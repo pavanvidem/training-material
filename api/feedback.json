@@ -20909,5 +20909,27 @@
     "topic": "Metagenomics",
     "month": "2022-06",
     "date": "2022-06-24"
+  },
+  {
+    "": "2744",
+    "note": "5",
+    "pro": "easy to follow & explained well",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Quality Control",
+    "topic": "Sequence analysis",
+    "month": "2022-06",
+    "date": "2022-06-28"
+  },
+  {
+    "": "2745",
+    "note": "1",
+    "pro": "tree -l 2 was helpful as otherwise unclear which file goes where",
+    "con": "Current version of the tutorial is broken, consider rolling back to archive. Ansible errors very hard to troubleshoot - ideally add more tips where things can go wrong, for ex ansible vault seems to enter an unfixable state if you mess up the secret yml file and have to make it again",
+    "anonymous": null,
+    "tutorial": "Galaxy Installation with Ansible",
+    "topic": "Galaxy Server administration",
+    "month": "2022-06",
+    "date": "2022-06-29"
   }
 ]
