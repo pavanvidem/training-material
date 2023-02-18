@@ -133,16 +133,16 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "deg-analysis.ga",
-      "tests": true
-    },
-    {
       "workflow": "qc-mapping-counting.ga",
       "tests": true
     },
     {
       "workflow": "qc-mapping-counting-paired-and-single.ga",
       "tests": false
+    },
+    {
+      "workflow": "deg-analysis.ga",
+      "tests": true
     }
   ],
   "tools": [
