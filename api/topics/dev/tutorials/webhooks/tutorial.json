@@ -21,15 +21,18 @@
       "name": "Clemens Blank",
       "email": "blankclemens@gmail.com",
       "joined": "2017-09",
+      "elixir_node": "de",
       "id": "blankclemens",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/blankclemens.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/blankclemens.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/blankclemens/"
     },
     {
       "name": "Martin Čech",
       "email": "marten@bx.psu.edu",
       "joined": "2017-09",
       "id": "martenson",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/martenson/"
     },
     {
       "name": "Björn Grüning",
@@ -39,15 +42,25 @@
       "orcid": "0000-0002-3079-6586",
       "linkedin": "bgruening",
       "joined": "2017-09",
+      "elixir_node": "de",
       "id": "bgruening",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
     }
   ],
   "subtopic": "advanced",
-  "last_modified_at": "2021-05-27T12:26:52+00:00",
   "url": "/topics/dev/tutorials/webhooks/tutorial.html",
   "topic_name": "dev",
   "tutorial_name": "webhooks",
+  "dir": "topics/dev/tutorials/webhooks",
+  "id": "dev/webhooks",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": true,
   "tools": [
@@ -66,7 +79,7 @@
   },
   "type": "tutorial",
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/webhooks/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/webhooks/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/webhooks/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/webhooks/tutorial.json"
   }
 }

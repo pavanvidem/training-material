@@ -34,59 +34,113 @@
       "orcid": "0000-0001-9818-0537",
       "joined": "2018-06",
       "id": "subinamehta",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/subinamehta.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/subinamehta.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/"
     },
     {
       "name": "Timothy J. Griffin",
       "email": "tgriffin@umn.edu",
       "github": false,
       "joined": "2017-09",
+      "orcid": "0000-0001-6801-2559",
       "id": "timothygriffin",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/timothygriffin.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/timothygriffin.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/"
     },
     {
       "name": "Pratik Jagtap",
       "email": "pjagtap@umn.edu",
       "joined": "2017-09",
+      "orcid": "0000-0003-0984-0973",
       "id": "pratikdjagtap",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/pratikdjagtap.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/pratikdjagtap.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/"
     },
     {
       "name": "Ray Sajulga",
       "email": "rsajulga@umn.edu",
       "joined": "2018-11",
       "id": "jraysajulga",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/jraysajulga.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/jraysajulga.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jraysajulga/"
     },
     {
       "name": "James Johnson",
       "email": "jj@umn.edu",
       "joined": "2017-09",
       "id": "jj-umn",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/jj-umn.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/jj-umn.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jj-umn/"
     },
     {
       "name": "Praveen Kumar",
       "email": "kumar207@umn.edu",
       "joined": "2019-04",
       "id": "pravs3683",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/pravs3683.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/pravs3683.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pravs3683/"
     }
   ],
   "subtopic": "multi-omics",
   "tags": [
     "proteogenomics"
   ],
-  "last_modified_at": "2021-05-31T09:06:26+00:00",
   "url": "/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html",
   "topic_name": "proteomics",
   "tutorial_name": "proteogenomics-dbcreation",
+  "dir": "topics/proteomics/tutorials/proteogenomics-dbcreation",
+  "id": "proteomics/proteogenomics-dbcreation",
+  "video_library": {
+    "tutorial": {
+      "description": "In this tutorial, we will provide a walkthrough on how to generate a customized protein sequence database using RNA-Seq data.  The resultant FASTA database contains sequences with single amino acid variants (SAVs), insertions and deletions (indels)and transcript assemblies (splicing variants). This database can then be used to identify protein sequence variants from the mass spectrometry data.",
+      "materials": [
+        {
+          "link": "topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html",
+          "type": "Tutorial"
+        }
+      ],
+      "tags": [
+        "proteomics"
+      ],
+      "type": "Tutorial",
+      "versions": [
+        {
+          "captions": [
+            "emmaleith"
+          ],
+          "date": "2021-02-15",
+          "galaxy_version": "21.01",
+          "length": "40M",
+          "link": "b_kZf8mXHdo",
+          "speakers": [
+            "jj-umn"
+          ]
+        }
+      ],
+      "gtn_id": "proteomics/proteogenomics-dbcreation",
+      "title": "Proteogenomics 1: Database Creation",
+      "captioned": true
+    },
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": false,
   "workflows": [
     {
       "workflow": "galaxy-workflow-mouse_rnaseq_dbcreation.ga",
-      "tests": false
+      "tests": false,
+      "url": "https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/proteogenomics-dbcreation/workflows/galaxy-workflow-mouse_rnaseq_dbcreation.ga",
+      "path": "topics/proteomics/tutorials/proteogenomics-dbcreation/workflows/galaxy-workflow-mouse_rnaseq_dbcreation.ga",
+      "wfid": "proteomics-proteogenomics-dbcreation",
+      "wfname": "galaxy-workflow-mouse_rnaseq_dbcreation",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/proteomics-proteogenomics-dbcreation/versions/galaxy-workflow-mouse_rnaseq_dbcreation",
+      "license": null,
+      "creators": [
+
+      ]
     }
   ],
   "tools": [
@@ -121,7 +175,7 @@
   },
   "type": "tutorial",
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//proteomics/tutorials/proteogenomics-dbcreation/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//proteomics/tutorials/proteogenomics-dbcreation/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.json"
   }
 }

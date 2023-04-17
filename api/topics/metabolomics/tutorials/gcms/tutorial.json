@@ -1,6 +1,6 @@
 {
   "layout": "tutorial_hands_on",
-  "enable": false,
+  "draft": true,
   "title": "Mass spectrometry : GC-MS analysis with metaMS package",
   "level": "Introductory",
   "zenodo_link": "https://zenodo.org/record/3244991",
@@ -33,13 +33,22 @@
       "name": "Julien Saint-Vanne",
       "joined": "2020-01",
       "id": "jsaintvanne",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/jsaintvanne.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/jsaintvanne.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jsaintvanne/"
     }
   ],
-  "last_modified_at": "2021-09-22T11:20:42+00:00",
   "url": "/topics/metabolomics/tutorials/gcms/tutorial.html",
   "topic_name": "metabolomics",
   "tutorial_name": "gcms",
+  "dir": "topics/metabolomics/tutorials/gcms",
+  "id": "metabolomics/gcms",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": false,
   "tools": [
@@ -65,7 +74,7 @@
     "work-in-progress"
   ],
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/gcms/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/gcms/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gcms/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gcms/tutorial.json"
   }
 }

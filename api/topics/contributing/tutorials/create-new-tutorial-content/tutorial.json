@@ -16,61 +16,32 @@
     "Self-learning can be done by questions and hidden answers"
   ],
   "subtopic": "writing",
-  "contributors": [
-    {
-      "name": "Bérénice Batut",
-      "email": "berenice.batut@gmail.com",
-      "twitter": "bebatut",
-      "linkedin": "berenicebatut",
-      "gitter": "bebatut",
-      "orcid": "0000-0001-9852-1987",
-      "joined": "2017-09",
-      "id": "bebatut",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json"
-    },
-    {
-      "name": "Björn Grüning",
-      "email": "bjoern.gruening@gmail.com",
-      "twitter": "bjoerngruening",
-      "gitter": "bgruening",
-      "orcid": "0000-0002-3079-6586",
-      "linkedin": "bgruening",
-      "joined": "2017-09",
-      "id": "bgruening",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
-    },
-    {
-      "name": "Saskia Hiltemann",
-      "maintainer_contact": "gitter",
-      "email": "saskia.hiltemann@gmail.com",
-      "twitter": "shiltemann",
-      "linkedin": "shiltemann",
-      "gitter": "shiltemann",
-      "orcid": "0000-0003-3803-468X",
-      "joined": "2017-09",
-      "bio": "Researcher at Erasmus Medical Center",
-      "id": "shiltemann",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
-    },
-    {
-      "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
-      "orcid": "0000-0001-9760-8992",
-      "maintainer_contact": "gitter",
-      "gitter": "hexylena",
-      "joined": "2017-09",
-      "id": "hexylena",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
-    }
-  ],
+  "contributions": {
+    "authorship": [
+      "bebatut",
+      "hexylena"
+    ],
+    "editing": [
+      "bgruening",
+      "shiltemann"
+    ]
+  },
   "abbreviations": {
     "API": "Application Programming Interface",
     "JSON": "JavaScript Object Notation"
   },
-  "last_modified_at": "2022-04-25T15:08:09+00:00",
   "url": "/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "create-new-tutorial-content",
+  "dir": "topics/contributing/tutorials/create-new-tutorial-content",
+  "id": "contributing/create-new-tutorial-content",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": false,
   "tools": [
@@ -89,8 +60,83 @@
     "video": false
   },
   "type": "tutorial",
+  "contributors": [
+    {
+      "name": "Bérénice Batut",
+      "email": "berenice.batut@gmail.com",
+      "twitter": "bebatut",
+      "linkedin": "berenicebatut",
+      "gitter": "bebatut",
+      "orcid": "0000-0001-9852-1987",
+      "joined": "2017-09",
+      "elixir_node": "de",
+      "contact_for_training": true,
+      "location": {
+        "country": "FR",
+        "lat": 45.77,
+        "lon": 3.08
+      },
+      "fediverse": "https://piaille.fr/@bebatut",
+      "id": "bebatut",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
+    },
+    {
+      "name": "Helena Rasche",
+      "email": "hexylena@galaxians.org",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "elixir_node": "nl",
+      "fediverse": "https://galaxians.garden/hexylena",
+      "contact_for_training": false,
+      "location": {
+        "country": "NL",
+        "lat": 51.91,
+        "lon": 4.46
+      },
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
+    },
+    {
+      "name": "Björn Grüning",
+      "email": "bjoern.gruening@gmail.com",
+      "twitter": "bjoerngruening",
+      "gitter": "bgruening",
+      "orcid": "0000-0002-3079-6586",
+      "linkedin": "bgruening",
+      "joined": "2017-09",
+      "elixir_node": "de",
+      "id": "bgruening",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
+    },
+    {
+      "name": "Saskia Hiltemann",
+      "maintainer_contact": "gitter",
+      "email": "saskia.hiltemann@gmail.com",
+      "twitter": "shiltemann",
+      "linkedin": "shiltemann",
+      "gitter": "shiltemann",
+      "orcid": "0000-0003-3803-468X",
+      "joined": "2017-09",
+      "bio": "Researcher at Erasmus Medical Center",
+      "elixir_node": "nl",
+      "contact_for_training": true,
+      "location": {
+        "country": "NL",
+        "lat": 51.912,
+        "lon": 4.462
+      },
+      "id": "shiltemann",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
+    }
+  ],
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//contributing/tutorials/create-new-tutorial-content/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//contributing/tutorials/create-new-tutorial-content/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/contributing/tutorials/create-new-tutorial-content/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/contributing/tutorials/create-new-tutorial-content/tutorial.json"
   }
 }

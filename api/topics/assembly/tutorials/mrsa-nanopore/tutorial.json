@@ -28,52 +28,20 @@
     "assembly",
     "amr"
   ],
-  "contributors": [
-    {
-      "name": "Bazante Sanders",
-      "joined": "2020-12",
-      "id": "bazante1",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bazante1.json"
-    },
-    {
-      "name": "Miaomiao Zhou",
-      "email": "m.zhou1@avans.nl",
-      "joined": "2020-12",
-      "id": "miaomiaozhou88",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/miaomiaozhou88.json"
-    },
-    {
-      "name": "Saskia Hiltemann",
-      "maintainer_contact": "gitter",
-      "email": "saskia.hiltemann@gmail.com",
-      "twitter": "shiltemann",
-      "linkedin": "shiltemann",
-      "gitter": "shiltemann",
-      "orcid": "0000-0003-3803-468X",
-      "joined": "2017-09",
-      "bio": "Researcher at Erasmus Medical Center",
-      "id": "shiltemann",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
-    },
-    {
-      "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
-      "orcid": "0000-0001-9760-8992",
-      "maintainer_contact": "gitter",
-      "gitter": "hexylena",
-      "joined": "2017-09",
-      "id": "hexylena",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
-    },
-    {
-      "name": "Avans Hogeschool",
-      "joined": "2020-11",
-      "funder": true,
-      "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. [avans.nl](https://avans.nl/)\n",
-      "id": "avans-atgm",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
-    }
-  ],
+  "contributions": {
+    "authorship": [
+      "bazante1"
+    ],
+    "editing": [
+      "hexylena",
+      "bazante1",
+      "shiltemann",
+      "miaomiaozhou88"
+    ],
+    "funding": [
+      "avans-atgm"
+    ]
+  },
   "follow_up_training": [
     {
       "type": "internal",
@@ -90,16 +58,52 @@
       ]
     }
   ],
-  "last_modified_at": "2021-12-14T14:52:15+00:00",
+  "abbreviations": {
+    "SVs": "Structural Variations"
+  },
   "url": "/topics/assembly/tutorials/mrsa-nanopore/tutorial.html",
   "topic_name": "assembly",
   "tutorial_name": "mrsa-nanopore",
+  "dir": "topics/assembly/tutorials/mrsa-nanopore",
+  "id": "assembly/mrsa-nanopore",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": false,
   "workflows": [
     {
       "workflow": "main_workflow.ga",
-      "tests": false
+      "tests": false,
+      "url": "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/mrsa-nanopore/workflows/main_workflow.ga",
+      "path": "topics/assembly/tutorials/mrsa-nanopore/workflows/main_workflow.ga",
+      "wfid": "assembly-mrsa-nanopore",
+      "wfname": "main_workflow",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/assembly-mrsa-nanopore/versions/main_workflow",
+      "license": "AGPL-3.0-or-later",
+      "creators": [
+        {
+          "class": "Organization",
+          "name": "Avans Hogeschool",
+          "url": "https://www.avans.nl"
+        },
+        {
+          "class": "Person",
+          "identifier": "0000-0001-9760-8992",
+          "jobTitle": "Docent HBO",
+          "name": "Helena Rasche",
+          "url": "https://github.com/hexylena"
+        },
+        {
+          "class": "Person",
+          "identifier": "",
+          "name": "Miaomiao Zhou"
+        }
+      ]
     }
   ],
   "tools": [
@@ -131,8 +135,82 @@
     "video": false
   },
   "type": "tutorial",
+  "contributors": [
+    {
+      "name": "Bazante Sanders",
+      "joined": "2020-12",
+      "id": "bazante1",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bazante1.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/"
+    },
+    {
+      "name": "Helena Rasche",
+      "email": "hexylena@galaxians.org",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "elixir_node": "nl",
+      "fediverse": "https://galaxians.garden/hexylena",
+      "contact_for_training": false,
+      "location": {
+        "country": "NL",
+        "lat": 51.91,
+        "lon": 4.46
+      },
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
+    },
+    {
+      "name": "Bazante Sanders",
+      "joined": "2020-12",
+      "id": "bazante1",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bazante1.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/"
+    },
+    {
+      "name": "Saskia Hiltemann",
+      "maintainer_contact": "gitter",
+      "email": "saskia.hiltemann@gmail.com",
+      "twitter": "shiltemann",
+      "linkedin": "shiltemann",
+      "gitter": "shiltemann",
+      "orcid": "0000-0003-3803-468X",
+      "joined": "2017-09",
+      "bio": "Researcher at Erasmus Medical Center",
+      "elixir_node": "nl",
+      "contact_for_training": true,
+      "location": {
+        "country": "NL",
+        "lat": 51.912,
+        "lon": 4.462
+      },
+      "id": "shiltemann",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
+    },
+    {
+      "name": "Miaomiao Zhou",
+      "email": "m.zhou1@avans.nl",
+      "joined": "2020-12",
+      "orcid": "0000-0003-4426-1758",
+      "id": "miaomiaozhou88",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/miaomiaozhou88.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/miaomiaozhou88/"
+    },
+    {
+      "name": "Avans Hogeschool",
+      "joined": "2020-11",
+      "funder": true,
+      "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
+      "id": "avans-atgm",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/"
+    }
+  ],
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/mrsa-nanopore/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/mrsa-nanopore/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/mrsa-nanopore/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/mrsa-nanopore/tutorial.json"
   }
 }

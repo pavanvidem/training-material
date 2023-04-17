@@ -39,20 +39,39 @@
       "gitter": "foellmelanie",
       "orcid": "0000-0002-1887-7543",
       "joined": "2018-10",
+      "elixir_node": "de",
       "id": "foellmelanie",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/foellmelanie.json"
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/foellmelanie.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/"
     }
   ],
-  "last_modified_at": "2021-03-12T17:24:55+00:00",
   "url": "/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html",
   "topic_name": "metabolomics",
   "tutorial_name": "msi-finding-nglycans",
+  "dir": "topics/metabolomics/tutorials/msi-finding-nglycans",
+  "id": "metabolomics/msi-finding-nglycans",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": true,
   "slides": false,
   "workflows": [
     {
       "workflow": "msi-finding-diff-analytes.ga",
-      "tests": false
+      "tests": false,
+      "url": "https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/workflows/msi-finding-diff-analytes.ga",
+      "path": "topics/metabolomics/tutorials/msi-finding-nglycans/workflows/msi-finding-diff-analytes.ga",
+      "wfid": "metabolomics-msi-finding-nglycans",
+      "wfname": "msi-finding-diff-analytes",
+      "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metabolomics-msi-finding-nglycans/versions/msi-finding-diff-analytes",
+      "license": null,
+      "creators": [
+
+      ]
     }
   ],
   "tools": [
@@ -82,7 +101,7 @@
   },
   "type": "tutorial",
   "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/msi-finding-nglycans/tutorial.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/msi-finding-nglycans/tutorial.json"
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.json"
   }
 }
