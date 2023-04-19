@@ -1646,6 +1646,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/martenson/"
         }
       ],
+      "subtopic": "deprecated",
       "url": "/topics/admin/tutorials/advanced-galaxy-customisation/slides.html",
       "topic_name": "admin",
       "tutorial_name": "advanced-galaxy-customisation",
@@ -1788,7 +1789,9 @@
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/admin/tutorials/heterogeneous-compute/tutorial"
+        "/topics/admin/tutorials/heterogeneous-compute/tutorial",
+        "/short/admin/pulsar",
+        "/short/T00017"
       ],
       "title": "Running Jobs on Remote Resources with Pulsar",
       "questions": [
@@ -2041,7 +2044,6 @@
           "martenson",
           "jmchilton",
           "davebx",
-          "nsoranzo",
           "lecorguille",
           "abretaud",
           "lldelisle"
@@ -2292,17 +2294,6 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/davebx/"
         },
         {
-          "name": "Nicola Soranzo",
-          "gitter": "nsoranzo",
-          "orcid": "0000-0003-3627-5340",
-          "twitter": "NicolaSoranzo",
-          "joined": "2017-09",
-          "elixir_node": "uk",
-          "id": "nsoranzo",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/nsoranzo.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/"
-        },
-        {
           "name": "Gildas Le Corguillé",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -2365,7 +2356,9 @@
     {
       "layout": "tutorial_hands_on",
       "redirect_from": [
-        "/topics/admin/tutorials/upstream-auth/tutorial"
+        "/topics/admin/tutorials/upstream-auth/tutorial",
+        "/short/admin/external-auth",
+        "/short/T00007"
       ],
       "title": "External Authentication",
       "questions": [
@@ -2476,7 +2469,9 @@
       "subtopic": "core",
       "priority": 1,
       "redirect_from": [
-        "/topics/admin/slides/introduction"
+        "/topics/admin/slides/introduction",
+        "/short/admin/introduction/slides",
+        "/short/S00015"
       ],
       "title": "Galaxy from an administrator's point of view",
       "zenodo_link": "",
@@ -2913,7 +2908,9 @@
       "layout": "tutorial_hands_on",
       "title": "Connecting Galaxy to a compute cluster",
       "redirect_from": [
-        "/topics/admin/tutorials/job-metrics/tutorial"
+        "/topics/admin/tutorials/job-metrics/tutorial",
+        "/short/admin/connect-to-compute-cluster",
+        "/short/T00002"
       ],
       "questions": [
         "How to connect Galaxy to a compute cluster?",
@@ -2924,7 +2921,7 @@
       "objectives": [
         "Be familiar with the basics of installing, configuring, and using Slurm",
         "Understand all components of the Galaxy job running stack",
-        "Understand how the `job_conf.xml` file controls Galaxy's jobs subsystem",
+        "Understand how the job conf controls Galaxy's jobs subsystem",
         "Have a strong understanding of Galaxy job destinations",
         "Understand the purpose and function of Galaxy job metrics"
       ],
