@@ -105,6 +105,16 @@
     {
       "name": "Martin Čech",
       "email": "marten@bx.psu.edu",
+      "gitter": "martenson",
+      "orcid": "0000-0002-9318-1781",
+      "elixir_node": "cz",
+      "contact_for_training": true,
+      "location": {
+        "country": "USA",
+        "lat": 37.0,
+        "lon": -122.0
+      },
+      "fediverse": "https://mastodon.world/@martenson",
       "joined": "2017-09",
       "id": "martenson",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -464,6 +474,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -852,6 +872,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -968,6 +998,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -1478,11 +1518,15 @@
       "layout": "tutorial_slides",
       "logo": "assets/images/gat.png",
       "video": true,
-      "title": "User, Role, Group and Quota managment",
+      "title": "User, Role, Group, Quota, and Authentication managment",
       "zenodo_link": "",
       "questions": [
         "How does Galaxy manage users and groups?",
-        "How can I assign Quotas to specific users/groups?"
+        "How can I assign Quotas to specific users/groups?",
+        "How should I manage groups vs roles",
+        "What authentication methods are available?",
+        "How is dataset privacy managed?",
+        "Authentication Systems, what is available and how can I enable it?"
       ],
       "objectives": [
         "Learn the Galaxy user/group management and assign Quotas.",
@@ -1492,51 +1536,13 @@
       "key_points": [
         "Galaxy has a powerful user and group managment system that can be utilized for Quota management."
       ],
-      "contributors": [
-        {
-          "name": "Nate Coraor",
-          "gitter": "natefoo",
-          "twitter": "natefoo",
-          "email": "nate@bx.psu.edu",
-          "joined": "2017-12",
-          "orcid": "0000-0001-8083-2963",
-          "id": "natefoo",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/"
-        },
-        {
-          "name": "Björn Grüning",
-          "email": "bjoern.gruening@gmail.com",
-          "twitter": "bjoerngruening",
-          "gitter": "bgruening",
-          "orcid": "0000-0002-3079-6586",
-          "linkedin": "bgruening",
-          "joined": "2017-09",
-          "elixir_node": "de",
-          "id": "bgruening",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
-        },
-        {
-          "name": "Helena Rasche",
-          "email": "hexylena@galaxians.org",
-          "orcid": "0000-0001-9760-8992",
-          "maintainer_contact": "gitter",
-          "gitter": "hexylena",
-          "joined": "2017-09",
-          "elixir_node": "nl",
-          "fediverse": "https://galaxians.garden/hexylena",
-          "contact_for_training": false,
-          "location": {
-            "country": "NL",
-            "lat": 51.91,
-            "lon": 4.46
-          },
-          "id": "hexylena",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
-        }
-      ],
+      "contributions": {
+        "authorship": [
+          "natefoo",
+          "bgruening",
+          "hexylena"
+        ]
+      },
       "subtopic": "maintenance",
       "url": "/topics/admin/tutorials/users-groups-quotas/slides.html",
       "topic_name": "admin",
@@ -1595,6 +1601,51 @@
         "video": true
       },
       "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Nate Coraor",
+          "gitter": "natefoo",
+          "twitter": "natefoo",
+          "email": "nate@bx.psu.edu",
+          "joined": "2017-12",
+          "orcid": "0000-0001-8083-2963",
+          "id": "natefoo",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/"
+        },
+        {
+          "name": "Björn Grüning",
+          "email": "bjoern.gruening@gmail.com",
+          "twitter": "bjoerngruening",
+          "gitter": "bgruening",
+          "orcid": "0000-0002-3079-6586",
+          "linkedin": "bgruening",
+          "joined": "2017-09",
+          "elixir_node": "de",
+          "id": "bgruening",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
+        },
+        {
+          "name": "Helena Rasche",
+          "email": "hexylena@galaxians.org",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
+          "contact_for_training": false,
+          "location": {
+            "country": "NL",
+            "lat": 51.91,
+            "lon": 4.46
+          },
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
+        }
+      ],
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/users-groups-quotas/slides.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/users-groups-quotas/slides.json"
@@ -1640,6 +1691,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -2270,6 +2331,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -3428,6 +3499,16 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
+          "gitter": "martenson",
+          "orcid": "0000-0002-9318-1781",
+          "elixir_node": "cz",
+          "contact_for_training": true,
+          "location": {
+            "country": "USA",
+            "lat": 37.0,
+            "lon": -122.0
+          },
+          "fediverse": "https://mastodon.world/@martenson",
           "joined": "2017-09",
           "id": "martenson",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/martenson.json",
@@ -4795,6 +4876,105 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/wireguard/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/wireguard/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Monitoring Galaxy and Pulsar with Sentry",
+      "zenodo_link": "",
+      "questions": null,
+      "objectives": [
+        "Have an understanding of Sentry",
+        "Install Sentry",
+        "Configure Galaxy and Pulsar to send errors to Sentry",
+        "Monitor performance with Sentry"
+      ],
+      "time_estimation": "1h",
+      "key_points": null,
+      "contributions": {
+        "authorship": [
+          "mvdbeek"
+        ],
+        "editing": [
+          "hexylena"
+        ]
+      },
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "admin",
+          "tutorials": [
+            "ansible",
+            "ansible-galaxy",
+            "pulsar"
+          ]
+        }
+      ],
+      "subtopic": "monitoring",
+      "tags": [
+        "ansible",
+        "git-gat"
+      ],
+      "url": "/topics/admin/tutorials/sentry/tutorial.html",
+      "topic_name": "admin",
+      "tutorial_name": "sentry",
+      "dir": "topics/admin/tutorials/sentry",
+      "id": "admin/sentry",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Marius van den Beek",
+          "joined": "2018-06",
+          "id": "mvdbeek",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/mvdbeek.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mvdbeek/"
+        },
+        {
+          "name": "Helena Rasche",
+          "email": "hexylena@galaxians.org",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
+          "contact_for_training": false,
+          "location": {
+            "country": "NL",
+            "lat": 51.91,
+            "lon": 4.46
+          },
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/sentry/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/sentry/tutorial.json"
       }
     },
     {
