@@ -4,7 +4,9 @@
   "subtopic": "end-to-end",
   "priority": 3,
   "redirect_from": [
-    "/topics/transcriptomics/tutorials/satac-preprocessing-tenx/tutorial"
+    "/topics/transcriptomics/tutorials/satac-preprocessing-tenx/tutorial",
+    "/short/single-cell/scatac-preprocessing-tenx",
+    "/short/T00335"
   ],
   "zenodo_link": "https://zenodo.org/record/7855968",
   "tags": [
@@ -47,6 +49,7 @@
   "contributors": [
     {
       "name": "Pavankumar Videm",
+      "orcid": "0000-0002-5192-126X",
       "joined": "2017-09",
       "id": "pavanvidem",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/pavanvidem.json",
@@ -110,16 +113,12 @@
     "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0",
     "toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.7.5+galaxy1",
     "toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_sortbed/2.30.0+galaxy2",
-    "toolshed.g2.bx.psu.edu/repos/iuc/episcanpy/episcanpy_build_matrix/0.3.2+galaxy0",
-    "toolshed.g2.bx.psu.edu/repos/iuc/episcanpy/episcanpy_build_matrix/0.3.2+galaxy1",
     "toolshed.g2.bx.psu.edu/repos/iuc/episcanpy_build_matrix/episcanpy_build_matrix/0.3.2+galaxy1",
     "toolshed.g2.bx.psu.edu/repos/iuc/episcanpy_preprocess/episcanpy_preprocess/0.3.2+galaxy1",
     "toolshed.g2.bx.psu.edu/repos/iuc/macs2/macs2_callpeak/2.1.1.20160309.6",
     "toolshed.g2.bx.psu.edu/repos/iuc/macs2/macs2_callpeak/2.2.7.1+galaxy0",
     "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.7.1+galaxy0",
     "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.7.1+galaxy1",
-    "toolshed.g2.bx.psu.edu/repos/iuc/sinto/sinto_barcode/0.9.0",
-    "toolshed.g2.bx.psu.edu/repos/iuc/sinto/sinto_fragments/0.9.0",
     "toolshed.g2.bx.psu.edu/repos/iuc/sinto_barcode/sinto_barcode/0.9.0+galaxy1",
     "toolshed.g2.bx.psu.edu/repos/iuc/sinto_fragments/sinto_fragments/0.9.0+galaxy1"
   ],
