@@ -26,7 +26,7 @@
       "email": "berenice.batut@gmail.com",
       "twitter": "bebatut",
       "linkedin": "berenicebatut",
-      "gitter": "bebatut",
+      "matrix": "bebatut:matrix.org",
       "orcid": "0000-0001-9852-1987",
       "joined": "2017-09",
       "elixir_node": "de",
@@ -44,7 +44,7 @@
   ],
   "materials": [
     {
-      "layout": "base_slides",
+      "layout": "tutorial_slides",
       "logo": "GTN",
       "redirect_from": [
         "/topics/instructors/tutorials/workshop-intro/slides",
@@ -61,7 +61,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -91,9 +91,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/workshop-intro/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -144,9 +176,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/gtn-for-instructors/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "translations": {
         "tutorial": [
@@ -164,7 +228,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -224,9 +288,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/teaching-online/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -248,7 +344,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -267,7 +363,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -282,10 +378,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -334,7 +431,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -363,9 +460,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/galaxy-admin-training/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -414,7 +543,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -434,7 +563,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -464,9 +593,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/setup-galaxy-for-training/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -554,9 +715,41 @@
           ]
         }
       ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/motivation_demotivation/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -575,7 +768,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -594,7 +787,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -630,10 +823,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -668,7 +862,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -687,7 +881,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -711,9 +905,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/experiences/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -756,7 +982,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -776,7 +1002,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -805,9 +1031,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/organize-workshop/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -867,9 +1125,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/hybrid-training/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -891,7 +1181,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -910,7 +1200,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -925,10 +1215,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -959,7 +1250,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -978,7 +1269,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -993,7 +1284,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -1013,7 +1304,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1042,9 +1333,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/running-workshop/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1160,9 +1483,41 @@
           ]
         }
       ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/learner_participation_engagement/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1181,7 +1536,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -1200,7 +1555,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -1236,10 +1591,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -1276,7 +1632,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1308,9 +1664,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/setup-tiaas-for-training/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1418,9 +1806,41 @@
           ]
         }
       ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/assessment/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1439,7 +1859,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -1458,7 +1878,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -1494,10 +1914,11 @@
           "avatar": "https://www.erasmusplus.nl/assets/images/logo.png",
           "github": false,
           "funder": true,
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "funding_id": "2020-1-NL01-KA203-064717",
+          "funding_system": "erasmusplus",
           "funding_statement": "This project (<a href=\"https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717\"><code class=\"language-plaintext highlighter-rouge\">2020-1-NL01-KA203-064717</code></a>) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src=\"https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg\" alt=\"eu flag with the text: with the support of the erasmus programme of the european union\" />",
           "id": "erasmusplus",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/"
         }
       ],
@@ -1531,7 +1952,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -1550,7 +1971,7 @@
           "name": "Fotis E. Psomopoulos",
           "email": "fpsom@certh.gr",
           "twitter": "fopsom",
-          "gitter": "fpsom",
+          "matrix": "fpsom:matrix.org",
           "orcid": "0000-0002-0222-4273",
           "linkedin": "fpsom",
           "joined": "2019-03",
@@ -1581,9 +2002,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/teaching/tutorials/live-coding/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {

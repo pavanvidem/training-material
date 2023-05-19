@@ -3,7 +3,9 @@
   "type": "admin-dev",
   "title": "Development in Galaxy",
   "summary": "Galaxy is an open-source project. Everyone can contribute to its development with core Galaxy development, integration of softwares in Galaxy environment, ...",
-  "edam_ontology": "topic_3372",
+  "edam_ontology": [
+    "topic_3372"
+  ],
   "docker_image": "quay.io/galaxy/dev-training",
   "requirements": null,
   "maintainers": [
@@ -20,7 +22,7 @@
       "email": "berenice.batut@gmail.com",
       "twitter": "bebatut",
       "linkedin": "berenicebatut",
-      "gitter": "bebatut",
+      "matrix": "bebatut:matrix.org",
       "orcid": "0000-0001-9852-1987",
       "joined": "2017-09",
       "elixir_node": "de",
@@ -40,7 +42,7 @@
       "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
-      "gitter": "hexylena",
+      "matrix": "hexylena:matrix.org",
       "joined": "2017-09",
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
@@ -129,7 +131,7 @@
       "contributors": [
         {
           "name": "Nicola Soranzo",
-          "gitter": "nsoranzo",
+          "matrix": "nsoranzo:matrix.org",
           "orcid": "0000-0003-3627-5340",
           "twitter": "NicolaSoranzo",
           "joined": "2017-09",
@@ -143,7 +145,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -153,7 +155,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -185,9 +187,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/conda/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -230,7 +264,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -249,7 +283,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -274,9 +308,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/interactive-tours/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -316,7 +382,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -342,7 +408,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -380,9 +446,41 @@
       },
       "hands_on": true,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/visualization-charts/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -444,7 +542,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -464,7 +562,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -483,7 +581,7 @@
           "name": "Anthony Bretaudeau",
           "email": "anthony.bretaudeau@inrae.fr",
           "twitter": "abretau",
-          "gitter": "abretaud",
+          "matrix": "abretaud:matrix.org",
           "orcid": "0000-0003-0914-2470",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -503,7 +601,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -511,7 +609,7 @@
         },
         {
           "name": "Nicola Soranzo",
-          "gitter": "nsoranzo",
+          "matrix": "nsoranzo:matrix.org",
           "orcid": "0000-0003-3627-5340",
           "twitter": "NicolaSoranzo",
           "joined": "2017-09",
@@ -524,7 +622,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -555,9 +653,41 @@
         "session": null
       },
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/tool-integration/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -604,7 +734,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -614,7 +744,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -652,9 +782,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/architecture/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -697,7 +859,7 @@
           "name": "Anthony Bretaudeau",
           "email": "anthony.bretaudeau@inrae.fr",
           "twitter": "abretau",
-          "gitter": "abretaud",
+          "matrix": "abretaud:matrix.org",
           "orcid": "0000-0003-0914-2470",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -734,9 +896,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/conda_sys/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -785,7 +979,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -822,9 +1016,41 @@
       },
       "hands_on": true,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/visualization-generic/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -873,7 +1099,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -892,7 +1118,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -906,7 +1132,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -936,9 +1162,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/interactive-environments/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -996,7 +1254,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -1006,7 +1264,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -1030,9 +1288,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/containers/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1076,7 +1366,7 @@
           "name": "Anthony Bretaudeau",
           "email": "anthony.bretaudeau@inrae.fr",
           "twitter": "abretau",
-          "gitter": "abretaud",
+          "matrix": "abretaud:matrix.org",
           "orcid": "0000-0003-0914-2470",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -1110,7 +1400,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -1140,9 +1430,41 @@
       },
       "hands_on": false,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/toolshed/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1192,7 +1514,7 @@
         {
           "name": "Martin Čech",
           "email": "marten@bx.psu.edu",
-          "gitter": "martenson",
+          "matrix": "martenson:matrix.org",
           "orcid": "0000-0002-9318-1781",
           "elixir_node": "cz",
           "contact_for_training": true,
@@ -1211,7 +1533,7 @@
           "name": "Björn Grüning",
           "email": "bjoern.gruening@gmail.com",
           "twitter": "bjoerngruening",
-          "gitter": "bgruening",
+          "matrix": "bgruening:matrix.org",
           "orcid": "0000-0002-3079-6586",
           "linkedin": "bgruening",
           "joined": "2017-09",
@@ -1236,9 +1558,41 @@
       },
       "hands_on": true,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/webhooks/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1308,9 +1662,41 @@
       },
       "hands_on": true,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/bioblend-api/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": true,
       "translations": {
@@ -1326,7 +1712,7 @@
       "contributors": [
         {
           "name": "Nicola Soranzo",
-          "gitter": "nsoranzo",
+          "matrix": "nsoranzo:matrix.org",
           "orcid": "0000-0003-3627-5340",
           "twitter": "NicolaSoranzo",
           "joined": "2017-09",
@@ -1355,7 +1741,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1445,7 +1831,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1503,9 +1889,41 @@
       },
       "hands_on": true,
       "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/tool-generators/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": true,
       "translations": {
@@ -1557,7 +1975,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -1600,9 +2018,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/writing_tests/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1636,7 +2086,7 @@
           "email": "berenice.batut@gmail.com",
           "twitter": "bebatut",
           "linkedin": "berenicebatut",
-          "gitter": "bebatut",
+          "matrix": "bebatut:matrix.org",
           "orcid": "0000-0001-9852-1987",
           "joined": "2017-09",
           "elixir_node": "de",
@@ -1657,7 +2107,7 @@
           "email": "saskia.hiltemann@gmail.com",
           "twitter": "shiltemann",
           "linkedin": "shiltemann",
-          "gitter": "shiltemann",
+          "matrix": "shiltemann:matrix.org",
           "orcid": "0000-0003-3803-468X",
           "joined": "2017-09",
           "bio": "Researcher at Erasmus Medical Center",
@@ -1686,7 +2136,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1721,9 +2171,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/data-source-integration/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1795,7 +2277,7 @@
           "name": "Yvan Le Bras",
           "email": "yvan.le-bras@mnhn.fr",
           "twitter": "Yvan2935",
-          "gitter": "yvanlebras",
+          "matrix": "yvanlebras:matrix.org",
           "orcid": "0000-0002-8504-068X",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -1826,7 +2308,7 @@
           "name": "Anthony Bretaudeau",
           "email": "anthony.bretaudeau@inrae.fr",
           "twitter": "abretau",
-          "gitter": "abretaud",
+          "matrix": "abretaud:matrix.org",
           "orcid": "0000-0003-0914-2470",
           "joined": "2017-09",
           "elixir_node": "fr",
@@ -1846,7 +2328,7 @@
           "email": "hexylena@galaxians.org",
           "orcid": "0000-0001-9760-8992",
           "maintainer_contact": "gitter",
-          "gitter": "hexylena",
+          "matrix": "hexylena:matrix.org",
           "joined": "2017-09",
           "elixir_node": "nl",
           "fediverse": "https://galaxians.garden/hexylena",
@@ -1875,9 +2357,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/interactive-tools/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -1943,7 +2457,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -1986,9 +2500,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/debugging/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -2102,9 +2648,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/tool-generators-advanced/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -2196,9 +2774,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/bioblend-dev/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -2288,6 +2898,20 @@
           "versions": [
             {
               "captions": [
+                "gallardoalba",
+                "astrovsky01"
+              ],
+              "date": "2023-05-18",
+              "galaxy_version": "22.01",
+              "length": "50M",
+              "link": "QRoY1pFUY30",
+              "speakers": [
+                "gallardoalba",
+                "astrovsky01"
+              ]
+            },
+            {
+              "captions": [
                 "gallardoalba"
               ],
               "date": "2022-03-11",
@@ -2325,9 +2949,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/tool-from-scratch/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {
@@ -2363,7 +3019,7 @@
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
           "twitter": "jmchilton",
-          "gitter": "jmchilton",
+          "matrix": "jmchilton:matrix.org",
           "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json",
@@ -2415,9 +3071,41 @@
       },
       "hands_on": true,
       "slides": false,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/core-contributing/tutorial.json",
       "tools": [
 
       ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
       "tours": false,
       "video": false,
       "translations": {

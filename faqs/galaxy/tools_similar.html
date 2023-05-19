@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,7 +40,7 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/faqs/galaxy/tools_similar.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -35,7 +58,7 @@
         <meta property="og:title" content="Galaxy Training: Multipile similar tools available">
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -104,8 +127,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/faqs/galaxy/tools_similar.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainfaqs/galaxy/tools_similar.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -220,6 +242,7 @@
 
     <!--SNIPPET-->
     <blockquote class="tip">   <div class="box-title tip-title" id="tip-using-tutorial-mode"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-using-tutorial-mode" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Using tutorial mode<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Tools are frequently updated to new versions. Your Galaxy may have multiple versions of the same tool available. By default, you will be shown the latest version of the tool. This may NOT be the same tool used in the tutorial you are accessing. Furthermore, if you use a newer tool in one step, and try using an older tool in the next step… this may fail! To ensure you use the same tool versions of a given tutorial, use the <strong>Tutorial mode</strong> feature.</p>   <ul>   <li>Open your Galaxy server</li>   <li>Click on the <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> icon on the top menu, this will open the GTN inside Galaxy.</li>   <li>Navigate to your tutorial</li>   <li>Tool names in tutorials will be blue buttons that open the correct tool for you</li>   <li><strong>Note:</strong> this does not work for all tutorials (yet)   <img src="/training-material/topics/contributing/images/88277962-ddda4a80-cce1-11ea-92cd-41b1df063db0.gif" alt="gif showing how GTN-in-Galaxy works" /></li>   <li>You can click anywhere in the grey-ed out area outside of the tutorial box to return back to the Galaxy analytical interface</li> </ul>   <blockquote class="warning">   <div class="box-title warning-title" id="warning-not-all-browsers-work"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: Not all browsers work!</div>   <ul>     <li>We’ve had some issues with Tutorial mode on Safari for Mac users.</li>     <li>Try a <strong>different browser</strong> if you aren’t seeing the button.</li>   </ul> </blockquote> </blockquote>
+    <p><!--END_SNIPPET--></p>
   </li>
   <li>
     <p>Check that the <strong>entire tool name</strong> matches what you see in the tutorial.</p>
@@ -283,23 +306,50 @@ add a button, include configuration options:
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:F00102">https://gxy.io/GTN:F00102</a>
+				</p>
+				
+				<p>
+					
+						Materials licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/faqs/galaxy/tools_similar.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/fee830b6da5b6f22c84ea431f133e5774eb038b2">fee830b6da5b6f22c84ea431f133e5774eb038b2</a>. This page has a shortlink, and will always be accessible via <a href="https://gxy.io/GTN:F00102">https://gxy.io/GTN:F00102</a></p>
+
     </div>
 </footer>
 
-        
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

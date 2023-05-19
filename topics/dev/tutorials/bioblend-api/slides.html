@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -92,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -138,8 +165,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
@@ -159,8 +186,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
@@ -180,8 +207,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
@@ -203,96 +230,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
-      "name": "Dannon Baker",
-      "image": "https://avatars.githubusercontent.com/dannon",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
-      "name": "Olivia Doppelt-Azeroual",
-      "image": "https://avatars.githubusercontent.com/odoppelt",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
-      "name": "Fabien Mareuil",
-      "image": "https://avatars.githubusercontent.com/fmareuil",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
-      "name": "Nicola Soranzo",
-      "image": "https://avatars.githubusercontent.com/nsoranzo",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3627-5340",
-      "orcid": "https://orcid.org/0000-0003-3627-5340"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
@@ -323,7 +262,12 @@
       "termCode": "topic_3372",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3372"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "## Galaxy API"
 }
         </script>
     </head>

@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,13 +40,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/crispr-screen/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="CRISPR screen analysis">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2022-10-18 14:23:35 +0000">
+<meta name="DC.date" content="2023-05-17 17:21:19 +0000">
 <meta name="DC.creator" content="Maria Doyle">
 <meta name="DC.creator" content="Kenji Fujihara">
 <meta name="DC.creator" content="Twishi Gulati">
@@ -37,7 +60,7 @@
         <meta property="og:title" content="Galaxy Training: CRISPR screen analysis">
         <meta property="og:description" content="Genome annotation is a multi-level process that includes ...">
         
-        <meta property="og:image" content="/training-material/assets/images/gga.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -66,7 +89,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2022-10-18 14:23:35 +0000",
+  "dateModified": "2023-05-17 17:21:19 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "CRISPR screen analysis",
   "interactivityType": "mixed",
@@ -92,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -119,6 +146,7 @@
   "name": "Hands-on for 'CRISPR screen analysis' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/crispr-screen/tutorial.html",
   "timeRequired": "PT2H",
+  "teaches": "Apply appropriate analysis and quality control steps for CRISPR screen data\n - Identify differentially enriched genes across conditions\n - Generate volcano plot to visualise results",
   "keywords": "genome-annotation, genome editing, CRISPR, essential genes, cell line",
   "description": "The questions this  addresses are:\n - What are the steps to process CRISPR screen data?\n - How to identify essential genes across experimental conditions?\n\n\nThe objectives are:\n - Apply appropriate analysis and quality control steps for CRISPR screen data\n - Identify differentially enriched genes across conditions\n - Generate volcano plot to visualise results\n\n",
   "inLanguage": {
@@ -206,8 +234,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
@@ -229,8 +257,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
@@ -250,75 +278,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "name": "Twishi Gulati",
-      "image": "https://avatars.githubusercontent.com/twishigulati",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "name": "Kenji Fujihara",
-      "image": "https://avatars.githubusercontent.com/kenjifujihara",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
@@ -349,7 +310,27 @@
       "termCode": "topic_0362",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0362"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "genome editing"
+    },
+    {
+      "@type": "Thing",
+      "name": "CRISPR"
+    },
+    {
+      "@type": "Thing",
+      "name": "essential genes"
+    },
+    {
+      "@type": "Thing",
+      "name": "cell line"
+    }
+  ],
+  "abstract": "# Introduction"
 }
         </script>
         
@@ -424,8 +405,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/genome-annotation/tutorials/crispr-screen/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/genome-annotation/tutorials/crispr-screen/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -530,319 +510,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2022-10-18 14:23:35 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "CRISPR screen analysis",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Genome Annotation",
-    "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-    "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'CRISPR screen analysis' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/crispr-screen/tutorial.html",
-  "timeRequired": "PT2H",
-  "keywords": "genome-annotation, genome editing, CRISPR, essential genes, cell line",
-  "description": "The questions this  addresses are:\n - What are the steps to process CRISPR screen data?\n - How to identify essential genes across experimental conditions?\n\n\nThe objectives are:\n - Apply appropriate analysis and quality control steps for CRISPR screen data\n - Identify differentially enriched genes across conditions\n - Generate volcano plot to visualise results\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "competencyRequired": [
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Introduction to Galaxy Analyses",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
-      "name": "Quality Control",
-      "description": "Hands-on for 'Quality Control' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html",
-      "name": "Using dataset collections",
-      "description": "Hands-on for 'Using dataset collections' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html",
-      "name": "Rule Based Uploader",
-      "description": "Hands-on for 'Rule Based Uploader' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    }
-  ],
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "name": "Kenji Fujihara",
-      "image": "https://avatars.githubusercontent.com/kenjifujihara",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "name": "Twishi Gulati",
-      "image": "https://avatars.githubusercontent.com/twishigulati",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/kenjifujihara/",
-      "name": "Kenji Fujihara",
-      "image": "https://avatars.githubusercontent.com/kenjifujihara",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/twishigulati/",
-      "name": "Twishi Gulati",
-      "image": "https://avatars.githubusercontent.com/twishigulati",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Genome Annotation",
-      "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-      "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "http://edamontology.org/topic_0362",
-      "inDefinedTermSet": "http://edamontology.org",
-      "termCode": "topic_0362",
-      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0362"
-    }
-  ]
-}
-</script>
 
 <article class="tutorial topic-genome-annotation">
     <h1 data-toc-skip>CRISPR screen analysis</h1>
@@ -1181,184 +848,78 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org (Main) <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org.au" title="">
+			UseGalaxy.org.au <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.be/" title="">
+			UseGalaxy.be
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.no/" title="">
+			UseGalaxy.no
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/genome-annotation/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
     </ul>
-
 
 </li>
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 17, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00171">https://gxy.io/GTN:T00171</a> </div>
@@ -1487,14 +1048,15 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
 </code></pre></div>      </div>
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Short read data from your current history”</em>: fastqs (click “Dataset collection” button on left-side of this input field)</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span><em>“Adapter list”</em>: <code class="language-plaintext highlighter-rouge">adapter_list.tsv</code></li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span>  with the following parameters to aggregate the FastQC reports:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span> with the following parameters to aggregate the FastQC reports:
       <ul>
         <li>In <em>“Results”</em>
           <ul>
@@ -1514,6 +1076,7 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Inspect the webpage output from MultiQC</p>
@@ -1569,7 +1132,7 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
   <div class="box-title hands-on-title" id="hands-on-trim-adapters"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Trim adapters</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.5+galaxy0" title="Cutadapt tool"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.5+galaxy0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.5+galaxy0" title="Cutadapt tool" aria-role="link"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.5+galaxy0</span></span> with the following parameters:
       <ul>
         <li><em>“Single-end or Paired-end reads?”</em>: <code class="language-plaintext highlighter-rouge">Single-end</code>
           <ul>
@@ -1618,7 +1181,7 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
         </blockquote>
       </blockquote>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span>  with the following parameters to aggregate the Cutadapt reports:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span> with the following parameters to aggregate the Cutadapt reports:
       <ul>
         <li>In <em>“Results”</em>
           <ul>
@@ -1645,7 +1208,7 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-exercise-quality-control-of-the-polished-datasets"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Exercise: Quality control of the polished datasets</div>
-  <p>Use <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  and <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span>  like before, but using the the trimmed datasets produced by Cutadapt as input.</p>
+  <p>Use <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> and <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0</span></span> like before, but using the the trimmed datasets produced by Cutadapt as input.</p>
 
   <blockquote class="question">
     <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
@@ -1676,7 +1239,7 @@ With CRISPR screens we expect adapter sequence to be present, surrounding the gu
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/api/files/6599878c-f569-41bf-a37a-2c6f3d2e67f9/brunello.tsv
 </code></pre></div>      </div>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_count/mageck_count/0.5.9.2.4" title="MAGeCK count tool"><strong>MAGeCK count</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_count/mageck_count/0.5.9.2.4</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_count/mageck_count/0.5.9.2.4" title="MAGeCK count tool" aria-role="link"><strong>MAGeCK count</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_count/mageck_count/0.5.9.2.4</span></span> with the following parameters:
       <ul>
         <li><em>“Reads Files or Count Table?”</em>: <code class="language-plaintext highlighter-rouge">Separate Reads files</code>
           <ul>
@@ -1840,7 +1403,7 @@ distribution of the remaining sgRNAs that haven’t been negatively selected. A 
   <div class="box-title hands-on-title" id="hands-on-test-for-enrichment"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Test for enrichment</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_test/mageck_test/0.5.9.2.1" title="MAGeCKs test tool"><strong>MAGeCKs test</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_test/mageck_test/0.5.9.2.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_test/mageck_test/0.5.9.2.1" title="MAGeCKs test tool" aria-role="link"><strong>MAGeCKs test</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_test/mageck_test/0.5.9.2.1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Counts file”</em>: <code class="language-plaintext highlighter-rouge">kenji_mageck_sgRNA_counts.tsv</code>(the counts file for the full dataset that we imported)</li>
         <li><em>“Specify Treated samples or Control”</em>: <code class="language-plaintext highlighter-rouge">Treated samples</code>
@@ -2103,7 +1666,7 @@ We can see the top genes ranked by RRA scores or p value. These values come from
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-create-volcano-plot"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create volcano plot</div>
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2" title="Text reformatting with awk tool"><strong>Text reformatting with awk</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2" title="Text reformatting with awk tool" aria-role="link"><strong>Text reformatting with awk</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“File to process”</em>: <code class="language-plaintext highlighter-rouge">MAGeCK test Gene Summary</code></li>
         <li><em>“AWK Program”</em>: Copy and paste the text in the grey box below into this field</li>
@@ -2133,7 +1696,7 @@ SHMT2   7.6093e-05  0.454208  -1.1328
 FLI1    9.0376e-05  0.454208  -0.08872
 </code></pre></div>      </div>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5" title="Volcano Plot tool"><strong>Volcano Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5</span></span>  to create a volcano plot
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5" title="Volcano Plot tool" aria-role="link"><strong>Volcano Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5</span></span> to create a volcano plot
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Specify an input file”</em>: the Text reformatting output file</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“File has header?”</em>: <code class="language-plaintext highlighter-rouge">Yes</code></li>
@@ -2186,6 +1749,7 @@ FLI1    9.0376e-05  0.454208  -0.08872
 </code></pre></div>      </div>
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select  your desired datatype     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with
       <ul>
@@ -2256,7 +1820,7 @@ T8-APR-246  1         0       1
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/api/files/6599878c-f569-41bf-a37a-2c6f3d2e67f9/kenji_mageck_mle_design_matrix.tsv
 </code></pre></div>      </div>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_mle/mageck_mle/0.5.9.2.1" title="MAGeCKs mle tool"><strong>MAGeCKs mle</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_mle/mageck_mle/0.5.9.2.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/mageck_mle/mageck_mle/0.5.9.2.1" title="MAGeCKs mle tool" aria-role="link"><strong>MAGeCKs mle</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/mageck_mle/mageck_mle/0.5.9.2.1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Counts file”</em>: the <code class="language-plaintext highlighter-rouge">kenji_mageck_sgrna_counts.tsv</code> file</li>
         <li><em>“Design matrix or sample labels”</em>: <code class="language-plaintext highlighter-rouge">Design matrix</code>
@@ -2322,7 +1886,7 @@ T8-APR-246  1         0       1
   <ol>
     <li>Create a volcano plot to visualise the result for APR vs T0. Use the gene summary file columns <code class="language-plaintext highlighter-rouge">Gene</code> <code class="language-plaintext highlighter-rouge">APR|beta</code> <code class="language-plaintext highlighter-rouge">APR|wald-p-value</code>  <code class="language-plaintext highlighter-rouge">APR|wald-fdr</code>
       <ul>
-        <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5" title="Volcano Plot tool"><strong>Volcano Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5</span></span>  to create a volcano plot
+        <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5" title="Volcano Plot tool" aria-role="link"><strong>Volcano Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/volcanoplot/volcanoplot/0.0.5</span></span> to create a volcano plot
           <ul>
             <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Specify an input file”</em>: the MAGeCK mle Gene Summary file</li>
             <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“FDR (adjusted P value)”</em>: <code class="language-plaintext highlighter-rouge">Column 14</code></li>
@@ -2481,9 +2045,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -2491,6 +2055,78 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/crispr-screen/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: text_processing
+  owner: bgruening
+  revisions: d698c222f354
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: e7b2202befea
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: 3d0c7bdf12f5
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: mageck_count
+  owner: iuc
+  revisions: e329d44424d7
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: mageck_mle
+  owner: iuc
+  revisions: 26126538a86f
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: mageck_test
+  owner: iuc
+  revisions: 9b4f4533c9ee
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: multiqc
+  owner: iuc
+  revisions: 9a913cdee30e
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: multiqc
+  owner: iuc
+  revisions: 75c93c70d094
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: volcanoplot
+  owner: iuc
+  revisions: 83c573f2e73c
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: cutadapt
+  owner: lparsons
+  revisions: 4e5056fefd88
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: cutadapt
+  owner: lparsons
+  revisions: de6cebe3c043
+  tool_panel_section_label: Genome Annotation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -2502,7 +2138,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00171">https://gxy.io/GTN:T00171</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/genome-annotation/tutorials/crispr-screen/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

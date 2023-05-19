@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,13 +40,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Network analysis with Heinz">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-03-29 07:47:34 +0000">
+<meta name="DC.date" content="2023-05-18 09:34:29 +0000">
 <meta name="DC.creator" content="Chao Zhang">
 
         
@@ -35,7 +58,7 @@
         <meta property="og:title" content="Galaxy Training: Network analysis with Heinz">
         <meta property="og:description" content="Training material for all kinds of transcriptomics analysis.">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -64,7 +87,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-03-29 07:47:34 +0000",
+  "dateModified": "2023-05-18 09:34:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Network analysis with Heinz",
   "interactivityType": "mixed",
@@ -90,6 +113,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -117,6 +144,7 @@
   "name": "Hands-on for 'Network analysis with Heinz' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.html",
   "timeRequired": "PT1H30M",
+  "teaches": "Network Analysis of metatranscriptomics data using Heinz in Galaxy to pinpoint the optimal scoring subnetwork.",
   "keywords": "transcriptomics, metatranscriptomics, network analysis",
   "description": "The questions this  addresses are:\n - Which pathways are potentially contributing to dental caries?\n\n\nThe objectives are:\n - Network Analysis of metatranscriptomics data using Heinz in Galaxy to pinpoint the optimal scoring subnetwork.\n\n",
   "inLanguage": {
@@ -204,31 +232,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "name": "Chao Zhang",
-      "image": "https://avatars.githubusercontent.com/ChaoZhang123",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
@@ -259,7 +264,19 @@
       "termCode": "topic_3308",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "metatranscriptomics"
+    },
+    {
+      "@type": "Thing",
+      "name": "network analysis"
+    }
+  ],
+  "abstract": "# Overview"
 }
         </script>
         
@@ -334,8 +351,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -440,231 +456,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2023-03-29 07:47:34 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "Network analysis with Heinz",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Transcriptomics",
-    "description": "Training material for all kinds of transcriptomics analysis.",
-    "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Network analysis with Heinz' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.html",
-  "timeRequired": "PT1H30M",
-  "keywords": "transcriptomics, metatranscriptomics, network analysis",
-  "description": "The questions this  addresses are:\n - Which pathways are potentially contributing to dental caries?\n\n\nThe objectives are:\n - Network Analysis of metatranscriptomics data using Heinz in Galaxy to pinpoint the optimal scoring subnetwork.\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "competencyRequired": [
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Introduction to Galaxy Analyses",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
-      "name": "Quality Control",
-      "description": "Hands-on for 'Quality Control' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html",
-      "name": "Mapping",
-      "description": "Hands-on for 'Mapping' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    }
-  ],
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "name": "Chao Zhang",
-      "image": "https://avatars.githubusercontent.com/ChaoZhang123",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/ChaoZhang123/",
-      "name": "Chao Zhang",
-      "image": "https://avatars.githubusercontent.com/ChaoZhang123",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Transcriptomics",
-      "description": "Training material for all kinds of transcriptomics analysis.",
-      "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "http://edamontology.org/topic_3308",
-      "inDefinedTermSet": "http://edamontology.org",
-      "termCode": "topic_3308",
-      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
-    }
-  ]
-}
-</script>
 
 <article class="tutorial topic-transcriptomics">
     <h1 data-toc-skip>Network analysis with Heinz</h1>
@@ -853,212 +644,84 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.be/" title="">
+			UseGalaxy.be <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
+			Galaxy Test
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.no/" title="">
+			UseGalaxy.no
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org (Main)
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org.au" title="">
+			UseGalaxy.org.au
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/transcriptomics/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
-            CLIP-Explorer
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
-            Human Cell Atlas
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://singlecell.usegalaxy.eu/" title="Single Cell Omics workbench">
-            Single Cell Omics workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
     </ul>
-
 
 </li>
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 29, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00293">https://gxy.io/GTN:T00293</a> </div>
@@ -1124,6 +787,7 @@ parameters to speed up the analysis for the purposes of this tutorial.</p>
 
 <!--SNIPPET-->
 <blockquote class="comment">   <div class="box-title comment-title" id="comment-results-may-vary"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Results may vary</div>   <p>Your results may be slightly different from the ones presented in this tutorial due to differing versions of tools, reference data, external databases, or because of stochastic processes in the algorithms.</p> </blockquote>
+<p><!--END_SNIPPET--></p>
 
 <p>In this tutorial, we will run the Heinz workflow step by step to understand how each step works. To get an overview of what this workflow does
 and what kind of calculation is involved, view the flowchart below.</p>
@@ -1176,8 +840,11 @@ into KO counts. We will use these count data as the starting point to perform th
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
+
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li><strong>Upload Disease Dataset</strong>
       <ul>
@@ -1614,6 +1281,7 @@ but, to use that, you can install Heinz directly via <a href="https://anaconda.o
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-extracting-a-workflow-from-your-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-extracting-a-workflow-from-your-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Extracting a workflow from your history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>     <p><strong>Clean up</strong> your history: remove any failed (red) jobs from your history by clicking on the <i class="fas fa-trash" aria-hidden="true"></i><span class="visually-hidden">galaxy-delete</span> button.</p>     <p>This will make the creation of the workflow easier.</p>   </li>   <li>     <p>Click on <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> (<strong>History options</strong>) at the top of your history panel and select <strong>Extract workflow</strong>.</p>     <p><img src="/training-material/topics/introduction/images/history_menu_extract_workflow.png" alt="`Extract Workflow` entry in the history options menu" /></p>     <p>The central panel will show the content of the history in reverse order (oldest on top), and you will be able to choose which steps to include in the workflow.</p>   </li>   <li>     <p>Replace the <strong>Workflow name</strong> to something more descriptive.</p>   </li>   <li>     <p><strong>Rename</strong> each workflow input in the boxes at the top of the second column.</p>   </li>   <li>     <p>If there are any steps that shouldn’t be included in the workflow, you can <strong>uncheck</strong> them in the first column of boxes.</p>   </li>   <li>     <p>Click on the <strong>Create Workflow</strong> button near the top.</p>     <p>You will get a message that the workflow was created.</p>   </li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Run the workflow on the dataset in this tutorial</p>
@@ -1740,9 +1408,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -1750,6 +1418,48 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: deseq2
+  owner: iuc
+  revisions: d9e5cadc7f0b
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: heinz
+  owner: iuc
+  revisions: 2b80a2596064
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: heinz
+  owner: iuc
+  revisions: 2b80a2596064
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: heinz
+  owner: iuc
+  revisions: 2b80a2596064
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: heinz
+  owner: iuc
+  revisions: 5f589c91566e
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -1761,7 +1471,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00293">https://gxy.io/GTN:T00293</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

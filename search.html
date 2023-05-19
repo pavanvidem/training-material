@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,7 +40,7 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/search.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -34,7 +57,7 @@
         <meta property="og:title" content="Galaxy Training: Search Tutorials">
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -103,8 +126,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/search.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainsearch.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -715,16 +737,38 @@ var resources = {
     ],
     "url": "/training-material/topics/admin/tutorials/terraform/tutorial.html"
   },
-  "/topics/ai4life/tutorials/example-slides/slides.html": {
+  "/topics/ai4life/tutorials/contribute-materials/slides.html": {
     "type": "Tutorial",
     "topic": "Image analysis using Deep Learning",
-    "title": "Example Slide Deck",
-    "contributors": "Beatriz Serrano-Solano",
+    "title": "Welcome to the BioImage Model Zoo",
+    "contributors": "Caterina Fuster-Barceló",
     "tags": [
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged some\" href=\"/training-material/search?query=some\" style=\"--color-primary: #ffb8f3; --color-darker: #ff91ee; --color-dimmed: #ffa5f0;\">some</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged tags\" href=\"/training-material/search?query=tags\" style=\"--color-primary: #ffbdd0; --color-darker: #ff9ab9; --color-dimmed: #ffacc4;\">tags</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged bioimageio\" href=\"/training-material/search?query=bioimageio\" style=\"--color-primary: #00ebab; --color-darker: #00d198; --color-dimmed: #00dea2;\">bioimageio</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged image analysis\" href=\"/training-material/search?query=image analysis\" style=\"--color-primary: #00ec8d; --color-darker: #00d27d; --color-dimmed: #00df85;\">image analysis</a>"
     ],
-    "url": "/training-material/topics/ai4life/tutorials/example-slides/slides.html"
+    "url": "/training-material/topics/ai4life/tutorials/contribute-materials/slides.html"
+  },
+  "/topics/ai4life/tutorials/welcome-bioimageio/slides.html": {
+    "type": "Tutorial",
+    "topic": "Image analysis using Deep Learning",
+    "title": "Welcome to the BioImage Model Zoo",
+    "contributors": "Caterina Fuster-Barceló",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged bioimageio\" href=\"/training-material/search?query=bioimageio\" style=\"--color-primary: #00ebab; --color-darker: #00d198; --color-dimmed: #00dea2;\">bioimageio</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged image analysis\" href=\"/training-material/search?query=image analysis\" style=\"--color-primary: #00ec8d; --color-darker: #00d27d; --color-dimmed: #00df85;\">image analysis</a>"
+    ],
+    "url": "/training-material/topics/ai4life/tutorials/welcome-bioimageio/slides.html"
+  },
+  "/topics/ai4life/tutorials/getting-started/slides.html": {
+    "type": "Tutorial",
+    "topic": "Image analysis using Deep Learning",
+    "title": "BioImage Model Zoo: Advanced models in one-click",
+    "contributors": "Caterina Fuster-Barceló",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged bioimageio\" href=\"/training-material/search?query=bioimageio\" style=\"--color-primary: #00ebab; --color-darker: #00d198; --color-dimmed: #00dea2;\">bioimageio</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged image analysis\" href=\"/training-material/search?query=image analysis\" style=\"--color-primary: #00ec8d; --color-darker: #00d27d; --color-dimmed: #00df85;\">image analysis</a>"
+    ],
+    "url": "/training-material/topics/ai4life/tutorials/getting-started/slides.html"
   },
   "/topics/assembly/tutorials/general-introduction/tutorial.html": {
     "type": "Tutorial",
@@ -1069,7 +1113,8 @@ var resources = {
     "contributors": "Wolfgang Maier, Bérénice Batut",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged covid19\" href=\"/training-material/search?query=covid19\" style=\"--color-primary: #ffbbe2; --color-darker: #ff96d5; --color-dimmed: #ffa9db;\">covid19</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ffbbde; --color-darker: #ff97d0; --color-dimmed: #ffa9d7;\">virology</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ffbbde; --color-darker: #ff97d0; --color-dimmed: #ffa9d7;\">virology</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #93e500; --color-darker: #82cc00; --color-dimmed: #8ad800;\">one-health</a>"
     ],
     "url": "/training-material/topics/variant-analysis/tutorials/sars-cov-2-variant-discovery/tutorial.html"
   },
@@ -1606,9 +1651,10 @@ var resources = {
     "type": "Tutorial",
     "topic": "Evolution",
     "title": "Identifying tuberculosis transmission links: from SNPs to transmission clusters",
-    "contributors": "Galo A. Goig, Daniela Brites, Christoph Stritt",
+    "contributors": "",
     "tags": [
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged work-in-progress\" href=\"/training-material/search?query=work-in-progress\" style=\"--color-primary: #b0d1ff; --color-darker: #81bcff; --color-dimmed: #9ac6ff;\">work-in-progress</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryote\" href=\"/training-material/search?query=prokaryote\" style=\"--color-primary: #d0c8ff; --color-darker: #baaeff; --color-dimmed: #c5bbff;\">prokaryote</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #93e500; --color-darker: #82cc00; --color-dimmed: #8ad800;\">one-health</a>"
     ],
     "url": "/training-material/topics/evolution/tutorials/mtb_transmission/tutorial.html"
   },
@@ -1616,12 +1662,11 @@ var resources = {
     "type": "Tutorial",
     "topic": "Evolution",
     "title": "Tree thinking for tuberculosis evolution and epidemiology",
-    "contributors": "Christoph Stritt, Daniela Brites, Galo A. Goig",
+    "contributors": "",
     "tags": [
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryotes\" href=\"/training-material/search?query=prokaryotes\" style=\"--color-primary: #fff3c9; --color-darker: #f6d700; --color-dimmed: #ffe56e;\">prokaryotes</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged phylogenetics\" href=\"/training-material/search?query=phylogenetics\" style=\"--color-primary: #00ee5f; --color-darker: #00d454; --color-dimmed: #00e15a;\">phylogenetics</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged evolution\" href=\"/training-material/search?query=evolution\" style=\"--color-primary: #ffbcd9; --color-darker: #ff98c8; --color-dimmed: #ffaad0;\">evolution</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged work-in-progress\" href=\"/training-material/search?query=work-in-progress\" style=\"--color-primary: #b0d1ff; --color-darker: #81bcff; --color-dimmed: #9ac6ff;\">work-in-progress</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryote\" href=\"/training-material/search?query=prokaryote\" style=\"--color-primary: #d0c8ff; --color-darker: #baaeff; --color-dimmed: #c5bbff;\">prokaryote</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #93e500; --color-darker: #82cc00; --color-dimmed: #8ad800;\">one-health</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged phylogenetics\" href=\"/training-material/search?query=phylogenetics\" style=\"--color-primary: #00ee5f; --color-darker: #00d454; --color-dimmed: #00e15a;\">phylogenetics</a>"
     ],
     "url": "/training-material/topics/evolution/tutorials/mtb_phylogeny/tutorial.html"
   },
@@ -2149,6 +2194,16 @@ var resources = {
     ],
     "url": "/training-material/topics/introduction/tutorials/dummy/tutorial.html"
   },
+  "/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Metabolomics",
+    "title": "Mass spectrometry: GC-MS data processing (with XCMS, RAMClustR, RIAssigner, and matchms)",
+    "contributors": "",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.html"
+  },
   "/topics/metabolomics/tutorials/lcms/tutorial.html": {
     "type": "Tutorial",
     "topic": "Metabolomics",
@@ -2244,7 +2299,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Metagenomics",
     "title": "Metatranscriptomics analysis using microbiome RNA-seq data",
-    "contributors": "Pratik Jagtap, Subina Mehta, Ray Sajulga, Bérénice Batut, Emma Leith, Praveen Kumar, Saskia Hiltemann",
+    "contributors": "Pratik Jagtap, Subina Mehta, Ray Sajulga, Bérénice Batut, Emma Leith, Praveen Kumar, Saskia Hiltemann, Paul Zierep",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged metatranscriptomics\" href=\"/training-material/search?query=metatranscriptomics\" style=\"--color-primary: #ebbfff; --color-darker: #e39dff; --color-dimmed: #e7aeff;\">metatranscriptomics</a>"
     ],
@@ -2275,7 +2330,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Metagenomics",
     "title": "Metatranscriptomics analysis using microbiome RNA-seq data (short)",
-    "contributors": "Pratik Jagtap, Subina Mehta, Ray Sajulga, Bérénice Batut, Emma Leith, Praveen Kumar, Saskia Hiltemann",
+    "contributors": "Pratik Jagtap, Subina Mehta, Ray Sajulga, Bérénice Batut, Emma Leith, Praveen Kumar, Saskia Hiltemann, Paul Zierep",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged metatranscriptomics\" href=\"/training-material/search?query=metatranscriptomics\" style=\"--color-primary: #ebbfff; --color-darker: #e39dff; --color-dimmed: #e7aeff;\">metatranscriptomics</a>"
     ],
@@ -2884,7 +2939,7 @@ var resources = {
   "/topics/single-cell/tutorials/scrna-case_monocle3-trajectories/tutorial.html": {
     "type": "Tutorial",
     "topic": "Single Cell",
-    "title": "Trajectory Analysis using Monocle3",
+    "title": "Inferring trajectories using Monocle3",
     "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged single-cell\" href=\"/training-material/search?query=single-cell\" style=\"--color-primary: #00e7d5; --color-darker: #00cebe; --color-dimmed: #00dbc9;\">single-cell</a>",
@@ -2909,7 +2964,7 @@ var resources = {
   "/topics/single-cell/tutorials/scrna-case_monocle3-rstudio/tutorial.html": {
     "type": "Tutorial",
     "topic": "Single Cell",
-    "title": "Trajectory Analysis: Monocle3 in R",
+    "title": "Inferring Trajectories using Monocle3 (R)",
     "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged single-cell\" href=\"/training-material/search?query=single-cell\" style=\"--color-primary: #00e7d5; --color-darker: #00cebe; --color-dimmed: #00dbc9;\">single-cell</a>",
@@ -3245,6 +3300,17 @@ var resources = {
     ],
     "url": "/training-material/topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.html"
   },
+  "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Transcriptomics",
+    "title": "Genome-wide alternative splicing analysis",
+    "contributors": "",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged alternative-splicing\" href=\"/training-material/search?query=alternative-splicing\" style=\"--color-primary: #e2d200; --color-darker: #c9bb00; --color-dimmed: #d5c600;\">alternative-splicing</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged isoform-switching\" href=\"/training-material/search?query=isoform-switching\" style=\"--color-primary: #ffc387; --color-darker: #faa700; --color-dimmed: #ffb456;\">isoform-switching</a>"
+    ],
+    "url": "/training-material/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+  },
   "/topics/transcriptomics/tutorials/srna/tutorial.html": {
     "type": "Tutorial",
     "topic": "Transcriptomics",
@@ -3304,6 +3370,16 @@ var resources = {
       "<a class=\"label label-default\" title=\"Show all tutorials tagged work-in-progress\" href=\"/training-material/search?query=work-in-progress\" style=\"--color-primary: #b0d1ff; --color-darker: #81bcff; --color-dimmed: #9ac6ff;\">work-in-progress</a>"
     ],
     "url": "/training-material/topics/transcriptomics/tutorials/rb-rnaseq/tutorial.html"
+  },
+  "/topics/transcriptomics/tutorials/rna-seq-bash-star-align/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Transcriptomics",
+    "title": "RNA-seq Alignment with STAR",
+    "contributors": "",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/transcriptomics/tutorials/rna-seq-bash-star-align/tutorial.html"
   },
   "/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot-r/tutorial.html": {
     "type": "Tutorial",
@@ -3390,6 +3466,17 @@ var resources = {
     ],
     "url": "/training-material/topics/variant-analysis/tutorials/trio-analysis/tutorial.html"
   },
+  "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Variant Analysis",
+    "title": "Pox virus genome analysis from tiled-amplicon sequencing data",
+    "contributors": "Wolfgang Maier, Tomas Klingström",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ffbbde; --color-darker: #ff97d0; --color-dimmed: #ffa9d7;\">virology</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #93e500; --color-darker: #82cc00; --color-dimmed: #8ad800;\">one-health</a>"
+    ],
+    "url": "/training-material/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
+  },
   "/topics/variant-analysis/tutorials/dip/tutorial.html": {
     "type": "Tutorial",
     "topic": "Variant Analysis",
@@ -3406,7 +3493,8 @@ var resources = {
     "title": "M. tuberculosis Variant Analysis",
     "contributors": "Peter van Heusden, Simon Gladman, Thoba Lose",
     "tags": [
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryote\" href=\"/training-material/search?query=prokaryote\" style=\"--color-primary: #d0c8ff; --color-darker: #baaeff; --color-dimmed: #c5bbff;\">prokaryote</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryote\" href=\"/training-material/search?query=prokaryote\" style=\"--color-primary: #d0c8ff; --color-darker: #baaeff; --color-dimmed: #c5bbff;\">prokaryote</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #93e500; --color-darker: #82cc00; --color-dimmed: #8ad800;\">one-health</a>"
     ],
     "url": "/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html"
   },
@@ -4210,6 +4298,16 @@ var resources = {
     ],
     "url": "/training-material/topics/admin/tutorials/ansible-galaxy/faqs/custom-welcome.html"
   },
+  "/topics/admin/faqs/database-slow-query.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Database Issues",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/database-slow-query.html"
+  },
   "/faqs/galaxy/dataset_incomplete_download.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -4920,6 +5018,16 @@ var resources = {
     ],
     "url": "/training-material/topics/sequence-analysis/tutorials/quality-control/faqs/further_learning.html"
   },
+  "/topics/admin/faqs/galaxy-blank-screen.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Blank page or no CSS/JavaScript",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/galaxy-blank-screen.html"
+  },
   "/topics/admin/faqs/galaxy-how-many-mules.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -4929,6 +5037,46 @@ var resources = {
 
     ],
     "url": "/training-material/topics/admin/faqs/galaxy-how-many-mules.html"
+  },
+  "/topics/admin/faqs/galaxy-tool-error.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Debugging tool errors",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/galaxy-tool-error.html"
+  },
+  "/topics/admin/faqs/galaxy-tool-memory-error.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Debugging tool memory errors",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/galaxy-tool-memory-error.html"
+  },
+  "/topics/admin/faqs/galaxy-tool-missing.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Tool missing from Galaxy",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/galaxy-tool-missing.html"
+  },
+  "/topics/admin/faqs/galaxy-ui-slow.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Galaxy UI is slow",
+    "contributors": "Nate Coraor",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/admin/faqs/galaxy-ui-slow.html"
   },
   "/topics/introduction/faqs/galaxy.html": {
     "type": "FAQ",
@@ -7154,7 +7302,7 @@ var resources = {
     "type": "FAQ",
     "topic": "FAQ",
     "title": "Importing a workflow using the search",
-    "contributors": "Bérénice Batut",
+    "contributors": "Bérénice Batut, Wolfgang Maier",
     "tags": [
 
     ],
@@ -7337,23 +7485,46 @@ fetch('/training-material/search.json')
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					
+						Materials licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/search.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/fee830b6da5b6f22c84ea431f133e5774eb038b2">fee830b6da5b6f22c84ea431f133e5774eb038b2</a>. </p>
+
     </div>
 </footer>
 
-        
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

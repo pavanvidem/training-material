@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,13 +40,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Quality Control">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2022-11-28 09:55:50 +0000">
+<meta name="DC.date" content="2023-05-18 09:34:29 +0000">
 <meta name="DC.creator" content="Bérénice Batut">
 <meta name="DC.creator" content="Maria Doyle">
 <meta name="DC.creator" content="Alexandre Cormier">
@@ -42,7 +65,7 @@
         <meta property="og:title" content="Galaxy Training: Quality Control">
         <meta property="og:description" content="Analyses of sequences">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -71,7 +94,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2022-11-28 09:55:50 +0000",
+  "dateModified": "2023-05-18 09:34:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Quality Control",
   "interactivityType": "mixed",
@@ -97,6 +120,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -124,6 +151,7 @@
   "name": "Hands-on for 'Quality Control' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
   "timeRequired": "PT1H30M",
+  "teaches": "Assess short reads FASTQ quality using FASTQE 🧬😎 and FastQC\n - Assess long reads FASTQ quality using Nanoplot and PycoQC\n - Perform quality correction with Cutadapt (short reads)\n - Summarise quality metrics MultiQC\n - Process single-end and paired-end data",
   "keywords": "sequence-analysis",
   "description": "The questions this  addresses are:\n - How to perform quality control of NGS raw data?\n - What are the quality parameters to check for a dataset?\n - How to improve the quality of a dataset?\n\n\nThe objectives are:\n - Assess short reads FASTQ quality using FASTQE 🧬😎 and FastQC\n - Assess long reads FASTQ quality using Nanoplot and PycoQC\n - Perform quality correction with Cutadapt (short reads)\n - Summarise quality metrics MultiQC\n - Process single-end and paired-end data\n\n",
   "inLanguage": {
@@ -151,8 +179,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
@@ -174,8 +202,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
@@ -197,8 +225,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
@@ -220,8 +248,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
@@ -243,8 +271,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
@@ -266,8 +294,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
@@ -289,8 +317,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
@@ -312,192 +340,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "name": "Bérénice Batut",
-      "image": "https://avatars.githubusercontent.com/bebatut",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9852-1987",
-      "orcid": "https://orcid.org/0000-0001-9852-1987"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "name": "Alexandre Cormier",
-      "image": "https://avatars.githubusercontent.com/alexcorm",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7775-8413",
-      "orcid": "https://orcid.org/0000-0002-7775-8413"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "name": "Laura Leroi",
-      "image": "https://avatars.githubusercontent.com/lleroi",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3748-4179",
-      "orcid": "https://orcid.org/0000-0003-3748-4179"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "name": "Erwan Corre",
-      "image": "https://avatars.githubusercontent.com/r1corre",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-6354-2278",
-      "orcid": "https://orcid.org/0000-0001-6354-2278"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "name": "Stéphanie Robin",
-      "image": "https://avatars.githubusercontent.com/stephanierobin",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-7379-9173",
-      "orcid": "https://orcid.org/0000-0001-7379-9173"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
@@ -529,7 +373,11 @@
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0080"
     }
   ],
-  "educationalLevel": "Beginner"
+  "educationalLevel": "Beginner",
+  "mentions": [
+
+  ],
+  "abstract": "# Introduction"
 }
         </script>
         
@@ -604,8 +452,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/sequence-analysis/tutorials/quality-control/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/sequence-analysis/tutorials/quality-control/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -710,494 +557,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2022-11-28 09:55:50 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "Quality Control",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Sequence analysis",
-    "description": "Analyses of sequences",
-    "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Quality Control' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
-  "timeRequired": "PT1H30M",
-  "keywords": "sequence-analysis",
-  "description": "The questions this  addresses are:\n - How to perform quality control of NGS raw data?\n - What are the quality parameters to check for a dataset?\n - How to improve the quality of a dataset?\n\n\nThe objectives are:\n - Assess short reads FASTQ quality using FASTQE 🧬😎 and FastQC\n - Assess long reads FASTQ quality using Nanoplot and PycoQC\n - Perform quality correction with Cutadapt (short reads)\n - Summarise quality metrics MultiQC\n - Process single-end and paired-end data\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "competencyRequired": [
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Introduction to Galaxy Analyses",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    }
-  ],
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "name": "Bérénice Batut",
-      "image": "https://avatars.githubusercontent.com/bebatut",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9852-1987",
-      "orcid": "https://orcid.org/0000-0001-9852-1987"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "name": "Alexandre Cormier",
-      "image": "https://avatars.githubusercontent.com/alexcorm",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7775-8413",
-      "orcid": "https://orcid.org/0000-0002-7775-8413"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "name": "Laura Leroi",
-      "image": "https://avatars.githubusercontent.com/lleroi",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3748-4179",
-      "orcid": "https://orcid.org/0000-0003-3748-4179"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "name": "Erwan Corre",
-      "image": "https://avatars.githubusercontent.com/r1corre",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-6354-2278",
-      "orcid": "https://orcid.org/0000-0001-6354-2278"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "name": "Stéphanie Robin",
-      "image": "https://avatars.githubusercontent.com/stephanierobin",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-7379-9173",
-      "orcid": "https://orcid.org/0000-0001-7379-9173"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "name": "Bérénice Batut",
-      "image": "https://avatars.githubusercontent.com/bebatut",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9852-1987",
-      "orcid": "https://orcid.org/0000-0001-9852-1987"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
-      "name": "Maria Doyle",
-      "image": "https://avatars.githubusercontent.com/mblue9",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-4847-8436",
-      "orcid": "https://orcid.org/0000-0003-4847-8436"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/alexcorm/",
-      "name": "Alexandre Cormier",
-      "image": "https://avatars.githubusercontent.com/alexcorm",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7775-8413",
-      "orcid": "https://orcid.org/0000-0002-7775-8413"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/lleroi/",
-      "name": "Laura Leroi",
-      "image": "https://avatars.githubusercontent.com/lleroi",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3748-4179",
-      "orcid": "https://orcid.org/0000-0003-3748-4179"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/r1corre/",
-      "name": "Erwan Corre",
-      "image": "https://avatars.githubusercontent.com/r1corre",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-6354-2278",
-      "orcid": "https://orcid.org/0000-0001-6354-2278"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/",
-      "name": "Stéphanie Robin",
-      "image": "https://avatars.githubusercontent.com/stephanierobin",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-7379-9173",
-      "orcid": "https://orcid.org/0000-0001-7379-9173"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Sequence analysis",
-      "description": "Analyses of sequences",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "http://edamontology.org/topic_0080",
-      "inDefinedTermSet": "http://edamontology.org",
-      "termCode": "topic_0080",
-      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0080"
-    }
-  ],
-  "educationalLevel": "Beginner"
-}
-</script>
 
 <article class="tutorial topic-sequence-analysis">
     <h1 data-toc-skip>Quality Control</h1>
@@ -1395,216 +754,84 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org (Main) <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org.au" title="">
+			UseGalaxy.org.au <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+    
+	<li>
+		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
+			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
+			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
+		</a>
+	</li>
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.fr/" title="">
+			UseGalaxy.fr
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/sequence-analysis/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://cpt.tamu.edu/galaxy-public/" title="Center for Phage Technology (CPT)">
-            Center for Phage Technology (CPT)
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.mesocentre.uca.fr" title="Galaxy@AuBi">
-            Galaxy@AuBi
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxytrakr.org/" title="GalaxyTrakr">
-            GalaxyTrakr
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.hyphy.org/" title="HyPhy HIV NGS Tools">
-            HyPhy HIV NGS Tools
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
     </ul>
-
 
 </li>
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 28, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00239">https://gxy.io/GTN:T00239</a> </div>
@@ -1682,8 +909,11 @@ Sequence quality control is therefore an essential first step in your analysis. 
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
+
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Import the file <code class="language-plaintext highlighter-rouge">female_oral2.fastq-4143.gz</code> from <a href="https://zenodo.org/record/3977236">Zenodo</a> or from the data library (ask your instructor)
@@ -1694,8 +924,11 @@ This is a microbiome sample from a snake <span class="citation"><a href="#StJacq
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
+
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ul>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor</li>   <li>Select the desired files</li>   <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>   <li>Click on <strong>Import</strong></li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to the correct folder as indicated by your instructor</li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Rename the imported dataset to <code class="language-plaintext highlighter-rouge">Reads</code>.</p>
@@ -1840,7 +1073,7 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGFGGGFGGGGGGAFFGGFGG
   <div class="box-title hands-on-title" id="hands-on-quality-check"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Quality check</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool" aria-role="link"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span> with the following parameters
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“FastQ data”</em>: <code class="language-plaintext highlighter-rouge">Reads</code></li>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Score types to show”</em>: <code class="language-plaintext highlighter-rouge">Mean</code></li>
@@ -1988,7 +1221,7 @@ GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGFGGGFGGGGGGAFFGGFGG
   <div class="box-title hands-on-title" id="hands-on-quality-check-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Quality check</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool" aria-role="link"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> with the following parameters
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Raw read data from your current history”</em>: <code class="language-plaintext highlighter-rouge">Reads</code></li>
       </ul>
@@ -2422,7 +1655,7 @@ GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
   <div class="box-title hands-on-title" id="hands-on-improvement-of-sequence-quality"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Improvement of sequence quality</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2" title="Cutadapt tool"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2" title="Cutadapt tool" aria-role="link"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2</span></span> with the following parameters
       <ul>
         <li><em>“Single-end or Paired-end reads?”</em>: <code class="language-plaintext highlighter-rouge">Single-end</code>
           <ul>
@@ -2548,7 +1781,7 @@ GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
   <div class="box-title hands-on-title" id="hands-on-checking-quality-after-trimming"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Checking quality after trimming</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span> : Re-run <strong>FASTQE</strong> with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool" aria-role="link"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span>: Re-run <strong>FASTQE</strong> with the following parameters
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“FastQ data”</em>: <code class="language-plaintext highlighter-rouge">Cutadapt Read 1 Output</code></li>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Score types to show”</em>: <code class="language-plaintext highlighter-rouge">Mean</code></li>
@@ -2564,6 +1797,7 @@ GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
 
         <!--SNIPPET-->
         <blockquote class="tip">   <div class="box-title tip-title" id="tip-using-the-scratchbook-to-view-multiple-datasets"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-using-the-scratchbook-to-view-multiple-datasets" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Using the Scratchbook to view multiple datasets<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>If you would like to view two or more datasets at once, you can use the <strong>Scratchbook</strong> feature in Galaxy:</p>   <ol>   <li><strong>Click</strong> on the <em>Scratchbook</em> icon <i class="fas fa-th" aria-hidden="true"></i><span class="visually-hidden">galaxy-scratchbook</span> on the top menu bar.     <ul>       <li>You should see a little checkmark on the icon now</li>     </ul>   </li>   <li><strong>View</strong> <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> a dataset by clicking on the eye icon <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> to view the output     <ul>       <li>You should see the output in a window overlayed over Galaxy</li>       <li>You can resize this window by dragging the bottom-right corner</li>     </ul>   </li>   <li><strong>Click</strong> outside the file to exit the Scratchbook</li>   <li><strong>View</strong> <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> a second dataset from your history     <ul>       <li>You should now see a second window with the new dataset</li>       <li>This makes it easier to compare the two outputs</li>     </ul>   </li>   <li>Repeat this for as many files as you would like to compare</li>   <li>You can turn off the <strong>Scratchbook</strong> <i class="fas fa-th" aria-hidden="true"></i><span class="visually-hidden">galaxy-scratchbook</span> by clicking on the icon again</li> </ol> </blockquote>
+        <p><!--END_SNIPPET--></p>
 
         <blockquote class="solution">
           <div class="box-title solution-title" id="solution-8"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-8" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
@@ -2587,7 +1821,7 @@ GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
   <div class="box-title hands-on-title" id="hands-on-checking-quality-after-trimming-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Checking quality after trimming</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool" aria-role="link"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> with the following parameters
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Short read data from your current history”</em>: <code class="language-plaintext highlighter-rouge">Cutadapt Read 1 Output</code></li>
       </ul>
@@ -2694,15 +1928,16 @@ GTGTCAGCCGCCGCGGTAGTCCGACGTGG
 https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_2.fastq
 </code></pre></div>      </div>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  with both datasets:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool" aria-role="link"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> with both datasets:
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Raw read data from your current history”</em>: both the uploaded datasets.</li>
       </ul>
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-select-multiple-datasets"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-select-multiple-datasets" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Select multiple datasets<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <strong>Multiple datasets</strong></li>   <li>Select several files by keeping the <kbd>Ctrl</kbd> (or <kbd>COMMAND</kbd>) key pressed and clicking on the files of interest</li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1</span></span>  with the following parameters to aggregate the FastQC reports of both forward and reverse reads
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1</span></span> with the following parameters to aggregate the FastQC reports of both forward and reverse reads
       <ul>
         <li>In <em>“Results”</em>
           <ul>
@@ -2756,7 +1991,7 @@ https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_2.fastq
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-improving-the-quality-of-paired-end-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Improving the quality of paired-end data</div>
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2" title="Cutadapt tool"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2" title="Cutadapt tool" aria-role="link"><strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2</span></span> with the following parameters
       <ul>
         <li><em>“Single-end or Paired-end reads?”</em>: <code class="language-plaintext highlighter-rouge">Paired-end</code>
           <ul>
@@ -2857,7 +2092,7 @@ https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_2.fastq
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/api/files/ff9aa6e3-3d69-451f-9798-7ea69b475989/m64011_190830_220126.Q20.subsample.fastq.gz
 </code></pre></div>      </div>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1" title="Nanoplot tool"><strong>Nanoplot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1</span></span>  with the following parameters
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1" title="Nanoplot tool" aria-role="link"><strong>Nanoplot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1</span></span> with the following parameters
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“files”</em>: <code class="language-plaintext highlighter-rouge">m64011_190830_220126.Q20.subsample.fastq.gz</code></li>
         <li><em>“Options for customizing the plots created”</em>
@@ -2952,7 +2187,7 @@ https://zenodo.org/api/files/ff9aa6e3-3d69-451f-9798-7ea69b475989/sequencing_sum
 </code></pre></div>      </div>
     </li>
     <li>
-      <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0" title="PycoQC tool"><strong>PycoQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0</span></span>  with the following parameters</p>
+      <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0" title="PycoQC tool" aria-role="link"><strong>PycoQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0</span></span> with the following parameters</p>
 
       <ul>
         <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“A sequencing_summary file “</em>: <code class="language-plaintext highlighter-rouge">sequencing_summary.txt</code></li>
@@ -3101,10 +2336,10 @@ Quality control steps are similar for any type of sequencing data:</p>
 <ul>
   <li>Quality assessment with tools like:
     <ul>
-      <li><em>Short Reads</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span></li>
-      <li><em>Short+Long</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span></li>
-      <li><em>Long Reads</em>:  <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1" title="Nanoplot tool"><strong>Nanoplot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1</span></span></li>
-      <li><em>Nanopore only</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0" title="PycoQC tool"><strong>PycoQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0</span></span></li>
+      <li><em>Short Reads</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2" title="FASTQE tool" aria-role="link"><strong>FASTQE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2</span></span></li>
+      <li><em>Short+Long</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FASTQC tool" aria-role="link"><strong>FASTQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span></li>
+      <li><em>Long Reads</em>:  <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1" title="Nanoplot tool" aria-role="link"><strong>Nanoplot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.28.2+galaxy1</span></span></li>
+      <li><em>Nanopore only</em>: <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0" title="PycoQC tool" aria-role="link"><strong>PycoQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0</span></span></li>
     </ul>
   </li>
   <li>Trimming and filtering for <strong>short reads</strong> with a tool like <strong>Cutadapt</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span></li>
@@ -3229,9 +2464,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -3240,6 +2475,7 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 
                 
                 <blockquote class="agenda follow-up">
+                    <div class="box-title">Go Further</div>
                     <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
                     <ul>
                         
@@ -3282,6 +2518,63 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                     </ul>
                 </blockquote>
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/quality-control/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: fastqc
+  owner: devteam
+  revisions: e7b2202befea
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: 3d0c7bdf12f5
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqe
+  owner: iuc
+  revisions: 89d299153577
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: multiqc
+  owner: iuc
+  revisions: 75c93c70d094
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: nanoplot
+  owner: iuc
+  revisions: edbb6c5028f5
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: pycoqc
+  owner: iuc
+  revisions: 3a2f2e24c37e
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: cutadapt
+  owner: lparsons
+  revisions: 660cffd8d92a
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: cutadapt
+  owner: lparsons
+  revisions: 44e2cc14f75b
+  tool_panel_section_label: Sequence analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -3293,7 +2586,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00239">https://gxy.io/GTN:T00239</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/sequence-analysis/tutorials/quality-control/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

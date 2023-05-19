@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,7 +40,7 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -34,7 +57,7 @@
         <meta property="og:title" content="Galaxy Training">
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -103,8 +126,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainindex.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -314,6 +336,14 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                 
                     
                     
+                    <tr>
+                        
+                        <td><a href="/training-material/topics/evolution/">Evolution</a></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    
+                
                     
                 
                     
@@ -343,13 +373,11 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                     
                 
                     
-                
-                    
                     
                     <tr>
                         
                         <td><a href="/training-material/topics/metabolomics/">Metabolomics</a></td>
-                        <td>7</td>
+                        <td>8</td>
                     </tr>
                     
                     
@@ -372,6 +400,10 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                         <td>27</td>
                     </tr>
                     
+                    
+                
+                    
+                
                     
                 
                     
@@ -435,11 +467,13 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                     
                 
                     
+                
+                    
                     
                     <tr>
                         
                         <td><a href="/training-material/topics/transcriptomics/">Transcriptomics</a></td>
-                        <td>21</td>
+                        <td>23</td>
                     </tr>
                     
                     
@@ -449,7 +483,7 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                     <tr>
                         
                         <td><a href="/training-material/topics/variant-analysis/">Variant Analysis</a></td>
-                        <td>14</td>
+                        <td>15</td>
                     </tr>
                     
                     
@@ -514,6 +548,8 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                     
                 
                     
+                
+                    
                     
                     <tr>
                         
@@ -521,6 +557,10 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                         <td>22</td>
                     </tr>
                     
+                    
+                
+                    
+                
                     
                 
                     
@@ -620,6 +660,20 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                 
                     
                 
+                    
+                
+                    
+                
+                    
+                
+                    
+                    
+                    <tr>
+                        
+                        <td><a href="/training-material/topics/fair/">FAIR Data, Workflows, and Research</a></td>
+                        <td>5</td>
+                    </tr>
+                    
                     
                 
                     
@@ -795,6 +849,12 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                 
                     
                 
+                    
+                
+                    
+                
+                    
+                
                 </tbody>
             </table>
 
@@ -901,6 +961,10 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                     
                 
                     
+                
+                    
+                
+                    
                     
                     <tr>
                         
@@ -908,6 +972,8 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
                         <td>14</td>
                     </tr>
                     
+                    
+                
                     
                 
                     
@@ -941,6 +1007,26 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
 <div class="list-group">
  
  
+ <a class="list-group-item" href="/training-material/news/2023/05/15/isoform-usage-training.html">
+   <p class="list-group-item-text">May 15, 2023</p>
+   <div class="list-group-item-heading">
+   
+   <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+   
+   
+   New Galaxy training: Genome-wide alternative splicing analysis </div>
+ </a>
+ 
+ <a class="list-group-item" href="/training-material/news/2023/05/11/ro-crate.html">
+   <p class="list-group-item-text">May 11, 2023</p>
+   <div class="list-group-item-heading">
+   
+   
+   <i class="fas fa-bullhorn" aria-hidden="true"></i>
+   
+   BY-COVID and RO-Crate collaboration brings new topic: FAIR Data, Workflows &amp; More </div>
+ </a>
+ 
  <a class="list-group-item" href="/training-material/news/2023/04/20/my-galaxy-training.html">
    <p class="list-group-item-text">Apr 20, 2023</p>
    <div class="list-group-item-heading">
@@ -969,26 +1055,6 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
    <i class="fas fa-bullhorn" aria-hidden="true"></i>
    
    New Feature: GTN Rdoc </div>
- </a>
- 
- <a class="list-group-item" href="/training-material/news/2023/04/19/click-to-run.html">
-   <p class="list-group-item-text">Apr 19, 2023</p>
-   <div class="list-group-item-heading">
-   
-   
-   <i class="fas fa-bullhorn" aria-hidden="true"></i>
-   
-   New Feature: Click-to-run Workflows </div>
- </a>
- 
- <a class="list-group-item" href="/training-material/news/2023/04/13/learning-pathways.html">
-   <p class="list-group-item-text">Apr 13, 2023</p>
-   <div class="list-group-item-heading">
-   
-   
-   <i class="fas fa-bullhorn" aria-hidden="true"></i>
-   
-   New Feature: Learning Pathways! </div>
  </a>
  
 </div>
@@ -1033,7 +1099,7 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
 		<a  href="/training-material/hall-of-fame" class="logo">
 		<div class="gtn-card color-agenda" style="color: black">
 			
-			<div class="card-title">292</div>
+			<div class="card-title">303</div>
 			<div class="card-text">Contributors</div>
 		</div>
 		</a>
@@ -1175,23 +1241,46 @@ This 5-day, 24/7 training event is completely free, and covers a wide range of t
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					
+						Materials licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/index.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/fee830b6da5b6f22c84ea431f133e5774eb038b2">fee830b6da5b6f22c84ea431f133e5774eb038b2</a>. </p>
+
     </div>
 </footer>
 
-        
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

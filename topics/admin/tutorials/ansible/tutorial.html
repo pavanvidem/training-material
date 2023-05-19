@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,7 +40,7 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -36,7 +59,7 @@
         <meta property="og:title" content="Galaxy Training: Ansible">
         <meta property="og:description" content="Resources related to configuration and maintenance of Gal...">
         
-        <meta property="og:image" content="/training-material/assets/images/gat.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -91,6 +114,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -118,6 +145,7 @@
   "name": "Hands-on for 'Ansible' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible/tutorial.html",
   "timeRequired": "PT60M",
+  "teaches": "Learn Ansible basics\n - Write a simple role\n - Install a role from Ansible Galaxy",
   "keywords": "admin, ansible",
   "description": "The questions this  addresses are:\n - Why Ansible?\n - How and when to use Ansible?\n - How to write a role?\n - How to leverage community build roles?\n\n\nThe objectives are:\n - Learn Ansible basics\n - Write a simple role\n - Install a role from Ansible Galaxy\n\n",
   "inLanguage": {
@@ -130,8 +158,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -153,56 +181,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "name": "Saskia Hiltemann",
-      "image": "https://avatars.githubusercontent.com/shiltemann",
-      "description": "Researcher at Erasmus Medical Center",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3803-468X",
-      "orcid": "https://orcid.org/0000-0003-3803-468X"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
@@ -228,7 +208,15 @@
       "description": "Resources related to configuration and maintenance of Galaxy servers",
       "url": "https://training.galaxyproject.org/training-material/topics/admin/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "ansible"
+    }
+  ],
+  "abstract": "# Overview"
 }
         </script>
         
@@ -303,8 +291,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/admin/tutorials/ansible/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/admin/tutorials/ansible/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -409,199 +396,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2023-04-11 12:57:40 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "Ansible",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Galaxy Server administration",
-    "description": "Resources related to configuration and maintenance of Galaxy servers",
-    "url": "https://training.galaxyproject.org/training-material/topics/admin/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Ansible' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible/tutorial.html",
-  "timeRequired": "PT60M",
-  "keywords": "admin, ansible",
-  "description": "The questions this  addresses are:\n - Why Ansible?\n - How and when to use Ansible?\n - How to write a role?\n - How to leverage community build roles?\n\n\nThe objectives are:\n - Learn Ansible basics\n - Write a simple role\n - Install a role from Ansible Galaxy\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "name": "Saskia Hiltemann",
-      "image": "https://avatars.githubusercontent.com/shiltemann",
-      "description": "Researcher at Erasmus Medical Center",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3803-468X",
-      "orcid": "https://orcid.org/0000-0003-3803-468X"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/",
-      "name": "Saskia Hiltemann",
-      "image": "https://avatars.githubusercontent.com/shiltemann",
-      "description": "Researcher at Erasmus Medical Center",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-3803-468X",
-      "orcid": "https://orcid.org/0000-0003-3803-468X"
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Galaxy Server administration",
-      "description": "Resources related to configuration and maintenance of Galaxy servers",
-      "url": "https://training.galaxyproject.org/training-material/topics/admin/"
-    }
-  ]
-}
-</script>
 
 <article class="tutorial topic-admin">
     <h1 data-toc-skip>Ansible</h1>
@@ -755,9 +549,8 @@
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 11, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00000">https://gxy.io/GTN:T00000</a> </div>
@@ -818,6 +611,7 @@
 
 <!--SNIPPET-->
 <blockquote class="tip">   <div class="box-title tip-title" id="tip-operating-system-compatibility"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-operating-system-compatibility" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Operating system compatibility<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>These Ansible roles and training materials were last tested on Centos 7 and Ubuntu 18.04, but will probably work on other RHEL and Debian variants.</p>   <p>The roles that are used in these training are currently used by <code class="language-plaintext highlighter-rouge">usegalaxy.*</code>, and other, servers in maintaining their infrastructure. (<a href="https://github.com/galaxyproject/infrastructure-playbook/">US</a>, <a href="https://github.com/usegalaxy-eu/infrastructure-playbook">EU</a>, both are running CentOS 7)</p>   <p>If you have an issue running these trainings on your OS flavour, please report <a href="https://github.com/galaxyproject/training-material/issues/new">the issue</a> in the training material and we can see if it is possible to solve.</p> </blockquote>
+<p><!--END_SNIPPET--></p>
 
 <h1 id="what-is-ansible">What is Ansible?</h1>
 
@@ -1402,6 +1196,7 @@ to show how a person using <code class="language-plaintext highlighter-rouge">my
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-variable-connection"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-variable-connection" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Variable connection<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>When the playbook runs, as part of the setup, it collects any variables that are set. For a playbook affecting a group of hosts named <code class="language-plaintext highlighter-rouge">my_hosts</code>, it checks many different places for variables, including “group_vars/my_hosts.yml”. If there are variables there, they’re added to the collection of current variables. It also checks “group_vars/all.yml” (for the built-in host group <code class="language-plaintext highlighter-rouge">all</code>). There is a precedence order, but then these variables are available for roles and tasks to consume.</p> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Run the playbook again, but imagine you are worried about this change, and supply the <code class="language-plaintext highlighter-rouge">--check --diff</code> flag to see what changes are made before committing to make them.</p>
@@ -1414,6 +1209,7 @@ to show how a person using <code class="language-plaintext highlighter-rouge">my
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-what-if-you-forget-diff"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-if-you-forget-diff" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: What if you forget `--diff`?<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>If you forget to use <code class="language-plaintext highlighter-rouge">--diff</code>, it is not easy to see what has changed. Some modules like the <code class="language-plaintext highlighter-rouge">copy</code> and <code class="language-plaintext highlighter-rouge">template</code> modules have a <code class="language-plaintext highlighter-rouge">backup</code> option. If you set this option, then it will keep a backup copy next to the destination file.</p>   <p>However, most modules do not have such an option, so if you want to know what changes, always use <code class="language-plaintext highlighter-rouge">--diff</code>.</p> </blockquote>
+      <p><!--END_SNIPPET--></p>
 
       <blockquote class="code-out">
         <div class="box-title code-out-title" id="code-out-1"><i class="fas fa-laptop-code" aria-hidden="true"></i> Output</div>
@@ -1570,6 +1366,7 @@ The solution to this is to set <code class="language-plaintext highlighter-rouge
 
 <!--SNIPPET-->
 <blockquote class="tip">   <div class="box-title tip-title" id="tip-how-do-i-know-what-i-can-do-with-a-role-what-variables-are-available"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-how-do-i-know-what-i-can-do-with-a-role-what-variables-are-available" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: How do I know what I can do with a role? What variables are available?<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>You don’t. There is no standard way for reporting this, but well written roles by trusted authors (e.g. geerlingguy, galaxyproject) do it properly and write all of the variables in the README file of the repository. We try to pick sensible roles for you in this course, but, in real life it may not be that simple.</p>   <p>So, definitely check there first, but if they aren’t there, then you’ll need to read through <code class="language-plaintext highlighter-rouge">defaults/</code> and <code class="language-plaintext highlighter-rouge">tasks/</code> and <code class="language-plaintext highlighter-rouge">templates/</code> to figure out what the role does and how you can control and modify it to accomplish your goals.</p> </blockquote>
+<p><!--END_SNIPPET--></p>
 
 <h1 id="ansible-vault">Ansible Vault</h1>
 
@@ -1852,9 +1649,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -1862,6 +1659,23 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/ansible/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools: []
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -1873,7 +1687,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00000">https://gxy.io/GTN:T00000</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/admin/tutorials/ansible/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

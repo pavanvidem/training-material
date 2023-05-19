@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,13 +40,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="A short introduction to Galaxy">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-04-01 10:05:43 +0000">
+<meta name="DC.date" content="2023-05-09 19:03:02 +0000">
 <meta name="DC.creator" content="Anna Syme">
 <meta name="DC.creator" content="Nicola Soranzo">
 
@@ -36,7 +59,7 @@
         <meta property="og:title" content="Galaxy Training: A short introduction to Galaxy">
         <meta property="og:description" content="Galaxy is a scientific workflow, data integration, and da...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -65,7 +88,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-04-01 10:05:43 +0000",
+  "dateModified": "2023-05-09 19:03:02 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "A short introduction to Galaxy",
   "interactivityType": "mixed",
@@ -91,6 +114,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -118,6 +145,7 @@
   "name": "Hands-on for 'A short introduction to Galaxy' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/tutorial.html",
   "timeRequired": "PT40M",
+  "teaches": "Learn how to upload a file\n - Learn how to use a tool\n - Learn how to view results\n - Learn how to view histories\n - Learn how to extract and run a workflow\n - Learn how to share a history",
   "keywords": "introduction, español",
   "description": "The questions this  addresses are:\n - How to get started in Galaxy\n\n\nThe objectives are:\n - Learn how to upload a file\n - Learn how to use a tool\n - Learn how to view results\n - Learn how to view histories\n - Learn how to extract and run a workflow\n - Learn how to share a history\n\n",
   "inLanguage": {
@@ -125,6 +153,54 @@
     "name": "English",
     "alternateName": "en"
   },
+  "author": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/annasyme/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/annasyme/",
+      "name": "Anna Syme",
+      "image": "https://avatars.githubusercontent.com/annasyme",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0002-9906-0673",
+      "orcid": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "name": "Nicola Soranzo",
+      "image": "https://avatars.githubusercontent.com/nsoranzo",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-3627-5340",
+      "orcid": "https://orcid.org/0000-0003-3627-5340"
+    }
+  ],
   "about": [
     {
       "@type": "CreativeWork",
@@ -133,7 +209,14 @@
       "url": "https://training.galaxyproject.org/training-material/topics/introduction/"
     }
   ],
-  "educationalLevel": "Beginner"
+  "educationalLevel": "Beginner",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "español"
+    }
+  ],
+  "abstract": "# Overview"
 }
         </script>
         
@@ -208,8 +291,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/introduction/tutorials/galaxy-intro-short/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/introduction/tutorials/galaxy-intro-short/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -314,104 +396,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2023-04-01 10:05:43 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "A short introduction to Galaxy",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Introduction to Galaxy Analyses",
-    "description": "Galaxy is a scientific workflow, data integration, and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience. ",
-    "url": "https://training.galaxyproject.org/training-material/topics/introduction/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'A short introduction to Galaxy' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-short/tutorial.html",
-  "timeRequired": "PT40M",
-  "keywords": "introduction, español",
-  "description": "The questions this  addresses are:\n - How to get started in Galaxy\n\n\nThe objectives are:\n - Learn how to upload a file\n - Learn how to use a tool\n - Learn how to view results\n - Learn how to view histories\n - Learn how to extract and run a workflow\n - Learn how to share a history\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Galaxy is a scientific workflow, data integration, and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience. ",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/"
-    }
-  ],
-  "educationalLevel": "Beginner"
-}
-</script>
 
 <article class="tutorial topic-introduction">
     <h1 data-toc-skip>A short introduction to Galaxy</h1>
@@ -581,244 +565,108 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org (Main) <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+    
+	<li>
+		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
+			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
+			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
+		</a>
+	</li>
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="http://143.169.238.104/galaxy/" title="">
+			Biomina
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://galaxytrakr.org/" title="">
+			GalaxyTrakr
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.be/" title="">
+			UseGalaxy.be
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.fr/" title="">
+			UseGalaxy.fr
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.no/" title="">
+			UseGalaxy.no
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org.au" title="">
+			UseGalaxy.org.au
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/introduction/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="http://143.169.238.104/galaxy/" title="Biomina">
-            Biomina
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
-            CLIP-Explorer
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxytrakr.org/" title="GalaxyTrakr">
-            GalaxyTrakr
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://hicexplorer.usegalaxy.eu" title="HiCExplorer">
-            HiCExplorer
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
-            Human Cell Atlas
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
-            Metagenomics
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://nanopore.usegalaxy.eu/" title="NanoGalaxy">
-            NanoGalaxy
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://singlecell.usegalaxy.eu/" title="Single Cell Omics workbench">
-            Single Cell Omics workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://virology.usegalaxy.eu/" title="Virology">
-            Virology
-        </a>
-        
-    
-        
-    
     </ul>
-
 
 </li>
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 1, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 9, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00190">https://gxy.io/GTN:T00190</a> </div>
@@ -988,6 +836,7 @@ the gray (preparing/queued) and yellow (running) states to become green (success
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Open the link to the shared history</li>   <li>Click on the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> <em>Import history</em> button on the top right</li>   <li>Enter a title for the new history</li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p><strong>Rename</strong> <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> the the history to your name of choice.</p>
@@ -1024,7 +873,7 @@ the gray (preparing/queued) and yellow (running) states to become green (success
   <ol>
     <li>Type <strong>FastQC</strong> in the tools panel search box (top)</li>
     <li>
-      <p>Click on the <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span>  tool</p>
+      <p>Click on the <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> tool</p>
 
       <p>The tool will be displayed in the central Galaxy panel.</p>
     </li>
@@ -1094,7 +943,7 @@ the gray (preparing/queued) and yellow (running) states to become green (success
   <div class="box-title hands-on-title" id="hands-on-run-another-tool"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Run another tool</div>
   <ol>
     <li>Type <strong>Filter by quality</strong> in the tools panel search box (top)</li>
-    <li>Click on the tool <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastq_quality_filter/cshl_fastq_quality_filter/1.0.2+galaxy0" title="Filter by quality tool"><strong>Filter by quality</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastq_quality_filter/cshl_fastq_quality_filter/1.0.2+galaxy0</span></span></li>
+    <li>Click on the tool <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastq_quality_filter/cshl_fastq_quality_filter/1.0.2+galaxy0" title="Filter by quality tool" aria-role="link"><strong>Filter by quality</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastq_quality_filter/cshl_fastq_quality_filter/1.0.2+galaxy0</span></span></li>
     <li>Set the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input FASTQ file”</em>: our initial FASTQ dataset</li>
@@ -1181,7 +1030,7 @@ the gray (preparing/queued) and yellow (running) states to become green (success
 
   <blockquote class="solution">
     <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
-    <p>11517 low-quality reads were discarded</p>
+    <p>If you selected 80% of bases with 36 as quality cut-off, then 11517 reads (92%) should have been discarded, which indicates that we have gone too far with the filtering in this case.</p>
   </blockquote>
 </blockquote>
 
@@ -1192,7 +1041,8 @@ the gray (preparing/queued) and yellow (running) states to become green (success
 <p>Finally, let’s imagine that you had a problem in your analysis and you want to ask for help. The easiest way to ask for help is to share your history. Try and create a link for your history and share it with…yourself!</p>
 
 <!--SNIPPET-->
-<blockquote class="tip">   <div class="box-title tip-title" id="tip-sharing-your-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-sharing-your-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Sharing your History<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Sharing your history allows others to import and access the datasets, parameters, and steps of your history.</p>   <ol>   <li><strong>Share via link</strong>     <ul>       <li>Open the <strong>History Options</strong> <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> menu (gear icon) at the top of your history panel         <ul>           <li><i class="fas fa-toggle-on" aria-hidden="true"></i><span class="visually-hidden">galaxy-toggle</span> <strong>Make History accessible</strong></li>           <li>A <strong>Share Link</strong> will appear that you give to others</li>         </ul>       </li>       <li>Anybody who has this link can view and copy your history</li>     </ul>   </li>   <li><strong>Publish your history</strong>     <ul>       <li><i class="fas fa-toggle-on" aria-hidden="true"></i><span class="visually-hidden">galaxy-toggle</span> <strong>Make History publicly available in Published Histories</strong></li>       <li>Anybody on this Galaxy server will see your history listed under the <em>Shared Data</em> menu</li>     </ul>   </li>   <li><strong>Share only with another user</strong>.     <ul>       <li>Click the <strong>Share with a user</strong> button at the bottom</li>       <li>Enter an email address for the user you want to share with</li>       <li>Your history will be shared only with this user.</li>     </ul>   </li>   <li><strong>Finding histories others have shared with me</strong>     <ul>       <li>Click on <strong>User</strong> menu on the top bar</li>       <li>Select <strong>Histories shared with me</strong></li>       <li>Here you will see all the histories others have shared with you directly</li>     </ul>   </li> </ol>   <p><strong>Note:</strong> If you want to make changes to your history without affecting the shared version, make a copy by going to <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <em>History options</em> icon in your history and clicking <em>Copy</em></p> </blockquote>
+<blockquote class="tip">   <div class="box-title tip-title" id="tip-sharing-your-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-sharing-your-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Sharing your History<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Sharing your history allows others to import and access the datasets, parameters, and steps of your history.</p>   <ol>   <li><strong>Share via link</strong>     <ul>       <li>Open the <strong>History Options</strong> <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> menu (gear icon) at the top of your history panel and select <strong>Share or Publish</strong>         <ul>           <li><i class="fas fa-toggle-on" aria-hidden="true"></i><span class="visually-hidden">galaxy-toggle</span> <strong>Make History accessible</strong></li>           <li>A <strong>Share Link</strong> will appear that you give to others</li>         </ul>       </li>       <li>Anybody who has this link can view and copy your history</li>     </ul>   </li>   <li><strong>Publish your history</strong>     <ul>       <li><i class="fas fa-toggle-on" aria-hidden="true"></i><span class="visually-hidden">galaxy-toggle</span> <strong>Make History publicly available in Published Histories</strong></li>       <li>Anybody on this Galaxy server will see your history listed under the <em>Shared Data</em> menu</li>     </ul>   </li>   <li><strong>Share only with another user</strong>.     <ul>       <li>Click the <strong>Share with a user</strong> button at the bottom</li>       <li>Enter an email address for the user you want to share with</li>       <li>Your history will be shared only with this user.</li>     </ul>   </li>   <li><strong>Finding histories others have shared with me</strong>     <ul>       <li>Click on <strong>User</strong> menu on the top bar</li>       <li>Select <strong>Histories shared with me</strong></li>       <li>Here you will see all the histories others have shared with you directly</li>     </ul>   </li> </ol>   <p><strong>Note:</strong> If you want to make changes to your history without affecting the shared version, make a copy by going to <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <em>History options</em> icon in your history and clicking <em>Copy</em></p> </blockquote>
+<p><!--END_SNIPPET--></p>
 
 <h2 id="convert-your-analysis-history-into-a-workflow">Convert your analysis history into a workflow</h2>
 
@@ -1250,12 +1100,14 @@ the gray (preparing/queued) and yellow (running) states to become green (success
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Rename your history, <em>e.g.</em> “Next Analysis”</p>
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
   </ol>
 
@@ -1460,9 +1312,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -1470,6 +1322,43 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/introduction/tutorials/galaxy-intro-short/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: fastq_quality_filter
+  owner: devteam
+  revisions: 43a7370aa010
+  tool_panel_section_label: Introduction to Galaxy Analyses
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastq_quality_filter
+  owner: devteam
+  revisions: ce9cd02d5b88
+  tool_panel_section_label: Introduction to Galaxy Analyses
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: 9da02be9c6cc
+  tool_panel_section_label: Introduction to Galaxy Analyses
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: 3d0c7bdf12f5
+  tool_panel_section_label: Introduction to Galaxy Analyses
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -1481,7 +1370,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00190">https://gxy.io/GTN:T00190</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/introduction/tutorials/galaxy-intro-short/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

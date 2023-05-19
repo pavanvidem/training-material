@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,7 +40,7 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -37,7 +60,7 @@
         <meta property="og:title" content="Galaxy Training: Whole transcriptome analysis of Arabidopsis thaliana">
         <meta property="og:description" content="Training material for all kinds of transcriptomics analysis.">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -92,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -119,6 +146,7 @@
   "name": "Hands-on for 'Whole transcriptome analysis of Arabidopsis thaliana' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html",
   "timeRequired": "PT2H",
+  "teaches": "Perform miRNA differential expression analysis\n - Understand the quasi-mapping-based Salmon method for quantifying the expression of transcripts using RNA-Seq data\n - Idenfity potential miRNAs involved in brassinosteroid-mediated regulation networks",
   "keywords": "transcriptomics, miRNA, plants, stress tolerance",
   "description": "The questions this  addresses are:\n - Which miRNAs are upregulated in response to brassinosteroids?\n - Which genes are potential target of brassinosteroid-induced miRNAs?\n\n\nThe objectives are:\n - Perform miRNA differential expression analysis\n - Understand the quasi-mapping-based Salmon method for quantifying the expression of transcripts using RNA-Seq data\n - Idenfity potential miRNAs involved in brassinosteroid-mediated regulation networks\n\n",
   "inLanguage": {
@@ -206,8 +234,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
@@ -229,8 +257,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
@@ -252,79 +280,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "name": "Beatriz Serrano-Solano",
-      "image": "https://avatars.githubusercontent.com/beatrizserrano",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5862-6132",
-      "orcid": "https://orcid.org/0000-0002-5862-6132"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "name": "Cristóbal Gallardo",
-      "image": "https://avatars.githubusercontent.com/gallardoalba",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5752-2155",
-      "orcid": "https://orcid.org/0000-0002-5752-2155"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "name": "Pavankumar Videm",
-      "image": "https://avatars.githubusercontent.com/pavanvidem",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5192-126X",
-      "orcid": "https://orcid.org/0000-0002-5192-126X"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
@@ -357,7 +314,23 @@
       "termCode": "topic_3308",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "miRNA"
+    },
+    {
+      "@type": "Thing",
+      "name": "plants"
+    },
+    {
+      "@type": "Thing",
+      "name": "stress tolerance"
+    }
+  ],
+  "abstract": "# Introduction"
 }
         </script>
         
@@ -432,8 +405,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/transcriptomics/tutorials/mirna-target-finder/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -538,327 +510,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2023-01-19 17:35:35 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "Whole transcriptome analysis of Arabidopsis thaliana",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Transcriptomics",
-    "description": "Training material for all kinds of transcriptomics analysis.",
-    "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Whole transcriptome analysis of Arabidopsis thaliana' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html",
-  "timeRequired": "PT2H",
-  "keywords": "transcriptomics, miRNA, plants, stress tolerance",
-  "description": "The questions this  addresses are:\n - Which miRNAs are upregulated in response to brassinosteroids?\n - Which genes are potential target of brassinosteroid-induced miRNAs?\n\n\nThe objectives are:\n - Perform miRNA differential expression analysis\n - Understand the quasi-mapping-based Salmon method for quantifying the expression of transcripts using RNA-Seq data\n - Idenfity potential miRNAs involved in brassinosteroid-mediated regulation networks\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "competencyRequired": [
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Introduction to Galaxy Analyses",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
-      "name": "Quality Control",
-      "description": "Hands-on for 'Quality Control' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html",
-      "name": "Mapping",
-      "description": "Hands-on for 'Mapping' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    }
-  ],
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "name": "Cristóbal Gallardo",
-      "image": "https://avatars.githubusercontent.com/gallardoalba",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5752-2155",
-      "orcid": "https://orcid.org/0000-0002-5752-2155"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "name": "Pavankumar Videm",
-      "image": "https://avatars.githubusercontent.com/pavanvidem",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5192-126X",
-      "orcid": "https://orcid.org/0000-0002-5192-126X"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "name": "Beatriz Serrano-Solano",
-      "image": "https://avatars.githubusercontent.com/beatrizserrano",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5862-6132",
-      "orcid": "https://orcid.org/0000-0002-5862-6132"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/",
-      "name": "Cristóbal Gallardo",
-      "image": "https://avatars.githubusercontent.com/gallardoalba",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5752-2155",
-      "orcid": "https://orcid.org/0000-0002-5752-2155"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/",
-      "name": "Pavankumar Videm",
-      "image": "https://avatars.githubusercontent.com/pavanvidem",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5192-126X",
-      "orcid": "https://orcid.org/0000-0002-5192-126X"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/beatrizserrano/",
-      "name": "Beatriz Serrano-Solano",
-      "image": "https://avatars.githubusercontent.com/beatrizserrano",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-5862-6132",
-      "orcid": "https://orcid.org/0000-0002-5862-6132"
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Transcriptomics",
-      "description": "Training material for all kinds of transcriptomics analysis.",
-      "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "http://edamontology.org/topic_3308",
-      "inDefinedTermSet": "http://edamontology.org",
-      "termCode": "topic_3308",
-      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
-    }
-  ]
-}
-</script>
 
 <article class="tutorial topic-transcriptomics">
     <h1 data-toc-skip>Whole transcriptome analysis of Arabidopsis thaliana</h1>
@@ -1095,168 +746,55 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org (Main) <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr> ⭐️
+		</a>
+	</li>
+    
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.no/" title="">
+			UseGalaxy.no
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/transcriptomics/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
     </ul>
-
 
 </li>
             
@@ -1266,9 +804,8 @@
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 19, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00292">https://gxy.io/GTN:T00292</a> </div>
@@ -1427,6 +964,7 @@ SRR1019439	BR treated mRNA	https://zenodo.org/record/4710649/files/SRR1019439_RN
 
   <!--SNIPPET-->
   <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+  <p><!--END_SNIPPET--></p>
 </blockquote>
 
 <p>Next we will retrieve the remaining datasets.</p>
@@ -1473,7 +1011,7 @@ miRNA_stem-loop_seq.fasta	https://zenodo.org/record/4710649/files/miRNA_stem-loo
     <div class="box-title hands-on-title" id="hands-on-dataset-subsampling"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Dataset subsampling</div>
 
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/peterjc/sample_seqs/sample_seqs/0.2.5" title="Sub-sample sequences files  tool"><strong>Sub-sample sequences files </strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/peterjc/sample_seqs/sample_seqs/0.2.5</span></span>  with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/peterjc/sample_seqs/sample_seqs/0.2.5" title="Sub-sample sequences files  tool" aria-role="link"><strong>Sub-sample sequences files </strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/peterjc/sample_seqs/sample_seqs/0.2.5</span></span> with the following parameters:
         <ul>
           <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Multiple datasets”</em>: Each of the fastq files</li>
           <li><em>“Subsampling approach”</em>: <code class="language-plaintext highlighter-rouge">Take every N-th sequence (or pair e.g. every fifth sequence)</code></li>
@@ -1506,14 +1044,14 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-initial-quality-check"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Initial quality check</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Dataset collection”</em>: <code class="language-plaintext highlighter-rouge">Control miRNA</code></li>
       </ul>
     </li>
     <li>Rename the outputs as <code class="language-plaintext highlighter-rouge">FastQC unprocessed control miRNA: RawData</code> and <code class="language-plaintext highlighter-rouge">FastQC unprocessed control miRNA: Webpage</code></li>
     <li>Repeat the previous steps with the <code class="language-plaintext highlighter-rouge">BR treated miRNA</code> collection.</li>
-    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span>  with the following parameters:
+    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool" aria-role="link"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span> with the following parameters:
       <ul>
         <li>In <em>“Input collections”</em>:
           <ul>
@@ -1523,7 +1061,7 @@ For more information on the topic of quality control, please see our <a href="/t
         </li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span> with the following parameters:
       <ul>
         <li>In <em>“Results”</em>:
           <ul>
@@ -1564,7 +1102,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-trimming-of-adapter-sequences"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Trimming of adapter sequences</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1" title="Trim Galore! tool"><strong>Trim Galore!</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1" title="Trim Galore! tool" aria-role="link"><strong>Trim Galore!</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1</span></span> with the following parameters:
       <ul>
         <li><em>“Is this library paired- or single-end?”</em>: <code class="language-plaintext highlighter-rouge">Single-end</code>
           <ul>
@@ -1586,14 +1124,14 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-post-processing-quality-check"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Post-processing quality check</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Dataset collection”</em>: <code class="language-plaintext highlighter-rouge">Control miRNA trimmed</code></li>
       </ul>
     </li>
     <li>Rename the outputs as <code class="language-plaintext highlighter-rouge">FastQC processed control miRNA: RawData</code> and <code class="language-plaintext highlighter-rouge">FastQC processed control miRNA: Webpage</code></li>
     <li>Repeat the previous steps with the <code class="language-plaintext highlighter-rouge">BR treated miRNA trimmed</code> collection.</li>
-    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span>  with the following parameters:
+    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool" aria-role="link"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span> with the following parameters:
       <ul>
         <li>In <em>“Input collections”</em>:
           <ul>
@@ -1603,7 +1141,7 @@ For more information on the topic of quality control, please see our <a href="/t
         </li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span> with the following parameters:
       <ul>
         <li>In <em>“Results”</em>:
           <ul>
@@ -1648,7 +1186,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-quantification-of-mirnas"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Quantification of miRNAs</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_mapper/rbc_mirdeep2_mapper/2.0.0" title="MiRDeep2 Mapper tool"><strong>MiRDeep2 Mapper</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_mapper/rbc_mirdeep2_mapper/2.0.0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_mapper/rbc_mirdeep2_mapper/2.0.0" title="MiRDeep2 Mapper tool" aria-role="link"><strong>MiRDeep2 Mapper</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_mapper/rbc_mirdeep2_mapper/2.0.0</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Deep sequencing reads”</em>: <code class="language-plaintext highlighter-rouge">Control miRNA trimmed</code></li>
         <li><em>“Remove reads with non-standard nucleotides”</em>: <code class="language-plaintext highlighter-rouge">Yes</code></li>
@@ -1660,7 +1198,7 @@ For more information on the topic of quality control, please see our <a href="/t
     <li>
       <p>Repeat the previous stages by providing <code class="language-plaintext highlighter-rouge">BR treated miRNA trimmed</code>as input, and rename it as <code class="language-plaintext highlighter-rouge">Collapsed BR treated miRNA</code>.</p>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_quantifier/rbc_mirdeep2_quantifier/2.0.0" title="MiRDeep2 Quantifier tool"><strong>MiRDeep2 Quantifier</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_quantifier/rbc_mirdeep2_quantifier/2.0.0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_quantifier/rbc_mirdeep2_quantifier/2.0.0" title="MiRDeep2 Quantifier tool" aria-role="link"><strong>MiRDeep2 Quantifier</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_quantifier/rbc_mirdeep2_quantifier/2.0.0</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Collapsed deep sequencing reads”</em>: <code class="language-plaintext highlighter-rouge">Collapsed control miRNA</code></li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Precursor sequences”</em>: <code class="language-plaintext highlighter-rouge">miRNA_stem-loop_seq.fasta</code></li>
@@ -1680,7 +1218,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-edition-of-mirdeep2-quantifier-outputs"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Edition of MiRDeep2 Quantifier outputs</div>
 
   <ol>
-    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool" aria-role="link"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span> with the following parameters:
       <ul>
         <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1,c2</code></li>
         <li><em>“Delimited by”</em>: <code class="language-plaintext highlighter-rouge">Tab</code></li>
@@ -1688,7 +1226,7 @@ For more information on the topic of quality control, please see our <a href="/t
       </ul>
     </li>
     <li>Rename the output as <code class="language-plaintext highlighter-rouge">control miRNA counts</code></li>
-    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span>   with the following parameters:
+    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool" aria-role="link"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span>  with the following parameters:
       <ul>
         <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1,c2</code></li>
         <li><em>“Delimited by”</em>: <code class="language-plaintext highlighter-rouge">Tab</code></li>
@@ -1714,7 +1252,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-differential-expression-analysis-using-deseq2"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Differential expression analysis using DESeq2</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1" title="DESeq2 tool"><strong>DESeq2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1" title="DESeq2 tool" aria-role="link"><strong>DESeq2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1</span></span> with the following parameters:
       <ul>
         <li><em>“How”</em>: <code class="language-plaintext highlighter-rouge">Select datasets per level</code>
           <ul>
@@ -1774,7 +1312,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-filter-differentially-expressed-mirnas"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Filter differentially expressed miRNAs</div>
 
   <ol>
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">DESeq2 results miRNA</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c7&lt;0.05</code></li>
@@ -1828,21 +1366,21 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-filter-and-sort-differentially-expressed-mirnas-from-the-full-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Filter and sort differentially expressed miRNAs from the full dataset</div>
 
   <ol class="comment">
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">miRNA_DESeq2_results_complete_dataset</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c7&lt;0.05</code></li>
       </ul>
     </li>
     <li>Rename the output as <code class="language-plaintext highlighter-rouge">Differentially expressed miRNAs</code></li>
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">Differentially expressed miRNAs</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c3&gt;0</code></li>
       </ul>
     </li>
     <li>Rename the output as <code class="language-plaintext highlighter-rouge">Upregulated miRNAs</code></li>
-    <li><span class="tool" data-tool="sort1" title="Sort tool"><strong>Sort</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: sort1</span></span>  data in ascending or descending order (Galaxy Version 1.1.0) with the following parameters:
+    <li><span class="tool" data-tool="sort1" title="Sort tool" aria-role="link"><strong>Sort</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: sort1</span></span> data in ascending or descending order (Galaxy Version 1.1.0) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Sort Dataset”</em>: <code class="language-plaintext highlighter-rouge">Upregulated miRNAs</code></li>
         <li><em>“on column”</em>: <code class="language-plaintext highlighter-rouge">Column: 3</code></li>
@@ -1883,14 +1421,14 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-initial-quality-check-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Initial quality check</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">param-collection</span> <em>“Dataset collection”</em>: <code class="language-plaintext highlighter-rouge">Control mRNA</code></li>
       </ul>
     </li>
     <li>Rename the outputs as <code class="language-plaintext highlighter-rouge">FastQC unprocessed control mRNA: RawData</code> and <code class="language-plaintext highlighter-rouge">FastQC unprocessed control mRNA: Webpage</code></li>
     <li>Repeat the previous step with the <code class="language-plaintext highlighter-rouge">BR treated mRNA</code> collection.</li>
-    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span>  with the following parameters:
+    <li><span class="tool" data-tool="__MERGE_COLLECTION__" title="Merge Collections tool" aria-role="link"><strong>Merge Collections</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <strong>MERGE_COLLECTION</strong></span></span> with the following parameters:
       <ul>
         <li>In <em>“Input collections”</em>:
           <ul>
@@ -1900,7 +1438,7 @@ For more information on the topic of quality control, please see our <a href="/t
         </li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1</span></span> with the following parameters:
       <ul>
         <li>In <em>“Results”</em>:
           <ul>
@@ -1959,7 +1497,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-quantify-gene-expression-with-salmon"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Quantify gene expression with Salmon</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1" title="Salmon quant tool"><strong>Salmon quant</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1" title="Salmon quant tool" aria-role="link"><strong>Salmon quant</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1</span></span> with the following parameters:
       <ul>
         <li><em>“Select salmon quantification mode:”</em>: <code class="language-plaintext highlighter-rouge">Reads</code>
           <ul>
@@ -2060,7 +1598,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-differential-expression-analysis-using-deseq2-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Differential expression analysis using DEseq2</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1" title="DESeq2 tool"><strong>DESeq2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1" title="DESeq2 tool" aria-role="link"><strong>DESeq2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1</span></span> with the following parameters:
       <ul>
         <li><em>“How”</em>: <code class="language-plaintext highlighter-rouge">Select datasets per level</code>
           <ul>
@@ -2156,7 +1694,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-extract-significantly-de-genes"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Extract significantly DE genes</div>
 
   <ol>
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">mRNA_DESeq2_results_complete_dataset</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c7&lt;0.05</code></li>
@@ -2165,7 +1703,7 @@ For more information on the topic of quality control, please see our <a href="/t
     <li>
       <p>Rename the output as <code class="language-plaintext highlighter-rouge">Differentially expressed mRNAs</code></p>
     </li>
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">Differentially expressed mRNAs</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c3&gt;1</code></li>
@@ -2174,7 +1712,7 @@ For more information on the topic of quality control, please see our <a href="/t
     <li>
       <p>Rename it as <code class="language-plaintext highlighter-rouge">Upregulated mRNAs</code></p>
     </li>
-    <li><span class="tool" data-tool="Filter1" title="Filter tool"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
+    <li><span class="tool" data-tool="Filter1" title="Filter tool" aria-role="link"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span> data on any column using simple expressions (Galaxy Version 1.1.1) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Filter”</em>: <code class="language-plaintext highlighter-rouge">Differentially expressed mRNAs</code></li>
         <li><em>“With following condition”</em>: <code class="language-plaintext highlighter-rouge">c3&lt;-1</code></li>
@@ -2220,7 +1758,7 @@ For more information on the topic of quality control, please see our <a href="/t
   </blockquote>
 
   <ol>
-    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool" aria-role="link"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span> with the following parameters:
       <ul>
         <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1</code></li>
         <li><em>“Delimited by”</em>: <code class="language-plaintext highlighter-rouge">Tab</code></li>
@@ -2228,7 +1766,7 @@ For more information on the topic of quality control, please see our <a href="/t
       </ul>
     </li>
     <li>Rename the output as <code class="language-plaintext highlighter-rouge">Upregulated miRNA ids</code></li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool" aria-role="link"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“FASTA sequences”</em>: <code class="language-plaintext highlighter-rouge">mature_miRNA_AT.fasta</code></li>
         <li><em>“Criteria for filtering on the headers”</em>: <code class="language-plaintext highlighter-rouge">List of IDs</code>
@@ -2239,7 +1777,7 @@ For more information on the topic of quality control, please see our <a href="/t
         </li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool" aria-role="link"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“FASTA sequences”</em>: <code class="language-plaintext highlighter-rouge">star_miRNA_seq.fasta</code></li>
         <li><em>“Criteria for filtering on the headers”</em>: <code class="language-plaintext highlighter-rouge">List of IDs</code>
@@ -2250,7 +1788,7 @@ For more information on the topic of quality control, please see our <a href="/t
         </li>
       </ul>
     </li>
-    <li><span class="tool" data-tool="cat1" title="Concatenate datasets tool"><strong>Concatenate datasets</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: cat1</span></span>  tail-to-head (Galaxy Version 1.0.0) with the following parameters:
+    <li><span class="tool" data-tool="cat1" title="Concatenate datasets tool" aria-role="link"><strong>Concatenate datasets</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: cat1</span></span> tail-to-head (Galaxy Version 1.0.0) with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Concatenate Dataset”</em>: output of <strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> on <code class="language-plaintext highlighter-rouge">mature_miRNA_AT.fasta</code></li>
         <li>
@@ -2274,7 +1812,7 @@ For more information on the topic of quality control, please see our <a href="/t
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-obtaining-the-gene-sequences-of-downregulated-mrnas"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Obtaining the gene sequences of downregulated mRNAs</div>
   <ol>
-    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="Cut1" title="Cut columns from a table tool" aria-role="link"><strong>Cut columns from a table</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Cut1</span></span> with the following parameters:
       <ul>
         <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1</code></li>
         <li><em>“Delimited by”</em>: <code class="language-plaintext highlighter-rouge">Tab</code></li>
@@ -2282,7 +1820,7 @@ For more information on the topic of quality control, please see our <a href="/t
       </ul>
     </li>
     <li>Rename the output as <code class="language-plaintext highlighter-rouge">Downregulated mRNA ids</code></li>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1" title="Filter FASTA tool" aria-role="link"><strong>Filter FASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“FASTA sequences”</em>: <code class="language-plaintext highlighter-rouge">transcriptome.fasta</code> (Input dataset)</li>
         <li><em>“Criteria for filtering on the headers”</em>: <code class="language-plaintext highlighter-rouge">List of IDs</code>
@@ -2310,7 +1848,7 @@ For more information on the topic of quality control, please see our <a href="/t
   <div class="box-title hands-on-title" id="hands-on-identification-of-potential-mirna-targets"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: identification of potential miRNA targets</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/targetfinder/targetfinder/1.7.0+galaxy1" title="TargetFinder tool"><strong>TargetFinder</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/targetfinder/targetfinder/1.7.0+galaxy1</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/rnateam/targetfinder/targetfinder/1.7.0+galaxy1" title="TargetFinder tool" aria-role="link"><strong>TargetFinder</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/rnateam/targetfinder/targetfinder/1.7.0+galaxy1</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input small RNA sequences file”</em>: <code class="language-plaintext highlighter-rouge">Upreguled miRNA sequences</code></li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Target sequence database file</em>”: <code class="language-plaintext highlighter-rouge">Downregulated mRNA sequences</code></li>
@@ -2506,9 +2044,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -2516,6 +2054,78 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: salmon
+  owner: bgruening
+  revisions: e3d32471da11
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: trim_galore
+  owner: bgruening
+  revisions: 949f01671246
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: fastqc
+  owner: devteam
+  revisions: e7b2202befea
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: filter_by_fasta_ids
+  owner: galaxyp
+  revisions: 3c623e81be77
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: deseq2
+  owner: iuc
+  revisions: 6a3a025714d3
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: multiqc
+  owner: iuc
+  revisions: b2f1f75d49c4
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: multiqc
+  owner: iuc
+  revisions: 5e33b465d8d5
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: sample_seqs
+  owner: peterjc
+  revisions: 7c40a1fbc82e
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: mirdeep2_mapper
+  owner: rnateam
+  revisions: a8d24f4b6d95
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: mirdeep2_quantifier
+  owner: rnateam
+  revisions: d5ea61ff12eb
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: targetfinder
+  owner: rnateam
+  revisions: c9d56748fbde
+  tool_panel_section_label: Transcriptomics
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -2527,7 +2137,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00292">https://gxy.io/GTN:T00292</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>

@@ -8,6 +8,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
@@ -17,13 +40,13 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html">
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="RNA-Seq analysis with AskOmics Interactive Tool">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2022-10-18 14:23:35 +0000">
+<meta name="DC.date" content="2023-05-18 09:34:29 +0000">
 <meta name="DC.creator" content="Xavier Garnier">
 <meta name="DC.creator" content="Anthony Bretaudeau">
 <meta name="DC.creator" content="Anne Siegel">
@@ -39,7 +62,7 @@
         <meta property="og:title" content="Galaxy Training: RNA-Seq analysis with AskOmics Interactive Tool">
         <meta property="og:description" content="Training material for all kinds of transcriptomics analysis.">
         
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -68,7 +91,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2022-10-18 14:23:35 +0000",
+  "dateModified": "2023-05-18 09:34:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "RNA-Seq analysis with AskOmics Interactive Tool",
   "interactivityType": "mixed",
@@ -94,6 +117,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -121,6 +148,7 @@
   "name": "Hands-on for 'RNA-Seq analysis with AskOmics Interactive Tool' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html",
   "timeRequired": "PT2H",
+  "teaches": "Launch an AskOmics Interactive Tool\n - Integrate RNA-Seq and reference datasets into AskOmics\n - Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL\n - Complete the query to get the human homologs and their location using neXtProt database",
   "keywords": "transcriptomics",
   "description": "The questions this  addresses are:\n - How to integrate RNA-Seq results with other datasets using AskOmics?\n - How to query these datasets to answer a biological question?\n - How to exploit a distant SPARQL endpoint to retrieve information?\n\n\nThe objectives are:\n - Launch an AskOmics Interactive Tool\n - Integrate RNA-Seq and reference datasets into AskOmics\n - Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL\n - Complete the query to get the human homologs and their location using neXtProt database\n\n",
   "inLanguage": {
@@ -223,8 +251,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
@@ -244,8 +272,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
@@ -267,8 +295,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
@@ -288,8 +316,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
@@ -309,119 +337,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "name": "Mateo Boudet",
-      "image": "https://avatars.githubusercontent.com/mboudet",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7028-7620",
-      "orcid": "https://orcid.org/0000-0002-7028-7620"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "name": "Xavier Garnier",
-      "image": "https://avatars.githubusercontent.com/xgaia",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "name": "Anne Siegel",
-      "image": "https://avatars.githubusercontent.com/annesiegel",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "name": "Olivier Dameron",
-      "image": "https://avatars.githubusercontent.com/odameron",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
@@ -454,7 +371,12 @@
       "termCode": "topic_3308",
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "# Introduction"
 }
         </script>
         
@@ -529,8 +451,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -635,422 +556,6 @@
 
 
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<script type="application/ld+json">
-    
-
-
-{
-  "@context": "http://schema.org",
-  "@type": "LearningResource",
-  "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
-    "@type": "CreativeWork"
-  },
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "Students"
-  },
-  "citation": {
-    "@type": "CreativeWork",
-    "name": "Community-Driven Data Analysis Training for Biology",
-    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
-  },
-  "copyrightHolder": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "dateModified": "2022-10-18 14:23:35 +0000",
-  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "RNA-Seq analysis with AskOmics Interactive Tool",
-  "interactivityType": "mixed",
-  "isAccessibleForFree": true,
-  "isFamilyFriendly": true,
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
-  "producer": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "provider": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "sourceOrganization": {
-    "@type": "Organization",
-    "email": "galaxytrainingnetwork@gmail.com",
-    "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
-  },
-  "identifier": "https://github.com/galaxyproject/training-material",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
-  "isPartOf": {
-    "@type": "CreativeWork",
-    "name": "Transcriptomics",
-    "description": "Training material for all kinds of transcriptomics analysis.",
-    "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-  },
-  "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'RNA-Seq analysis with AskOmics Interactive Tool' tutorial",
-  "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html",
-  "timeRequired": "PT2H",
-  "keywords": "transcriptomics",
-  "description": "The questions this  addresses are:\n - How to integrate RNA-Seq results with other datasets using AskOmics?\n - How to query these datasets to answer a biological question?\n - How to exploit a distant SPARQL endpoint to retrieve information?\n\n\nThe objectives are:\n - Launch an AskOmics Interactive Tool\n - Integrate RNA-Seq and reference datasets into AskOmics\n - Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL\n - Complete the query to get the human homologs and their location using neXtProt database\n\n",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
-  "competencyRequired": [
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
-      "name": "Introduction to Galaxy Analyses",
-      "description": "Introduction to Galaxy Analyses",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
-      "name": "Quality Control",
-      "description": "Hands-on for 'Quality Control' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html",
-      "name": "Mapping",
-      "description": "Hands-on for 'Mapping' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "LearningResource",
-      "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-counts-to-genes/tutorial.html",
-      "name": "2: RNA-seq counts to genes",
-      "description": "Hands-on for '2: RNA-seq counts to genes' tutorial",
-      "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    }
-  ],
-  "author": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "name": "Xavier Garnier",
-      "image": "https://avatars.githubusercontent.com/xgaia",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "name": "Anne Siegel",
-      "image": "https://avatars.githubusercontent.com/annesiegel",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "name": "Olivier Dameron",
-      "image": "https://avatars.githubusercontent.com/odameron",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "name": "Mateo Boudet",
-      "image": "https://avatars.githubusercontent.com/mboudet",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7028-7620",
-      "orcid": "https://orcid.org/0000-0002-7028-7620"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/xgaia/",
-      "name": "Xavier Garnier",
-      "image": "https://avatars.githubusercontent.com/xgaia",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/annesiegel/",
-      "name": "Anne Siegel",
-      "image": "https://avatars.githubusercontent.com/annesiegel",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odameron/",
-      "name": "Olivier Dameron",
-      "image": "https://avatars.githubusercontent.com/odameron",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "name": "Mateo Boudet",
-      "image": "https://avatars.githubusercontent.com/mboudet",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7028-7620",
-      "orcid": "https://orcid.org/0000-0002-7028-7620"
-    }
-  ],
-  "about": [
-    {
-      "@type": "CreativeWork",
-      "name": "Transcriptomics",
-      "description": "Training material for all kinds of transcriptomics analysis.",
-      "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "http://edamontology.org/topic_3308",
-      "inDefinedTermSet": "http://edamontology.org",
-      "termCode": "topic_3308",
-      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3308"
-    }
-  ]
-}
-</script>
 
 <article class="tutorial topic-transcriptomics">
     <h1 data-toc-skip>RNA-Seq analysis with AskOmics Interactive Tool</h1>
@@ -1236,6 +741,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -1312,32 +821,66 @@
                 <li class="btn btn-default supporting_material">
 
 
+
+
+
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
+	<li class="dropdown-header">
+		<b>Known Working</b>
+	</li>
+	
+	
+
     
+    
+	<li class="dropdown-header">
+		<b>Possibly Working</b>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.eu" title="">
+			UseGalaxy.eu
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org" title="">
+			UseGalaxy.org
+		</a>
+	</li>
+    
+	<li>
+		<a class="dropdown-item" href="https://usegalaxy.org.au" title="">
+			UseGalaxy.org.au
+		</a>
+	</li>
+    
+
+    
+	<li class="dropdown-header">
+		Containers
+	</li>
         <li>
-            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics/transcriptomics/docker" title="Docker image for this tutorial">
+            <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/tree/main/topics//docker" title="Docker image for this tutorial">
                 <i class="fab fa-docker" aria-hidden="true"></i><span class="visually-hidden">docker_image</span> Docker image
             </a>
         </li>
     
-    
     </ul>
-
 
 </li>
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
         <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00297">https://gxy.io/GTN:T00297</a> </div>
@@ -1439,8 +982,11 @@ The query builder interface is used to create a path through the <strong>abstrac
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
+
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Import the files.</p>
@@ -1453,8 +999,11 @@ The query builder interface is used to create a path through the <strong>abstrac
 
       <!--SNIPPET-->
       <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
+
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ul>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor</li>   <li>Select the desired files</li>   <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>   <li>Click on <strong>Import</strong></li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to the correct folder as indicated by your instructor</li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <p><!--END_SNIPPET--></p>
 
       <ul>
         <li>
@@ -1496,6 +1045,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
 
   <!--SNIPPET-->
   <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select  your desired datatype     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+  <p><!--END_SNIPPET--></p>
 </blockquote>
 
 <p>Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> (eye) icon and take a look at the uploaded files.</p>
@@ -2025,9 +1575,9 @@ note = "[Online; accessed TODAY]"
 
 <script>
 // update the date on load, or leave fallback of 'today'
-var d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -2035,6 +1585,23 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 
 
                 
+
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools: []
+</code></pre></div>
+                </blockquote>
+		
+
+
                 </section>
 
             </div>
@@ -2046,7 +1613,50 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00297">https://gxy.io/GTN:T00297</a>
+				</p>
+				
+				<p>
+					
+						This material licensed under
+					
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
         <script src="/training-material/assets/js/popper.min.js"></script>
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
