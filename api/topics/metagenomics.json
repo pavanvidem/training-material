@@ -1215,7 +1215,34 @@
       "dir": "topics/metagenomics/tutorials/taxonomic-profiling",
       "id": "metagenomics/taxonomic-profiling",
       "video_library": {
-        "tutorial": null,
+        "tutorial": {
+          "description": null,
+          "materials": [
+            {
+              "link": "topics/metagenomics/tutorials/taxonomic-profiling/tutorial.html",
+              "type": "Tutorial"
+            }
+          ],
+          "tags": [
+            "metagenomics"
+          ],
+          "versions": [
+            {
+              "link": "jszMnBKm6ig",
+              "speakers": [
+                "bebatut"
+              ],
+              "captions": [
+
+              ],
+              "length": "1H15M",
+              "galaxy_version": "23.01"
+            }
+          ],
+          "gtn_id": "metagenomics/taxonomic-profiling",
+          "title": "Taxonomic Profiling and Visualization of Metagenomic Data",
+          "captioned": false
+        },
         "slides": null,
         "demo": null,
         "both": null,
@@ -3140,6 +3167,11 @@
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
+            "usegalaxy": "true"
           }
         ],
         "inexact": [
@@ -3434,6 +3466,11 @@
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
+            "usegalaxy": "true"
           }
         ]
       },
@@ -3670,6 +3707,18 @@
           ],
           "type": "Tutorial",
           "versions": [
+            {
+              "link": "CGSBeCW3rpA",
+              "speakers": [
+                "shiltemann"
+              ],
+              "captions": [
+                "shiltemann"
+              ],
+              "date": "2023-05-19",
+              "length": "1H37M",
+              "galaxy_version": "23.01"
+            },
             {
               "captions": [
                 "shiltemann"
