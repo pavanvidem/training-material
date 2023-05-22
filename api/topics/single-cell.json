@@ -2672,7 +2672,7 @@
                 "pavanvidem"
               ],
               "captions": [
-
+                "pavanvidem"
               ],
               "date": "2023-05-19",
               "length": "19M",
@@ -2692,7 +2692,7 @@
             }
           ],
           "gtn_id": "single-cell/scrna-preprocessing-tenx",
-          "captioned": false
+          "captioned": true
         },
         "slides": null,
         "demo": null,
@@ -2953,8 +2953,18 @@
       "supported_servers": {
         "exact": [
           {
+            "url": "https://test.galaxyproject.org/",
+            "name": "Galaxy Test",
+            "usegalaxy": "false"
+          },
+          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org",
+            "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
           }
         ],
