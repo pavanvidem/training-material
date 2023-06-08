@@ -119,11 +119,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://galaxytrakr.org/",
         "name": "GalaxyTrakr",
         "usegalaxy": "false"
