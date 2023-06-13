@@ -156,11 +156,6 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.fr/",
             "name": "UseGalaxy.fr",
             "usegalaxy": "true"
@@ -666,11 +661,6 @@
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
             "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
           }
         ],
         "inexact": [
@@ -874,11 +864,6 @@
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
-          },
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
           }
         ],
         "inexact": [
@@ -1071,11 +1056,6 @@
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
-          },
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
           },
           {
             "url": "https://usegalaxy.no/",
@@ -1363,11 +1343,6 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -1514,11 +1489,6 @@
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
-          },
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
           },
           {
             "url": "https://usegalaxy.no/",
