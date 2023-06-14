@@ -109,7 +109,11 @@
 
     ],
     "inexact": [
-
+      {
+        "url": "https://usegalaxy.eu",
+        "name": "UseGalaxy.eu",
+        "usegalaxy": "true"
+      }
     ]
   },
   "admin_install": {
