@@ -183,6 +183,11 @@
   "supported_servers": {
     "exact": [
       {
+        "url": "https://test.galaxyproject.org/",
+        "name": "Galaxy Test",
+        "usegalaxy": "false"
+      },
+      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
@@ -203,11 +208,6 @@
         "url": "https://galaxy.hyphy.org/",
         "name": "HyPhy HIV NGS Tools",
         "usegalaxy": "false"
-      },
-      {
-        "url": "https://usegalaxy.be/",
-        "name": "UseGalaxy.be",
-        "usegalaxy": "true"
       },
       {
         "url": "https://usegalaxy.no/",

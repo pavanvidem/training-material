@@ -130,9 +130,9 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://usegalaxy.be/",
-        "name": "UseGalaxy.be",
-        "usegalaxy": "true"
+        "url": "https://test.galaxyproject.org/",
+        "name": "Galaxy Test",
+        "usegalaxy": "false"
       },
       {
         "url": "https://usegalaxy.eu",
@@ -146,11 +146,6 @@
       }
     ],
     "inexact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",

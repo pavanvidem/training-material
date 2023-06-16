@@ -141,11 +141,7 @@
       }
     ],
     "inexact": [
-      {
-        "url": "https://usegalaxy.be/",
-        "name": "UseGalaxy.be",
-        "usegalaxy": "true"
-      }
+
     ]
   },
   "admin_install": {
