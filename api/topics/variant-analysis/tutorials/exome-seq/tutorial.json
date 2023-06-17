@@ -141,6 +141,11 @@
         "url": "https://test.galaxyproject.org/",
         "name": "Galaxy Test",
         "usegalaxy": "false"
+      },
+      {
+        "url": "https://usegalaxy.be/",
+        "name": "UseGalaxy.be",
+        "usegalaxy": "true"
       }
     ],
     "inexact": [
