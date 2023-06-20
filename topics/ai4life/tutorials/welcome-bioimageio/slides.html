@@ -19,7 +19,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -34,9 +34,8 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/ai4life/tutorials/welcome-bioimageio/slides.html" />
@@ -46,7 +45,7 @@ Sentry.init({
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Welcome to the BioImage Model Zoo">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-05-17 13:13:45 +0000">
+<meta name="DC.date" content="2023-05-18 13:22:53 +0000">
 <meta name="DC.creator" content="Caterina Fuster-Barceló">
 
         
@@ -86,7 +85,7 @@ Sentry.init({
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-05-17 13:13:45 +0000",
+  "dateModified": "2023-05-18 13:22:53 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Welcome to the BioImage Model Zoo",
   "interactivityType": "mixed",
@@ -143,9 +142,9 @@ Sentry.init({
   "name": "Slides for 'Welcome to the BioImage Model Zoo' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/ai4life/tutorials/welcome-bioimageio/slides.html",
   "timeRequired": "PT5M",
-  "teaches": "Overview of the BioImage Model Zoo\n - Content of the BioImage Model Zoo\n - Models of the BioImage Model Zoo",
+  "teaches": "Overview\n - Content\n - Models",
   "keywords": "ai4life, bioimageio, image analysis",
-  "description": "The questions this  addresses are:\n - What can be found in the BioImage Model Zoo?\n - Why is it worth trying?\n - How does it work?\n\n\nThe objectives are:\n - Overview of the BioImage Model Zoo\n - Content of the BioImage Model Zoo\n - Models of the BioImage Model Zoo\n\n",
+  "description": "The questions this  addresses are:\n - What can be found in the BioImage Model Zoo?\n - Why is it worth trying?\n - How does it work?\n\n\nThe objectives are:\n - Overview\n - Content\n - Models\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
@@ -278,7 +277,7 @@ class: center, middle, inverse
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=27" alt="Avatar">Caterina Fuster-Barceló</a>
+		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=36" alt="Avatar">Caterina Fuster-Barceló</a>
 	</div>
 
 </div>
@@ -343,11 +342,11 @@ Useful when presenting.
 ### &lt;i class=&quot;fas fa-bullseye&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;objectives&lt;/span&gt; Objectives
 
 
-- Overview of the BioImage Model Zoo
+- Overview
 
-- Content of the BioImage Model Zoo
+- Content
 
-- Models of the BioImage Model Zoo
+- Models
 
 
 ---
@@ -360,25 +359,22 @@ Useful when presenting.
 - Python notebooks to train or fine-tune your models.
 
 ???
-In the Bioimage Model Zoo you can find pretrained models to perform different bioimage analysis tasks as well as
-reference datasets used to train the models.
+In the Bioimage Model Zoo you can find pretrained models to perform different bioimage analysis tasks as well as reference datasets used to train the models.
 Between many different tools and softwares, you can also find python notebooks to train or fine-tune your models easily.
 
 ---
 
 ## Why is it worth trying?
 
-You can easily run any of the models in user-friendly tools such as Ilastik, deepImageJ, ZeroCostDL4Mic, ImJoy, Fiji,
-Icy, QuPath or more.
+You can easily run any of the models in user-friendly tools such as Ilastik, deepImageJ, ZeroCostDL4Mic, ImJoy, Fiji, Icy, QuPath or more.
 
 ???
-You can easily run any of the models in user-friendly tools such as Ilastik, deepImageJ, ZeroCostDL4Mic, ImJoy, Fiji,
-Icy, QuPath or more.
+You can easily run any of the models in user-friendly tools such as Ilastik, deepImageJ, ZeroCostDL4Mic, ImJoy, Fiji, Icy, QuPath or more.
 
 ---
 ### BioImage Model Zoo: Overview
 
-&lt;figure id=&quot;figure-1&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-01.png&quot; alt=&quot;Consumer Software of Bioimageio. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;:&lt;/span&gt; Consumer software of the Bioimageio&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-1&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-01.png&quot;  alt=&quot;Consumer Software of Bioimageio. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;:&lt;/span&gt; Consumer software of the Bioimageio&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
 If you access the BioImage Model Zoo webpage you can find all consumer software that can run the bioimage io models.
@@ -386,25 +382,23 @@ If you access the BioImage Model Zoo webpage you can find all consumer software 
 ---
 ### BioImage Model Zoo: Overview
 
-&lt;figure id=&quot;figure-2&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-02.png&quot; alt=&quot;Choose a category. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;:&lt;/span&gt; Choose a category&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-2&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-02.png&quot;  alt=&quot;Choose a category. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;:&lt;/span&gt; Choose a category&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
-Depending on the task you wish to perform, you may cohose the type of card you are looking for. It will depend on the
-model, application or dataset you wish to use.
+Depending on the task you wish to perform, you may cohose the type of card you are looking for. It will depend on the model, application or dataset you wish to use.
 
 ---
 ### BioImage Model Zoo: Overview
 
-&lt;figure id=&quot;figure-3&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-03.png&quot; alt=&quot;Search bar. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;:&lt;/span&gt; Search bar&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-3&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-03.png&quot;  alt=&quot;Search bar. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;:&lt;/span&gt; Search bar&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
-In the search bar you can write an image processing task, the name of a model or a bioimaging modality. It will suggest
-you the existing choices.
+In the search bar you can write an image processing task, the name of a model or a bioimaging modality. It will suggest you the existing choices.
 
 ---
 ### BioImage Model Zoo: Content
 
-&lt;figure id=&quot;figure-4&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-04.png&quot; alt=&quot;BioImage Model Zoo Content. &quot;  width=&quot;906&quot; height=500 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 4&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Content&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-4&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-04.png&quot;  alt=&quot;BioImage Model Zoo Content. &quot;  width=&quot;906&quot; height=500 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 4&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Content&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
 The content of bioimage io such as models, datasets and applications are provided as cards.
@@ -412,17 +406,16 @@ The content of bioimage io such as models, datasets and applications are provide
 ---
 ### BioImage Model Zoo: Models
 
-&lt;figure id=&quot;figure-5&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-05.png&quot; alt=&quot;BioImage Model Zoo Model Cards. &quot;  width=&quot;1073&quot; height=615 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Model Cards&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-5&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-05.png&quot;  alt=&quot;BioImage Model Zoo Model Cards. &quot;  width=&quot;1073&quot; height=615 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Model Cards&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
-In each model card you can find interactive buttons and the description of the model itself. These buttons will provide
-you some of the features of that model such as the training dataset or the license.
+In each model card you can find interactive buttons and the description of the model itself. These buttons will provide you some of the features of that model such as the training dataset or the license.
 You can also choose the consumer software to run the model, share this model, download it and more.
 
 ---
 ### BioImage Model Zoo: Models
 
-&lt;figure id=&quot;figure-6&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-06.png&quot; alt=&quot;BioImage Model Zoo Model Download. &quot;  width=&quot;950&quot; height=516 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Model Download&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-6&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-06.png&quot;  alt=&quot;BioImage Model Zoo Model Download. &quot;  width=&quot;950&quot; height=516 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Model Download&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
 If you want, you can click on the download button to download the method and click on the consumer software you chose.
@@ -433,7 +426,7 @@ It will download automatically.
 
 If you want to know more about the Bioimage Model Zoo, check out the documentation or contact us!
 
-&lt;figure id=&quot;figure-7&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-07.png&quot; alt=&quot;BioImage Model Zoo Documentation. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Documentation&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-7&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/welcome-bioimageio-07.png&quot;  alt=&quot;BioImage Model Zoo Documentation. &quot;  width=&quot;961&quot; height=721 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;:&lt;/span&gt; BioImage Model Zoo Documentation&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
 If you want to know more about the Bioimage Model Zoo, check our documentation or contact us!
@@ -454,7 +447,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=27" alt="Avatar">Caterina Fuster-Barceló</a>
+		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=36" alt="Avatar">Caterina Fuster-Barceló</a>
 	</div>
 
 </div>

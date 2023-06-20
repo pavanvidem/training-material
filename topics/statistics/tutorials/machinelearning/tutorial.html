@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/machinelearning/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -58,7 +62,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Basics of machine learning">
         <meta property="og:description" content="Statistical Analyses for omics data and machine learning ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -284,7 +288,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/statistics/tutorials/machinelearning/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/statistics/tutorials/machinelearning/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -331,7 +335,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -344,7 +348,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -381,14 +385,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-statistics">
     <h1 data-toc-skip>Basics of machine learning</h1>
@@ -398,7 +395,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+		Authors: <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=36" alt="Avatar">Anup Kumar</a>
 	</div>
 
 </div>
@@ -572,12 +569,6 @@ Sentry.init({
     
     
 	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
-	<li>
 		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
 			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
 		</a>
@@ -613,12 +604,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 9, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00270">https://gxy.io/GTN:T00270</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00270">https://gxy.io/GTN:T00270</a> </div>
         
     </blockquote>
     </section>
@@ -637,19 +629,19 @@ Sentry.init({
 
 <p><a href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a> uses techniques from statistics, mathematics and computer science to make computer programs learn from data. It is one of the most popular fields of computer science and finds applications in multiple streams of data analysis such as <a href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a>, <a href="https://en.wikipedia.org/wiki/Regression_analysis">regression</a>, <a href="https://en.wikipedia.org/wiki/Cluster_analysis">clustering</a>, <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">dimensionality reduction</a>, <a href="https://en.wikipedia.org/wiki/Density_estimation">density estimation</a> and many more. Some real-life applications are spam filtering, medical diagnosis, autonomous driving, recommendation systems, facial recognition, stock prices prediction and many more. The following image shows a basic flow of any machine learning task. Data is provided by a user to a machine learning algorithm for analysis.</p>
 
-<figure id="figure-1"><img src="images/ml_basics.png" alt="data. " width="709" height="503" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Flow of a machine learning task.</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="images/ml_basics.png" alt="data. " width="709" height="503" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Flow of a machine learning task.</figcaption></figure>
 
 <p>There are multiple ways in which machine learning can be used to perform data analysis. They depend on the nature of data and the kind of data analysis. The following image shows the most popular ones. In <a href="https://en.wikipedia.org/wiki/Supervised_learning">supervised learning</a> techniques, the categories of data records are known beforehand. But in <a href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised learning</a>, the categories of data records are not known.</p>
 
-<figure id="figure-2"><img src="images/variants_ml.png" alt="data. " width="713" height="384" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Different types of machine learning.</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="images/variants_ml.png" alt="data. " width="713" height="384" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Different types of machine learning.</figcaption></figure>
 
 <p>In general, machine learning can be used in multiple real-life tasks by applying its variants as depicted in the following image.</p>
 
-<figure id="figure-3"><img src="images/usage_ml.png" alt="data. " width="688" height="504" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Real-life usage of machine learning.</figcaption></figure>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="images/usage_ml.png" alt="data. " width="688" height="504" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Real-life usage of machine learning.</figcaption></figure>
 
 <p>The following image shows how a classification task is performed. The complete data is divided into training and test sets. The training set is used by a classifier to learn features. It results in a trained model and its robustness (of learning) is evaluated using the test set (unseen by the classifier during the training).</p>
 
-<figure id="figure-4"><img src="images/prediction.png" alt="data. " width="543" height="654" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Supervised learning.</figcaption></figure>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="images/prediction.png" alt="data. " width="543" height="654" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Supervised learning.</figcaption></figure>
 
 <p>This tutorial shows how to use a machine learning module implemented as a Galaxy tool. The data used in this tutorial is available at <a href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">Zenodo</a>.</p>
 
@@ -673,7 +665,7 @@ Sentry.init({
 <p>The datasets required for this tutorial contain 9 features of breast cells which include the thickness of clump, cell-size, cell-shape and so on (<a href="https://github.com/EpistasisLab/pmlb/tree/master/datasets/breast_w">more information</a>). In addition to these features, the training dataset contains one more column as <code class="language-plaintext highlighter-rouge">target</code>. It has a binary value (0 or 1) for each row. <code class="language-plaintext highlighter-rouge">0</code> indicates no breast cancer and <code class="language-plaintext highlighter-rouge">1</code> indicates breast cancer. The test dataset does not contain the <code class="language-plaintext highlighter-rouge">target</code> column.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Data upload</div>
 
   <ol>
     <li>
@@ -691,7 +683,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -704,9 +696,9 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
     <li>
       <p>The datasets should look like these:</p>
 
-      <figure id="figure-5"><img src="images/train_data.png" alt="data. " width="1157" height="381" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Training data (breast-w_train) with targets (9 features and one target).</figcaption></figure>
+      <figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="images/train_data.png" alt="data. " width="1157" height="381" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Training data (breast-w_train) with targets (9 features and one target).</figcaption></figure>
 
-      <figure id="figure-6"><img src="images/test_data.png" alt="data. " width="1103" height="403" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Test data (breast-w_test) (9 features and no target).</figcaption></figure>
+      <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="images/test_data.png" alt="data. " width="1103" height="403" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Test data (breast-w_test) (9 features and no target).</figcaption></figure>
     </li>
   </ol>
 </blockquote>
@@ -715,7 +707,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 <p>In this step, we will use the <a href="https://scikit-learn.org/stable/modules/svm.html#svm-classification">SVM (support vector machine)</a> classifier for training on the <code class="language-plaintext highlighter-rouge">breast-w_train</code> dataset. The classifier learns a mapping between each row and its category. SVM is a memory efficient classifier which needs only those data points which lie on the decision boundaries among different classes to predict a class for a new sample. The rest of the data points can be thrown away. We will use the <code class="language-plaintext highlighter-rouge">LinearSVC</code> variant of SVM which is faster. Other variants <code class="language-plaintext highlighter-rouge">SVC</code> and <code class="language-plaintext highlighter-rouge">NuSVC</code> have high running time for large datasets. The last column of the training dataset contains a category/class for each row. The classifier learns a mapping between data row and its category which is called a trained model. The trained model is used to predict the categories of the unseen data.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-train-a-classifier"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Train a classifier</div>
+  <div class="box-title hands-on-title" id="hands-on-train-a-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train a classifier</div>
 
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1" title="Support vector machines (SVMs) for classification tool" aria-role="link"><strong>Support vector machines (SVMs) for classification</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1</span></span> with the following parameters to train:</p>
   <ul>
@@ -741,7 +733,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 <p>The previous step produced a trained model (a zip archive) which we will now use to predict classes for the test data (<code class="language-plaintext highlighter-rouge">breast-w_test</code>).</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-predict-using-a-trained-model"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Predict using a trained model</div>
+  <div class="box-title hands-on-title" id="hands-on-predict-using-a-trained-model"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict using a trained model</div>
 
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1" title="Support vector machines (SVMs) for classification tool" aria-role="link"><strong>Support vector machines (SVMs) for classification</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.1</span></span> with the following parameters:</p>
   <ul>
@@ -761,7 +753,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 <p>The last column of the predicted dataset shows the category of each row. A row either got <code class="language-plaintext highlighter-rouge">0</code> (no breast cancer) or <code class="language-plaintext highlighter-rouge">1</code> (breast cancer) as its predicted category.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-see-the-predicted-column"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: See the predicted column</div>
+  <div class="box-title hands-on-title" id="hands-on-see-the-predicted-column"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: See the predicted column</div>
   <ol>
     <li>Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> (eye) icon of the dataset created by the previous step.</li>
     <li>The last column of the table shows the predicted category (<code class="language-plaintext highlighter-rouge">target</code>) for each row.</li>
@@ -770,7 +762,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-additional-ml-resources"><button class="gtn-boxify-button details" type="button" aria-controls="details-additional-ml-resources" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Additional ML resources<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-additional-ml-resources"><button class="gtn-boxify-button details" type="button" aria-controls="details-additional-ml-resources" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Additional ML resources<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Read more about <a href="http://scikit-learn.org/stable/">machine learning using scikit-learn</a>.</p>
 </blockquote>
@@ -835,6 +827,9 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
                             Anup Kumar,  <b>Basics of machine learning (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/machinelearning/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/machinelearning/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -856,12 +851,12 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 
 <code id="citation-code">@misc{statistics-machinelearning,
 author = "Anup Kumar",
-title = "Basics of machine learning (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/machinelearning/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Basics of machine learning (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/machinelearning/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -943,19 +938,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00270">https://gxy.io/GTN:T00270</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00270">https://gxy.io/GTN:T00270</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -975,7 +970,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -983,9 +978,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

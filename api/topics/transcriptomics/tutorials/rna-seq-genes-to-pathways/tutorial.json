@@ -36,6 +36,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bphipson/"
     }
   ],
+  "short_id": "T00300",
   "url": "/topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "rna-seq-genes-to-pathways",
@@ -62,7 +63,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.json",
@@ -78,11 +80,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -112,6 +109,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

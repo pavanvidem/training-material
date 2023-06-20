@@ -75,6 +75,7 @@
     }
   ],
   "subtopic": "core",
+  "short_id": "T00115",
   "url": "/topics/dev/tutorials/debugging/tutorial.html",
   "topic_name": "dev",
   "tutorial_name": "debugging",
@@ -115,6 +116,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

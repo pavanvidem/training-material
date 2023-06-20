@@ -110,6 +110,7 @@
         "language": "python",
         "snippet": "topics/climate/tutorials/pangeo-notebook/preamble.md"
       },
+      "short_id": "T00045",
       "url": "/topics/climate/tutorials/pangeo-notebook/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "pangeo-notebook",
@@ -171,7 +172,8 @@
               "name": "Anne Fouilloux",
               "url": "https://github.com/annefou"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/climate/tutorials/pangeo-notebook/tutorial.json",
@@ -190,6 +192,7 @@
 
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -247,6 +250,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
         }
       ],
+      "short_id": "T00041",
       "url": "/topics/climate/tutorials/climate-101/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "climate-101",
@@ -277,7 +281,8 @@
               "identifier": "https://orcid.org/0000-0002-1784-2920",
               "name": "Anne Fouilloux"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/climate/tutorials/climate-101/tutorial.json",
@@ -311,6 +316,7 @@
           }
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -443,6 +449,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/huitang-earth/"
         }
       ],
+      "short_id": "T00042",
       "url": "/topics/climate/tutorials/fates/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "fates",
@@ -540,7 +547,8 @@
               "identifier": "https://orcid.org/0000-0002-1784-2920",
               "name": "Anne Fouilloux"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/climate/tutorials/fates/tutorial.json",
@@ -556,11 +564,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -575,6 +578,7 @@
 
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -677,6 +681,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
         }
       ],
+      "short_id": "T00044",
       "url": "/topics/climate/tutorials/pangeo/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "pangeo",
@@ -738,7 +743,8 @@
               "name": "Anne Fouilloux",
               "url": "https://github.com/annefou"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/climate/tutorials/pangeo/tutorial.json",
@@ -757,11 +763,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -782,6 +783,7 @@
 
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -900,6 +902,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/j34ni/"
         }
       ],
+      "short_id": "S00037",
       "url": "/topics/climate/tutorials/introduction/slides.html",
       "topic_name": "climate",
       "tutorial_name": "introduction",
@@ -940,6 +943,7 @@
           }
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1034,6 +1038,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
         }
       ],
+      "short_id": "T00043",
       "url": "/topics/climate/tutorials/fates-jupyterlab/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "fates-jupyterlab",
@@ -1054,11 +1059,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -1089,6 +1089,7 @@
 
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1151,6 +1152,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
         }
       ],
+      "short_id": "T00046",
       "url": "/topics/climate/tutorials/panoply/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "panoply",
@@ -1172,11 +1174,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -1191,6 +1188,7 @@
 
         ]
       },
+      "topic_name_human": "Climate",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

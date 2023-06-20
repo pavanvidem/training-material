@@ -76,6 +76,7 @@
     "SQL",
     "Python"
   ],
+  "short_id": "T00109",
   "url": "/topics/data-science/tutorials/sql-python/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "sql-python",
@@ -116,6 +117,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -922,6 +922,15 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/heylf/"
   },
   {
+    "name": "Morgan Howells",
+    "email": "hexhowells@gmail.com",
+    "orcid": "0009-0008-9422-6380",
+    "joined": "2023-06",
+    "id": "hexhowells",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/hexhowells.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexhowells/"
+  },
+  {
     "name": "Helena Rasche",
     "email": "hexylena@galaxians.org",
     "orcid": "0000-0001-9760-8992",
@@ -1384,11 +1393,13 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kilpert/"
   },
   {
-    "name": "Katarzyna Murat",
+    "name": "Katarzyna Kamieniecka",
+    "orcid": "0009-0004-2454-5950",
     "joined": "2018-08",
-    "id": "kpbioteam",
-    "url": "https://training.galaxyproject.org/training-material/api/contributors/kpbioteam.json",
-    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpbioteam/"
+    "elixir_node": "uk",
+    "id": "kkamieniecka",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/kkamieniecka.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kkamieniecka/"
   },
   {
     "name": "Krzysztof Poterlowicz",
@@ -1396,9 +1407,9 @@
     "orcid": "0000-0001-6173-5674",
     "joined": "2017-09",
     "elixir_node": "uk",
-    "id": "kpoterlowicz",
-    "url": "https://training.galaxyproject.org/training-material/api/contributors/kpoterlowicz.json",
-    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpoterlowicz/"
+    "id": "poterlowicz-lab",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/poterlowicz-lab.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/poterlowicz-lab/"
   },
   {
     "name": "Mallory Freeberg",
@@ -1482,7 +1493,7 @@
   },
   {
     "name": "Matthias Fahrner",
-    "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+    "email": "matthias.fahrner@uniklinik-freiburg.de",
     "twitter": "mfahrner313",
     "orcid": "0000-0001-7955-2518",
     "joined": "2019-03",
@@ -1928,6 +1939,14 @@
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pravs3683/"
   },
   {
+    "name": "Peter Sefton",
+    "orcid": "0000-0002-3545-944X",
+    "joined": "2023-04",
+    "id": "ptsefton",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/ptsefton.json",
+    "page": "https://training.galaxyproject.org/training-material/hall-of-fame/ptsefton/"
+  },
+  {
     "name": "Peter van Heusden",
     "twitter": "pvanheus",
     "orcid": "0000-0001-6553-5274",
@@ -2160,9 +2179,17 @@
   },
   {
     "name": "Stian Soiland-Reyes",
-    "joined": "2023-04",
+    "email": "soiland-reyes@manchester.ac.uk",
+    "twitter": "soilandreyes",
     "orcid": "0000-0001-9842-9718",
+    "joined": "2023-04",
     "elixir_node": "uk",
+    "location": {
+      "country": "UK",
+      "lat": 53.46724379071192,
+      "lon": -2.233631283105614
+    },
+    "fediverse": "https://scholar.social/@soilandreyes",
     "id": "stain",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/stain.json",
     "page": "https://training.galaxyproject.org/training-material/hall-of-fame/stain/"

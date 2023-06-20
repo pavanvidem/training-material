@@ -43,6 +43,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
     }
   ],
+  "short_id": "T00192",
   "url": "/topics/introduction/tutorials/galaxy-reproduce/tutorial.html",
   "topic_name": "introduction",
   "tutorial_name": "galaxy-reproduce",
@@ -69,7 +70,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/introduction/tutorials/galaxy-reproduce/tutorial.json",
@@ -85,11 +87,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.mesocentre.uca.fr",
         "name": "Galaxy@AuBi",
@@ -124,6 +121,7 @@
       }
     ]
   },
+  "topic_name_human": "Introduction to Galaxy Analyses",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

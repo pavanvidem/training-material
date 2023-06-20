@@ -67,6 +67,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nagoue/"
     }
   ],
+  "short_id": "T00047",
   "url": "/topics/computational-chemistry/tutorials/analysis-md-simulations/tutorial.html",
   "topic_name": "computational-chemistry",
   "tutorial_name": "analysis-md-simulations",
@@ -97,7 +98,8 @@
           "identifier": "",
           "name": "Chris Barnett"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "main_workflow.ga",
@@ -110,7 +112,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/analysis-md-simulations/tutorial.json",
@@ -129,11 +132,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -158,6 +156,7 @@
       }
     ]
   },
+  "topic_name_human": "Computational chemistry",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

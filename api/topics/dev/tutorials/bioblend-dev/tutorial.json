@@ -58,6 +58,7 @@
     "API": "Application Programming Interface",
     "PR": "Pull Request"
   },
+  "short_id": "T00112",
   "url": "/topics/dev/tutorials/bioblend-dev/tutorial.html",
   "topic_name": "dev",
   "tutorial_name": "bioblend-dev",
@@ -98,6 +99,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

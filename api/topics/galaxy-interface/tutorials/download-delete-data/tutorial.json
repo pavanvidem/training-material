@@ -54,6 +54,7 @@
     }
   ],
   "subtopic": "cleanup",
+  "short_id": "T00147",
   "url": "/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "download-delete-data",
@@ -94,6 +95,7 @@
       }
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -114,6 +114,7 @@
       "type": "none"
     }
   ],
+  "short_id": "T00017",
   "url": "/topics/admin/tutorials/pulsar/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "pulsar",
@@ -232,6 +233,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

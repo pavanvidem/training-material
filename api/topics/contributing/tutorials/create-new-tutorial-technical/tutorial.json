@@ -97,6 +97,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
     }
   ],
+  "short_id": "T00060",
   "url": "/topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "create-new-tutorial-technical",
@@ -137,6 +138,7 @@
       }
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

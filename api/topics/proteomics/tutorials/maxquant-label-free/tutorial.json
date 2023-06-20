@@ -31,7 +31,7 @@
     },
     {
       "name": "Matthias Fahrner",
-      "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+      "email": "matthias.fahrner@uniklinik-freiburg.de",
       "twitter": "mfahrner313",
       "orcid": "0000-0001-7955-2518",
       "joined": "2019-03",
@@ -45,6 +45,7 @@
     "DDA",
     "label-free"
   ],
+  "short_id": "T00218",
   "url": "/topics/proteomics/tutorials/maxquant-label-free/tutorial.html",
   "topic_name": "proteomics",
   "tutorial_name": "maxquant-label-free",
@@ -71,7 +72,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/maxquant-label-free/tutorial.json",
@@ -87,11 +89,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -121,6 +118,7 @@
       }
     ]
   },
+  "topic_name_human": "Proteomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

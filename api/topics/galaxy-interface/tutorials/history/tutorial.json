@@ -38,6 +38,7 @@
     ]
   },
   "subtopic": "histories",
+  "short_id": "T00150",
   "url": "/topics/galaxy-interface/tutorials/history/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "history",
@@ -106,6 +107,7 @@
       }
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

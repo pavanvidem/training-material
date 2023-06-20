@@ -97,6 +97,7 @@
     }
   ],
   "subtopic": "features",
+  "short_id": "T00010",
   "url": "/topics/admin/tutorials/interactive-tools/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "interactive-tools",
@@ -171,6 +172,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

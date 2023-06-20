@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/external-auth/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -60,7 +64,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: External Authentication">
         <meta property="og:description" content="Resources related to configuration and maintenance of Gal...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -377,7 +381,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/admin/tutorials/external-auth/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/admin/tutorials/external-auth/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -424,7 +428,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -437,7 +441,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -474,14 +478,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'galaxyproject/admins'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-admin">
     <h1 data-toc-skip>External Authentication</h1>
@@ -491,7 +488,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/natefoo?s=27" alt="Avatar">Nate Coraor</a><a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		Authors: <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/natefoo?s=36" alt="Avatar">Nate Coraor</a><a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/nsoranzo?s=36" alt="Avatar">Nicola Soranzo</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar">Helena Rasche</a>
 	</div>
 
 </div>
@@ -824,12 +821,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00007">https://gxy.io/GTN:T00007</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00007">https://gxy.io/GTN:T00007</a> </div>
         
     </blockquote>
     </section>
@@ -864,7 +862,7 @@ Sentry.init({
 <h1 id="configuring-authentication">Configuring Authentication</h1>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-configuring-everything"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Configuring everything</div>
+  <div class="box-title hands-on-title" id="hands-on-configuring-everything"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Configuring everything</div>
 
   <ol>
     <li>Edit the galaxy.j2 template file in the templates/nginx directory and update the main location block defined for serving galaxy. Add the parameters:
@@ -892,7 +890,7 @@ Sentry.init({
       <p><!--END_SNIPPET--></p>
 
       <blockquote class="tip">
-        <div class="box-title tip-title" id="tip-running-this-tutorial-i-just-i-for-reports"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-this-tutorial-i-just-i-for-reports" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Running this tutorial <i>just</i> for Reports?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title tip-title" id="tip-running-this-tutorial-i-just-i-for-reports"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-this-tutorial-i-just-i-for-reports" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Running this tutorial <i>just</i> for Reports?<span class="fold-unfold fa fa-minus-square"></span></button></div>
         <p>Add the <code class="language-plaintext highlighter-rouge">auth_basic</code> and <code class="language-plaintext highlighter-rouge">auth_basic_user_file</code> lines to your <code class="language-plaintext highlighter-rouge">location /reports/</code></p>
       </blockquote>
 
@@ -903,7 +901,7 @@ Sentry.init({
       <p><code class="language-plaintext highlighter-rouge">GX_SECRET</code> is added as a header for security purposes, to prevent any other users on the system impersonating nginx and sending requests to Galaxy. NGINX and other webservers like Apache will strip any user-sent <code class="language-plaintext highlighter-rouge">REMOTE_USER</code> headers, as that header defines the authenticated user. If you can talk directly to Galaxy (e.g. via curl) and provide the <code class="language-plaintext highlighter-rouge">REMOTE_USER</code> header, you can impersonate any other use. While having Galaxy listen on <code class="language-plaintext highlighter-rouge">127.0.0.1</code> prevents any requests from outside of the system reaching Galaxy, anyone on the system can still send requests to that port. Here you can choose to switch to a unix socket with permissions only permitting Galaxy and Nginx to connect. <code class="language-plaintext highlighter-rouge">GX_SECRET</code> adds additional security as it needs to match <code class="language-plaintext highlighter-rouge">remote_user_secret</code> in your galaxy configutation.</p>
 
       <blockquote class="tip">
-        <div class="box-title tip-title" id="tip-proxy-bypass"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-proxy-bypass" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Proxy bypass<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title tip-title" id="tip-proxy-bypass"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-proxy-bypass" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Proxy bypass<span class="fold-unfold fa fa-minus-square"></span></button></div>
         <p>Users can bypass the authentication only if they can talk directly to the gunicorn processes (if you have socket/http: 0.0.0.0, or if it is directly responsible for serving galaxy, and there is no proxy.)
 This can happen mostly when some users have command line access to the Galaxy server, which is considered a bad practice.</p>
       </blockquote>
@@ -913,12 +911,12 @@ This can happen mostly when some users have command line access to the Galaxy se
 
       <p>Add a pre_task using the <a href="https://docs.ansible.com/ansible/2.4/htpasswd_module.html"><code class="language-plaintext highlighter-rouge">htpasswd</code></a> module which sets up a password file in <code class="language-plaintext highlighter-rouge">/etc/nginx/passwd</code>, with owner and group set to root, and a name and password, and a mode of 0640.</p>
       <blockquote class="question">
-        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>How does your final configuration look?</p>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@@ -7,6 +7,15 @@</span>
          name: galaxy
@@ -954,7 +952,7 @@ This can happen mostly when some users have command line access to the Galaxy se
 </code></pre></div>      </div>
 
       <blockquote class="tip">
-        <div class="box-title tip-title" id="tip-running-this-tutorial-i-just-i-for-reports-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-this-tutorial-i-just-i-for-reports-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Running this tutorial <i>just</i> for Reports?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title tip-title" id="tip-running-this-tutorial-i-just-i-for-reports-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-this-tutorial-i-just-i-for-reports-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Running this tutorial <i>just</i> for Reports?<span class="fold-unfold fa fa-minus-square"></span></button></div>
         <p>You don’t need to make the above changes for Galaxy then.</p>
       </blockquote>
 
@@ -966,11 +964,11 @@ This can happen mostly when some users have command line access to the Galaxy se
 </blockquote>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-access-denied"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Access denied</div>
+  <div class="box-title comment-title" id="comment-access-denied"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Access denied</div>
 
   <p>If you see this message, it is because nginx is not correctly sending the <code class="language-plaintext highlighter-rouge">REMOTE_USER</code> or the <code class="language-plaintext highlighter-rouge">GX_SECRET</code> values.</p>
 
-  <p><img src="../../images/access_denied.png" alt="access denied message. " loading="lazy" /></p>
+  <p><img src="../../images/access_denied.png" alt="access denied message. " width="1062" height="326" loading="lazy" /></p>
 
 </blockquote>
 
@@ -979,7 +977,7 @@ This can happen mostly when some users have command line access to the Galaxy se
 <p>You should now be presented with a password dialog when attempting to load the Galaxy UI.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-testing"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Testing</div>
+  <div class="box-title hands-on-title" id="hands-on-testing"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Testing</div>
 
   <ol>
     <li>
@@ -1008,7 +1006,7 @@ This can happen mostly when some users have command line access to the Galaxy se
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-notification-of-registration"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-notification-of-registration" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Notification of Registration<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-notification-of-registration"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-notification-of-registration" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Notification of Registration<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>There is no built-in way to be notified if users are registered, with external authentication or built-in. However, you could automate this easily. There is a <a href="https://github.com/usegalaxy-eu/gxadmin">gxadmin</a> command we use called <code class="language-plaintext highlighter-rouge">gxadmin query latest-users</code> which Björn uses often. Other sites have other methods, e.g. Nicola’s <a href="https://gist.github.com/nsoranzo/f023e26aa60024ef6a7e3a3fe5fb2e4f">cron script</a> which runs daily on his server, to add new users to a group according to their email domain name.</p>
 </blockquote>
 
@@ -1017,7 +1015,7 @@ This can happen mostly when some users have command line access to the Galaxy se
 <p>We don’t want to leave Galaxy this way for the rest of our workshop.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-reverting-the-changes"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Reverting the changes</div>
+  <div class="box-title hands-on-title" id="hands-on-reverting-the-changes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Reverting the changes</div>
 
   <ol>
     <li>
@@ -1080,6 +1078,9 @@ This can happen mostly when some users have command line access to the Galaxy se
                             Nate Coraor, Nicola Soranzo, Helena Rasche,  <b>External Authentication (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/external-auth/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/external-auth/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1101,12 +1102,12 @@ This can happen mostly when some users have command line access to the Galaxy se
 
 <code id="citation-code">@misc{admin-external-auth,
 author = "Nate Coraor and Nicola Soranzo and Helena Rasche",
-title = "External Authentication (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/external-auth/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "External Authentication (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/external-auth/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1183,19 +1184,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00007">https://gxy.io/GTN:T00007</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00007">https://gxy.io/GTN:T00007</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1215,7 +1216,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1223,9 +1224,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

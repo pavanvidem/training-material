@@ -118,6 +118,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
     }
   ],
+  "short_id": "T00116",
   "url": "/topics/dev/tutorials/interactive-tools/tutorial.html",
   "topic_name": "dev",
   "tutorial_name": "interactive-tools",
@@ -158,6 +159,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

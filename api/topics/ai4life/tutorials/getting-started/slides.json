@@ -10,20 +10,18 @@
   "questions": [
     "What is BioImage Model Zoo?",
     "Who participates in the BioImage Model Zoo?",
-    "Who can participate in BioImage Model Zoo?"
+    "Who can participate in the BioImage Model Zoo?"
   ],
   "objectives": [
     "Share what BioImage Model Zoo is.",
     "Provide a general view of what can be done with BioImage Model Zoo.",
-    "Explain who can and should participate into the BioImage Model Zoo."
+    "Explain who can and should contribute to the BioImage Model Zoo."
   ],
   "time_estimation": "5m",
-  "key_points": [
-    "The BioImage Model Zoo is a community-driven AI model repository to facilitate the adoption of AI methods among the bioimage community by providing easy access to pretrained AI models."
-  ],
   "contributors": [
     "cfusterbarcelo"
   ],
+  "short_id": "S00105",
   "url": "/topics/ai4life/tutorials/getting-started/slides.html",
   "topic_name": "ai4life",
   "tutorial_name": "getting-started",
@@ -64,6 +62,7 @@
       }
     ]
   },
+  "topic_name_human": "Image analysis using Deep Learning",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -84,7 +83,6 @@
     "video": true
   },
   "type": "tutorial",
-  "short_id": "S00105",
   "redirect_from": [
     "/short/ai4life/getting-started/slides",
     "/short/S00105"

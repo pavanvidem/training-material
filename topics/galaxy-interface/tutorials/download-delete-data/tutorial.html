@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Downloading and Deleting Data in Galaxy">
         <meta property="og:description" content="A collection of microtutorials explaining various feature...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -288,7 +292,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/galaxy-interface/tutorials/download-delete-data/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/galaxy-interface/tutorials/download-delete-data/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -335,7 +339,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -348,7 +352,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -385,14 +389,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-galaxy-interface">
     <h1 data-toc-skip>Downloading and Deleting Data in Galaxy</h1>
@@ -402,7 +399,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/slugger70?s=27" alt="Avatar">Simon Gladman</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		Authors: <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar">Simon Gladman</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar">Helena Rasche</a>
 	</div>
 
 </div>
@@ -461,12 +458,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Feb 2, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00147">https://gxy.io/GTN:T00147</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00147">https://gxy.io/GTN:T00147</a> </div>
         
     </blockquote>
     </section>
@@ -556,18 +554,18 @@ Sentry.init({
 <p>The following example steps through the process using a generic history. The history pictured in the screenshots will most likely not appear in your Galaxy server but the process will be the same.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-download-a-single-file"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Download a single file</div>
+  <div class="box-title hands-on-title" id="hands-on-download-a-single-file"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Download a single file</div>
 
   <ol>
     <li>
       <p>In the History pane, click on the name of the file you wish to download. This will expand the file in the History to show more details about it.</p>
 
-      <p><img src="../../images/download-delete/expanded_file_history.png" alt="expanded file history. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/expanded_file_history.png" alt="expanded file history. " width="264" height="600" loading="lazy" /></p>
     </li>
     <li>
       <p>Click the <i class="far fa-save" aria-hidden="true"></i><span class="visually-hidden">galaxy-save</span> <strong>Download</strong> button. The dataset will now be downloaded to your computer.</p>
 
-      <p><img src="../../images/download-delete/file_download_button.png" alt="download button. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/file_download_button.png" alt="download button. " width="260" height="369" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -582,7 +580,7 @@ Sentry.init({
 <p>The concept is very simple however, we are just going to lump together our files of interest and download them all at once.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-download-multiple-datasets"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Download multiple datasets</div>
+  <div class="box-title hands-on-title" id="hands-on-download-multiple-datasets"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Download multiple datasets</div>
 
   <p><strong>Create a collection of the files you want</strong></p>
 
@@ -590,14 +588,14 @@ Sentry.init({
     <li>
       <p>Click on the <strong>Collections</strong> button at the top of the History pane (the little checkbox)</p>
 
-      <p><img src="../../images/download-delete/collections_button.png" alt="collections button. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/collections_button.png" alt="collections button. " width="263" height="260" loading="lazy" /></p>
 
       <p>This shows a different view of the History. Each file now has a checkbox next to it and there are some new buttons in the header section of the History.</p>
     </li>
     <li>
       <p>Select the files you want by clicking on their checkboxes, you can also select all or none of them.</p>
 
-      <p><img src="../../images/download-delete/collection_selection.png" alt="collection selection. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/collection_selection.png" alt="collection selection. " width="261" height="363" loading="lazy" /></p>
     </li>
     <li>
       <p>Once you have selected everything you want, click the <strong>for all selected</strong> button and then <strong>Build Dataset List</strong></p>
@@ -605,12 +603,12 @@ Sentry.init({
     <li>
       <p>A new interface opens, showing you the files you have selected. Give the list a name in the appropriate box and click <strong>Create</strong></p>
 
-      <p><img src="../../images/download-delete/list_interface.png" alt="list interface. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/list_interface.png" alt="list interface. " width="863" height="392" loading="lazy" /></p>
     </li>
     <li>
       <p>A new collection item has now appeared in your History.</p>
 
-      <p><img src="../../images/download-delete/collection_in_history.png" alt="collection in history. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/collection_in_history.png" alt="collection in history. " width="263" height="246" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -621,7 +619,7 @@ Sentry.init({
     <li>
       <p>Click the <i class="far fa-save" aria-hidden="true"></i><span class="visually-hidden">galaxy-save</span> <strong>Download Collection</strong> button to download the collection of files as a compressed archive to your computer.</p>
 
-      <p><img src="../../images/download-delete/collection_download.png" alt="collection_download. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/collection_download.png" alt="collection_download. " width="262" height="317" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -636,23 +634,23 @@ Sentry.init({
 <p>Depending on the size of the files and the complexity of the history, it can take quite some time to create the archive before download. For example it can take over 24 hours to create an archive file of a 50GB history. It may be simpler just to download the individual files of interest as outlined above.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-export-an-entire-history"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Export an entire history</div>
+  <div class="box-title hands-on-title" id="hands-on-export-an-entire-history"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Export an entire history</div>
 
   <ol>
     <li>
       <p>In the History pane, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> history menu, then select <strong>Export History to File</strong></p>
 
-      <p><img src="../../images/download-delete/history_export.png" alt="history export. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/history_export.png" alt="history export. " width="284" height="572" loading="lazy" /></p>
     </li>
     <li>
       <p>Galaxy will now start archiving the history and making it available for download. In the main Galaxy pane, a message will appear with a download URL. Once the history has been completely archived, the URL can be used to download the history archive file.</p>
 
-      <p><img src="../../images/download-delete/history_export_link.png" alt="history export link. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/history_export_link.png" alt="history export link. " width="869" height="66" loading="lazy" /></p>
     </li>
     <li>
       <p>Click on the URL to start the download. If it isn’t ready yet, it will show you the following message. You will need to save the URL and try again later.</p>
 
-      <p><img src="../../images/download-delete/history_export_not_ready.png" alt="history export not ready. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/history_export_not_ready.png" alt="history export not ready. " width="806" height="51" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -669,28 +667,28 @@ Sentry.init({
 <p>This section will show you how to delete and then purge a single dataset from a history. You can also delete multiple datasets and then purge them all at once.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-delete-a-single-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Delete a single dataset</div>
+  <div class="box-title hands-on-title" id="hands-on-delete-a-single-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Delete a single dataset</div>
 
   <ol>
     <li>
       <p>Click on the <i class="fas fa-trash" aria-hidden="true"></i><span class="visually-hidden">galaxy-delete</span> <strong>Delete</strong> button of the dataset you wish to delete</p>
 
-      <p><img src="../../images/download-delete/delete_button.png" alt="delete button. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/delete_button.png" alt="delete button. " width="259" height="263" loading="lazy" /></p>
     </li>
     <li>
       <p>The dataset has now disappeared from the history pane and the text <code class="language-plaintext highlighter-rouge">1 deleted</code> appears below the history name.</p>
 
-      <p><img src="../../images/download-delete/one_deleted.png" alt="one deleted. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/one_deleted.png" alt="one deleted. " width="259" height="150" loading="lazy" /></p>
     </li>
     <li>
       <p>You can see all of the deleted datasets by clicking on the <code class="language-plaintext highlighter-rouge">1 deleted</code> link at the top of the history pane. This will allow you to either: <code class="language-plaintext highlighter-rouge">Undelete it</code> OR <code class="language-plaintext highlighter-rouge">Permanently remove it from disk</code> by clicking on the appropriate link. <strong>Note: Once you click on the permanently remove it from disk link you CANNOT undo it.</strong></p>
 
-      <p><img src="../../images/download-delete/show_deleted.png" alt="show deleted. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/show_deleted.png" alt="show deleted. " width="260" height="230" loading="lazy" /></p>
     </li>
     <li>
       <p>You can also delete and purge multiple datasets at a time by clicking on the <strong>delete</strong> button on all the datasets you want to remove and then purge them all at once by going to the history menu (the little cog wheel) and selecting <strong>Purge Deleted Datasets</strong></p>
 
-      <p><img src="../../images/download-delete/purge_deleted.png" alt="purge deleted. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/purge_deleted.png" alt="purge deleted. " width="238" height="562" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -701,24 +699,24 @@ Sentry.init({
 <p>You can delete an entire history and purge it from disk.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-delete-an-entire-history"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Delete an entire History</div>
+  <div class="box-title hands-on-title" id="hands-on-delete-an-entire-history"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Delete an entire History</div>
 
   <ol>
     <li>
       <p>Open the <strong>History List</strong> display by clicking on the <i class="fas fa-columns" aria-hidden="true"></i><span class="visually-hidden">galaxy-columns</span> history list button</p>
 
-      <p><img src="../../images/download-delete/saved_histories.png" alt="saved histories. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/saved_histories.png" alt="saved histories. " width="287" height="80" loading="lazy" /></p>
     </li>
     <li>
       <p>You will now see a list of all of your histories</p>
 
-      <p><img src="../../images/download-delete/all_histories.png" alt="all_histories. " loading="lazy" /></p>
+      <p><img src="../../images/download-delete/all_histories.png" alt="all_histories. " width="645" height="473" loading="lazy" /></p>
     </li>
     <li>
       <p>You can now delete a history by clicking on the <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> dropdown arrow at the top of the history, and then selecting <strong>Delete</strong> OR <strong>Purge</strong>.</p>
 
       <blockquote class="warning">
-        <div class="box-title warning-title" id="warning-you-can-lose-data"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Warning: You can lose data</div>
+        <div class="box-title warning-title" id="warning-you-can-lose-data"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: You can lose data</div>
         <p><strong>NOTE: Selecting Delete Permanently will remove the entire history and all of its non shared datasets from disk. It CANNOT be undone.</strong></p>
       </blockquote>
     </li>
@@ -791,6 +789,9 @@ Sentry.init({
                             Simon Gladman, Helena Rasche,  <b>Downloading and Deleting Data in Galaxy (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -812,12 +813,12 @@ Sentry.init({
 
 <code id="citation-code">@misc{galaxy-interface-download-delete-data,
 author = "Simon Gladman and Helena Rasche",
-title = "Downloading and Deleting Data in Galaxy (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Downloading and Deleting Data in Galaxy (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/download-delete-data/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -894,19 +895,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00147">https://gxy.io/GTN:T00147</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00147">https://gxy.io/GTN:T00147</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -926,7 +927,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -934,9 +935,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

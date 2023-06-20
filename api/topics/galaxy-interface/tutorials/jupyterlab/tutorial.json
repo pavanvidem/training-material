@@ -37,6 +37,7 @@
     ]
   },
   "subtopic": "analyse",
+  "short_id": "T00153",
   "url": "/topics/galaxy-interface/tutorials/jupyterlab/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "jupyterlab",
@@ -57,11 +58,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
@@ -92,6 +88,7 @@
 
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

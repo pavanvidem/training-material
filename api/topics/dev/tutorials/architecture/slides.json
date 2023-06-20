@@ -25,6 +25,7 @@
     "jmchilton",
     "bgruening"
   ],
+  "short_id": "S00043",
   "url": "/topics/dev/tutorials/architecture/slides.html",
   "topic_name": "dev",
   "tutorial_name": "architecture",
@@ -79,6 +80,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -100,7 +102,6 @@
     "video": false
   },
   "type": "tutorial",
-  "short_id": "S00043",
   "redirect_from": [
     "/short/dev/architecture/slides",
     "/short/S00043"

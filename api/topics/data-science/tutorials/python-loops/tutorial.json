@@ -84,6 +84,7 @@
     "language": "python",
     "pyolite": true
   },
+  "short_id": "T00093",
   "url": "/topics/data-science/tutorials/python-loops/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-loops",
@@ -124,6 +125,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

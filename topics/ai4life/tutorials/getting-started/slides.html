@@ -19,7 +19,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -34,9 +34,8 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/ai4life/tutorials/getting-started/slides.html" />
@@ -46,7 +45,7 @@ Sentry.init({
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="BioImage Model Zoo: Advanced models in one-click">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-05-17 13:53:05 +0000">
+<meta name="DC.date" content="2023-05-23 19:12:48 +0000">
 <meta name="DC.creator" content="Caterina Fuster-Barceló">
 
         
@@ -86,7 +85,7 @@ Sentry.init({
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-05-17 13:53:05 +0000",
+  "dateModified": "2023-05-23 19:12:48 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "BioImage Model Zoo: Advanced models in one-click",
   "interactivityType": "mixed",
@@ -143,9 +142,9 @@ Sentry.init({
   "name": "Slides for 'BioImage Model Zoo: Advanced models in one-click' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/ai4life/tutorials/getting-started/slides.html",
   "timeRequired": "PT5M",
-  "teaches": "Share what BioImage Model Zoo is.\n - Provide a general view of what can be done with BioImage Model Zoo.\n - Explain who can and should participate into the BioImage Model Zoo.",
+  "teaches": "Share what BioImage Model Zoo is.\n - Provide a general view of what can be done with BioImage Model Zoo.\n - Explain who can and should contribute to the BioImage Model Zoo.",
   "keywords": "ai4life, bioimageio, image analysis",
-  "description": "The questions this  addresses are:\n - What is BioImage Model Zoo?\n - Who participates in the BioImage Model Zoo?\n - Who can participate in BioImage Model Zoo?\n\n\nThe objectives are:\n - Share what BioImage Model Zoo is.\n - Provide a general view of what can be done with BioImage Model Zoo.\n - Explain who can and should participate into the BioImage Model Zoo.\n\n",
+  "description": "The questions this  addresses are:\n - What is BioImage Model Zoo?\n - Who participates in the BioImage Model Zoo?\n - Who can participate in the BioImage Model Zoo?\n\n\nThe objectives are:\n - Share what BioImage Model Zoo is.\n - Provide a general view of what can be done with BioImage Model Zoo.\n - Explain who can and should contribute to the BioImage Model Zoo.\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
@@ -278,7 +277,7 @@ class: center, middle, inverse
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=27" alt="Avatar">Caterina Fuster-Barceló</a>
+		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=36" alt="Avatar">Caterina Fuster-Barceló</a>
 	</div>
 
 </div>
@@ -333,7 +332,7 @@ Useful when presenting.
 
 - Who participates in the BioImage Model Zoo?
 
-- Who can participate in BioImage Model Zoo?
+- Who can participate in the BioImage Model Zoo?
 
 
 ---
@@ -347,7 +346,7 @@ Useful when presenting.
 
 - Provide a general view of what can be done with BioImage Model Zoo.
 
-- Explain who can and should participate into the BioImage Model Zoo.
+- Explain who can and should contribute to the BioImage Model Zoo.
 
 
 ---
@@ -355,51 +354,46 @@ Useful when presenting.
 
 ## BioImage Model Zoo
 
-Integrated with Fiji, ilastik, ImJoy and more
-Try model instantly with BioEngine
-Contribute your models via Github
-Link models to datasets and applications
+- Integrated with Fiji, ilastik, ImJoy and more
+- Try model instantly with BioEngine
+- Contribute your models via bioimage.io or Zenodo
+- Link models to datasets and applications
 [Explore the zoo!](https://bioimage.io/#/)
+
+???
+The BioImage Model Zoo is integrated with different softwares such as Fiji, ilastik, ImJoy and more. You can try the models instantly with BioEngine and contribute your models via Github. You can also link models to datasets and applications.
 ---
 
 ### Introduction
 
-- Uses the Model Resource Description File Specification as a distribution point for DL models
-- Two different end users:
+The BioImage Model Zoo is destined for two different end users:
 - Developers with trained model
 - Researchers willing to use those trained models
 
 
-&lt;figure id=&quot;figure-1&quot;&gt;&lt;img src=&quot;../../images/bioimage_description.png&quot; alt=&quot;Description of the bioimage.io. &quot;  width=&quot;1537&quot; height=809 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;:&lt;/span&gt; Description of the bioimage.io&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure id=&quot;figure-1&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/bioimage_description.png&quot;  alt=&quot;Description of the bioimage.io. &quot;  width=&quot;1537&quot; height=809 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;:&lt;/span&gt; Description of the bioimage.io&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
-The Bioimage Model Zoo is a community-driven AI model repository. The aim is to facilitate the adoption of AI methods
-among the bioimaging community by providing easy access to pretrained AI models. By establishing a common Model Resource
-Description File Specification, the model zoo serves as a distribution point for deep learning models trained to perform
-bioimage analysis tasks.
+The BioImage Model Zoo is a community-driven AI model repository. The aim is to facilitate the adoption of AI methods among the bioimaging community by providing easy access to pretrained AI models. By establishing a common Model Resource Description File Specification, the model zoo serves as a distribution point for deep learning models trained to perform bioimage analysis tasks.
 ---
-
 
 ### Who is funding it?
 
-&lt;figure id=&quot;figure-2&quot;&gt;&lt;img src=&quot;../../images/AI4Life-logo_giraffe-solid.png&quot; alt=&quot;AI4Life. &quot;  width=&quot;4572&quot; height=2111 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;:&lt;/span&gt; AI4Life&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;img src=&quot;../../images/AI4Life-logo_giraffe-solid.png&quot;  alt=&quot;AI4Life. &quot;  width=&quot;4572&quot; height=2111 loading=&quot;lazy&quot;&gt;
 AI models and methods 4 the Life Sciences
 
 ???
-Currently, the bioimage io is being funded by the AI4Life project, research services and infrastructure to support life
-scientists in the adoption of machine learning solutions that improve the utility and interpretability of image data –
-the key to future biological and biomedical research.
+Currently, the bioimage io is being funded by the AI4Life project, research services and infrastructure to support life scientists in the adoption of machine learning solutions that improve the utility and interpretability of image data – the key to future biological and biomedical research.
 ---
 
 ### Who is currently contributing?
 
-&lt;img src=&quot;../../images/bmz-community-partners.png&quot; alt=&quot;bioimage.io Community Partners. &quot;  loading=&quot;lazy&quot;&gt;
+&lt;img src=&quot;../../images/bmz-community-partners.png&quot;  alt=&quot;bioimage.io Community Partners. &quot;  width=&quot;1780&quot; height=196 loading=&quot;lazy&quot;&gt;
 
 Community partners such as ilastik, ImJoy, Fiji, deepImageJ, ZeroCostDL4Mic, QuPath, Icy and more!
 
 ???
-Several founding partners including ilastik, ImJoy, Fiji, deepImageJ, ZeroCostDL4Mic, QuPath and Icy are involved in the
-creation of the model zoo and we welcome more community partners to join the efforts.
+Several founding partners including ilastik, ImJoy, Fiji, deepImageJ, ZeroCostDL4Mic, QuPath and Icy are involved in the creation of the model zoo and we welcome more community partners to join the efforts.
 ---
 
 ### Only these ones?
@@ -407,24 +401,17 @@ creation of the model zoo and we welcome more community partners to join the eff
 Welcome! We encourage you to submit or run models, use our tools or even become a Community Partner!
 
 ???
-The model zoo is open for contributions from the community partners and external individuals. You are welcome to submit
-models to the model zoo. We will do our best to ensure you have a smooth experience contributing your work which will of
-course remain in your IP with all necessary attributions.
+The model zoo is open for contributions from the community partners and external individuals. You are welcome to submit models to the model zoo. We will do our best to ensure you have a smooth experience contributing your work which will of course remain in your IP with all necessary attributions.
 ---
 
 ## How does it work?
 
-![Operation of bioimage.io](../../images/bioimage-io-paper-figure-1.png &quot;Operation of bioimage-io and its community
-partners&quot;)
+&lt;figure id=&quot;figure-2&quot; style=&quot;max-width: 90%; margin:auto;&quot;&gt;&lt;img src=&quot;../../images/bioimage-io-paper-figure-1.png&quot;  alt=&quot;Operation of bioimage.io. &quot;  width=&quot;2500&quot; height=1319 loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;&lt;span class=&quot;figcaption-prefix&quot;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;:&lt;/span&gt; Operation of bioimage-io and its community partners&lt;/figcaption&gt;&lt;/figure&gt;
 
 ???
-The BioImage Model Zoo is a repository with many trained models ready to use on many different AI-powered bioimage
-analysis tools. You can either upload your trained model so it is shared among the community or use that model through
-any of our user-friendly softwares between the community partners.
-All models will appear on their own model card. In each card several information about how to download it, run it, who
-made it and more can be found.
-Finally, there are many different applications for that models such as segmentation, classification, artificial
-labeling, denoising, super-resolution and more.
+The BioImage Model Zoo is a repository with many trained models ready to use on many different AI-powered bioimage analysis tools. You can either upload your trained model so it is shared among the community or use that model through any of our user-friendly softwares between the community partners.
+All models will appear on their own model card. In each card several information about how to download it, run it, who made it and more can be found.
+Finally, there are many different applications for that models such as segmentation, classification, artificial labeling, denoising, super-resolution and more.
 ---
 
 ## Why should I be using it?
@@ -434,18 +421,9 @@ labeling, denoising, super-resolution and more.
 - People will be using your models and citing you!
 
 ???
-There are many reasons for which you should be using the bioimage.io to run and upload your models. One of them is that
-we are an open-source project and we believe in sharing. And then, if you are willing to run deep-learning models, you
-will be able to do it in many different user-friendly softwares. Or, if you have a model and you want to upload it, you
-can share it among many people that will use it and cite you.
+There are many reasons for which you should be using the bioimage.io to run and upload your models. One of them is that we are an open-source project and we believe in sharing. And then, if you are willing to run deep-learning models, you will be able to do it in many different user-friendly softwares. Or, if you have a model and you want to upload it, you can share it among many people that will use it and cite you.
 
 
-
----
-### &lt;i class=&quot;fas fa-key&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;keypoints&lt;/span&gt; Key points
-
-
-- The BioImage Model Zoo is a community-driven AI model repository to facilitate the adoption of AI methods among the bioimage community by providing easy access to pretrained AI models.
 
 
 
@@ -462,7 +440,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=27" alt="Avatar">Caterina Fuster-Barceló</a>
+		Authors: <a href="/training-material/hall-of-fame/cfusterbarcelo/" class="contributor-badge contributor-cfusterbarcelo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cfusterbarcelo?s=36" alt="Avatar">Caterina Fuster-Barceló</a>
 	</div>
 
 </div>

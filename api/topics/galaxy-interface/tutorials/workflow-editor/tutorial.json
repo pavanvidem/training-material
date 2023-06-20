@@ -32,6 +32,7 @@
   ],
   "level": "Intermediate",
   "subtopic": "workflows",
+  "short_id": "T00163",
   "url": "/topics/galaxy-interface/tutorials/workflow-editor/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "workflow-editor",
@@ -58,7 +59,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "subworkflow.ga",
@@ -71,7 +73,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json",
@@ -82,11 +85,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.mesocentre.uca.fr",
         "name": "Galaxy@AuBi",
@@ -137,6 +135,7 @@
 
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

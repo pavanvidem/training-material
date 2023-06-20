@@ -43,6 +43,7 @@
     }
   ],
   "subtopic": "data",
+  "short_id": "T00004",
   "url": "/topics/admin/tutorials/cvmfs-manual/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "cvmfs-manual",
@@ -83,6 +84,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

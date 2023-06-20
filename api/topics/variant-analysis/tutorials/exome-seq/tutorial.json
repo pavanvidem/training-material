@@ -79,6 +79,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
     }
   ],
+  "short_id": "T00311",
   "url": "/topics/variant-analysis/tutorials/exome-seq/tutorial.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "exome-seq",
@@ -105,7 +106,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow_exome_seq_full.ga",
@@ -118,7 +120,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/exome-seq/tutorial.json",
@@ -137,11 +140,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -176,6 +174,7 @@
       }
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

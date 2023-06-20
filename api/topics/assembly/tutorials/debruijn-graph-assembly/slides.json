@@ -22,6 +22,7 @@
   "contributors": [
     "slugger70"
   ],
+  "short_id": "S00032",
   "url": "/topics/assembly/tutorials/debruijn-graph-assembly/slides.html",
   "topic_name": "assembly",
   "tutorial_name": "debruijn-graph-assembly",
@@ -48,7 +49,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.json",
@@ -59,11 +61,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.mesocentre.uca.fr",
         "name": "Galaxy@AuBi",
@@ -104,6 +101,7 @@
 
     ]
   },
+  "topic_name_human": "Assembly",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -147,7 +145,6 @@
   "type": "tutorial",
   "logo": "GTN",
   "class": "enlarge120",
-  "short_id": "S00032",
   "redirect_from": [
     "/short/assembly/debruijn-graph-assembly/slides",
     "/short/S00032"

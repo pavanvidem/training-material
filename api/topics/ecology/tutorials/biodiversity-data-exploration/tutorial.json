@@ -60,6 +60,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/yvanlebras/"
     }
   ],
+  "short_id": "T00126",
   "url": "/topics/ecology/tutorials/biodiversity-data-exploration/tutorial.html",
   "topic_name": "ecology",
   "tutorial_name": "biodiversity-data-exploration",
@@ -115,7 +116,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/biodiversity-data-exploration/tutorial.json",
@@ -151,6 +153,7 @@
       }
     ]
   },
+  "topic_name_human": "Ecology",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

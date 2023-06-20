@@ -20,6 +20,7 @@
     "guerler",
     "dannon"
   ],
+  "short_id": "S00053",
   "url": "/topics/dev/tutorials/visualization-charts/slides.html",
   "topic_name": "dev",
   "tutorial_name": "visualization-charts",
@@ -60,6 +61,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -82,7 +84,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00053",
   "redirect_from": [
     "/short/dev/visualization-charts/slides",
     "/short/S00053"

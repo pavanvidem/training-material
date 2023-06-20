@@ -65,6 +65,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
     }
   ],
+  "short_id": "T00131",
   "url": "/topics/ecology/tutorials/panoply_ebv/tutorial.html",
   "topic_name": "ecology",
   "tutorial_name": "panoply_ebv",
@@ -86,11 +87,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
@@ -105,6 +101,7 @@
 
     ]
   },
+  "topic_name_human": "Ecology",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

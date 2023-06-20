@@ -24,6 +24,7 @@
       "erasmusplus"
     ]
   },
+  "short_id": "T00287",
   "url": "/topics/teaching/tutorials/teaching-online/tutorial.html",
   "topic_name": "teaching",
   "tutorial_name": "teaching-online",
@@ -64,6 +65,7 @@
       }
     ]
   },
+  "topic_name_human": "Teaching and Hosting Galaxy training",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

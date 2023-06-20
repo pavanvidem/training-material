@@ -63,6 +63,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jbmihoub/"
     }
   ],
+  "short_id": "T00125",
   "url": "/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html",
   "topic_name": "ecology",
   "tutorial_name": "PAMPA-toolsuite-tutorial",
@@ -118,7 +119,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.json",
@@ -166,6 +168,7 @@
       }
     ]
   },
+  "topic_name_human": "Ecology",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

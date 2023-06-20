@@ -8,6 +8,7 @@
     "martenson"
   ],
   "subtopic": "deprecated",
+  "short_id": "S00000",
   "url": "/topics/admin/tutorials/advanced-galaxy-customisation/slides.html",
   "topic_name": "admin",
   "tutorial_name": "advanced-galaxy-customisation",
@@ -48,6 +49,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -69,7 +71,6 @@
     "video": false
   },
   "type": "tutorial",
-  "short_id": "S00000",
   "redirect_from": [
     "/short/admin/advanced-galaxy-customisation/slides",
     "/short/S00000"

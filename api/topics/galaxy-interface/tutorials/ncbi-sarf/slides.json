@@ -31,6 +31,7 @@
       ]
     }
   ],
+  "short_id": "S00063",
   "url": "/topics/galaxy-interface/tutorials/ncbi-sarf/slides.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "ncbi-sarf",
@@ -130,11 +131,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
         "usegalaxy": "true"
@@ -168,6 +164,7 @@
       }
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -238,7 +235,6 @@
   },
   "type": "tutorial",
   "logo": "assets/images/ncbi.png",
-  "short_id": "S00063",
   "redirect_from": [
     "/short/galaxy-interface/ncbi-sarf/slides",
     "/short/S00063"

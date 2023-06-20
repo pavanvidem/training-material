@@ -17,6 +17,7 @@
       "hexylena"
     ]
   },
+  "short_id": "S00092",
   "url": "/topics/teaching/tutorials/gtn-for-instructors/slides.html",
   "topic_name": "teaching",
   "tutorial_name": "gtn-for-instructors",
@@ -57,6 +58,7 @@
       }
     ]
   },
+  "topic_name_human": "Teaching and Hosting Galaxy training",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -98,7 +100,6 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
     }
   ],
-  "short_id": "S00092",
   "redirect_from": [
     "/short/teaching/gtn-for-instructors/slides",
     "/short/S00092"

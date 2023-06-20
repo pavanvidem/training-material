@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -60,7 +64,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Running the GTN website locally">
         <meta property="og:description" content="Galaxy is a great solution to train the bioinformatics co...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -312,7 +316,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/contributing/tutorials/running-jekyll/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/contributing/tutorials/running-jekyll/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -359,7 +363,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -372,7 +376,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -409,14 +413,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-contributing">
     <h1 data-toc-skip>Running the GTN website locally</h1>
@@ -426,7 +423,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+		Authors: <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar">Björn Grüning</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar">Saskia Hiltemann</a>
 	</div>
 
 </div>
@@ -572,12 +569,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00069">https://gxy.io/GTN:T00069</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00069">https://gxy.io/GTN:T00069</a> </div>
         
     </blockquote>
     </section>
@@ -623,7 +621,7 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 <p>We also need to make sure that a couple of other utilities and build requirements are present: <strong>git</strong>, <strong>curl</strong> &amp; <strong>make</strong>. The easiest way to install these is with your package manager of choice - i.e. yum, apt, brew etc.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-install-the-requirements"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Install the requirements</div>
+  <div class="box-title hands-on-title" id="hands-on-install-the-requirements"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Install the requirements</div>
 
   <ol>
     <li>Open a Terminal</li>
@@ -653,7 +651,7 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-troubleshooting-libxml2-errors"><button class="gtn-boxify-button details" type="button" aria-controls="details-troubleshooting-libxml2-errors" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Troubleshooting `libxml2` errors<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-troubleshooting-libxml2-errors"><button class="gtn-boxify-button details" type="button" aria-controls="details-troubleshooting-libxml2-errors" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Troubleshooting `libxml2` errors<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>If you encounter an error about libxml2 on Linux, please try to install <code class="language-plaintext highlighter-rouge">libxml2-dev</code> (executing <code class="language-plaintext highlighter-rouge">sudo apt install libxml2-dev</code>) if on Debian/Ubuntu or <code class="language-plaintext highlighter-rouge">libxml2-devel</code> (executing <code class="language-plaintext highlighter-rouge">sudo yum install libxml2-devel</code>) if on Fedora/RedHat/CentOS, and re-run <code class="language-plaintext highlighter-rouge">make install</code> .</p>
 </blockquote>
 
@@ -662,7 +660,7 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 <p>Once Jekyll and its modules are installed in our conda environment, we can check the generation of the website locally:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-checking-the-website-generation-locally"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Checking the website generation locally</div>
+  <div class="box-title hands-on-title" id="hands-on-checking-the-website-generation-locally"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Checking the website generation locally</div>
 
   <ol>
     <li>Run a local Jekyll server with <code class="language-plaintext highlighter-rouge">make serve-quick</code></li>
@@ -685,7 +683,7 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 <p>With <code class="language-plaintext highlighter-rouge">make serve-quick</code>, a local Jekyll server will run in background. It will check the changes and regenerate the website accordingly. You may need to reload the page to see the changes (and sometimes to wait 1-2 minutes).</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-tips"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-tips" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Tips<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-tips"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-tips" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Tips<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <ol>
     <li>
@@ -720,7 +718,7 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 <p>Once you are done, you can stop the server and clean your repository.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-stopping-the-server"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Stopping the server</div>
+  <div class="box-title hands-on-title" id="hands-on-stopping-the-server"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Stopping the server</div>
 
   <ol>
     <li>Stop the server with <kbd>CTRL</kbd>-<kbd>C</kbd></li>
@@ -777,6 +775,9 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
                             Bérénice Batut, Björn Grüning, Saskia Hiltemann,  <b>Running the GTN website locally (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html">https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -798,12 +799,12 @@ We can use Jekyll to run a server to check if the tutorial is correctly added an
 
 <code id="citation-code">@misc{contributing-running-jekyll,
 author = "Bérénice Batut and Björn Grüning and Saskia Hiltemann",
-title = "Running the GTN website locally (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Running the GTN website locally (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-jekyll/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1003,19 +1004,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00069">https://gxy.io/GTN:T00069</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00069">https://gxy.io/GTN:T00069</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1035,7 +1036,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1043,9 +1044,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

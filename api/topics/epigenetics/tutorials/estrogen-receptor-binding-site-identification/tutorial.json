@@ -82,6 +82,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/fidelram/"
     }
   ],
+  "short_id": "T00138",
   "url": "/topics/epigenetics/tutorials/estrogen-receptor-binding-site-identification/tutorial.html",
   "topic_name": "epigenetics",
   "tutorial_name": "estrogen-receptor-binding-site-identification",
@@ -108,7 +109,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "qc_mapping.ga",
@@ -121,7 +123,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/epigenetics/tutorials/estrogen-receptor-binding-site-identification/tutorial.json",
@@ -150,11 +153,6 @@
       }
     ],
     "inexact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.mesocentre.uca.fr",
         "name": "Galaxy@AuBi",
@@ -187,6 +185,7 @@
       }
     ]
   },
+  "topic_name_human": "Epigenetics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

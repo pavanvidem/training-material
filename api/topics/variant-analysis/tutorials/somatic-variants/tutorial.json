@@ -32,6 +32,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/wm75/"
     }
   ],
+  "short_id": "T00318",
   "url": "/topics/variant-analysis/tutorials/somatic-variants/tutorial.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "somatic-variants",
@@ -58,7 +59,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variants/tutorial.json",
@@ -81,11 +83,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -120,6 +117,7 @@
       }
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

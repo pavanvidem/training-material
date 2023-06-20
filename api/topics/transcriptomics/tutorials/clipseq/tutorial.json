@@ -60,6 +60,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
     }
   ],
+  "short_id": "T00288",
   "url": "/topics/transcriptomics/tutorials/clipseq/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "clipseq",
@@ -86,7 +87,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/clipseq/tutorial.json",
@@ -133,6 +135,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -41,6 +41,7 @@
   "notebook": {
     "language": "bash"
   },
+  "short_id": "T00101",
   "url": "/topics/data-science/tutorials/python-venv/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-venv",
@@ -81,6 +82,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

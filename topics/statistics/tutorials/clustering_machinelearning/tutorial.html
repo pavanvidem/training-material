@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Clustering in Machine Learning">
         <meta property="og:description" content="Statistical Analyses for omics data and machine learning ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -308,7 +312,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/statistics/tutorials/clustering_machinelearning/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/statistics/tutorials/clustering_machinelearning/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -355,7 +359,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -368,7 +372,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -405,14 +409,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-statistics">
     <h1 data-toc-skip>Clustering in Machine Learning</h1>
@@ -422,7 +419,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=27" alt="Avatar">Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=36" alt="Avatar">Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=36" alt="Avatar">Anup Kumar</a>
 	</div>
 
 </div>
@@ -599,12 +596,6 @@ Sentry.init({
     
     
 	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
-	<li>
 		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
 			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
 		</a>
@@ -640,12 +631,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00264">https://gxy.io/GTN:T00264</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00264">https://gxy.io/GTN:T00264</a> </div>
         
     </blockquote>
     </section>
@@ -668,11 +660,11 @@ Sentry.init({
 
 <p>We represent an observation/sample/data point as an n-dimensional vector and many such data points constitute a dataset. To show an example, let us assume that a dataset, shown in Figure 1, contains many samples and each sample has two dimensions each:</p>
 
-<figure id="figure-1"><img src="images/data_before_clustering.png" alt="data. " width="394" height="262" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Sample data before clustering</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="images/data_before_clustering.png" alt="data. " width="394" height="262" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Sample data before clustering</figcaption></figure>
 
 <p>Clustering reveals the following three groups, indicated by different colors:</p>
 
-<figure id="figure-2"><img src="images/data_after_clustering.png" alt="data. " width="370" height="248" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Sample data after clustering</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="images/data_after_clustering.png" alt="data. " width="370" height="248" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Sample data after clustering</figcaption></figure>
 
 <p>Clustering is divided into two subgroups based on the assignment of data points to clusters:</p>
 
@@ -737,10 +729,10 @@ Sentry.init({
 
 <p>The choice of a distance measure is crucial in clustering. It defines how the similarity of two elements <code class="language-plaintext highlighter-rouge">(x, y)</code> is calculated as it influences the shape of the clusters. The classical distance measures are <a href="https://en.wikipedia.org/wiki/Euclidean_distance">euclidean</a> and <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan</a> distances. For the most common clustering algorithms, the default distance measure is euclidean. If the euclidean distance is chosen, then observations having high magnitudes of their respective features will be clustered together. The same holds for the observations having low magnitudes of their respective features. In Figure 3, we group the cells using euclidean distance and their distance matrix.</p>
 
-<figure id="figure-3"><img src="images/raceid_distance.svg" alt="Distances. " width="571" height="349" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Euclidean distance between three points (R, P, V) across three features (G1, G2, G3)</figcaption></figure>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><div style="overflow-x: auto"><object data="images/raceid_distance.svg" type="image/svg+xml" alt="Distances. ">Distances.</object></div><small><a target="_blank" href="images/raceid_distance.svg">Open image in new tab</a></small><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Euclidean distance between three points (R, P, V) across three features (G1, G2, G3)</figcaption></figure>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Why are there zeroes along the diagonal of the above example distance matrix?</li>
@@ -748,7 +740,7 @@ Sentry.init({
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>The distance between a point to itself is zero.</li>
@@ -789,19 +781,19 @@ Sentry.init({
 
 <p>Let’s now see how dendrograms help in hierarchical clustering.</p>
 
-<figure id="figure-4"><img src="images/Hierarchical_clustering_1.png" alt="data. " width="560" height="420" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Hierarchical clustering</figcaption></figure>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="images/Hierarchical_clustering_1.png" alt="data. " width="560" height="420" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Hierarchical clustering</figcaption></figure>
 
 <p>All data points are chosen at the bottom and each one is assigned to a separate cluster. Then, the two closest clusters are merged till just one cluster is left at the top. From the dendrogram thus formed, the distance between two clusters can be determined by computing the height at which two clusters are merged.</p>
 
 <p>By looking at the dendrogram, the clusters can be observed showing different groups in the best way. The optimal number of clusters is the number of vertical lines in the dendrogram cut by a horizontal line that can transverse maximum distance vertically without intersecting a cluster.</p>
 
 <p>In the above example, the best choice of the number of clusters will be 4 as the red horizontal line in the dendrogram below covers maximum vertical distance AB. For more details, please read <a href="https://www.analyticsvidhya.com/blog/2016/11/an-introduction-to-clustering-and-different-methods-of-clustering/">here</a>.</p>
-<figure id="figure-5"><img src="images/Hierarchical_clustering_2.png" alt="data. " width="768" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Hierarchical clustering</figcaption></figure>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="images/Hierarchical_clustering_2.png" alt="data. " width="768" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Hierarchical clustering</figcaption></figure>
 
 <p>This algorithm explained above uses the bottom-up approach. It is also possible to follow the top-down approach starting with all data points assigned in the same cluster and recursively performing splits till each data point is assigned a separate cluster. The decision of merging two clusters is taken based on the proximity of these clusters.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-background-of-the-iris-dataset"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Background of the iris dataset</div>
+  <div class="box-title comment-title" id="comment-background-of-the-iris-dataset"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Background of the iris dataset</div>
   <p>The iris flower dataset or Fisher’s iris dataset is a multivariate dataset introduced by the British statistician and biologist Ronald Fisher in his 1936 paper (<span class="citation"><a href="#Fisher1936">Fisher 1936</a></span>).
 Each row of the table represents an iris flower, including its species and dimensions of its botanical parts, sepal and petal, in centimeters.
 For more history of this dataset read here <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Wikipedia</a>.</p>
@@ -810,7 +802,7 @@ For more history of this dataset read here <a href="https://en.wikipedia.org/wik
 <p>At the first step, we should upload the iris dataset and two other datasets which will be used at the end of the tutorial.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Data upload</div>
 
   <ol>
     <li>
@@ -822,11 +814,11 @@ https://zenodo.org/record/3813447/files/moon.csv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to the correct folder as indicated by your instructor</li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -864,19 +856,19 @@ https://zenodo.org/record/3813447/files/moon.csv
 <p>Our objective is to categorise similar flowers in different groups (Figure 6). We know that we have <strong>3</strong> species of iris flowers (versicolor, virginica, setosa) with
 <strong>50</strong> samples for each. These species look very much alike as shown in the figure below.</p>
 
-<figure id="figure-6"><img src="images/iris_flowers.png" alt="3 species of iris flowers. " width="600" height="181" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> 3 species of iris flowers</figcaption></figure>
+<figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="images/iris_flowers.png" alt="3 species of iris flowers. " width="600" height="181" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> 3 species of iris flowers</figcaption></figure>
 
 <p>In our dataset, we have the following features measured for each flower: <a href="https://en.wikipedia.org/wiki/Petal">petal</a> length, petal width, <a href="https://en.wikipedia.org/wiki/Sepal">sepal</a> length, sepal width</p>
 
 <p>Figure 7 shows the dendrogram of these data.</p>
 
-<figure id="figure-7"><img src="images/Hierarchical_iris.png" alt="data. " width="1446" height="611" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Iris data hierarchical clustering</figcaption></figure>
+<figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="images/Hierarchical_iris.png" alt="data. " width="1446" height="611" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Iris data hierarchical clustering</figcaption></figure>
 
 <p>We will apply hierarchical clustering to the iris dataset to find clusters based on two features (of flowers) - sepal length and width.
 <strong>Hint</strong>: Please find the <code class="language-plaintext highlighter-rouge">Numeric Clustering</code> tool in the <code class="language-plaintext highlighter-rouge">Statistics</code> tool section.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-hierarchical-clustering"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Hierarchical clustering</div>
+  <div class="box-title hands-on-title" id="hands-on-hierarchical-clustering"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Hierarchical clustering</div>
 
   <ol>
     <li><strong>Numeric Clustering</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following clustering parameters:
@@ -914,7 +906,7 @@ https://zenodo.org/record/3813447/files/moon.csv
 Let’s visualize the clustering results to see how groups have been built. <strong>Hint</strong>: Please find the <code class="language-plaintext highlighter-rouge">Scatterplot with ggplot2</code> tool in the <code class="language-plaintext highlighter-rouge">Graph/Display data</code> tool section.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-hierarchical-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize hierarchical clustering result</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-hierarchical-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize hierarchical clustering result</div>
 
   <ol>
     <li><strong>Scatterplot with ggplot2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
@@ -954,7 +946,7 @@ Let’s visualize the clustering results to see how groups have been built. <str
   </ol>
 </blockquote>
 
-<figure id="figure-8"><img src="images/hierarchical_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Hierarchical clustering scatter plot</figcaption></figure>
+<figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="images/hierarchical_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Hierarchical clustering scatter plot</figcaption></figure>
 
 <h2 id="k-means-clustering">K-means clustering</h2>
 
@@ -983,7 +975,7 @@ Let’s visualize the clustering results to see how groups have been built. <str
 <p>The parameters that minimize the cost function are learned through an iterative process of assigning data points to clusters and then moving the clusters. A restriction for the k-means algorithm is that the dataset should be continuous.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-k-means-clustering"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: K-means clustering</div>
+  <div class="box-title hands-on-title" id="hands-on-k-means-clustering"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: K-means clustering</div>
 
   <ol>
     <li><strong>Numeric Clustering</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following clustering parameters:
@@ -1014,7 +1006,7 @@ Let’s visualize the clustering results to see how groups have been built. <str
 <h3 id="visualize-k-means-clustering">Visualize k-means clustering</h3>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-k-means-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize k-means clustering result</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-k-means-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize k-means clustering result</div>
 
   <ol>
     <li><strong>Scatterplot with ggplot2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
@@ -1054,31 +1046,31 @@ Let’s visualize the clustering results to see how groups have been built. <str
   </ol>
 </blockquote>
 
-<figure id="figure-9"><img src="images/k_means_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> K-means clustering scatter plot</figcaption></figure>
+<figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="images/k_means_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> K-means clustering scatter plot</figcaption></figure>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>How to choose the right number of expected clusters (k)?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>Major difficulty found with k-means is the choice of the number of clusters. Different methods are proposed to solve this problem.
 Here, we provide a simple solution. The idea is to compute k-means clustering using different values of clusters k. Next, the within sum of squares is drawn according to the number of clusters. The location of a bend (knee) in the plot is generally considered as an indicator of the appropriate number of clusters.</p>
-    <figure id="figure-10"><img src="images/number_of_clusters.png" alt="data. " width="1036" height="576" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Optimal number of clusters</figcaption></figure>
+    <figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="images/number_of_clusters.png" alt="data. " width="1036" height="576" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Optimal number of clusters</figcaption></figure>
     <p>The plot above represents the variance within the clusters. It decreases as k increases, but it can be seen as a bend (or “elbow”) at k = 4. This bend indicates that
 additional clusters beyond the fourth have little value.</p>
   </blockquote>
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>What are the differences between k-means and hierarchical clustering techniques</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>
@@ -1101,7 +1093,7 @@ additional clusters beyond the fourth have little value.</p>
 <p>DBSCAN (Density-based spatial clustering of applications with noise) is a popular clustering algorithm and finds clusters as regions of high density followed by regions of low density. Clusters found by DBSCAN can be of any shape, as opposed to k-means which works well if the clusters are spherical in shape. The central component of the DBSCAN algorithm are the core samples which are present in the areas of high density. A cluster is, therefore, a set of core samples close to one other (measured by some distance measure) and a set of non-core samples that are close to core samples (but are not core samples themselves). There are two important parameters in DBSCAN algorithm - <code class="language-plaintext highlighter-rouge">min_samples</code> is the number of samples in a neighborhood for a point to be considered as a core point and <code class="language-plaintext highlighter-rouge">eps</code> is the maximum distance (between two samples) for a sample to be considered as in the neighborhood of the other. Higher the value of <code class="language-plaintext highlighter-rouge">min_samples</code> or lower the value of eps indicate higher density necessary to form a cluster. DBSCAN does not require one to specify the number of clusters in the data a priori, as opposed to k-means.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-dbscan-clustering"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: DBSCAN clustering</div>
+  <div class="box-title hands-on-title" id="hands-on-dbscan-clustering"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: DBSCAN clustering</div>
 
   <ol>
     <li><strong>Numeric Clustering</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following clustering parameters:
@@ -1127,7 +1119,7 @@ additional clusters beyond the fourth have little value.</p>
 <h3 id="visualise-dbscan-clustering">Visualise DBSCAN clustering</h3>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-dbscan-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize DBSCAN clustering result</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-dbscan-clustering-result"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize DBSCAN clustering result</div>
 
   <ol>
     <li><strong>Scatterplot with ggplot2</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
@@ -1167,17 +1159,17 @@ additional clusters beyond the fourth have little value.</p>
   </ol>
 </blockquote>
 
-<figure id="figure-11"><img src="images/dbscan_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> DBSCAN clustering scatter plot</figcaption></figure>
+<figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="images/dbscan_scatter.png" alt="data. " width="2100" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> DBSCAN clustering scatter plot</figcaption></figure>
 
 <p>You will also notice that the green points (factor = -1) in the plot are not contained within any cluster. DBSCAN does not necessarily categorize every data point, and is therefore works very well with handling outliers in a dataset.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>How can we evaluate the clustering results?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>Clustering is an unsupervised learning algorithm; there are no labels or ground truth to compare with the clusters. However, we can still evaluate the performance of the algorithm using intrinsic measures.
 There is a performance measure for clustering evaluation which is called the <a href="https://en.wikipedia.org/wiki/Silhouette_(clustering)">silhouette coefficient</a>. It is a measure of the compactness and separation of the clusters.
@@ -1192,7 +1184,7 @@ It increases as the quality of the clusters increase; it is large for compact cl
 <h2 id="visualise-datasets">Visualise datasets</h2>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-scatter-plot-of-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize scatter plot of data</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-scatter-plot-of-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize scatter plot of data</div>
 
   <ol>
     <li>
@@ -1223,14 +1215,14 @@ It increases as the quality of the clusters increase; it is large for compact cl
   </ol>
 </blockquote>
 
-<figure id="figure-12"><img src="images/circles_moon_scatter.png" alt="data. " width="1696" height="726" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Scatter plot of circles and moon datasets</figcaption></figure>
+<figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="images/circles_moon_scatter.png" alt="data. " width="1696" height="726" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Scatter plot of circles and moon datasets</figcaption></figure>
 
 <h2 id="find-clusters">Find clusters</h2>
 
 <p>Now you can find clusters in these datasets using the aforementioned algorithms.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-hierarchical-clustering-of-circles-and-moon-datasets"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Hierarchical clustering of circles and moon datasets</div>
+  <div class="box-title hands-on-title" id="hands-on-hierarchical-clustering-of-circles-and-moon-datasets"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Hierarchical clustering of circles and moon datasets</div>
 
   <ol>
     <li>
@@ -1268,7 +1260,7 @@ It increases as the quality of the clusters increase; it is large for compact cl
 <p>Then, you can visualize the clustering results using the following steps:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-hierarchical-clustering-result-on-circles-and-moon-datasets"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize hierarchical clustering result on circles and moon datasets.</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-hierarchical-clustering-result-on-circles-and-moon-datasets"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize hierarchical clustering result on circles and moon datasets.</div>
 
   <ol>
     <li>
@@ -1315,9 +1307,9 @@ It increases as the quality of the clusters increase; it is large for compact cl
 
 <p>You can apply the other two algorithms (k-means and DBSCAN) to moon and circles datasets in the same way as explained above. In the k-means algorithm, please use <code class="language-plaintext highlighter-rouge">k=2</code> and for the DBSCAN algorithm, the parameters should not be the default ones as used earlier. They should be set as follows: for the circles dataset (<code class="language-plaintext highlighter-rouge">maximum neighborhood distance=0.2</code> and <code class="language-plaintext highlighter-rouge">minimal core point density=5</code>) and for the moon dataset (<code class="language-plaintext highlighter-rouge">maximum neighborhood distance=0.3</code> and <code class="language-plaintext highlighter-rouge">minimal core point density=4</code>). You can see the scatter plots of the clustering results for all three clustering algorithms in Figure 13 and 14.</p>
 
-<figure id="figure-13"><img src="images/circles_clustering.png" alt="data. " width="6300" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Plot of clustering algorithms on circles dataset</figcaption></figure>
+<figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="images/circles_clustering.png" alt="data. " width="6300" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Plot of clustering algorithms on circles dataset</figcaption></figure>
 
-<figure id="figure-14"><img src="images/moon_clustering.png" alt="data. " width="6300" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Plot of clustering algorithms on moon dataset</figcaption></figure>
+<figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="images/moon_clustering.png" alt="data. " width="6300" height="2100" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Plot of clustering algorithms on moon dataset</figcaption></figure>
 
 <h1 id="conclusion">Conclusion</h1>
 
@@ -1374,6 +1366,9 @@ It increases as the quality of the clusters increase; it is large for compact cl
                             Alireza Khanteymoori, Anup Kumar,  <b>Clustering in Machine Learning (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1395,12 +1390,12 @@ It increases as the quality of the clusters increase; it is large for compact cl
 
 <code id="citation-code">@misc{statistics-clustering_machinelearning,
 author = "Alireza Khanteymoori and Anup Kumar",
-title = "Clustering in Machine Learning (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Clustering in Machine Learning (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/clustering_machinelearning/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1487,19 +1482,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00264">https://gxy.io/GTN:T00264</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00264">https://gxy.io/GTN:T00264</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1519,7 +1514,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1527,9 +1522,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

@@ -118,6 +118,7 @@
   "abbreviations": {
     "OGS": "Official Gene Set"
   },
+  "short_id": "T00169",
   "url": "/topics/genome-annotation/tutorials/apollo/tutorial.html",
   "topic_name": "genome-annotation",
   "tutorial_name": "apollo",
@@ -214,7 +215,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/apollo/tutorial.json",
@@ -241,6 +243,7 @@
       }
     ]
   },
+  "topic_name_human": "Genome Annotation",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

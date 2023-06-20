@@ -26,6 +26,7 @@
     "shiltemann",
     "yhoogstrate"
   ],
+  "short_id": "S00054",
   "url": "/topics/dev/tutorials/visualization-generic/slides.html",
   "topic_name": "dev",
   "tutorial_name": "visualization-generic",
@@ -66,6 +67,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -88,7 +90,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00054",
   "redirect_from": [
     "/short/dev/visualization-generic/slides",
     "/short/S00054"

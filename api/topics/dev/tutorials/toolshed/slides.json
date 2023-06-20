@@ -25,6 +25,7 @@
     "slegras",
     "bebatut"
   ],
+  "short_id": "S00052",
   "url": "/topics/dev/tutorials/toolshed/slides.html",
   "topic_name": "dev",
   "tutorial_name": "toolshed",
@@ -65,6 +66,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -86,7 +88,6 @@
     "video": false
   },
   "type": "tutorial",
-  "short_id": "S00052",
   "redirect_from": [
     "/short/dev/toolshed/slides",
     "/short/S00052"

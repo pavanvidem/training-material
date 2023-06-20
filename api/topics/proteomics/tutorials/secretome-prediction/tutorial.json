@@ -44,6 +44,7 @@
   "tags": [
     "human"
   ],
+  "short_id": "T00235",
   "url": "/topics/proteomics/tutorials/secretome-prediction/tutorial.html",
   "topic_name": "proteomics",
   "tutorial_name": "secretome-prediction",
@@ -70,7 +71,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/secretome-prediction/tutorial.json",
@@ -96,6 +98,7 @@
 
     ]
   },
+  "topic_name_human": "Proteomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

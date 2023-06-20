@@ -68,6 +68,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/tnabtaf/"
     }
   ],
+  "short_id": "T00205",
   "url": "/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html",
   "topic_name": "metagenomics",
   "tutorial_name": "mothur-miseq-sop",
@@ -94,7 +95,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.json",
@@ -153,11 +155,6 @@
     ],
     "inexact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.fr/",
         "name": "UseGalaxy.fr",
         "usegalaxy": "true"
@@ -179,6 +176,7 @@
       }
     ]
   },
+  "topic_name_human": "Metagenomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -37,6 +37,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/"
     }
   ],
+  "short_id": "T00051",
   "url": "/topics/computational-chemistry/tutorials/md-simulation-gromacs/tutorial.html",
   "topic_name": "computational-chemistry",
   "tutorial_name": "md-simulation-gromacs",
@@ -63,7 +64,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/md-simulation-gromacs/tutorial.json",
@@ -83,11 +85,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -122,6 +119,7 @@
       }
     ]
   },
+  "topic_name_human": "Computational chemistry",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

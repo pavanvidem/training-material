@@ -49,6 +49,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/workflow4metabolomics/"
     }
   ],
+  "short_id": "T00197",
   "url": "/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html",
   "topic_name": "metabolomics",
   "tutorial_name": "lcms-preprocessing",
@@ -104,6 +105,7 @@
       }
     ]
   },
+  "topic_name_human": "Metabolomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

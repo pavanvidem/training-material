@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/name-tags/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -58,7 +62,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Name tags for following complex histories">
         <meta property="og:description" content="A collection of microtutorials explaining various feature...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -264,7 +268,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/galaxy-interface/tutorials/name-tags/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/galaxy-interface/tutorials/name-tags/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -311,7 +315,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -324,7 +328,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -361,14 +365,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-galaxy-interface">
     <h1 data-toc-skip>Name tags for following complex histories</h1>
@@ -378,7 +375,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		Authors: <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar">Helena Rasche</a>
 	</div>
 
 </div>
@@ -426,12 +423,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 24, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00154">https://gxy.io/GTN:T00154</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00154">https://gxy.io/GTN:T00154</a> </div>
         
     </blockquote>
     </section>
@@ -464,7 +462,7 @@ time it takes to figure out where your datasets came from.</p>
 <p>Name tags “propagate”, they will follow your datasets throughout their analysis.
 To more clearly see this, look at the simple workflow below. If the input datasets are tagged <code class="language-plaintext highlighter-rouge">TB8_R1</code> and <code class="language-plaintext highlighter-rouge">TB8_R2</code>, these tags will propagate to the outputs of any tools run on these datasets. If a tool has multiple inputs with tags, the outputs will have all of the tags like in the bowtie2 tool.</p>
 
-<p><img src="../../images/nametag-wf.png" alt="A workflow with some tags overlaid. " loading="lazy" /></p>
+<p><img src="../../images/nametag-wf.png" alt="A workflow with some tags overlaid. " width="837" height="735" loading="lazy" /></p>
 
 <p>It can turn your histories from a complicated mess into an easier to follow analysis, as each step is clearly labelled with the original input sample corresponding to each analysis:</p>
 
@@ -477,8 +475,8 @@ To more clearly see this, look at the simple workflow below. If the input datase
   </thead>
   <tbody>
     <tr>
-      <td><img src="../../images/nametag-why.png" alt="History with untagged and poorly named datasets. " loading="lazy" /></td>
-      <td><img src="../../images/nametag-why-fixed.png" alt="History with tagged datasets showing how much easier it is. " loading="lazy" /></td>
+      <td><img src="../../images/nametag-why.png" alt="History with untagged and poorly named datasets. " width="288" height="793" loading="lazy" /></td>
+      <td><img src="../../images/nametag-why-fixed.png" alt="History with tagged datasets showing how much easier it is. " width="288" height="793" loading="lazy" /></td>
     </tr>
     <tr>
       <td>How would you identify which input sample corresponds with which featureCounts output?</td>
@@ -504,7 +502,7 @@ To more clearly see this, look at the simple workflow below. If the input datase
 <h1 id="setting-name-tags-manually">Setting name tags manually</h1>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-set-name-tags-manually"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Set name tags manually</div>
+  <div class="box-title hands-on-title" id="hands-on-set-name-tags-manually"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Set name tags manually</div>
 
   <ol>
     <li>
@@ -531,7 +529,7 @@ To more clearly see this, look at the simple workflow below. If the input datase
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on the dataset to expand it</li>   <li>Click on <strong>Add Tags</strong> <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span></li>   <li>Add a tag  starting with <code class="language-plaintext highlighter-rouge">#</code>     <ul>       <li>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</li>     </ul>   </li>   <li>Press <kbd>Enter</kbd></li>   <li>Check that the tag appears below the dataset name</li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
   </ol>
@@ -542,10 +540,10 @@ To more clearly see this, look at the simple workflow below. If the input datase
 
 <p>If you’re using a Galaxy server newer than 19.01, you will notice that the tags each have different colours:</p>
 
-<p><img src="../../images/nametag-colour.png" alt="Name tags have different colours based on their contents. " loading="lazy" /></p>
+<p><img src="../../images/nametag-colour.png" alt="Name tags have different colours based on their contents. " width="288" height="200" loading="lazy" /></p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-in-depth-colours"><button class="gtn-boxify-button details" type="button" aria-controls="details-in-depth-colours" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: In depth: Colours<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-in-depth-colours"><button class="gtn-boxify-button details" type="button" aria-controls="details-in-depth-colours" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: In depth: Colours<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The colours are generated from a checksum of the text of each tag. Every time the same tag is used, the same colour will be generated. Different words will usually result in different colours.</p>
 
@@ -562,14 +560,14 @@ While current evidence (<span class="citation"><a href="#microsoft-word-recognit
 <p>For more information about the rule-based uploader, please see <a href="/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html">this dedicated tutorial</a></p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-set-name-tags-during-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Set name tags during upload</div>
+  <div class="box-title hands-on-title" id="hands-on-set-name-tags-during-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Set name tags during upload</div>
 
   <ol>
     <li>Open the <strong>Upload</strong> <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> interface</li>
     <li>
       <p>Click on <strong>Rule-based</strong> at the top</p>
 
-      <p><img src="../../images/group-tags/rule_upload.png" alt="Rule-based upload. " loading="lazy" /></p>
+      <p><img src="../../images/group-tags/rule_upload.png" alt="Rule-based upload. " width="891" height="538" loading="lazy" /></p>
 
       <p>As you can see in this dialog, data can be selected from a history dataset or pasted in directly</p>
     </li>
@@ -624,12 +622,12 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
 
 <p>This will add 7 new datasets to your history, each one tagged and named appropriately.</p>
 
-<p><img src="../../images/nametag-rulebuilder.png" alt="Automatically tagged uploads. " loading="lazy" /></p>
+<p><img src="../../images/nametag-rulebuilder.png" alt="Automatically tagged uploads. " width="288" height="442" loading="lazy" /></p>
 
 <p>The datasets now have two types of tags: name tags and general purpose tags. General purpose tags, unlike name tags, will not propagate. They’re mainly useful for searching through your datasets (Try entering <code class="language-plaintext highlighter-rouge">tag=paired</code> in your History search box).</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>How many tags does the dataset named <code class="language-plaintext highlighter-rouge">GSM461177</code> have? Which ones?</li>
@@ -637,7 +635,7 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>3 tags. You can find all tags of a dataset by first clicking on it to expand it, and then clicking on the tags icon <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span>. The tags are <code class="language-plaintext highlighter-rouge">#GSM461177</code>, <code class="language-plaintext highlighter-rouge">paired</code>, and <code class="language-plaintext highlighter-rouge">untreat</code></li>
@@ -652,7 +650,7 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
 <p>Now that we have our name tags in place, let’s see them in action!</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-some-analysis-steps"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Some analysis steps</div>
+  <div class="box-title hands-on-title" id="hands-on-some-analysis-steps"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Some analysis steps</div>
   <ol>
     <li><strong>Select first</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> lines from a dataset (head)
       <ul>
@@ -665,14 +663,14 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
 
 <p>We can already see the benefits of name tags. Even though our outputs are named things like “Select first on data 8”, they’re also visibly tagged with the name of the original input.</p>
 
-<p><img src="../../images/nametag-select.png" alt="Tagged datasets are clearly traceable. " loading="lazy" /></p>
+<p><img src="../../images/nametag-select.png" alt="Tagged datasets are clearly traceable. " width="275" height="392" loading="lazy" /></p>
 
 <p>Next we’ll join two of these datasets together, to see the tagging behaviour on summaries of multiple datasets. In any box which allows selecting single files, you can also search on name tags.</p>
 
-<p><img src="../../images/nametag-filter.png" alt="Filtering datasets is possible on tag names. " loading="lazy" /></p>
+<p><img src="../../images/nametag-filter.png" alt="Filtering datasets is possible on tag names. " width="797" height="313" loading="lazy" /></p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-multiple-inputs"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Multiple inputs</div>
+  <div class="box-title hands-on-title" id="hands-on-multiple-inputs"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Multiple inputs</div>
   <ol>
     <li><strong>Join two datasets</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> side by side on a specified field
       <ul>
@@ -686,7 +684,7 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
 
 <p>The output will include all of the name tags from all of the inputs:</p>
 
-<p><img src="../../images/nametag-join.png" alt="The output dataset should be tagged with both of the inputs. " loading="lazy" /></p>
+<p><img src="../../images/nametag-join.png" alt="The output dataset should be tagged with both of the inputs. " width="276" height="73" loading="lazy" /></p>
 
 <p>If you compare the tags of the last output joining the two tables, and the original inputs, you will notice that the “General Purpose” tags were lost along the way. Only name tags are propagated with each analysis step.</p>
 
@@ -742,6 +740,9 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
                             Helena Rasche,  <b>Name tags for following complex histories (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/name-tags/tutorial.html">https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/name-tags/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -763,12 +764,12 @@ https://zenodo.org/record/1185122/files/GSM461182_untreat_single.counts
 
 <code id="citation-code">@misc{galaxy-interface-name-tags,
 author = "Helena Rasche",
-title = "Name tags for following complex histories (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/name-tags/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Name tags for following complex histories (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/name-tags/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -845,19 +846,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00154">https://gxy.io/GTN:T00154</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00154">https://gxy.io/GTN:T00154</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -877,7 +878,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -885,9 +886,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

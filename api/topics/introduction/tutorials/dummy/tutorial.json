@@ -38,6 +38,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
     }
   ],
+  "short_id": "T00185",
   "url": "/topics/introduction/tutorials/dummy/tutorial.html",
   "topic_name": "introduction",
   "tutorial_name": "dummy",
@@ -78,6 +79,7 @@
       }
     ]
   },
+  "topic_name_human": "Introduction to Galaxy Analyses",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

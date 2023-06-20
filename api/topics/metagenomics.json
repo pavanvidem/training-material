@@ -136,6 +136,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
         }
       ],
+      "short_id": "T00201",
       "url": "/topics/metagenomics/tutorials/general-tutorial/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "general-tutorial",
@@ -162,7 +163,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "wgs-worklow.ga",
@@ -175,7 +177,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/general-tutorial/tutorial.json",
@@ -228,6 +231,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -470,6 +474,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/tnabtaf/"
         }
       ],
+      "short_id": "T00206",
       "url": "/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "mothur-miseq-sop-short",
@@ -541,10 +546,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow1_quality_control",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow1_quality_control",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow2_data_cleaning.ga",
@@ -554,10 +564,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow2_data_cleaning",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow2_data_cleaning",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow3_classification.ga",
@@ -567,10 +582,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow3_classification",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow3_classification",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow4_mock_otu_clustering.ga",
@@ -580,10 +600,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow4_mock_otu_clustering",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow4_mock_otu_clustering",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow5_otu_clustering.ga",
@@ -593,10 +618,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow5_otu_clustering",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow5_otu_clustering",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow6_alpha_diversity.ga",
@@ -606,10 +636,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow6_alpha_diversity",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow6_alpha_diversity",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow7_beta_diversity.ga",
@@ -619,10 +654,15 @@
           "wfid": "metagenomics-mothur-miseq-sop-short",
           "wfname": "workflow7_beta_diversity",
           "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow7_beta_diversity",
-          "license": null,
+          "license": "MIT",
           "creators": [
-
-          ]
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0003-3803-468X",
+              "name": "Saskia Hiltemann"
+            }
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.json",
@@ -657,11 +697,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -701,6 +736,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -947,6 +983,7 @@
       "tags": [
         "nanopore"
       ],
+      "short_id": "T00207",
       "url": "/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "nanopore-16S-metagenomics",
@@ -973,7 +1010,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.json",
@@ -990,11 +1028,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -1034,6 +1067,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1238,6 +1272,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/paulzierep/"
         }
       ],
+      "short_id": "T00203",
       "url": "/topics/metagenomics/tutorials/metatranscriptomics/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "metatranscriptomics",
@@ -1355,7 +1390,8 @@
               "identifier": "0000-0003-2982-388X",
               "name": "Paul Zierep"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metatranscriptomics/tutorial.json",
@@ -1384,11 +1420,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
@@ -1407,6 +1438,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1618,6 +1650,7 @@
         "assembly",
         "amr"
       ],
+      "short_id": "T00209",
       "url": "/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "plasmid-metagenomics-nanopore",
@@ -1679,7 +1712,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json",
@@ -1712,11 +1746,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
@@ -1743,6 +1772,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1957,6 +1987,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/tnabtaf/"
         }
       ],
+      "short_id": "T00205",
       "url": "/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "mothur-miseq-sop",
@@ -1983,7 +2014,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.json",
@@ -2042,11 +2074,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.fr/",
             "name": "UseGalaxy.fr",
             "usegalaxy": "true"
@@ -2068,6 +2095,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2360,6 +2388,7 @@
           "teresa-m"
         ]
       },
+      "short_id": "T00200",
       "url": "/topics/metagenomics/tutorials/beer-data-analysis/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "beer-data-analysis",
@@ -2429,7 +2458,8 @@
               "identifier": "0000-0002-0507-4602",
               "name": "Polina Polunina"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/beer-data-analysis/tutorial.json",
@@ -2444,11 +2474,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxytrakr.org/",
             "name": "GalaxyTrakr",
@@ -2474,6 +2499,7 @@
 
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2620,6 +2646,7 @@
         "metagenomics",
         "taxonomic profiling"
       ],
+      "short_id": "T00338",
       "url": "/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "taxonomic-profiling",
@@ -2678,7 +2705,8 @@
               "identifier": "0000-0001-9852-1987",
               "name": "Bérénice Batut"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.json",
@@ -2706,6 +2734,7 @@
 
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2941,6 +2970,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/paulzierep/"
         }
       ],
+      "short_id": "T00204",
       "url": "/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "metatranscriptomics-short",
@@ -3003,7 +3033,8 @@
               "identifier": "0000-0003-2982-388X",
               "name": "Paul Zierep"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow2_community_profile.ga",
@@ -3052,7 +3083,8 @@
               "identifier": "0000-0003-2982-388X",
               "name": "Paul Zierep"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow3_functional_information.ga",
@@ -3101,7 +3133,8 @@
               "identifier": "0000-0003-2982-388X",
               "name": "Paul Zierep"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow3_functional_information_quick.ga",
@@ -3150,7 +3183,8 @@
               "identifier": "0000-0003-2982-388X",
               "name": "Paul Zierep"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.json",
@@ -3187,11 +3221,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -3208,6 +3237,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3430,6 +3460,7 @@
           "wm75"
         ]
       },
+      "short_id": "T00208",
       "url": "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "pathogen-detection-from-nanopore-foodborne-data",
@@ -3495,7 +3526,8 @@
               "name": "Bérénice Batut",
               "url": "https://orcid.org/0000-0001-9852-1987"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Nanopore_Datasets_Pathogen_Tracking_among_all_samples.ga",
@@ -3519,7 +3551,8 @@
               "name": "Bérénice Batut",
               "url": "https://orcid.org/0000-0001-9852-1987"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "nanopore_preprocessing.ga",
@@ -3543,7 +3576,8 @@
               "name": "Engy Nasr",
               "url": "https://orcid.org/0000-0001-9047-4215"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "nanopore_snp_based_pathogenetic_identification.ga",
@@ -3567,7 +3601,8 @@
               "name": "Bérénice Batut",
               "url": "https://orcid.org/0000-0001-9852-1987"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "nanopore_taxonomy_profiling_and_visualization.ga",
@@ -3591,7 +3626,8 @@
               "name": "Bérénice Batut",
               "url": "https://orcid.org/0000-0001-9852-1987"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.json",
@@ -3654,6 +3690,7 @@
 
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4053,6 +4090,7 @@
         "assembly",
         "metagenomics"
       ],
+      "short_id": "T00202",
       "url": "/topics/metagenomics/tutorials/metagenomics-assembly/tutorial.html",
       "topic_name": "metagenomics",
       "tutorial_name": "metagenomics-assembly",
@@ -4109,7 +4147,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
@@ -4122,7 +4161,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metagenomics-assembly/tutorial.json",
@@ -4161,6 +4201,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4402,6 +4443,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "S00078",
       "url": "/topics/metagenomics/tutorials/introduction/slides.html",
       "topic_name": "metagenomics",
       "tutorial_name": "introduction",
@@ -4472,6 +4514,7 @@
           }
         ]
       },
+      "topic_name_human": "Metagenomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

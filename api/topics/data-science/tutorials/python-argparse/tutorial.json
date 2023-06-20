@@ -42,6 +42,7 @@
     ]
   },
   "priority": 10,
+  "short_id": "T00082",
   "url": "/topics/data-science/tutorials/python-argparse/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-argparse",
@@ -82,6 +83,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

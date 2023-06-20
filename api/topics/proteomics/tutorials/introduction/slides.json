@@ -13,6 +13,7 @@
   "contributors": [
     "foellmelanie"
   ],
+  "short_id": "S00080",
   "url": "/topics/proteomics/tutorials/introduction/slides.html",
   "topic_name": "proteomics",
   "tutorial_name": "introduction",
@@ -83,6 +84,7 @@
       }
     ]
   },
+  "topic_name_human": "Proteomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -102,6 +104,5 @@
     ],
     "video": true
   },
-  "type": "tutorial",
-  "short_id": "S00080"
+  "type": "tutorial"
 }

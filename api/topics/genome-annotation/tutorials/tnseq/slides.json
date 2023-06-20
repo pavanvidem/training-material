@@ -24,6 +24,7 @@
   ],
   "subtopic": "prokaryote",
   "priority": 4,
+  "short_id": "S00070",
   "url": "/topics/genome-annotation/tutorials/tnseq/slides.html",
   "topic_name": "genome-annotation",
   "tutorial_name": "tnseq",
@@ -50,7 +51,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/tnseq/tutorial.json",
@@ -71,11 +73,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
         "usegalaxy": "true"
@@ -94,6 +91,7 @@
       }
     ]
   },
+  "topic_name_human": "Genome Annotation",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -178,7 +176,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00070",
   "redirect_from": [
     "/short/genome-annotation/tnseq/slides",
     "/short/S00070"

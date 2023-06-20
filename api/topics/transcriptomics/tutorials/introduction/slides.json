@@ -14,6 +14,7 @@
     "erxleben",
     "mwolfien"
   ],
+  "short_id": "S00094",
   "url": "/topics/transcriptomics/tutorials/introduction/slides.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "introduction",
@@ -85,6 +86,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -105,6 +107,5 @@
     ],
     "video": false
   },
-  "type": "tutorial",
-  "short_id": "S00094"
+  "type": "tutorial"
 }

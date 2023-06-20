@@ -474,6 +474,12 @@
         "/topics/variant-analysis/tutorials/dunovo/tutorial.html"
       ],
       [
+        "variant-analysis/sars-cov-2",
+        "From NCBI's Sequence Read Archive (SRA) to Galaxy: SARS-CoV-2 variant analysis",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/sars-cov-2/tutorial.html"
+      ],
+      [
         "variant-analysis/sars-cov-2-variant-discovery",
         "Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data",
         "Variant Analysis",
@@ -644,6 +650,12 @@
         "A Docker-based interactive Jupyterlab powered by GPU for artificial intelligence in Galaxy",
         "Statistics and machine learning",
         "/topics/statistics/tutorials/gpu_jupyter_lab/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
       ],
       [
         "transcriptomics/mirna-target-finder",
@@ -1056,128 +1068,16 @@
         "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
       ],
       [
+        "variant-analysis/sars-cov-2",
+        "From NCBI's Sequence Read Archive (SRA) to Galaxy: SARS-CoV-2 variant analysis",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/sars-cov-2/tutorial.html"
+      ],
+      [
         "variant-analysis/somatic-variant-discovery",
         "Somatic Variant Discovery from WES Data Using Control-FREEC",
         "Variant Analysis",
         "/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.html"
-      ],
-      [
-        "visualisation/circos",
-        "Visualisation with Circos",
-        "Visualisation",
-        "/topics/visualisation/tutorials/circos/tutorial.html"
-      ]
-    ]
-  },
-  "upload1": {
-    "tool_id": [
-      [
-        "upload1",
-        "upload1"
-      ]
-    ],
-    "tutorials": [
-      [
-        "assembly/chloroplast-assembly",
-        "Chloroplast genome assembly",
-        "Assembly",
-        "/topics/assembly/tutorials/chloroplast-assembly/tutorial.html"
-      ],
-      [
-        "assembly/ecoli_comparison",
-        "Making sense of a newly assembled genome",
-        "Assembly",
-        "/topics/assembly/tutorials/ecoli_comparison/tutorial.html"
-      ],
-      [
-        "assembly/mrsa-illumina",
-        "Genome Assembly of MRSA using Illumina MiSeq Data",
-        "Assembly",
-        "/topics/assembly/tutorials/mrsa-illumina/tutorial.html"
-      ],
-      [
-        "assembly/mrsa-nanopore",
-        "Genome Assembly of MRSA using Oxford Nanopore MinION Data",
-        "Assembly",
-        "/topics/assembly/tutorials/mrsa-nanopore/tutorial.html"
-      ],
-      [
-        "contributing/create-new-tutorial-content",
-        "Creating content in Markdown",
-        "Contributing to the Galaxy Training Material",
-        "/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html"
-      ],
-      [
-        "evolution/mtb_phylogeny",
-        "Tree thinking for tuberculosis evolution and epidemiology",
-        "Evolution",
-        "/topics/evolution/tutorials/mtb_phylogeny/tutorial.html"
-      ],
-      [
-        "evolution/mtb_transmission",
-        "Identifying tuberculosis transmission links: from SNPs to transmission clusters",
-        "Evolution",
-        "/topics/evolution/tutorials/mtb_transmission/tutorial.html"
-      ],
-      [
-        "galaxy-interface/workflow-reports",
-        "Workflow Reports",
-        "Using Galaxy and Managing your Data",
-        "/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html"
-      ],
-      [
-        "introduction/data-manipulation-olympics",
-        "Data Manipulation Olympics",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/data-manipulation-olympics/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-intro-101",
-        "Galaxy 101",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-101/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-intro-101-everyone",
-        "Galaxy 101 for everyone",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-intro-peaks2genes",
-        "From peaks to genes",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-peaks2genes/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-reproduce",
-        "How to reproduce published Galaxy analyses",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-reproduce/tutorial.html"
-      ],
-      [
-        "variant-analysis/aiv-analysis",
-        "Avian influenza viral strain analysis from gene segment sequencing data",
-        "Variant Analysis",
-        "/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html"
-      ],
-      [
-        "variant-analysis/pox-tiled-amplicon",
-        "Pox virus genome analysis from tiled-amplicon sequencing data",
-        "Variant Analysis",
-        "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
-      ],
-      [
-        "variant-analysis/sars-cov-2-variant-discovery",
-        "Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data",
-        "Variant Analysis",
-        "/topics/variant-analysis/tutorials/sars-cov-2-variant-discovery/tutorial.html"
-      ],
-      [
-        "variant-analysis/tb-variant-analysis",
-        "M. tuberculosis Variant Analysis",
-        "Variant Analysis",
-        "/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html"
       ],
       [
         "visualisation/circos",
@@ -1300,6 +1200,130 @@
         "3: RNA-seq genes to pathways",
         "Transcriptomics",
         "/topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.html"
+      ],
+      [
+        "variant-analysis/sars-cov-2",
+        "From NCBI's Sequence Read Archive (SRA) to Galaxy: SARS-CoV-2 variant analysis",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/sars-cov-2/tutorial.html"
+      ]
+    ]
+  },
+  "upload1": {
+    "tool_id": [
+      [
+        "upload1",
+        "upload1"
+      ]
+    ],
+    "tutorials": [
+      [
+        "assembly/chloroplast-assembly",
+        "Chloroplast genome assembly",
+        "Assembly",
+        "/topics/assembly/tutorials/chloroplast-assembly/tutorial.html"
+      ],
+      [
+        "assembly/ecoli_comparison",
+        "Making sense of a newly assembled genome",
+        "Assembly",
+        "/topics/assembly/tutorials/ecoli_comparison/tutorial.html"
+      ],
+      [
+        "assembly/mrsa-illumina",
+        "Genome Assembly of MRSA using Illumina MiSeq Data",
+        "Assembly",
+        "/topics/assembly/tutorials/mrsa-illumina/tutorial.html"
+      ],
+      [
+        "assembly/mrsa-nanopore",
+        "Genome Assembly of MRSA using Oxford Nanopore MinION Data",
+        "Assembly",
+        "/topics/assembly/tutorials/mrsa-nanopore/tutorial.html"
+      ],
+      [
+        "contributing/create-new-tutorial-content",
+        "Creating content in Markdown",
+        "Contributing to the Galaxy Training Material",
+        "/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html"
+      ],
+      [
+        "evolution/mtb_phylogeny",
+        "Tree thinking for tuberculosis evolution and epidemiology",
+        "Evolution",
+        "/topics/evolution/tutorials/mtb_phylogeny/tutorial.html"
+      ],
+      [
+        "evolution/mtb_transmission",
+        "Identifying tuberculosis transmission links: from SNPs to transmission clusters",
+        "Evolution",
+        "/topics/evolution/tutorials/mtb_transmission/tutorial.html"
+      ],
+      [
+        "galaxy-interface/workflow-reports",
+        "Workflow Reports",
+        "Using Galaxy and Managing your Data",
+        "/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html"
+      ],
+      [
+        "introduction/data-manipulation-olympics",
+        "Data Manipulation Olympics",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/data-manipulation-olympics/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-intro-101",
+        "Galaxy 101",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-intro-101/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-intro-101-everyone",
+        "Galaxy 101 for everyone",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-intro-peaks2genes",
+        "From peaks to genes",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-intro-peaks2genes/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-reproduce",
+        "How to reproduce published Galaxy analyses",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-reproduce/tutorial.html"
+      ],
+      [
+        "variant-analysis/aiv-analysis",
+        "Avian influenza viral strain analysis from gene segment sequencing data",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html"
+      ],
+      [
+        "variant-analysis/pox-tiled-amplicon",
+        "Pox virus genome analysis from tiled-amplicon sequencing data",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
+      ],
+      [
+        "variant-analysis/sars-cov-2-variant-discovery",
+        "Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/sars-cov-2-variant-discovery/tutorial.html"
+      ],
+      [
+        "variant-analysis/tb-variant-analysis",
+        "M. tuberculosis Variant Analysis",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html"
+      ],
+      [
+        "visualisation/circos",
+        "Visualisation with Circos",
+        "Visualisation",
+        "/topics/visualisation/tutorials/circos/tutorial.html"
       ]
     ]
   },
@@ -2765,6 +2789,76 @@
       ]
     ]
   },
+  "sort1": {
+    "tool_id": [
+      [
+        "sort1",
+        "sort1"
+      ]
+    ],
+    "tutorials": [
+      [
+        "assembly/vgp_genome_assembly",
+        "VGP assembly pipeline",
+        "Assembly",
+        "/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html"
+      ],
+      [
+        "assembly/vgp_workflow_training",
+        "VGP assembly pipeline - short version",
+        "Assembly",
+        "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html"
+      ],
+      [
+        "computational-chemistry/zauberkugel",
+        "Protein target prediction of a bioactive ligand with Align-it and ePharmaLib",
+        "Computational chemistry",
+        "/topics/computational-chemistry/tutorials/zauberkugel/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-intro-101",
+        "Galaxy 101",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-intro-101/tutorial.html"
+      ],
+      [
+        "single-cell/bulk-music-2-preparescref",
+        "Creating the single-cell RNA-seq reference dataset for deconvolution",
+        "Single Cell",
+        "/topics/single-cell/tutorials/bulk-music-2-preparescref/tutorial.html"
+      ],
+      [
+        "single-cell/bulk-music-3-preparebulk",
+        "Creating the bulk RNA-seq dataset for deconvolution",
+        "Single Cell",
+        "/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html"
+      ],
+      [
+        "single-cell/scrna-case_cell-cycle",
+        "Removing the effects of the cell cycle",
+        "Single Cell",
+        "/topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.html"
+      ],
+      [
+        "transcriptomics/clipseq",
+        "CLIP-Seq data analysis from pre-processing to motif detection",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/clipseq/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ],
+      [
+        "transcriptomics/mirna-target-finder",
+        "Whole transcriptome analysis of Arabidopsis thaliana",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html"
+      ]
+    ]
+  },
   "bgruening/tp_replace_in_line": {
     "tool_id": [
       [
@@ -3215,70 +3309,6 @@
       ]
     ]
   },
-  "sort1": {
-    "tool_id": [
-      [
-        "sort1",
-        "sort1"
-      ]
-    ],
-    "tutorials": [
-      [
-        "assembly/vgp_genome_assembly",
-        "VGP assembly pipeline",
-        "Assembly",
-        "/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html"
-      ],
-      [
-        "assembly/vgp_workflow_training",
-        "VGP assembly pipeline - short version",
-        "Assembly",
-        "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html"
-      ],
-      [
-        "computational-chemistry/zauberkugel",
-        "Protein target prediction of a bioactive ligand with Align-it and ePharmaLib",
-        "Computational chemistry",
-        "/topics/computational-chemistry/tutorials/zauberkugel/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-intro-101",
-        "Galaxy 101",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-101/tutorial.html"
-      ],
-      [
-        "single-cell/bulk-music-2-preparescref",
-        "Creating the single-cell RNA-seq reference dataset for deconvolution",
-        "Single Cell",
-        "/topics/single-cell/tutorials/bulk-music-2-preparescref/tutorial.html"
-      ],
-      [
-        "single-cell/bulk-music-3-preparebulk",
-        "Creating the bulk RNA-seq dataset for deconvolution",
-        "Single Cell",
-        "/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html"
-      ],
-      [
-        "single-cell/scrna-case_cell-cycle",
-        "Removing the effects of the cell cycle",
-        "Single Cell",
-        "/topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.html"
-      ],
-      [
-        "transcriptomics/clipseq",
-        "CLIP-Seq data analysis from pre-processing to motif detection",
-        "Transcriptomics",
-        "/topics/transcriptomics/tutorials/clipseq/tutorial.html"
-      ],
-      [
-        "transcriptomics/mirna-target-finder",
-        "Whole transcriptome analysis of Arabidopsis thaliana",
-        "Transcriptomics",
-        "/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html"
-      ]
-    ]
-  },
   "devteam/bowtie2": {
     "tool_id": [
       [
@@ -3552,6 +3582,68 @@
         "M. tuberculosis Variant Analysis",
         "Variant Analysis",
         "/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html"
+      ]
+    ]
+  },
+  "bgruening/tp_sorted_uniq": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sorted_uniq/1.1.0",
+        "1.1.0"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sorted_uniq/1.0.0",
+        "1.0.0"
+      ]
+    ],
+    "tutorials": [
+      [
+        "contributing/create-new-tutorial",
+        "Creating a new tutorial",
+        "Contributing to the Galaxy Training Material",
+        "/topics/contributing/tutorials/create-new-tutorial/tutorial.html"
+      ],
+      [
+        "galaxy-interface/workflow-reports",
+        "Workflow Reports",
+        "Using Galaxy and Managing your Data",
+        "/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html"
+      ],
+      [
+        "introduction/data-manipulation-olympics",
+        "Data Manipulation Olympics",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/data-manipulation-olympics/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-intro-101-everyone",
+        "Galaxy 101 for everyone",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html"
+      ],
+      [
+        "introduction/galaxy-reproduce",
+        "How to reproduce published Galaxy analyses",
+        "Introduction to Galaxy Analyses",
+        "/topics/introduction/tutorials/galaxy-reproduce/tutorial.html"
+      ],
+      [
+        "proteomics/secretome-prediction",
+        "Secretome Prediction",
+        "Proteomics",
+        "/topics/proteomics/tutorials/secretome-prediction/tutorial.html"
+      ],
+      [
+        "single-cell/scatac-preprocessing-tenx",
+        "Pre-processing of 10X Single-Cell ATAC-seq Datasets",
+        "Single Cell",
+        "/topics/single-cell/tutorials/scatac-preprocessing-tenx/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
       ]
     ]
   },
@@ -3916,62 +4008,6 @@
         "Clustering 3K PBMCs with Scanpy",
         "Single Cell",
         "/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.html"
-      ]
-    ]
-  },
-  "bgruening/tp_sorted_uniq": {
-    "tool_id": [
-      [
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sorted_uniq/1.1.0",
-        "1.1.0"
-      ],
-      [
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sorted_uniq/1.0.0",
-        "1.0.0"
-      ]
-    ],
-    "tutorials": [
-      [
-        "contributing/create-new-tutorial",
-        "Creating a new tutorial",
-        "Contributing to the Galaxy Training Material",
-        "/topics/contributing/tutorials/create-new-tutorial/tutorial.html"
-      ],
-      [
-        "galaxy-interface/workflow-reports",
-        "Workflow Reports",
-        "Using Galaxy and Managing your Data",
-        "/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html"
-      ],
-      [
-        "introduction/data-manipulation-olympics",
-        "Data Manipulation Olympics",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/data-manipulation-olympics/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-intro-101-everyone",
-        "Galaxy 101 for everyone",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html"
-      ],
-      [
-        "introduction/galaxy-reproduce",
-        "How to reproduce published Galaxy analyses",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-reproduce/tutorial.html"
-      ],
-      [
-        "proteomics/secretome-prediction",
-        "Secretome Prediction",
-        "Proteomics",
-        "/topics/proteomics/tutorials/secretome-prediction/tutorial.html"
-      ],
-      [
-        "single-cell/scatac-preprocessing-tenx",
-        "Pre-processing of 10X Single-Cell ATAC-seq Datasets",
-        "Single Cell",
-        "/topics/single-cell/tutorials/scatac-preprocessing-tenx/tutorial.html"
       ]
     ]
   },
@@ -6166,6 +6202,10 @@
   "iuc/fasterq_dump": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/3.0.3+galaxy0",
+        "3.0.3+galaxy0"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.11.0+galaxy0",
         "2.11.0+galaxy0"
       ],
@@ -6504,6 +6544,48 @@
         "De novo transcriptome reconstruction with RNA-Seq",
         "Transcriptomics",
         "/topics/transcriptomics/tutorials/de-novo/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ]
+    ]
+  },
+  "devteam/gffread": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.3+galaxy0",
+        "2.2.1.3+galaxy0"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.2",
+        "2.2.1.2"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.1",
+        "2.2.1.1"
+      ]
+    ],
+    "tutorials": [
+      [
+        "genome-annotation/annotation-with-maker",
+        "Genome annotation with Maker",
+        "Genome Annotation",
+        "/topics/genome-annotation/tutorials/annotation-with-maker/tutorial.html"
+      ],
+      [
+        "genome-annotation/annotation-with-maker-short",
+        "Genome annotation with Maker (short)",
+        "Genome Annotation",
+        "/topics/genome-annotation/tutorials/annotation-with-maker-short/tutorial.html"
+      ],
+      [
+        "genome-annotation/lncrna",
+        "Long non-coding RNAs (lncRNAs) annotation with FEELnc",
+        "Genome Annotation",
+        "/topics/genome-annotation/tutorials/lncrna/tutorial.html"
       ],
       [
         "transcriptomics/differential-isoform-expression",
@@ -7341,6 +7423,34 @@
       ]
     ]
   },
+  "param_value_from_file": {
+    "tool_id": [
+      [
+        "param_value_from_file",
+        "param_value_from_file"
+      ]
+    ],
+    "tutorials": [
+      [
+        "assembly/vgp_workflow_training",
+        "VGP assembly pipeline - short version",
+        "Assembly",
+        "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ],
+      [
+        "variant-analysis/pox-tiled-amplicon",
+        "Pox virus genome analysis from tiled-amplicon sequencing data",
+        "Variant Analysis",
+        "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
+      ]
+    ]
+  },
   "iuc/circos": {
     "tool_id": [
       [
@@ -7777,6 +7887,38 @@
       ]
     ]
   },
+  "iuc/gffcompare": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/gffcompare/gffcompare/0.12.6+galaxy0",
+        "0.12.6+galaxy0"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/gffcompare/gffcompare/0.11.2",
+        "0.11.2"
+      ]
+    ],
+    "tutorials": [
+      [
+        "proteomics/proteogenomics-dbcreation",
+        "Proteogenomics 1: Database Creation",
+        "Proteomics",
+        "/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html"
+      ],
+      [
+        "transcriptomics/de-novo",
+        "De novo transcriptome reconstruction with RNA-Seq",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/de-novo/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ]
+    ]
+  },
   "bgruening/bg_uniq": {
     "tool_id": [
       [
@@ -8146,42 +8288,6 @@
         "NCBI BLAST+ against the MAdLand",
         "Sequence analysis",
         "/topics/sequence-analysis/tutorials/ncbi-blast-against-the-madland/tutorial.html"
-      ]
-    ]
-  },
-  "devteam/gffread": {
-    "tool_id": [
-      [
-        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.3+galaxy0",
-        "2.2.1.3+galaxy0"
-      ],
-      [
-        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.2",
-        "2.2.1.2"
-      ],
-      [
-        "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.1",
-        "2.2.1.1"
-      ]
-    ],
-    "tutorials": [
-      [
-        "genome-annotation/annotation-with-maker",
-        "Genome annotation with Maker",
-        "Genome Annotation",
-        "/topics/genome-annotation/tutorials/annotation-with-maker/tutorial.html"
-      ],
-      [
-        "genome-annotation/annotation-with-maker-short",
-        "Genome annotation with Maker (short)",
-        "Genome Annotation",
-        "/topics/genome-annotation/tutorials/annotation-with-maker-short/tutorial.html"
-      ],
-      [
-        "genome-annotation/lncrna",
-        "Long non-coding RNAs (lncRNAs) annotation with FEELnc",
-        "Genome Annotation",
-        "/topics/genome-annotation/tutorials/lncrna/tutorial.html"
       ]
     ]
   },
@@ -9867,6 +9973,32 @@
       ]
     ]
   },
+  "iuc/stringtie_merge": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/2.2.1+galaxy1",
+        "2.2.1+galaxy1"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/1.3.6",
+        "1.3.6"
+      ]
+    ],
+    "tutorials": [
+      [
+        "transcriptomics/de-novo",
+        "De novo transcriptome reconstruction with RNA-Seq",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/de-novo/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ]
+    ]
+  },
   "bgruening/salmon": {
     "tool_id": [
       [
@@ -10799,28 +10931,6 @@
       ]
     ]
   },
-  "param_value_from_file": {
-    "tool_id": [
-      [
-        "param_value_from_file",
-        "param_value_from_file"
-      ]
-    ],
-    "tutorials": [
-      [
-        "assembly/vgp_workflow_training",
-        "VGP assembly pipeline - short version",
-        "Assembly",
-        "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html"
-      ],
-      [
-        "variant-analysis/pox-tiled-amplicon",
-        "Pox virus genome analysis from tiled-amplicon sequencing data",
-        "Variant Analysis",
-        "/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
-      ]
-    ]
-  },
   "__RELABEL_FROM_FILE__": {
     "tool_id": [
       [
@@ -11449,25 +11559,25 @@
       ]
     ]
   },
-  "ucsc_table_direct1": {
+  "gene2exon1": {
     "tool_id": [
       [
-        "ucsc_table_direct1",
-        "ucsc_table_direct1"
+        "gene2exon1",
+        "gene2exon1"
       ]
     ],
     "tutorials": [
-      [
-        "epigenetics/atac-seq",
-        "ATAC-Seq data analysis",
-        "Epigenetics",
-        "/topics/epigenetics/tutorials/atac-seq/tutorial.html"
-      ],
       [
         "introduction/galaxy-intro-strands",
         "Introduction to Genomics and Galaxy",
         "Introduction to Galaxy Analyses",
         "/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html"
+      ],
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
       ]
     ]
   },
@@ -11534,28 +11644,6 @@
         "Proteogenomics 1: Database Creation",
         "Proteomics",
         "/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html"
-      ]
-    ]
-  },
-  "iuc/gffcompare": {
-    "tool_id": [
-      [
-        "toolshed.g2.bx.psu.edu/repos/iuc/gffcompare/gffcompare/0.11.2",
-        "0.11.2"
-      ]
-    ],
-    "tutorials": [
-      [
-        "proteomics/proteogenomics-dbcreation",
-        "Proteogenomics 1: Database Creation",
-        "Proteomics",
-        "/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html"
-      ],
-      [
-        "transcriptomics/de-novo",
-        "De novo transcriptome reconstruction with RNA-Seq",
-        "Transcriptomics",
-        "/topics/transcriptomics/tutorials/de-novo/tutorial.html"
       ]
     ]
   },
@@ -12763,6 +12851,10 @@
   },
   "ebi-gxa/anndata_ops": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.8.1+galaxy91",
+        "1.8.1+galaxy91"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -14225,11 +14317,47 @@
       ]
     ]
   },
+  "nilesh/rseqc_inner_distance": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_inner_distance/5.0.1+galaxy2",
+        "5.0.1+galaxy2"
+      ]
+    ],
+    "tutorials": [
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ]
+    ]
+  },
+  "iuc/rna_quast": {
+    "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/rnaquast/rna_quast/2.2.3+galaxy0",
+        "2.2.3+galaxy0"
+      ],
+      [
+        "toolshed.g2.bx.psu.edu/repos/iuc/rnaquast/rna_quast/2.2.1",
+        "2.2.1"
+      ]
+    ],
+    "tutorials": [
+      [
+        "transcriptomics/differential-isoform-expression",
+        "Genome-wide alternative splicing analysis",
+        "Transcriptomics",
+        "/topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html"
+      ]
+    ]
+  },
   "iuc/isoformswitchanalyzer": {
     "tool_id": [
       [
-        "toolshed.g2.bx.psu.edu/repos/iuc/isoformswitchanalyzer/isoformswitchanalyzer/1.20.0+galaxy0",
-        "1.20.0+galaxy0"
+        "toolshed.g2.bx.psu.edu/repos/iuc/isoformswitchanalyzer/isoformswitchanalyzer/1.20.0+galaxy5",
+        "1.20.0+galaxy5"
       ]
     ],
     "tutorials": [
@@ -14830,22 +14958,6 @@
         "Differential abundance testing of small RNAs",
         "Transcriptomics",
         "/topics/transcriptomics/tutorials/srna/tutorial.html"
-      ]
-    ]
-  },
-  "iuc/stringtie_merge": {
-    "tool_id": [
-      [
-        "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/1.3.6",
-        "1.3.6"
-      ]
-    ],
-    "tutorials": [
-      [
-        "transcriptomics/de-novo",
-        "De novo transcriptome reconstruction with RNA-Seq",
-        "Transcriptomics",
-        "/topics/transcriptomics/tutorials/de-novo/tutorial.html"
       ]
     ]
   },
@@ -18469,22 +18581,6 @@
       ]
     ]
   },
-  "gene2exon1": {
-    "tool_id": [
-      [
-        "gene2exon1",
-        "gene2exon1"
-      ]
-    ],
-    "tutorials": [
-      [
-        "introduction/galaxy-intro-strands",
-        "Introduction to Genomics and Galaxy",
-        "Introduction to Galaxy Analyses",
-        "/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html"
-      ]
-    ]
-  },
   "proteore/prot_features": {
     "tool_id": [
       [
@@ -20680,6 +20776,10 @@
   "ebi-gxa/scanpy_scale_data": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_scale_data/scanpy_scale_data/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_scale_data/scanpy_scale_data/1.8.1+galaxy0",
         "1.8.1+galaxy0"
       ]
@@ -20695,6 +20795,10 @@
   },
   "ebi-gxa/scanpy_run_umap": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_umap/scanpy_run_umap/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_umap/scanpy_run_umap/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -20712,6 +20816,10 @@
   "ebi-gxa/scanpy_run_tsne": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_tsne/scanpy_run_tsne/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_tsne/scanpy_run_tsne/1.8.1+galaxy1",
         "1.8.1+galaxy1"
       ]
@@ -20727,6 +20835,10 @@
   },
   "ebi-gxa/scanpy_run_pca": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_run_pca/scanpy_run_pca/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -20744,6 +20856,10 @@
   "ebi-gxa/scanpy_plot_embed": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_plot_embed/scanpy_plot_embed/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_plot_embed/scanpy_plot_embed/1.8.1+galaxy0",
         "1.8.1+galaxy0"
       ]
@@ -20759,6 +20875,10 @@
   },
   "ebi-gxa/scanpy_normalise_data": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_normalise_data/scanpy_normalise_data/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_normalise_data/scanpy_normalise_data/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -20776,6 +20896,10 @@
   "ebi-gxa/scanpy_find_variable_genes": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_variable_genes/scanpy_find_variable_genes/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_variable_genes/scanpy_find_variable_genes/1.8.1+galaxy0",
         "1.8.1+galaxy0"
       ]
@@ -20791,6 +20915,10 @@
   },
   "ebi-gxa/scanpy_find_markers": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_markers/scanpy_find_markers/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -20808,6 +20936,10 @@
   "ebi-gxa/scanpy_find_cluster": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_cluster/scanpy_find_cluster/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_find_cluster/scanpy_find_cluster/1.8.1+galaxy0",
         "1.8.1+galaxy0"
       ]
@@ -20823,6 +20955,10 @@
   },
   "ebi-gxa/scanpy_filter_genes": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_filter_genes/scanpy_filter_genes/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_filter_genes/scanpy_filter_genes/1.8.1+galaxy0",
         "1.8.1+galaxy0"
@@ -20840,6 +20976,10 @@
   "ebi-gxa/scanpy_filter_cells": {
     "tool_id": [
       [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_filter_cells/scanpy_filter_cells/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
+      [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_filter_cells/scanpy_filter_cells/1.8.1+galaxy0",
         "1.8.1+galaxy0"
       ]
@@ -20855,6 +20995,10 @@
   },
   "ebi-gxa/scanpy_compute_graph": {
     "tool_id": [
+      [
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.8.1+galaxy9",
+        "1.8.1+galaxy9"
+      ],
       [
         "toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.8.1+galaxy1",
         "1.8.1+galaxy1"
@@ -20888,10 +21032,6 @@
   "iuc/rna_starsolo": {
     "tool_id": [
       [
-        "toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.8a",
-        "2.7.8a"
-      ],
-      [
         "toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3",
         "2.7.10b+galaxy3"
       ]
@@ -20910,10 +21050,6 @@
       [
         "toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2",
         "1.10.0+galaxy2"
-      ],
-      [
-        "toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy1",
-        "1.10.0+galaxy1"
       ]
     ],
     "tutorials": [

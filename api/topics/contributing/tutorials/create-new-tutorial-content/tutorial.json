@@ -30,6 +30,7 @@
     "API": "Application Programming Interface",
     "JSON": "JavaScript Object Notation"
   },
+  "short_id": "T00058",
   "url": "/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "create-new-tutorial-content",
@@ -51,16 +52,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://cpt.tamu.edu/galaxy-public/",
-        "name": "Center for Phage Technology (CPT)",
-        "usegalaxy": "false"
-      },
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
@@ -110,6 +101,7 @@
       }
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

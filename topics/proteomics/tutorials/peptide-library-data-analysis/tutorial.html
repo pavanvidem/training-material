@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Peptide Library Data Analysis">
         <meta property="og:description" content="Training material for proteomics workflows in Galaxy">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -310,7 +314,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/proteomics/tutorials/peptide-library-data-analysis/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -357,7 +361,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -370,7 +374,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -407,14 +411,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-proteomics">
     <h1 data-toc-skip>Peptide Library Data Analysis</h1>
@@ -424,7 +421,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/jaidevjoshi83/" class="contributor-badge contributor-jaidevjoshi83"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/jaidevjoshi83?s=27" alt="Avatar">Jayadev Joshi</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/blankenberg?s=27" alt="Avatar">Daniel Blankenberg</a>
+		Authors: <a href="/training-material/hall-of-fame/jaidevjoshi83/" class="contributor-badge contributor-jaidevjoshi83"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/jaidevjoshi83?s=36" alt="Avatar">Jayadev Joshi</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/blankenberg?s=36" alt="Avatar">Daniel Blankenberg</a>
 	</div>
 
 </div>
@@ -590,12 +587,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00227">https://gxy.io/GTN:T00227</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00227">https://gxy.io/GTN:T00227</a> </div>
         
     </blockquote>
     </section>
@@ -619,7 +617,7 @@ Sentry.init({
 <p>An easy way to install and use the PDAUG toolset, and follow this tutorial is via a prebuilt docker image equipped with a PDAUG toolset, workflow, and data library. A prebuilds docker image can be downloaded and run by typing a simple command at the terminal after installing docker software on any operating system.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-easy-access-of-tools-workflows-and-data-from-docker-image"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Easy access of tools, workflows and data from docker image</div>
+  <div class="box-title hands-on-title" id="hands-on-easy-access-of-tools-workflows-and-data-from-docker-image"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Easy access of tools, workflows and data from docker image</div>
 
   <ol>
     <li>Downloading the docker image from the docker hub using <code class="language-plaintext highlighter-rouge">docker pull jayadevjoshi12/galaxy_pdaug:latest</code> command.</li>
@@ -653,7 +651,7 @@ Sentry.init({
 <p>Several inbuilt data sets have been provided with the tool<code class="language-plaintext highlighter-rouge">PDAUG Peptide Data Access</code>. The antimicrobial peptides (AMPs) versus transmembrane peptides (TMPs) dataset was used as an example data set to understand the overall relation between features and biological properties of peptides. AMPs consist of an intersection of all activity annotations of the APD2 and CAMP databases, where gram-positive, gram-negative, and antifungal exact matches were observed. TMPs were extracted from alpha-helical transmembrane regions of proteins for classification.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-fetching-inbuild-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Fetching inbuild data</div>
+  <div class="box-title hands-on-title" id="hands-on-fetching-inbuild-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Fetching inbuild data</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_peptide_data_access/pdaug_peptide_data_access/0.1.0" title="PDAUG Peptide Data Access tool" aria-role="link"><strong>PDAUG Peptide Data Access</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_peptide_data_access/pdaug_peptide_data_access/0.1.0</span></span> with the following parameters:
@@ -670,7 +668,7 @@ Sentry.init({
 <p><code class="language-plaintext highlighter-rouge">PDAUG Peptide Data Access</code> tool returns data as a tabular file that contains sequences from both the classes. In order to utilize this data in the next steps, first we need to convert tabular data into fasta format. If data contains sequences from two different classes <code class="language-plaintext highlighter-rouge">PDAUG TSVtoFASTA</code> tool converts and splits data into two separate files for each of the class,  AMPs, and TMPs.  The reason behind converting and splitting the data is that all the downstream tools require two separate files if we are comparing two different peptide classes or calculating features.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-converting-tabular-data-into-fasta-formate"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Converting tabular data into fasta formate</div>
+  <div class="box-title hands-on-title" id="hands-on-converting-tabular-data-into-fasta-formate"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Converting tabular data into fasta formate</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_tsvtofasta/pdaug_tsvtofasta/0.1.0" title="PDAUG TSVtoFASTA tool" aria-role="link"><strong>PDAUG TSVtoFASTA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_tsvtofasta/pdaug_tsvtofasta/0.1.0</span></span> with the following parameters:
@@ -692,7 +690,7 @@ Sentry.init({
 <p>In this step, we utilize <code class="language-plaintext highlighter-rouge">PDAUG Peptide Sequence Analysis</code> tool to compare peptide sequences based on hydrophobicity, hydrophobic movement, charge, amino acid fraction, and sequence length and create a summary plot.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-generating-a-summary-plot-to-assess-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Generating a summary plot to assess peptide dataset</div>
+  <div class="box-title hands-on-title" id="hands-on-generating-a-summary-plot-to-assess-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Generating a summary plot to assess peptide dataset</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_peptide_sequence_analysis/pdaug_peptide_sequence_analysis/0.1.0" title="PDAUG Peptide Sequence Analysis tool" aria-role="link"><strong>PDAUG Peptide Sequence Analysis</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_peptide_sequence_analysis/pdaug_peptide_sequence_analysis/0.1.0</span></span> with the following parameters:
@@ -710,11 +708,11 @@ Sentry.init({
   </ol>
 
   <blockquote class="question">
-    <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+    <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
     <p>What can be concluded from the summary plot based on different properties?</p>
 
     <blockquote class="solution">
-      <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+      <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
       <p>The summary plot represents differences between two sets of peptides based on an amino acid fraction, global charge, sequence length, global hydrophobicity, glocal hydrophobic movement. Additionally, 3D scattered plot shows the clustering of peptides based on three features.</p>
 
       <ol>
@@ -729,14 +727,14 @@ Sentry.init({
 
 </blockquote>
 
-<figure id="figure-1"><img src="../../images/SummaryPlot.png" alt="Summary Plot. " width="1304" height="755" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Summary plot shows comparison between AMPs and TMPs</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/SummaryPlot.png" alt="Summary Plot. " width="1304" height="755" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Summary plot shows comparison between AMPs and TMPs</figcaption></figure>
 
 <h3 id="assessing-feature-space-distribution">Assessing feature space distribution</h3>
 
 <p>In this tool, we have used <code class="language-plaintext highlighter-rouge">PDAUG Fisher's Plot</code> that compares two peptide libraries based on the feature space using the Fisher test.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-generating-a-fisher-s-plot-to-assess-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Generating a Fisher's plot to assess peptide dataset</div>
+  <div class="box-title hands-on-title" id="hands-on-generating-a-fisher-s-plot-to-assess-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Generating a Fisher's plot to assess peptide dataset</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_fishers_plot/pdaug_fishers_plot/0.1.0" title="PDAUG Fisher's Plot tool" aria-role="link"><strong>PDAUG Fisher’s Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_fishers_plot/pdaug_fishers_plot/0.1.0</span></span> with the following parameters:
@@ -750,11 +748,11 @@ Sentry.init({
   </ol>
 
   <blockquote class="question">
-    <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+    <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
     <p>What does Fisher’s plot represents?</p>
 
     <blockquote class="solution">
-      <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+      <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
       <p>Fisher’s plot represents the difference between two groups of peptides based on their feature space. Each tiny square in this plot represents the feature space. Based on the sliding window Fisher’s test was performed for each feature space to assess the presence of peptides from two different groups on each of the tiny squares.  The AMPs and TMPs in the feature space represented by their mean hydropathy and amino acid volume. Fisher’s plot shows that the sequences with larger hydrophobic amino acids are more frequent in TMPs in comparison to AMPs.</p>
     </blockquote>
@@ -762,7 +760,7 @@ Sentry.init({
 
 </blockquote>
 
-<figure id="figure-2"><img src="../../images/FeatureSpace.png" alt="Fishers plot. " width="2400" height="2400" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> TMPs peptides show amino acids with larger hydrophobic residues in compare to AMPs</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/FeatureSpace.png" alt="Fishers plot. " width="2400" height="2400" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> TMPs peptides show amino acids with larger hydrophobic residues in compare to AMPs</figcaption></figure>
 
 <p>The AMPs and TMPs in the feature space represented by their mean hydropathy and amino acid volume. Fisher’s plot shows that the sequences with larger hydrophobic amino acids are more frequent in TMPs in comparison to AMPs.</p>
 
@@ -773,7 +771,7 @@ Sentry.init({
 <p>In this step we will calculate Composition, Transition and Distribution (CTD) descriptos. Composition describptors are defined as the number of amino acids of a particular property divided by total number of amino acids.  Transition descriptors are representd as the number of transition from a particular property to different property divided by (total number of amino acids − 1). Distribution descriptors are derived by chain length and the amino acids of a particular property located on this length <span class="citation"><a href="#Govindan_Nair_2013">Govindan and Nair 2013</a></span>.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-calculating-descriptors-for-the-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Calculating descriptors for the peptide dataset</div>
+  <div class="box-title hands-on-title" id="hands-on-calculating-descriptors-for-the-peptide-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Calculating descriptors for the peptide dataset</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_sequence_property_based_descriptors/pdaug_sequence_property_based_descriptors/0.1.0" title="PDAUG Sequence Property Based Descriptors tool" aria-role="link"><strong>PDAUG Sequence Property Based Descriptors</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_sequence_property_based_descriptors/pdaug_sequence_property_based_descriptors/0.1.0</span></span> with the following parameters:
@@ -801,7 +799,7 @@ Sentry.init({
 </ul>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-adding-class-labels-target-labels-to-the-tabular-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Adding Class Labels (target labels) to the tabular data</div>
+  <div class="box-title hands-on-title" id="hands-on-adding-class-labels-target-labels-to-the-tabular-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Adding Class Labels (target labels) to the tabular data</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_addclasslabel/pdaug_addclasslabel/0.1.0" title="PDAUG Add Class Label tool" aria-role="link"><strong>PDAUG Add Class Label</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_addclasslabel/pdaug_addclasslabel/0.1.0</span></span> with the following parameters:
@@ -825,7 +823,7 @@ Sentry.init({
 <p>We utilize <code class="language-plaintext highlighter-rouge">PDAUG Merge Dataframes</code> to merge two tabular data files.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-merging-two-tabular-data-files"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Merging two tabular data files</div>
+  <div class="box-title hands-on-title" id="hands-on-merging-two-tabular-data-files"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Merging two tabular data files</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_merge_dataframes/pdaug_merge_dataframes/0.1.0" title="PDAUG Merge Dataframes tool" aria-role="link"><strong>PDAUG Merge Dataframes</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_merge_dataframes/pdaug_merge_dataframes/0.1.0</span></span> with the following parameters:
@@ -843,7 +841,7 @@ Sentry.init({
 <p>Tool <code class="language-plaintext highlighter-rouge">PDAUG Basic Plots</code> will be used to compare two peptide libraries based on three CTD descriptors <code class="language-plaintext highlighter-rouge">SecondaryStrD1100</code>, <code class="language-plaintext highlighter-rouge">SolventAccessibilityD2001</code>, and <code class="language-plaintext highlighter-rouge">NormalizedVDWVD3050</code> respectively. A 3D scatter plot will be generated.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-generating-a-scatter-plot-to-assess-features"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Generating a scatter plot to assess features</div>
+  <div class="box-title hands-on-title" id="hands-on-generating-a-scatter-plot-to-assess-features"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Generating a scatter plot to assess features</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/jay/pdaug_basic_plots/pdaug_basic_plots/0.1.0" title="PDAUG Basic Plots tool" aria-role="link"><strong>PDAUG Basic Plots</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/jay/pdaug_basic_plots/pdaug_basic_plots/0.1.0</span></span> with the following parameters:
@@ -867,7 +865,7 @@ Sentry.init({
 
 </blockquote>
 
-<figure id="figure-3"><img src="../../images/3DScattered.png" alt="3D Scatter plot . " width="1051" height="791" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> 3D scatter Plot shows relation between featues</figcaption></figure>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/3DScattered.png" alt="3D Scatter plot . " width="1051" height="791" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> 3D scatter Plot shows relation between featues</figcaption></figure>
 
 <p><strong>Figure 3</strong> Represent 3D scattered plot generated based on the CTD descriptors. Red dots represent TMPs and blue dots represent AMPs. Based on these 3 features, we can observe that both groups do not show any clear separation or cluster in the 3D space.</p>
 
@@ -877,7 +875,7 @@ Sentry.init({
 
 <p>In this tutorial, we learned an example flexible and extensible analysis of peptide data using PDAUG tools. We generated various plots based on the quantitative properties of amino acids and peptide sequences.</p>
 
-<figure id="figure-4"><img src="../../images/PeptideAnalysisWorkflow.png" alt="Workflow. " width="1343" height="885" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Workflow used</figcaption></figure>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/PeptideAnalysisWorkflow.png" alt="Workflow. " width="1343" height="885" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Workflow used</figcaption></figure>
 
 
                 </section>
@@ -921,6 +919,9 @@ Sentry.init({
                             Jayadev Joshi, Daniel Blankenberg,  <b>Peptide Library Data Analysis (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html">https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -942,12 +943,12 @@ Sentry.init({
 
 <code id="citation-code">@misc{proteomics-peptide-library-data-analysis,
 author = "Jayadev Joshi and Daniel Blankenberg",
-title = "Peptide Library Data Analysis (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Peptide Library Data Analysis (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1064,19 +1065,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00227">https://gxy.io/GTN:T00227</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00227">https://gxy.io/GTN:T00227</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1096,7 +1097,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1104,9 +1105,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

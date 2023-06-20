@@ -29,6 +29,7 @@
 
   ],
   "subtopic": "maintenance",
+  "short_id": "T00328",
   "url": "/topics/admin/tutorials/customization-manual/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "customization-manual",
@@ -69,6 +70,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

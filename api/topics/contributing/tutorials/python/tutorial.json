@@ -29,6 +29,7 @@
       "dirowa"
     ]
   },
+  "short_id": "T00068",
   "url": "/topics/contributing/tutorials/python/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "python",
@@ -69,6 +70,7 @@
       }
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

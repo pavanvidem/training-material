@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/rstudio/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -61,7 +65,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: RStudio in Galaxy">
         <meta property="og:description" content="A collection of microtutorials explaining various feature...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -337,7 +341,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/galaxy-interface/tutorials/rstudio/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/galaxy-interface/tutorials/rstudio/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -384,7 +388,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -397,7 +401,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -434,14 +438,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-galaxy-interface">
     <h1 data-toc-skip>RStudio in Galaxy</h1>
@@ -451,7 +448,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/tobyhodges/" class="contributor-badge contributor-tobyhodges"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/tobyhodges?s=27" alt="Avatar">Toby Hodges</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+		Authors: <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=36" alt="Avatar">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/tobyhodges/" class="contributor-badge contributor-tobyhodges"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/tobyhodges?s=36" alt="Avatar">Toby Hodges</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=36" alt="Avatar">Erasmus+ Programme</a>
 	</div>
 
 </div>
@@ -493,12 +490,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 17, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00157">https://gxy.io/GTN:T00157</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00157">https://gxy.io/GTN:T00157</a> </div>
         
     </blockquote>
     </section>
@@ -556,14 +554,14 @@ Sentry.init({
 
 <p>You should now be looking at a page with the RStudio interface:</p>
 
-<p><img src="../../images/rstudio/rstudio_session_default.png" alt="rstudio default session. " loading="lazy" /></p>
+<p><img src="../../images/rstudio/rstudio_session_default.png" alt="rstudio default session. " width="3184" height="2364" loading="lazy" /></p>
 
 <h2 id="creating-your-first-r-script">Creating your first R script</h2>
 
 <p>Now that we are ready to start exploring R, we will want to keep a record of the commands we are using. To do this we can create an R script.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-create-a-r-script"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create a R script</div>
+  <div class="box-title hands-on-title" id="hands-on-create-a-r-script"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create a R script</div>
 
   <ol>
     <li>Click the <strong>File</strong> menu</li>
@@ -575,7 +573,7 @@ Sentry.init({
 <p>A new panel appears on the top left. Before we go any further, you should save your script.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-save-a-r-script"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Save a R script</div>
+  <div class="box-title hands-on-title" id="hands-on-save-a-r-script"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Save a R script</div>
 
   <ol>
     <li>
@@ -599,7 +597,7 @@ Sentry.init({
 
 <p>Here are the major windows (or panels) of the RStudio environment:</p>
 
-<p><img src="../../images/rstudio/rstudio_session_4pane_layout.png" alt="rstudio default session. " loading="lazy" /></p>
+<p><img src="../../images/rstudio/rstudio_session_4pane_layout.png" alt="rstudio default session. " width="3178" height="2362" loading="lazy" /></p>
 
 <ul>
   <li>
@@ -632,7 +630,7 @@ Sentry.init({
 <p>All of the panels in RStudio have configuration options. For example, you can minimize/maximize a panel, or by moving your mouse in the space between panels you can resize as needed. The most important customization options for panel layout are in the <strong>View</strong> menu. Other options such as font sizes, colors/themes, and more are in the <strong>Tools</strong> menu under <strong>Global Options</strong>.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-working-with-r-at-the-terminal"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Working with R at the terminal</div>
+  <div class="box-title comment-title" id="comment-working-with-r-at-the-terminal"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Working with R at the terminal</div>
   <p>Although we won’t be working with R at the terminal, there are lots of reasons to.</p>
 
   <p>For example, once you have written an RScript, you can run it at any Linux or Windows terminal without the need to start up RStudio. We don’t want you to get confused - RStudio runs R, but R is not RStudio.</p>
@@ -645,7 +643,7 @@ Sentry.init({
 <p>A function in R (or any computing language) is a short program that takes some input and returns some output.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-calling-a-function-in-r"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Calling a function in R</div>
+  <div class="box-title hands-on-title" id="hands-on-calling-a-function-in-r"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Calling a function in R</div>
 
   <ol>
     <li>Type <code class="language-plaintext highlighter-rouge">date()</code> in the <strong>Console</strong> panel</li>
@@ -661,7 +659,7 @@ Sentry.init({
 </span></code></pre></div></div>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-display-of-function-call-in-the-tutorial"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Display of function call in the tutorial</div>
+  <div class="box-title comment-title" id="comment-display-of-function-call-in-the-tutorial"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Display of function call in the tutorial</div>
   <p>Now in the tutorial, we will display the function call like this:</p>
 
   <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="w"> </span><span class="n">date</span><span class="p">()</span><span class="w">
@@ -672,7 +670,7 @@ Sentry.init({
 <p>The other way to execute these functions is to use the script we just created and then keep track of the functions.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-running-a-function-via-a-script"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Running a function via a script</div>
+  <div class="box-title hands-on-title" id="hands-on-running-a-function-via-a-script"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Running a function via a script</div>
 
   <ol>
     <li>Type <code class="language-plaintext highlighter-rouge">date()</code> in the <strong>Script</strong> panel</li>
@@ -685,7 +683,7 @@ Sentry.init({
 <p>We would like now to keep information about this function</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-comment-in-a-script"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Comment in a script</div>
+  <div class="box-title hands-on-title" id="hands-on-comment-in-a-script"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Comment in a script</div>
 
   <ol>
     <li>
@@ -703,7 +701,7 @@ Sentry.init({
 <p>The comment line is displayed in the console but not executed.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-what-do-these-functions-do"><i class="far fa-question-circle" aria-hidden="true"></i> Question: What do these functions do?</div>
+  <div class="box-title question-title" id="question-what-do-these-functions-do"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: What do these functions do?</div>
 
   <p>Try the following functions by writing them in your script. See if you can
 guess what they do, and make sure to add comments to your script about your
@@ -715,7 +713,7 @@ assumed purpose.</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li><code class="language-plaintext highlighter-rouge">dir()</code> lists files in the working directory</li>
@@ -727,7 +725,7 @@ assumed purpose.</p>
 </blockquote>
 
 <blockquote class="warning">
-  <div class="box-title warning-title" id="warning-commands-are-case-sensitive"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Warning: Commands are case sensitive!</div>
+  <div class="box-title warning-title" id="warning-commands-are-case-sensitive"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: Commands are case sensitive!</div>
   <p>In R, the commands are case sensitive. So be careful when you type them.</p>
 </blockquote>
 
@@ -741,7 +739,7 @@ assumed purpose.</p>
     <p>An argument may be a specific input for your function and/or may modify the function’s behavior. For example the function <code class="language-plaintext highlighter-rouge">round()</code> will round a number with a decimal:</p>
 
     <blockquote class="code_in">
-      <div class="box-title code-in-title" id="code-in"><i class="far fa-keyboard" aria-hidden="true"></i> Input</div>
+      <div class="box-title code-in-title" id="code-in"><i class="far fa-keyboard" aria-hidden="true" ></i> Input</div>
       <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This will round a number to the nearest integer</span><span class="w">
 </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="m">3.14</span><span class="p">)</span><span class="w">
 </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">3</span><span class="w">
@@ -757,7 +755,7 @@ assumed purpose.</p>
 <p>To see the help you need enter a <code class="language-plaintext highlighter-rouge">?</code> in front of the function name. The <strong>Help</strong> tab (in the bottom-right panel) will show you information.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-help"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get help</div>
+  <div class="box-title hands-on-title" id="hands-on-get-help"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get help</div>
 
   <ol>
     <li>
@@ -783,7 +781,7 @@ assumed purpose.</p>
 <p>We can also see the arguments of a function without opening its help.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-the-function-arguments"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get the function arguments</div>
+  <div class="box-title hands-on-title" id="hands-on-get-the-function-arguments"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get the function arguments</div>
 
   <ol>
     <li>
@@ -814,7 +812,7 @@ assumed purpose.</p>
 <p>We can explicitly set the digits parameter when we call the function.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-call-a-function-with-several-parameters"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Call a function with several parameters</div>
+  <div class="box-title hands-on-title" id="hands-on-call-a-function-with-several-parameters"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Call a function with several parameters</div>
 
   <ol>
     <li>Call <code class="language-plaintext highlighter-rouge">round</code> with 2 arguments
@@ -845,7 +843,7 @@ assumed purpose.</p>
 <p>Finally, what if you are using <code class="language-plaintext highlighter-rouge">?</code> to get help for a function in a package not installed on your system, such as when you are running a script which has dependencies?</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-help-for-a-missing-function"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get help for a missing function</div>
+  <div class="box-title hands-on-title" id="hands-on-get-help-for-a-missing-function"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get help for a missing function</div>
 
   <ol>
     <li>Ask help for <code class="language-plaintext highlighter-rouge">geom_point()</code></li>
@@ -867,7 +865,7 @@ assumed purpose.</p>
 <p>Finally, if you think there should be a function, for example a statistical test, but you aren’t sure what it is called in R, or what functions may be available.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-search-for-a-function"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Search for a function</div>
+  <div class="box-title hands-on-title" id="hands-on-search-for-a-function"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Search for a function</div>
 
   <ol>
     <li>Type <code class="language-plaintext highlighter-rouge">help.search('chi-Squared test')</code></li>
@@ -878,7 +876,7 @@ assumed purpose.</p>
 <p>A list of potential interesting function related to “chi-Squared test” are listed. You can click on one of them to see the help of it. Remember to put your search query in quotes inside the function’s parentheses.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-search-for-r-functions"><i class="far fa-question-circle" aria-hidden="true"></i> Question: Search for R functions</div>
+  <div class="box-title question-title" id="question-search-for-r-functions"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Search for R functions</div>
 
   <p>Search the R functions for the following statistical
 functions</p>
@@ -889,7 +887,7 @@ functions</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>While your search results may return several tests, we list a few you might
 find:</p>
@@ -912,7 +910,7 @@ find:</p>
 <p>Here is one last bonus we will mention about RStudio. It’s difficult to remember all of the arguments and definitions associated with a given function.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-search-for-a-function-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Search for a function</div>
+  <div class="box-title hands-on-title" id="hands-on-search-for-a-function-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Search for a function</div>
 
   <ol>
     <li>Type <code class="language-plaintext highlighter-rouge">lm</code> in the <strong>Script</strong> panel</li>
@@ -921,7 +919,7 @@ find:</p>
 
       <p>RStudio displays functions and associated help</p>
 
-      <p><img src="../../images/rstudio/studio_contexthelp1.png" alt="rstudio contextual help. " loading="lazy" /></p>
+      <p><img src="../../images/rstudio/studio_contexthelp1.png" alt="rstudio contextual help. " width="1860" height="644" loading="lazy" /></p>
     </li>
     <li>Select <code class="language-plaintext highlighter-rouge">lm</code> function using the arrows</li>
     <li>Hit <kbd>Enter</kbd></li>
@@ -930,7 +928,7 @@ find:</p>
 
       <p>RStudio shows the function’s arguments and provide additional help for each of these arguments:</p>
 
-      <p><img src="../../images/rstudio/studio_contexthelp2.png" alt="rstudio contextual help. " loading="lazy" /></p>
+      <p><img src="../../images/rstudio/studio_contexthelp2.png" alt="rstudio contextual help. " width="1854" height="638" loading="lazy" /></p>
     </li>
   </ol>
 
@@ -998,6 +996,9 @@ Then you can safely shut down RStudio.</p>
                             Bérénice Batut, Fotis E. Psomopoulos, Toby Hodges, Erasmus+ Programme,  <b>RStudio in Galaxy (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/rstudio/tutorial.html">https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/rstudio/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1019,12 +1020,12 @@ Then you can safely shut down RStudio.</p>
 
 <code id="citation-code">@misc{galaxy-interface-rstudio,
 author = "Bérénice Batut and Fotis E. Psomopoulos and Toby Hodges and Erasmus+ Programme",
-title = "RStudio in Galaxy (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/rstudio/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "RStudio in Galaxy (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/rstudio/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1101,6 +1102,10 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> R basics in Galaxy:
                             
@@ -1110,6 +1115,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -1206,19 +1213,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00157">https://gxy.io/GTN:T00157</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00157">https://gxy.io/GTN:T00157</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1238,7 +1245,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1246,9 +1253,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

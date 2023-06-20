@@ -21,6 +21,7 @@
       "hexylena"
     ]
   },
+  "short_id": "T00056",
   "url": "/topics/contributing/tutorials/create-new-topic/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "create-new-topic",
@@ -61,6 +62,7 @@
       }
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

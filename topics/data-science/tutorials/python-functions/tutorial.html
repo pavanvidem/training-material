@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/python-functions/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -61,7 +65,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Python - Functions">
         <meta property="og:description" content="These lessons will help you get your feet in data science...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -357,7 +361,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/data-science/tutorials/python-functions/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/python-functions/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -404,7 +408,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -417,7 +421,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -454,14 +458,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-data-science">
     <h1 data-toc-skip>Python - Functions</h1>
@@ -471,7 +468,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=27" alt="Avatar">The Carpentries</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/dirowa/" class="contributor-badge contributor-dirowa"><img src="https://avatars.githubusercontent.com/dirowa?s=27" alt="Avatar">Donny Vrins</a><a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=27" alt="Avatar">Bazante Sanders</a>
+		Authors: <a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=36" alt="Avatar">The Carpentries</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/dirowa/" class="contributor-badge contributor-dirowa"><img src="https://avatars.githubusercontent.com/dirowa?s=36" alt="Avatar">Donny Vrins</a><a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=36" alt="Avatar">Bazante Sanders</a>
 	</div>
 
 </div>
@@ -550,6 +547,10 @@ Sentry.init({
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> Python - Math:
                             
@@ -559,6 +560,8 @@ Sentry.init({
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -684,12 +687,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Feb 13, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00089">https://gxy.io/GTN:T00089</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00089">https://gxy.io/GTN:T00089</a> </div>
         
     </blockquote>
     </section>
@@ -766,7 +770,7 @@ Sentry.init({
 
 <blockquote class="code-2col">
   <blockquote class="code-in">
-    <div class="box-title code-in-title" id="code-in-math"><i class="far fa-keyboard" aria-hidden="true"></i> Input: Math</div>
+    <div class="box-title code-in-title" id="code-in-math"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Math</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Define our function
 f(x) = 3 * x
 # Compute some value
@@ -775,7 +779,7 @@ f(3) # is 9
   </blockquote>
 
   <blockquote class="code-out">
-    <div class="box-title code-out-title" id="code-out-python"><i class="fas fa-laptop-code" aria-hidden="true"></i> Output: Python</div>
+    <div class="box-title code-out-title" id="code-out-python"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output: Python</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Define our function
 def f(x):
    return 3 * x
@@ -798,7 +802,7 @@ f(3)
     <span class="nf">return </span><span class="p">((</span><span class="n">temp</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p><img src="../../images/python-basics/Figure7_Functions.png" alt="The above function fahr to celsius is shown except annotated. def is labelled &quot;def statement&quot;, fahr_to_celsius is noted as the function name. Inside parentheses is temp and an arrow shows it is called parameter names. The next line which is indented is annotated as the function body which has a return statement and the calculation from above." loading="lazy" /></p>
+<p><img src="../../images/python-basics/Figure7_Functions.png" alt="The above function fahr to celsius is shown except annotated. def is labelled &quot;def statement&quot;, fahr_to_celsius is noted as the function name. Inside parentheses is temp and an arrow shows it is called parameter names. The next line which is indented is annotated as the function body which has a return statement and the calculation from above." width="340" height="130" loading="lazy" /></p>
 
 <p>The function definition opens with the keyword <code class="language-plaintext highlighter-rouge">def</code> followed by the name of the function <code class="language-plaintext highlighter-rouge">fahr_to_celsius</code> and a parenthesized list of parameter names <code class="language-plaintext highlighter-rouge">temp</code>. The body of the function — the statements that are executed when it runs — is indented below the definition line. The body concludes with a <code class="language-plaintext highlighter-rouge">return</code> keyword followed by the return value.</p>
 
@@ -812,7 +816,7 @@ f(3)
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-formatting-strings"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-formatting-strings" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Formatting Strings<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-formatting-strings"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-formatting-strings" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Formatting Strings<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>There are several ways to print out a few values in python. We’d recommend you to use <code class="language-plaintext highlighter-rouge">f-strings</code> as it’s the cleanest and most modern way to do it.</p>
 
   <p><code class="language-plaintext highlighter-rouge">f</code>-strings start with an <code class="language-plaintext highlighter-rouge">f</code> (very descriptive name eh?). Within the text between the single or double quotes (<code class="language-plaintext highlighter-rouge">'</code>/<code class="language-plaintext highlighter-rouge">"</code>) you can use curly braces to refer to variables or python code which will be placed there in the string.</p>
@@ -845,7 +849,7 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-what-is-0"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-is-0" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: What is `0.`<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-what-is-0"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-is-0" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: What is `0.`<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>That’s a float! A <code class="language-plaintext highlighter-rouge">.</code> in a number makes it a float, rather than an integer.</p>
 </blockquote>
 
@@ -883,13 +887,13 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 <p>For a function this small, with such a descriptive name (<code class="language-plaintext highlighter-rouge">fahr_to_kelvin</code>) it feels quite obvious what the function should do, what inputs it takes, what outputs it produces. However, you will thank yourself in the future if you do this now. You may think you will remember what the code does, but, be kind to your future self who is busy and stressed and may not want to spend time reading the code over again to figure out what every single function does.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-converting-statements-to-functions"><i class="far fa-question-circle" aria-hidden="true"></i> Question: Converting statements to functions</div>
+  <div class="box-title question-title" id="question-converting-statements-to-functions"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Converting statements to functions</div>
   <p>A lot of what you’ll do in programing is to turn a procedure that you want to do, into statements and a function.</p>
 
   <p>Fill in the missing portions of this function, two average numbers. Then use it to find the average of 32326 and 631</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def average2(a, b):
     c = (a + b) / 2
     return c
@@ -907,7 +911,7 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 </code></pre></div></div>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-a-more-complicated-example"><i class="far fa-question-circle" aria-hidden="true"></i> Question: A more complicated example</div>
+  <div class="box-title question-title" id="question-a-more-complicated-example"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: A more complicated example</div>
 
   <p>The formula for a 90° triangle can be expressed as: \(c = \sqrt{a^2 + b^2}\)</p>
 
@@ -918,7 +922,7 @@ print(f"Here is the value of a: {function_that_returns_10()}")
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def pythagorus(a, b):
     c = math.sqrt(math.pow(a, 2) + math.pow(b, 2))
     return c
@@ -969,11 +973,11 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 </span></code></pre></div></div>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-scope"><i class="far fa-question-circle" aria-hidden="true"></i> Question: Scope</div>
+  <div class="box-title question-title" id="question-scope"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Scope</div>
   <p>Given the above code, which variables are accessible at Locations 1, 2, and 3?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>a, b</li>
       <li>a and b are there but you shouldn’t use these. x, y, c, d, e are also accessible.</li>
@@ -1004,7 +1008,7 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 </code></pre></div></div>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-exercise-signing-a-message"><i class="far fa-question-circle" aria-hidden="true"></i> Question: Exercise: Signing a message</div>
+  <div class="box-title question-title" id="question-exercise-signing-a-message"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Exercise: Signing a message</div>
   <p>Let’s test out a default argument. Imagine you are printing out a message, and at the bottom it should have a signature.</p>
 
   <p>Inputs:</p>
@@ -1021,7 +1025,7 @@ print(f"Here is the value of a: {function_that_returns_10()}")
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def myFunction(message, signature="Your name"):
     print(message)
     print()
@@ -1102,6 +1106,9 @@ print(f"Here is the value of a: {function_that_returns_10()}")
                             The Carpentries, Helena Rasche, Donny Vrins, Bazante Sanders,  <b>Python - Functions (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/python-functions/tutorial.html">https://training.galaxyproject.org/training-material/topics/data-science/tutorials/python-functions/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1123,12 +1130,12 @@ print(f"Here is the value of a: {function_that_returns_10()}")
 
 <code id="citation-code">@misc{data-science-python-functions,
 author = "The Carpentries and Helena Rasche and Donny Vrins and Bazante Sanders",
-title = "Python - Functions (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/data-science/tutorials/python-functions/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Python - Functions (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/data-science/tutorials/python-functions/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1213,19 +1220,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00089">https://gxy.io/GTN:T00089</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00089">https://gxy.io/GTN:T00089</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1245,7 +1252,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1253,9 +1260,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

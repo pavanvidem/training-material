@@ -61,6 +61,7 @@
     }
   ],
   "subtopic": "core",
+  "short_id": "T00123",
   "url": "/topics/dev/tutorials/writing_tests/tutorial.html",
   "topic_name": "dev",
   "tutorial_name": "writing_tests",
@@ -101,6 +102,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

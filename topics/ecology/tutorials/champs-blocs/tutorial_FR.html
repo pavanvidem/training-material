@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/ecology/tutorials/champs-blocs/tutorial_FR.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Production d'indicateurs champs de bloc">
         <meta property="og:description" content="Learn to analyse Ecological data through Galaxy.">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -302,7 +306,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/ecology/tutorials/champs-blocs/tutorial_FR.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/ecology/tutorials/champs-blocs/tutorial_FR.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -349,7 +353,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -362,7 +366,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -399,14 +403,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-ecology">
     <h1 data-toc-skip>Production d'indicateurs champs de bloc</h1>
@@ -416,7 +413,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Auteurs: <a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=27" alt="Avatar">Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
+		Auteurs: <a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=36" alt="Avatar">Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Avatar">Yvan Le Bras</a>
 	</div>
 
 </div>
@@ -566,6 +563,7 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Dernière modification:</strong> Mar 21, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> Licence:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Le Framework GTN est sous licence MIT</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
@@ -619,20 +617,20 @@ Ainsi, l’habitat « champs de blocs médiolittoraux » a fait l’objet de plu
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-rapide-introduction-sur-le-fonctionnement-de-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-rapide-introduction-sur-le-fonctionnement-de-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Détails: Rapide introduction sur le fonctionnement de Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-rapide-introduction-sur-le-fonctionnement-de-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-rapide-introduction-sur-le-fonctionnement-de-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Détails: Rapide introduction sur le fonctionnement de Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Vous pouvez quitter le didacticiel et aller vous prélasser sur l’écran principal en cliquant en dehors de l’écran du didacticiel.
 Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en cliquant sur <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span>.</p>
 
   <blockquote class="notranslate hands_on">
-    <div class="box-title hands-on-title" id="hands-on-se-connecter-à-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true"></i> En pratique: Se connecter à Galaxy</div>
+    <div class="box-title hands-on-title" id="hands-on-se-connecter-à-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Se connecter à Galaxy</div>
     <ol>
       <li>Ouvrez votre navigateur internet préféré (Chrome, Safari ou Firefox, s’il vous plaît, pas Edge ;) !!!)</li>
       <li>Rendez-vous sur votre instance Galaxy</li>
       <li>Se connecter ou s’enregistrer</li>
     </ol>
 
-    <figure id="figure-1"><img src="../../images/champbloc/galaxy_homepage.png" alt="Capture d'écran de l'interface Galaxy avec le bouton d'enregistrement ou de connexion en surbrillance. " width="1376" height="728" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Galaxy homepage</figcaption></figure>
+    <figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/galaxy_homepage.png" alt="Capture d'écran de l'interface Galaxy avec le bouton d'enregistrement ou de connexion en surbrillance. " width="1376" height="728" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Galaxy homepage</figcaption></figure>
 
     <p>Cette capture d’écran présente l’instance Galaxy Ecology, accessible à l’adresse <a href="https://ecology.usegalaxy.eu/">usegalaxy.eu</a></p>
 
@@ -645,14 +643,14 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
     <li>L’historique des analyses et l’ensemble des fichiers utilisés et générés sur la droite</li>
   </ul>
 
-  <figure id="figure-2"><img src="../../images/champbloc/galaxy_interface.png" alt="Capture d'écran de l'interface Galaxy, le panneau des outils est à gauche, le panneau principal est au centre et l'historique est à droite." width="1777" height="1290" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Explication de l'interface Galaxy</figcaption></figure>
+  <figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/galaxy_interface.png" alt="Capture d'écran de l'interface Galaxy, le panneau des outils est à gauche, le panneau principal est au centre et l'historique est à droite." width="1777" height="1290" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Explication de l'interface Galaxy</figcaption></figure>
 
   <p>La première fois que vous utiliserez Galaxy, il n’y aura aucun fichier dans votre panneau d’historique.</p>
 </blockquote>
 
 <p>Concentrons-nous maintenant sur notre workflows d’analyse sur l’état écologique de champ de blocs</p>
 
-<figure id="figure-3"><img src="../../images/champbloc/workflow.png" alt="workflows d'analyse sur l'état écologique du champ de blocs. " width="1760" height="1360" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Workflow</figcaption></figure>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/workflow.png" alt="workflows d'analyse sur l'état écologique du champ de blocs. " width="1760" height="1360" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Workflow</figcaption></figure>
 
 <h1 id="centraliser-les-données">Centraliser les données</h1>
 
@@ -710,7 +708,7 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
 </div>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-télerversement-des-données-dans-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true"></i> En pratique: Télerversement des données dans Galaxy</div>
+  <div class="box-title hands-on-title" id="hands-on-télerversement-des-données-dans-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Télerversement des données dans Galaxy</div>
   <ol>
     <li>Importer les données dans Galaxy</li>
   </ol>
@@ -718,23 +716,23 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
   <ul>
     <li>Ouvrir l’outil Galaxy de téléversement de données <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span></li>
     <li>Sélectionner <strong>Choose local files</strong>
-      <figure id="figure-4"><img src="../../images/champbloc/upload.png" alt="Choisir les fihiers en local. " width="1465" height="581" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> téléverser vos données</figcaption></figure>
+      <figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/upload.png" alt="Choisir les fihiers en local. " width="1465" height="581" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> téléverser vos données</figcaption></figure>
     </li>
     <li>
       <p>Naviguez dans votre ordinateur et récupérez vos fichiers ESTAMP (sélectionnez les trois fichiers mentionnés précédemment : champbloc_ivr.csv, champbloc_qecb.csv et ficheterrain.csv)</p>
     </li>
     <li>Cliquer sur <strong>Start</strong>
-      <figure id="figure-5"><img src="../../images/champbloc/start.png" alt="Commencer à charger vos données. " width="1239" height="748" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Lancer le chargement des données</figcaption></figure>
+      <figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/start.png" alt="Commencer à charger vos données. " width="1239" height="748" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Lancer le chargement des données</figcaption></figure>
     </li>
     <li>Cliquer sur <strong>Close</strong>
-      <figure id="figure-6"><img src="../../images/champbloc/close.png" alt="Fermer la fenêtre de téléversement de données. " width="1254" height="762" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Fermer</figcaption></figure>
+      <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/close.png" alt="Fermer la fenêtre de téléversement de données. " width="1254" height="762" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Fermer</figcaption></figure>
       <p>Vous devez attendre que les données de votre historique s’affichent en couleur verte sur le panneau de droite avant de pouvoir les utiliser.</p>
-      <figure id="figure-7"><img src="../../images/champbloc/avant_apres.png" alt="Jeux de données prêts à être utilisés. " width="825" height="544" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Jeux de données prêts</figcaption></figure>
+      <figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/avant_apres.png" alt="Jeux de données prêts à être utilisés. " width="825" height="544" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Jeux de données prêts</figcaption></figure>
     </li>
   </ul>
 
   <blockquote class="tip">
-    <div class="box-title tip-title" id="tip-création-d-un-nouvel-historique-analytique"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-création-d-un-nouvel-historique-analytique" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Astuce: Création d'un nouvel historique analytique<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title tip-title" id="tip-création-d-un-nouvel-historique-analytique"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-création-d-un-nouvel-historique-analytique" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Création d'un nouvel historique analytique<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>Créez un nouvel historique pour ce tutoriel et donnez-lui un nom (exemple : “Indicateurs de blocs de champs”) pour que vous puissiez le retrouver plus tard si besoin.</p>
 
     <!--SNIPPET-->
@@ -751,10 +749,10 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
 <p>Basé sur la proportion de blocs « tournés » et « non tournés », cet indicateur varie de 0 à 5 et peut être rapidement utilisé.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-comment-accéder-à-l-outil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-comment-accéder-à-l-outil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Astuce: Comment accéder à l'outil ?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-comment-accéder-à-l-outil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-comment-accéder-à-l-outil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Comment accéder à l'outil ?<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <blockquote class="notranslate hands_on">
-    <div class="box-title hands-on-title" id="hands-on-utilisation-un-outil-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true"></i> En pratique: Utilisation 'un outil Galaxy</div>
+    <div class="box-title hands-on-title" id="hands-on-utilisation-un-outil-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Utilisation 'un outil Galaxy</div>
     <ol>
       <li>cliquer sur le lien de l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="link"><strong>IVR</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0</span></span> ou taper <strong>ivr</strong> dans le module de recherche du panneau d’outils (en haut à gauche)
 L’outil sera affiché dans le panneau central Galaxy.</li>
@@ -767,7 +765,7 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
 <p>Rendez-vous sur le formulaire de l’outil <strong>IVR</strong></p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-calculer-l-indice-ivr"><i class="fas fa-pencil-alt" aria-hidden="true"></i> En pratique: Calculer l'indice IVR</div>
+  <div class="box-title hands-on-title" id="hands-on-calculer-l-indice-ivr"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Calculer l'indice IVR</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="link"><strong>IVR</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0</span></span> avec ces paramètres :
@@ -792,10 +790,10 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
 
   <p>L’inforamtion est affichée dans le panneau du milieu</p>
 
-  <figure id="figure-8"><img src="../../images/champbloc/ivr.png" alt="IVR. " width="1855" height="919" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> IVR for Bilfot</figcaption></figure>
+  <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/ivr.png" alt="IVR. " width="1855" height="919" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> IVR for Bilfot</figcaption></figure>
 
   <blockquote class="tip">
-    <div class="box-title tip-title" id="tip-rechercher-les-résultats-de-votre-site"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-rechercher-les-résultats-de-votre-site" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Astuce: Rechercher les résultats de votre site<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title tip-title" id="tip-rechercher-les-résultats-de-votre-site"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-rechercher-les-résultats-de-votre-site" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Rechercher les résultats de votre site<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>En haut du panneau Historique (à droite) allez sur le champ de recherche</li>
@@ -823,7 +821,7 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
 Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="link"><strong>Dissimilarity</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0</span></span></p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-calculer-des-index-de-dissimilarité"><i class="fas fa-pencil-alt" aria-hidden="true"></i> En pratique: Calculer des index de dissimilarité</div>
+  <div class="box-title hands-on-title" id="hands-on-calculer-des-index-de-dissimilarité"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Calculer des index de dissimilarité</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="link"><strong>Dissimilarity</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0</span></span> avec les paramètres suivants:
@@ -849,9 +847,9 @@ Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ec
 
   <p>Les informations sont affichées dans le panneau central</p>
 
-  <figure id="figure-9"><img src="../../images/champbloc/fs_fi.png" alt="Dissim fs fi. " width="1839" height="895" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> dissimilarité des faces sup et inf</figcaption></figure>
+  <figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/fs_fi.png" alt="Dissim fs fi. " width="1839" height="895" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> dissimilarité des faces sup et inf</figcaption></figure>
 
-  <figure id="figure-10"><img src="../../images/champbloc/bf_bm.png" alt="Dissim bf bm. " width="1853" height="891" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> dissimilarité des blocs fixes et mobiles</figcaption></figure>
+  <figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/bf_bm.png" alt="Dissim bf bm. " width="1853" height="891" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> dissimilarité des blocs fixes et mobiles</figcaption></figure>
 
   <ol>
     <li>Téléchargez vos résultats</li>
@@ -918,6 +916,9 @@ Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ec
                             Marie Josse, Yvan Le Bras,  <b>Production d'indicateurs champs de bloc (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/ecology/tutorials/champs-blocs/tutorial_FR.html">https://training.galaxyproject.org/training-material/topics/ecology/tutorials/champs-blocs/tutorial_FR.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -939,12 +940,12 @@ Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ec
 
 <code id="citation-code">@misc{ecology-champs-blocs,
 author = "Marie Josse and Yvan Le Bras",
-title = "Production d'indicateurs champs de bloc (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/ecology/tutorials/champs-blocs/tutorial_FR.html}",
-note = "[Online; accessed TODAY]"
+	title = "Production d'indicateurs champs de bloc (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/ecology/tutorials/champs-blocs/tutorial_FR.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1036,15 +1037,15 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1064,7 +1065,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1072,9 +1073,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

@@ -138,6 +138,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jfaulon/"
         }
       ],
+      "short_id": "T00273",
       "url": "/topics/synthetic-biology/tutorials/basic_assembly_analysis/tutorial.html",
       "topic_name": "synthetic-biology",
       "tutorial_name": "basic_assembly_analysis",
@@ -191,7 +192,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/synthetic-biology/tutorials/basic_assembly_analysis/tutorial.json",
@@ -208,6 +210,7 @@
 
         ]
       },
+      "topic_name_human": "Synthetic Biology",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -332,6 +335,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jfaulon/"
         }
       ],
+      "short_id": "T00274",
       "url": "/topics/synthetic-biology/tutorials/pathway_analysis/tutorial.html",
       "topic_name": "synthetic-biology",
       "tutorial_name": "pathway_analysis",
@@ -385,7 +389,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/synthetic-biology/tutorials/pathway_analysis/tutorial.json",
@@ -403,6 +408,7 @@
 
         ]
       },
+      "topic_name_human": "Synthetic Biology",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -535,6 +541,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jfaulon/"
         }
       ],
+      "short_id": "T00275",
       "url": "/topics/synthetic-biology/tutorials/retrosynthesis_analysis/tutorial.html",
       "topic_name": "synthetic-biology",
       "tutorial_name": "retrosynthesis_analysis",
@@ -588,7 +595,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/synthetic-biology/tutorials/retrosynthesis_analysis/tutorial.json",
@@ -608,6 +616,7 @@
 
         ]
       },
+      "topic_name_human": "Synthetic Biology",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

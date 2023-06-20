@@ -130,6 +130,7 @@
   "tags": [
     "bash"
   ],
+  "short_id": "T00076",
   "url": "/topics/data-science/tutorials/cli-basics/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "cli-basics",
@@ -170,6 +171,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

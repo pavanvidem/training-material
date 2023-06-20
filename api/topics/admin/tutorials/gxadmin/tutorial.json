@@ -43,6 +43,7 @@
     "ansible",
     "git-gat"
   ],
+  "short_id": "T00009",
   "url": "/topics/admin/tutorials/gxadmin/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "gxadmin",
@@ -116,6 +117,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -27,6 +27,7 @@
   },
   "subtopic": "eukaryote",
   "priority": 6,
+  "short_id": "T00173",
   "url": "/topics/genome-annotation/tutorials/functional/tutorial.html",
   "topic_name": "genome-annotation",
   "tutorial_name": "functional",
@@ -57,7 +58,8 @@
           "identifier": "https://orcid.org/0000-0003-0914-2470",
           "name": "Anthony Bretaudeau"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/functional/tutorial.json",
@@ -69,11 +71,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -103,6 +100,7 @@
       }
     ]
   },
+  "topic_name_human": "Genome Annotation",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

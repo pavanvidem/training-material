@@ -75,6 +75,7 @@
       ]
     }
   ],
+  "short_id": "T00005",
   "url": "/topics/admin/tutorials/data-library/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "data-library",
@@ -145,6 +146,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

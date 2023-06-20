@@ -152,7 +152,7 @@
       "contributors": [
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -177,6 +177,7 @@
       "tags": [
         "DIA"
       ],
+      "short_id": "T00210",
       "url": "/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "DIA_Analysis_MSstats",
@@ -203,7 +204,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-DIA_MSstats_Training_msstats_input_tabular.ga",
@@ -216,7 +218,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.json",
@@ -228,11 +231,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -267,6 +265,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -363,6 +362,7 @@
         "DDA",
         "human"
       ],
+      "short_id": "T00234",
       "url": "/topics/proteomics/tutorials/proteome_annotation/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "proteome_annotation",
@@ -419,7 +419,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "main_workflow.ga",
@@ -432,7 +433,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteome_annotation/tutorial.json",
@@ -462,6 +464,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -591,6 +594,7 @@
       "tags": [
 
       ],
+      "short_id": "T00226",
       "url": "/topics/proteomics/tutorials/ntails/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "ntails",
@@ -617,7 +621,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/ntails/tutorial.json",
@@ -644,6 +649,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -736,6 +742,7 @@
         "DDA",
         "HeLa"
       ],
+      "short_id": "T00228",
       "url": "/topics/proteomics/tutorials/protein-id-oms/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "protein-id-oms",
@@ -762,7 +769,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow_two-search-engines.ga",
@@ -775,7 +783,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/protein-id-oms/tutorial.json",
@@ -826,6 +835,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1038,7 +1048,7 @@
         },
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -1053,6 +1063,7 @@
         "TMT",
         "work-in-progress"
       ],
+      "short_id": "T00220",
       "url": "/topics/proteomics/tutorials/maxquant-msstats-tmt/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "maxquant-msstats-tmt",
@@ -1079,7 +1090,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/maxquant-msstats-tmt/tutorial.json",
@@ -1109,6 +1121,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1246,6 +1259,7 @@
       "tags": [
         "microbiome"
       ],
+      "short_id": "T00224",
       "url": "/topics/proteomics/tutorials/metaquantome-taxonomy/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "metaquantome-taxonomy",
@@ -1272,7 +1286,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/metaquantome-taxonomy/tutorial.json",
@@ -1315,6 +1330,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1413,7 +1429,7 @@
       "contributors": [
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -1438,6 +1454,7 @@
       "tags": [
         "DIA"
       ],
+      "short_id": "T00211",
       "url": "/topics/proteomics/tutorials/DIA_Analysis_OSW/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "DIA_Analysis_OSW",
@@ -1464,7 +1481,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/DIA_Analysis_OSW/tutorial.json",
@@ -1495,6 +1513,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1632,6 +1651,7 @@
         "mouse",
         "imaging"
       ],
+      "short_id": "T00217",
       "url": "/topics/proteomics/tutorials/mass-spectrometry-imaging-loading-exploring-data/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "mass-spectrometry-imaging-loading-exploring-data",
@@ -1658,7 +1678,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/mass-spectrometry-imaging-loading-exploring-data/tutorial.json",
@@ -1704,6 +1725,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1855,6 +1877,7 @@
       "tags": [
         "microbiome"
       ],
+      "short_id": "T00223",
       "url": "/topics/proteomics/tutorials/metaquantome-function/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "metaquantome-function",
@@ -1881,7 +1904,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/metaquantome-function/tutorial.json",
@@ -1930,6 +1954,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2111,6 +2136,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/"
         }
       ],
+      "short_id": "T00215",
       "url": "/topics/proteomics/tutorials/encyclopedia/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "encyclopedia",
@@ -2203,7 +2229,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/encyclopedia/tutorial.json",
@@ -2217,11 +2244,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -2246,6 +2268,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2335,7 +2358,7 @@
       "contributors": [
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -2360,6 +2383,7 @@
       "tags": [
         "DIA"
       ],
+      "short_id": "T00212",
       "url": "/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "DIA_lib_OSW",
@@ -2386,7 +2410,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.json",
@@ -2422,6 +2447,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2584,6 +2610,7 @@
       "tags": [
         "microbiome"
       ],
+      "short_id": "T00222",
       "url": "/topics/proteomics/tutorials/metaquantome-data-creation/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "metaquantome-data-creation",
@@ -2610,7 +2637,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/metaquantome-data-creation/tutorial.json",
@@ -2657,6 +2685,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2797,6 +2826,7 @@
         "ML",
         "cancer"
       ],
+      "short_id": "T00225",
       "url": "/topics/proteomics/tutorials/ml-modeling-of-anti-cancer-peptides/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "ml-modeling-of-anti-cancer-peptides",
@@ -2823,7 +2853,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/ml-modeling-of-anti-cancer-peptides/tutorial.json",
@@ -2846,6 +2877,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2952,6 +2984,7 @@
       "tags": [
         "human"
       ],
+      "short_id": "T00235",
       "url": "/topics/proteomics/tutorials/secretome-prediction/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "secretome-prediction",
@@ -2978,7 +3011,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/secretome-prediction/tutorial.json",
@@ -3004,6 +3038,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3158,6 +3193,7 @@
       "tags": [
         "proteogenomics"
       ],
+      "short_id": "T00233",
       "url": "/topics/proteomics/tutorials/proteogenomics-novel-peptide-analysis/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "proteogenomics-novel-peptide-analysis",
@@ -3213,7 +3249,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-novel-peptide-analysis/tutorial.json",
@@ -3225,11 +3262,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
@@ -3264,6 +3296,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3368,6 +3401,7 @@
       "tags": [
         "DDA"
       ],
+      "short_id": "T00214",
       "url": "/topics/proteomics/tutorials/database-handling/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "database-handling",
@@ -3394,7 +3428,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "wf_database-handling_mycoplasma.ga",
@@ -3407,7 +3442,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/database-handling/tutorial.json",
@@ -3440,6 +3476,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3533,7 +3570,7 @@
         },
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -3547,6 +3584,7 @@
         "DDA",
         "label-free"
       ],
+      "short_id": "T00218",
       "url": "/topics/proteomics/tutorials/maxquant-label-free/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "maxquant-label-free",
@@ -3573,7 +3611,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/maxquant-label-free/tutorial.json",
@@ -3589,11 +3628,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
@@ -3623,6 +3657,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3718,6 +3753,7 @@
       "tags": [
 
       ],
+      "short_id": "T00227",
       "url": "/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "peptide-library-data-analysis",
@@ -3744,7 +3780,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/peptide-library-data-analysis/tutorial.json",
@@ -3770,6 +3807,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3945,6 +3983,7 @@
       "tags": [
         "proteogenomics"
       ],
+      "short_id": "T00232",
       "url": "/topics/proteomics/tutorials/proteogenomics-dbsearch/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "proteogenomics-dbsearch",
@@ -4005,7 +4044,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-dbsearch/tutorial.json",
@@ -4018,11 +4058,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -4057,6 +4092,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4165,6 +4201,7 @@
         "DDA",
         "HeLa"
       ],
+      "short_id": "T00229",
       "url": "/topics/proteomics/tutorials/protein-id-sg-ps/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "protein-id-sg-ps",
@@ -4191,7 +4228,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "wf_proteinID_SG_PS_multipleFiles.ga",
@@ -4204,7 +4242,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/protein-id-sg-ps/tutorial.json",
@@ -4223,6 +4262,7 @@
 
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4349,6 +4389,7 @@
       "tags": [
         "proteogenomics"
       ],
+      "short_id": "T00231",
       "url": "/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "proteogenomics-dbcreation",
@@ -4404,7 +4445,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.json",
@@ -4429,11 +4471,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
@@ -4463,6 +4500,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4663,7 +4701,7 @@
         },
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -4677,6 +4715,7 @@
         "DDA",
         "SILAC"
       ],
+      "short_id": "T00230",
       "url": "/topics/proteomics/tutorials/protein-quant-sil/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "protein-quant-sil",
@@ -4703,7 +4742,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/protein-quant-sil/tutorial.json",
@@ -4747,6 +4787,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4930,6 +4971,7 @@
         "DDA",
         "human"
       ],
+      "short_id": "T00213",
       "url": "/topics/proteomics/tutorials/biomarker_selection/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "biomarker_selection",
@@ -4956,7 +4998,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/biomarker_selection/tutorial.json",
@@ -4987,6 +5030,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5100,7 +5144,7 @@
         },
         {
           "name": "Matthias Fahrner",
-          "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+          "email": "matthias.fahrner@uniklinik-freiburg.de",
           "twitter": "mfahrner313",
           "orcid": "0000-0001-7955-2518",
           "joined": "2019-03",
@@ -5122,6 +5166,7 @@
       "tags": [
         "label-free"
       ],
+      "short_id": "T00219",
       "url": "/topics/proteomics/tutorials/maxquant-msstats-dda-lfq/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "maxquant-msstats-dda-lfq",
@@ -5184,7 +5229,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/maxquant-msstats-dda-lfq/tutorial.json",
@@ -5214,11 +5260,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
             "usegalaxy": "true"
@@ -5240,6 +5281,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5404,6 +5446,7 @@
       "tags": [
         "microbiome"
       ],
+      "short_id": "T00221",
       "url": "/topics/proteomics/tutorials/metaproteomics/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "metaproteomics",
@@ -5459,7 +5502,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/metaproteomics/tutorial.json",
@@ -5472,11 +5516,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -5506,6 +5545,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5592,6 +5632,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/foellmelanie/"
         }
       ],
+      "short_id": "S00080",
       "url": "/topics/proteomics/tutorials/introduction/slides.html",
       "topic_name": "proteomics",
       "tutorial_name": "introduction",
@@ -5662,6 +5703,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5732,6 +5774,7 @@
       "tags": [
         "DDA"
       ],
+      "short_id": "T00216",
       "url": "/topics/proteomics/tutorials/labelfree-vs-labelled/tutorial.html",
       "topic_name": "proteomics",
       "tutorial_name": "labelfree-vs-labelled",
@@ -5772,6 +5815,7 @@
           }
         ]
       },
+      "topic_name_human": "Proteomics",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

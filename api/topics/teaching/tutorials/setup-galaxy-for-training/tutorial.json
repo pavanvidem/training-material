@@ -65,6 +65,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
     }
   ],
+  "short_id": "T00285",
   "url": "/topics/teaching/tutorials/setup-galaxy-for-training/tutorial.html",
   "topic_name": "teaching",
   "tutorial_name": "setup-galaxy-for-training",
@@ -105,6 +106,7 @@
       }
     ]
   },
+  "topic_name_human": "Teaching and Hosting Galaxy training",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

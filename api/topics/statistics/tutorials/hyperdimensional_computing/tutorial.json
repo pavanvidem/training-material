@@ -34,6 +34,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cumbof/"
     }
   ],
+  "short_id": "T00337",
   "url": "/topics/statistics/tutorials/hyperdimensional_computing/tutorial.html",
   "topic_name": "statistics",
   "tutorial_name": "hyperdimensional_computing",
@@ -55,11 +56,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
         "usegalaxy": "true"
@@ -69,6 +65,7 @@
 
     ]
   },
+  "topic_name_human": "Statistics and machine learning",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

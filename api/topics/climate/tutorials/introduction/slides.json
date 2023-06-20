@@ -13,6 +13,7 @@
     "annefou",
     "j34ni"
   ],
+  "short_id": "S00037",
   "url": "/topics/climate/tutorials/introduction/slides.html",
   "topic_name": "climate",
   "tutorial_name": "introduction",
@@ -53,6 +54,7 @@
       }
     ]
   },
+  "topic_name_human": "Climate",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -72,6 +74,5 @@
     ],
     "video": true
   },
-  "type": "tutorial",
-  "short_id": "S00037"
+  "type": "tutorial"
 }

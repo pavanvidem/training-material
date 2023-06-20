@@ -31,6 +31,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annasyme/"
     }
   ],
+  "short_id": "T00331",
   "url": "/topics/assembly/tutorials/largegenome/tutorial.html",
   "topic_name": "assembly",
   "tutorial_name": "largegenome",
@@ -91,7 +92,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Assembly_with_Flye.ga",
@@ -108,7 +110,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Assess_genome_quality.ga",
@@ -125,7 +128,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga",
@@ -142,7 +146,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Data_QC.ga",
@@ -159,7 +164,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Racon_polish_with_Illumina_reads_x2.ga",
@@ -176,7 +182,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Racon_polish_with_long_reads_x4.ga",
@@ -193,7 +200,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Trim_and_filter_reads.ga",
@@ -210,7 +218,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-kmer_counting.ga",
@@ -227,7 +236,8 @@
           "identifier": "0000-0002-9906-0673",
           "name": "Anna Syme"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/largegenome/tutorial.json",
@@ -251,11 +261,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
@@ -274,6 +279,7 @@
       }
     ]
   },
+  "topic_name_human": "Assembly",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

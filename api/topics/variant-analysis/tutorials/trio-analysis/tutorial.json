@@ -83,6 +83,7 @@
   "tags": [
     "cyoa"
   ],
+  "short_id": "T00320",
   "url": "/topics/variant-analysis/tutorials/trio-analysis/tutorial.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "trio-analysis",
@@ -141,7 +142,8 @@
           "identifier": "0000-0003-2556-2125",
           "name": "Jasper Ouwerkerk"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/trio-analysis/tutorial.json",
@@ -160,11 +162,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
@@ -179,6 +176,7 @@
 
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

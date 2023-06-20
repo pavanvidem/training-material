@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/dunovo/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Calling very rare variants">
         <meta property="og:description" content="Genetic differences (variants) between healthy and diseas...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -366,7 +370,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/variant-analysis/tutorials/dunovo/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/variant-analysis/tutorials/dunovo/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -413,7 +417,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -426,7 +430,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -463,14 +467,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-variant-analysis">
     <h1 data-toc-skip>Calling very rare variants</h1>
@@ -486,7 +483,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=27" alt="Avatar">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/NickSto/" class="contributor-badge contributor-NickSto"><img src="https://avatars.githubusercontent.com/NickSto?s=27" alt="Avatar">Nick Stoler</a>
+		Authors: <a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/NickSto/" class="contributor-badge contributor-NickSto"><img src="https://avatars.githubusercontent.com/NickSto?s=36" alt="Avatar">Nick Stoler</a>
 	</div>
 
 </div>
@@ -685,12 +682,6 @@ Sentry.init({
 	</li>
     
     
-	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
 	<li class="dropdown-header">
 		<b>Possibly Working</b>
 	</li>
@@ -715,12 +706,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 5, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00310">https://gxy.io/GTN:T00310</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00310">https://gxy.io/GTN:T00310</a> </div>
         
     </blockquote>
     </section>
@@ -794,7 +786,7 @@ Sentry.init({
 <p>Du Novo is a tool which can carry out these steps. Unlike most other such tools, it can do so without the use of a reference sequence, and it can correct for errors in the tags which can contribute to data loss.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-terminology"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Terminology</div>
+  <div class="box-title comment-title" id="comment-terminology"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Terminology</div>
 
   <p>Du Novo processes the tags from each fragment by concatenating them into a single <strong>barcode</strong>.</p>
 
@@ -805,7 +797,7 @@ Sentry.init({
 </blockquote>
 
 <p><a href="http://www.pnas.org/content/109/36/14508.short">Schmitt <em>et al.</em> 2012</a> provides this overview of the whole method:
-<img src="../../images/ds.png" alt="duplex. " loading="lazy" /></p>
+<img src="../../images/ds.png" alt="duplex. " width="1280" height="576" loading="lazy" /></p>
 
 <p><strong>Figure 1:</strong> The logic of duplex sequencing. The computational process is shown in part <strong>C</strong>.</p>
 
@@ -813,7 +805,7 @@ Sentry.init({
 
 <p>The DCSs have the ultimate accuracy, yet the SSCSs can also be very useful when ampliconic DNA is used as an input to a duplex experiment. Let us illustrate the utility of SSCSs with the following example. Suppose one is interested in quantifying variants in a virus that has a very low titer in body fluids. Since the duplex procedure requires a substantial amount of starting DNA (between <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4271547/">between 0.2 and 3 micrograms</a>) the virus needs to be enriched. This can be done, for example, with a PCR designed to amplify the entire genome of the virus. Yet the problem is that during the amplification heterologous strands will almost certainly realign to some extent forming heteroduplex molecules:</p>
 
-<p><img src="../../images/het.png" alt="hd. " height="444px" width="605px" loading="lazy" /></p>
+<p><img src="../../images/het.png" alt="hd. " height="888" width="1210" loading="lazy" /></p>
 
 <p><strong>Figure 2:</strong> Heteroduplex formation in ampliconic templates. Image by Barbara Arbeithuber from <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1039-4">Stoler <em>et al.</em> 2016</a>. Here there are two distinct types of viral genomes: carrying <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">G</code>. Because the population of genomes is enriched via PCR, heteroduplex formation takes place, skewing frequency estimates performed using DCSs.</p>
 
@@ -824,11 +816,11 @@ Sentry.init({
 <p>The entire analysis described here is accessible as a <a href="https://usegalaxy.org/u/nstoler/h/du-novo-gtn-tutorial">Galaxy history</a> that you can copy and play with.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-running-the-tools"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Running the tools</div>
+  <div class="box-title comment-title" id="comment-running-the-tools"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Running the tools</div>
   <ul>
     <li>Leave all parameters on their default settings, unless instructed otherwise.
       <blockquote class="comment">
-        <div class="box-title comment-title" id="comment-helping-du-novo"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Helping Du Novo</div>
+        <div class="box-title comment-title" id="comment-helping-du-novo"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Helping Du Novo</div>
         <p>But if you’d like to help improve Du Novo, consider checking <code class="language-plaintext highlighter-rouge">Yes</code> under <i class="far fa-check-square" aria-hidden="true"></i><span class="visually-hidden">param-check</span> <em>Send usage data</em>.</p>
       </blockquote>
     </li>
@@ -847,7 +839,7 @@ Sentry.init({
   <li>Note: Galaxy histories show the first step at the bottom!</li>
 </ul>
 
-<p><img src="../../images/history-dunovo.png" alt="steps. " loading="lazy" /></p>
+<p><img src="../../images/history-dunovo.png" alt="steps. " width="831" height="1467" loading="lazy" /></p>
 
 <p><strong>Figure 3:</strong> Analysis outline</p>
 
@@ -860,7 +852,7 @@ Sentry.init({
 <p>We uploaded the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414912/">Schmitt <em>et al.</em> 2015</a> data directly from SRA as shown in <a href="https://vimeo.com/121187220">this screencast</a>.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-importing-the-raw-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Importing the raw data</div>
+  <div class="box-title hands-on-title" id="hands-on-importing-the-raw-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Importing the raw data</div>
 
   <p>You can obtain the reads from this dataset by copying <a href="https://usegalaxy.org/u/nstoler/h/srr1799908---schmitt-2015">this history</a>.</p>
   <ol>
@@ -885,8 +877,8 @@ Sentry.init({
 <table>
   <tbody>
     <tr>
-      <td><img src="../../images/abl1-f-qc.png" alt="Quality scores across all bases: foward. " loading="lazy" /></td>
-      <td><img src="../../images/abl1-r-qc.png" alt="Quality scores across all bases: reverse. " loading="lazy" /></td>
+      <td><img src="../../images/abl1-f-qc.png" alt="Quality scores across all bases: foward. " width="825" height="600" loading="lazy" /></td>
+      <td><img src="../../images/abl1-r-qc.png" alt="Quality scores across all bases: reverse. " width="825" height="600" loading="lazy" /></td>
     </tr>
   </tbody>
 </table>
@@ -900,7 +892,7 @@ Sentry.init({
 <p>Now we are ready to collapse the raw reads into duplex consensus sequences.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-finding-du-novo"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Finding Du Novo</div>
+  <div class="box-title comment-title" id="comment-finding-du-novo"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Finding Du Novo</div>
   <ul>
     <li>The tools in this portion of the tutorial can all be found in the <strong>NGS: Du Novo</strong> section.</li>
   </ul>
@@ -911,7 +903,7 @@ Sentry.init({
 <p>The <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Make families</strong> tool will separate the 12bp tags from each read pair and concatenate them into a 24bp barcode. Then it will use the barcodes to sort the reads into families that all descend from the same original fragment.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-sorting-reads-into-families"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Sorting reads into families</div>
+  <div class="box-title hands-on-title" id="hands-on-sorting-reads-into-families"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Sorting reads into families</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Make families</strong> with the following parameters:</p>
   <ul>
@@ -930,7 +922,7 @@ Sentry.init({
 <p>Du Novo includes a tool which can correct most of these errors and recover the affected reads. This can increase the final yield of duplex consensus reads by up to 11% (Stoler <em>et al.</em> 2018, in preparation).</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-correcting-barcodes"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Correcting barcodes</div>
+  <div class="box-title hands-on-title" id="hands-on-correcting-barcodes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Correcting barcodes</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Correct barcodes</strong> with the following parameters:</p>
   <ul>
@@ -946,7 +938,7 @@ Sentry.init({
 <p>After grouping reads that came from the same original fragment, we need to align them with each other. This next tool will perform a multiple sequence alignment on each family.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-analysis-bottleneck"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Analysis bottleneck</div>
+  <div class="box-title comment-title" id="comment-analysis-bottleneck"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Analysis bottleneck</div>
   <p>This is by far the most time-consuming step.</p>
 
   <p>On this dataset, it took 2 hours to complete when run on <a href="https://usegalaxy.org/">Galaxy Main</a>.</p>
@@ -956,7 +948,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-aligning-families"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Aligning families</div>
+  <div class="box-title hands-on-title" id="hands-on-aligning-families"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Aligning families</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Align families</strong> with the following parameters:</p>
   <ul>
@@ -974,7 +966,7 @@ Sentry.init({
 <p>Normally, the tool only produces the final double-stranded consensus sequences. But we will make use of the single-stranded consensus sequences <a href="#calling-variants-with-single-strand-consensus-sequences">later</a>, so we’ll tell it to keep those as well.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-making-consensus-sequences"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Making consensus sequences</div>
+  <div class="box-title hands-on-title" id="hands-on-making-consensus-sequences"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Making consensus sequences</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Make consensus reads</strong> with the following parameters:</p>
   <ul>
@@ -995,7 +987,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-setting-output-formats"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Setting output formats</div>
+  <div class="box-title comment-title" id="comment-setting-output-formats"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Setting output formats</div>
 
   <p>You may have to set the datatype of the outputs from <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Du Novo: Make consensus reads</strong> tool.</p>
 
@@ -1010,7 +1002,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-where-do-the-fastq-quality-scores-come-from"><button class="gtn-boxify-button details" type="button" aria-controls="details-where-do-the-fastq-quality-scores-come-from" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Where do the FASTQ quality scores come from?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-where-do-the-fastq-quality-scores-come-from"><button class="gtn-boxify-button details" type="button" aria-controls="details-where-do-the-fastq-quality-scores-come-from" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Where do the FASTQ quality scores come from?<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>There is no easy way to assign a PHRED score to a consensus base derived from many duplex reads.</p>
 
@@ -1030,7 +1022,7 @@ Sentry.init({
 <p>This information could be useful for some analyses, but not for our variant calling. The tool <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Sequence Content Trimmer</strong> will help with filtering these out. With the settings below, it will move along the read, tracking the frequency of ambiguous (non-ACGT) bases in a 10bp window. If it sees more than 2 ambiguous bases in a window, it will remove the rest of the read, starting with the first offending base in the window. We’ll also tell it to remove entirely any read pair containing a read that got trimmed to less than 50bp.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-filtering-the-consensus-sequences"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Filtering the consensus sequences</div>
+  <div class="box-title hands-on-title" id="hands-on-filtering-the-consensus-sequences"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Filtering the consensus sequences</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Sequence Content Trimmer</strong> with the following parameters:</p>
   <ul>
@@ -1065,7 +1057,7 @@ Sentry.init({
 <p>Here, we’ll use <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Map with BWA-MEM</strong> to map the DCS reads to the human reference genome.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-align-with-bwa-mem"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Align with BWA-MEM</div>
+  <div class="box-title hands-on-title" id="hands-on-align-with-bwa-mem"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Align with BWA-MEM</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Map with BWA-MEM</strong> with the following parameters:</p>
   <ul>
@@ -1082,7 +1074,7 @@ Sentry.init({
 <p>To normalize the positional distribution of indels we use the <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>BamLeftAlign</strong> utility from the <a href="https://github.com/ekg/freebayes#indels">FreeBayes</a> package. You can find it in the <strong>NGS: Variant Analysis</strong> section. This is necessary to avoid erroneous polymorphisms flanking regions with indels (e.g., in low complexity loci):</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-left-align-indels"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Left-align indels</div>
+  <div class="box-title hands-on-title" id="hands-on-left-align-indels"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Left-align indels</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>BamLeftAlign</strong> with the following parameters:</p>
   <ul>
@@ -1110,7 +1102,7 @@ Sentry.init({
 <p>To identify sites containing variants we use the <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Naive Variant Caller (NVC)</strong> tool from the <strong>NGS: Variant Analysis</strong> section. This reads the alignment and counts the number of bases of each type at each site.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-count-the-variants"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Count the variants</div>
+  <div class="box-title hands-on-title" id="hands-on-count-the-variants"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Count the variants</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Naive Variant Caller (NVC)</strong> with the following parameters:</p>
   <ul>
@@ -1149,7 +1141,7 @@ Sentry.init({
 <p>Now we’ll want to parse the VCF produced by the NVC, determine what the major and minor allele is at each site, and calculate their frequencies. The <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Variant Annotator</strong> from the <strong>NGS: Variant Analysis</strong> section can do this.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-read-the-variants-file"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Read the variants file</div>
+  <div class="box-title hands-on-title" id="hands-on-read-the-variants-file"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Read the variants file</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Variant Annotator</strong> with the following parameters:</p>
   <ul>
@@ -1173,7 +1165,7 @@ Sentry.init({
 <p>The <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Variant Annotator</strong> produces a simple tab-delimited file, with one site per line. We can use the <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Filter</strong> tool from the <strong>Filter and Sort</strong> section to process this kind of file. We’ll use the filter <code class="language-plaintext highlighter-rouge">c16 &gt;= 0.01</code> to remove lines where the value in column 16 is less than 0.01. Column 16 contains the minor allele frequency, so this will remove all sites with a MAF less than 1%.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-filter-the-raw-variants-list"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Filter the raw variants list</div>
+  <div class="box-title hands-on-title" id="hands-on-filter-the-raw-variants-list"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Filter the raw variants list</div>
 
   <p>Run <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> <strong>Filter</strong> with the following parameters:</p>
   <ul>
@@ -1235,7 +1227,7 @@ Sentry.init({
 </ul>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-re-running-with-the-same-settings"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-re-running-with-the-same-settings" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Re-running with the same settings<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-re-running-with-the-same-settings"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-re-running-with-the-same-settings" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Re-running with the same settings<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>There’s a shortcut to avoid setting every parameter the second time you run a tool.</p>
 
@@ -1260,7 +1252,7 @@ Sentry.init({
     </ul>
 
     <blockquote class="comment">
-      <div class="box-title comment-title" id="comment-helping-du-novo-1"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: Helping Du Novo</div>
+      <div class="box-title comment-title" id="comment-helping-du-novo-1"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Helping Du Novo</div>
       <p>The <i class="far fa-check-square" aria-hidden="true"></i><span class="visually-hidden">param-check</span> <em>Send usage data</em> option is left off in the above workflow.
 This is because we want to make sure you only share data knowingly.</p>
 
@@ -1278,9 +1270,9 @@ This is because we want to make sure you only share data knowingly.</p>
 
 <p>You can use the variant calling workflow to call variants using the SSCS instead of the DCS.</p>
 
-<figure id="figure-1"><img src="../../images/workflow-dunovo.png" alt="Du Novo workflow. " width="1053" height="438" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Workflow 1: Making consensus sequences</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/workflow-dunovo.png" alt="Du Novo workflow. " width="1053" height="438" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Workflow 1: Making consensus sequences</figcaption></figure>
 
-<figure id="figure-2"><img src="../../images/workflow-dunovo-variant-calling.png" alt="Variant calling workflow. " width="777" height="360" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Workflow 2: Variant calling</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/workflow-dunovo-variant-calling.png" alt="Variant calling workflow. " width="777" height="360" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Workflow 2: Variant calling</figcaption></figure>
 
 <h1 id="conclusion">Conclusion</h1>
 
@@ -1340,6 +1332,9 @@ This is because we want to make sure you only share data knowingly.</p>
                             Anton Nekrutenko, Nick Stoler,  <b>Calling very rare variants (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/dunovo/tutorial.html">https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/dunovo/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1361,12 +1356,12 @@ This is because we want to make sure you only share data knowingly.</p>
 
 <code id="citation-code">@misc{variant-analysis-dunovo,
 author = "Anton Nekrutenko and Nick Stoler",
-title = "Calling very rare variants (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/dunovo/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Calling very rare variants (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/dunovo/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1488,19 +1483,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00310">https://gxy.io/GTN:T00310</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00310">https://gxy.io/GTN:T00310</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1520,7 +1515,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1528,9 +1523,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

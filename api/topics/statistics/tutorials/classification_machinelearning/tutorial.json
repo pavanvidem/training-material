@@ -48,6 +48,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/"
     }
   ],
+  "short_id": "T00262",
   "url": "/topics/statistics/tutorials/classification_machinelearning/tutorial.html",
   "topic_name": "statistics",
   "tutorial_name": "classification_machinelearning",
@@ -110,7 +111,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/statistics/tutorials/classification_machinelearning/tutorial.json",
@@ -133,11 +135,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -172,6 +169,7 @@
       }
     ]
   },
+  "topic_name_human": "Statistics and machine learning",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

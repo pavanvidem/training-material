@@ -57,6 +57,7 @@
       "epsrc-training-grant"
     ]
   },
+  "short_id": "S00083",
   "url": "/topics/single-cell/tutorials/scrna-case_monocle3-trajectories/slides.html",
   "topic_name": "single-cell",
   "tutorial_name": "scrna-case_monocle3-trajectories",
@@ -112,7 +113,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Galaxy-Workflow-Monocle3_workflow.ga",
@@ -125,7 +127,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "Trajectory-analysis-using-Monocle3---full-tutorial-workflow.ga",
@@ -142,7 +145,8 @@
           "identifier": "0009-0001-2017-8805",
           "name": "Julia Jakiela"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_monocle3-trajectories/tutorial.json",
@@ -167,11 +171,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
@@ -186,6 +185,7 @@
 
     ]
   },
+  "topic_name_human": "Single Cell",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -300,6 +300,5 @@
   "contributors": [
     "wee-snufkin"
   ],
-  "logo": "GTN",
-  "short_id": "S00083"
+  "logo": "GTN"
 }

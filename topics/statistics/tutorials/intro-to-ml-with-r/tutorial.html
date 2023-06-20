@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Introduction to Machine Learning using R">
         <meta property="og:description" content="Statistical Analyses for omics data and machine learning ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -356,7 +360,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/statistics/tutorials/intro-to-ml-with-r/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -403,7 +407,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -416,7 +420,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -453,14 +457,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-statistics">
     <h1 data-toc-skip>Introduction to Machine Learning using R</h1>
@@ -470,7 +467,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+		Authors: <a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=36" alt="Avatar">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=36" alt="Avatar">Erasmus+ Programme</a>
 	</div>
 
 </div>
@@ -643,6 +640,10 @@ Sentry.init({
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> R basics in Galaxy:
                             
@@ -698,7 +699,15 @@ Sentry.init({
                     
                         
                     
+                        
+                    
                 
+                    
+                        
+                    
+                        
+                    
+                        
                     
                         
                     
@@ -919,12 +928,6 @@ Sentry.init({
     
     
 	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
-	<li>
 		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
 			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
 		</a>
@@ -954,12 +957,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 24, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00267">https://gxy.io/GTN:T00267</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00267">https://gxy.io/GTN:T00267</a> </div>
         
     </blockquote>
     </section>
@@ -1055,10 +1059,10 @@ are not known beforehand, making this typically an unsupervised task.</li>
 
 <p>There are several biological domains where machine learning techniques are applied for knowledge extraction from data. The following figure (retrieved from <span class="citation"><a href="#Larra_aga_2006">Larrañaga <i>et al.</i> 2006</a></span>) shows a scheme of the main biological problems where computational methods are being applied.</p>
 
-<figure id="figure-1"><img src="../../images/intro-to-ml-with-r/bioinformatics-ml.png" alt="A series of overlapping boxes showing intersections of different topics like text mining and proteomics and evolution and microarrays, with various topics listed in the intersections. Unfortunately the source image is too low resolution even for sighted users." width="520" height="435" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Classification of the topics where machine learning methods are applied (<a href="https://doi.org/10.1093/bib/bbk007">https://doi.org/10.1093/bib/bbk007</a>)</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/bioinformatics-ml.png" alt="A series of overlapping boxes showing intersections of different topics like text mining and proteomics and evolution and microarrays, with various topics listed in the intersections. Unfortunately the source image is too low resolution even for sighted users." width="520" height="435" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Classification of the topics where machine learning methods are applied (<a href="https://doi.org/10.1093/bib/bbk007">https://doi.org/10.1093/bib/bbk007</a>)</figcaption></figure>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-examples-of-different-machine-learning-data-mining-techniques-that-can-be-applied-to-different-ngs-data-analysis-pipelines"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-examples-of-different-machine-learning-data-mining-techniques-that-can-be-applied-to-different-ngs-data-analysis-pipelines" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Examples of different Machine Learning / Data Mining techniques that can be applied to different NGS data analysis pipelines.<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-examples-of-different-machine-learning-data-mining-techniques-that-can-be-applied-to-different-ngs-data-analysis-pipelines"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-examples-of-different-machine-learning-data-mining-techniques-that-can-be-applied-to-different-ngs-data-analysis-pipelines" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Examples of different Machine Learning / Data Mining techniques that can be applied to different NGS data analysis pipelines.<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>An extensive list of examples of applications of Machine Learning in Bioinformatics can be found in the <span class="citation"><a href="#Larra_aga_2006">Larrañaga <i>et al.</i> 2006</a></span></p>
 </blockquote>
 
@@ -1089,7 +1093,7 @@ are not known beforehand, making this typically an unsupervised task.</li>
 <p><!--END_SNIPPET--></p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-installing-required-packages"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Installing Required Packages</div>
+  <div class="box-title hands-on-title" id="hands-on-installing-required-packages"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Installing Required Packages</div>
 
   <ol>
     <li>
@@ -1134,7 +1138,7 @@ are not known beforehand, making this typically an unsupervised task.</li>
 We will be using <a href="https://www.tidyverse.org">tidyverse</a>, a collection of R packages for Data Science.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-load-the-uci-dataset"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Load the UCI Dataset</div>
+  <div class="box-title hands-on-title" id="hands-on-load-the-uci-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Load the UCI Dataset</div>
 
   <ol>
     <li>
@@ -1184,12 +1188,12 @@ breastCancerData %&gt;% head()
 </span></code></pre></div>      </div>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>What is a factor?</p>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>TODO</p>
 
@@ -1207,12 +1211,12 @@ breastCancerData %&gt;% head()
 <p>We will first remove the first column, which is the unique identifier of each row:</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>Why?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -1220,7 +1224,7 @@ breastCancerData %&gt;% head()
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-exploratory-data-analysis"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Exploratory Data Analysis</div>
+  <div class="box-title hands-on-title" id="hands-on-exploratory-data-analysis"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Exploratory Data Analysis</div>
   <ol>
     <li>
       <p>Remove the first column</p>
@@ -1262,7 +1266,7 @@ breastCancerDataNoID %&gt;% head()
 </span><span class="n">ggpairs</span><span class="p">(</span><span class="n">breastCancerDataNoID</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">Diagnosis</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.4</span><span class="p">))</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-2"><img src="../../images/intro-to-ml-with-r/ggpairs5variables.png" alt="ggpairs output of the first 5 variables. " width="1024" height="559" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> ggpairs output of the first 5 variables</figcaption></figure>
+      <figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/ggpairs5variables.png" alt="ggpairs output of the first 5 variables. " width="1024" height="559" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> ggpairs output of the first 5 variables</figcaption></figure>
     </li>
     <li>
       <p>Next, we need to center and scale the data.</p>
@@ -1324,15 +1328,15 @@ M:212     1st Qu.:-0.6888   1st Qu.:-0.7253   1st Qu.:-0.6913   1st Qu.:-0.6666
 </span><span class="n">ggpairs</span><span class="p">(</span><span class="n">breastCancerDataNoID_tr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">Diagnosis</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.4</span><span class="p">))</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-3"><img src="../../images/intro-to-ml-with-r/ggpairs5variables_tr.png" alt="ggpairs output of the first 5 variables of the recentered/rescaled data. " width="1024" height="559" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> ggpairs output of the first 5 variables of the recentered/rescaled data</figcaption></figure>
+      <figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/ggpairs5variables_tr.png" alt="ggpairs output of the first 5 variables of the recentered/rescaled data. " width="1024" height="559" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> ggpairs output of the first 5 variables of the recentered/rescaled data</figcaption></figure>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>Do you see any differences?</p>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>TODO</p>
 
@@ -1362,7 +1366,7 @@ M:212     1st Qu.:-0.6888   1st Qu.:-0.7253   1st Qu.:-0.6913   1st Qu.:-0.6666
 </ul>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-dimensionality-reduction-pca"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Dimensionality Reduction &amp; PCA</div>
+  <div class="box-title hands-on-title" id="hands-on-dimensionality-reduction-amp-pca"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Dimensionality Reduction &amp; PCA</div>
 
   <ol>
     <li>Let’s have a look into the variables that we currently have, and apply PCA to them. As you can see, we will be using only the numerical variables (i.e. we will exclude the first two, <code class="language-plaintext highlighter-rouge">ID</code> and <code class="language-plaintext highlighter-rouge">Diagnosis</code>):
@@ -1408,7 +1412,7 @@ Cumulative Proportion  0.99992 0.99997 1.00000 1.00000
 <p>Every eigenvector has a corresponding eigenvalue. Simply put, an eigenvector is a direction, such as “vertical” or “45 degrees”, while an eigenvalue is a number telling you how much variance there is in the data in that direction. The eigenvector with the highest eigenvalue is, therefore, the first principal component. The number of eigenvalues and eigenvectors that exits is equal to the number of dimensions the data set has. In our case, we had 30 variables (32 original, minus the first two), so we have produced 30 eigenvectors / PCs. And we can see that we can address more than 95% of the variance (0.95157) using only the first 10 PCs.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-deeper-look-into-pca"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Deeper look into PCA</div>
+  <div class="box-title hands-on-title" id="hands-on-deeper-look-into-pca"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Deeper look into PCA</div>
 
   <ol>
     <li>
@@ -1458,14 +1462,14 @@ Cumulative Proportion  0.99992 0.99997 1.00000 1.00000
   </span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bottom"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-4"><img src="../../images/intro-to-ml-with-r/pc12Visualization_Full.png" alt="Visualization of the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Visualization of the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
+      <figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/pc12Visualization_Full.png" alt="Visualization of the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Visualization of the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
     </li>
   </ol>
 
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Try changing the parameters of the plot. For example, check the <code class="language-plaintext highlighter-rouge">choices</code> and the <code class="language-plaintext highlighter-rouge">var.scale</code>. Is there an impact? What does this mean?</li>
@@ -1473,7 +1477,7 @@ Cumulative Proportion  0.99992 0.99997 1.00000 1.00000
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -1498,7 +1502,7 @@ Cumulative Proportion  0.99992 0.99997 1.00000 1.00000
 <p>What we are going to do is group the tumor data points into two clusters using an algorithm called <code class="language-plaintext highlighter-rouge">k-means</code>, which aims to cluster the data in order to minimize the variances of the clusters. The basic idea behind k-means clustering consists of defining clusters so that the total intra-cluster variation (known as total within-cluster variation) is minimized. There are several k-means algorithms available. However, the standard algorithm defines the total within-cluster variation as the sum of squared distances Euclidean distances between items and the corresponding centroid:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-let-s-cluster-our-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Let's cluster our data</div>
+  <div class="box-title hands-on-title" id="hands-on-let-s-cluster-our-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Let's cluster our data</div>
 
   <ol>
     <li>
@@ -1554,7 +1558,7 @@ Also, note that k-means requires the number of clusters to be defined beforehand
   </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"K-Means clusters against PCA"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PC1"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PC2"</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cluster"</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Diagnosis"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-5"><img src="../../images/intro-to-ml-with-r/kmeans-pc12-Visualization.png" alt="Visualization of the k-means results against the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Visualization of the k-means results against the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
+      <figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/kmeans-pc12-Visualization.png" alt="Visualization of the k-means results against the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Visualization of the k-means results against the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
 
       <p>This is a rather complex plotting command that is based on the <code class="language-plaintext highlighter-rouge">ggplot</code> library. For an overview of how <code class="language-plaintext highlighter-rouge">ggplot</code> works, have a look at the <a href="/training-material/topics/transcriptomics/tutorials/rna-seq-counts-to-viz-in-r/tutorial.html">RNA Seq Counts to Viz in R</a> tutorial.</p>
     </li>
@@ -1612,7 +1616,7 @@ breastCancerData$Diagnosis |         1 |         2 | Row Total |
 <p>One technique to choose the best <code class="language-plaintext highlighter-rouge">k</code> is called the <strong>elbow method</strong>. This method uses within-group homogeneity or within-group heterogeneity to evaluate the variability. In other words, you are interested in the percentage of the variance explained by each cluster. You can expect the variability to increase with the number of clusters, alternatively, heterogeneity decreases. Our challenge is to find the <code class="language-plaintext highlighter-rouge">k</code> that is beyond the diminishing returns. Adding a new cluster does not improve the variability in the data because very few information is left to explain.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-finding-the-optimal-k"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Finding the optimal k</div>
+  <div class="box-title hands-on-title" id="hands-on-finding-the-optimal-k"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Finding the optimal k</div>
 
   <ol>
     <li>
@@ -1659,15 +1663,15 @@ breastCancerData$Diagnosis |         1 |         2 | Row Total |
   </span><span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-6"><img src="../../images/intro-to-ml-with-r/elbow-plot-kmeans.png" alt="Elbow plot for multiple values of k. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Elbow plot for multiple values of k</figcaption></figure>
+      <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/elbow-plot-kmeans.png" alt="Elbow plot for multiple values of k. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Elbow plot for multiple values of k</figcaption></figure>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>What is the optimal <code class="language-plaintext highlighter-rouge">k</code> value?</p>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>From the graph, you can see the optimal <code class="language-plaintext highlighter-rouge">k</code> is around 10, where the curve is starting to have a diminishing return.</p>
 
@@ -1679,7 +1683,7 @@ breastCancerData$Diagnosis |         1 |         2 | Row Total |
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-5"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-5"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Try re-running the clustering step with the new k. Is there a significant difference?</li>
@@ -1687,7 +1691,7 @@ breastCancerData$Diagnosis |         1 |         2 | Row Total |
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-5"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-5" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-5"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-5" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -1715,7 +1719,7 @@ The algorithm works as follows:</p>
 </ol>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-k-means-clustering"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: k-means Clustering</div>
+  <div class="box-title hands-on-title" id="hands-on-k-means-clustering"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: k-means Clustering</div>
   <ol>
     <li>
       <p>We will be applying Hierarchical clustering to our dataset, and see what the result might be. Remember that our dataset has some columns with nominal (categorical) values (columns <code class="language-plaintext highlighter-rouge">ID</code> and <code class="language-plaintext highlighter-rouge">Diagnosis</code>), so we will need to make sure we only use the columns with numerical values. There are no missing values in this dataset that we need to clean before clustering. But the scales of the features are different and we need to normalize it.</p>
@@ -1740,7 +1744,7 @@ The algorithm works as follows:</p>
 </span><span class="n">plot</span><span class="p">(</span><span class="n">hclust_avg</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-7"><img src="../../images/intro-to-ml-with-r/hclust-fig1.png" alt="Hierarchical clustering (attempt 1). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Hierarchical clustering (attempt 1)</figcaption></figure>
+      <figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/hclust-fig1.png" alt="Hierarchical clustering (attempt 1). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Hierarchical clustering (attempt 1)</figcaption></figure>
 
       <p>Notice how the dendrogram is built and every data point finally merges into a single cluster with the height(distance) shown on the y-axis.</p>
     </li>
@@ -1758,7 +1762,7 @@ The algorithm works as follows:</p>
 </span><span class="c1"># Draw a line at the height that the cut takes place</span><span class="w">
 </span><span class="n">abline</span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'red'</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
-      <figure id="figure-8"><img src="../../images/intro-to-ml-with-r/hclust-fig2.png" alt="Hierarchical clustering (attempt 2). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Hierarchical clustering (attempt 2)</figcaption></figure>
+      <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/hclust-fig2.png" alt="Hierarchical clustering (attempt 2). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Hierarchical clustering (attempt 2)</figcaption></figure>
     </li>
     <li>
       <p>Now we can see the two clusters enclosed in two different colored boxes. We can also use the <code class="language-plaintext highlighter-rouge">color_branches()</code> function from the <code class="language-plaintext highlighter-rouge">dendextend</code> library to visualize our tree with different colored branches.</p>
@@ -1770,7 +1774,7 @@ The algorithm works as follows:</p>
 </span><span class="n">plot</span><span class="p">(</span><span class="n">avg_col_dend</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cluster dendrogram with color per cluster (k = 2)"</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Breast Cancer ID"</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Height"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-9"><img src="../../images/intro-to-ml-with-r/hclust-fig3.png" alt="Hierarchical clustering (attempt 3). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Hierarchical clustering (attempt 3)</figcaption></figure>
+      <figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/hclust-fig3.png" alt="Hierarchical clustering (attempt 3). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Hierarchical clustering (attempt 3)</figcaption></figure>
     </li>
     <li>
       <p>We can change the way branches are colored, to reflect the <code class="language-plaintext highlighter-rouge">Diagnosis</code> value:</p>
@@ -1779,7 +1783,7 @@ The algorithm works as follows:</p>
 </span><span class="n">plot</span><span class="p">(</span><span class="n">avg_col_dend</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cluster dendrogram with Diagnosis color"</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Breast Cancer ID"</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Height"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-10"><img src="../../images/intro-to-ml-with-r/hclust-fig4.png" alt="Hierarchical clustering (attempt 4). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Hierarchical clustering (attempt 4)</figcaption></figure>
+      <figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/hclust-fig4.png" alt="Hierarchical clustering (attempt 4). " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Hierarchical clustering (attempt 4)</figcaption></figure>
     </li>
     <li>
       <p>TODO? Step Title</p>
@@ -1791,14 +1795,14 @@ The algorithm works as follows:</p>
   </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hierarchical clustering (cut at k=2) against PCA"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PC1"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PC2"</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cluster"</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Diagnosis"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-11"><img src="../../images/intro-to-ml-with-r/hclust-pc12-Visualization.png" alt="Visualization of the Hierarchical clustering (cut at k=2) results against the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Visualization of the Hierarchical clustering (cut at k=2) results against the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
+      <figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/hclust-pc12-Visualization.png" alt="Visualization of the Hierarchical clustering (cut at k=2) results against the first two PCs on the UCI Breast Cancer dataset. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Visualization of the Hierarchical clustering (cut at k=2) results against the first two PCs on the UCI Breast Cancer dataset</figcaption></figure>
     </li>
   </ol>
 
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-6"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-6"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>The hierarchical clustering performed so far, only used two methods: <code class="language-plaintext highlighter-rouge">euclidean</code> and <code class="language-plaintext highlighter-rouge">average</code>. Try experimenting with different methods. Do the final results improve?</li>
@@ -1806,7 +1810,7 @@ The algorithm works as follows:</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-6"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-6" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-6"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-6" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -1864,7 +1868,7 @@ The algorithm works as follows:</p>
 <p>Regression trees are used when the dependent variable is continuous while classification trees are used when the dependent variable is categorical. In continuous, a value obtained is a mean response of observation. In classification, a value obtained by a terminal node is a mode of observations.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-decision-trees"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Decision Trees</div>
+  <div class="box-title hands-on-title" id="hands-on-decision-trees"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Decision Trees</div>
   <ol>
     <li>
       <p>Here, we will use the <code class="language-plaintext highlighter-rouge">rpart</code> and the <code class="language-plaintext highlighter-rouge">rpart.plot</code> package in order to produce and visualize a decision tree. First of all, we’ll create the train and test datasets using a 70/30 ratio and a fixed seed so that we can reproduce the results.</p>
@@ -1905,7 +1909,7 @@ The algorithm works as follows:</p>
 4 -1.00000000      6 0.2727273 0.3006993 0.04330166
 </code></pre></div>      </div>
 
-      <figure id="figure-12"><img src="../../images/intro-to-ml-with-r/decisionTreeFull.png" alt="Full decision tree. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Full decision tree</figcaption></figure>
+      <figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/decisionTreeFull.png" alt="Full decision tree. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Full decision tree</figcaption></figure>
 
       <p>The parameters that we used reflect the following aspects of the model:</p>
       <ul>
@@ -1935,15 +1939,15 @@ B  245  34
 M   9   109
 </code></pre></div>      </div>
 
-      <figure id="figure-13"><img src="../../images/intro-to-ml-with-r/decisionTreePruned.png" alt="Pruned decision tree. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Pruned decision tree</figcaption></figure>
+      <figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/decisionTreePruned.png" alt="Pruned decision tree. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Pruned decision tree</figcaption></figure>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-7"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-7"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>What does the above “Confusion Matrix” tells you?</p>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution-7"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-7" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution-7"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-7" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>TODO</p>
 
@@ -1968,13 +1972,13 @@ M   9   109
                 M   1  53
 </code></pre></div>      </div>
 
-      <figure id="figure-14"><img src="../../images/intro-to-ml-with-r/predictionPlot.png" alt="Prediction Plot. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Prediction Plot</figcaption></figure>
+      <figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/predictionPlot.png" alt="Prediction Plot. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Prediction Plot</figcaption></figure>
     </li>
   </ol>
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-8"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-8"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Can we improve the above model? What are the key parameters that have the most impact?</li>
@@ -1982,7 +1986,7 @@ M   9   109
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-8"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-8" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-8"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-8" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -2013,7 +2017,7 @@ M   9   109
 <p>In this exercise, we will be using the <code class="language-plaintext highlighter-rouge">randomForest</code>.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-random-forests"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Random Forests</div>
+  <div class="box-title hands-on-title" id="hands-on-random-forests"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Random Forests</div>
   <ol>
     <li>
       <p>First, let’s train the model:</p>
@@ -2061,7 +2065,7 @@ M  12 131  0.08391608
       <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-15"><img src="../../images/intro-to-ml-with-r/error-rate-rf.png" alt="Error rate plot for the Random Forest model. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> Error rate plot for the Random Forest model</figcaption></figure>
+      <figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/error-rate-rf.png" alt="Error rate plot for the Random Forest model. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> Error rate plot for the Random Forest model</figcaption></figure>
     </li>
     <li>
       <p>We can also review which of the variables has the highest “importance” (i.e. impact to the performance of the model):</p>
@@ -2106,7 +2110,7 @@ Symmetry.Worst                 2.1507714
 Fractal.Dimension.Worst        1.1498020
 </code></pre></div>      </div>
 
-      <figure id="figure-16"><img src="../../images/intro-to-ml-with-r/importance-variables.png" alt="Importance of the individual variables. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 16</strong>:</span> Importance of the individual variables</figcaption></figure>
+      <figure id="figure-16" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/importance-variables.png" alt="Importance of the individual variables. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 16</strong>:</span> Importance of the individual variables</figcaption></figure>
     </li>
     <li>
       <p>Let’s try to do a prediction of the <code class="language-plaintext highlighter-rouge">Diagnosis</code> for the test set, using the new model. The margin of a data point is as the proportion of votes for the correct class minus maximum proportion of votes for other classes. Positive margin means correct classification.</p>
@@ -2124,7 +2128,7 @@ Fractal.Dimension.Worst        1.1498020
                    M   2  63
 </code></pre></div>      </div>
 
-      <figure id="figure-17"><img src="../../images/intro-to-ml-with-r/margin-rf.png" alt="Margin plot for the Random Forest. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 17</strong>:</span> Margin plot for the Random Forest</figcaption></figure>
+      <figure id="figure-17" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/margin-rf.png" alt="Margin plot for the Random Forest. " width="1024" height="677" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 17</strong>:</span> Margin plot for the Random Forest</figcaption></figure>
     </li>
     <li>
       <p>Feature selection: We can evaluate the prediction performance of models with reduced numbers of variables that are ranked by their importance.</p>
@@ -2133,7 +2137,7 @@ Fractal.Dimension.Worst        1.1498020
 </span><span class="n">with</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">plot</span><span class="p">(</span><span class="n">n.var</span><span class="p">,</span><span class="w"> </span><span class="n">error.cv</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">))</span><span class="w">
 </span></code></pre></div>      </div>
 
-      <figure id="figure-18"><img src="../../images/intro-to-ml-with-r/rfcv.png" alt="Random Forest Cross-Valdidation for feature selection. " width="483" height="384" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 18</strong>:</span> Random Forest Cross-Valdidation for feature selection</figcaption></figure>
+      <figure id="figure-18" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/rfcv.png" alt="Random Forest Cross-Valdidation for feature selection. " width="483" height="384" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 18</strong>:</span> Random Forest Cross-Valdidation for feature selection</figcaption></figure>
     </li>
   </ol>
 
@@ -2146,7 +2150,7 @@ Fractal.Dimension.Worst        1.1498020
 <p>Linear regression is to predict response with a linear function of predictors. The most common function in R for this is <code class="language-plaintext highlighter-rouge">lm</code>. In our dataset, let’s try to investigate the relationship between <code class="language-plaintext highlighter-rouge">Radius.Mean</code>, <code class="language-plaintext highlighter-rouge">Concave.Points.Mean</code> and <code class="language-plaintext highlighter-rouge">Area.Mean</code>.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-linear-regression"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Linear Regression</div>
+  <div class="box-title hands-on-title" id="hands-on-linear-regression"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Linear Regression</div>
   <ol>
     <li>
       <p>We can get a first impression by looking at the correlation of these variables:</p>
@@ -2187,7 +2191,7 @@ Coefficients:
 </span><span class="n">plot</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span><span class="w"> </span><span class="n">bc</span><span class="o">$</span><span class="n">Radius.Mean</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Prediction"</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Observed"</span><span class="p">)</span><span class="w">
 </span><span class="n">abline</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
-      <figure id="figure-19"><img src="../../images/intro-to-ml-with-r/lm_full_dataset.png" alt="Prediction Plot GLM. " width="630" height="397" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 19</strong>:</span> Prediction Plot GLM</figcaption></figure>
+      <figure id="figure-19" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/lm_full_dataset.png" alt="Prediction Plot GLM. " width="630" height="397" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 19</strong>:</span> Prediction Plot GLM</figcaption></figure>
     </li>
     <li>
       <p>We can also have a better look at what the model contains with <code class="language-plaintext highlighter-rouge">summary(bc_model_full)</code>:</p>
@@ -2237,7 +2241,7 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
   </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_abline</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>      </div>
-      <figure id="figure-20"><img src="../../images/intro-to-ml-with-r/lm_train_dataset.png" alt="Prediction Plot GLM. " width="630" height="397" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 20</strong>:</span> Prediction Plot GLM</figcaption></figure>
+      <figure id="figure-20" style="max-width: 90%; margin:auto;"><img src="../../images/intro-to-ml-with-r/lm_train_dataset.png" alt="Prediction Plot GLM. " width="630" height="397" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 20</strong>:</span> Prediction Plot GLM</figcaption></figure>
 
       <p>You will note that it is quite similar to when using whole dataset</p>
     </li>
@@ -2261,12 +2265,12 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
 <p>Now let’s use the RMSE and the R_square metrics to evaluate our model on the training and test set. R_square measures how much of variability in dependent variable can be explained by the model. It is defined as the square of the correlation coefficient (<code class="language-plaintext highlighter-rouge">R</code>), and that is why it is called “R Square” (more info <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">on the Wikipedia page for CoD</a>).</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-9"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-9"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>Try evaluating model using RMSE, but on the training set this time</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-9"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-9" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-9"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-9" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##### Answer to exercise 1.</span><span class="w">
 </span><span class="c1">#Calculate residuals</span><span class="w">
@@ -2288,7 +2292,7 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-10"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-10"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Calculate RMSE for the test data and check if the model is not overfit.</li>
@@ -2297,7 +2301,7 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-10"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-10" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-10"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-10" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>TODO</p>
 
@@ -2377,6 +2381,9 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
                             Fotis E. Psomopoulos, Erasmus+ Programme,  <b>Introduction to Machine Learning using R (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -2398,12 +2405,12 @@ F-statistic: 1.111e+04 on 2 and 566 DF,  p-value: &lt; 2.2e-16
 
 <code id="citation-code">@misc{statistics-intro-to-ml-with-r,
 author = "Fotis E. Psomopoulos and Erasmus+ Programme",
-title = "Introduction to Machine Learning using R (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Introduction to Machine Learning using R (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -2547,19 +2554,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00267">https://gxy.io/GTN:T00267</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00267">https://gxy.io/GTN:T00267</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -2579,7 +2586,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -2587,9 +2594,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

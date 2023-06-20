@@ -17,7 +17,7 @@
   "tags": [
     "ro-crate"
   ],
-  "priority": 1,
+  "priority": 2,
   "contributions": {
     "authorship": [
       "simleo",
@@ -35,6 +35,7 @@
   "notebook": {
     "language": "python"
   },
+  "short_id": "T00341",
   "url": "/topics/fair/tutorials/ro-crate-in-python/tutorial.html",
   "topic_name": "fair",
   "tutorial_name": "ro-crate-in-python",
@@ -75,6 +76,7 @@
       }
     ]
   },
+  "topic_name_human": "FAIR Data, Workflows, and Research",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

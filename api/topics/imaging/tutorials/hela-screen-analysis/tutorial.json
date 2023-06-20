@@ -55,6 +55,7 @@
   "tags": [
     "HeLa"
   ],
+  "short_id": "T00180",
   "url": "/topics/imaging/tutorials/hela-screen-analysis/tutorial.html",
   "topic_name": "imaging",
   "tutorial_name": "hela-screen-analysis",
@@ -81,7 +82,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "feature_extraction.ga",
@@ -94,7 +96,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/hela-screen-analysis/tutorial.json",
@@ -132,6 +135,7 @@
       }
     ]
   },
+  "topic_name_human": "Imaging",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -9,6 +9,7 @@
     "natefoo",
     "hexylena"
   ],
+  "short_id": "S00008",
   "url": "/topics/admin/tutorials/database/slides.html",
   "topic_name": "admin",
   "tutorial_name": "database",
@@ -49,6 +50,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -69,7 +71,6 @@
     "video": true
   },
   "type": "tutorial",
-  "short_id": "S00008",
   "redirect_from": [
     "/short/admin/database/slides",
     "/short/S00008"

@@ -28,6 +28,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pavanvidem/"
     }
   ],
+  "short_id": "T00296",
   "url": "/topics/transcriptomics/tutorials/rna-interactome/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "rna-interactome",
@@ -54,7 +55,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/rna-interactome/tutorial.json",
@@ -70,11 +72,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -104,6 +101,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

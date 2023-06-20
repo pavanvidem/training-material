@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -61,7 +65,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: High Throughput Molecular Dynamics and Analysis">
         <meta property="og:description" content="Modelling, simulation and analysis of biomolecular systems">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -352,7 +356,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/computational-chemistry/tutorials/htmd-analysis/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -399,7 +403,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -412,7 +416,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -449,14 +453,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'galaxycomputationalchemistry/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-computational-chemistry">
     <h1 data-toc-skip>High Throughput Molecular Dynamics and Analysis</h1>
@@ -466,7 +463,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a><a href="/training-material/hall-of-fame/tsenapathi/" class="contributor-badge contributor-tsenapathi"><img src="https://avatars.githubusercontent.com/tsenapathi?s=27" alt="Avatar">Tharindu Senapathi</a><a href="/training-material/hall-of-fame/chrisbarnettster/" class="contributor-badge contributor-chrisbarnettster"><img src="https://avatars.githubusercontent.com/chrisbarnettster?s=27" alt="Avatar">Christopher Barnett</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+		Authors: <a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Avatar">Simon Bray</a><a href="/training-material/hall-of-fame/tsenapathi/" class="contributor-badge contributor-tsenapathi"><img src="https://avatars.githubusercontent.com/tsenapathi?s=36" alt="Avatar">Tharindu Senapathi</a><a href="/training-material/hall-of-fame/chrisbarnettster/" class="contributor-badge contributor-chrisbarnettster"><img src="https://avatars.githubusercontent.com/chrisbarnettster?s=36" alt="Avatar">Christopher Barnett</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar">Björn Grüning</a>
 	</div>
 
 </div>
@@ -661,12 +658,6 @@ Sentry.init({
 	</li>
     
     
-	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
 	<li class="dropdown-header">
 		<b>Possibly Working</b>
 	</li>
@@ -703,12 +694,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 23, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00050">https://gxy.io/GTN:T00050</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00050">https://gxy.io/GTN:T00050</a> </div>
         
     </blockquote>
     </section>
@@ -778,14 +770,14 @@ Sentry.init({
 
 <p>In the structure which will be examined during this tutorial, the ligand of concern is a resorcinol, a common class of compounds with affinity for the Hsp90 N-terminal domain. It is registered in the PubChem database under the compound ID 135508238 (<span class="citation"><a href="#ligand_resorcinol">PubChem</a></span>). As can be seen by viewing the PDB structure, the resorcinol part of the structure is embedded in the binding site, bound by a hydrogen bond to residue aspartate-93. The ligand structure also contains a triazole and a fluorophenyl ring, which lie nearer to the surface of the protein.</p>
 
-<figure id="figure-1"><img src="/training-material/topics/computational-chemistry/images/hsp90lig.png" alt="Image showing Hsp90 structure, with a ligand bound. " width="677" height="562" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Structure of Hsp90, with a ligand bound. <a href="https://usegalaxy.eu/u/sbray/v/hsp90-lig">Click to view</a> in NGL. (<span class="citation"><a href="#ngl">Rose <i>et al.</i> 2018</a></span>)</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/computational-chemistry/images/hsp90lig.png" alt="Image showing Hsp90 structure, with a ligand bound. " width="677" height="562" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Structure of Hsp90, with a ligand bound. <a href="https://usegalaxy.eu/u/sbray/v/hsp90-lig">Click to view</a> in NGL. (<span class="citation"><a href="#ngl">Rose <i>et al.</i> 2018</a></span>)</figcaption></figure>
 
 <h2 id="get-data">Get data</h2>
 
 <p>As a first step, we create a new Galaxy history and then we download a crystal structure for the Hsp90 protein from the Protein Data Bank (PDB). The structure is provided under accession code <code class="language-plaintext highlighter-rouge">6HHR</code> (<span class="citation"><a href="#Schuetz2018">Schuetz <i>et al.</i> 2018</a></span>) and shows Hsp90 in complex with a ligand belonging to the resorcinol class.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Data upload</div>
 
   <ol>
     <li>Create a new history for this tutorial</li>
@@ -817,14 +809,14 @@ Sentry.init({
 <p>Parameterization needs to be done separately for the ligand and protein. Therefore, the first step is to separate the PDB file into two sets of coordinates - one for the ligand and one for the protein. Here, we can make use of the simple text manipulation tools integrated into Galaxy.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Why do protein and ligand need to be parameterized separately?</li>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>Protein and small molecules are constructed differently. A protein is made up of 20 different building blocks (amino acids) - therefore, to construct a protein topology, amino acid topologies simply need to be combined appropriately. By contrast, the structure of small molecules is far more flexible and needs to be calculated for each different structure.</li>
@@ -835,7 +827,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-separate-protein-and-ligand-coordinates"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Separate protein and ligand coordinates</div>
+  <div class="box-title hands-on-title" id="hands-on-separate-protein-and-ligand-coordinates"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Separate protein and ligand coordinates</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1" title="Search in textfiles (grep) tool" aria-role="link"><strong>Search in textfiles (grep)</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1</span></span> with the following parameters:
@@ -867,7 +859,7 @@ Sentry.init({
 <p>Firstly, we need to calculate the topology for the protein file. We will use the <strong>GROMACS initial setup</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> tool.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-generate-protein-topology"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Generate protein topology</div>
+  <div class="box-title hands-on-title" id="hands-on-generate-protein-topology"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Generate protein topology</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_setup/gmx_setup/2020.4+galaxy0" title="GROMACS initial setup tool" aria-role="link"><strong>GROMACS initial setup</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_setup/gmx_setup/2020.4+galaxy0</span></span> with the following parameters:
@@ -879,7 +871,7 @@ Sentry.init({
       </ul>
 
       <blockquote class="comment">
-        <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+        <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
         <p>A force field is essentially a function to calculate the potential energy of a system, based on various empirical parameters (for the atoms, bonds, charges, dihedral angles and so on). There are a number of families of forcefields; some of the most commonly used include CHARMM, AMBER, GROMOS and OpenFF (for a recent, accessible overview see (<span class="citation"><a href="#Lemkul2020">Lemkul 2020</a></span>).</p>
 
         <p>A wide range of models exist for modeling water. Here we are using the common TIP3P model, which is an example of a ‘three-site model’ - so-called because the molecule is modeled using three points, corresponding to the three atoms of water. (Four- and five-site models include additional ‘dummy atoms’ representing the negative charges of the lone pairs of the oxygen atom).</p>
@@ -900,7 +892,7 @@ Sentry.init({
 <p>Inspecting the contents of the <code class="language-plaintext highlighter-rouge">Ligand (PDB)</code> file shows that it contains no hydrogen atoms. These need to be added before the topology can be calculated. The <strong>Compound conversion</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> (which is based on OpenBabel) can be used to achieve this.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-generate-ligand-topology"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Generate ligand topology</div>
+  <div class="box-title hands-on-title" id="hands-on-generate-ligand-topology"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Generate ligand topology</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0" title="Compound conversion tool" aria-role="link"><strong>Compound conversion</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0</span></span> with the following parameters:
@@ -940,7 +932,7 @@ minimization step.</p>
 <p>While we have separate topology and structure files for both protein and ligand, we need to combine them into a single set of files to continue with the simulation setup. A dedicated Galaxy tool is provided for this, using the Python library ParmEd (<span class="citation"><a href="#Swails2016">Swails <i>et al.</i> 2016</a></span>).</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-combine-gro-and-topology-files"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Combine GRO and topology files</div>
+  <div class="box-title hands-on-title" id="hands-on-combine-gro-and-topology-files"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Combine GRO and topology files</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_merge_topology_files/gmx_merge_topology_files/3.2.0+galaxy0" title="Merge GROMACS topologies tool" aria-role="link"><strong>Merge GROMACS topologies</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_merge_topology_files/gmx_merge_topology_files/3.2.0+galaxy0</span></span> with the following parameters:
@@ -960,7 +952,7 @@ minimization step.</p>
 <p>The next step, once combined coordinate (GRO) and topology (TOP) files have been created, is to create a simulation box in which the system is situated.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-create-simulation-box"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create simulation box</div>
+  <div class="box-title hands-on-title" id="hands-on-create-simulation-box"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create simulation box</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2020.4+galaxy0" title="GROMACS structure configuration tool" aria-role="link"><strong>GROMACS structure configuration</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2020.4+galaxy0</span></span> with the following parameters:
@@ -976,7 +968,7 @@ minimization step.</p>
       </ul>
 
       <blockquote class="comment">
-        <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+        <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
         <p>This tool returns a new GRO structure file, containing the same coordinates as before, but defining a simulation box such that every atom is a minimum of 1 nm from the box boundary. A distance of at least 1 nm is recommended to avoid interactions between the protein and its mirror image. On the other hand, increasing the box size too far will increase the simulation time, due to the greater number of solvent molecules which need to be treated. A variety of box shapes are available to choose: we select triclinic, as it provides the most efficient packing in space and thus fewer computational resources need to be devoted to simulation of solvent.</p>
       </blockquote>
@@ -990,7 +982,7 @@ minimization step.</p>
 <p>The next step is solvation of the newly created simulation box - as we are simulating under biological conditions, we use water as the solvent. Note that the system is charged (depending on the pH) - the solvation tool also adds sodium or chloride ions (replacing existing water molecules) as required to neutralize this.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-solvation"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Solvation</div>
+  <div class="box-title hands-on-title" id="hands-on-solvation"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Solvation</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_solvate/gmx_solvate/2020.4+galaxy1" title="GROMACS solvation and adding ions tool" aria-role="link"><strong>GROMACS solvation and adding ions</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_solvate/gmx_solvate/2020.4+galaxy1</span></span> with the following parameters:
@@ -1013,14 +1005,14 @@ minimization step.</p>
 <p>After the solvation step, parameterization of the system is complete and preparatory simulations can be performed. The first of theses is energy minimization, which can be carried out using the <strong>GROMACS energy minimization</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> tool.</p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>What is the purpose of energy minimization?</li>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>Running an energy minimization (EM) algorithm relaxes the structure by removing any steric clashes or unusual geometry which would artificially raise the energy of the system.</li>
@@ -1031,7 +1023,7 @@ minimization step.</p>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-energy-minimization"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Energy minimization</div>
+  <div class="box-title hands-on-title" id="hands-on-energy-minimization"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Energy minimization</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_em/gmx_em/2020.4+galaxy0" title="GROMACS energy minimization tool" aria-role="link"><strong>GROMACS energy minimization</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_em/gmx_em/2020.4+galaxy0</span></span> with the following parameters:
@@ -1057,7 +1049,7 @@ minimization step.</p>
 <p>As an aside, we can use the <code class="language-plaintext highlighter-rouge">Extract energy components</code> tool to plot the convergence of the potential energy during the minimization.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-checking-em-convergence"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Checking EM convergence</div>
+  <div class="box-title hands-on-title" id="hands-on-checking-em-convergence"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Checking EM convergence</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_energy/gmx_energy/2020.4+galaxy0" title="Extract energy components with GROMACS tool" aria-role="link"><strong>Extract energy components with GROMACS</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_energy/gmx_energy/2020.4+galaxy0</span></span> with the following parameters:
@@ -1081,7 +1073,7 @@ minimization step.</p>
 
 <p>The resulting plot should resemble the figure below. The system first drops rapidly in energy, before slowly converging on the minimized state.</p>
 
-<figure id="figure-2"><img src="/training-material/topics/computational-chemistry/images/empot.png" alt="Snapshot of Energy potential during the EM simulation. " width="640" height="525" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Energy potential during the EM simulation. <a href="https://usegalaxy.eu/u/sbray/v/em-pot">Click to view</a> as a Galaxy visualization</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/computational-chemistry/images/empot.png" alt="Snapshot of Energy potential during the EM simulation. " width="640" height="525" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Energy potential during the EM simulation. <a href="https://usegalaxy.eu/u/sbray/v/em-pot">Click to view</a> as a Galaxy visualization</figcaption></figure>
 
 <h2 id="equilibration">Equilibration</h2>
 
@@ -1090,7 +1082,7 @@ minimization step.</p>
 <p>Simulation under the NVT ensemble allows the solvent to be brought to the desired temperature, while simulation under the NPT ensemble bring the solvent to the correct pressure.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-more-detail-about-equilibration"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment: More detail about equilibration</div>
+  <div class="box-title comment-title" id="comment-more-detail-about-equilibration"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: More detail about equilibration</div>
 
   <p>At this point equilibration of the solvent around the solute (i.e. the protein) is necessary. This is performed in two stages: equilibration under an NVT (or isothermal-isochoric) ensemble, followed by an NPT (or isothermal-isobaric) ensemble. Use of the NVT ensemble entails maintaining constant number of particles, volume and temperature, while the NPT ensemble maintains constant number of particles, pressure and temperature.</p>
 
@@ -1099,7 +1091,7 @@ minimization step.</p>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-nvt-equilibration"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: NVT equilibration</div>
+  <div class="box-title hands-on-title" id="hands-on-nvt-equilibration"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: NVT equilibration</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1" title="GROMACS simulation tool" aria-role="link"><strong>GROMACS simulation</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1</span></span> with the following parameters:
@@ -1151,7 +1143,7 @@ parameters) by using the checkpoint (CPT) file saved at the end of the
 NVT simulation.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-npt-equilibration"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: NPT equilibration</div>
+  <div class="box-title hands-on-title" id="hands-on-npt-equilibration"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: NPT equilibration</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1" title="GROMACS simulation tool" aria-role="link"><strong>GROMACS simulation</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1</span></span> with the following parameters:
@@ -1200,7 +1192,7 @@ NVT simulation.</p>
 <p>We can now remove the restraints and continue with the production simulation. The simulation will run for 1 million steps, with a step size of 1 fs, so will have a total length of 1 ns. This is rather short compared to the state-of-the-art, but sufficient for the purposes of a tutorial. For longer-scale simulations, the tool can be used multiple times (with the checkpoint file) to continue the existing simulation.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on</div>
+  <div class="box-title hands-on-title" id="hands-on"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1" title="GROMACS simulation tool" aria-role="link"><strong>GROMACS simulation</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_sim/gmx_sim/2020.4+galaxy1</span></span> with the following parameters:
@@ -1248,7 +1240,7 @@ NVT simulation.</p>
 <p>Before beginning a detailed analysis, the structure and trajectory files generated previously need to be converted into different formats. First, convert the structural coordinates of the system in GRO format into PDB format. This PDB file will be used by most analysis tools as a starting structure.  Next, convert the trajectory from XTC to DCD format, as a number of tools (particularly those based on Bio3D) only accept trajectories in DCD format.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-convert-coordinate-format"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Convert coordinate format</div>
+  <div class="box-title hands-on-title" id="hands-on-convert-coordinate-format"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Convert coordinate format</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2020.4+galaxy0" title="GROMACS structure configuration tool" aria-role="link"><strong>GROMACS structure configuration</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2020.4+galaxy0</span></span> with the following parameters:
@@ -1258,7 +1250,7 @@ NVT simulation.</p>
       </ul>
 
       <blockquote class="comment">
-        <div class="box-title comment-title" id="comment-2"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+        <div class="box-title comment-title" id="comment-2"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
         <p>This tool can also be used to carry out initial setup (as discussed in the simulation methods section) for GROMACS simulations and convert from PDB to GRO format.</p>
       </blockquote>
@@ -1272,7 +1264,7 @@ NVT simulation.</p>
 <p>Convert from XTC to DCD format. A number of the analysis tools being used have been built to analyse trajectories in CHARMM’s DCD format.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-convert-trajectory-format"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Convert trajectory format</div>
+  <div class="box-title hands-on-title" id="hands-on-convert-trajectory-format"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Convert trajectory format</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/md_converter/md_converter/1.9.6+galaxy0" title="MDTraj file converter tool" aria-role="link"><strong>MDTraj file converter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/md_converter/md_converter/1.9.6+galaxy0</span></span> with the following parameters:
@@ -1281,7 +1273,7 @@ NVT simulation.</p>
       </ul>
 
       <blockquote class="comment">
-        <div class="box-title comment-title" id="comment-3"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+        <div class="box-title comment-title" id="comment-3"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
         <p>This tool can also be used to interconvert between several trajectory formats.</p>
       </blockquote>
@@ -1299,7 +1291,7 @@ RMSD of the Cα atoms of the protein backbone is calculated here and
 is a measure of how much the protein conformation has changed between different time points in the trajectory.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-rmsd-analysis"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: RMSD Analysis</div>
+  <div class="box-title hands-on-title" id="hands-on-rmsd-analysis"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: RMSD Analysis</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsd/bio3d_rmsd/2.3.4" title="RMSD Analysis tool" aria-role="link"><strong>RMSD Analysis</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsd/bio3d_rmsd/2.3.4</span></span> <em>“DCD trajectory input”</em>: <code class="language-plaintext highlighter-rouge">output</code> (output of <strong>MDTraj file converter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)
@@ -1318,16 +1310,16 @@ is a measure of how much the protein conformation has changed between different 
 
 <p>In our case the ligand is stable with a single binding mode. The RMSD fluctuates around 0.3Å, with a slight fluctuation near the end of the simulation. This is more clearly seen in the histogram. The conformation seen during simulation is very similar to that in the crystal structure and the ligand is stable in the active site.</p>
 
-<figure id="figure-5"><img src="../../images/htmd_analysis_rmsd2_series.png" alt="RMSD timeseries Hsp90 ligand. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> RMSD timeseries for the Hsp90 Residue ID G5E (ligand)</figcaption></figure>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/htmd_analysis_rmsd2_series.png" alt="RMSD timeseries Hsp90 ligand. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> RMSD timeseries for the Hsp90 Residue ID G5E (ligand)</figcaption></figure>
 
-<figure id="figure-6"><img src="../../images/htmd_analysis_rmsd2_histo.png" alt="RMSD histogram Hsp90 ligand. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> RMSD histogram for the Hsp90 Residue ID G5E (ligand)</figcaption></figure>
+<figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/htmd_analysis_rmsd2_histo.png" alt="RMSD histogram Hsp90 ligand. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> RMSD histogram for the Hsp90 Residue ID G5E (ligand)</figcaption></figure>
 
 <h2 id="rmsf-analysis">RMSF analysis</h2>
 
 <p>The Root Mean Square Fluctuation (RMSF) is valuable to consider, as it represents the deviation at a reference position over time. The fluctuation in space of particular amino acids in the protein are considered. The Cα of the protein, designated by <code class="language-plaintext highlighter-rouge">C-alpha</code>, is a good selection to understand the change in protein structure. Depending on the system these fluctuations can be correlated to experimental techniques including Nuclear Magnetic Resonance (NMR) and M"{o}ssbauer spectroscopy (<span class="citation"><a href="#berjanskii_nmr_2006">Berjanskii and Wishart 2006</a></span>, <span class="citation"><a href="#kuzmanic_determination_2010">Kuzmanic and Zagrovic 2010</a></span>). The output from the tools is the requested RMSF data and the RMSF plotted as a time series.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-rmsf-analysis"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: RMSF analysis</div>
+  <div class="box-title hands-on-title" id="hands-on-rmsf-analysis"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: RMSF analysis</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsf/bio3d_rmsf/2.3.4" title="RMSF Analysis tool" aria-role="link"><strong>RMSF Analysis</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsf/bio3d_rmsf/2.3.4</span></span> <em>“DCD trajectory input”</em>: <code class="language-plaintext highlighter-rouge">output</code> (output of <strong>MDTraj file converter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)
@@ -1340,7 +1332,7 @@ is a measure of how much the protein conformation has changed between different 
 
 </blockquote>
 
-<figure id="figure-7"><img src="../../images/htmd_analysis_rmsf.png" alt="RMSF Hsp90. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> RMSF(Å) vs the residue position. Large fluctuations occur at various positions, which correspond to flexible loop regions on the surface of the protein.</figcaption></figure>
+<figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/htmd_analysis_rmsf.png" alt="RMSF Hsp90. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> RMSF(Å) vs the residue position. Large fluctuations occur at various positions, which correspond to flexible loop regions on the surface of the protein.</figcaption></figure>
 
 <p>When considering the RMSF, fluctuations greater than 1.0Å are of interest; for example see the fluctuations near residue positions 50, 110 and 160.  Inspecting the structure with molecular visualization software such as VMD, these can be seen to correspond to flexible loop regions on the protein surface. In addition, very large fluctuations are seen for the C-terminus; this is common and no investigation is needed.</p>
 
@@ -1355,7 +1347,7 @@ The PCA tool calculates the PCA in order to determine the relationship between s
 Having discovered the principal components usually these are visualized. The PCA visualization tool will create trajectories of specific principal components which can be viewed in a molecular viewer such as VMD (<span class="citation"><a href="#hump_vmd_1996">Humphrey <i>et al.</i> 1996</a></span>) or NGL viewer (<span class="citation"><a href="#Rose2018ngl">Rose <i>et al.</i> 2018</a></span>). We also consider the PCA cosine content which when close to 1 indicates that the simulation is not converged and a longer simulation is needed. For values below 0.7, no statement can be made about convergence or lack thereof.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-pca"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: PCA</div>
+  <div class="box-title hands-on-title" id="hands-on-pca"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: PCA</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4" title="PCA tool" aria-role="link"><strong>PCA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4</span></span> with the following parameters:
@@ -1369,12 +1361,12 @@ Having discovered the principal components usually these are visualized. The PCA
 
 </blockquote>
 
-<figure id="figure-8"><img src="../../images/htmd_analysis_pca.png" alt="PCA Hsp90. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> PCA results which include graphs of PC2 vs PC1, PC2 vs PC3, PC3 vs PC1  colored from blue to red in order of time, and an eigenvalue rank plot. In the eigenvalue plot the cumulative variance is labeled for each data point.</figcaption></figure>
+<figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/htmd_analysis_pca.png" alt="PCA Hsp90. " width="480" height="480" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> PCA results which include graphs of PC2 vs PC1, PC2 vs PC3, PC3 vs PC1  colored from blue to red in order of time, and an eigenvalue rank plot. In the eigenvalue plot the cumulative variance is labeled for each data point.</figcaption></figure>
 
 <p>The first three principal components are responsible for 32.8% of the total variance, as seen in the eigenvalue rank plot. The first principal component (PC1) accounts for 15.4% of the variance (see PC1 vs PC2 and eigenvalue rank plots). Visualization of PC1 using VMD shows a rocking motion and wagging of the C-terminus.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-pca-cosine-content-calculation"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: PCA cosine content calculation</div>
+  <div class="box-title hands-on-title" id="hands-on-pca-cosine-content-calculation"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: PCA cosine content calculation</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/mdanalysis_cosine_analysis/mdanalysis_cosine_analysis/1.0.0+galaxy0" title="Cosine Content tool" aria-role="link"><strong>Cosine Content</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/mdanalysis_cosine_analysis/mdanalysis_cosine_analysis/1.0.0+galaxy0</span></span> with the following parameters:
@@ -1390,7 +1382,7 @@ Having discovered the principal components usually these are visualized. The PCA
 <p>The PCA cosine content of the dominant motion related to PC1 is 0.93, indicating that the simulation is not fully converged. This is expected due to the short simulation length. For production level simulations, it is the norm to extend simulations to hundreds of nanoseconds in length, if not microseconds. As this tutorial is designed to be carried out on public webservers, we limit simulations to 1 ns, as we cannot provide a large amount of computational resources for training purposes.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-pca-visualisation"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: PCA visualisation</div>
+  <div class="box-title hands-on-title" id="hands-on-pca-visualisation"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: PCA visualisation</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4" title="PCA visualization tool" aria-role="link"><strong>PCA visualization</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4</span></span> with the following parameters:
@@ -1404,14 +1396,14 @@ Having discovered the principal components usually these are visualized. The PCA
 
 </blockquote>
 
-<figure id="figure-9"><img src="../../images/htmd_analysis_pc1_hsp90.gif" alt="PC1 Hsp90 gif. " width="365" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> PC1 motion for Hsp90</figcaption></figure>
+<figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/htmd_analysis_pc1_hsp90.gif" alt="PC1 Hsp90 gif. " width="365" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> PC1 motion for Hsp90</figcaption></figure>
 
 <h2 id="hydrogen-bond-analysis">Hydrogen bond analysis</h2>
 
 <p>Hydrogen bonding interactions contribute to binding and are worth investigating, in particular persistent hydrogen bonds. All possible hydrogen bonding interactions between the two selected regions, here the protein and the ligand, are investigated over time using the VMD hydrogen bond analysis tool included in Galaxy. Hydrogen bonds are identified and in the output the total number of hydrogen bonds and  occupancy over time is returned.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-hydrogen-bond-analysis"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Hydrogen bond analysis</div>
+  <div class="box-title hands-on-title" id="hands-on-hydrogen-bond-analysis"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Hydrogen bond analysis</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3" title="Hydrogen Bond Analysis using VMD tool" aria-role="link"><strong>Hydrogen Bond Analysis using VMD</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3</span></span> with the following parameters:
@@ -1434,7 +1426,7 @@ Having discovered the principal components usually these are visualized. The PCA
 <p>We will demonstrate the high-throughput capabilities of Galaxy by running the workflow detailed so far on a further three ligands.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-high-throughput-md"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: High-throughput MD</div>
+  <div class="box-title hands-on-title" id="hands-on-high-throughput-md"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: High-throughput MD</div>
 
   <ol>
     <li>Create a new history for running the high-throughput workflow and name it <code class="language-plaintext highlighter-rouge">Hsp90 HTMD simulation</code></li>
@@ -1461,7 +1453,7 @@ Having discovered the principal components usually these are visualized. The PCA
 <p>If you are able to write small scripts, you can automate everything you have learned here with the Galaxy API. This allows you to interact with the server to automate repetitive tasks and create more complex workflows (which may have repetition or branching). The simplest way to access the API is through the Python library BioBlend (<span class="citation"><a href="#sloggett_bioblend">Sloggett <i>et al.</i> 2013</a></span>). An example Python script, which uses BioBlend to run the GROMACS simulation workflow for each of a list of ligands, is given in the hands-on box below.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-bioblend-script"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Bioblend script</div>
+  <div class="box-title hands-on-title" id="hands-on-bioblend-script"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Bioblend script</div>
 
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from bioblend import galaxy
 
@@ -1653,6 +1645,9 @@ table as <code class="language-plaintext highlighter-rouge">History Content API 
                             Simon Bray, Tharindu Senapathi, Christopher Barnett, Björn Grüning,  <b>High Throughput Molecular Dynamics and Analysis (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.html">https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1674,12 +1669,12 @@ table as <code class="language-plaintext highlighter-rouge">History Content API 
 
 <code id="citation-code">@misc{computational-chemistry-htmd-analysis,
 author = "Simon Bray and Tharindu Senapathi and Christopher Barnett and Björn Grüning",
-title = "High Throughput Molecular Dynamics and Analysis (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "High Throughput Molecular Dynamics and Analysis (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1896,19 +1891,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00050">https://gxy.io/GTN:T00050</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00050">https://gxy.io/GTN:T00050</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1928,7 +1923,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1936,9 +1931,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

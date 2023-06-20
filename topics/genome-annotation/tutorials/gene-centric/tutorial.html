@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/gene-centric/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -58,7 +62,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Comparative gene analysis in unannotated genomes">
         <meta property="og:description" content="Genome annotation is a multi-level process that includes ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -337,7 +341,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/genome-annotation/tutorials/gene-centric/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/genome-annotation/tutorials/gene-centric/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -384,7 +388,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -397,7 +401,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -434,14 +438,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'galaxy-genome-annotation/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-genome-annotation">
     <h1 data-toc-skip>Comparative gene analysis in unannotated genomes</h1>
@@ -451,7 +448,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=27" alt="Avatar">Anton Nekrutenko</a>
+		Authors: <a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar">Anton Nekrutenko</a>
 	</div>
 
 </div>
@@ -713,12 +710,6 @@ Sentry.init({
 	</li>
     
     
-	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
 	<li class="dropdown-header">
 		<b>Possibly Working</b>
 	</li>
@@ -743,12 +734,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 27, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00174">https://gxy.io/GTN:T00174</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00174">https://gxy.io/GTN:T00174</a> </div>
         
     </blockquote>
     </section>
@@ -769,7 +761,7 @@ Sentry.init({
 
 <blockquote class="code-2col">
   <blockquote class="code-in">
-    <div class="box-title code-in-title" id="code-in-what-i-have"><i class="far fa-keyboard" aria-hidden="true"></i> Input: What I have</div>
+    <div class="box-title code-in-title" id="code-in-what-i-have"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: What I have</div>
     <ul>
       <li>I know the gene’s name</li>
       <li>I know which species I’m interested in</li>
@@ -778,7 +770,7 @@ Sentry.init({
   </blockquote>
 
   <blockquote class="code-out">
-    <div class="box-title code-out-title" id="code-out-what-i-want"><i class="fas fa-laptop-code" aria-hidden="true"></i> Output: What I want</div>
+    <div class="box-title code-out-title" id="code-out-what-i-want"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output: What I want</div>
     <ul>
       <li>I work with a gene <em>X</em></li>
       <li>I would like to compare the structure of gene <em>X</em> across <em>N</em> genomes</li>
@@ -788,7 +780,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-what-i-will-get"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-i-will-get" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: What I will get<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-what-i-will-get"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-i-will-get" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: What I will get<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <ul>
     <li>Interactive graphs showing location of the gene across your species of choice. These will allow you to see the absence/presence of the genes across genomes, to detect potential duplications, predogenization events, re-arrangements etc.</li>
     <li>Phylogenetic trees for individual exons of the gene. The trees will give you an idea of potential unusual evolutionary dynamics for the gene.</li>
@@ -842,7 +834,7 @@ Sentry.init({
   <li>Create a comparative plot showing distribution of matches across genomes of interest</li>
 </ol>
 
-<p><img src="../../images/gene-centric/gene_analysis.svg" alt="A schematic diagram of the above workflow. " loading="lazy" /></p>
+<p><img src="../../images/gene-centric/gene_analysis.svg" alt="A schematic diagram of the above workflow. " width="539" height="960" loading="lazy" /></p>
 
 <hr />
 
@@ -857,7 +849,7 @@ Sentry.init({
 <p>You can use this history to understand the input datasets as well as outputs of the entire analysis. The key items in the history are labelled with <kbd>tags</kbd>:</p>
 
 <blockquote class="code-in">
-  <div class="box-title code-in-title" id="code-in-dataset-in-the-example-history"><i class="far fa-keyboard" aria-hidden="true"></i> Input: dataset in the example history</div>
+  <div class="box-title code-in-title" id="code-in-dataset-in-the-example-history"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: dataset in the example history</div>
   <ul>
     <li><kbd>EXONS</kbd> - amino acid translation of exons of the gene of interest (<em>XBP-1</em>)</li>
     <li><kbd>ORF_BED</kbd> - coordinates of predicted ORFs in the genomes of interest</li>
@@ -866,7 +858,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="code-out">
-  <div class="box-title code-out-title" id="code-out-in-the-sample-history"><i class="fas fa-laptop-code" aria-hidden="true"></i> Output: in the sample history</div>
+  <div class="box-title code-out-title" id="code-out-in-the-sample-history"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output: in the sample history</div>
   <ul>
     <li><kbd>PlottingData</kbd> - summary necessary for plotting comparative genome graphs</li>
     <li><kbd>Trees</kbd> - phylogenetic trees for each exon</li>
@@ -874,7 +866,7 @@ Sentry.init({
 </blockquote>
 
 <blockquote class="warning">
-  <div class="box-title warning-title" id="warning-a-suggestion"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Warning: A suggestion!</div>
+  <div class="box-title warning-title" id="warning-a-suggestion"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: A suggestion!</div>
   <p>Importing and looking around this history is very helpful for understanding how this analysis works!</p>
 </blockquote>
 
@@ -892,7 +884,7 @@ Sentry.init({
 
 <p>The best annotated vertebrate is … human. To obtain amino acid translation of individual exons of <em>XBP-1</em> you can use <a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&amp;lastVirtModeType=default&amp;lastVirtModeExtraState=&amp;virtModeType=default&amp;virtMode=0&amp;nonVirtPosition=&amp;position=chr22%3A28794555%2D28800597&amp;hgsid=1433476153_N1Iet0RvAaPQIpPuVl2qbi74BrC3">UCSC Genome browser</a>. The “UCSC annotations of RefSeq RNAs (NM_* and NR_*)” track shows two alternative transcripts produced by <em>XBP-1</em> : spliced and unspliced (here ‘spliced’ and ‘unspliced’ do not refer to the “normal’ splicing process. To learn more about this fascinating gene read here).</p>
 
-<p><img src="../../images/gene-centric/xbp-1.svg" alt="XBP-1. " loading="lazy" /></p>
+<p><img src="../../images/gene-centric/xbp-1.svg" alt="XBP-1. " width="945" height="213" loading="lazy" /></p>
 
 <p>Clicking on the names of the transcripts open a UCSC page specific to that transcript. From there you can obtain genomic sequences corresponding to all exons. You can then translate these sequences using any available online tool (e.g., <a href="https://www.ncbi.nlm.nih.gov/orffinder/">NCBI ORFinder</a>).</p>
 
@@ -924,7 +916,7 @@ ASGGLPQARKRQRLTHLSPEEKALR
 <h3 id="uploading-sample-data">Uploading sample data</h3>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-sample-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Sample Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-sample-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Sample Data upload</div>
 
   <ul>
     <li>Create a new history for this tutorial</li>
@@ -938,7 +930,7 @@ https://zenodo.org/record/7034885/files/mCynVol1.fa
 https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 </code></pre></div>      </div>
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
   </ul>
@@ -960,7 +952,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>Galaxy provides a direct connection to <a href="https://vgp.github.io/genomeark/">GenomeArk</a> from its “Upload Data” tool. To access GenomeArk data you need to:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-upload-vgp-data-from-genomeark"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Upload VGP data from GenomeArk</div>
+  <div class="box-title hands-on-title" id="hands-on-upload-vgp-data-from-genomeark"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Upload VGP data from GenomeArk</div>
 
   <ul>
     <li>Create a new history for this tutorial</li>
@@ -991,7 +983,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>After uploading data from GenomeArk you will end up with a number of FASTA datasets in your history. To proceed with the analysis you will need to combine these into a single dataset collection:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-combine-genome-assemblies-into-a-dataset-collection"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Combine genome assemblies into a dataset collection</div>
+  <div class="box-title hands-on-title" id="hands-on-combine-genome-assemblies-into-a-dataset-collection"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Combine genome assemblies into a dataset collection</div>
 
   <p>To create a collection from genome assemblies you just uploaded into GenomeArk follow the steps in the video below. Obviously, you only want to click check-boxes next to FASTA files (assemblies) you want to include and leave everything else out.</p>
 
@@ -1008,7 +1000,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>Now we can go ahead and find all ORFs in all genome assemblies we have bundled into a collection. For this we will use tool called <a href="https://github.com/urmi-21/orfipy">ORFiPy</a>:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-find-orfs-witrh-orfipy"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Find ORFs witrh ORFiPy</div>
+  <div class="box-title hands-on-title" id="hands-on-find-orfs-witrh-orfipy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Find ORFs witrh ORFiPy</div>
 
   <p>Run <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/orfipy/orfipy/0.0.4+galaxy0" title="ORFiPy tool" aria-role="link"><strong>ORFiPy</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/orfipy/orfipy/0.0.4+galaxy0</span></span> with the following parameters:</p>
   <ul>
@@ -1030,7 +1022,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>Because we will be using the <a href="https://github.com/bbuchfink/diamond">Diamond</a> tool to find matches between our gene of interest and ORF translations we need to convert FASTA files into Diamond database using <strong>Diamond makedb</strong> tool:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-create-diamond-database"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create Diamond database</div>
+  <div class="box-title hands-on-title" id="hands-on-create-diamond-database"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create Diamond database</div>
 
   <p>Run <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_makedb/2.0.15+galaxy0" title="Diamond makedb tool" aria-role="link"><strong>Diamond makedb</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/diamond/bg_diamond_makedb/2.0.15+galaxy0</span></span> on the collection containing amino acid translations of ORFs generated using <strong>ORFiPy</strong>:</p>
   <ul>
@@ -1051,12 +1043,12 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 
 <p>To find location of genes, <a href="/training-material/topics/genome-annotation/tutorials/gene-centric/workflows/index.html">we will use the following workflow</a> that is available as a part of this tutorial. To use this workflow you need to import it into your Galaxy instance.</p>
 
-<p><img src="../../images/gene-centric/wf.png" alt="WF. " loading="lazy" /></p>
+<p><img src="../../images/gene-centric/wf.png" alt="WF. " width="2324" height="984" loading="lazy" /></p>
 
 <p>The workflow takes three inputs:</p>
 
 <blockquote class="code-in">
-  <div class="box-title code-in-title" id="code-in-workflow-inputs"><i class="far fa-keyboard" aria-hidden="true"></i> Input: Workflow inputs</div>
+  <div class="box-title code-in-title" id="code-in-workflow-inputs"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Workflow inputs</div>
 
   <ol>
     <li><kbd>EXONS</kbd> - Amino acid translation of exons from the gene of interest (<a href="#step-2-get-amino-acid-translations-for-all-exons-of-my-gene-of-interest">Step 2</a> of this tutorial)</li>
@@ -1069,7 +1061,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>It produces two primary outputs:</p>
 
 <blockquote class="code-out">
-  <div class="box-title code-out-title" id="code-out-results"><i class="fas fa-laptop-code" aria-hidden="true"></i> Output: Results</div>
+  <div class="box-title code-out-title" id="code-out-results"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output: Results</div>
 
   <ol>
     <li><kbd>Trees</kbd> - Phylogenetic trees for each input exon as <a href="https://en.wikipedia.org/wiki/Newick_format">Newick</a> file</li>
@@ -1093,16 +1085,16 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 <p>After running the workflow phylogenetic trees will be saved into a collection named <code class="language-plaintext highlighter-rouge">Join neighbors on ...</code>. This collection will also be labelled with tag <kbd>Trees</kbd>. To visualize the trees:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-the-trees"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize the trees</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-the-trees"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize the trees</div>
 
   <ul>
     <li>Expand the collection by clicking on it</li>
     <li>Click on any dataset</li>
     <li>Click the <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> icon:
-  <img src="../../images/gene-centric/display_tree.png" alt="Graph icon. " loading="lazy" /></li>
+  <img src="../../images/gene-centric/display_tree.png" alt="Graph icon. " width="247" height="74" loading="lazy" /></li>
     <li>A selection of tree visualization tools will appear in the center pane of the interface</li>
     <li>Select <code class="language-plaintext highlighter-rouge">Phylogenetic Tre Visualization</code> and play with it:
-  <img src="../../images/gene-centric/tree.png" alt="The tree. " loading="lazy" /></li>
+  <img src="../../images/gene-centric/tree.png" alt="The tree. " width="878" height="678" loading="lazy" /></li>
   </ul>
 </blockquote>
 
@@ -1185,7 +1177,7 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 
 <p>This is a URL pointing to one of the workflow outputs: <code class="language-plaintext highlighter-rouge">Mapping report</code> with the <kbd>PlottingData</kbd> tag. To copy the URL click on the <i class="fas fa-link" aria-hidden="true"></i><span class="visually-hidden">galaxy-link</span> icon adjacent to the dataset:</p>
 
-<p><img src="../../images/gene-centric/copy_link.png" alt="Copying the link. " loading="lazy" /></p>
+<p><img src="../../images/gene-centric/copy_link.png" alt="Copying the link. " width="282" height="310" loading="lazy" /></p>
 
 <p>Running the notebook will generate two graphs explained in the next section.</p>
 
@@ -4895,14 +4887,14 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 
 <p>Another plot currently produced by the notebook is a summary plot showing the distribution of matches across species and their amino acid identity:</p>
 
-<p><img src="../../images/gene-centric/summary_plot.svg" alt="Copying the link. " loading="lazy" /></p>
+<p><img src="../../images/gene-centric/summary_plot.svg" alt="Copying the link. " width="324" height="203" loading="lazy" /></p>
 
 <h1 id="about-the-gene">About the gene</h1>
 
 <p><em>XBP-1</em> is one of a few vertebrate gene containing overlapping reading frames encoding different proteins within a single gene (<span class="citation"><a href="#Chung2007-wv">Chung <i>et al.</i> 2007</a></span>). In this case the switch between two reading frames occurs when a highly specialized RNA endonuclease, IRE1, excises a 26 nucleotide spacer from <em>XBP-1</em> mRNA (<span class="citation"><a href="#Nekrutenko2006-bk">Nekrutenko and He 2006</a></span>). This converts the so-called “unspliced” form of the transcript (XBP-1U) to the “spliced” form XBP-1S (Note that the term “spliced” is misleading here. The XBP-1U is already processed by splicing machinery and contains no canonical introns. The “spliced” is simply used to indicate the removal of the 26 nucleotide spacer). Because the 26 is not divisible by three, the XBP-1S transcript is translated in a different frame from the point of cleavage. The activation of IRE1 and resulting removal of the spacer is triggered by presence of unfolded proteins in the endoplasmic reticulum and the IRE1-XBP1 pathway is one of the three major unfolded protein response systems in higher eukaryotes (<span class="citation"><a href="#Chen2021-ws">Chen and Cubillos-Ruiz 2021</a></span>) that is conserved all the way to yeast (with <em>XBP-1</em>’s homologue <em>HAC-1</em>; <span class="citation"><a href="#Calfon2002-dl">Calfon <i>et al.</i> 2002</a></span> ) .</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-getting-help"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-getting-help" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Getting help<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-getting-help"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-getting-help" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Getting help<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>For questions about using Galaxy, you can ask in the <a href="https://help.galaxyproject.org/">Galaxy help forum</a>.</p>
 
@@ -4969,6 +4961,9 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
                             Anton Nekrutenko,  <b>Comparative gene analysis in unannotated genomes (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/gene-centric/tutorial.html">https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/gene-centric/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -4990,12 +4985,12 @@ https://zenodo.org/record/7034885/files/mHomSapT2T.fa
 
 <code id="citation-code">@misc{genome-annotation-gene-centric,
 author = "Anton Nekrutenko",
-title = "Comparative gene analysis in unannotated genomes (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/gene-centric/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Comparative gene analysis in unannotated genomes (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/gene-centric/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -5137,19 +5132,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00174">https://gxy.io/GTN:T00174</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00174">https://gxy.io/GTN:T00174</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -5169,7 +5164,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -5177,9 +5172,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

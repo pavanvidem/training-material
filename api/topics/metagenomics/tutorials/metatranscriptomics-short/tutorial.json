@@ -121,6 +121,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/paulzierep/"
     }
   ],
+  "short_id": "T00204",
   "url": "/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html",
   "topic_name": "metagenomics",
   "tutorial_name": "metatranscriptomics-short",
@@ -183,7 +184,8 @@
           "identifier": "0000-0003-2982-388X",
           "name": "Paul Zierep"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow2_community_profile.ga",
@@ -232,7 +234,8 @@
           "identifier": "0000-0003-2982-388X",
           "name": "Paul Zierep"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow3_functional_information.ga",
@@ -281,7 +284,8 @@
           "identifier": "0000-0003-2982-388X",
           "name": "Paul Zierep"
         }
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow3_functional_information_quick.ga",
@@ -330,7 +334,8 @@
           "identifier": "0000-0003-2982-388X",
           "name": "Paul Zierep"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.json",
@@ -367,11 +372,6 @@
     ],
     "inexact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.no/",
         "name": "UseGalaxy.no",
         "usegalaxy": "true"
@@ -388,6 +388,7 @@
       }
     ]
   },
+  "topic_name_human": "Metagenomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

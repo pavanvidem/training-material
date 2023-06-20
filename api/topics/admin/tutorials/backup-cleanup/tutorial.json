@@ -54,6 +54,7 @@
     "topic_0605",
     "topic_3071"
   ],
+  "short_id": "T00324",
   "url": "/topics/admin/tutorials/backup-cleanup/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "backup-cleanup",
@@ -94,6 +95,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

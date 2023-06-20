@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -60,7 +64,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: De Bruijn Graph Assembly">
         <meta property="og:description" content="DNA sequence data has become an indispensable tool for Mo...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -364,7 +368,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/assembly/tutorials/debruijn-graph-assembly/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -411,7 +415,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -424,7 +428,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -461,14 +465,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-assembly">
     <h1 data-toc-skip>De Bruijn Graph Assembly</h1>
@@ -478,7 +475,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/slugger70?s=27" alt="Avatar">Simon Gladman</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+		Authors: <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar">Simon Gladman</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar">Saskia Hiltemann</a>
 	</div>
 
 </div>
@@ -700,12 +697,6 @@ Sentry.init({
     
     
 	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
-	<li>
 		<a class="dropdown-item" href="https://galaxy.mesocentre.uca.fr" title="">
 			Galaxy@AuBi <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
 		</a>
@@ -741,12 +732,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 28, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00031">https://gxy.io/GTN:T00031</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00031">https://gxy.io/GTN:T00031</a> </div>
         
     </blockquote>
     </section>
@@ -786,7 +778,7 @@ Sentry.init({
 <p>We will be using the same data that we used in the introductory tutorial, so if you have already completed that and have the data, skip this section.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-getting-the-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Getting the data</div>
+  <div class="box-title hands-on-title" id="hands-on-getting-the-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Getting the data</div>
 
   <ol>
     <li>
@@ -804,7 +796,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -819,7 +811,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
       <p><!--END_SNIPPET--></p>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <ol>
           <li>What are four key features of a FASTQ file?</li>
@@ -836,7 +828,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>We will perform an assembly with the Velvet Optimiser, which automatically runs and optimises the output of the Velvet assembler (<span class="citation"><a href="#Velvet2008">Zerbino and Birney 2008</a></span>). It will automatically choose a suitable value for the k-mer size (<strong>k</strong>). It will then go on to optimise the coverage cutoff (<strong>cov_cutoff</strong>) which corrects for read errors. It will use the “<em>n50</em>” metric for optimising the k-mer size and the “<em>total number of bases in contigs</em>” for optimising the coverage cutoff.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-assemble-with-the-velvet-optimiser"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Assemble with the Velvet Optimiser</div>
+  <div class="box-title hands-on-title" id="hands-on-assemble-with-the-velvet-optimiser"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Assemble with the Velvet Optimiser</div>
 
   <ol>
     <li><strong>Velvet Optimiser</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Optimise your assembly with the following parameters:
@@ -871,7 +863,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>Have a look at each file.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-contig-statistics-for-velvet-optimiser-contigs"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get contig statistics for Velvet Optimiser contigs</div>
+  <div class="box-title hands-on-title" id="hands-on-get-contig-statistics-for-velvet-optimiser-contigs"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get contig statistics for Velvet Optimiser contigs</div>
 
   <ol>
     <li><strong>Fasta Statistics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Produce a summary of the velvet optimiser contigs:
@@ -883,7 +875,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
       <p>View the output</p>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>Compare the output we got here with the output of the simple assemblies obtained in the introductory tutorial.</p>
         <ol>
@@ -898,12 +890,12 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 
 <p>Tables of results from <strong>(a)</strong> Simple assembly and <strong>(b)</strong> optimised assembly.</p>
 
-<p><strong>(a)</strong> <img src="../../images/image12.png" alt="The results of the contigs from Simple assembly." loading="lazy" /></p>
+<p><strong>(a)</strong> <img src="../../images/image12.png" alt="The results of the contigs from Simple assembly." width="482" height="305" loading="lazy" /></p>
 
-<p><strong>(b)</strong> <img src="../../images/optstats.png" alt="The results of the contigs from Optimised assembly. In contrast to simple assembly produced much higher n_50, while num_seq is lower." loading="lazy" /></p>
+<p><strong>(b)</strong> <img src="../../images/optstats.png" alt="The results of the contigs from Optimised assembly. In contrast to simple assembly produced much higher n_50, while num_seq is lower." width="188" height="302" loading="lazy" /></p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-further-reading-on-assembly-with-velvet"><button class="gtn-boxify-button details" type="button" aria-controls="details-further-reading-on-assembly-with-velvet" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Further reading on assembly with Velvet<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-further-reading-on-assembly-with-velvet"><button class="gtn-boxify-button details" type="button" aria-controls="details-further-reading-on-assembly-with-velvet" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Further reading on assembly with Velvet<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <ul>
     <li>Heuristic Resolution of Repeats and Scaffolding in the Velvet Short-Read de Novo Assembler (<span class="citation"><a href="#Zerbino2009">Zerbino <i>et al.</i> 2009</a></span>)</li>
   </ul>
@@ -917,7 +909,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>Currently VelvetOptimiser does not include the LastGraph output, so we will manually run <code class="language-plaintext highlighter-rouge">velveth</code> and <code class="language-plaintext highlighter-rouge">velvetg</code> with the optimised parameters.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-manually-running-velvetg-h"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Manually running velvetg/h</div>
+  <div class="box-title hands-on-title" id="hands-on-manually-running-velvetg-h"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Manually running velvetg/h</div>
 
   <ol>
     <li>
@@ -933,10 +925,10 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
   <p>What was the optimal k-mer value? (referred to as <em>“hash”</em> in the stderr log)</p>
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>55</p>
   </blockquote>
 </blockquote>
@@ -944,7 +936,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>With this information in hand, let’s run velvet:</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-manually-running-velvetg-h-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Manually running velvetg/h</div>
+  <div class="box-title hands-on-title" id="hands-on-manually-running-velvetg-h-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Manually running velvetg/h</div>
 
   <ol>
     <li><strong>velveth</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Prepare a dataset for the Velvet velvetg Assembler
@@ -993,7 +985,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>The LastGraph contains a detailed representation of the De Bruijn graph, which can give us an idea how velvet has assembled the genome and potentially resolved any conflicts.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-bandage"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Bandage</div>
+  <div class="box-title hands-on-title" id="hands-on-bandage"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Bandage</div>
 
   <ol>
     <li><strong>Bandage Image</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: visualize de novo assembly graphs
@@ -1009,7 +1001,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 
 <p>And now you should be able to see the graph that velvet produced:</p>
 
-<p><img src="../../images/bandage-velvet.svg" alt="velvet graph. " loading="lazy" /></p>
+<p><img src="../../images/bandage-velvet.svg" alt="velvet graph. " width="492" height="352" loading="lazy" /></p>
 
 <h2 id="interpreting-bandage-graphs">Interpreting Bandage Graphs</h2>
 
@@ -1025,19 +1017,19 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
   <tbody>
     <tr>
       <td>21</td>
-      <td><a href="../../images/bandage-velvet-21.svg"><img src="../../images/bandage-velvet-21.svg" alt="21. " loading="lazy" /></a></td>
+      <td><a href="../../images/bandage-velvet-21.svg"><img src="../../images/bandage-velvet-21.svg" alt="21. " width="918" height="352" loading="lazy" /></a></td>
     </tr>
     <tr>
       <td>33</td>
-      <td><a href="../../images/bandage-velvet-33.svg"><img src="../../images/bandage-velvet-33.svg" alt="33. " loading="lazy" /></a></td>
+      <td><a href="../../images/bandage-velvet-33.svg"><img src="../../images/bandage-velvet-33.svg" alt="33. " width="781" height="352" loading="lazy" /></a></td>
     </tr>
     <tr>
       <td>53</td>
-      <td><a href="../../images/bandage-velvet-53.svg"><img src="../../images/bandage-velvet-53.svg" alt="53. " loading="lazy" /></a></td>
+      <td><a href="../../images/bandage-velvet-53.svg"><img src="../../images/bandage-velvet-53.svg" alt="53. " width="729" height="352" loading="lazy" /></a></td>
     </tr>
     <tr>
       <td>77</td>
-      <td><a href="../../images/bandage-velvet-77.svg"><img src="../../images/bandage-velvet-77.svg" alt="77. " loading="lazy" /></a></td>
+      <td><a href="../../images/bandage-velvet-77.svg"><img src="../../images/bandage-velvet-77.svg" alt="77. " width="457" height="352" loading="lazy" /></a></td>
     </tr>
   </tbody>
 </table>
@@ -1071,7 +1063,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>We will now perform an assembly with the much more modern SPAdes assembler (<span class="citation"><a href="#Bankevich2012">Bankevich <i>et al.</i> 2012</a></span>). It goes through a similar process to Velvet in the fact that it uses and simplifies de Bruijn graphs but it uses multiple values for k-mer size and combines the resultant graphs. This combination produces very good assemblies. When using SPAdes it is typical to choose at least 3 k-mer sizes. One low, one medium and one high. We will use 33, 55 and 91.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-assemble-with-spades"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Assemble with SPAdes</div>
+  <div class="box-title hands-on-title" id="hands-on-assemble-with-spades"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Assemble with SPAdes</div>
 
   <ol>
     <li>
@@ -1100,10 +1092,10 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 
 <p>Examine each file, especially the stats files.</p>
 
-<p><img src="../../images/contig_stats.png" alt="Contig stats file with NODE_5 being the shortest contig with the highest coverage and NODE_1 being the opposite." loading="lazy" /></p>
+<p><img src="../../images/contig_stats.png" alt="Contig stats file with NODE_5 being the shortest contig with the highest coverage and NODE_1 being the opposite." width="512" height="249" loading="lazy" /></p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <ol>
     <li>Why would one of the contigs have much higher coverage than the others?</li>
@@ -1113,7 +1105,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualize-assembly-with-bandage"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualize assembly with Bandage</div>
+  <div class="box-title hands-on-title" id="hands-on-visualize-assembly-with-bandage"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize assembly with Bandage</div>
 
   <ol>
     <li><strong>Bandage</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
@@ -1128,17 +1120,17 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 
 <p>The visualized assembly should look something like this:</p>
 
-<p><img src="../../images/bandage_spades.svg" alt="bandage spades. " loading="lazy" /></p>
+<p><img src="../../images/bandage_spades.svg" alt="bandage spades. " width="842" height="352" loading="lazy" /></p>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>Which assembly looks better to you? Why?</p>
 
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-contig-statistics-for-spades-contigs"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get contig statistics for SPAdes contigs</div>
+  <div class="box-title hands-on-title" id="hands-on-get-contig-statistics-for-spades-contigs"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get contig statistics for SPAdes contigs</div>
 
   <ol>
     <li><strong>Fasta Statistics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Produce a summary of the SPAdes contigs:
@@ -1150,7 +1142,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
       <p>Look at the output file.</p>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-5"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-5"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
         <p>Compare the output we got here with the output of the simple assemblies obtained in the introductory tutorial.</p>
         <ol>
@@ -1223,6 +1215,9 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
                             Simon Gladman, Helena Rasche, Saskia Hiltemann,  <b>De Bruijn Graph Assembly (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html">https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1244,12 +1239,12 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 
 <code id="citation-code">@misc{assembly-debruijn-graph-assembly,
 author = "Simon Gladman and Helena Rasche and Saskia Hiltemann",
-title = "De Bruijn Graph Assembly (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "De Bruijn Graph Assembly (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1341,19 +1336,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00031">https://gxy.io/GTN:T00031</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00031">https://gxy.io/GTN:T00031</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1373,7 +1368,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1381,9 +1376,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

@@ -530,9 +530,17 @@
       },
       {
         "name": "Stian Soiland-Reyes",
-        "joined": "2023-04",
+        "email": "soiland-reyes@manchester.ac.uk",
+        "twitter": "soilandreyes",
         "orcid": "0000-0001-9842-9718",
+        "joined": "2023-04",
         "elixir_node": "uk",
+        "location": {
+          "country": "UK",
+          "lat": 53.46724379071192,
+          "lon": -2.233631283105614
+        },
+        "fediverse": "https://scholar.social/@soilandreyes",
         "id": "stain",
         "url": "https://training.galaxyproject.org/training-material/api/contributors/stain.json",
         "page": "https://training.galaxyproject.org/training-material/hall-of-fame/stain/"
@@ -545,6 +553,25 @@
         "id": "pauldg",
         "url": "https://training.galaxyproject.org/training-material/api/contributors/pauldg.json",
         "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pauldg/"
+      },
+      {
+        "name": "Katarzyna Kamieniecka",
+        "orcid": "0009-0004-2454-5950",
+        "joined": "2018-08",
+        "elixir_node": "uk",
+        "id": "kkamieniecka",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/kkamieniecka.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kkamieniecka/"
+      },
+      {
+        "name": "Krzysztof Poterlowicz",
+        "twitter": "bioinfbrad",
+        "orcid": "0000-0001-6173-5674",
+        "joined": "2017-09",
+        "elixir_node": "uk",
+        "id": "poterlowicz-lab",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/poterlowicz-lab.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/poterlowicz-lab/"
       }
     ]
   },
@@ -783,6 +810,64 @@
         "id": "shiltemann",
         "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json",
         "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
+      }
+    ]
+  },
+  "one-health": {
+    "name": "one-health",
+    "title": "One Health",
+    "summary": "One Health is unified approach that aims to sustainably balance the health of humans, animals, and ecosystems, as all of the health of each of these groups is closely interlinked.\n",
+    "url": "https://training.galaxyproject.org/training-material/api/topics/one-health.json",
+    "maintainers": [
+      {
+        "name": "Wolfgang Maier",
+        "orcid": "0000-0002-9464-6640",
+        "joined": "2017-09",
+        "elixir_node": "de",
+        "id": "wm75",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/wm75.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/wm75/"
+      },
+      {
+        "name": "Peter van Heusden",
+        "twitter": "pvanheus",
+        "orcid": "0000-0001-6553-5274",
+        "joined": "2017-09",
+        "bio": "Research at the South African National Bioinformatics Institute",
+        "id": "pvanheus",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/pvanheus.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pvanheus/"
+      },
+      {
+        "name": "Tomas Klingström",
+        "email": "tomas.klingstrom@slu.se",
+        "twitter": "TKlingstrom",
+        "matrix": "TKlingstrom:matrix.org",
+        "orcid": "0000-0002-9504-1352",
+        "joined": "2018-11",
+        "elixir_node": "se",
+        "id": "TKlingstrom",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/TKlingstrom.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/TKlingstrom/"
+      },
+      {
+        "name": "Helena Rasche",
+        "email": "hexylena@galaxians.org",
+        "orcid": "0000-0001-9760-8992",
+        "maintainer_contact": "gitter",
+        "matrix": "hexylena:matrix.org",
+        "joined": "2017-09",
+        "elixir_node": "nl",
+        "fediverse": "https://galaxians.garden/hexylena",
+        "contact_for_training": false,
+        "location": {
+          "country": "NL",
+          "lat": 51.91,
+          "lon": 4.46
+        },
+        "id": "hexylena",
+        "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+        "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
       }
     ]
   },

@@ -76,6 +76,7 @@
     "language": "python",
     "pyolite": true
   },
+  "short_id": "T00081",
   "url": "/topics/data-science/tutorials/python-advanced-np-pd/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-advanced-np-pd",
@@ -116,6 +117,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

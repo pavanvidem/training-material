@@ -91,6 +91,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/"
         }
       ],
+      "short_id": "T00034",
       "url": "/topics/assembly/tutorials/general-introduction/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "general-introduction",
@@ -148,7 +149,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/general-introduction/tutorial.json",
@@ -167,11 +169,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
@@ -206,6 +203,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -387,6 +385,7 @@
         "VGP": "Vertebrate Genome Project",
         "G10K": "Genome 10K"
       },
+      "short_id": "T00040",
       "url": "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "vgp_workflow_training",
@@ -413,7 +412,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/vgp_workflow_training/tutorial.json",
@@ -460,17 +460,13 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -720,6 +716,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00032",
       "url": "/topics/assembly/tutorials/ecoli_comparison/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "ecoli_comparison",
@@ -746,7 +743,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/ecoli_comparison/tutorial.json",
@@ -789,6 +787,7 @@
 
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -994,6 +993,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annasyme/"
         }
       ],
+      "short_id": "T00331",
       "url": "/topics/assembly/tutorials/largegenome/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "largegenome",
@@ -1054,7 +1054,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Assembly_with_Flye.ga",
@@ -1071,7 +1072,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Assess_genome_quality.ga",
@@ -1088,7 +1090,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga",
@@ -1105,7 +1108,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Data_QC.ga",
@@ -1122,7 +1126,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Racon_polish_with_Illumina_reads_x2.ga",
@@ -1139,7 +1144,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Racon_polish_with_long_reads_x4.ga",
@@ -1156,7 +1162,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-Trim_and_filter_reads.ga",
@@ -1173,7 +1180,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "Galaxy-Workflow-kmer_counting.ga",
@@ -1190,7 +1198,8 @@
               "identifier": "0000-0002-9906-0673",
               "name": "Anna Syme"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/largegenome/tutorial.json",
@@ -1214,11 +1223,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -1237,6 +1241,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1388,7 +1393,8 @@
       "tags": [
         "illumina",
         "assembly",
-        "amr"
+        "amr",
+        "one-health"
       ],
       "contributions": {
         "authorship": [
@@ -1420,6 +1426,7 @@
           ]
         }
       ],
+      "short_id": "T00036",
       "url": "/topics/assembly/tutorials/mrsa-illumina/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "mrsa-illumina",
@@ -1446,7 +1453,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/mrsa-illumina/tutorial.json",
@@ -1479,6 +1487,7 @@
 
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1696,6 +1705,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annasyme/"
         }
       ],
+      "short_id": "T00030",
       "url": "/topics/assembly/tutorials/chloroplast-assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "chloroplast-assembly",
@@ -1752,7 +1762,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/chloroplast-assembly/tutorial.json",
@@ -1781,11 +1792,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -1818,6 +1824,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1990,6 +1997,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/"
         }
       ],
+      "short_id": "T00038",
       "url": "/topics/assembly/tutorials/unicycler-assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "unicycler-assembly",
@@ -2016,7 +2024,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/unicycler-assembly/tutorial.json",
@@ -2029,11 +2038,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -2083,6 +2087,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2217,6 +2222,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "T00031",
       "url": "/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "debruijn-graph-assembly",
@@ -2243,7 +2249,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.json",
@@ -2254,11 +2261,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.mesocentre.uca.fr",
             "name": "Galaxy@AuBi",
@@ -2299,6 +2301,7 @@
 
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2385,6 +2388,7 @@
         "assembly",
         "metagenomics"
       ],
+      "short_id": "T00035",
       "url": "/topics/assembly/tutorials/metagenomics-assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "metagenomics-assembly",
@@ -2411,7 +2415,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
@@ -2424,7 +2429,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/metagenomics-assembly/tutorial.json",
@@ -2463,6 +2469,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2754,6 +2761,7 @@
         "ASM": "assembly",
         "QV": "consensus accuracy quality value"
       },
+      "short_id": "T00039",
       "url": "/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "vgp_genome_assembly",
@@ -2780,7 +2788,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/vgp_genome_assembly/tutorial.json",
@@ -2836,11 +2845,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -2857,6 +2861,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3218,6 +3223,7 @@
       "abbreviations": {
         "SVs": "Structural Variations"
       },
+      "short_id": "T00037",
       "url": "/topics/assembly/tutorials/mrsa-nanopore/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "mrsa-nanopore",
@@ -3260,7 +3266,8 @@
               "identifier": "",
               "name": "Miaomiao Zhou"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/mrsa-nanopore/tutorial.json",
@@ -3293,6 +3300,7 @@
 
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3565,6 +3573,7 @@
           ]
         }
       ],
+      "short_id": "T00028",
       "url": "/topics/assembly/tutorials/assembly-quality-control/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "assembly-quality-control",
@@ -3615,7 +3624,8 @@
               "identifier": "",
               "name": "Laura Leroi"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-quality-control/tutorial.json",
@@ -3652,6 +3662,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3770,6 +3781,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/wm75/"
         }
       ],
+      "short_id": "T00029",
       "url": "/topics/assembly/tutorials/assembly-with-preprocessing/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "assembly-with-preprocessing",
@@ -3829,7 +3841,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "assembly_with_preprocessing_and_sra_download.ga",
@@ -3842,7 +3855,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-with-preprocessing/tutorial.json",
@@ -3884,11 +3898,6 @@
         ],
         "inexact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
@@ -3910,6 +3919,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4144,6 +4154,7 @@
           ]
         }
       ],
+      "short_id": "T00033",
       "url": "/topics/assembly/tutorials/flye-assembly/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "flye-assembly",
@@ -4189,7 +4200,8 @@
               "identifier": "",
               "name": "Alexandre Cormier"
             }
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/flye-assembly/tutorial.json",
@@ -4202,11 +4214,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -4251,6 +4258,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4342,6 +4350,7 @@
       },
       "level": "Introductory",
       "time_estimation": "1h",
+      "short_id": "S00034",
       "url": "/topics/assembly/tutorials/get-started-genome-assembly/slides.html",
       "topic_name": "assembly",
       "tutorial_name": "get-started-genome-assembly",
@@ -4382,6 +4391,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4540,6 +4550,7 @@
         }
       ],
       "level": "Intermediate",
+      "short_id": "S00029",
       "url": "/topics/assembly/tutorials/algorithms-introduction/slides.html",
       "topic_name": "assembly",
       "tutorial_name": "algorithms-introduction",
@@ -4580,6 +4591,7 @@
           }
         ]
       },
+      "topic_name_human": "Assembly",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

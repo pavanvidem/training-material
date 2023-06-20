@@ -66,6 +66,7 @@
       ]
     }
   ],
+  "short_id": "T00024",
   "url": "/topics/admin/tutorials/tus/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "tus",
@@ -135,6 +136,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

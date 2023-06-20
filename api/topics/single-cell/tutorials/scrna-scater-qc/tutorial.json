@@ -66,6 +66,7 @@
     }
   ],
   "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+  "short_id": "T00255",
   "url": "/topics/single-cell/tutorials/scrna-scater-qc/tutorial.html",
   "topic_name": "single-cell",
   "tutorial_name": "scrna-scater-qc",
@@ -92,7 +93,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scater-qc/tutorial.json",
@@ -134,6 +136,7 @@
 
     ]
   },
+  "topic_name_human": "Single Cell",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

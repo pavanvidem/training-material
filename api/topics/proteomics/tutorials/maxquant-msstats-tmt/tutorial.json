@@ -38,7 +38,7 @@
     },
     {
       "name": "Matthias Fahrner",
-      "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+      "email": "matthias.fahrner@uniklinik-freiburg.de",
       "twitter": "mfahrner313",
       "orcid": "0000-0001-7955-2518",
       "joined": "2019-03",
@@ -53,6 +53,7 @@
     "TMT",
     "work-in-progress"
   ],
+  "short_id": "T00220",
   "url": "/topics/proteomics/tutorials/maxquant-msstats-tmt/tutorial.html",
   "topic_name": "proteomics",
   "tutorial_name": "maxquant-msstats-tmt",
@@ -79,7 +80,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/maxquant-msstats-tmt/tutorial.json",
@@ -109,6 +111,7 @@
 
     ]
   },
+  "topic_name_human": "Proteomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

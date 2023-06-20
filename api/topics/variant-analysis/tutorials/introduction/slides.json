@@ -13,6 +13,7 @@
     "bebatut",
     "yvanlebras"
   ],
+  "short_id": "S00099",
   "url": "/topics/variant-analysis/tutorials/introduction/slides.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "introduction",
@@ -53,6 +54,7 @@
       }
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -73,6 +75,5 @@
     ],
     "video": false
   },
-  "type": "tutorial",
-  "short_id": "S00099"
+  "type": "tutorial"
 }

@@ -52,6 +52,7 @@
     "prokaryote",
     "one-health"
   ],
+  "short_id": "T00319",
   "url": "/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "tb-variant-analysis",
@@ -151,7 +152,8 @@
           "identifier": "https://orcid.org/0000-0001-6553-5274",
           "name": "Peter van Heusden"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.json",
@@ -180,6 +182,7 @@
 
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

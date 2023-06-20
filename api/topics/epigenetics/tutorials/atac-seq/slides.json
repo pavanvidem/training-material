@@ -22,6 +22,7 @@
     "heylf",
     "lldelisle"
   ],
+  "short_id": "S00056",
   "url": "/topics/epigenetics/tutorials/atac-seq/slides.html",
   "topic_name": "epigenetics",
   "tutorial_name": "atac-seq",
@@ -114,7 +115,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/epigenetics/tutorials/atac-seq/tutorial.json",
@@ -136,16 +138,10 @@
     "toolshed.g2.bx.psu.edu/repos/iuc/pe_histogram/pe_histogram/1.0.1",
     "toolshed.g2.bx.psu.edu/repos/iuc/pygenometracks/pygenomeTracks/3.6",
     "toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.16.5",
-    "ucsc_table_direct1",
     "wig_to_bigWig"
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -175,6 +171,7 @@
       }
     ]
   },
+  "topic_name_human": "Epigenetics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -295,7 +292,6 @@
   "type": "tutorial",
   "logo": "GTN",
   "requirements": null,
-  "short_id": "S00056",
   "redirect_from": [
     "/short/epigenetics/atac-seq/slides",
     "/short/S00056"

@@ -32,6 +32,7 @@
     "tools",
     "git-gat"
   ],
+  "short_id": "S00025",
   "url": "/topics/admin/tutorials/tool-management/slides.html",
   "topic_name": "admin",
   "tutorial_name": "tool-management",
@@ -157,6 +158,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -183,6 +185,5 @@
     "/topics/admin/tutorials/tool-install/slides",
     "/short/admin/tool-management/slides",
     "/short/S00025"
-  ],
-  "short_id": "S00025"
+  ]
 }

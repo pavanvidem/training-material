@@ -41,6 +41,7 @@
   "abbreviations": {
     "GIL": "Global Interpreter Lock"
   },
+  "short_id": "T00095",
   "url": "/topics/data-science/tutorials/python-multiprocessing/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "python-multiprocessing",
@@ -81,6 +82,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

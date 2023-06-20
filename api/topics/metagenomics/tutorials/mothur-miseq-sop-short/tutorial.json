@@ -68,6 +68,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/tnabtaf/"
     }
   ],
+  "short_id": "T00206",
   "url": "/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html",
   "topic_name": "metagenomics",
   "tutorial_name": "mothur-miseq-sop-short",
@@ -139,10 +140,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow1_quality_control",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow1_quality_control",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow2_data_cleaning.ga",
@@ -152,10 +158,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow2_data_cleaning",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow2_data_cleaning",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow3_classification.ga",
@@ -165,10 +176,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow3_classification",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow3_classification",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow4_mock_otu_clustering.ga",
@@ -178,10 +194,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow4_mock_otu_clustering",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow4_mock_otu_clustering",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow5_otu_clustering.ga",
@@ -191,10 +212,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow5_otu_clustering",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow5_otu_clustering",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow6_alpha_diversity.ga",
@@ -204,10 +230,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow6_alpha_diversity",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow6_alpha_diversity",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     },
     {
       "workflow": "workflow7_beta_diversity.ga",
@@ -217,10 +248,15 @@
       "wfid": "metagenomics-mothur-miseq-sop-short",
       "wfname": "workflow7_beta_diversity",
       "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/metagenomics-mothur-miseq-sop-short/versions/workflow7_beta_diversity",
-      "license": null,
+      "license": "MIT",
       "creators": [
-
-      ]
+        {
+          "class": "Person",
+          "identifier": "https://orcid.org/0000-0003-3803-468X",
+          "name": "Saskia Hiltemann"
+        }
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.json",
@@ -255,11 +291,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -299,6 +330,7 @@
       }
     ]
   },
+  "topic_name_human": "Metagenomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

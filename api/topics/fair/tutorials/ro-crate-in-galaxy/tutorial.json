@@ -18,7 +18,7 @@
     "ro-crate",
     "workflows"
   ],
-  "priority": 1,
+  "priority": 2,
   "contributions": {
     "authorship": [
       "pauldg"
@@ -29,6 +29,7 @@
   },
   "license": "Apache-2.0",
   "subtopic": "ro-crate",
+  "short_id": "T00340",
   "url": "/topics/fair/tutorials/ro-crate-in-galaxy/tutorial.html",
   "topic_name": "fair",
   "tutorial_name": "ro-crate-in-galaxy",
@@ -69,6 +70,7 @@
       }
     ]
   },
+  "topic_name_human": "FAIR Data, Workflows, and Research",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

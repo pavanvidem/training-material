@@ -67,6 +67,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/annefou/"
     }
   ],
+  "short_id": "T00043",
   "url": "/topics/climate/tutorials/fates-jupyterlab/tutorial.html",
   "topic_name": "climate",
   "tutorial_name": "fates-jupyterlab",
@@ -87,11 +88,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
@@ -122,6 +118,7 @@
 
     ]
   },
+  "topic_name_human": "Climate",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

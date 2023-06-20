@@ -33,6 +33,7 @@
     "metagenomics",
     "taxonomic profiling"
   ],
+  "short_id": "T00338",
   "url": "/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.html",
   "topic_name": "metagenomics",
   "tutorial_name": "taxonomic-profiling",
@@ -91,7 +92,8 @@
           "identifier": "0000-0001-9852-1987",
           "name": "Bérénice Batut"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.json",
@@ -119,6 +121,7 @@
 
     ]
   },
+  "topic_name_human": "Metagenomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

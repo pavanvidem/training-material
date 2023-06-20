@@ -51,6 +51,7 @@
     "astrovsky01"
   ],
   "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+  "short_id": "S00086",
   "url": "/topics/single-cell/tutorials/scrna-preprocessing/slides.html",
   "topic_name": "single-cell",
   "tutorial_name": "scrna-preprocessing",
@@ -77,7 +78,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "scrna_pp_celseq.ga",
@@ -90,7 +92,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-preprocessing/tutorial.json",
@@ -121,11 +124,6 @@
     ],
     "inexact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
         "usegalaxy": "false"
@@ -152,6 +150,7 @@
       }
     ]
   },
+  "topic_name_human": "Single Cell",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -270,6 +269,5 @@
     "video": false
   },
   "type": "tutorial",
-  "logo": "GTN",
-  "short_id": "S00086"
+  "logo": "GTN"
 }

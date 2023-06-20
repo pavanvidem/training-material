@@ -82,6 +82,7 @@
   "abbreviations": {
     "OGS": "Official Gene Set"
   },
+  "short_id": "T00170",
   "url": "/topics/genome-annotation/tutorials/apollo-euk/tutorial.html",
   "topic_name": "genome-annotation",
   "tutorial_name": "apollo-euk",
@@ -124,6 +125,7 @@
 
     ]
   },
+  "topic_name_human": "Genome Annotation",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

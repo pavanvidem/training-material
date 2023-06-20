@@ -38,6 +38,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/dpryan79/"
     }
   ],
+  "short_id": "T00142",
   "url": "/topics/epigenetics/tutorials/methylation-seq/tutorial.html",
   "topic_name": "epigenetics",
   "tutorial_name": "methylation-seq",
@@ -64,7 +65,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/epigenetics/tutorials/methylation-seq/tutorial.json",
@@ -81,11 +83,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
@@ -125,6 +122,7 @@
       }
     ]
   },
+  "topic_name_human": "Epigenetics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

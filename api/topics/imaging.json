@@ -89,6 +89,7 @@
       "tags": [
         "HeLa"
       ],
+      "short_id": "T00180",
       "url": "/topics/imaging/tutorials/hela-screen-analysis/tutorial.html",
       "topic_name": "imaging",
       "tutorial_name": "hela-screen-analysis",
@@ -115,7 +116,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "feature_extraction.ga",
@@ -128,7 +130,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/hela-screen-analysis/tutorial.json",
@@ -166,6 +169,7 @@
           }
         ]
       },
+      "topic_name_human": "Imaging",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -276,6 +280,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/alliecreason/"
         }
       ],
+      "short_id": "T00334",
       "url": "/topics/imaging/tutorials/multiplex-tissue-imaging-TMA/tutorial.html",
       "topic_name": "imaging",
       "tutorial_name": "multiplex-tissue-imaging-TMA",
@@ -302,7 +307,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/multiplex-tissue-imaging-TMA/tutorial.json",
@@ -330,6 +336,7 @@
           }
         ]
       },
+      "topic_name_human": "Imaging",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -474,6 +481,7 @@
         }
       ],
       "zenodo_link": "",
+      "short_id": "T00183",
       "url": "/topics/imaging/tutorials/tutorial-CP/tutorial.html",
       "topic_name": "imaging",
       "tutorial_name": "tutorial-CP",
@@ -500,7 +508,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/tutorial-CP/tutorial.json",
@@ -552,6 +561,7 @@
           }
         ]
       },
+      "topic_name_human": "Imaging",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -770,6 +780,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/jkh1/"
         }
       ],
+      "short_id": "T00182",
       "url": "/topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.html",
       "topic_name": "imaging",
       "tutorial_name": "object-tracking-using-cell-profiler",
@@ -796,7 +807,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.json",
@@ -836,6 +848,7 @@
 
         ]
       },
+      "topic_name_human": "Imaging",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1010,6 +1023,7 @@
       "tags": [
         "HeLa"
       ],
+      "short_id": "T00181",
       "url": "/topics/imaging/tutorials/imaging-introduction/tutorial.html",
       "topic_name": "imaging",
       "tutorial_name": "imaging-introduction",
@@ -1036,7 +1050,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/imaging-introduction/tutorial.json",
@@ -1073,6 +1088,7 @@
 
         ]
       },
+      "topic_name_human": "Imaging",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

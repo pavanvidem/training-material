@@ -28,6 +28,7 @@
     "hexylena"
   ],
   "subtopic": "advanced",
+  "short_id": "S00048",
   "url": "/topics/dev/tutorials/interactive-environments/slides.html",
   "topic_name": "dev",
   "tutorial_name": "interactive-environments",
@@ -68,6 +69,7 @@
       }
     ]
   },
+  "topic_name_human": "Development in Galaxy",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -92,7 +94,6 @@
   "tags": [
     "work-in-progress"
   ],
-  "short_id": "S00048",
   "redirect_from": [
     "/short/dev/interactive-environments/slides",
     "/short/S00048"

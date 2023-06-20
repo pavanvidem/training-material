@@ -27,6 +27,7 @@
     "cmonjeau",
     "bebatut"
   ],
+  "short_id": "S00041",
   "url": "/topics/contributing/tutorials/github-command-line-contribution/slides.html",
   "topic_name": "contributing",
   "tutorial_name": "github-command-line-contribution",
@@ -67,6 +68,7 @@
       }
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -89,7 +91,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00041",
   "redirect_from": [
     "/short/contributing/github-command-line-contribution/slides",
     "/short/S00041"

@@ -45,6 +45,7 @@
     "cloud"
   ],
   "priority": 3,
+  "short_id": "T00021",
   "url": "/topics/admin/tutorials/terraform/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "terraform",
@@ -85,6 +86,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

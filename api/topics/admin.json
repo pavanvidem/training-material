@@ -222,6 +222,7 @@
         }
       ],
       "subtopic": "features",
+      "short_id": "T00010",
       "url": "/topics/admin/tutorials/interactive-tools/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "interactive-tools",
@@ -296,6 +297,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -378,6 +380,7 @@
         "topic_0605",
         "topic_3071"
       ],
+      "short_id": "T00324",
       "url": "/topics/admin/tutorials/backup-cleanup/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "backup-cleanup",
@@ -418,6 +421,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -529,6 +533,7 @@
         }
       ],
       "subtopic": "data",
+      "short_id": "T00329",
       "url": "/topics/admin/tutorials/reference-genomes/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "reference-genomes",
@@ -557,6 +562,7 @@
 
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -726,6 +732,7 @@
         "tools",
         "git-gat"
       ],
+      "short_id": "T00023",
       "url": "/topics/admin/tutorials/tool-management/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tool-management",
@@ -851,6 +858,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -916,6 +924,7 @@
         "ansible",
         "git-gat"
       ],
+      "short_id": "T00326",
       "url": "/topics/admin/tutorials/celery/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "celery",
@@ -956,6 +965,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1043,6 +1053,7 @@
         }
       ],
       "subtopic": "deprecated",
+      "short_id": "S00028",
       "url": "/topics/admin/tutorials/uwsgi/slides.html",
       "topic_name": "admin",
       "tutorial_name": "uwsgi",
@@ -1083,6 +1094,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1166,6 +1178,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
         }
       ],
+      "short_id": "S00011",
       "url": "/topics/admin/tutorials/galaxy-docker/slides.html",
       "topic_name": "admin",
       "tutorial_name": "galaxy-docker",
@@ -1206,6 +1219,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1278,6 +1292,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "S00009",
       "url": "/topics/admin/tutorials/empathy/slides.html",
       "topic_name": "admin",
       "tutorial_name": "empathy",
@@ -1318,6 +1333,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1415,6 +1431,7 @@
           ]
         }
       ],
+      "short_id": "T00016",
       "url": "/topics/admin/tutorials/object-store/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "object-store",
@@ -1455,6 +1472,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1555,6 +1573,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "S00022",
       "url": "/topics/admin/tutorials/stuff/slides.html",
       "topic_name": "admin",
       "tutorial_name": "stuff",
@@ -1595,6 +1614,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1702,6 +1722,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "S00015",
       "url": "/topics/admin/tutorials/introduction/slides.html",
       "topic_name": "admin",
       "tutorial_name": "introduction",
@@ -1742,6 +1763,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1804,6 +1826,7 @@
         }
       ],
       "subtopic": "maintenance",
+      "short_id": "S00026",
       "url": "/topics/admin/tutorials/troubleshooting/slides.html",
       "topic_name": "admin",
       "tutorial_name": "troubleshooting",
@@ -1844,6 +1867,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1947,6 +1971,7 @@
           ]
         }
       ],
+      "short_id": "T00005",
       "url": "/topics/admin/tutorials/data-library/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "data-library",
@@ -2017,6 +2042,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2100,6 +2126,7 @@
         }
       ],
       "subtopic": "deprecated",
+      "short_id": "S00000",
       "url": "/topics/admin/tutorials/advanced-galaxy-customisation/slides.html",
       "topic_name": "admin",
       "tutorial_name": "advanced-galaxy-customisation",
@@ -2140,6 +2167,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2196,6 +2224,7 @@
         ]
       },
       "subtopic": "maintenance",
+      "short_id": "S00027",
       "url": "/topics/admin/tutorials/users-groups-quotas/slides.html",
       "topic_name": "admin",
       "tutorial_name": "users-groups-quotas",
@@ -2265,6 +2294,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2451,6 +2481,7 @@
           "type": "none"
         }
       ],
+      "short_id": "T00017",
       "url": "/topics/admin/tutorials/pulsar/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "pulsar",
@@ -2569,6 +2600,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2671,6 +2703,7 @@
           ]
         }
       ],
+      "short_id": "T00007",
       "url": "/topics/admin/tutorials/external-auth/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "external-auth",
@@ -2711,6 +2744,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2790,6 +2824,7 @@
         }
       ],
       "subtopic": "maintenance",
+      "short_id": "S00019",
       "url": "/topics/admin/tutorials/production/slides.html",
       "topic_name": "admin",
       "tutorial_name": "production",
@@ -2830,6 +2865,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2920,6 +2956,7 @@
         "ansible",
         "git-gat"
       ],
+      "short_id": "T00003",
       "url": "/topics/admin/tutorials/cvmfs/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "cvmfs",
@@ -3025,6 +3062,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3096,6 +3134,7 @@
         "ansible",
         "git-gat"
       ],
+      "short_id": "T00009",
       "url": "/topics/admin/tutorials/gxadmin/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "gxadmin",
@@ -3169,6 +3208,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3213,6 +3253,7 @@
         }
       ],
       "subtopic": "cloud",
+      "short_id": "S00004",
       "url": "/topics/admin/tutorials/cloudbursting/slides.html",
       "topic_name": "admin",
       "tutorial_name": "cloudbursting",
@@ -3253,6 +3294,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3343,6 +3385,7 @@
       "abbreviations": {
         "TSDB": "Time Series Database"
       },
+      "short_id": "T00015",
       "url": "/topics/admin/tutorials/monitoring/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "monitoring",
@@ -3449,6 +3492,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3513,6 +3557,7 @@
         }
       ],
       "subtopic": "deprecated",
+      "short_id": "S00023",
       "url": "/topics/admin/tutorials/systemd-supervisor/slides.html",
       "topic_name": "admin",
       "tutorial_name": "systemd-supervisor",
@@ -3553,6 +3598,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -3643,6 +3689,7 @@
         "topic_0605",
         "topic_3071"
       ],
+      "short_id": "T00001",
       "url": "/topics/admin/tutorials/ansible-galaxy/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "ansible-galaxy",
@@ -3757,6 +3804,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4030,6 +4078,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "S00008",
       "url": "/topics/admin/tutorials/database/slides.html",
       "topic_name": "admin",
       "tutorial_name": "database",
@@ -4070,6 +4119,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4191,6 +4241,7 @@
           ]
         }
       ],
+      "short_id": "T00002",
       "url": "/topics/admin/tutorials/connect-to-compute-cluster/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "connect-to-compute-cluster",
@@ -4231,6 +4282,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4323,6 +4375,7 @@
       "tags": [
         "ansible"
       ],
+      "short_id": "T00000",
       "url": "/topics/admin/tutorials/ansible/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "ansible",
@@ -4428,6 +4481,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4515,6 +4569,7 @@
         }
       ],
       "subtopic": "monitoring",
+      "short_id": "S00012",
       "url": "/topics/admin/tutorials/general-monitoring/slides.html",
       "topic_name": "admin",
       "tutorial_name": "general-monitoring",
@@ -4555,6 +4610,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4635,6 +4691,7 @@
         "data",
         "git-gat"
       ],
+      "short_id": "T00008",
       "url": "/topics/admin/tutorials/ftp/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "ftp",
@@ -4675,6 +4732,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4746,6 +4804,7 @@
         }
       ],
       "subtopic": "data",
+      "short_id": "T00004",
       "url": "/topics/admin/tutorials/cvmfs-manual/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "cvmfs-manual",
@@ -4786,6 +4845,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4857,6 +4917,7 @@
         "wireguard",
         "networking"
       ],
+      "short_id": "T00027",
       "url": "/topics/admin/tutorials/wireguard-headscale/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "wireguard-headscale",
@@ -4897,6 +4958,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -4994,6 +5056,7 @@
         "wireguard",
         "networking"
       ],
+      "short_id": "T00026",
       "url": "/topics/admin/tutorials/wireguard/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "wireguard",
@@ -5034,6 +5097,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5140,6 +5204,7 @@
       "abbreviations": {
         "CI": "Continuous Integration"
       },
+      "short_id": "T00011",
       "url": "/topics/admin/tutorials/jenkins/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "jenkins",
@@ -5180,6 +5245,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5243,6 +5309,7 @@
         "ansible",
         "git-gat"
       ],
+      "short_id": "T00330",
       "url": "/topics/admin/tutorials/sentry/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "sentry",
@@ -5283,6 +5350,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5381,6 +5449,7 @@
         "beacon",
         "git-gat"
       ],
+      "short_id": "T00325",
       "url": "/topics/admin/tutorials/beacon/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "beacon",
@@ -5421,6 +5490,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5530,6 +5600,7 @@
 
       ],
       "subtopic": "maintenance",
+      "short_id": "T00328",
       "url": "/topics/admin/tutorials/customization-manual/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "customization-manual",
@@ -5570,6 +5641,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5673,6 +5745,7 @@
           ]
         }
       ],
+      "short_id": "T00025",
       "url": "/topics/admin/tutorials/upgrading/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "upgrading",
@@ -5743,6 +5816,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5842,6 +5916,7 @@
         }
       ],
       "priority": 1,
+      "short_id": "T00014",
       "url": "/topics/admin/tutorials/k8s-managing-galaxy/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "k8s-managing-galaxy",
@@ -5882,6 +5957,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -5989,6 +6065,7 @@
       "abbreviations": {
         "TIaaS": "Training Infrastructure as a Service"
       },
+      "short_id": "T00022",
       "url": "/topics/admin/tutorials/tiaas/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tiaas",
@@ -6059,6 +6136,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -6141,6 +6219,7 @@
       "abbreviations": {
         "TPV": "Total Perspective Vortex"
       },
+      "short_id": "T00012",
       "url": "/topics/admin/tutorials/job-destinations/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "job-destinations",
@@ -6210,6 +6289,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -6383,6 +6463,7 @@
           ]
         }
       ],
+      "short_id": "T00024",
       "url": "/topics/admin/tutorials/tus/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tus",
@@ -6452,6 +6533,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -6553,7 +6635,8 @@
       "tags": [
         "ansible",
         "monitoring",
-        "git-gat"
+        "git-gat",
+        "broken"
       ],
       "requirements": [
         {
@@ -6565,6 +6648,7 @@
           ]
         }
       ],
+      "short_id": "T00018",
       "url": "/topics/admin/tutorials/reports/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "reports",
@@ -6605,6 +6689,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -6665,6 +6750,7 @@
         "git-gat"
       ],
       "subtopic": "maintenance",
+      "short_id": "T00327",
       "url": "/topics/admin/tutorials/customization/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "customization",
@@ -6705,6 +6791,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -6807,6 +6894,7 @@
           ]
         }
       ],
+      "short_id": "T00020",
       "url": "/topics/admin/tutorials/stop-worrying-love-systemd/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "stop-worrying-love-systemd",
@@ -6847,6 +6935,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -7005,6 +7094,7 @@
           ]
         }
       ],
+      "short_id": "T00323",
       "url": "/topics/admin/tutorials/apptainer/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "apptainer",
@@ -7088,6 +7178,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -7167,6 +7258,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/"
         }
       ],
+      "short_id": "T00006",
       "url": "/topics/admin/tutorials/database-schema/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "database-schema",
@@ -7207,6 +7299,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -7303,6 +7396,7 @@
         }
       ],
       "priority": 2,
+      "short_id": "T00013",
       "url": "/topics/admin/tutorials/k8s-deploying-galaxy/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "k8s-deploying-galaxy",
@@ -7343,6 +7437,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -7416,6 +7511,7 @@
         "cloud"
       ],
       "priority": 3,
+      "short_id": "T00021",
       "url": "/topics/admin/tutorials/terraform/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "terraform",
@@ -7456,6 +7552,7 @@
           }
         ]
       },
+      "topic_name_human": "Galaxy Server administration",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

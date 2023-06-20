@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -60,7 +64,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Regression in Machine Learning">
         <meta property="og:description" content="Statistical Analyses for omics data and machine learning ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -330,7 +334,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/statistics/tutorials/regression_machinelearning/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/statistics/tutorials/regression_machinelearning/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -377,7 +381,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -390,7 +394,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -427,14 +431,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-statistics">
     <h1 data-toc-skip>Regression in Machine Learning</h1>
@@ -444,7 +441,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=27" alt="Avatar">Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a>
+		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=36" alt="Avatar">Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=36" alt="Avatar">Anup Kumar</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Avatar">Simon Bray</a>
 	</div>
 
 </div>
@@ -637,12 +634,6 @@ Sentry.init({
 	</li>
     
     
-	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
 	<li class="dropdown-header">
 		<b>Possibly Working</b>
 	</li>
@@ -679,12 +670,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 10, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00271">https://gxy.io/GTN:T00271</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00271">https://gxy.io/GTN:T00271</a> </div>
         
     </blockquote>
     </section>
@@ -733,22 +725,22 @@ Sentry.init({
 
 <p>Regression analysis attempts to determine the relationship between one target variable and a series of independent variables. A regressor learns the mapping between the features of a dataset row (i.e. the values for each of the independent variables) and its target value. It tries to fit a curve for the targets, which can be linear or non-linear. When the targets in a dataset are real numbers, the machine learning task is known as regression and each sample in the dataset has a real-valued output or target. Figure <a href="#figure-1">1</a> shows how a regression curve is fitted which best explains all these points. Here, the curve is a straight line, so this is an example of linear regression. The regression task is to learn this curve, which explains the underlying distribution of the data points. The curve can then be used to make predictions for new data points; the target for a new sample will lie on the curve learned by the regression task.</p>
 
-<figure id="figure-1"><img src="images/regression.png" alt="regression. " width="353" height="259" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Regression fit through data points.</figcaption></figure>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="images/regression.png" alt="regression. " width="353" height="259" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Regression fit through data points.</figcaption></figure>
 
 <p>Linear regression is a technique used to analyze a linear relationship between input variables (independent variables) and a single target variable. A linear relationship means that the data points tend to follow a straight line. Simple linear regression involves only a single input variable. Figure 2 shows a dataset with a linear relationship.</p>
 
-<figure id="figure-2"><img src="images/linear_regression_generated_data.png" alt="regression. " width="397" height="252" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Data points with a linear relationship.</figcaption></figure>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="images/linear_regression_generated_data.png" alt="regression. " width="397" height="252" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Data points with a linear relationship.</figcaption></figure>
 
 <p>In linear regression, our goal is to find the line that best models the path of the data points. Figure 3 shows the dataset we used in Figure 2 with a line of best fit through it. The position of the line is determined by certain fitting coefficients (in this simple case, the gradient and intercept) and linear regression helps us pick appropriate values for these coefficients. In this example we have only one input variable and the problem is therefore simple linear regression. Note that in real problems we have more than one input variable. In this case, we call it multiple linear regression. Adding extra input variables just means that we’ll need to find more weights.</p>
 
-<figure id="figure-3"><img src="images/linear_regression_regressor.png" alt="regression. " width="397" height="253" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Regression fit through data points.</figcaption></figure>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="images/linear_regression_regressor.png" alt="regression. " width="397" height="253" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Regression fit through data points.</figcaption></figure>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-cost-function"><button class="gtn-boxify-button details" type="button" aria-controls="details-cost-function" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Cost function<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-cost-function"><button class="gtn-boxify-button details" type="button" aria-controls="details-cost-function" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Cost function<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Once we have a prediction in regression problems, we need some way to tell if it’s reasonable or not. A cost function helps us do this. The cost function compares all the predictions against their actual values and provides a single number that we can use as a measure. Two common cost functions are the error and squared error. The error is how far our prediction is away from the actual value (Figure 4).</p>
 
-  <figure id="figure-4"><img src="images/cost_function.png" alt="regression. " width="394" height="253" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Distance between true value and prediction.</figcaption></figure>
+  <figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="images/cost_function.png" alt="regression. " width="394" height="253" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Distance between true value and prediction.</figcaption></figure>
   <p>We know an error above the actual value and an error below the actual value should be about as bad as each other. The squared error makes this clear because both positive and negative values of the error result in a positive squared error. We will use the Mean Squared Error (MSE) function as our cost function. This function finds the average squared error value for all of our data points. Cost functions are important to us because they measure how accurate our model is against the target values.</p>
 
 </blockquote>
@@ -767,7 +759,7 @@ It has been recognized that DNA methylation analysis, which mostly occurs in a C
 <p>Whole blood samples are collected from humans with their ages falling in the range 18-69 and the best age-correlated CpG sites in the genome are chosen as features. The dataset is divided into two parts - training and test sets. The training set is used to train a regressor and the test set is used to evaluate the performance of the trained model. We proceed with the analysis by uploading new datasets and creating a new history.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Data upload</div>
 
   <ol>
     <li>Create a new history for this tutorial</li>
@@ -780,7 +772,7 @@ https://zenodo.org/record/2545213/files/test_rows.csv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -805,7 +797,7 @@ https://zenodo.org/record/2545213/files/test_rows.csv
 The <code class="language-plaintext highlighter-rouge">train_rows</code> contains a column <code class="language-plaintext highlighter-rouge">Age</code> which is the label or target. We will evaluate our model on <code class="language-plaintext highlighter-rouge">test_rows</code> and compare the predicted age with the true age in <code class="language-plaintext highlighter-rouge">test_rows_labels</code></p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-test-train-data-splitting-data-within-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-test-train-data-splitting-data-within-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Test-train data splitting data within Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-test-train-data-splitting-data-within-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-test-train-data-splitting-data-within-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Test-train data splitting data within Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>For this task, test and training datasets are provided. However, if you want to analyze your own data, you can check out the <strong>Split Dataset</strong> tool, which can split a dataset into training and test subsets with a number of advanced options.</p>
 
 </blockquote>
@@ -817,7 +809,7 @@ The <code class="language-plaintext highlighter-rouge">train_rows</code> contain
 <p>The dataset is divided into two parts - training and test sets. The training set is used to train a regressor and the test set is used to evaluate the performance of the trained model.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-train-a-model"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Train a model</div>
+  <div class="box-title hands-on-title" id="hands-on-train-a-model"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train a model</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="link"><strong>Generalized linear models for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4</span></span>:
@@ -855,12 +847,12 @@ The <code class="language-plaintext highlighter-rouge">train_rows</code> contain
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>What is learned by the linear regressor?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>The linear regressor learns the coefficients of the best fit line to the data.</p>
 
@@ -875,7 +867,7 @@ The <code class="language-plaintext highlighter-rouge">train_rows</code> contain
 <p>Now, we will predict age in the test dataset using this model in order to see if the model has learned important features which can be generalized on a new dataset. The test dataset (<code class="language-plaintext highlighter-rouge">test_rows</code>) contains the same number of features but does not contain the <code class="language-plaintext highlighter-rouge">Age</code> column; the age will instead be predicted using the trained model.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-predict-targets-using-the-model"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Predict targets using the model</div>
+  <div class="box-title hands-on-title" id="hands-on-predict-targets-using-the-model"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict targets using the model</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="link"><strong>Generalized linear models for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4</span></span>:
@@ -899,7 +891,7 @@ The <code class="language-plaintext highlighter-rouge">train_rows</code> contain
 <p>We will evaluate the predictions by comparing them to the expected targets. In the previous step, we generated predictions for the test dataset (<code class="language-plaintext highlighter-rouge">predicted_data_linear</code>). We have one more dataset (<code class="language-plaintext highlighter-rouge">test_rows_labels</code>) which contains the true age values of the test set. Using the true and predicted values of age in the test set, we will verify the performance by analyzing the plots. As you can see, <code class="language-plaintext highlighter-rouge">predicted_data_linear</code> has no header, so first we need to remove the header from <code class="language-plaintext highlighter-rouge">test_rows_labels</code> to perform the comparison.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-remove-the-header"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Remove the header</div>
+  <div class="box-title hands-on-title" id="hands-on-remove-the-header"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Remove the header</div>
 
   <ol>
     <li><strong>Remove beginning of a file</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
@@ -916,7 +908,7 @@ The <code class="language-plaintext highlighter-rouge">train_rows</code> contain
 Hint: Please find the above tool in “Graph/Display data” tool section in Galaxy.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-predictions"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Check and visualize the predictions</div>
+  <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-predictions"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Check and visualize the predictions</div>
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1" title="Plot actual vs predicted curves and residual plots tool" aria-role="link"><strong>Plot actual vs predicted curves and residual plots</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1</span></span>:</p>
   <ul>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select input data file”</em>: <code class="language-plaintext highlighter-rouge">test_rows_labels_without_header</code></li>
@@ -930,39 +922,39 @@ Hint: Please find the above tool in “Graph/Display data” tool section in Gal
   <li>
     <p>True vs. predicted targets curves: In this plot the corresponding points in both these curves should be close to each other for a good regression performance. We can see that the plot shows this behaviour.</p>
 
-    <figure id="figure-5"><img src="images/true_pred_curves.png" alt="true_predicted. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> True vs predicted targets curves. </figcaption></figure>
+    <figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="images/true_pred_curves.png" alt="true_predicted. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> True vs predicted targets curves.</figcaption></figure>
   </li>
   <li>
     <p><a href="https://towardsdatascience.com/everything-you-need-to-know-about-scatter-plots-for-data-visualisation-924144c0bc5">Scatter plot</a> for true vs. predicted targets: We can see in the scatter plot (figure <a href="#figure-6">6</a>) that most of the points lie along the x=y curve. It means that the true and predicted ages are close to each other. The root mean square error (<code class="language-plaintext highlighter-rouge">RMSE</code>) is <code class="language-plaintext highlighter-rouge">4.1</code> and the R2 score is <code class="language-plaintext highlighter-rouge">0.93</code>.</p>
 
-    <figure id="figure-6"><img src="images/true_vs_pred_scatter.png" alt="scatter_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Scatter plot for true vs. predicted targets.</figcaption></figure>
+    <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="images/true_vs_pred_scatter.png" alt="scatter_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Scatter plot for true vs. predicted targets.</figcaption></figure>
   </li>
   <li>
     <p><a href="http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/">Residual plot</a> between residual (predicted - true) and predicted targets: The residual plot shown in figure <a href="#figure-7">7</a> is generated to see if there is any visible pattern between residual (predicted age - true age) and predicted age. For a good regression performance, this plot should exhibit a random pattern and the points should be symmetrically distributed along the y=0 line.</p>
 
-    <figure id="figure-7"><img src="images/residual_plot.png" alt="residual_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Residual plot between residual (predicted - true) and predicted targets. The plot shows a random pattern of points.</figcaption></figure>
+    <figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="images/residual_plot.png" alt="residual_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Residual plot between residual (predicted - true) and predicted targets. The plot shows a random pattern of points.</figcaption></figure>
   </li>
 </ol>
 
 <p>These plots are important to visualize the quality of regression and the true and predicted targets - how close or far they are from each other. The closer they are, the better the prediction.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-r2-coefficient-of-determination"><button class="gtn-boxify-button details" type="button" aria-controls="details-r2-coefficient-of-determination" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: R2 (coefficient of determination)<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-r2-coefficient-of-determination"><button class="gtn-boxify-button details" type="button" aria-controls="details-r2-coefficient-of-determination" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: R2 (coefficient of determination)<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>In both the parts, learning on datasets is done using cross-validation and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html">R2</a> scoring metric is used to evaluate the performance of the trained model. The closer it is to 1.0, the better it is. If it is negative, then the trained model is not good. To infer how its values exhibit model performance, we can compare the figures <a href="#figure-8">8</a> and <a href="#figure-9">9</a>. In both the plots, the true and predicted targets are plotted in a scatter plot. For a good model, most of the points should lie along the <code class="language-plaintext highlighter-rouge">x = y</code> line as the true and predicted targets are close to each other. In figure <a href="#figure-8">8</a>, we can see that the points are scattered and do not show any pattern. Therefore, the R2 score is <code class="language-plaintext highlighter-rouge">-0.06</code>. On the other hand, figure <a href="#figure-9">9</a> shows a better pattern as most of the points lie along the line and the R2 score is almost <code class="language-plaintext highlighter-rouge">1.0</code>. For RNA-seq dataset, we will compute the cross-validated R2 score using the training set and for DNA methylation dataset, we will compute the R2 score for the test set.</p>
 
-  <figure id="figure-8"><img src="../../images/age-prediction-with-ml/model_bad.png" alt="model_bad. " width="800" height="500" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> This shows an example of a bad model as most of the points are scattered.</figcaption></figure>
+  <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/model_bad.png" alt="model_bad. " width="800" height="500" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> This shows an example of a bad model as most of the points are scattered.</figcaption></figure>
 
-  <figure id="figure-9"><img src="../../images/age-prediction-with-ml/model_good.png" alt="model_good. " width="800" height="500" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> This shows an example of a good model as most of the points lie along the x = y line.</figcaption></figure>
+  <figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/model_good.png" alt="model_good. " width="800" height="500" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> This shows an example of a good model as most of the points lie along the x = y line.</figcaption></figure>
 
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>Inspect the plots. What can you say about the predictions?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>Figures 5, 6 and 7 show that the prediction is acceptable and the predicted age lies about close to the true age, but the reults can be improved by using better algorithms such as ensemble-based regressors.</p>
 
@@ -975,13 +967,13 @@ Hint: Please find the above tool in “Graph/Display data” tool section in Gal
 
 <p>It is not a good choice when the relationship between independent and dependent variables is more complicated. For example, Figure 10 shows a dataset that does not have a linear relationship so linear regression would not be a good choice.</p>
 
-<figure id="figure-10"><img src="images/nonlinear_regression_generated_data.png" alt="regression. " width="393" height="252" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Data points with nonlinear relationship. </figcaption></figure>
+<figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="images/nonlinear_regression_generated_data.png" alt="regression. " width="393" height="252" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Data points with nonlinear relationship.</figcaption></figure>
 
 <p>To learn the mapping between several features and the targets, in the next step, we will apply the
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor">Gradient boosting regressor</a>. It is an ensemble-based regressor because its prediction is the collective performance of multiple weak learners (e.g. decision trees). It learns features from training dataset and maps all the rows to their respective targets (real numbers). The process of mapping gives a trained model.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+  <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
   <p>An <a href="https://scikit-learn.org/stable/modules/ensemble.html#ensemble"><em>ensemble</em></a> method uses multiple learning models internally for better predictions and boosting is a method of converting weak learners into strong learners.</p>
 </blockquote>
 
@@ -990,7 +982,7 @@ Hint: Please find the above tool in “Graph/Display data” tool section in Gal
 <p>Like the random forest method, gradient boosting is an ensemble-based regressor, because it uses multiple decision tree regressors internally and makes predictions by taking the collective performances of predictions made by multiple decision trees. It has a good predictive power and is robust to outliers. It creates an ensemble of weak learners (decision trees) and iteratively minimizes errors. One disadvantage, which comes from its basic principle of boosting, is that it cannot be parallelized. <em>Hint:</em> Please find the following tool in “Machine learning” tool section in Galaxy.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-train-a-model-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Train a model</div>
+  <div class="box-title hands-on-title" id="hands-on-train-a-model-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train a model</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
@@ -1028,12 +1020,12 @@ Hint: Please find the above tool in “Graph/Display data” tool section in Gal
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>What is learned by the gradient boosting regressor?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p><strong>Gradient boosting</strong> regressor learns multiple attributes like <strong>feature_importances_</strong> (weight for each feature/column),
 <strong>oob_improvement_</strong> (which stores incremental improvements in learning), <strong>estimators_</strong> (collection of weak learners) and a few more.
@@ -1046,7 +1038,7 @@ These attributes are used to predict the target for a new sample and are stored 
 <p>After learning on the training dataset, we should evaluate the performance on the test dataset.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-predict-targets-using-the-model-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Predict targets using the model</div>
+  <div class="box-title hands-on-title" id="hands-on-predict-targets-using-the-model-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict targets using the model</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
@@ -1067,7 +1059,7 @@ These attributes are used to predict the target for a new sample and are stored 
 
 <p>Now we can visualize and analyze the predictions using the <strong>Plot actual vs predicted curves and residual plots</strong> tool.</p>
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-predictions-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Check and visualize the predictions</div>
+  <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-predictions-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Check and visualize the predictions</div>
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1" title="Plot actual vs predicted curves and residual plots tool" aria-role="link"><strong>Plot actual vs predicted curves and residual plots</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1</span></span>:</p>
   <ul>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select input data file”</em>: <code class="language-plaintext highlighter-rouge">test_rows_labels</code> (<em>Note:</em> use the <code class="language-plaintext highlighter-rouge">test_rows_labels</code> dataset, not the <code class="language-plaintext highlighter-rouge">test_rows_labels_without_header</code> one)</li>
@@ -1075,7 +1067,7 @@ These attributes are used to predict the target for a new sample and are stored 
   </ul>
 </blockquote>
 
-<figure id="figure-11"><img src="images/true_vs_pred_scatter_ensemble.png" alt="scatter_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Scatter plot for true vs. predicted targets using gradient boosting regressor.</figcaption></figure>
+<figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="images/true_vs_pred_scatter_ensemble.png" alt="scatter_plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Scatter plot for true vs. predicted targets using gradient boosting regressor.</figcaption></figure>
 
 <p>R2 score is 0.93, the same as the linear model, but the RMSE is smaller (3.85), which tells us that the predicted targets are closer to the true targets.</p>
 
@@ -1084,7 +1076,7 @@ These attributes are used to predict the target for a new sample and are stored 
 <p>In the final step, we will create a pipeline learner with the <strong>Pipeline builder</strong> tool but this time, we just specify the regressor. The <strong>Pipeline builder</strong> tool will wrap this regressor and return a zip file. By choosing <code class="language-plaintext highlighter-rouge">Yes</code> from the boolean option, tunable hyperparameters will be output in a separate file.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-create-pipeline"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create pipeline</div>
+  <div class="box-title hands-on-title" id="hands-on-create-pipeline"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create pipeline</div>
 
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.4" title="Pipeline builder tool" aria-role="link"><strong>Pipeline builder</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.4</span></span>:</p>
   <ul>
@@ -1110,17 +1102,17 @@ These attributes are used to predict the target for a new sample and are stored 
 <p>After the <strong>New Pipeline/Estimator</strong> dataset and its tunable hyperparameters are produced by the <strong>Pipeline builder</strong> tool, we will use the <strong>Hyperparameter search</strong> tool to find the best values for each hyperparameter. These values will lead us to create the best model based on the search space chosen for each hyperparameter. We use only one parameter <code class="language-plaintext highlighter-rouge">n_estimators</code> of <code class="language-plaintext highlighter-rouge">Gradient boosting</code> regressor for this task. This parameter specifies the number of boosting stages the learning process has to go through. The default value of <code class="language-plaintext highlighter-rouge">n_estimators</code> for this regressor is <code class="language-plaintext highlighter-rouge">100</code>. However, we are not sure if this gives the best accuracy. Therefore, it is important to try setting this parameter to different values to find the optimal one. We choose some values which are less than <code class="language-plaintext highlighter-rouge">100</code> and a few more than <code class="language-plaintext highlighter-rouge">100</code>. The hyperparameter search will look for the optimal number of estimators and gives the best-trained model as one of the outputs. This model is used in the next step to predict age in the test dataset.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-5-fold-cross-validation"><button class="gtn-boxify-button details" type="button" aria-controls="details-5-fold-cross-validation" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: 5-fold cross-validation<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-5-fold-cross-validation"><button class="gtn-boxify-button details" type="button" aria-controls="details-5-fold-cross-validation" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: 5-fold cross-validation<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>This is a model validation technique which estimates the performance of a predictive model on an unseen dataset. A dataset is divided into <code class="language-plaintext highlighter-rouge">5</code> folds and these folds are categorized into training and validation sets. The idea of cross-validation is shown in figure <a href="#figure-12">12</a>. The complete dataset is divided into <code class="language-plaintext highlighter-rouge">5</code> equal parts. 4 out of the 5 parts are used for training and the remaining 1 part is used for validating the performance of training. This is done for <code class="language-plaintext highlighter-rouge">5</code> folds/iterations; each time the validation set (1/5 of the dataset) is different. In all five folds, the complete dataset is used for training and validation. The final validation performance is averaged over <code class="language-plaintext highlighter-rouge">5</code> folds.</p>
 
-  <figure id="figure-12"><img src="../../images/age-prediction-with-ml/5fold_cv.png" alt="5fold_cv. " width="622" height="347" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> 5-fold cross validation. </figcaption></figure>
+  <figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/5fold_cv.png" alt="5fold_cv. " width="622" height="347" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> 5-fold cross validation.</figcaption></figure>
   <p>The image demonstrates how the 5-fold cross-validation works. The complete dataset is divided into 5 equal parts/folds. 4 parts (80%) of the data (training set shown in yellow) are used for training the model and the remaining one part is used for evaluating (validation set shown in blue) the trained model. This is repeated for 5 times till every part/fold is used as the validation set. The accuracies computed for different validation folds are averaged to give 5-fold cross-validation accuracy.</p>
 
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-hyperparameter-search"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Hyperparameter search</div>
+  <div class="box-title hands-on-title" id="hands-on-hyperparameter-search"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Hyperparameter search</div>
 
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.4" title="Hyperparameter search tool" aria-role="link"><strong>Hyperparameter search</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.4</span></span>:</p>
   <ul>
@@ -1199,14 +1191,14 @@ These attributes are used to predict the target for a new sample and are stored 
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-3"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>What is the optimal number of estimators for the given dataset?</p>
 
   <p>Hint: Please look at the <code class="language-plaintext highlighter-rouge">mean_test_score</code> column in the tabular result from the <strong>Hyperparameter search</strong> tool.</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>(Even though the default value of the number of estimators for the gradient boosting regressor is <code class="language-plaintext highlighter-rouge">100</code>, <code class="language-plaintext highlighter-rouge">75</code> gives the best accuracy. That’s why it is important to perform hyperparameter search to tune these parameters for any dataset). 50 estimators also give almost the same accuracy.</li>
@@ -1219,7 +1211,7 @@ These attributes are used to predict the target for a new sample and are stored 
 <p>Using the <strong>Hyperparameter search</strong> tool, we optimized our model, based on the training data. Now, we will predict the age from the test dataset using this model.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-predict-age"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Predict age</div>
+  <div class="box-title hands-on-title" id="hands-on-predict-age"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict age</div>
 
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
@@ -1240,7 +1232,7 @@ These attributes are used to predict the target for a new sample and are stored 
 <p>Now we will verify the performance by creating and analyzing the plots.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-create-regression-plots"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Create regression plots</div>
+  <div class="box-title hands-on-title" id="hands-on-create-regression-plots"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create regression plots</div>
 
   <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1" title="Plot actual vs predicted curves and residual plots tool" aria-role="link"><strong>Plot actual vs predicted curves and residual plots</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1</span></span>:</p>
   <ul>
@@ -1251,26 +1243,26 @@ These attributes are used to predict the target for a new sample and are stored 
 </blockquote>
 
 <blockquote class="question">
-  <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+  <div class="box-title question-title" id="question-4"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
   <p>Inspect the plots. What can you say about the predictions?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>The figures show that the prediction is very good because the predicted age lies close to the true age.</p>
   </blockquote>
 </blockquote>
 
-<figure id="figure-13"><img src="../../images/age-prediction-with-ml/scatter_plot.png" alt="Scatter plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Scatter plot for true and predicted age for test set using hyperparameter search. </figcaption></figure>
+<figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/scatter_plot.png" alt="Scatter plot. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Scatter plot for true and predicted age for test set using hyperparameter search.</figcaption></figure>
 
 <p>We can see in the scatter plot (figure <a href="#figure-13">13</a>) that most of the points lie along the <code class="language-plaintext highlighter-rouge">x = y</code> curve. This tells us that the true and predicted ages are close to each other. The root mean square error (<code class="language-plaintext highlighter-rouge">RMSE</code>) is <code class="language-plaintext highlighter-rouge">3.74</code> and the R2 score is <code class="language-plaintext highlighter-rouge">0.94</code>.</p>
 
-<figure id="figure-14"><img src="../../images/age-prediction-with-ml/residual_plot.png" alt="Residuals. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> The plot shows the residuals (predicted age - true) age against the predicted age.</figcaption></figure>
+<figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/residual_plot.png" alt="Residuals. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> The plot shows the residuals (predicted age - true) age against the predicted age.</figcaption></figure>
 
 <p>As you can see in the figure, there is no visible pattern between the plotted points, which means our model is good.</p>
 
-<figure id="figure-15"><img src="../../images/age-prediction-with-ml/true_vs_predicted_plot.png" alt="True vs predicted age. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> True vs predicted age for all the samples in the test set. </figcaption></figure>
+<figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="../../images/age-prediction-with-ml/true_vs_predicted_plot.png" alt="True vs predicted age. " width="700" height="450" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> True vs predicted age for all the samples in the test set.</figcaption></figure>
 <p>We can see that the predicted values are close to the true values.</p>
 
 <p>Figure <a href="#figure-13">13</a> shows that we achieved an R2 score of <code class="language-plaintext highlighter-rouge">0.94</code> and root mean square score of <code class="language-plaintext highlighter-rouge">3.74</code> for the test set using Gradient boosting regressor. <a href="https://www.sciencedirect.com/science/article/pii/S1872497317301643?via%3Dihub">Jana Naue et al. 2017</a> mention a similar root mean square score (<code class="language-plaintext highlighter-rouge">3.93</code>) using the random forest regressor. The root mean square score shows the difference between the true and predicted age of humans. The R2 score (<code class="language-plaintext highlighter-rouge">0.94</code>) is close to the best achievable score of <code class="language-plaintext highlighter-rouge">1.0</code> which shows that the trained model is good. Overall, the second part of the analysis also shows that using the machine learning tools in Galaxy, we can achieve state-of-the-art predictions mentioned in the recent scientific studies.</p>
@@ -1327,6 +1319,9 @@ The quality of predictions is visualized using multiple plots to ascertain the r
                             Alireza Khanteymoori, Anup Kumar, Simon Bray,  <b>Regression in Machine Learning (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1348,12 +1343,12 @@ The quality of predictions is visualized using multiple plots to ascertain the r
 
 <code id="citation-code">@misc{statistics-regression_machinelearning,
 author = "Alireza Khanteymoori and Anup Kumar and Simon Bray",
-title = "Regression in Machine Learning (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Regression in Machine Learning (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/regression_machinelearning/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1475,19 +1470,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00271">https://gxy.io/GTN:T00271</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00271">https://gxy.io/GTN:T00271</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1507,7 +1502,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1515,9 +1510,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

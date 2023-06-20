@@ -81,6 +81,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/"
     }
   ],
+  "short_id": "T00297",
   "url": "/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "rna-seq-analysis-with-askomics-it",
@@ -121,6 +122,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

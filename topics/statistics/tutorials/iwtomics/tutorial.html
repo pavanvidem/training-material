@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,21 +32,25 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/iwtomics/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Interval-Wise Testing for omics data">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2022-10-18 14:23:35 +0000">
+<meta name="DC.date" content="2023-05-19 15:28:16 +0000">
 <meta name="DC.creator" content="Marzia A Cremona">
 <meta name="DC.creator" content="Fabio Cumbo">
 
@@ -59,7 +63,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Interval-Wise Testing for omics data">
         <meta property="og:description" content="Statistical Analyses for omics data and machine learning ...">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -88,7 +92,7 @@ Sentry.init({
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2022-10-18 14:23:35 +0000",
+  "dateModified": "2023-05-19 15:28:16 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Interval-Wise Testing for omics data",
   "interactivityType": "mixed",
@@ -308,7 +312,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/statistics/tutorials/iwtomics/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/statistics/tutorials/iwtomics/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -355,7 +359,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -368,7 +372,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -405,14 +409,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-statistics">
     <h1 data-toc-skip>Interval-Wise Testing for omics data</h1>
@@ -422,7 +419,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge contributor-marziacremona"><img src="https://avatars.githubusercontent.com/marziacremona?s=27" alt="Avatar">Marzia A Cremona</a><a href="/training-material/hall-of-fame/cumbof/" class="contributor-badge contributor-cumbof"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cumbof?s=27" alt="Avatar">Fabio Cumbo</a>
+		Authors: <a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge contributor-marziacremona"><img src="https://avatars.githubusercontent.com/marziacremona?s=36" alt="Avatar">Marzia A Cremona</a><a href="/training-material/hall-of-fame/cumbof/" class="contributor-badge contributor-cumbof"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/cumbof?s=36" alt="Avatar">Fabio Cumbo</a>
 	</div>
 
 </div>
@@ -602,12 +599,6 @@ Sentry.init({
     
     
 	<li>
-		<a class="dropdown-item" href="https://test.galaxyproject.org/" title="">
-			Galaxy Test <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
-		</a>
-	</li>
-    
-	<li>
 		<a class="dropdown-item" href="https://galaxy.genouest.org" title="">
 			Galaxy@GenOuest <abbr title="This instance supports the precise tool versions used in this tutorial">✅</abbr>
 		</a>
@@ -635,14 +626,15 @@ Sentry.init({
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 18, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 19, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00269">https://gxy.io/GTN:T00269</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00269">https://gxy.io/GTN:T00269</a> </div>
         
     </blockquote>
     </section>
@@ -691,7 +683,7 @@ The dataset contains two region datasets “ETn fixed”, “Control” and one 
 <p>The first tool (IWTomics Load Smooth and Plot) imports a collection of genomic region datasets, and associates to each region multiple genomic feature measurements. It allows to align the regions in multiple ways (center, left, right or scale alignment), to smooth the feature curves (possibly filling gaps in the measurements) and to create a graphical representation of the feature measurements in each region datasets (aligned curves or pointwise quantile curves).</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-get-the-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Get the data</div>
+  <div class="box-title hands-on-title" id="hands-on-get-the-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Get the data</div>
   <ol>
     <li>
       <p>Create a new history for this tutorial</p>
@@ -728,7 +720,7 @@ https://zenodo.org/record/5589610/files/features_header.tabular
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-pre-process-data-and-create-pointwise-boxplot"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Pre-process data and create pointwise boxplot</div>
+  <div class="box-title hands-on-title" id="hands-on-pre-process-data-and-create-pointwise-boxplot"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Pre-process data and create pointwise boxplot</div>
   <p><strong>Load, Smooth and Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Run <strong>Load, Smooth and Plot</strong> with:</p>
   <ul>
     <li>Select the two region datasets <code class="language-plaintext highlighter-rouge">ETn_fixed.bed</code> and <code class="language-plaintext highlighter-rouge">Control.bed</code>.</li>
@@ -740,17 +732,17 @@ https://zenodo.org/record/5589610/files/features_header.tabular
     <li>Select the graphical representation type <strong>Pointwise quantile curves (boxplot)</strong>.</li>
   </ul>
 
-  <p><img src="../../images/load_smooth_and_plot_output.png" alt="Recombination hotspot pointwise boxplot. " loading="lazy" /></p>
+  <p><img src="../../images/load_smooth_and_plot_output.png" alt="Recombination hotspot pointwise boxplot. " width="958" height="765" loading="lazy" /></p>
 </blockquote>
 
 <h1 id="step-2-performing-interval-wise-testing">Step 2: Performing Interval-Wise Testing</h1>
 
-<p>The second tool (IWTomics Test and Plot) statistically evaluates differences in genomic features between groups of regions along the genome. In particular, it implements the Interval-Wise Testing for omics data, an extended version of the Interval-Wise Testing for functional data presented in <a href="https://doi.org/10.1080/10485252.2017.1306627">Pini and Vantini (2017)</a>.</p>
+<p>The second tool (IWTomics Test and Plot) statistically evaluates differences in genomic features between groups of regions along the genome. In particular, it implements the Interval-Wise Testing for omics data, an extended version of the Interval-Wise Testing for functional data presented in <span class="citation"><a href="#Pini2017">Pini and Vantini 2017</a></span>.</p>
 
 <p>It allows to perform multiple two sample permutation tests between pairs of region datasets, on several features. It returns the adjusted p-value curves for every test and all possible scales. Moreover, it creates a graphical representation of the Interval-Wise Testing results and a summary plot (optional) with p-values at the maximum scale. The tool IWTomics Plot with Threshold on Test Scale permits to select the scale to be used in the plots.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-test-for-difference-between-etn-and-control-regions"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Test for difference between ETn and Control regions</div>
+  <div class="box-title hands-on-title" id="hands-on-test-for-difference-between-etn-and-control-regions"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Test for difference between ETn and Control regions</div>
   <p><strong>Test and Plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Run <strong>Test and Plot</strong> with:</p>
   <ul>
     <li>Select the <code class="language-plaintext highlighter-rouge">IWTomicsData Object</code>, <code class="language-plaintext highlighter-rouge">Region Dataset IDs</code>, and <code class="language-plaintext highlighter-rouge">Feature IDs</code> created during <strong>Step 1</strong>.</li>
@@ -760,7 +752,7 @@ https://zenodo.org/record/5589610/files/features_header.tabular
     <li>Select the graphical representation type <strong>Pointwise quantile curves (boxplot)</strong>.</li>
   </ul>
 
-  <p><img src="../../images/test_and_plot_output.png" alt="Recombination hotspot IWT results. " loading="lazy" /></p>
+  <p><img src="../../images/test_and_plot_output.png" alt="Recombination hotspot IWT results. " width="418" height="586" loading="lazy" /></p>
 </blockquote>
 
 <h1 id="step-3-selecting-test-scale">Step 3: Selecting test scale</h1>
@@ -768,7 +760,7 @@ https://zenodo.org/record/5589610/files/features_header.tabular
 <p>The third tool (IWTomics Plot with Threshold on Test Scale) allows to select the scale for the Interval-Wise Testing results. In particular it returns the p-value curves for the different tests performed at the selected scale, and it creates a graphical representation of the Interval-Wise Testing results and a summary plot (optional) at the selected scale.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-change-scale-for-test-results"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Change scale for test results</div>
+  <div class="box-title hands-on-title" id="hands-on-change-scale-for-test-results"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Change scale for test results</div>
   <p><strong>Plot with Threshold on Test Scale</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>: Run <strong>Plot with Threshold on Test Scale</strong> with:</p>
   <ul>
     <li>Select the <code class="language-plaintext highlighter-rouge">IWTomicsData Object with Test Results</code>, <code class="language-plaintext highlighter-rouge">Test IDs</code>, and <code class="language-plaintext highlighter-rouge">Feature IDs</code> created during <strong>Step 2</strong>.</li>
@@ -776,13 +768,13 @@ https://zenodo.org/record/5589610/files/features_header.tabular
     <li>Select the graphical representation type <strong>Pointwise quantile curves (boxplot)</strong>.</li>
   </ul>
 
-  <p><img src="../../images/plot_with_threshold_on_test_scale_output.png" alt="Recombination hotspot IWT results scale 8. " loading="lazy" /></p>
+  <p><img src="../../images/plot_with_threshold_on_test_scale_output.png" alt="Recombination hotspot IWT results scale 8. " width="418" height="584" loading="lazy" /></p>
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-additional-resources"><button class="gtn-boxify-button details" type="button" aria-controls="details-additional-resources" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Additional resources<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-additional-resources"><button class="gtn-boxify-button details" type="button" aria-controls="details-additional-resources" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Additional resources<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
-  <p>Read more about <strong>IWTomics</strong> <a href="https://bioconductor.org/packages/release/bioc/vignettes/IWTomics/inst/doc/IWTomics.pdf">here</a>.</p>
+  <p>Read more about <strong>IWTomics</strong> <a href="https://bioconductor.org/packages/release/bioc/vignettes/IWTomics/inst/doc/IWTomics.pdf">in the documentation (PDF)</a>.</p>
 </blockquote>
 
                 </section>
@@ -846,6 +838,9 @@ https://zenodo.org/record/5589610/files/features_header.tabular
                             Marzia A Cremona, Fabio Cumbo,  <b>Interval-Wise Testing for omics data (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/iwtomics/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/iwtomics/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -867,12 +862,12 @@ https://zenodo.org/record/5589610/files/features_header.tabular
 
 <code id="citation-code">@misc{statistics-iwtomics,
 author = "Marzia A Cremona and Fabio Cumbo",
-title = "Interval-Wise Testing for omics data (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/iwtomics/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Interval-Wise Testing for omics data (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/iwtomics/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -964,19 +959,19 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00269">https://gxy.io/GTN:T00269</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00269">https://gxy.io/GTN:T00269</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -996,7 +991,7 @@ tools:
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1004,9 +999,13 @@ tools:
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

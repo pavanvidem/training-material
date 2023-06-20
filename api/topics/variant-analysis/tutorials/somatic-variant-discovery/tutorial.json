@@ -27,11 +27,13 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/Khaled196/"
     },
     {
-      "name": "Katarzyna Murat",
+      "name": "Katarzyna Kamieniecka",
+      "orcid": "0009-0004-2454-5950",
       "joined": "2018-08",
-      "id": "kpbioteam",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/kpbioteam.json",
-      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpbioteam/"
+      "elixir_node": "uk",
+      "id": "kkamieniecka",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/kkamieniecka.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kkamieniecka/"
     },
     {
       "name": "Wolfgang Maier",
@@ -55,11 +57,12 @@
       "orcid": "0000-0001-6173-5674",
       "joined": "2017-09",
       "elixir_node": "uk",
-      "id": "kpoterlowicz",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/kpoterlowicz.json",
-      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpoterlowicz/"
+      "id": "poterlowicz-lab",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/poterlowicz-lab.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/poterlowicz-lab/"
     }
   ],
+  "short_id": "T00317",
   "url": "/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.html",
   "topic_name": "variant-analysis",
   "tutorial_name": "somatic-variant-discovery",
@@ -86,7 +89,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.json",
@@ -140,6 +144,7 @@
       }
     ]
   },
+  "topic_name_human": "Variant Analysis",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

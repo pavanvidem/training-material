@@ -28,6 +28,7 @@
     }
   ],
   "subtopic": "analyse",
+  "short_id": "T00152",
   "url": "/topics/galaxy-interface/tutorials/intermine/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "intermine",
@@ -54,7 +55,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/intermine/tutorial.json",
@@ -64,11 +66,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
@@ -99,6 +96,7 @@
 
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

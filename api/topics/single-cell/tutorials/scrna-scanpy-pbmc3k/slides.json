@@ -43,6 +43,7 @@
     "mtekman"
   ],
   "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+  "short_id": "S00087",
   "url": "/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/slides.html",
   "topic_name": "single-cell",
   "tutorial_name": "scrna-scanpy-pbmc3k",
@@ -98,7 +99,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.json",
@@ -133,11 +135,6 @@
     ],
     "inexact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
         "usegalaxy": "true"
@@ -159,6 +156,7 @@
       }
     ]
   },
+  "topic_name_human": "Single Cell",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -291,6 +289,5 @@
     "video": false
   },
   "type": "tutorial",
-  "logo": "GTN",
-  "short_id": "S00087"
+  "logo": "GTN"
 }

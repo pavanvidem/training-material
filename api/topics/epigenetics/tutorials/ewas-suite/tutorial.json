@@ -17,11 +17,13 @@
   ],
   "contributors": [
     {
-      "name": "Katarzyna Murat",
+      "name": "Katarzyna Kamieniecka",
+      "orcid": "0009-0004-2454-5950",
       "joined": "2018-08",
-      "id": "kpbioteam",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/kpbioteam.json",
-      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpbioteam/"
+      "elixir_node": "uk",
+      "id": "kkamieniecka",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/kkamieniecka.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kkamieniecka/"
     },
     {
       "name": "Krzysztof Poterlowicz",
@@ -29,11 +31,12 @@
       "orcid": "0000-0001-6173-5674",
       "joined": "2017-09",
       "elixir_node": "uk",
-      "id": "kpoterlowicz",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/kpoterlowicz.json",
-      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/kpoterlowicz/"
+      "id": "poterlowicz-lab",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/poterlowicz-lab.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/poterlowicz-lab/"
     }
   ],
+  "short_id": "T00139",
   "url": "/topics/epigenetics/tutorials/ewas-suite/tutorial.html",
   "topic_name": "epigenetics",
   "tutorial_name": "ewas-suite",
@@ -74,6 +77,7 @@
       }
     ]
   },
+  "topic_name_human": "Epigenetics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@62154c95250c410e8f94ca713c108aad5cba2a05",
+  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -32,15 +32,19 @@ Sentry.init({
 </script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.html">
-	<link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -58,7 +62,7 @@ Sentry.init({
         <meta property="og:title" content="Galaxy Training: Visualization of RNA-Seq results with CummeRbund">
         <meta property="og:description" content="Training material for all kinds of transcriptomics analysis.">
         
-        <meta property="og:image" content="/training-material/assets/images/GTN.png">
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         
         <script type="application/ld+json">
@@ -344,7 +348,7 @@ Sentry.init({
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -391,7 +395,7 @@ Sentry.init({
 
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -404,7 +408,7 @@ Sentry.init({
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -441,14 +445,7 @@ Sentry.init({
 
 
 
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
 
-
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 <article class="tutorial topic-transcriptomics">
     <h1 data-toc-skip>Visualization of RNA-Seq results with CummeRbund</h1>
@@ -458,7 +455,7 @@ Sentry.init({
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/bagnacan/" class="contributor-badge contributor-bagnacan"><img src="https://avatars.githubusercontent.com/bagnacan?s=27" alt="Avatar">Andrea Bagnacani</a>
+		Authors: <a href="/training-material/hall-of-fame/bagnacan/" class="contributor-badge contributor-bagnacan"><img src="https://avatars.githubusercontent.com/bagnacan?s=36" alt="Avatar">Andrea Bagnacani</a>
 	</div>
 
 </div>
@@ -697,12 +694,13 @@ Sentry.init({
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 18, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00302">https://gxy.io/GTN:T00302</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00302">https://gxy.io/GTN:T00302</a> </div>
         
     </blockquote>
     </section>
@@ -756,22 +754,22 @@ Sentry.init({
 
 <p>A typical workflow for the visualization of RNA-Seq data involving CummeRbund:</p>
 
-<p><img src="../../images/transcriptomics_images/cummerbund-rna-seq-viz-with-cummerbund.png" alt="workflow. " loading="lazy" /></p>
+<p><img src="../../images/transcriptomics_images/cummerbund-rna-seq-viz-with-cummerbund.png" alt="workflow. " width="3502" height="1126" loading="lazy" /></p>
 
 <p>CummeRbund reads your RNA-Seq results from a <a href="https://www.sqlite.org/">SQLite</a> database. This database has to be created using CuffDiff’s SQLite output option.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-sqlite-output-with-cuffdiff"><button class="gtn-boxify-button details" type="button" aria-controls="details-sqlite-output-with-cuffdiff" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: SQLite output with CuffDiff<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-sqlite-output-with-cuffdiff"><button class="gtn-boxify-button details" type="button" aria-controls="details-sqlite-output-with-cuffdiff" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: SQLite output with CuffDiff<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Instruct CuffDiff to organize its output in a SQLite database to be read CummeRbund.</p>
 
-  <p><img src="../../images/transcriptomics_images/cummerbund-cuffdiff-set-sqlite.png" alt="SQLite output. " loading="lazy" /></p>
+  <p><img src="../../images/transcriptomics_images/cummerbund-cuffdiff-set-sqlite.png" alt="SQLite output. " width="600" height="122" loading="lazy" /></p>
 </blockquote>
 
 <h1 id="importing-rna-seq-result-data">Importing RNA-Seq result data</h1>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Data upload</div>
 
   <ol>
     <li>
@@ -785,7 +783,7 @@ Sentry.init({
       <p>Import the <a href="https://zenodo.org/record/1001880/files/CuffDiff_SQLite_database.sqlite"><code class="language-plaintext highlighter-rouge">CuffDiff SQLite</code></a> dataset</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <p>Rename the dataset to “RNA-Seq SQLite result data”</p>
@@ -804,7 +802,7 @@ Sentry.init({
 <p>For this tutorial, we are interested in CuffDiff’s tested transcripts for differential expression.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-extract-cuffdiff-results"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Extract CuffDiff results</div>
+  <div class="box-title hands-on-title" id="hands-on-extract-cuffdiff-results"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Extract CuffDiff results</div>
 
   <ol>
     <li><strong>Extract CuffDiff</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
@@ -816,7 +814,7 @@ Sentry.init({
       <p>Inspect the table</p>
 
       <blockquote class="tip">
-        <div class="box-title tip-title" id="tip-inspecting-the-content-of-a-file-in-galaxy"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-inspecting-the-content-of-a-file-in-galaxy" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Inspecting the content of a file in Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title tip-title" id="tip-inspecting-the-content-of-a-file-in-galaxy"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-inspecting-the-content-of-a-file-in-galaxy" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Inspecting the content of a file in Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
         <ul>
           <li>Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> (eye) icon (“View data”) on the right of the file name in the history</li>
@@ -856,7 +854,7 @@ Sentry.init({
   <p>We want to keep only the <em>significant differentially expressed</em> genes.</p>
 
   <blockquote class="question">
-    <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+    <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
 
     <ol>
       <li>How to retain only the significant differentially expressed genes?</li>
@@ -864,7 +862,7 @@ Sentry.init({
     </ol>
 
     <blockquote class="solution">
-      <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+      <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
       <ol>
         <li>We need to filter on the column storing the record’s significance</li>
         <li>Column 14</li>
@@ -878,7 +876,7 @@ Sentry.init({
 <p>We now want to highlight the transcripts whose expression difference, the log<sub>2</sub>(fold_change), has been statistically assessed as both high and significant.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-extract-cuffdiff-s-significant-differentially-expressed-genes"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Extract CuffDiff's significant differentially expressed genes</div>
+  <div class="box-title hands-on-title" id="hands-on-extract-cuffdiff-s-significant-differentially-expressed-genes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Extract CuffDiff's significant differentially expressed genes</div>
 
   <ol>
     <li><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
@@ -889,7 +887,7 @@ Sentry.init({
       </ul>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
         <ol>
           <li>What column stores the information of significance for each record?</li>
           <li>Which conditional expression has to be set to filter all records on the selected column?</li>
@@ -898,7 +896,7 @@ Sentry.init({
         </ol>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
           <ol>
             <li>Column 14</li>
             <li>c14==’yes’</li>
@@ -930,13 +928,13 @@ Sentry.init({
       </ul>
 
       <blockquote class="question">
-        <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
+        <div class="box-title question-title" id="question-2"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
         <ol>
           <li>Which gene transcript has been statistically assessed as both high and significant?</li>
         </ol>
 
         <blockquote class="solution">
-          <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true"></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
           <p>1 LIMCH1</p>
         </blockquote>
       </blockquote>
@@ -955,7 +953,7 @@ Sentry.init({
 <p>In this section we will parametrize CummeRbund to create different kinds of plots from our input data.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualization"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualization</div>
+  <div class="box-title hands-on-title" id="hands-on-visualization"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualization</div>
 
   <ol>
     <li><strong>CummeRbund</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
@@ -981,12 +979,12 @@ Sentry.init({
 
 <p>Our first CummeRbund plot is the “Expression Plot” of the isoforms of gene NDUFV1, which shows the expression differences of isoforms NM_001166102 and NM_007103 among the three conditions. Error bars capture the variability of the distribution of FPKM values: the broader the distribution of FPKM values, the larger the corresponding error bar.</p>
 
-<p><img src="../../images/transcriptomics_images/cummerbund-expression-plot.png" alt="Expression plot. " loading="lazy" /></p>
+<p><img src="../../images/transcriptomics_images/cummerbund-expression-plot.png" alt="Expression plot. " width="800" height="600" loading="lazy" /></p>
 
 <p>Our plot has a modest number of isoforms, and is therefore easy to read. However, with a high number of isoforms and expression variability among different conditions, the plot can look very busy. We can therefore change the visualization type by selecting another type of plot. Let’s change visualization.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualization-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualization</div>
+  <div class="box-title hands-on-title" id="hands-on-visualization-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualization</div>
 
   <ol>
     <li><strong>CummeRbund</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
@@ -1008,12 +1006,12 @@ Sentry.init({
   </ol>
 </blockquote>
 
-<p><img src="../../images/transcriptomics_images/cummerbund-expression-bar-plot.png" alt="Expression bar plot. " loading="lazy" /></p>
+<p><img src="../../images/transcriptomics_images/cummerbund-expression-bar-plot.png" alt="Expression bar plot. " width="800" height="600" loading="lazy" /></p>
 
 <p>The Expression Bar Plot of gene NDUFV1’s replicates NM_001166102 and NM_007103, shows the expression changes across the three aforementioned conditions.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+  <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
   <p>These plots are shown also in <a href="https://vimeo.com/channels/884356/128265982">this</a> Galaxy video tutorial.</p>
 </blockquote>
@@ -1022,7 +1020,7 @@ Sentry.init({
 As a showcase example, let’s consider only the top 5 differentially expressed genes.</p>
 
 <blockquote class="notranslate hands_on">
-  <div class="box-title hands-on-title" id="hands-on-visualization-2"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on: Visualization</div>
+  <div class="box-title hands-on-title" id="hands-on-visualization-2"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualization</div>
 
   <ol>
     <li><strong>CummeRbund</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
@@ -1057,12 +1055,12 @@ As a showcase example, let’s consider only the top 5 differentially expressed 
 
 </blockquote>
 
-<p><img src="../../images/transcriptomics_images/cummerbund-heatmap.png" alt="Expression bar plot. " loading="lazy" /></p>
+<p><img src="../../images/transcriptomics_images/cummerbund-heatmap.png" alt="Expression bar plot. " width="800" height="600" loading="lazy" /></p>
 
 <p>Heatmap of significant differentially expressed isoforms of genes LIMCH1, IFNL2, CXCL11, NUB1. Differences in up- and down-regulation of certain gene isoforms across Patient 1 (hits7), Patient 2 (hits8), and Control (hits9), are visible in the lower and upper part of the heatmap.</p>
 
 <blockquote class="comment">
-  <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
+  <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
   <p>For more sophisticated visualizations of your RNA-Seq analysis results, try selecting different CummeRbund plot options and parametrizations. Have a look also at CummeRbund’s <a href="http://compbio.mit.edu/cummeRbund/manual_2_0.html">manual</a>. Alternatively, you can modify a plot’s style by changing CummeRbund’s R output! CummeRbund’s R outputs are <em>ggplot</em> objects. Look at the <a href="https://github.com/tidyverse/ggplot2">ggplot2 documentation</a> to learn how to change fonts, colors, error bars, and more.</p>
 </blockquote>
@@ -1126,6 +1124,9 @@ In this tutorial we overviewed the advantages of visualizing RNA-Seq results wit
                             Andrea Bagnacani,  <b>Visualization of RNA-Seq results with CummeRbund (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.html">https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
+                        </li>
+                        <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
                         </li>
                     </ol>
@@ -1147,12 +1148,12 @@ In this tutorial we overviewed the advantages of visualizing RNA-Seq results wit
 
 <code id="citation-code">@misc{transcriptomics-rna-seq-viz-with-cummerbund,
 author = "Andrea Bagnacani",
-title = "Visualization of RNA-Seq results with CummeRbund (Galaxy Training Materials)",
-year = "",
-month = "",
-day = ""
-url = "\url{https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "Visualization of RNA-Seq results with CummeRbund (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-cummerbund/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
 @article{Hiltemann_2023,
 	doi = {10.1371/journal.pcbi.1010752},
@@ -1229,19 +1230,19 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/62154c95250c410e8f94ca713c108aad5cba2a05">62154c9</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
 				
 				<p>
-					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00302">https://gxy.io/GTN:T00302</a>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00302">https://gxy.io/GTN:T00302</a>
 				</p>
 				
 				<p>
+					<i>This Material</i>:
 					
-						This material licensed under
-					
+					is licensed under
 					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 						Creative Commons Attribution 4.0 International License
 					</a>
@@ -1261,7 +1262,7 @@ tools: []
 </footer>
 
         <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script src="/training-material/assets/js/popper.min.js"></script>
+	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
         <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
         <script src="/training-material/assets/js/details-element-polyfill.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1269,9 +1270,13 @@ tools: []
         <script src="/training-material/assets/js/main.js"></script>
         <script src="/training-material/assets/js/clipboard.min.js"></script>
         <script>
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

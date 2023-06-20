@@ -120,6 +120,7 @@
   "tags": [
     "R"
   ],
+  "short_id": "T00102",
   "url": "/topics/data-science/tutorials/r-advanced/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "r-advanced",
@@ -172,11 +173,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
         "usegalaxy": "false"
@@ -201,6 +197,7 @@
 
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

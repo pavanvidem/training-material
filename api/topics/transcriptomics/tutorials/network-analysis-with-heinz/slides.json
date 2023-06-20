@@ -27,6 +27,7 @@
     "sanneabeln",
     "ChaoZhang123"
   ],
+  "short_id": "S00096",
   "url": "/topics/transcriptomics/tutorials/network-analysis-with-heinz/slides.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "network-analysis-with-heinz",
@@ -53,7 +54,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/network-analysis-with-heinz/tutorial.json",
@@ -80,11 +82,6 @@
     ],
     "inexact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.no/",
         "name": "UseGalaxy.no",
         "usegalaxy": "true"
@@ -101,6 +98,7 @@
       }
     ]
   },
+  "topic_name_human": "Transcriptomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -157,7 +155,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00096",
   "redirect_from": [
     "/short/transcriptomics/network-analysis-with-heinz/slides",
     "/short/S00096"

@@ -42,6 +42,7 @@
     "beacon",
     "git-gat"
   ],
+  "short_id": "T00325",
   "url": "/topics/admin/tutorials/beacon/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "beacon",
@@ -82,6 +83,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

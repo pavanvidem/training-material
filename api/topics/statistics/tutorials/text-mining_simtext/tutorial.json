@@ -50,6 +50,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/blankenberg/"
     }
   ],
+  "short_id": "T00272",
   "url": "/topics/statistics/tutorials/text-mining_simtext/tutorial.html",
   "topic_name": "statistics",
   "tutorial_name": "text-mining_simtext",
@@ -80,7 +81,8 @@
           "identifier": "",
           "name": ""
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/statistics/tutorials/text-mining_simtext/tutorial.json",
@@ -101,6 +103,7 @@
 
     ]
   },
+  "topic_name_human": "Statistics and machine learning",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

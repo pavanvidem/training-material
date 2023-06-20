@@ -51,6 +51,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/brigidagallone/"
     }
   ],
+  "short_id": "T00132",
   "url": "/topics/ecology/tutorials/phylogeny-data-prep/tutorial.html",
   "topic_name": "ecology",
   "tutorial_name": "phylogeny-data-prep",
@@ -81,7 +82,8 @@
           "identifier": "",
           "name": "Miguel Roncoroni"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/phylogeny-data-prep/tutorial.json",
@@ -112,6 +114,7 @@
 
     ]
   },
+  "topic_name_human": "Ecology",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

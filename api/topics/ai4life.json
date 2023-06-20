@@ -40,9 +40,9 @@
         "How does it work?"
       ],
       "objectives": [
-        "Overview of the BioImage Model Zoo",
-        "Content of the BioImage Model Zoo",
-        "Models of the BioImage Model Zoo"
+        "Overview",
+        "Content",
+        "Models"
       ],
       "time_estimation": "5m",
       "contributors": [
@@ -59,6 +59,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cfusterbarcelo/"
         }
       ],
+      "short_id": "S00106",
       "url": "/topics/ai4life/tutorials/welcome-bioimageio/slides.html",
       "topic_name": "ai4life",
       "tutorial_name": "welcome-bioimageio",
@@ -99,6 +100,7 @@
           }
         ]
       },
+      "topic_name_human": "Image analysis using Deep Learning",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -136,17 +138,14 @@
       "questions": [
         "What is BioImage Model Zoo?",
         "Who participates in the BioImage Model Zoo?",
-        "Who can participate in BioImage Model Zoo?"
+        "Who can participate in the BioImage Model Zoo?"
       ],
       "objectives": [
         "Share what BioImage Model Zoo is.",
         "Provide a general view of what can be done with BioImage Model Zoo.",
-        "Explain who can and should participate into the BioImage Model Zoo."
+        "Explain who can and should contribute to the BioImage Model Zoo."
       ],
       "time_estimation": "5m",
-      "key_points": [
-        "The BioImage Model Zoo is a community-driven AI model repository to facilitate the adoption of AI methods among the bioimage community by providing easy access to pretrained AI models."
-      ],
       "contributors": [
         {
           "name": "Caterina Fuster-Barceló",
@@ -161,6 +160,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cfusterbarcelo/"
         }
       ],
+      "short_id": "S00105",
       "url": "/topics/ai4life/tutorials/getting-started/slides.html",
       "topic_name": "ai4life",
       "tutorial_name": "getting-started",
@@ -201,6 +201,7 @@
           }
         ]
       },
+      "topic_name_human": "Image analysis using Deep Learning",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -230,22 +231,20 @@
       "layout": "tutorial_slides_ai4life",
       "logo": "topics/ai4life/images/AI4Life-logo_giraffe-nodes.png",
       "video": true,
-      "title": "Welcome to the BioImage Model Zoo",
+      "title": "Contribute to the BioImage.IO models",
       "tags": [
         "bioimageio",
         "image analysis"
       ],
       "questions": [
-        "What can be found in the BioImage Model Zoo?",
-        "Why is it worth trying?",
-        "How does it work?"
+        "What is contained in a BioImage.IO model?",
+        "Which are the requirements to contribute?",
+        "How to contribute?"
       ],
       "objectives": [
-        "Overview of the BioImage Model Zoo",
-        "Content of the BioImage Model Zoo",
-        "Models of the BioImage Model Zoo"
+        "Get to know how to contribute with models to the BioImage.IO"
       ],
-      "time_estimation": "5m",
+      "time_estimation": "10m",
       "contributors": [
         {
           "name": "Caterina Fuster-Barceló",
@@ -260,6 +259,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cfusterbarcelo/"
         }
       ],
+      "short_id": "S00107",
       "url": "/topics/ai4life/tutorials/contribute-materials/slides.html",
       "topic_name": "ai4life",
       "tutorial_name": "contribute-materials",
@@ -300,6 +300,7 @@
           }
         ]
       },
+      "topic_name_human": "Image analysis using Deep Learning",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

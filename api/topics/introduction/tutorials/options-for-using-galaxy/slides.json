@@ -18,6 +18,7 @@
     "nsoranzo",
     "alaaelghamry"
   ],
+  "short_id": "S00075",
   "url": "/topics/introduction/tutorials/options-for-using-galaxy/slides.html",
   "topic_name": "introduction",
   "tutorial_name": "options-for-using-galaxy",
@@ -58,6 +59,7 @@
       }
     ]
   },
+  "topic_name_human": "Introduction to Galaxy Analyses",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -78,7 +80,6 @@
     "video": true
   },
   "type": "tutorial",
-  "short_id": "S00075",
   "redirect_from": [
     "/short/introduction/options-for-using-galaxy/slides",
     "/short/S00075"

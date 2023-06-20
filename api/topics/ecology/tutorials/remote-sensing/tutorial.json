@@ -28,6 +28,7 @@
       "yvanlebras"
     ]
   },
+  "short_id": "T00333",
   "url": "/topics/ecology/tutorials/remote-sensing/tutorial.html",
   "topic_name": "ecology",
   "tutorial_name": "remote-sensing",
@@ -59,7 +60,8 @@
           "identifier": "Marie59",
           "name": "Marie Josse"
         }
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/remote-sensing/tutorial.json",
@@ -88,6 +90,7 @@
 
     ]
   },
+  "topic_name_human": "Ecology",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

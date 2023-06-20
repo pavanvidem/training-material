@@ -36,6 +36,7 @@
     "delphine-l",
     "slugger70"
   ],
+  "short_id": "S00035",
   "url": "/topics/assembly/tutorials/unicycler-assembly/slides.html",
   "topic_name": "assembly",
   "tutorial_name": "unicycler-assembly",
@@ -62,7 +63,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/unicycler-assembly/tutorial.json",
@@ -75,11 +77,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://galaxy.genouest.org",
         "name": "Galaxy@GenOuest",
@@ -129,6 +126,7 @@
       }
     ]
   },
+  "topic_name_human": "Assembly",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -186,7 +184,6 @@
   "type": "tutorial",
   "logo": "GTN",
   "class": "enlarge120",
-  "short_id": "S00035",
   "redirect_from": [
     "/short/assembly/unicycler-assembly/slides",
     "/short/S00035"

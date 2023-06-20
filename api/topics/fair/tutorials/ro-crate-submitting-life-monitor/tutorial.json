@@ -18,7 +18,7 @@
   "tags": [
     "ro-crate"
   ],
-  "priority": 1,
+  "priority": 4,
   "contributions": {
     "authorship": [
       "ilveroluca",
@@ -46,6 +46,7 @@
   "abbreviations": {
     "LM": "Life Monitor"
   },
+  "short_id": "T00342",
   "url": "/topics/fair/tutorials/ro-crate-submitting-life-monitor/tutorial.html",
   "topic_name": "fair",
   "tutorial_name": "ro-crate-submitting-life-monitor",
@@ -86,6 +87,7 @@
       }
     ]
   },
+  "topic_name_human": "FAIR Data, Workflows, and Research",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

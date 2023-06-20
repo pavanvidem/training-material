@@ -10,6 +10,7 @@
     "martenson"
   ],
   "subtopic": "maintenance",
+  "short_id": "S00019",
   "url": "/topics/admin/tutorials/production/slides.html",
   "topic_name": "admin",
   "tutorial_name": "production",
@@ -50,6 +51,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -70,7 +72,6 @@
     "video": true
   },
   "type": "tutorial",
-  "short_id": "S00019",
   "redirect_from": [
     "/short/admin/production/slides",
     "/short/S00019"

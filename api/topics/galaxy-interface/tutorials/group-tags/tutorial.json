@@ -29,6 +29,7 @@
     }
   ],
   "subtopic": "manage",
+  "short_id": "T00149",
   "url": "/topics/galaxy-interface/tutorials/group-tags/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "group-tags",
@@ -69,6 +70,7 @@
       }
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

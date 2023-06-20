@@ -94,6 +94,7 @@
       ]
     }
   ],
+  "short_id": "T00002",
   "url": "/topics/admin/tutorials/connect-to-compute-cluster/tutorial.html",
   "topic_name": "admin",
   "tutorial_name": "connect-to-compute-cluster",
@@ -134,6 +135,7 @@
       }
     ]
   },
+  "topic_name_human": "Galaxy Server administration",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

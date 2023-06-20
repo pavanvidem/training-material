@@ -63,6 +63,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
     }
   ],
+  "short_id": "T00201",
   "url": "/topics/metagenomics/tutorials/general-tutorial/tutorial.html",
   "topic_name": "metagenomics",
   "tutorial_name": "general-tutorial",
@@ -89,7 +90,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "wgs-worklow.ga",
@@ -102,7 +104,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/general-tutorial/tutorial.json",
@@ -155,6 +158,7 @@
       }
     ]
   },
+  "topic_name_human": "Metagenomics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

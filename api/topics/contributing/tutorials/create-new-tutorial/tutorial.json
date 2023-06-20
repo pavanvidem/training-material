@@ -95,6 +95,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/"
     }
   ],
+  "short_id": "T00057",
   "url": "/topics/contributing/tutorials/create-new-tutorial/tutorial.html",
   "topic_name": "contributing",
   "tutorial_name": "create-new-tutorial",
@@ -156,7 +157,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     },
     {
       "workflow": "main_workflow.ga",
@@ -169,7 +171,8 @@
       "license": null,
       "creators": [
 
-      ]
+      ],
+      "test_results": null
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/contributing/tutorials/create-new-tutorial/tutorial.json",
@@ -191,11 +194,6 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://test.galaxyproject.org/",
-        "name": "Galaxy Test",
-        "usegalaxy": "false"
-      },
-      {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
         "usegalaxy": "true"
@@ -210,6 +208,7 @@
 
     ]
   },
+  "topic_name_human": "Contributing to the Galaxy Training Material",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

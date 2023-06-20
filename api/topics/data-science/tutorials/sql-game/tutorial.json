@@ -85,6 +85,7 @@
     "game",
     "SQL"
   ],
+  "short_id": "T00108",
   "url": "/topics/data-science/tutorials/sql-game/tutorial.html",
   "topic_name": "data-science",
   "tutorial_name": "sql-game",
@@ -125,6 +126,7 @@
       }
     ]
   },
+  "topic_name_human": "Foundations of Data Science",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

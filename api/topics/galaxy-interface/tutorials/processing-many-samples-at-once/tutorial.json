@@ -33,6 +33,7 @@
     }
   ],
   "subtopic": "manage",
+  "short_id": "T00156",
   "url": "/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html",
   "topic_name": "galaxy-interface",
   "tutorial_name": "processing-many-samples-at-once",
@@ -73,6 +74,7 @@
       }
     ]
   },
+  "topic_name_human": "Using Galaxy and Managing your Data",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,

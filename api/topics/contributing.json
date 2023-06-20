@@ -155,6 +155,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/"
         }
       ],
+      "short_id": "T00057",
       "url": "/topics/contributing/tutorials/create-new-tutorial/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial",
@@ -216,7 +217,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         },
         {
           "workflow": "main_workflow.ga",
@@ -229,7 +231,8 @@
           "license": null,
           "creators": [
 
-          ]
+          ],
+          "test_results": null
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/contributing/tutorials/create-new-tutorial/tutorial.json",
@@ -251,11 +254,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
@@ -270,6 +268,7 @@
 
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -397,6 +396,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
         }
       ],
+      "short_id": "S00042",
       "url": "/topics/contributing/tutorials/introduction/slides.html",
       "topic_name": "contributing",
       "tutorial_name": "introduction",
@@ -437,6 +437,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -546,6 +547,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "S00040",
       "url": "/topics/contributing/tutorials/create-new-tutorial-slides/slides.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial-slides",
@@ -616,6 +618,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -695,6 +698,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
         }
       ],
+      "short_id": "T00064",
       "url": "/topics/contributing/tutorials/github-command-line-contribution/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "github-command-line-contribution",
@@ -735,6 +739,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -799,6 +804,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "T00066",
       "url": "/topics/contributing/tutorials/gitpod/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "gitpod",
@@ -869,6 +875,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -927,6 +934,7 @@
         "API": "Application Programming Interface",
         "JSON": "JavaScript Object Notation"
       },
+      "short_id": "T00058",
       "url": "/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial-content",
@@ -948,16 +956,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://cpt.tamu.edu/galaxy-public/",
-            "name": "Center for Phage Technology (CPT)",
-            "usegalaxy": "false"
-          },
-          {
-            "url": "https://test.galaxyproject.org/",
-            "name": "Galaxy Test",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
@@ -1007,6 +1005,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1149,6 +1148,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
         }
       ],
+      "short_id": "T00063",
       "url": "/topics/contributing/tutorials/generating-pdf/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "generating-pdf",
@@ -1189,6 +1189,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1255,6 +1256,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
         }
       ],
+      "short_id": "T00065",
       "url": "/topics/contributing/tutorials/github-interface-contribution/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "github-interface-contribution",
@@ -1295,6 +1297,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1420,6 +1423,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00060",
       "url": "/topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial-technical",
@@ -1460,6 +1464,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1558,6 +1563,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "T00061",
       "url": "/topics/contributing/tutorials/create-new-tutorial-tours/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial-tours",
@@ -1598,6 +1604,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1675,6 +1682,7 @@
           "erasmusplus"
         ]
       },
+      "short_id": "T00062",
       "url": "/topics/contributing/tutorials/design/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "design",
@@ -1749,6 +1757,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -1871,12 +1880,14 @@
           "fpsom",
           "allegravia",
           "ppalagi",
+          "gallardoalba",
           "elixir-goblet-ttt"
         ],
         "funding": [
           "erasmusplus"
         ]
       },
+      "short_id": "T00067",
       "url": "/topics/contributing/tutorials/learning-principles/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "learning-principles",
@@ -1959,6 +1970,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2027,6 +2039,15 @@
           "id": "ppalagi",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/ppalagi.json",
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/ppalagi/"
+        },
+        {
+          "name": "Cristóbal Gallardo",
+          "joined": "2020-11",
+          "elixir_node": "de",
+          "orcid": "0000-0002-5752-2155",
+          "id": "gallardoalba",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/gallardoalba.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/"
         },
         {
           "name": "ELIXIR Goblet Train the Trainers",
@@ -2126,6 +2147,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "short_id": "T00069",
       "url": "/topics/contributing/tutorials/running-jekyll/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "running-jekyll",
@@ -2166,6 +2188,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2223,6 +2246,7 @@
           "dirowa"
         ]
       },
+      "short_id": "T00068",
       "url": "/topics/contributing/tutorials/python/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "python",
@@ -2263,6 +2287,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2360,6 +2385,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00059",
       "url": "/topics/contributing/tutorials/create-new-tutorial-quiz/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-tutorial-quiz",
@@ -2410,6 +2436,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2473,6 +2500,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00055",
       "url": "/topics/contributing/tutorials/admin-knitting/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "admin-knitting",
@@ -2513,6 +2541,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2562,6 +2591,7 @@
           "hexylena"
         ]
       },
+      "short_id": "T00056",
       "url": "/topics/contributing/tutorials/create-new-topic/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "create-new-topic",
@@ -2602,6 +2632,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2707,6 +2738,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00071",
       "url": "/topics/contributing/tutorials/slides-with-video/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "slides-with-video",
@@ -2747,6 +2779,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,
@@ -2804,6 +2837,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
         }
       ],
+      "short_id": "T00070",
       "url": "/topics/contributing/tutorials/schemas/tutorial.html",
       "topic_name": "contributing",
       "tutorial_name": "schemas",
@@ -2844,6 +2878,7 @@
           }
         ]
       },
+      "topic_name_human": "Contributing to the Galaxy Training Material",
       "admin_install": {
         "install_tool_dependencies": true,
         "install_repository_dependencies": true,

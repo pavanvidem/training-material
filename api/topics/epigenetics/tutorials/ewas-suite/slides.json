@@ -16,9 +16,10 @@
     "Time and cost efficiency followed by high sample output, and overall quantitative accuracy and reproducibility made Infinium Human Methylation BeadChip one of the most widely used arrays on the market."
   ],
   "contributors": [
-    "kpoterlowicz",
-    "kpbioteam"
+    "kkamieniecka",
+    "poterlowicz-lab"
   ],
+  "short_id": "S00057",
   "url": "/topics/epigenetics/tutorials/ewas-suite/slides.html",
   "topic_name": "epigenetics",
   "tutorial_name": "ewas-suite",
@@ -59,6 +60,7 @@
       }
     ]
   },
+  "topic_name_human": "Epigenetics",
   "admin_install": {
     "install_tool_dependencies": true,
     "install_repository_dependencies": true,
@@ -81,7 +83,6 @@
   },
   "type": "tutorial",
   "logo": "GTN",
-  "short_id": "S00057",
   "redirect_from": [
     "/short/epigenetics/ewas-suite/slides",
     "/short/S00057"
