@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
+  release: "galaxy-training-network@3b9ae5e893e360fc00670f1c6610c8462795f1c7",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -39,18 +39,20 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1689125988' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1689125988' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
-
 
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Admin Training Course">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-04-14 08:53:33 +0000">
+<meta name="DC.date" content="2023-06-27 15:38:42 +0000">
 
         
         
@@ -66,7 +68,7 @@ Sentry.init({
         
     </head>
     <body data-spy="scroll" data-target="#toc">
-        <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
+        <script src='/training-material/assets/js/bundle.theme.js?v=1689125988'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -239,7 +241,7 @@ the events.</p>
 
 
     
-        <h3 id="st-module-1-setting-up-galaxy-with-ansible">Module 1: Setting up Galaxy with Ansible</h3>
+        <h3 id="st-monday-setting-up-galaxy-with-ansible">Monday: Setting up Galaxy with Ansible</h3>
         <p><p>This module covers getting a Galaxy server setup with Ansible, a server you will develop furhter in the rest of the modules</p>
 </p>
 
@@ -971,7 +973,7 @@ the events.</p>
 
 
     
-        <h3 id="st-module-2-making-the-server-useful">Module 2: Making the server useful</h3>
+        <h3 id="st-tuesday-making-the-server-useful">Tuesday: Making the server useful</h3>
         <p><p>Here we pivot to focus on making our server useful; adding tools and data,
 configuring quotas and authentication</p>
 </p>
@@ -2919,7 +2921,7 @@ configuring quotas and authentication</p>
 
 
     
-        <h3 id="st-module-3-clusters">Module 3: Clusters</h3>
+        <h3 id="st-wednesday-clusters">Wednesday: Clusters</h3>
         <p>
 </p>
 
@@ -3718,7 +3720,7 @@ configuring quotas and authentication</p>
 
 
     
-        <h3 id="st-module-4">Module 4</h3>
+        <h3 id="st-thursday-expanding">Thursday: Expanding</h3>
         <p>
 </p>
 
@@ -4819,6 +4821,137 @@ configuring quotas and authentication</p>
          </tr>
        
     
+        <!-- MAT: admin/sentry -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/admin/tutorials/sentry/tutorial.html">
+                Monitoring Galaxy and Pulsar with Sentry
+            </a>
+            
+
+
+            <div class="extra">
+            
+            
+              
+              <a href="/training-material/search?query=ansible" class="label label-default tutorial_tag" style="--color-primary: #ff9cd8; --color-darker: #ff75ce; --color-dimmed: #ff89d3;" title="Click to show all tutorials tagged ansible">ansible</a>
+              
+              <a href="/training-material/search?query=git-gat" class="label label-default tutorial_tag" style="--color-primary: #ffa2a6; --color-darker: #ff8086; --color-dimmed: #ff9296;" title="Click to show all tutorials tagged git-gat">git-gat</a>
+              
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
+
+<!-- video slides -->
+
+
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/admin/tutorials/sentry/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fadmin%2Ftutorials%2Fsentry%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+
+<!-- video slides -->
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/admin/tutorials/sentry/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fadmin%2Ftutorials%2Fsentry%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+ </td>
+          <td> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ </td>
+
+          
+
+          
+         </tr>
+       
+    
   </tbody>
 </table>
 
@@ -4826,7 +4959,7 @@ configuring quotas and authentication</p>
 
 
     
-        <h3 id="st-module-5-grab-bag">Module 5: Grab bag</h3>
+        <h3 id="st-friday-grab-bag">Friday: Grab bag</h3>
         <p><p>Here we have some additional topics, some of which are not admin related.
 Please feel free to pick and choose the tutorials that are interesting for you.</p>
 </p>
@@ -5950,6 +6083,21 @@ Please feel free to pick and choose the tutorials that are interesting for you.<
     
 </section>
 
+<hr style="margin-top: 6em"/>
+<section>
+	<!-- Maintained by -->
+	<h2 id="maintainers">Maintained by</h2>
+	<p>This material is maintained by:</p>
+	
+	
+
+	<h2 id="funders">Funders</h2>
+	<p>This material was funded by:</p>
+	
+	
+
+</section>
+
         </div>
         <footer>
 	<hr />
@@ -5964,7 +6112,7 @@ Please feel free to pick and choose the tutorials that are interesting for you.<
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/3b9ae5e893e360fc00670f1c6610c8462795f1c7">3b9ae5e</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -5991,41 +6139,8 @@ Please feel free to pick and choose the tutorials that are interesting for you.<
     </div>
 </footer>
 
-        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
-        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+
+        <script src='/training-material/assets/js/bundle.main.js?v=1689125988'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script src="/training-material/assets/js/main.js"></script>
-        <script src="/training-material/assets/js/clipboard.min.js"></script>
-        <script>
-        document.querySelectorAll('div.highlight').forEach((snippet) => {
-                // Google translate has additional #text nodes mixed in with
-                // the pre for some reason.
-                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
-                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
-                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-                }
-        });
-
-        var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-            target:function(trigger){return trigger.nextElementSibling;
-        }});
-        </script>
-        
-
-        <script type="text/javascript">
-            if(window.location.hostname === "galaxyproject.github.io") {
-                // Redirect
-                var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-                $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-                window.setTimeout(function(){
-                    window.location.href = redirect;
-                }, 5000)
-
-            }
-        </script>
     </body>
 </html>

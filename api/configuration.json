@@ -127,6 +127,28 @@
     "pt": "Português",
     "ar": "العربية"
   },
+  "javascript_bundles": {
+    "theme": {
+      "preload": true,
+      "resources": [
+        "assets/js/theme.js"
+      ],
+      "timestamp": 1689125988
+    },
+    "main": {
+      "preload": true,
+      "resources": [
+        "assets/js/jquery.slim.min.js",
+        "assets/js/popper.min.js",
+        "assets/js/bootstrap.min.js",
+        "assets/js/bootstrap-toc.min.js",
+        "assets/js/clipboard.min.js",
+        "assets/js/list.min.js",
+        "assets/js/main.js"
+      ],
+      "timestamp": 1689125988
+    }
+  },
   "figurify": {
     "skip_empty": true,
     "skip_layouts": [
@@ -271,8 +293,8 @@
   "serving": false,
   "boxify": {
   },
-  "git_revision": "9142c8a06a76631ea66583734e4821acd24ed772",
-  "git_revision_short": "9142c8a",
+  "git_revision": "3b9ae5e893e360fc00670f1c6610c8462795f1c7",
+  "git_revision_short": "3b9ae5e",
   "gtn_fork": "pavanvidem",
   "git_tags": [
 
@@ -280,5 +302,5 @@
   "git_tags_recent": [
 
   ],
-  "age": 8.032854209445585
+  "age": 8.035592060232718
 }

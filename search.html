@@ -17,7 +17,7 @@
 <script type="text/javascript">
 Sentry.init({
   dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@9142c8a06a76631ea66583734e4821acd24ed772",
+  release: "galaxy-training-network@3b9ae5e893e360fc00670f1c6610c8462795f1c7",
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
   sampleRate: 0.1,
   tracesSampleRate: 0.1,
@@ -39,11 +39,13 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1689125988' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1689125988' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
-
 
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
@@ -66,7 +68,7 @@ Sentry.init({
         
     </head>
     <body data-spy="scroll" data-target="#toc">
-        <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
+        <script src='/training-material/assets/js/bundle.theme.js?v=1689125988'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -842,6 +844,16 @@ var resources = {
     ],
     "url": "/training-material/topics/assembly/tutorials/mrsa-illumina/tutorial.html"
   },
+  "/topics/assembly/tutorials/ERGA-post-assembly-QC/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Assembly",
+    "title": "ERGA post-assembly QC",
+    "contributors": "Fabian Recktenwald, Cristóbal Gallardo",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/assembly/tutorials/ERGA-post-assembly-QC/tutorial.html"
+  },
   "/topics/assembly/tutorials/assembly-with-preprocessing/tutorial.html": {
     "type": "Tutorial",
     "topic": "SARS-CoV-2",
@@ -1139,7 +1151,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Variant Analysis",
     "title": "Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data",
-    "contributors": "Wolfgang Maier, Bérénice Batut",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged covid19\" href=\"/training-material/search?query=covid19\" style=\"--color-primary: #ff9cd7; --color-darker: #ff76cd; --color-dimmed: #ff8ad2;\">covid19</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ff9dd2; --color-darker: #ff77c6; --color-dimmed: #ff8bcc;\">virology</a>",
@@ -1169,6 +1181,16 @@ var resources = {
       "<a class=\"label label-default\" title=\"Show all tutorials tagged covid19\" href=\"/training-material/search?query=covid19\" style=\"--color-primary: #ff9cd7; --color-darker: #ff76cd; --color-dimmed: #ff8ad2;\">covid19</a>"
     ],
     "url": "/training-material/topics/galaxy-interface/tutorials/ncbi-sarf/tutorial.html"
+  },
+  "/topics/sequence-analysis/tutorials/sars-with-galaxy-on-anvil/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Sequence analysis",
+    "title": "SARS-CoV-2 Viral Sample Alignment and Variant Visualization",
+    "contributors": "",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged covid19\" href=\"/training-material/search?query=covid19\" style=\"--color-primary: #ff9cd7; --color-darker: #ff76cd; --color-dimmed: #ff8ad2;\">covid19</a>"
+    ],
+    "url": "/training-material/topics/sequence-analysis/tutorials/sars-with-galaxy-on-anvil/tutorial.html"
   },
   "/topics/dev/tutorials/tool-generators/tutorial.html": {
     "type": "Tutorial",
@@ -1474,7 +1496,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Ecology",
     "title": "Biodiversity data exploration",
-    "contributors": "Olivier Norvez, Marie Josse, Coline Royaux, Yvan Le Bras",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged taxonomic data\" href=\"/training-material/search?query=taxonomic data\" style=\"--color-primary: #66d400; --color-darker: #5abd00; --color-dimmed: #60c800;\">taxonomic data</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged data quality\" href=\"/training-material/search?query=data quality\" style=\"--color-primary: #ff9dcf; --color-darker: #ff78c2; --color-dimmed: #ff8bc9;\">data quality</a>"
@@ -1884,7 +1906,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Genome Annotation",
     "title": "Masking repeats with RepeatMasker",
-    "contributors": "Anthony Bretaudeau, Alexandre Cormier, Laura Leroi, Erwan Corre, Stéphanie Robin, Erasmus+ Programme, Jonathan Kreplak",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged eukaryote\" href=\"/training-material/search?query=eukaryote\" style=\"--color-primary: #4ad700; --color-darker: #41bf00; --color-dimmed: #45cb00;\">eukaryote</a>"
     ],
@@ -1894,7 +1916,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Genome Annotation",
     "title": "Refining Genome Annotations with Apollo (prokaryotes)",
-    "contributors": "Anthony Bretaudeau, Helena Rasche, Nathan Dunn, Mateo Boudet, Erasmus+ Programme",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged prokaryote\" href=\"/training-material/search?query=prokaryote\" style=\"--color-primary: #beb2ff; --color-darker: #aa99ff; --color-dimmed: #b4a5ff;\">prokaryote</a>"
     ],
@@ -2002,7 +2024,7 @@ var resources = {
     "type": "Tutorial",
     "topic": "Genome Annotation",
     "title": "Refining Genome Annotations with Apollo (eukaryotes)",
-    "contributors": "Anthony Bretaudeau, Erasmus+ Programme",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged eukaryote\" href=\"/training-material/search?query=eukaryote\" style=\"--color-primary: #4ad700; --color-darker: #41bf00; --color-dimmed: #45cb00;\">eukaryote</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged cyoa\" href=\"/training-material/search?query=cyoa\" style=\"--color-primary: #ff9ae5; --color-darker: #ff71df; --color-dimmed: #ff87e2;\">cyoa</a>"
@@ -2429,12 +2451,23 @@ var resources = {
     "type": "Tutorial",
     "topic": "Variant Analysis",
     "title": "Pox virus genome analysis from tiled-amplicon sequencing data",
-    "contributors": "Wolfgang Maier, Tomas Klingström",
+    "contributors": "",
     "tags": [
       "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ff9dd2; --color-darker: #ff77c6; --color-dimmed: #ff8bcc;\">virology</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #85d000; --color-darker: #76b900; --color-dimmed: #7dc400;\">one-health</a>"
     ],
     "url": "/training-material/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.html"
+  },
+  "/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html": {
+    "type": "Tutorial",
+    "topic": "Variant Analysis",
+    "title": "Avian influenza viral strain analysis from gene segment sequencing data",
+    "contributors": "Wolfgang Maier",
+    "tags": [
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ff9dd2; --color-darker: #ff77c6; --color-dimmed: #ff8bcc;\">virology</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged one-health\" href=\"/training-material/search?query=one-health\" style=\"--color-primary: #85d000; --color-darker: #76b900; --color-dimmed: #7dc400;\">one-health</a>"
+    ],
+    "url": "/training-material/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html"
   },
   "/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html": {
     "type": "Tutorial",
@@ -3000,8 +3033,8 @@ var resources = {
       "<a class=\"label label-default\" title=\"Show all tutorials tagged single-cell\" href=\"/training-material/search?query=single-cell\" style=\"--color-primary: #00d2c1; --color-darker: #00bbac; --color-dimmed: #00c6b7;\">single-cell</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged trajectory-analysis\" href=\"/training-material/search?query=trajectory-analysis\" style=\"--color-primary: #00d595; --color-darker: #00be84; --color-dimmed: #00ca8c;\">trajectory-analysis</a>",
       "<a class=\"label label-default\" title=\"Show all tutorials tagged paper-replication\" href=\"/training-material/search?query=paper-replication\" style=\"--color-primary: #00d1ce; --color-darker: #00bab8; --color-dimmed: #00c5c3;\">paper-replication</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged jupyter-notebook\" href=\"/training-material/search?query=jupyter-notebook\" style=\"--color-primary: #00cfdf; --color-darker: #00b8c7; --color-dimmed: #00c4d3;\">jupyter-notebook</a>",
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged rmarkdown-notebook\" href=\"/training-material/search?query=rmarkdown-notebook\" style=\"--color-primary: #c9aeff; --color-darker: #ba93ff; --color-dimmed: #c2a0ff;\">rmarkdown-notebook</a>"
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged rmarkdown-notebook\" href=\"/training-material/search?query=rmarkdown-notebook\" style=\"--color-primary: #c9aeff; --color-darker: #ba93ff; --color-dimmed: #c2a0ff;\">rmarkdown-notebook</a>",
+      "<a class=\"label label-default\" title=\"Show all tutorials tagged jupyter-notebook\" href=\"/training-material/search?query=jupyter-notebook\" style=\"--color-primary: #00cfdf; --color-darker: #00b8c7; --color-dimmed: #00c4d3;\">jupyter-notebook</a>"
     ],
     "url": "/training-material/topics/single-cell/tutorials/scrna-case_monocle3-rstudio/tutorial.html"
   },
@@ -3555,16 +3588,6 @@ var resources = {
 
     ],
     "url": "/training-material/topics/variant-analysis/tutorials/mapping-by-sequencing/tutorial.html"
-  },
-  "/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html": {
-    "type": "Tutorial",
-    "topic": "Variant Analysis",
-    "title": "Avian influenza viral strain analysis from gene segment sequencing data",
-    "contributors": "Wolfgang Maier",
-    "tags": [
-      "<a class=\"label label-default\" title=\"Show all tutorials tagged virology\" href=\"/training-material/search?query=virology\" style=\"--color-primary: #ff9dd2; --color-darker: #ff77c6; --color-dimmed: #ff8bcc;\">virology</a>"
-    ],
-    "url": "/training-material/topics/variant-analysis/tutorials/aiv-analysis/tutorial.html"
   },
   "/topics/visualisation/tutorials/circos/tutorial.html": {
     "type": "Tutorial",
@@ -4175,6 +4198,16 @@ var resources = {
 
     ],
     "url": "/training-material/topics/proteomics/tutorials/metaproteomics/faqs/comparing_measurement.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/compining_fastq_files_of_one_sample.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "After sequencing with MinKNOW software, we get many fastq files, do these files need to be combined into one file before uploading or is it possible to upload them all at once?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/compining_fastq_files_of_one_sample.html"
   },
   "/topics/proteomics/tutorials/maxquant-msstats-dda-lfq/faqs/contaminants.html": {
     "type": "FAQ",
@@ -5506,6 +5539,26 @@ var resources = {
     ],
     "url": "/training-material/faqs/galaxy/histories_unsharing_histories.html"
   },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/host_filtering_filter.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "What does `^.*Gallus|Homo|Bos.*$` mean?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/host_filtering_filter.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/host_removal.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "For preprocessing part with host removal: Where do you find the abbreviations for each host species available (e.g. bos is cow, homo is human..)?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/host_removal.html"
+  },
   "/topics/assembly/faqs/hybrid_assembly.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -5525,6 +5578,16 @@ var resources = {
 
     ],
     "url": "/training-material/topics/contributing/tutorials/create-new-tutorial-content/faqs/icons_list.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/importing_genomes.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "From where can I import other genomes?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/importing_genomes.html"
   },
   "/topics/transcriptomics/tutorials/ref-based/faqs/infer_experiments.html": {
     "type": "FAQ",
@@ -5745,6 +5808,16 @@ var resources = {
 
     ],
     "url": "/training-material/topics/dev/tutorials/tool-generators/faqs/job_grey.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/kalamri_database_filtering.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Is there a way to filter on the Kalimari database?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/kalamri_database_filtering.html"
   },
   "/topics/variant-analysis/tutorials/tb-variant-analysis/faqs/key-error.html": {
     "type": "FAQ",
@@ -6216,6 +6289,16 @@ var resources = {
     ],
     "url": "/training-material/topics/galaxy-interface/tutorials/ncbi-sarf/faqs/quality-scores.html"
   },
+  "/topics/sequence-analysis/faqs/quality_score.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Quality Scores",
+    "contributors": "Bérénice Batut, Natalie Kucher, Helena Rasche",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/sequence-analysis/faqs/quality_score.html"
+  },
   "/topics/transcriptomics/tutorials/mirna-target-finder/faqs/quantification_alternatives.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -6285,6 +6368,16 @@ var resources = {
 
     ],
     "url": "/training-material/faqs/galaxy/reference_genomes_troubleshooting_custom_genome.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/remaining_human_sequences.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Isn't it awkward to find so many humans sequences there, since we filter for them before?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/remaining_human_sequences.html"
   },
   "/topics/dev/tutorials/tool-generators/faqs/replace_manual_install.html": {
     "type": "FAQ",
@@ -6856,6 +6949,16 @@ var resources = {
     ],
     "url": "/training-material/topics/single-cell/faqs/variable_genes.html"
   },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/variant_calling_quality.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Can we use snippy pipeline instead for the phylogenetic analysis?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/variant_calling_quality.html"
+  },
   "/topics/proteomics/tutorials/proteogenomics-dbcreation/faqs/variant_mapping_file.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -7256,6 +7359,26 @@ var resources = {
     ],
     "url": "/training-material/topics/proteomics/tutorials/encyclopedia/faqs/without_spectral_library.html"
   },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/worflow_and_sequencing_techniques.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Can we also use this workflow on Illumina raw reads?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/worflow_and_sequencing_techniques.html"
+  },
+  "/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/workflow_and_isolations.html": {
+    "type": "FAQ",
+    "topic": "FAQ",
+    "title": "Do the pipelines work with both isolates and direct from raw meat? or only isolate?",
+    "contributors": "Engy Nasr",
+    "tags": [
+
+    ],
+    "url": "/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/faqs/workflow_and_isolations.html"
+  },
   "/faqs/galaxy/workflows_annotate.html": {
     "type": "FAQ",
     "topic": "FAQ",
@@ -7536,7 +7659,7 @@ fetch('/training-material/search.json')
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/9142c8a06a76631ea66583734e4821acd24ed772">9142c8a</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/3b9ae5e893e360fc00670f1c6610c8462795f1c7">3b9ae5e</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -7563,41 +7686,8 @@ fetch('/training-material/search.json')
     </div>
 </footer>
 
-        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
-	<script src="/training-material/assets/js/popper.min.js"></script> <!-- used in dropdown menus -->
-        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+
+        <script src='/training-material/assets/js/bundle.main.js?v=1689125988'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script src="/training-material/assets/js/main.js"></script>
-        <script src="/training-material/assets/js/clipboard.min.js"></script>
-        <script>
-        document.querySelectorAll('div.highlight').forEach((snippet) => {
-                // Google translate has additional #text nodes mixed in with
-                // the pre for some reason.
-                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
-                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
-                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-                }
-        });
-
-        var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-            target:function(trigger){return trigger.nextElementSibling;
-        }});
-        </script>
-        
-
-        <script type="text/javascript">
-            if(window.location.hostname === "galaxyproject.github.io") {
-                // Redirect
-                var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-                $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-                window.setTimeout(function(){
-                    window.location.href = redirect;
-                }, 5000)
-
-            }
-        </script>
     </body>
 </html>
