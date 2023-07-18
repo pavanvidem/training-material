@@ -133,7 +133,7 @@
       "resources": [
         "assets/js/theme.js"
       ],
-      "timestamp": 1689558283
+      "timestamp": 1689645094
     },
     "main": {
       "preload": true,
@@ -146,7 +146,7 @@
         "assets/js/list.min.js",
         "assets/js/main.js"
       ],
-      "timestamp": 1689558283
+      "timestamp": 1689645094
     }
   },
   "figurify": {
@@ -285,16 +285,11 @@
     "video-slides": "far fa-play-circle",
     "zenodo_link": "far fa-copy"
   },
-  "announcement": {
-    "class": "success",
-    "title": "GTN Celebrates Pride Month",
-    "text": "June is pride month in many countries around the world! The GTN is celebrating it by remembering the story of Alan L. Hart, a trans doctor who pioneered the use of x-ray photography in tuberculosis detection.\n\n[Read about Alan L. Hart's contribution to M. Tuberculosis](/training-material/news/2023/06/01/hart.html){: .btn.btn-primary}\n<a href=\"#\" class=\"btn btn-success\" onclick=\"setTheme('progress')\">Activate the GTN Theme!</a>\n\n<strong>Note:</strong> You can change your theme any time via the 'Extras' menu at the top!\n"
-  },
   "serving": false,
   "boxify": {
   },
-  "git_revision": "3b9ae5e893e360fc00670f1c6610c8462795f1c7",
-  "git_revision_short": "3b9ae5e",
+  "git_revision": "260fe9dd07d4b2d4aff21efa5dc11786ba01df56",
+  "git_revision_short": "260fe9d",
   "gtn_fork": "pavanvidem",
   "git_tags": [
 
@@ -302,5 +297,5 @@
   "git_tags_recent": [
 
   ],
-  "age": 8.049281314168377
+  "age": 8.05201916495551
 }
