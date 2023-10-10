@@ -6,29 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Metagenomics data processing and analysis for microbiome</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
+
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
+
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
+-->
 <script type="text/javascript">
-Sentry.init({
-  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@6fb3f3507969690dd959e1b86bb32f7516f935d6",
-  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-  sampleRate: 0.1,
-  tracesSampleRate: 0.1,
-  // Capture Replay for no sessions by default
-  replaysSessionSampleRate: 0.01,
-  // plus for 1% of sessions with an error
-  replaysOnErrorSampleRate: 0.01,
-  // PII OFF
-  sendDefaultPii: false, // Off by default but just in case.
-  environment: "production",
-});
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
 </script>
 
         
@@ -41,8 +76,8 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696813405' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696813405' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696899779' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696899779' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,8 +102,8 @@ Sentry.init({
 
         
     </head>
-    <body data-spy="scroll" data-target="#toc">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1696813405'></script>
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1696899779'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -112,7 +147,7 @@ Sentry.init({
         </form>
         -->
 
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
         </a>
         
@@ -151,23 +186,9 @@ Sentry.init({
             </a>
         
 
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                    <button class="btn" data-theme="default">Default</button>
-                    <button class="btn" data-theme="night">Night</button>
-                    <button class="btn" data-theme="midnight">Midnight</button>
-                    <button class="btn" data-theme="rainbow">Rainbow</button>
-                    <button class="btn" data-theme="blm">✊🏿</button>
-                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
-                    <button class="btn" data-theme="halloween">🎃</button>
-                    <button class="btn" data-theme="straya">🇦🇺</button>
-            </div>
-
-        </div>
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
 
         <div class="dropdown-item">
             <div>
@@ -243,6 +264,7 @@ steps of microbiome data analysis: quality control, taxonomic profiling, taxonom
         <p><p>Why study the microbiome? What are the different approaches for metagenomics? This module will give you a short introduction to metagenomics.</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -532,6 +554,7 @@ steps of microbiome data analysis: quality control, taxonomic profiling, taxonom
 
 
 
+	
     
         <h3 id="st-module-2-introduction-to-galaxy">Module 2: Introduction to Galaxy</h3>
         <p><p>Get a first look at the Galaxy platform for data analysis. We start with a
@@ -540,6 +563,7 @@ interface, and then proceed with a slightly longer introduction tutorials where
 you perform a first, very simple, analysis.</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -585,7 +609,7 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=español" class="label label-default tutorial_tag" style="--color-primary: #00fdf0; --color-darker: #00e1d6; --color-dimmed: #00eee3;" title="Click to show all tutorials tagged español">español</a>
+              <a href="/training-material/search?query=español" class="label label-default tutorial_tag" style="--color-primary: #00d7cd; --color-darker: #00c0b7; --color-dimmed: #00cbc2;" title="Click to show all tutorials tagged español">español</a>
               
             
             </div>
@@ -1044,11 +1068,13 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
         <h3 id="st-module-3-quality-control">Module 3: Quality control</h3>
         <p><p>When analysing sequencing data, you should always start with a quality control step to clean your data and make sure your data is good enough to answer your research question.</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -1346,6 +1372,7 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
         <h3 id="st-module-4-assembly">Module 4: Assembly</h3>
         <p><p>This module covers the following questions:</p>
@@ -1358,6 +1385,7 @@ you perform a first, very simple, analysis.</p>
 </ul>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -1403,9 +1431,9 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=assembly" class="label label-default tutorial_tag" style="--color-primary: #ffd8ec; --color-darker: #ffb3dd; --color-dimmed: #ffc5e4;" title="Click to show all tutorials tagged assembly">assembly</a>
+              <a href="/training-material/search?query=assembly" class="label label-default tutorial_tag" style="--color-primary: #ffa5d8; --color-darker: #ff80cc; --color-dimmed: #ff93d2;" title="Click to show all tutorials tagged assembly">assembly</a>
               
-              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #ffe32f; --color-darker: #e4c900; --color-dimmed: #f2d600;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
+              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #dac100; --color-darker: #c3ac00; --color-dimmed: #ceb700;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
               
             
             </div>
@@ -1581,6 +1609,7 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
         <h3 id="st-module-5-community-taxonomic-profiling">Module 5: Community taxonomic profiling</h3>
         <p><p>This module covers the following questions:</p>
@@ -1593,6 +1622,7 @@ you perform a first, very simple, analysis.</p>
 <p>This module will cover taxonomic profiling in theory and also with an example tutorial.</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -1638,9 +1668,9 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #ffe32f; --color-darker: #e4c900; --color-dimmed: #f2d600;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
+              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #dac100; --color-darker: #c3ac00; --color-dimmed: #ceb700;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
               
-              <a href="/training-material/search?query=taxonomic profiling" class="label label-default tutorial_tag" style="--color-primary: #ffd6f7; --color-darker: #ffb0f0; --color-dimmed: #ffc3f4;" title="Click to show all tutorials tagged taxonomic profiling">taxonomic profiling</a>
+              <a href="/training-material/search?query=taxonomic profiling" class="label label-default tutorial_tag" style="--color-primary: #ffa2ee; --color-darker: #ff7aea; --color-dimmed: #ff8fec;" title="Click to show all tutorials tagged taxonomic profiling">taxonomic profiling</a>
               
             
             </div>
@@ -1837,13 +1867,13 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=nanopore" class="label label-default tutorial_tag" style="--color-primary: #cce5ff; --color-darker: #97cfff; --color-dimmed: #b3daff;" title="Click to show all tutorials tagged nanopore">nanopore</a>
+              <a href="/training-material/search?query=nanopore" class="label label-default tutorial_tag" style="--color-primary: #82c8ff; --color-darker: #27b6ff; --color-dimmed: #60bfff;" title="Click to show all tutorials tagged nanopore">nanopore</a>
               
-              <a href="/training-material/search?query=beer" class="label label-default tutorial_tag" style="--color-primary: #00fcfa; --color-darker: #00e0de; --color-dimmed: #00eeec;" title="Click to show all tutorials tagged beer">beer</a>
+              <a href="/training-material/search?query=beer" class="label label-default tutorial_tag" style="--color-primary: #00d7d5; --color-darker: #00bfbe; --color-dimmed: #00cbc9;" title="Click to show all tutorials tagged beer">beer</a>
               
-              <a href="/training-material/search?query=citizen science" class="label label-default tutorial_tag" style="--color-primary: #75ff68; --color-darker: #37e800; --color-dimmed: #3bf600;" title="Click to show all tutorials tagged citizen science">citizen science</a>
+              <a href="/training-material/search?query=citizen science" class="label label-default tutorial_tag" style="--color-primary: #34de00; --color-darker: #2dc600; --color-dimmed: #31d200;" title="Click to show all tutorials tagged citizen science">citizen science</a>
               
-              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #ffe32f; --color-darker: #e4c900; --color-dimmed: #f2d600;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
+              <a href="/training-material/search?query=metagenomics" class="label label-default tutorial_tag" style="--color-primary: #dac100; --color-darker: #c3ac00; --color-dimmed: #ceb700;" title="Click to show all tutorials tagged metagenomics">metagenomics</a>
               
             
             </div>
@@ -2019,6 +2049,7 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
         <h3 id="st-module-8-applying-concepts-to-metatranscriptomics-data">Module 8: Applying concepts to metatranscriptomics data</h3>
         <p><p>This module covers the following questions:</p>
@@ -2029,6 +2060,7 @@ you perform a first, very simple, analysis.</p>
 </ul>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -2074,7 +2106,7 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=metatranscriptomics" class="label label-default tutorial_tag" style="--color-primary: #f3daff; --color-darker: #e9b7ff; --color-dimmed: #eec9ff;" title="Click to show all tutorials tagged metatranscriptomics">metatranscriptomics</a>
+              <a href="/training-material/search?query=metatranscriptomics" class="label label-default tutorial_tag" style="--color-primary: #e6abff; --color-darker: #df8aff; --color-dimmed: #e39bff;" title="Click to show all tutorials tagged metatranscriptomics">metatranscriptomics</a>
               
             
             </div>
@@ -2310,11 +2342,13 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
         <h3 id="st-recommended-follow-up-tutorials">Recommended follow-up tutorials</h3>
         <p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -2360,15 +2394,15 @@ you perform a first, very simple, analysis.</p>
             
             
               
-              <a href="/training-material/search?query=Nanopore data analysis" class="label label-default tutorial_tag" style="--color-primary: #00fbfd; --color-darker: #00e0e1; --color-dimmed: #00edee;" title="Click to show all tutorials tagged Nanopore data analysis">Nanopore data analysis</a>
+              <a href="/training-material/search?query=Nanopore data analysis" class="label label-default tutorial_tag" style="--color-primary: #00d6d7; --color-darker: #00bfc0; --color-dimmed: #00cacb;" title="Click to show all tutorials tagged Nanopore data analysis">Nanopore data analysis</a>
               
-              <a href="/training-material/search?query=Pathogens detection" class="label label-default tutorial_tag" style="--color-primary: #b4f700; --color-darker: #9fdc00; --color-dimmed: #aae900;" title="Click to show all tutorials tagged Pathogens detection">Pathogens detection</a>
+              <a href="/training-material/search?query=Pathogens detection" class="label label-default tutorial_tag" style="--color-primary: #99d300; --color-darker: #88bc00; --color-dimmed: #90c700;" title="Click to show all tutorials tagged Pathogens detection">Pathogens detection</a>
               
-              <a href="/training-material/search?query=Phylogenetic tree" class="label label-default tutorial_tag" style="--color-primary: #61ff98; --color-darker: #00e775; --color-dimmed: #00f57c;" title="Click to show all tutorials tagged Phylogenetic tree">Phylogenetic tree</a>
+              <a href="/training-material/search?query=Phylogenetic tree" class="label label-default tutorial_tag" style="--color-primary: #00de6f; --color-darker: #00c563; --color-dimmed: #00d269;" title="Click to show all tutorials tagged Phylogenetic tree">Phylogenetic tree</a>
               
-              <a href="/training-material/search?query=Heatmap" class="label label-default tutorial_tag" style="--color-primary: #ffd7ef; --color-darker: #ffb1e3; --color-dimmed: #ffc5e9;" title="Click to show all tutorials tagged Heatmap">Heatmap</a>
+              <a href="/training-material/search?query=Heatmap" class="label label-default tutorial_tag" style="--color-primary: #ffa4df; --color-darker: #ff7ed6; --color-dimmed: #ff92da;" title="Click to show all tutorials tagged Heatmap">Heatmap</a>
               
-              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffd7f3; --color-darker: #ffb0ea; --color-dimmed: #ffc4ee;" title="Click to show all tutorials tagged cyoa">cyoa</a>
+              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffa3e7; --color-darker: #ff7ce0; --color-dimmed: #ff90e3;" title="Click to show all tutorials tagged cyoa">cyoa</a>
               
             
             </div>
@@ -2544,6 +2578,7 @@ you perform a first, very simple, analysis.</p>
 
 
 
+	
     
 </section>
 
@@ -2553,12 +2588,14 @@ you perform a first, very simple, analysis.</p>
 	<h2 id="editorial-board">Editorial Board</h2>
 	<p>This material is reviewed by our Editorial Board:</p>
 	
-	
+	<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a>
 
+	
 	<h2 id="funders">Funders</h2>
 	<p>This material was funded by:</p>
 	
 	<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://www.erasmusplus.nl/assets/images/logo.png" alt="Avatar" width="36" height="36">Erasmus+ Programme</a>
+	
 
 </section>
 
@@ -2576,7 +2613,7 @@ you perform a first, very simple, analysis.</p>
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/6fb3f3507969690dd959e1b86bb32f7516f935d6">6fb3f35</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -2604,7 +2641,7 @@ you perform a first, very simple, analysis.</p>
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.main.js?v=1696813405'></script>
+        <script src='/training-material/assets/js/bundle.main.js?v=1696899779'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

@@ -6,29 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Galaxy Training!</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
+
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
+
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
+-->
 <script type="text/javascript">
-Sentry.init({
-  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@6fb3f3507969690dd959e1b86bb32f7516f935d6",
-  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-  sampleRate: 0.1,
-  tracesSampleRate: 0.1,
-  // Capture Replay for no sessions by default
-  replaysSessionSampleRate: 0.01,
-  // plus for 1% of sessions with an error
-  replaysOnErrorSampleRate: 0.01,
-  // PII OFF
-  sendDefaultPii: false, // Off by default but just in case.
-  environment: "production",
-});
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
 </script>
 
         
@@ -41,8 +76,8 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696813405' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696813405' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696899779' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696899779' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,8 +102,8 @@ Sentry.init({
 
         
     </head>
-    <body data-spy="scroll" data-target="#toc">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1696813405'></script>
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1696899779'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -112,7 +147,7 @@ Sentry.init({
         </form>
         -->
 
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
         </a>
         
@@ -160,23 +195,9 @@ Sentry.init({
             
         
 
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                    <button class="btn" data-theme="default">Default</button>
-                    <button class="btn" data-theme="night">Night</button>
-                    <button class="btn" data-theme="midnight">Midnight</button>
-                    <button class="btn" data-theme="rainbow">Rainbow</button>
-                    <button class="btn" data-theme="blm">✊🏿</button>
-                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
-                    <button class="btn" data-theme="halloween">🎃</button>
-                    <button class="btn" data-theme="straya">🇦🇺</button>
-            </div>
-
-        </div>
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
 
         <div class="dropdown-item">
             <div>
@@ -215,9 +236,6 @@ Sentry.init({
         
         <div class="container main-content" role="main">
         
-
-
-
 
 
 <!-- Gitter -->
@@ -394,36 +412,6 @@ genotypes.</p>
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -494,36 +482,6 @@ genotypes.</p>
         
 
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
         
 		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
@@ -618,36 +576,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -718,36 +646,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fdip%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -813,7 +711,7 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #e3dfff; --color-darker: #cbc2ff; --color-dimmed: #d7d0ff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
+              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #c3b8ff; --color-darker: #af9fff; --color-dimmed: #b9acff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
               
             
             </div>
@@ -839,36 +737,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
@@ -939,36 +807,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fnon-dip%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1039,7 +877,7 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #e3dfff; --color-darker: #cbc2ff; --color-dimmed: #d7d0ff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
+              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #c3b8ff; --color-darker: #af9fff; --color-dimmed: #b9acff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
               
             
             </div>
@@ -1065,36 +903,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1165,36 +973,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmicrobial-variants%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1320,36 +1098,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -1418,36 +1166,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fmapping-by-sequencing%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1559,9 +1277,9 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffd8eb; --color-darker: #ffb3db; --color-dimmed: #ffc6e3;" title="Click to show all tutorials tagged virology">virology</a>
+              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffa5d5; --color-darker: #ff81c8; --color-dimmed: #ff94cf;" title="Click to show all tutorials tagged virology">virology</a>
               
-              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #a1fa00; --color-darker: #8fdf00; --color-dimmed: #98ed00;" title="Click to show all tutorials tagged one-health">one-health</a>
+              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #89d600; --color-darker: #79be00; --color-dimmed: #81ca00;" title="Click to show all tutorials tagged one-health">one-health</a>
               
             
             </div>
@@ -1587,36 +1305,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1681,36 +1369,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Faiv-analysis%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -1768,11 +1426,11 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffd8ed; --color-darker: #ffb2df; --color-dimmed: #ffc5e6;" title="Click to show all tutorials tagged covid19">covid19</a>
+              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffa5da; --color-darker: #ff7fcf; --color-dimmed: #ff93d4;" title="Click to show all tutorials tagged covid19">covid19</a>
               
-              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffd8eb; --color-darker: #ffb3db; --color-dimmed: #ffc6e3;" title="Click to show all tutorials tagged virology">virology</a>
+              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffa5d5; --color-darker: #ff81c8; --color-dimmed: #ff94cf;" title="Click to show all tutorials tagged virology">virology</a>
               
-              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #a1fa00; --color-darker: #8fdf00; --color-dimmed: #98ed00;" title="Click to show all tutorials tagged one-health">one-health</a>
+              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #89d600; --color-darker: #79be00; --color-dimmed: #81ca00;" title="Click to show all tutorials tagged one-health">one-health</a>
               
             
             </div>
@@ -1798,36 +1456,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1923,36 +1551,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2055,9 +1653,9 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #e3dfff; --color-darker: #cbc2ff; --color-dimmed: #d7d0ff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
+              <a href="/training-material/search?query=prokaryote" class="label label-default tutorial_tag" style="--color-primary: #c3b8ff; --color-darker: #af9fff; --color-dimmed: #b9acff;" title="Click to show all tutorials tagged prokaryote">prokaryote</a>
               
-              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #a1fa00; --color-darker: #8fdf00; --color-dimmed: #98ed00;" title="Click to show all tutorials tagged one-health">one-health</a>
+              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #89d600; --color-darker: #79be00; --color-dimmed: #81ca00;" title="Click to show all tutorials tagged one-health">one-health</a>
               
             
             </div>
@@ -2083,36 +1681,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2222,36 +1790,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2368,11 +1906,11 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffd8ed; --color-darker: #ffb2df; --color-dimmed: #ffc5e6;" title="Click to show all tutorials tagged covid19">covid19</a>
+              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffa5da; --color-darker: #ff7fcf; --color-dimmed: #ff93d4;" title="Click to show all tutorials tagged covid19">covid19</a>
               
-              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffd8eb; --color-darker: #ffb3db; --color-dimmed: #ffc6e3;" title="Click to show all tutorials tagged virology">virology</a>
+              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffa5d5; --color-darker: #ff81c8; --color-dimmed: #ff94cf;" title="Click to show all tutorials tagged virology">virology</a>
               
-              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #a1fa00; --color-darker: #8fdf00; --color-dimmed: #98ed00;" title="Click to show all tutorials tagged one-health">one-health</a>
+              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #89d600; --color-darker: #79be00; --color-dimmed: #81ca00;" title="Click to show all tutorials tagged one-health">one-health</a>
               
             
             </div>
@@ -2398,36 +1936,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2523,36 +2031,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsars-cov-2-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2655,9 +2133,9 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffd8eb; --color-darker: #ffb3db; --color-dimmed: #ffc6e3;" title="Click to show all tutorials tagged virology">virology</a>
+              <a href="/training-material/search?query=virology" class="label label-default tutorial_tag" style="--color-primary: #ffa5d5; --color-darker: #ff81c8; --color-dimmed: #ff94cf;" title="Click to show all tutorials tagged virology">virology</a>
               
-              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #a1fa00; --color-darker: #8fdf00; --color-dimmed: #98ed00;" title="Click to show all tutorials tagged one-health">one-health</a>
+              <a href="/training-material/search?query=one-health" class="label label-default tutorial_tag" style="--color-primary: #89d600; --color-darker: #79be00; --color-dimmed: #81ca00;" title="Click to show all tutorials tagged one-health">one-health</a>
               
             
             </div>
@@ -2683,36 +2161,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2779,36 +2227,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fpox-tiled-amplicon%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2930,36 +2348,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3028,36 +2416,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fexome-seq%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3149,36 +2507,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3247,36 +2575,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variants%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3368,36 +2666,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3468,36 +2736,6 @@ genotypes.</p>
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Fsomatic-variant-discovery%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3563,7 +2801,7 @@ genotypes.</p>
             
             
               
-              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffd7f3; --color-darker: #ffb0ea; --color-dimmed: #ffc4ee;" title="Click to show all tutorials tagged cyoa">cyoa</a>
+              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffa3e7; --color-darker: #ff7ce0; --color-dimmed: #ff90e3;" title="Click to show all tutorials tagged cyoa">cyoa</a>
               
             
             </div>
@@ -3589,36 +2827,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3718,36 +2926,6 @@ genotypes.</p>
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftrio-analysis%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3854,10 +3032,12 @@ genotypes.</p>
     Common questions regarding this topic have been collected on a <a href="faqs/">dedicated FAQ page </a>. Common questions related to specific tutorials can be accessed from the tutorials themselves.
     
 
+    
     <h2 id="editorial-board">Editorial Board</h2>
     <p>This material is reviewed by our Editorial Board:</p>
     
     <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/wm75?s=36" alt="Avatar" width="36" height="36">Wolfgang Maier</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a><a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar" width="36" height="36">Anton Nekrutenko</a>
+    
 
     <p>
         <em>For any question related to this topic and the content, you can contact them or visit our <a href="https://gitter.im/Galaxy-Training-Network/Lobby">Gitter channel</a>.</em>
@@ -3866,12 +3046,12 @@ genotypes.</p>
     <h2 id="contributors">Contributors</h2>
     <p>This material was contributed to by:</p>
     
-    <a href="/training-material/hall-of-fame/pvanheus/" class="contributor-badge contributor-pvanheus"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pvanheus?s=36" alt="Avatar" width="36" height="36">Peter van Heusden</a><a href="/training-material/hall-of-fame/JasperO98/" class="contributor-badge contributor-JasperO98"><img src="https://avatars.githubusercontent.com/JasperO98?s=36" alt="Avatar" width="36" height="36">Jasper Ouwerkerk</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/astrovsky01?s=36" alt="Avatar" width="36" height="36">Alex Ostrovsky</a><a href="/training-material/hall-of-fame/TKlingstrom/" class="contributor-badge contributor-TKlingstrom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/TKlingstrom?s=36" alt="Avatar" width="36" height="36">Tomas Klingström</a><a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar" width="36" height="36">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/NickSto/" class="contributor-badge contributor-NickSto"><img src="https://avatars.githubusercontent.com/NickSto?s=36" alt="Avatar" width="36" height="36">Nick Stoler</a><a href="/training-material/hall-of-fame/annasyme/" class="contributor-badge contributor-annasyme"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/annasyme?s=36" alt="Avatar" width="36" height="36">Anna Syme</a><a href="/training-material/hall-of-fame/thobalose/" class="contributor-badge contributor-thobalose"><img src="https://avatars.githubusercontent.com/thobalose?s=36" alt="Avatar" width="36" height="36">Thoba Lose</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Avatar" width="36" height="36">Yvan Le Bras</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/blankenberg?s=36" alt="Avatar" width="36" height="36">Daniel Blankenberg</a><a href="/training-material/hall-of-fame/Khaled196/" class="contributor-badge contributor-Khaled196"><img src="https://avatars.githubusercontent.com/Khaled196?s=36" alt="Avatar" width="36" height="36">Khaled Jum'ah</a><a href="/training-material/hall-of-fame/d-salgado/" class="contributor-badge contributor-d-salgado"><img src="https://avatars.githubusercontent.com/d-salgado?s=36" alt="Avatar" width="36" height="36">David Salgado</a><a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nsoranzo?s=36" alt="Avatar" width="36" height="36">Nicola Soranzo</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a><a href="/training-material/hall-of-fame/erxleben/" class="contributor-badge contributor-erxleben"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/erxleben?s=36" alt="Avatar" width="36" height="36">Anika Erxleben</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a><a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tnabtaf?s=36" alt="Avatar" width="36" height="36">Dave Clements</a><a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge contributor-mvdbeek"><img src="https://avatars.githubusercontent.com/mvdbeek?s=36" alt="Avatar" width="36" height="36">Marius van den Beek</a><a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar" width="36" height="36">Simon Gladman</a><a href="/training-material/hall-of-fame/torhou/" class="contributor-badge contributor-torhou"><img src="https://avatars.githubusercontent.com/torhou?s=36" alt="Avatar" width="36" height="36">Torsten Houwaart</a><a href="/training-material/hall-of-fame/tseemann/" class="contributor-badge contributor-tseemann"><img src="https://avatars.githubusercontent.com/tseemann?s=36" alt="Avatar" width="36" height="36">Torsten Seemann</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar" width="36" height="36">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/kkamieniecka/" class="contributor-badge contributor-kkamieniecka"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/kkamieniecka?s=36" alt="Avatar" width="36" height="36">Katarzyna Kamieniecka</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/wm75?s=36" alt="Avatar" width="36" height="36">Wolfgang Maier</a><a href="/training-material/hall-of-fame/poterlowicz-lab/" class="contributor-badge contributor-poterlowicz-lab"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/poterlowicz-lab?s=36" alt="Avatar" width="36" height="36">Krzysztof Poterlowicz</a>
+    <a href="/training-material/hall-of-fame/annasyme/" class="contributor-badge contributor-annasyme"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/annasyme?s=36" alt="Avatar" width="36" height="36">Anna Syme</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Avatar" width="36" height="36">Yvan Le Bras</a><a href="/training-material/hall-of-fame/JasperO98/" class="contributor-badge contributor-JasperO98"><img src="https://avatars.githubusercontent.com/JasperO98?s=36" alt="Avatar" width="36" height="36">Jasper Ouwerkerk</a><a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar" width="36" height="36">Simon Gladman</a><a href="/training-material/hall-of-fame/poterlowicz-lab/" class="contributor-badge contributor-poterlowicz-lab"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/poterlowicz-lab?s=36" alt="Avatar" width="36" height="36">Krzysztof Poterlowicz</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/wm75?s=36" alt="Avatar" width="36" height="36">Wolfgang Maier</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/blankenberg?s=36" alt="Avatar" width="36" height="36">Daniel Blankenberg</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/astrovsky01?s=36" alt="Avatar" width="36" height="36">Alex Ostrovsky</a><a href="/training-material/hall-of-fame/pvanheus/" class="contributor-badge contributor-pvanheus"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pvanheus?s=36" alt="Avatar" width="36" height="36">Peter van Heusden</a><a href="/training-material/hall-of-fame/torhou/" class="contributor-badge contributor-torhou"><img src="https://avatars.githubusercontent.com/torhou?s=36" alt="Avatar" width="36" height="36">Torsten Houwaart</a><a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar" width="36" height="36">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/Khaled196/" class="contributor-badge contributor-Khaled196"><img src="https://avatars.githubusercontent.com/Khaled196?s=36" alt="Avatar" width="36" height="36">Khaled Jum'ah</a><a href="/training-material/hall-of-fame/TKlingstrom/" class="contributor-badge contributor-TKlingstrom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/TKlingstrom?s=36" alt="Avatar" width="36" height="36">Tomas Klingström</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge contributor-mvdbeek"><img src="https://avatars.githubusercontent.com/mvdbeek?s=36" alt="Avatar" width="36" height="36">Marius van den Beek</a><a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nsoranzo?s=36" alt="Avatar" width="36" height="36">Nicola Soranzo</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a><a href="/training-material/hall-of-fame/thobalose/" class="contributor-badge contributor-thobalose"><img src="https://avatars.githubusercontent.com/thobalose?s=36" alt="Avatar" width="36" height="36">Thoba Lose</a><a href="/training-material/hall-of-fame/erxleben/" class="contributor-badge contributor-erxleben"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/erxleben?s=36" alt="Avatar" width="36" height="36">Anika Erxleben</a><a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tnabtaf?s=36" alt="Avatar" width="36" height="36">Dave Clements</a><a href="/training-material/hall-of-fame/NickSto/" class="contributor-badge contributor-NickSto"><img src="https://avatars.githubusercontent.com/NickSto?s=36" alt="Avatar" width="36" height="36">Nick Stoler</a><a href="/training-material/hall-of-fame/tseemann/" class="contributor-badge contributor-tseemann"><img src="https://avatars.githubusercontent.com/tseemann?s=36" alt="Avatar" width="36" height="36">Torsten Seemann</a><a href="/training-material/hall-of-fame/kkamieniecka/" class="contributor-badge contributor-kkamieniecka"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/kkamieniecka?s=36" alt="Avatar" width="36" height="36">Katarzyna Kamieniecka</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar" width="36" height="36">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a><a href="/training-material/hall-of-fame/d-salgado/" class="contributor-badge contributor-d-salgado"><img src="https://avatars.githubusercontent.com/d-salgado?s=36" alt="Avatar" width="36" height="36">David Salgado</a>
 
     <h2 id="funders">Funders</h2>
     <p>This material was funded by:</p>
     
-    <a href="/training-material/hall-of-fame/h2020-defend/" class="contributor-badge contributor-h2020-defend"><img src="https://avatars.githubusercontent.com/h2020-defend?s=36" alt="Avatar" width="36" height="36">DEFEND</a><a href="/training-material/hall-of-fame/elixir-converge/" class="contributor-badge contributor-elixir-converge"><img src="https://elixir-europe.org/sites/default/files/styles/right-medium/public/images/converge_logo.png" alt="Avatar" width="36" height="36">ELIXIR-CONVERGE</a><a href="/training-material/hall-of-fame/by-covid/" class="contributor-badge contributor-by-covid"><img src="https://avatars.githubusercontent.com/by-covid?s=36" alt="Avatar" width="36" height="36">BeYond-COVID</a>
+    <a href="/training-material/hall-of-fame/elixir-converge/" class="contributor-badge contributor-elixir-converge"><img src="https://elixir-europe.org/sites/default/files/styles/right-medium/public/images/converge_logo.png" alt="Avatar" width="36" height="36">ELIXIR-CONVERGE</a><a href="/training-material/hall-of-fame/h2020-defend/" class="contributor-badge contributor-h2020-defend"><img src="https://avatars.githubusercontent.com/h2020-defend?s=36" alt="Avatar" width="36" height="36">DEFEND</a><a href="/training-material/hall-of-fame/by-covid/" class="contributor-badge contributor-by-covid"><img src="https://avatars.githubusercontent.com/by-covid?s=36" alt="Avatar" width="36" height="36">BeYond-COVID</a>
 
     
     <h2 id="references">References</h2>
@@ -3944,7 +3124,7 @@ genotypes.</p>
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/6fb3f3507969690dd959e1b86bb32f7516f935d6">6fb3f35</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -3972,7 +3152,7 @@ genotypes.</p>
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.main.js?v=1696813405'></script>
+        <script src='/training-material/assets/js/bundle.main.js?v=1696899779'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

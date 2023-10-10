@@ -6,29 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Galaxy Training!</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
+
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
+
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
+-->
 <script type="text/javascript">
-Sentry.init({
-  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@6fb3f3507969690dd959e1b86bb32f7516f935d6",
-  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-  sampleRate: 0.1,
-  tracesSampleRate: 0.1,
-  // Capture Replay for no sessions by default
-  replaysSessionSampleRate: 0.01,
-  // plus for 1% of sessions with an error
-  replaysOnErrorSampleRate: 0.01,
-  // PII OFF
-  sendDefaultPii: false, // Off by default but just in case.
-  environment: "production",
-});
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
 </script>
 
         
@@ -41,8 +76,8 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696813405' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696813405' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696899779' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696899779' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,8 +102,8 @@ Sentry.init({
 
         
     </head>
-    <body data-spy="scroll" data-target="#toc">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1696813405'></script>
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1696899779'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -112,7 +147,7 @@ Sentry.init({
         </form>
         -->
 
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
         </a>
         
@@ -160,23 +195,9 @@ Sentry.init({
             
         
 
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                    <button class="btn" data-theme="default">Default</button>
-                    <button class="btn" data-theme="night">Night</button>
-                    <button class="btn" data-theme="midnight">Midnight</button>
-                    <button class="btn" data-theme="rainbow">Rainbow</button>
-                    <button class="btn" data-theme="blm">✊🏿</button>
-                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
-                    <button class="btn" data-theme="halloween">🎃</button>
-                    <button class="btn" data-theme="straya">🇦🇺</button>
-            </div>
-
-        </div>
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
 
         <div class="dropdown-item">
             <div>
@@ -215,9 +236,6 @@ Sentry.init({
         
         <div class="container main-content" role="main">
         
-
-
-
 
 
 <!-- Gitter -->
@@ -298,36 +316,6 @@ Sentry.init({
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -389,36 +377,6 @@ Sentry.init({
         
 
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
         
 		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Fslides.html&edit-text=&act=url" title="">
@@ -490,9 +448,9 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffdadd; --color-darker: #ffb6bd; --color-dimmed: #ffc8cd;" title="Click to show all tutorials tagged collections">collections</a>
+              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffaab3; --color-darker: #ff8896; --color-dimmed: #ff99a5;" title="Click to show all tutorials tagged collections">collections</a>
               
-              <a href="/training-material/search?query=tags" class="label label-default tutorial_tag" style="--color-primary: #ffd9e3; --color-darker: #ffb5ca; --color-dimmed: #ffc7d6;" title="Click to show all tutorials tagged tags">tags</a>
+              <a href="/training-material/search?query=tags" class="label label-default tutorial_tag" style="--color-primary: #ffa8c2; --color-darker: #ff85ad; --color-dimmed: #ff97b8;" title="Click to show all tutorials tagged tags">tags</a>
               
             
             </div>
@@ -518,36 +476,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
@@ -630,36 +558,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
@@ -749,9 +647,9 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffdadd; --color-darker: #ffb6bd; --color-dimmed: #ffc8cd;" title="Click to show all tutorials tagged collections">collections</a>
+              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffaab3; --color-darker: #ff8896; --color-dimmed: #ff99a5;" title="Click to show all tutorials tagged collections">collections</a>
               
-              <a href="/training-material/search?query=tags" class="label label-default tutorial_tag" style="--color-primary: #ffd9e3; --color-darker: #ffb5ca; --color-dimmed: #ffc7d6;" title="Click to show all tutorials tagged tags">tags</a>
+              <a href="/training-material/search?query=tags" class="label label-default tutorial_tag" style="--color-primary: #ffa8c2; --color-darker: #ff85ad; --color-dimmed: #ff97b8;" title="Click to show all tutorials tagged tags">tags</a>
               
             
             </div>
@@ -777,36 +675,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
@@ -862,36 +730,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules-advanced%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -940,9 +778,9 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=ncbi" class="label label-default tutorial_tag" style="--color-primary: #ffd9e4; --color-darker: #ffb5cc; --color-dimmed: #ffc7d8;" title="Click to show all tutorials tagged ncbi">ncbi</a>
+              <a href="/training-material/search?query=ncbi" class="label label-default tutorial_tag" style="--color-primary: #ffa8c4; --color-darker: #ff84b1; --color-dimmed: #ff97ba;" title="Click to show all tutorials tagged ncbi">ncbi</a>
               
-              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffd8ed; --color-darker: #ffb2df; --color-dimmed: #ffc5e6;" title="Click to show all tutorials tagged covid19">covid19</a>
+              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffa5da; --color-darker: #ff7fcf; --color-dimmed: #ff93d4;" title="Click to show all tutorials tagged covid19">covid19</a>
               
             
             </div>
@@ -967,36 +805,6 @@ Sentry.init({
         
 
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
         
 		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
@@ -1028,36 +836,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1151,36 +929,6 @@ Sentry.init({
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -1210,36 +958,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fncbi-sarf%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1394,36 +1112,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -1475,36 +1163,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fsearch%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1577,36 +1235,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1689,36 +1317,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory%2Ftutorial.html&edit-text=&act=url" title="">
@@ -1853,36 +1451,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -1934,36 +1502,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgroup-tags%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2024,7 +1562,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffdadd; --color-darker: #ffb6bd; --color-dimmed: #ffc8cd;" title="Click to show all tutorials tagged collections">collections</a>
+              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffaab3; --color-darker: #ff8896; --color-dimmed: #ff99a5;" title="Click to show all tutorials tagged collections">collections</a>
               
             
             </div>
@@ -2050,36 +1588,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2133,36 +1641,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fprocessing-many-samples-at-once%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2237,36 +1715,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -2318,36 +1766,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fname-tags%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2408,7 +1826,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffdadd; --color-darker: #ffb6bd; --color-dimmed: #ffc8cd;" title="Click to show all tutorials tagged collections">collections</a>
+              <a href="/training-material/search?query=collections" class="label label-default tutorial_tag" style="--color-primary: #ffaab3; --color-darker: #ff8896; --color-dimmed: #ff99a5;" title="Click to show all tutorials tagged collections">collections</a>
               
             
             </div>
@@ -2434,36 +1852,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2546,36 +1934,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fcollections%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2686,11 +2044,11 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffdcc6; --color-darker: #ffbb87; --color-dimmed: #ffcba9;" title="Click to show all tutorials tagged workflows">workflows</a>
+              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffb06a; --color-darker: #f49600; --color-dimmed: #ffa130;" title="Click to show all tutorials tagged workflows">workflows</a>
               
-              <a href="/training-material/search?query=variant-analysis" class="label label-default tutorial_tag" style="--color-primary: #2cffca; --color-darker: #00e3b2; --color-dimmed: #00f2bd;" title="Click to show all tutorials tagged variant-analysis">variant-analysis</a>
+              <a href="/training-material/search?query=variant-analysis" class="label label-default tutorial_tag" style="--color-primary: #00daab; --color-darker: #00c298; --color-dimmed: #00cea1;" title="Click to show all tutorials tagged variant-analysis">variant-analysis</a>
               
-              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffd8ed; --color-darker: #ffb2df; --color-dimmed: #ffc5e6;" title="Click to show all tutorials tagged covid19">covid19</a>
+              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffa5da; --color-darker: #ff7fcf; --color-dimmed: #ff93d4;" title="Click to show all tutorials tagged covid19">covid19</a>
               
             
             </div>
@@ -2716,36 +2074,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2828,36 +2156,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-automation%2Ftutorial.html&edit-text=&act=url" title="">
@@ -2947,7 +2245,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffdcc6; --color-darker: #ffbb87; --color-dimmed: #ffcba9;" title="Click to show all tutorials tagged workflows">workflows</a>
+              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffb06a; --color-darker: #f49600; --color-dimmed: #ffa130;" title="Click to show all tutorials tagged workflows">workflows</a>
               
             
             </div>
@@ -2973,36 +2271,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3058,36 +2326,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-editor%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3136,7 +2374,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffdcc6; --color-darker: #ffbb87; --color-dimmed: #ffcba9;" title="Click to show all tutorials tagged workflows">workflows</a>
+              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffb06a; --color-darker: #f49600; --color-dimmed: #ffa130;" title="Click to show all tutorials tagged workflows">workflows</a>
               
             
             </div>
@@ -3162,36 +2400,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3245,36 +2453,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fhistory-to-workflow%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3348,36 +2526,6 @@ Sentry.init({
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -3439,36 +2587,6 @@ Sentry.init({
         
 
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
         
 		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-on-dockstore%2Fslides.html&edit-text=&act=url" title="">
@@ -3540,7 +2658,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffdcc6; --color-darker: #ffbb87; --color-dimmed: #ffcba9;" title="Click to show all tutorials tagged workflows">workflows</a>
+              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffb06a; --color-darker: #f49600; --color-dimmed: #ffa130;" title="Click to show all tutorials tagged workflows">workflows</a>
               
             
             </div>
@@ -3566,36 +2684,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3678,36 +2766,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-parameters%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3797,7 +2855,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffdcc6; --color-darker: #ffbb87; --color-dimmed: #ffcba9;" title="Click to show all tutorials tagged workflows">workflows</a>
+              <a href="/training-material/search?query=workflows" class="label label-default tutorial_tag" style="--color-primary: #ffb06a; --color-darker: #f49600; --color-dimmed: #ffa130;" title="Click to show all tutorials tagged workflows">workflows</a>
               
             
             </div>
@@ -3823,36 +2881,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
@@ -3935,36 +2963,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fworkflow-reports%2Ftutorial.html&edit-text=&act=url" title="">
@@ -4099,36 +3097,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -4182,36 +3150,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fintermine%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -4260,7 +3198,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffdbd0; --color-darker: #ffb9a0; --color-dimmed: #ffcab9;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffad8e; --color-darker: #ff8e51; --color-dimmed: #ff9e73;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
               
             
             </div>
@@ -4286,36 +3224,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
@@ -4371,36 +3279,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fjupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -4449,7 +3327,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffdbd0; --color-darker: #ffb9a0; --color-dimmed: #ffcab9;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffad8e; --color-darker: #ff8e51; --color-dimmed: #ff9e73;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
               
             
             </div>
@@ -4475,36 +3353,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
@@ -4558,36 +3406,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Frstudio%2Ftutorial.html&edit-text=&act=url" title="">
@@ -4662,36 +3480,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -4743,36 +3531,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
@@ -4888,36 +3646,6 @@ Sentry.init({
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -4969,36 +3697,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fdownload-delete-data%2Ftutorial.html&edit-text=&act=url" title="">
@@ -5090,7 +3788,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffd8ed; --color-darker: #ffb2df; --color-dimmed: #ffc5e6;" title="Click to show all tutorials tagged covid19">covid19</a>
+              <a href="/training-material/search?query=covid19" class="label label-default tutorial_tag" style="--color-primary: #ffa5da; --color-darker: #ff7fcf; --color-dimmed: #ff93d4;" title="Click to show all tutorials tagged covid19">covid19</a>
               
             
             </div>
@@ -5115,36 +3813,6 @@ Sentry.init({
         
 
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
         
 		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
@@ -5176,36 +3844,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
@@ -5260,36 +3898,6 @@ Sentry.init({
         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
 		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-		</li>
-        
-		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
@@ -5319,36 +3927,6 @@ Sentry.init({
         
         
          <li class="dropdown-item"><strong>Automatic translations</strong></li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-	</li>
-        
-	<li class="dropdown-item">
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-	</li>
         
 	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-data-to-ena%2Ftutorial.html&edit-text=&act=url" title="">
@@ -5400,10 +3978,12 @@ Sentry.init({
     Common questions regarding this topic have been collected on a <a href="faqs/">dedicated FAQ page </a>. Common questions related to specific tutorials can be accessed from the tutorials themselves.
     
 
+    
     <h2 id="editorial-board">Editorial Board</h2>
     <p>This material is reviewed by our Editorial Board:</p>
     
     <a href="/training-material/hall-of-fame/jennaj/" class="contributor-badge contributor-jennaj"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/jennaj?s=36" alt="Avatar" width="36" height="36">Jennifer Hillman-Jackson</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a>
+    
 
     <p>
         <em>For any question related to this topic and the content, you can contact them or visit our <a href="https://gitter.im/Galaxy-Training-Network/Lobby">Gitter channel</a>.</em>
@@ -5412,7 +3992,7 @@ Sentry.init({
     <h2 id="contributors">Contributors</h2>
     <p>This material was contributed to by:</p>
     
-    <a href="/training-material/hall-of-fame/jontrow/" class="contributor-badge contributor-jontrow"><img src="https://avatars.githubusercontent.com/jontrow?s=36" alt="Avatar" width="36" height="36">Jon Trow</a><a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge contributor-mvdbeek"><img src="https://avatars.githubusercontent.com/mvdbeek?s=36" alt="Avatar" width="36" height="36">Marius van den Beek</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/wm75?s=36" alt="Avatar" width="36" height="36">Wolfgang Maier</a><a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge contributor-polkhe"><img src="https://avatars.githubusercontent.com/polkhe?s=36" alt="Avatar" width="36" height="36">Ekaterina Polkh</a><a href="/training-material/hall-of-fame/roncoronimiguel/" class="contributor-badge contributor-roncoronimiguel"><img src="https://avatars.githubusercontent.com/roncoronimiguel?s=36" alt="Avatar" width="36" height="36">Miguel Roncoroni</a><a href="/training-material/hall-of-fame/avani-k/" class="contributor-badge contributor-avani-k"><img src="https://avatars.githubusercontent.com/avani-k?s=36" alt="Avatar" width="36" height="36">Avani Khadilkar</a><a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar" width="36" height="36">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Avatar" width="36" height="36">Maria Doyle</a><a href="/training-material/hall-of-fame/yochannah/" class="contributor-badge contributor-yochannah"><img src="https://avatars.githubusercontent.com/yochannah?s=36" alt="Avatar" width="36" height="36">Yo Yehudi</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar" width="36" height="36">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/afgane/" class="contributor-badge contributor-afgane"><img src="https://avatars.githubusercontent.com/afgane?s=36" alt="Avatar" width="36" height="36">Enis Afgan</a><a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tnabtaf?s=36" alt="Avatar" width="36" height="36">Dave Clements</a><a href="/training-material/hall-of-fame/bethsheets/" class="contributor-badge contributor-bethsheets"><img src="https://avatars.githubusercontent.com/bethsheets?s=36" alt="Avatar" width="36" height="36">Elizabeth Sheets</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a><a href="/training-material/hall-of-fame/gallardoalba/" class="contributor-badge contributor-gallardoalba"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/gallardoalba?s=36" alt="Avatar" width="36" height="36">Cristóbal Gallardo</a><a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/fpsom?s=36" alt="Avatar" width="36" height="36">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/danielabutano/" class="contributor-badge contributor-danielabutano"><img src="https://avatars.githubusercontent.com/danielabutano?s=36" alt="Avatar" width="36" height="36">Daniela Butano</a><a href="/training-material/hall-of-fame/tobyhodges/" class="contributor-badge contributor-tobyhodges"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tobyhodges?s=36" alt="Avatar" width="36" height="36">Toby Hodges</a><a href="/training-material/hall-of-fame/bedroesb/" class="contributor-badge contributor-bedroesb"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bedroesb?s=36" alt="Avatar" width="36" height="36">Bert Droesbeke</a><a href="/training-material/hall-of-fame/martenson/" class="contributor-badge contributor-martenson"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/martenson?s=36" alt="Avatar" width="36" height="36">Martin Čech</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Avatar" width="36" height="36">Simon Bray</a><a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar" width="36" height="36">Simon Gladman</a><a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge contributor-jmchilton"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/jmchilton?s=36" alt="Avatar" width="36" height="36">John Chilton</a><a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/delphine-l?s=36" alt="Avatar" width="36" height="36">Delphine Lariviere</a><a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge contributor-pajanne"><img src="https://avatars.githubusercontent.com/pajanne?s=36" alt="Avatar" width="36" height="36">Anne Pajon</a><a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/annefou?s=36" alt="Avatar" width="36" height="36">Anne Fouilloux</a><a href="/training-material/hall-of-fame/coverbeck/" class="contributor-badge contributor-coverbeck"><img src="https://avatars.githubusercontent.com/coverbeck?s=36" alt="Avatar" width="36" height="36">Charles Overbeck</a><a href="/training-material/hall-of-fame/guerler/" class="contributor-badge contributor-guerler"><img src="https://avatars.githubusercontent.com/guerler?s=36" alt="Avatar" width="36" height="36">Aysam Guerler</a><a href="/training-material/hall-of-fame/RareSeas/" class="contributor-badge contributor-RareSeas"><img src="https://avatars.githubusercontent.com/RareSeas?s=36" alt="Avatar" width="36" height="36">Adelaide Rhodes</a>
+    <a href="/training-material/hall-of-fame/martenson/" class="contributor-badge contributor-martenson"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/martenson?s=36" alt="Avatar" width="36" height="36">Martin Čech</a><a href="/training-material/hall-of-fame/avani-k/" class="contributor-badge contributor-avani-k"><img src="https://avatars.githubusercontent.com/avani-k?s=36" alt="Avatar" width="36" height="36">Avani Khadilkar</a><a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Avatar" width="36" height="36">Maria Doyle</a><a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge contributor-mvdbeek"><img src="https://avatars.githubusercontent.com/mvdbeek?s=36" alt="Avatar" width="36" height="36">Marius van den Beek</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/tobyhodges/" class="contributor-badge contributor-tobyhodges"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tobyhodges?s=36" alt="Avatar" width="36" height="36">Toby Hodges</a><a href="/training-material/hall-of-fame/bedroesb/" class="contributor-badge contributor-bedroesb"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bedroesb?s=36" alt="Avatar" width="36" height="36">Bert Droesbeke</a><a href="/training-material/hall-of-fame/guerler/" class="contributor-badge contributor-guerler"><img src="https://avatars.githubusercontent.com/guerler?s=36" alt="Avatar" width="36" height="36">Aysam Guerler</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a><a href="/training-material/hall-of-fame/danielabutano/" class="contributor-badge contributor-danielabutano"><img src="https://avatars.githubusercontent.com/danielabutano?s=36" alt="Avatar" width="36" height="36">Daniela Butano</a><a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/annefou?s=36" alt="Avatar" width="36" height="36">Anne Fouilloux</a><a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/slugger70?s=36" alt="Avatar" width="36" height="36">Simon Gladman</a><a href="/training-material/hall-of-fame/afgane/" class="contributor-badge contributor-afgane"><img src="https://avatars.githubusercontent.com/afgane?s=36" alt="Avatar" width="36" height="36">Enis Afgan</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/wm75?s=36" alt="Avatar" width="36" height="36">Wolfgang Maier</a><a href="/training-material/hall-of-fame/yochannah/" class="contributor-badge contributor-yochannah"><img src="https://avatars.githubusercontent.com/yochannah?s=36" alt="Avatar" width="36" height="36">Yo Yehudi</a><a href="/training-material/hall-of-fame/RareSeas/" class="contributor-badge contributor-RareSeas"><img src="https://avatars.githubusercontent.com/RareSeas?s=36" alt="Avatar" width="36" height="36">Adelaide Rhodes</a><a href="/training-material/hall-of-fame/roncoronimiguel/" class="contributor-badge contributor-roncoronimiguel"><img src="https://avatars.githubusercontent.com/roncoronimiguel?s=36" alt="Avatar" width="36" height="36">Miguel Roncoroni</a><a href="/training-material/hall-of-fame/bethsheets/" class="contributor-badge contributor-bethsheets"><img src="https://avatars.githubusercontent.com/bethsheets?s=36" alt="Avatar" width="36" height="36">Elizabeth Sheets</a><a href="/training-material/hall-of-fame/gallardoalba/" class="contributor-badge contributor-gallardoalba"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/gallardoalba?s=36" alt="Avatar" width="36" height="36">Cristóbal Gallardo</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Avatar" width="36" height="36">Simon Bray</a><a href="/training-material/hall-of-fame/coverbeck/" class="contributor-badge contributor-coverbeck"><img src="https://avatars.githubusercontent.com/coverbeck?s=36" alt="Avatar" width="36" height="36">Charles Overbeck</a><a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=36" alt="Avatar" width="36" height="36">Anton Nekrutenko</a><a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge contributor-jmchilton"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/jmchilton?s=36" alt="Avatar" width="36" height="36">John Chilton</a><a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge contributor-pajanne"><img src="https://avatars.githubusercontent.com/pajanne?s=36" alt="Avatar" width="36" height="36">Anne Pajon</a><a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/delphine-l?s=36" alt="Avatar" width="36" height="36">Delphine Lariviere</a><a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/fpsom?s=36" alt="Avatar" width="36" height="36">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/jontrow/" class="contributor-badge contributor-jontrow"><img src="https://avatars.githubusercontent.com/jontrow?s=36" alt="Avatar" width="36" height="36">Jon Trow</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar" width="36" height="36">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge contributor-polkhe"><img src="https://avatars.githubusercontent.com/polkhe?s=36" alt="Avatar" width="36" height="36">Ekaterina Polkh</a><a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/tnabtaf?s=36" alt="Avatar" width="36" height="36">Dave Clements</a>
 
     <h2 id="funders">Funders</h2>
     <p>This material was funded by:</p>
@@ -5436,7 +4016,7 @@ Sentry.init({
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/6fb3f3507969690dd959e1b86bb32f7516f935d6">6fb3f35</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -5464,7 +4044,7 @@ Sentry.init({
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.main.js?v=1696813405'></script>
+        <script src='/training-material/assets/js/bundle.main.js?v=1696899779'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

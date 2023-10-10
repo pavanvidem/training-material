@@ -6,29 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Genome annotation for eukaryotes</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
+
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
+
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
+-->
 <script type="text/javascript">
-Sentry.init({
-  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-  release: "galaxy-training-network@6fb3f3507969690dd959e1b86bb32f7516f935d6",
-  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-  sampleRate: 0.1,
-  tracesSampleRate: 0.1,
-  // Capture Replay for no sessions by default
-  replaysSessionSampleRate: 0.01,
-  // plus for 1% of sessions with an error
-  replaysOnErrorSampleRate: 0.01,
-  // PII OFF
-  sendDefaultPii: false, // Off by default but just in case.
-  environment: "production",
-});
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
 </script>
 
         
@@ -41,8 +76,8 @@ Sentry.init({
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696813405' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696813405' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1696899779' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1696899779' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,8 +102,8 @@ Sentry.init({
 
         
     </head>
-    <body data-spy="scroll" data-target="#toc">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1696813405'></script>
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1696899779'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -112,7 +147,7 @@ Sentry.init({
         </form>
         -->
 
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
         </a>
         
@@ -151,23 +186,9 @@ Sentry.init({
             </a>
         
 
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                    <button class="btn" data-theme="default">Default</button>
-                    <button class="btn" data-theme="night">Night</button>
-                    <button class="btn" data-theme="midnight">Midnight</button>
-                    <button class="btn" data-theme="rainbow">Rainbow</button>
-                    <button class="btn" data-theme="blm">✊🏿</button>
-                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
-                    <button class="btn" data-theme="halloween">🎃</button>
-                    <button class="btn" data-theme="straya">🇦🇺</button>
-            </div>
-
-        </div>
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
 
         <div class="dropdown-item">
             <div>
@@ -241,6 +262,7 @@ Sentry.init({
         <p><p>General introduction to genome annotation</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -420,11 +442,13 @@ Sentry.init({
 
 
 
+	
     
         <h3 id="st-module-2-repeat-masking">Module 2: Repeat Masking</h3>
         <p><p>Learn how to identifying, and “mask”, repeated regions, a first step before annotating genes</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -470,7 +494,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #79ff59; --color-darker: #50e600; --color-dimmed: #55f500;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
+              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #4cdd00; --color-darker: #43c500; --color-dimmed: #47d100;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
               
             
             </div>
@@ -646,11 +670,13 @@ Sentry.init({
 
 
 
+	
     
         <h3 id="st-module-3-gene-calling-and-functional-annotation">Module 3: Gene calling and functional annotation</h3>
         <p><p>In this module you will learn to run the Funannotate tool suite to find the position of genes and to functionally annotate them. Optionally you can also identify long non-coding RNAs.</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -696,7 +722,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #79ff59; --color-darker: #50e600; --color-dimmed: #55f500;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
+              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #4cdd00; --color-darker: #43c500; --color-dimmed: #47d100;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
               
             
             </div>
@@ -893,7 +919,7 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #79ff59; --color-darker: #50e600; --color-dimmed: #55f500;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
+              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #4cdd00; --color-darker: #43c500; --color-dimmed: #47d100;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
               
             
             </div>
@@ -1011,11 +1037,13 @@ Sentry.init({
 
 
 
+	
     
         <h3 id="st-module-4-manual-curation">Module 4: Manual curation</h3>
         <p><p>Automatic annotation is rarely perfect, in this module you will learn how to start a collaborative manual curation project using Galaxy and Apollo</p>
 </p>
 
+	
         
 	<table class="table table-responsive table-striped">
   <thead>
@@ -1061,9 +1089,9 @@ Sentry.init({
             
             
               
-              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #79ff59; --color-darker: #50e600; --color-dimmed: #55f500;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
+              <a href="/training-material/search?query=eukaryote" class="label label-default tutorial_tag" style="--color-primary: #4cdd00; --color-darker: #43c500; --color-dimmed: #47d100;" title="Click to show all tutorials tagged eukaryote">eukaryote</a>
               
-              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffd7f3; --color-darker: #ffb0ea; --color-dimmed: #ffc4ee;" title="Click to show all tutorials tagged cyoa">cyoa</a>
+              <a href="/training-material/search?query=cyoa" class="label label-default tutorial_tag" style="--color-primary: #ffa3e7; --color-darker: #ff7ce0; --color-dimmed: #ff90e3;" title="Click to show all tutorials tagged cyoa">cyoa</a>
               
             
             </div>
@@ -1181,6 +1209,7 @@ Sentry.init({
 
 
 
+	
     
 </section>
 
@@ -1190,12 +1219,14 @@ Sentry.init({
 	<h2 id="editorial-board">Editorial Board</h2>
 	<p>This material is reviewed by our Editorial Board:</p>
 	
-	
+	<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/abretaud?s=36" alt="Avatar" width="36" height="36">Anthony Bretaudeau</a>
 
+	
 	<h2 id="funders">Funders</h2>
 	<p>This material was funded by:</p>
 	
 	<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://www.erasmusplus.nl/assets/images/logo.png" alt="Avatar" width="36" height="36">Erasmus+ Programme</a>
+	
 
 </section>
 
@@ -1213,7 +1244,7 @@ Sentry.init({
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/6fb3f3507969690dd959e1b86bb32f7516f935d6">6fb3f35</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1241,7 +1272,7 @@ Sentry.init({
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.main.js?v=1696813405'></script>
+        <script src='/training-material/assets/js/bundle.main.js?v=1696899779'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>
