@@ -595,11 +595,6 @@
         ],
         "inexact": [
           {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
             "usegalaxy": "true"
@@ -888,11 +883,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -1387,11 +1377,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
@@ -2595,11 +2580,7 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          }
+
         ]
       },
       "topic_name_human": "Single Cell",
@@ -3869,11 +3850,7 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          }
+
         ]
       },
       "topic_name_human": "Single Cell",
@@ -5466,11 +5443,6 @@
       ],
       "supported_servers": {
         "exact": [
-          {
-            "url": "https://galaxy.genouest.org",
-            "name": "Galaxy@GenOuest",
-            "usegalaxy": "false"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
