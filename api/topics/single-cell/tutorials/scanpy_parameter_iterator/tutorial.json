@@ -32,9 +32,7 @@
     "You can enter the parameter values either as a list or as values to be iterated in step.",
     "Parameter Iterator is a useful tool to quickly and easily compare the differences in the outputs caused by changing parameter values. Hence it allows us to choose the optimal parameter values."
   ],
-  "tags": [
-    "single-cell"
-  ],
+  "tags": null,
   "contributions": {
     "authorship": [
       "wee-snufkin"
@@ -78,7 +76,9 @@
           "name": "Julia Jakiela"
         }
       ],
-      "test_results": null
+      "name": "Scanpy Parameter Iterator workflow full (imported from URL)",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scanpy_parameter_iterator/tutorial.json",
@@ -205,7 +205,7 @@
       "funding_id": "824087",
       "funding_system": "cordis",
       "funding_statement": "EOSC-Life has received funding from the European Union’s Horizon 2020 programme under grant agreement number 824087",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/eosc-life.json",
+      "url": "https://training.galaxyproject.org/training-material/api/funders/eosc-life.json",
       "id": "eosc-life",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/eosc-life/"
     }

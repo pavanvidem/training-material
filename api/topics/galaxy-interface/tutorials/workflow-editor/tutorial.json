@@ -60,7 +60,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Tutorial workflow",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:19 +0000"
     },
     {
       "workflow": "subworkflow.ga",
@@ -74,7 +76,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Subworkflow",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:19 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json",
@@ -85,11 +89,6 @@
   ],
   "supported_servers": {
     "exact": [
-      {
-        "url": "https://galaxy.mesocentre.uca.fr",
-        "name": "Galaxy@AuBi",
-        "usegalaxy": "false"
-      },
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",

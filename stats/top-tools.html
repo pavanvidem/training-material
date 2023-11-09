@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Top Tools</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1699405462' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1699405462' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699492035' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -103,7 +83,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -187,7 +167,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -824,6 +804,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 				</li>
 				
 				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
+					</a>
+				</li>
+				
+				<li>
 					Using Galaxy and Managing your Data /
 					<a href="/training-material/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html">
 					Workflow Reports
@@ -1023,6 +1010,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Visualisation /
 					<a href="/training-material/topics/visualisation/tutorials/circos/tutorial.html">
 					Visualisation with Circos
+					</a>
+				</li>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
 					</a>
 				</li>
 				
@@ -2424,6 +2418,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Ecology /
 					<a href="/training-material/topics/ecology/tutorials/regionalGAM/tutorial.html">
 					Regional GAM
+					</a>
+				</li>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
 					</a>
 				</li>
 				
@@ -5885,6 +5886,50 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	</tr>
 	
 	<tr>
+		<td><a href="/training-material/by-tool/bgruening/deeptools_bam_coverage.html">bgruening/deeptools_bam_coverage</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/estrogen-receptor-binding-site-identification/tutorial.html">
+					Identification of the binding sites of the Estrogen receptor
+					</a>
+				</li>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/formation_of_super-structures_on_xi/tutorial.html">
+					Formation of the Super-Structures on the Inactive X
+					</a>
+				</li>
+				
+				<li>
+					Genome Annotation /
+					<a href="/training-material/topics/genome-annotation/tutorials/tnseq/tutorial.html">
+					Essential genes detection with Transposon insertion sequencing
+					</a>
+				</li>
+				
+				<li>
+					Transcriptomics /
+					<a href="/training-material/topics/transcriptomics/tutorials/de-novo/tutorial.html">
+					De novo transcriptome reconstruction with RNA-Seq
+					</a>
+				</li>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
 		<td><a href="/training-material/by-tool/iuc/rna_star.html">iuc/rna_star</a></td>
 		<td>
 			<ul>
@@ -6555,6 +6600,43 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Metagenomics /
 					<a href="/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.html">
 					Pathogen detection from (direct Nanopore) sequencing data using Galaxy - Foodborne Edition
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/iuc/circos.html">iuc/circos</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Assembly /
+					<a href="/training-material/topics/assembly/tutorials/ecoli_comparison/tutorial.html">
+					Making sense of a newly assembled genome
+					</a>
+				</li>
+				
+				<li>
+					Variant Analysis /
+					<a href="/training-material/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.html">
+					Somatic Variant Discovery from WES Data Using Control-FREEC
+					</a>
+				</li>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos/tutorial.html">
+					Visualisation with Circos
+					</a>
+				</li>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
 					</a>
 				</li>
 				
@@ -7258,43 +7340,6 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Transcriptomics /
 					<a href="/training-material/topics/transcriptomics/tutorials/clipseq/tutorial.html">
 					CLIP-Seq data analysis from pre-processing to motif detection
-					</a>
-				</li>
-				
-			</ul>
-		</td>
-	</tr>
-	
-	<tr>
-		<td><a href="/training-material/by-tool/bgruening/deeptools_bam_coverage.html">bgruening/deeptools_bam_coverage</a></td>
-		<td>
-			<ul>
-				
-				<li>
-					Epigenetics /
-					<a href="/training-material/topics/epigenetics/tutorials/estrogen-receptor-binding-site-identification/tutorial.html">
-					Identification of the binding sites of the Estrogen receptor
-					</a>
-				</li>
-				
-				<li>
-					Epigenetics /
-					<a href="/training-material/topics/epigenetics/tutorials/formation_of_super-structures_on_xi/tutorial.html">
-					Formation of the Super-Structures on the Inactive X
-					</a>
-				</li>
-				
-				<li>
-					Genome Annotation /
-					<a href="/training-material/topics/genome-annotation/tutorials/tnseq/tutorial.html">
-					Essential genes detection with Transposon insertion sequencing
-					</a>
-				</li>
-				
-				<li>
-					Transcriptomics /
-					<a href="/training-material/topics/transcriptomics/tutorials/de-novo/tutorial.html">
-					De novo transcriptome reconstruction with RNA-Seq
 					</a>
 				</li>
 				
@@ -8117,36 +8162,6 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Metagenomics /
 					<a href="/training-material/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.html">
 					Pathogen detection from (direct Nanopore) sequencing data using Galaxy - Foodborne Edition
-					</a>
-				</li>
-				
-			</ul>
-		</td>
-	</tr>
-	
-	<tr>
-		<td><a href="/training-material/by-tool/iuc/circos.html">iuc/circos</a></td>
-		<td>
-			<ul>
-				
-				<li>
-					Assembly /
-					<a href="/training-material/topics/assembly/tutorials/ecoli_comparison/tutorial.html">
-					Making sense of a newly assembled genome
-					</a>
-				</li>
-				
-				<li>
-					Variant Analysis /
-					<a href="/training-material/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.html">
-					Somatic Variant Discovery from WES Data Using Control-FREEC
-					</a>
-				</li>
-				
-				<li>
-					Visualisation /
-					<a href="/training-material/topics/visualisation/tutorials/circos/tutorial.html">
-					Visualisation with Circos
 					</a>
 				</li>
 				
@@ -13677,6 +13692,22 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	</tr>
 	
 	<tr>
+		<td><a href="/training-material/by-tool/interactive_tool_qgis.html">interactive_tool_qgis</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Ecology /
+					<a href="/training-material/topics/ecology/tutorials/QGIS_Web_Feature_Services/tutorial.html">
+					QGIS Web Feature Services
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
 		<td><a href="/training-material/by-tool/melpetera/idchoice.html">melpetera/idchoice</a></td>
 		<td>
 			<ul>
@@ -14709,6 +14740,86 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Computational chemistry /
 					<a href="/training-material/topics/computational-chemistry/tutorials/covid19-docking/tutorial.html">
 					Virtual screening of the SARS-CoV-2 main protease with rxDock and pose scoring
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/iuc/circos_wiggle_to_scatter.html">iuc/circos_wiggle_to_scatter</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/iuc/circos_interval_to_tile.html">iuc/circos_interval_to_tile</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/iuc/circos_interval_to_text.html">iuc/circos_interval_to_text</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/iuc/circos_gc_skew.html">iuc/circos_gc_skew</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/gff2bed1.html">gff2bed1</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Visualisation /
+					<a href="/training-material/topics/visualisation/tutorials/circos-microbial/tutorial.html">
+					Ploting a Microbial Genome with Circos
 					</a>
 				</li>
 				
@@ -15829,6 +15940,70 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					Epigenetics /
 					<a href="/training-material/topics/epigenetics/tutorials/hicexplorer/tutorial.html">
 					Hi-C analysis of Drosophila melanogaster cells using HiCExplorer
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/kpbioteam/minfi_analysis.html">kpbioteam/minfi_analysis</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/kpbioteam/clusterprofiler_go.html">kpbioteam/clusterprofiler_go</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/kpbioteam/clusterprofiler_bitr.html">kpbioteam/clusterprofiler_bitr</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
+					</a>
+				</li>
+				
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/training-material/by-tool/kpbioteam/chipeakanno_annopeaks.html">kpbioteam/chipeakanno_annopeaks</a></td>
+		<td>
+			<ul>
+				
+				<li>
+					Epigenetics /
+					<a href="/training-material/topics/epigenetics/tutorials/ewas-suite/tutorial.html">
+					Infinium Human Methylation BeadChip
 					</a>
 				</li>
 				
@@ -19341,22 +19516,6 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	</tr>
 	
 	<tr>
-		<td><a href="/training-material/by-tool/toolshed.g2.bx.psu.edu/bgruening.html">toolshed.g2.bx.psu.edu/bgruening</a></td>
-		<td>
-			<ul>
-				
-				<li>
-					Genome Annotation /
-					<a href="/training-material/topics/genome-annotation/tutorials/lncrna/tutorial.html">
-					Long non-coding RNAs (lncRNAs) annotation with FEELnc
-					</a>
-				</li>
-				
-			</ul>
-		</td>
-	</tr>
-	
-	<tr>
 		<td><a href="/training-material/by-tool/Extract_features1.html">Extract_features1</a></td>
 		<td>
 			<ul>
@@ -22158,7 +22317,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -22182,11 +22341,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699492035'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

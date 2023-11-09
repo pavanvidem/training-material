@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Visualization of RNA-Seq results with heatmap2</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1699405462' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1699405462' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699492035' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -126,7 +106,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-05-18 09:34:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -139,25 +120,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00303",
   "accessMode": [
     "textual",
     "visual"
@@ -182,11 +166,14 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Visualization of RNA-Seq results with heatmap2' tutorial",
+  "name": "Visualization of RNA-Seq results with heatmap2",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-heatmap2/tutorial.html",
+  "version": 16,
   "timeRequired": "PT1H",
   "teaches": "Create heatmaps of RNA-seq data",
-  "keywords": "transcriptomics",
+  "keywords": [
+    "Transcriptomics"
+  ],
   "description": "The questions this  addresses are:\n - How to generate heatmaps from RNA-seq data?\n\n\nThe objectives are:\n - Create heatmaps of RNA-seq data\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -204,7 +191,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -219,7 +207,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -234,7 +223,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -249,7 +239,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -264,7 +255,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -286,7 +278,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0003-4847-8436",
@@ -318,7 +311,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -410,7 +403,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -479,7 +472,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Avatar" width="36" height="36">Maria Doyle</a>
+		Authors: <a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Maria Doyle avatar" width="36" class="avatar" />
+    Maria Doyle</a>
 	</div>
 
 </div>
@@ -745,8 +739,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00303">https://gxy.io/GTN:T00303</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00303">https://gxy.io/GTN:T00303</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 16 </div>
+
     </blockquote>
     </section>
 
@@ -768,7 +765,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 <p>The data for this tutorial comes from a Nature Cell Biology paper, <a href="https://www.ncbi.nlm.nih.gov/pubmed/25730472">EGF-mediated induction of Mcl-1 at the switch to lactation is essential for alveolar cell survival</a>), Fu et al. 2015. This study examined the expression profiles of basal and luminal cells in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status.</p>
 
-<p><a href="../../images/rna-seq-reads-to-counts/mouse_exp.png" rel="noopener noreferrer"><figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-reads-to-counts/mouse_exp.png" alt="Tutorial Dataset. " width="567" height="402" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Tutorial Dataset&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-reads-to-counts/mouse_exp.png" alt="Tutorial Dataset. " width="567" height="402" loading="lazy" /><a target="_blank" href="../../images/rna-seq-reads-to-counts/mouse_exp.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Tutorial Dataset</figcaption></figure>
 
 <blockquote class="agenda">
   <div class="box-title agenda-title" id="agenda">Agenda</div>
@@ -818,11 +815,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
       <p>Create a new history for this RNA-seq exercise e.g. <code class="language-plaintext highlighter-rouge">RNA-seq heatmap</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Creating a new history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Renaming a history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -835,11 +832,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing via links</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing data from a data library</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <ul>
@@ -862,7 +859,7 @@ https://zenodo.org/record/2529926/files/heatmap_genes
 If the datatype is not <code class="language-plaintext highlighter-rouge">tabular</code>, please change the file type to <code class="language-plaintext highlighter-rouge">tabular</code>.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Changing the datatype</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
   </ol>
@@ -871,7 +868,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> (eye) icon of the the <code class="language-plaintext highlighter-rouge">DE results</code> file and take a look. It should look like below with 8 columns (just the first few rows are shown).</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/DE_results.png" rel="noopener noreferrer"><figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/DE_results.png" alt="DE results. " width="1332" height="244" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 2</strong>:</span> DE results&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/DE_results.png" alt="DE results. " width="1332" height="244" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/DE_results.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> DE results</figcaption></figure>
 
 <h1 id="create-heatmap-of-top-de-genes">Create heatmap of top DE genes</h1>
 
@@ -934,7 +931,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>First click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> (eye) icon and take a look at the <code class="language-plaintext highlighter-rouge">normalized counts</code> file that we imported. It should look like below (just the first few rows and columns are shown). Note that the normalized count values are log2. We will join our <code class="language-plaintext highlighter-rouge">top 20 by Pvalue</code> file to the <code class="language-plaintext highlighter-rouge">normalized counts</code> file, matching on the ENTREZID columns.</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/normalized_counts.png" rel="noopener noreferrer"><figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/normalized_counts.png" alt="Normalized counts. " width="2238" height="520" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Normalized counts&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/normalized_counts.png" alt="Normalized counts. " width="2238" height="520" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/normalized_counts.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Normalized counts</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-extract-the-normalized-counts-for-the-top-genes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Extract the normalized counts for the top genes</div>
@@ -962,7 +959,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>The file should look like below with the 20 genes in the rows and the 12 samples in the columns (just the first few columns are shown).</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/heatmap_input.png" rel="noopener noreferrer"><figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap_input.png" alt="Heatmap input. " width="644" height="289" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Heatmap input&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap_input.png" alt="Heatmap input. " width="644" height="289" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap_input.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Heatmap input</figcaption></figure>
 
 <p>Now that we have our file with just the normalized counts for the genes we want, we can create a heatmap.</p>
 
@@ -987,7 +984,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>You should see a heatmap like below. Note that here we are plotting the top genes differentially expressed in the luminal cells from the pregnant mice (<code class="language-plaintext highlighter-rouge">MCL1.LC</code> and <code class="language-plaintext highlighter-rouge">MCL1.LD</code>) versus the luminal cells from the lactating mice (<code class="language-plaintext highlighter-rouge">MCL1.LE</code> and <code class="language-plaintext highlighter-rouge">MCL1.LF</code>). This heatmap enables us to see the expression of these genes in all the samples from the different groups in the experiment (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating).</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20.png" rel="noopener noreferrer"><figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20.png" alt="Heatmap of top DE genes. " width="690" height="723" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Heatmap of top DE genes&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20.png" alt="Heatmap of top DE genes. " width="690" height="723" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Heatmap of top DE genes</figcaption></figure>
 
 <blockquote class="question">
   <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
@@ -999,17 +996,18 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
       <p>How could we make a heatmap of the top 10 most upregulated and top 10 most downregulated significant genes?</p>
 
       <blockquote class="solution">
-        <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
         <ol>
           <li>We don’t use clustering here as we want to keep the genes in the order we input (ordered by P value).</li>
-          <li>
-            <p>We scale the genes as otherwise large expression values from highly expressed genes would dominate the plot, see below.
- <a href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_noscale.png" rel="noopener noreferrer"><figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_noscale.png" alt="Heatmap with no scaling. " width="434" height="454" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Heatmap without scaling genes&lt;/figcaption&gt;</figure></a></p>
+          <li>We scale the genes as otherwise large expression values from highly expressed genes would dominate the plot, see below.
+            <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_noscale.png" alt="Heatmap with no scaling. " width="434" height="454" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_noscale.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Heatmap without scaling genes</figcaption></figure>
           </li>
           <li>To make the heatmap with these genes ordered by logFC, we could <strong>Sort</strong> the output of the <strong>Join</strong> step on the logFC column, then <strong>Cut</strong> the columns as before and remake the heatmap. It should look like below.
- <a href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_sorted_by_lfc.png" rel="noopener noreferrer"><figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_sorted_by_lfc.png" alt="Heatmap sorted by logFC. " width="442" height="449" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Heatmap sorted by logFC&lt;/figcaption&gt;</figure></a></li>
+            <figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_sorted_by_lfc.png" alt="Heatmap sorted by logFC. " width="442" height="449" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top20_sorted_by_lfc.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Heatmap sorted by logFC</figcaption></figure>
+          </li>
           <li>To make a heatmap of the most upregulated and downregulated significant genes, we could <strong>Sort</strong> on the logFC column (instead of P value above), then use the <strong>Select first</strong> and <strong>Select last</strong> tools to select the genes with the largest and smallest fold changes (10 genes for each) and the <strong>Concatenate</strong> tool to combine the outputs of the first and last Selects into one file. We would then repeat the <strong>Join</strong> and <strong>Cut</strong> steps as before to get the normalized counts and make the heatmap as below (Note that one gene name in the middle is missing as it is a gene that has NA for gene symbol)
- <a href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top_up_and_down.png" rel="noopener noreferrer"><figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top_up_and_down.png" alt="Heatmap for top logFC. " width="479" height="485" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Heatmap of top 10 up and down&lt;/figcaption&gt;</figure></a></li>
+            <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap2_top_up_and_down.png" alt="Heatmap for top logFC. " width="479" height="485" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap2_top_up_and_down.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Heatmap of top 10 up and down</figcaption></figure>
+          </li>
         </ol>
       </blockquote>
     </li>
@@ -1020,11 +1018,11 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>You can also create a heatmap for a custom set of genes. To demonstrate this, we will create a heatmap for the 31 genes in Figure 6b from the original paper using this dataset (see below). These 31 genes include the authors’ main gene of interest in the paper, Mcl1, and a set of cytokines/growth factors identified as differentially expressed. We will recreate this heatmap here. To see how to visualize these genes in a volcano plot see the tutorial <a href="/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html">here</a>.</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/fu_heatmap.png" rel="noopener noreferrer"><figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/fu_heatmap.png" alt="Fu heatmap. " width="932" height="482" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Fu et al, Nat Cell Biol 2015&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/fu_heatmap.png" alt="Fu heatmap. " width="932" height="482" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/fu_heatmap.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Fu et al, Nat Cell Biol 2015</figcaption></figure>
 
 <p>These 31 genes are in the file we imported called <code class="language-plaintext highlighter-rouge">heatmap genes</code>, shown below.</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/heatmap_genes.png" rel="noopener noreferrer"><figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap_genes.png" alt="Heatmap genes. " height="560" width="62" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Heatmap genes&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/heatmap_genes.png" alt="Heatmap genes. " height="560" width="62" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/heatmap_genes.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Heatmap genes</figcaption></figure>
 
 <p>As in the previous example, we need to extract the normalized counts for just these 31 genes. To do that we will join the <code class="language-plaintext highlighter-rouge">heatmap genes</code> file with the <code class="language-plaintext highlighter-rouge">normalized counts</code> file, on the Gene Symbol columns this time (instead of ENTREZID), and then extract the columns we need.</p>
 
@@ -1066,7 +1064,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>We now have a table with the 31 genes in columns and the normalized counts for the 12 samples in rows, similar to below (just the first few columns are shown).</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/transposed_input.png" rel="noopener noreferrer"><figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/transposed_input.png" alt="Transposed input. " width="1220" height="384" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Transposed input&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/transposed_input.png" alt="Transposed input. " width="1220" height="384" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/transposed_input.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Transposed input</figcaption></figure>
 
 <h2 id="create-heatmap-of-custom-genes-1">Create heatmap of custom genes</h2>
 
@@ -1089,7 +1087,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
 
 <p>You should see a heatmap like below.</p>
 
-<p><a href="../../images/rna-seq-viz-with-heatmap2/fu_heatmap_regenerated.png" rel="noopener noreferrer"><figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/fu_heatmap_regenerated.png" alt="Fu heatmap regenerated. " width="678" height="706" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Fu heatmap regenerated&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/rna-seq-viz-with-heatmap2/fu_heatmap_regenerated.png" alt="Fu heatmap regenerated. " width="678" height="706" loading="lazy" /><a target="_blank" href="../../images/rna-seq-viz-with-heatmap2/fu_heatmap_regenerated.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Fu heatmap regenerated</figcaption></figure>
 
 <blockquote class="question">
   <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question</div>
@@ -1097,7 +1095,7 @@ If the datatype is not <code class="language-plaintext highlighter-rouge">tabula
   <p>How does the heatmap compare to the one from the Fu paper Fig 6 (above)?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>The heatmap looks similar to the heatmap in the paper.</p>
 
@@ -1272,7 +1270,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1300,11 +1298,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699492035'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

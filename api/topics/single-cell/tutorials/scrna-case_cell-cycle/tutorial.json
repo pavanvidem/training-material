@@ -29,7 +29,6 @@
     "Identifying the cell cycle genes and using them to regress out the effects of the cell cycle can reveal underlying patterns in the data"
   ],
   "tags": [
-    "single-cell",
     "10x"
   ],
   "contributions": {
@@ -88,7 +87,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Cell Cycle Regression Workflow",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.json",

@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Pre-processing of 10X Single-Cell RNA Datasets</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,18 +57,17 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1699405462' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1699405462' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699492035' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Pre-processing of 10X Single-Cell RNA Datasets">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-09-21 15:52:41 +0000">
+<meta name="DC.date" content="2023-10-09 16:30:03 +0000">
 <meta name="DC.creator" content="Mehmet Tekman">
 <meta name="DC.creator" content="Hans-Rudolf Hotz">
 <meta name="DC.creator" content="Daniel Blankenberg">
@@ -130,9 +110,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-09-21 15:52:41 +0000",
+  "dateModified": "2023-10-09 16:30:03 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Pre-processing of 10X Single-Cell RNA Datasets",
   "interactivityType": "mixed",
@@ -143,25 +124,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00252",
   "accessMode": [
     "textual",
     "visual"
@@ -186,11 +170,15 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/single-cell/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Pre-processing of 10X Single-Cell RNA Datasets' tutorial",
+  "name": "Pre-processing of 10X Single-Cell RNA Datasets",
   "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-preprocessing-tenx/tutorial.html",
+  "version": 16,
   "timeRequired": "PT1H",
   "teaches": "Demultiplex single-cell FASTQ data from 10X Genomics\n - Learn about transparent matrix formats\n - Understand the importance of high and low quality cells",
-  "keywords": "single-cell, single-cell, 10x",
+  "keywords": [
+    "Single Cell",
+    "10x"
+  ],
   "description": "The questions this  addresses are:\n - What is 10X?\n - What is STARsolo and what is Cell Ranger?\n - What are BCL and MTX files?\n - What is an HDF5 file, and why is it important?\n\n\nThe objectives are:\n - Demultiplex single-cell FASTQ data from 10X Genomics\n - Learn about transparent matrix formats\n - Understand the importance of high and low quality cells\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -208,7 +196,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -223,7 +212,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -238,7 +228,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -260,7 +251,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -281,7 +273,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-2799-424X",
@@ -304,7 +297,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-6833-9049",
@@ -327,7 +321,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-8170-8806",
@@ -350,7 +345,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-5192-126X",
@@ -369,10 +365,6 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   "mentions": [
     {
       "@type": "Thing",
-      "name": "single-cell"
-    },
-    {
-      "@type": "Thing",
       "name": "10x"
     }
   ],
@@ -382,7 +374,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -474,7 +466,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -543,7 +535,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Avatar" width="36" height="36">Mehmet Tekman</a><a href="/training-material/hall-of-fame/hrhotz/" class="contributor-badge contributor-hrhotz"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hrhotz?s=36" alt="Avatar" width="36" height="36">Hans-Rudolf Hotz</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/blankenberg?s=36" alt="Avatar" width="36" height="36">Daniel Blankenberg</a><a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a><a href="/training-material/hall-of-fame/pavanvidem/" class="contributor-badge contributor-pavanvidem"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pavanvidem?s=36" alt="Avatar" width="36" height="36">Pavankumar Videm</a>
+		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Mehmet Tekman avatar" width="36" class="avatar" />
+    Mehmet Tekman</a><a href="/training-material/hall-of-fame/hrhotz/" class="contributor-badge contributor-hrhotz"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hrhotz?s=36" alt="Hans-Rudolf Hotz avatar" width="36" class="avatar" />
+    Hans-Rudolf Hotz</a><a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/blankenberg?s=36" alt="Daniel Blankenberg avatar" width="36" class="avatar" />
+    Daniel Blankenberg</a><a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a><a href="/training-material/hall-of-fame/pavanvidem/" class="contributor-badge contributor-pavanvidem"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pavanvidem?s=36" alt="Pavankumar Videm avatar" width="36" class="avatar" />
+    Pavankumar Videm</a>
 	</div>
 
 </div>
@@ -853,7 +850,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 21, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 9, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -861,8 +858,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00252">https://gxy.io/GTN:T00252</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00252">https://gxy.io/GTN:T00252</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 16 </div>
+
     </blockquote>
     </section>
 
@@ -885,20 +885,20 @@ The cellular resolution and genome wide scope make it possible to draw new concl
 
 <p>10x genomics has provided not only a cost-effective high-throughput solution to understanding sample heterogeneity at the individual cell level, but has defined the standards of the field that many downstream analysis packages are now scrambling to accommodate.</p>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_clusters_intro.png" rel="noopener noreferrer"><figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_clusters_intro.png" alt="clusters. " width="953" height="415" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 1</strong>:</span> From less than 1K to over 10K with 10x genomics: Analyses of two separate scRNA datasets using the (left) CelSEQ2 protocol, and the (right) 10x Chromium system.&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_clusters_intro.png" alt="clusters. " width="953" height="415" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_clusters_intro.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> From less than 1K to over 10K with 10x genomics: Analyses of two separate scRNA datasets using the (left) CelSEQ2 protocol, and the (right) 10x Chromium system.</figcaption></figure>
 
 <p>The gain in resolution reduces the granularity and noise issues that plagued the field of scRNA-seq not long ago, where now individual clusters are much easier to decipher due to the added stability added by this gain in information.</p>
 
 <h2 id="library-preparation">Library Preparation</h2>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_libprep.png" rel="noopener noreferrer"><figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_libprep.png" alt="Library Preparation. " width="1861" height="697" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 2</strong>:</span> An overview of the library preparation&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_libprep.png" alt="Library Preparation. " width="1861" height="697" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_libprep.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> An overview of the library preparation</figcaption></figure>
 
 <p>The 10X barcoded gel beads consist of a pool barcodes which are used to separately index each cell’s transcriptome. The individual gel barcodes are delivered to each cell via flow-cytometry, where each cell is fed single-file along a liquid tube and tagged with a 10X gel bead. The cells are then isolated from one another within thousands of nanoliter droplets, where each droplet described by a unique 10x barcode that all reads in that droplet are associated with once they undergo reverse-transcription (RT) which reconstructs the mRNA into a cDNA counterpart. The oil is then removed and all (now barcoded) cDNA reads are pooled together to be sequenced.</p>
 
 <p>Though there are approximately 3 million 10x gel barcodes used, the amount actually qualitatively profiled in a sample is ~10,000 due to majority of droplets (&gt;90%) being empty in order to ensure that the remainder contains only one cell.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-whitelist-barcodes"><button class="gtn-boxify-button details" type="button" aria-controls="details-whitelist-barcodes" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Whitelist Barcodes<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-whitelist-barcodes"><button class="gtn-boxify-button details" type="button" aria-controls="details-whitelist-barcodes" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Whitelist Barcodes</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>There are actually two sets of barcodes for the different chemistries provided; one which has 737,000 barcodes, and one with ~3,7 million barcodes.</p>
 
@@ -947,7 +947,7 @@ The cellular resolution and genome wide scope make it possible to draw new concl
 
 </blockquote>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_workflow.png" rel="noopener noreferrer"><figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_workflow.png" alt="Overview of workflow. " width="1096" height="641" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 3</strong>:</span> An overview of the workflow&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_workflow.png" alt="Overview of workflow. " width="1096" height="641" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_workflow.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> An overview of the workflow</figcaption></figure>
 
 <p>The first part of this tutorial is essentially a one-click “fire and forget” solution to demultiplexing and quantifying scRNA-seq data, where much of the complexity required in this extremely crucial stage is simplified into a single step.</p>
 
@@ -958,9 +958,9 @@ The cellular resolution and genome wide scope make it possible to draw new concl
 <p>Since STARsolo is a drop-in solution to the <em>Cell Ranger</em> pipeline, the first part of the tutorial is a one-click solution where users are encouraged to launch their <strong>RNA STARsolo</strong> jobs and spend the time familiarising themselves with the pre-processing training materials mentioned above.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-benchmark-of-cell-ranger-to-others"><button class="gtn-boxify-button details" type="button" aria-controls="details-benchmark-of-cell-ranger-to-others" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Benchmark of Cell Ranger to others<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-benchmark-of-cell-ranger-to-others"><button class="gtn-boxify-button details" type="button" aria-controls="details-benchmark-of-cell-ranger-to-others" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Benchmark of Cell Ranger to others</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
-  <p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_runtimes.jpg" rel="noopener noreferrer"><figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_runtimes.jpg" alt="tenx_runtimes. " width="490" height="347" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Benchmark of different mapping software.&lt;/figcaption&gt;</figure></a></p>
+  <figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_runtimes.jpg" alt="tenx_runtimes. " width="490" height="347" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_runtimes.jpg" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> Benchmark of different mapping software.</figcaption></figure>
 
   <p>The image is from <span class="citation"><a href="#Melsted2019">Melsted <i>et al.</i> 2019</a></span>. Notice the order of magnitude speed up that STARsolo and a few others display, for a variety of different datasets in comparison to Cell Ranger.</p>
 </blockquote>
@@ -997,14 +997,14 @@ The cellular resolution and genome wide scope make it possible to draw new concl
       <p>Create a new history and rename it (e.g. scRNA-seq 10X dataset tutorial)</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Creating a new history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Import the sub-sampled FASTQ data from <a href="https://zenodo.org/record/3457880"><code class="language-plaintext highlighter-rouge">Zenodo</code></a> or from the data library (ask your instructor)</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing data from a data library</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L001_R1_001.fastq.gz
@@ -1014,7 +1014,7 @@ https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L002_R2_001.fastq.g
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing via links</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -1032,7 +1032,7 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
 
 <p>There are two main reagent kits used during the library preparation, and the choice of one will influence the size of the sequences we work with. Below we can see the layout of the primers used in both chemistries. We can ignore most of these as they are not relevant, namely: the P5 and P7 illumina primers are used in the illumina <a href="https://en.wikipedia.org/wiki/Illumina_dye_sequencing#Bridge_amplification">bridge amplification</a> process; the Sample Index is an 8bp primer which is related to the Chromium system that balances nucleotide bias and ensures that there is no sample overlap during the multiplexed sequencing; and the Poly(dT) VN primer used to capture RNA sequences with poly-A tails (i.e. mRNA).</p>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_primers.svg" rel="noopener noreferrer"><figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_primers.svg" alt="chem. " width="899" height="213" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 5</strong>:</span> 10x Chromiumv2 and Chromiumv3 Chemistries&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_primers.svg" alt="chem. " width="899" height="213" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_primers.svg" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> 10x Chromiumv2 and Chromiumv3 Chemistries</figcaption></figure>
 
 <p>The primers of interest to us are the Cell Barcode (CB) and the Unique Molecular Identifiers (UMI) used in the Read 1 sequencing primer, as they describe to us how to demultiplex and deduplicate our reads. It is highly advised that the <a href="/training-material/topics/single-cell/tutorials/scrna-preprocessing/tutorial.html">Plates, Batches, and Barcodes</a> slides are revisited to refresh your mind on these concepts.</p>
 
@@ -1064,11 +1064,11 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
 <p>The table above gives a summary of the primers used in the image and the number of basepairs occupied by each.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-strandedness"><button class="gtn-boxify-button details" type="button" aria-controls="details-strandedness" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Strandedness<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-strandedness"><button class="gtn-boxify-button details" type="button" aria-controls="details-strandedness" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Strandedness</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Unstranded protocols do not distinguish between whether a fragment was sequenced from the forward or the reverse strand, which can lead to some ambiguity if the fragment overlaps two transcripts. In the image below, it is not clear whether the fragment is derived from GeneF or GeneR due to this overlap.</p>
 
-  <p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_strandedness.svg" rel="noopener noreferrer"><figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_strandedness.svg" alt="strandedness. " width="354" height="210" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Mapping fragments to overlapping transcripts is ambiguous with unstranded protocols.&lt;/figcaption&gt;</figure></a></p>
+  <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_strandedness.svg" alt="strandedness. " width="354" height="210" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_strandedness.svg" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> Mapping fragments to overlapping transcripts is ambiguous with unstranded protocols.</figcaption></figure>
 
   <p>Stranded protocols overcome this by fitting different 5’ and 3’ primers and adaptors, meaning that the orientation of the fragment is fixed during sequencing. For the Chromium v2 and v3 chemistries, the barcode information is purely within the R1 forward strand.</p>
 
@@ -1086,7 +1086,7 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>The Cell Barcode (CB) has remained at 16bp for both chemistries.</li>
@@ -1119,7 +1119,7 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>There are 28 basepairs.</li>
       <li>The v2 has 26 basepairs, but the v3 has 28 basepairs. Therefore the reads we have here use the Chromium v3 chemistry.</li>
@@ -1134,13 +1134,13 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
 <blockquote class="comment">
   <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3" title="RNA STARsolo tool" aria-role="link"><strong>RNA STARsolo</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3</span></span> consumes a large amount of memory. During the Smörgåsbord training please use <code class="language-plaintext highlighter-rouge">Human (Homo Sapiens): hg19 chrX</code> as the reference genome if you follow this tutorial on <a href="https://usegalaxy.org">usegalaxy.org</a>. This performs the mapping only against chromosome X. The full output dataset is available at <a href="https://zenodo.org/record/3581213/files/matrix.mtx">zenodo</a> and will be the starting point for the next tutorial.</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3" title="RNA STARsolo tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>RNA STARsolo</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 2.7.10b+galaxy3)</span> consumes a large amount of memory. During the Smörgåsbord training please use <code class="language-plaintext highlighter-rouge">Human (Homo Sapiens): hg19 chrX</code> as the reference genome if you follow this tutorial on <a href="https://usegalaxy.org">usegalaxy.org</a>. This performs the mapping only against chromosome X. The full output dataset is available at <a href="https://zenodo.org/record/3581213/files/matrix.mtx">zenodo</a> and will be the starting point for the next tutorial.</p>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3" title="RNA STARsolo tool" aria-role="link"><strong>RNA STARsolo</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3</span></span>  with the following parameters:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3" title="RNA STARsolo tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>RNA STARsolo</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 2.7.10b+galaxy3)</span>  with the following parameters:</p>
   <ul>
     <li><em>“Custom or built-in reference genome”</em>: <code class="language-plaintext highlighter-rouge">Use a built-in index</code>
       <ul>
@@ -1204,7 +1204,7 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1" title="MultiQC tool" aria-role="link"><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1</span></span> with the following parameters:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1" title="MultiQC tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>MultiQC</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.9+galaxy1)</span> with the following parameters:</p>
   <ul>
     <li>In <em>“Results”</em>:
       <ul>
@@ -1234,7 +1234,7 @@ https://zenodo.org/record/3457880/files/3M-february-2018.txt.gz
   <p>What percentage of reads are uniquely mapped?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>87.5%</p>
     <ul>
       <li>This is good, and is expected of 10x datasets.</li>
@@ -1285,7 +1285,7 @@ Genes:
 <p>The explanation of these parameters can be seen in the <a href="https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf">RNA STAR Manual</a> under the <em>STARsolo</em> section, with most of the information given in the details box below.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-explanation-of-parameters"><button class="gtn-boxify-button details" type="button" aria-controls="details-explanation-of-parameters" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Explanation of parameters<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-explanation-of-parameters"><button class="gtn-boxify-button details" type="button" aria-controls="details-explanation-of-parameters" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Explanation of parameters</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <table>
     <thead>
@@ -1380,7 +1380,7 @@ Genes:
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-default-method"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Default Method</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="link"><strong>DropletUtils</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2</span></span>  with the following parameters:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>DropletUtils</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.10.0+galaxy2)</span>  with the following parameters:</p>
   <ul>
     <li><em>“Format for the input matrix”</em>: <code class="language-plaintext highlighter-rouge">Bundled (barcodes.tsv, genes.tsv, matrix.mtx)</code>
       <ul>
@@ -1420,7 +1420,7 @@ Genes:
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>By clicking on the title of the output dataset in the history we can expand the box to see the output says that there are <code class="language-plaintext highlighter-rouge">272</code> cells in the output table.</li>
@@ -1432,7 +1432,7 @@ Genes:
 <p>This will produce a count matrix in a human readable tabular format which can be used in downstream analysis tools, such as those used in the <a href="/training-material/topics/single-cell/tutorials/scrna-raceid/tutorial.html"><em>Downstream Single-cell RNA analysis with RaceID</em></a> tutorial.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-file-formats-in-scrna-seq"><button class="gtn-boxify-button details" type="button" aria-controls="details-file-formats-in-scrna-seq" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: File Formats in scRNA-seq<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-file-formats-in-scrna-seq"><button class="gtn-boxify-button details" type="button" aria-controls="details-file-formats-in-scrna-seq" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: File Formats in scRNA-seq</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The tabular outputs here are selected mostly for transparency, since they are easy to inspect. However, the datasets produced with 10x data are very large and very sparse, meaning there is much data redundancy due to the repetition of zeroes everywhere in the data.</p>
 
@@ -1456,7 +1456,7 @@ Genes:
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-rank-barcodes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Rank Barcodes</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="link"><strong>DropletUtils</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2</span></span>  with the following parameters:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>DropletUtils</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.10.0+galaxy2)</span>  with the following parameters:</p>
   <ul>
     <li><em>“Format for the input matrix”</em>: <code class="language-plaintext highlighter-rouge">Bundled (barcodes.tsv, genes.tsv, matrix.mtx)</code>
       <ul>
@@ -1474,7 +1474,7 @@ Genes:
 
 </blockquote>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_knee.png" rel="noopener noreferrer"><figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_knee.png" alt="knee. " width="480" height="480" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Barcode Ranks: The separating thresholds of high and low quality cells&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_knee.png" alt="knee. " width="480" height="480" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_knee.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Barcode Ranks: The separating thresholds of high and low quality cells</figcaption></figure>
 
 <p>The knee and inflection points on the curve mark the transition between two components of the total count distribution. This is assumed to represent the difference between cells with high RNA content and empty droplets with little RNA, and gives us a rough idea of how many cells to expect in our sample.</p>
 
@@ -1487,7 +1487,7 @@ Genes:
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>We see the blue knee line cross the threshold of barcodes at just below than the 10000 Rank on the horizontal log scale, which is shown in the expanded view of our data as <code class="language-plaintext highlighter-rouge">"knee = 4861"</code>. This line intersects with the ranked cells near 100 on x-axis. We can expect 100-200 cells with high RNA content.</li>
       <li>This threshold is given by the inflection line, which is given at <code class="language-plaintext highlighter-rouge">"inflection = 260"</code>. The vertical drop in the ranked cells at the inflection line is between 100 and 10000 on the x-axis. The axis is log scaled it is close to 100. Hence, we can expect between 200 and 400 cells.</li>
@@ -1500,7 +1500,7 @@ Genes:
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-custom-filtering"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Custom Filtering</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="link"><strong>DropletUtils</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2</span></span>  with the following parameters:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/dropletutils/dropletutils/1.10.0+galaxy2" title="DropletUtils tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>DropletUtils</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.10.0+galaxy2)</span>  with the following parameters:</p>
   <ul>
     <li><em>“Format for the input matrix”</em>: <code class="language-plaintext highlighter-rouge">Bundled (barcodes.tsv, genes.tsv, matrix.mtx)</code>
       <ul>
@@ -1524,7 +1524,7 @@ Genes:
 
 </blockquote>
 
-<p><a href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_cells.png" rel="noopener noreferrer"><figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_cells.png" alt="cells. " width="480" height="480" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Detected Cells (red)&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_cells.png" alt="cells. " width="480" height="480" loading="lazy" /><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/tenx_cells.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Detected Cells (red)</figcaption></figure>
 
 <p>Here we recover 282 high quality cells instead of the 272 detected via the default method previously. On large datasets, this difference can help clean downstream clustering. For example, soft or less well-defined clusters are derived from too much noise in the data due to too many low quality cells being in the data during the clustering. Filtering these out during the pre-processing would produce much better separation, albeit at the cost of having less cells to cluster. This filter-cluster trade-off is discussed in more detail in the downstream analysis training materials.</p>
 
@@ -1538,7 +1538,7 @@ Genes:
 
 <p>This tutorial is part of the https://singlecell.usegalaxy.eu portal (<span class="citation"><a href="#tekman2020single">Tekman <i>et al.</i> 2020</a></span>).</p>
 
-<!-- <a href="/training-material/topics/single-cell/images/scrna-pre-processing/scrna_workflow.svg" rel="noopener noreferrer"><figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/scrna_workflow.svg"  alt="Recap of workflow. "  width="933" height=978 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> A recap of the entire workflow</figcaption></figure></a> -->
+<!-- <figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="/training-material/topics/single-cell/images/scrna-pre-processing/scrna_workflow.svg"  alt="Recap of workflow. "  width="933" height=978 loading="lazy"><a target="_blank" href="/training-material/topics/single-cell/images/scrna-pre-processing/scrna_workflow.svg" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> A recap of the entire workflow</figcaption></figure> -->
 
                 </section>
 
@@ -1804,7 +1804,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1832,11 +1832,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699492035'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

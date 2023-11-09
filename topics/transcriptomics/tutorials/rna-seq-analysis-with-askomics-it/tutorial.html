@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>RNA-Seq analysis with AskOmics Interactive Tool</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1699405462' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1699405462' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699492035' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -130,7 +110,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-05-18 09:34:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -143,25 +124,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00297",
   "accessMode": [
     "textual",
     "visual"
@@ -186,11 +170,14 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'RNA-Seq analysis with AskOmics Interactive Tool' tutorial",
+  "name": "RNA-Seq analysis with AskOmics Interactive Tool",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html",
+  "version": 16,
   "timeRequired": "PT2H",
   "teaches": "Launch an AskOmics Interactive Tool\n - Integrate RNA-Seq and reference datasets into AskOmics\n - Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL\n - Complete the query to get the human homologs and their location using neXtProt database",
-  "keywords": "transcriptomics",
+  "keywords": [
+    "Transcriptomics"
+  ],
   "description": "The questions this  addresses are:\n - How to integrate RNA-Seq results with other datasets using AskOmics?\n - How to query these datasets to answer a biological question?\n - How to exploit a distant SPARQL endpoint to retrieve information?\n\n\nThe objectives are:\n - Launch an AskOmics Interactive Tool\n - Integrate RNA-Seq and reference datasets into AskOmics\n - Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL\n - Complete the query to get the human homologs and their location using neXtProt database\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -208,7 +195,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -223,7 +211,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -238,7 +227,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -253,7 +243,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -268,7 +259,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     },
     {
@@ -283,7 +275,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -305,7 +298,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -326,7 +320,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0003-0914-2470",
@@ -349,7 +344,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -370,7 +366,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -391,7 +388,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-7028-7620",
@@ -423,7 +421,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -515,7 +513,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -584,7 +582,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/xgaia/" class="contributor-badge contributor-xgaia"><img src="https://avatars.githubusercontent.com/xgaia?s=36" alt="Avatar" width="36" height="36">Xavier Garnier</a><a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/abretaud?s=36" alt="Avatar" width="36" height="36">Anthony Bretaudeau</a><a href="/training-material/hall-of-fame/annesiegel/" class="contributor-badge contributor-annesiegel"><img src="https://avatars.githubusercontent.com/annesiegel?s=36" alt="Avatar" width="36" height="36">Anne Siegel</a><a href="/training-material/hall-of-fame/odameron/" class="contributor-badge contributor-odameron"><img src="https://avatars.githubusercontent.com/odameron?s=36" alt="Avatar" width="36" height="36">Olivier Dameron</a><a href="/training-material/hall-of-fame/mboudet/" class="contributor-badge contributor-mboudet"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mboudet?s=36" alt="Avatar" width="36" height="36">Mateo Boudet</a>
+		Authors: <a href="/training-material/hall-of-fame/xgaia/" class="contributor-badge contributor-xgaia"><img src="https://avatars.githubusercontent.com/xgaia?s=36" alt="Xavier Garnier avatar" width="36" class="avatar" />
+    Xavier Garnier</a><a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/abretaud?s=36" alt="Anthony Bretaudeau avatar" width="36" class="avatar" />
+    Anthony Bretaudeau</a><a href="/training-material/hall-of-fame/annesiegel/" class="contributor-badge contributor-annesiegel"><img src="https://avatars.githubusercontent.com/annesiegel?s=36" alt="Anne Siegel avatar" width="36" class="avatar" />
+    Anne Siegel</a><a href="/training-material/hall-of-fame/odameron/" class="contributor-badge contributor-odameron"><img src="https://avatars.githubusercontent.com/odameron?s=36" alt="Olivier Dameron avatar" width="36" class="avatar" />
+    Olivier Dameron</a><a href="/training-material/hall-of-fame/mboudet/" class="contributor-badge contributor-mboudet"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mboudet?s=36" alt="Mateo Boudet avatar" width="36" class="avatar" />
+    Mateo Boudet</a>
 	</div>
 
 </div>
@@ -904,8 +907,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00297">https://gxy.io/GTN:T00297</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00297">https://gxy.io/GTN:T00297</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 16 </div>
+
     </blockquote>
     </section>
 
@@ -941,7 +947,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 <p>To link the human gene with neXtProt database, we will use the RDF abstraction of neXtProt. This file was obtained using the <a href="https://github.com/askomics/abstractor">Abstractor</a> tool.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-abstraction"><button class="gtn-boxify-button details" type="button" aria-controls="details-abstraction" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Abstraction<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-abstraction"><button class="gtn-boxify-button details" type="button" aria-controls="details-abstraction" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Abstraction</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>During the integration step, AskOmics builds an RDF description of the data: the <strong>abstraction</strong>. This abstraction is used to explore the data and build the query.
 AskOmics can also integrate <strong>abstraction</strong> of distant endpoint. Abstraction are obtained using <a href="https://github.com/askomics/abstractor">abstractor</a>, a python package to generate RDF abstractions from distant endpoints.
 The query builder interface is used to create a path through the <strong>abstraction</strong> of each ressources. The path is converted to a SPARQL query that is sent to the multiple SPARQL endpoint.</p>
@@ -1002,11 +1008,11 @@ The query builder interface is used to create a path through the <strong>abstrac
       <p>Create a new history for this RNA-seq exercise e.g. <code class="language-plaintext highlighter-rouge">RNA-seq AskOmics</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Creating a new history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Renaming a history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name (which by default is “Unnamed history”)</li>   <li>Type the new name</li>   <li>Click on <strong>Save</strong></li> </ol>   <p>If you do not have the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> (<strong>Edit</strong>) next to the history name:</p>   <ol>   <li>Click on <strong>Unnamed history</strong> (or the current name of the history) (<strong>Click to rename history</strong>) at the top of your history panel</li>   <li>Type the new name</li>   <li>Press <kbd>Enter</kbd></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -1019,11 +1025,11 @@ The query builder interface is used to create a path through the <strong>abstrac
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing via links</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing data from a data library<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-data-from-a-data-library"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-data-from-a-data-library" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing data from a data library</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>As an alternative to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>   <ol>   <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>   <li>Navigate to  the correct folder as indicated by your instructor.     <ul>       <li>On most Galaxies tutorial data will be provided in a folder named <strong>GTN - Material –&gt; Topic Name -&gt; Tutorial Name</strong>.</li>     </ul>   </li>   <li>Select the desired files</li>   <li>Click on <strong>Add to History</strong> <i class="fas fa-caret-down" aria-hidden="true"></i><span class="visually-hidden">galaxy-dropdown</span> near the top and select <strong>as Datasets</strong> from the dropdown menu</li>   <li>     <p>In the pop-up window, choose</p>     <ul>       <li><em>“Select history”</em>: the history you want to import the data to (or create a new one)</li>     </ul>   </li>   <li>Click on <strong>Import</strong></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
 
       <ul>
@@ -1065,7 +1071,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <p>If the datatypes are wrong, please change it.</p>
 
   <!--SNIPPET-->
-  <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select  your desired datatype     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+  <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Changing the datatype</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select  your desired datatype     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
   <p><!--END_SNIPPET--></p>
 </blockquote>
 
@@ -1098,7 +1104,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
 
 <p>Once the AskOmics Interactive Tool is ready, you should see a start page looking like this:</p>
 
-<p><a href="images/home.png" rel="noopener noreferrer"><figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="images/home.png" alt="home page. " width="1141" height="701" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 1</strong>:</span> AskOmics home page&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="images/home.png" alt="home page. " width="1141" height="701" loading="lazy" /><a target="_blank" href="images/home.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> AskOmics home page</figcaption></figure>
 
 <p>You can see that there is no data available yet. It’s because data needs to be integrated: it is the next step.</p>
 
@@ -1117,7 +1123,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   </ol>
 </blockquote>
 
-<p><a href="images/files.png" rel="noopener noreferrer"><figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="images/files.png" alt="files page. " width="1154" height="647" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 2</strong>:</span> AskOmics files page&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="images/files.png" alt="files page. " width="1154" height="647" loading="lazy" /><a target="_blank" href="images/files.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> AskOmics files page</figcaption></figure>
 
 <p>You will land on the <strong>Integrate</strong> page that shows a preview of the data present in each selected file, depending of its data type.</p>
 
@@ -1132,9 +1138,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <ol>
     <li>Search for <code class="language-plaintext highlighter-rouge">Mus musculus annotation (preview)</code></li>
     <li>Select <code class="language-plaintext highlighter-rouge">gene</code> and <code class="language-plaintext highlighter-rouge">mRNA</code></li>
-    <li>Click on the <strong>Integrate (private dataset)</strong> button
-<a href="images/mus_musculus_annotation_preview.png" rel="noopener noreferrer"><figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="images/mus_musculus_annotation_preview.png" alt="mus musculus annotation preview. " width="1214" height="170" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Mus musculus annotation preview&lt;/figcaption&gt;</figure></a></li>
+    <li>Click on the <strong>Integrate (private dataset)</strong> button</li>
   </ol>
+  <figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="images/mus_musculus_annotation_preview.png" alt="mus musculus annotation preview. " width="1214" height="170" loading="lazy" /><a target="_blank" href="images/mus_musculus_annotation_preview.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Mus musculus annotation preview</figcaption></figure>
 </blockquote>
 
 <h2 id="integration-of-tabular-tsv-files">Integration of tabular (TSV) files</h2>
@@ -1177,9 +1183,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
         <li>Keep the other column names and set their types to <em>numeric</em></li>
       </ul>
     </li>
-    <li><strong>Integrate (private dataset)</strong>
-  <a href="images/de_results_preview.png" rel="noopener noreferrer"><figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="images/de_results_preview.png" alt="De results preview. " width="1122" height="397" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 4</strong>:</span> DE results preview&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Integrate (private dataset)</strong></li>
   </ol>
+  <figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="images/de_results_preview.png" alt="De results preview. " width="1122" height="397" loading="lazy" /><a target="_blank" href="images/de_results_preview.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> DE results preview</figcaption></figure>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
@@ -1192,9 +1198,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
         <li>Set <code class="language-plaintext highlighter-rouge">to mouse genes@gene</code> type to <em>Symetric relation</em></li>
       </ul>
     </li>
-    <li>Click on the <strong>Integrate (private dataset)</strong> button
-  <a href="images/symbol_to_ensembl_preview.png" rel="noopener noreferrer"><figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="images/symbol_to_ensembl_preview.png" alt="Gene symbols preview. " width="1152" height="411" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Symbol to Ensembl preview&lt;/figcaption&gt;</figure></a></li>
+    <li>Click on the <strong>Integrate (private dataset)</strong> button</li>
   </ol>
+  <figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="images/symbol_to_ensembl_preview.png" alt="Gene symbols preview. " width="1152" height="411" loading="lazy" /><a target="_blank" href="images/symbol_to_ensembl_preview.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Symbol to Ensembl preview</figcaption></figure>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
@@ -1209,9 +1215,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
         <li>set <code class="language-plaintext highlighter-rouge">End</code> type to <em>End</em></li>
       </ul>
     </li>
-    <li>Click on the <strong>Integrate (private dataset)</strong> button
-  <a href="images/qtl_preview.png" rel="noopener noreferrer"><figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="images/qtl_preview.png" alt="QTL preview. " width="1130" height="408" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 6</strong>:</span> QTL preview&lt;/figcaption&gt;</figure></a></li>
+    <li>Click on the <strong>Integrate (private dataset)</strong> button</li>
   </ol>
+  <figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="images/qtl_preview.png" alt="QTL preview. " width="1130" height="408" loading="lazy" /><a target="_blank" href="images/qtl_preview.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> QTL preview</figcaption></figure>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
@@ -1226,9 +1232,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
         <li>Keep the other column names and set their types to <em>text</em></li>
       </ul>
     </li>
-    <li>Click on the <strong>Integrate (private dataset)</strong> button
-  <a href="images/homolog_groups.png" rel="noopener noreferrer"><figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="images/homolog_groups.png" alt="Homolog groups preview. " width="1126" height="396" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Homolog groups preview&lt;/figcaption&gt;</figure></a></li>
+    <li>Click on the <strong>Integrate (private dataset)</strong> button</li>
   </ol>
+  <figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="images/homolog_groups.png" alt="Homolog groups preview. " width="1126" height="396" loading="lazy" /><a target="_blank" href="images/homolog_groups.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Homolog groups preview</figcaption></figure>
 </blockquote>
 
 <h2 id="integration-of-rdf-files">Integration of RDF files</h2>
@@ -1240,9 +1246,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <ol>
     <li>Search for <code class="language-plaintext highlighter-rouge">neXtProt abstraction (preview)</code></li>
     <li>Check that <strong>Distant endpoint</strong> is set to <code class="language-plaintext highlighter-rouge">https://sparql.nextprot.org/sparql</code> in <strong>advanced options</strong></li>
-    <li>Click on the <strong>Integrate (private dataset)</strong> button
-  <a href="images/nextprot_abstraction_preview.png" rel="noopener noreferrer"><figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="images/nextprot_abstraction_preview.png" alt="neXtProt abstraction preview. " width="1125" height="497" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 8</strong>:</span> neXtProt abstraction preview&lt;/figcaption&gt;</figure></a></li>
+    <li>Click on the <strong>Integrate (private dataset)</strong> button</li>
   </ol>
+  <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="images/nextprot_abstraction_preview.png" alt="neXtProt abstraction preview. " width="1125" height="497" loading="lazy" /><a target="_blank" href="images/nextprot_abstraction_preview.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> neXtProt abstraction preview</figcaption></figure>
 </blockquote>
 
 <h2 id="monitor-integration">Monitor integration</h2>
@@ -1253,9 +1259,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <div class="box-title hands-on-title" id="hands-on-track-integration-progress"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: track integration progress</div>
   <ol>
     <li>Go to the <strong>Dataset</strong> page</li>
-    <li>Wait for all datasets to be in <em>success</em> state
-  <a href="images/datasets.png" rel="noopener noreferrer"><figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="images/datasets.png" alt="dataset. " width="1130" height="455" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Datasets table&lt;/figcaption&gt;</figure></a></li>
+    <li>Wait for all datasets to be in <em>success</em> state</li>
   </ol>
+  <figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="images/datasets.png" alt="dataset. " width="1130" height="455" loading="lazy" /><a target="_blank" href="images/datasets.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Datasets table</figcaption></figure>
 </blockquote>
 
 <h1 id="query">Query</h1>
@@ -1268,7 +1274,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
 
 <p>The first step to build a query is to choose a start point for the query.</p>
 
-<p><a href="images/ask.png" rel="noopener noreferrer"><figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="images/ask.png" alt="ask. " width="1143" height="357" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 10</strong>:</span> ask page&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="images/ask.png" alt="ask. " width="1143" height="357" loading="lazy" /><a target="_blank" href="images/ask.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> ask page</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-start-a-query"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Start a query</div>
@@ -1283,7 +1289,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
 
 <p>The query builder is composed of a graph. Nodes represents <em>entities</em> and links represents <em>relations</em> between entities. The selected entity is surrounded by a red circle. Links and other entities are dotted and lighter because there are not instantiated.</p>
 
-<p><a href="images/query_builder.png" rel="noopener noreferrer"><figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="images/query_builder.png" alt="query builder. " width="1120" height="662" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Query builder, Differential Expression is the selected entity, Gene Symbol is a suggested entity&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="images/query_builder.png" alt="query builder. " width="1120" height="662" loading="lazy" /><a target="_blank" href="images/query_builder.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> Query builder, Differential Expression is the selected entity, Gene Symbol is a suggested entity</figcaption></figure>
 
 <p>On the right, attributes of the selected entity are displayed as attribute boxes. Each box has an eye icon: an opened eye means the attribute will be displayed on the results.</p>
 
@@ -1291,9 +1297,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <div class="box-title hands-on-title" id="hands-on-ask-for-all-differential-expression-and-display-some-attributes"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Ask for all Differential Expression and display some attributes</div>
   <ol>
     <li>Display <code class="language-plaintext highlighter-rouge">logFC</code> and <code class="language-plaintext highlighter-rouge">adj.P.val</code> by clicking on the eye icon</li>
-    <li><strong>Run &amp; preview</strong>
-<a href="images/preview_results.png" rel="noopener noreferrer"><figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="images/preview_results.png" alt="preview results. " width="1125" height="550" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Results preview&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Run &amp; preview</strong></li>
   </ol>
+  <figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="images/preview_results.png" alt="preview results. " width="1125" height="550" loading="lazy" /><a target="_blank" href="images/preview_results.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> Results preview</figcaption></figure>
 </blockquote>
 
 <p><strong>Run &amp; preview</strong> launch the query with a limit of 30 rows returned. We use this button to get an idea of the results returned.</p>
@@ -1309,9 +1315,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <ol>
     <li>Filter <code class="language-plaintext highlighter-rouge">logFC</code> with <code class="language-plaintext highlighter-rouge">&gt; 2</code></li>
     <li>Filter <code class="language-plaintext highlighter-rouge">adj.P.val</code> with <code class="language-plaintext highlighter-rouge">≤ 0.05</code></li>
-    <li><strong>Run &amp; preview</strong>
-<a href="images/preview_results_filtered.png" rel="noopener noreferrer"><figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="images/preview_results_filtered.png" alt="preview filtered results. " width="1407" height="691" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Filtered results preview&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Run &amp; preview</strong></li>
   </ol>
+  <figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="images/preview_results_filtered.png" alt="preview filtered results. " width="1407" height="691" loading="lazy" /><a target="_blank" href="images/preview_results_filtered.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> Filtered results preview</figcaption></figure>
 </blockquote>
 
 <p>The preview shows only significantly over-expressed genes.</p>
@@ -1328,9 +1334,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
     <li>First, hide <code class="language-plaintext highlighter-rouge">Label</code>, <code class="language-plaintext highlighter-rouge">logFC</code> and <code class="language-plaintext highlighter-rouge">adj.P.val</code> of <code class="language-plaintext highlighter-rouge">Differential Expression</code> using the eye icon</li>
     <li>Instantiate <code class="language-plaintext highlighter-rouge">Gene Symbol</code> by clicking on the suggested node, and hide his <code class="language-plaintext highlighter-rouge">Label</code> using the eye icon</li>
     <li>Instantiate <code class="language-plaintext highlighter-rouge">gene</code> by clicking on the <code class="language-plaintext highlighter-rouge">gene</code> node</li>
-    <li><strong>Run &amp; preview</strong>
-<a href="images/gene_query.png" rel="noopener noreferrer"><figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="images/gene_query.png" alt="gene query. " width="385" height="444" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Gene query&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Run &amp; preview</strong></li>
   </ol>
+  <figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="images/gene_query.png" alt="gene query. " width="385" height="444" loading="lazy" /><a target="_blank" href="images/gene_query.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> Gene query</figcaption></figure>
 </blockquote>
 
 <p>Results now show the Ensembl id of our over-expressed genes. We have now access to all the information about the <code class="language-plaintext highlighter-rouge">gene</code> entity contained in the GFF file. For example, we can filter on chromosome and display chromosome and strand to get information about gene location.</p>
@@ -1341,9 +1347,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
     <li>Show <code class="language-plaintext highlighter-rouge">reference</code> and <code class="language-plaintext highlighter-rouge">strand</code> using the eye icon</li>
     <li>Filter <code class="language-plaintext highlighter-rouge">reference</code> by selecting <code class="language-plaintext highlighter-rouge">X</code> chromosome</li>
     <li>Filter <code class="language-plaintext highlighter-rouge">strand</code> by selecting <code class="language-plaintext highlighter-rouge">+</code> strand</li>
-    <li><strong>Run &amp; preview</strong>
-<a href="images/gene_filter.png" rel="noopener noreferrer"><figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="images/gene_filter.png" alt="gene filter. " width="534" height="316" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 15</strong>:</span> Gene filtering&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Run &amp; preview</strong></li>
   </ol>
+  <figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="images/gene_filter.png" alt="gene filter. " width="534" height="316" loading="lazy" /><a target="_blank" href="images/gene_filter.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> Gene filtering</figcaption></figure>
 </blockquote>
 
 <h3 id="query-on-the-position-of-elements-on-the-genome">Query on the position of elements on the genome.</h3>
@@ -1356,7 +1362,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
 </ul>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-faldo-ontology"><button class="gtn-boxify-button details" type="button" aria-controls="details-faldo-ontology" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: FALDO ontology<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-faldo-ontology"><button class="gtn-boxify-button details" type="button" aria-controls="details-faldo-ontology" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: FALDO ontology</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>The <a href="https://bioportal.bioontology.org/ontologies/FALDO">FALDO</a> ontology describes sequence feature positions and regions. AskOmics uses FALDO ontology to represent entity positions. GFF are using FALDO, as well as TSV entities with chromosome, strand, start and end.</p>
 </blockquote>
 
@@ -1371,9 +1377,9 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
     <li>Instantiate <code class="language-plaintext highlighter-rouge">QTL</code></li>
     <li>Click on the link between <code class="language-plaintext highlighter-rouge">gene</code> and <code class="language-plaintext highlighter-rouge">QTL</code> to edit the relation</li>
     <li>Check that the relation is <code class="language-plaintext highlighter-rouge">gene</code> <code class="language-plaintext highlighter-rouge">included in</code> <code class="language-plaintext highlighter-rouge">QTL</code> <code class="language-plaintext highlighter-rouge">on the same reference</code> with <code class="language-plaintext highlighter-rouge">strict</code> ticked</li>
-    <li><strong>Run &amp; preview</strong>
-<a href="images/query_builder_position.png" rel="noopener noreferrer"><figure id="figure-16" style="max-width: 90%; margin:auto;"><img src="images/query_builder_position.png" alt="FALDO query. " width="1098" height="662" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 16</strong>:</span> FALDO query&lt;/figcaption&gt;</figure></a></li>
+    <li><strong>Run &amp; preview</strong></li>
   </ol>
+  <figure id="figure-16" style="max-width: 90%; margin:auto;"><img src="images/query_builder_position.png" alt="FALDO query. " width="1098" height="662" loading="lazy" /><a target="_blank" href="images/query_builder_position.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 16</strong>:</span> FALDO query</figcaption></figure>
 </blockquote>
 
 <p>To go further, we can filter on <code class="language-plaintext highlighter-rouge">QTL</code> to refine the results.</p>
@@ -1408,8 +1414,10 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <ol>
     <li>Go back to the <code class="language-plaintext highlighter-rouge">gene</code> node</li>
     <li>instantiate <code class="language-plaintext highlighter-rouge">Gene Symbol</code> and hide his <code class="language-plaintext highlighter-rouge">Label</code></li>
-    <li>Instantiate <code class="language-plaintext highlighter-rouge">Homolog Group</code>, hide his label and filter his <code class="language-plaintext highlighter-rouge">Common Organism Name</code> with <code class="language-plaintext highlighter-rouge">human</code>
-<a href="images/filter_organism_name.png" rel="noopener noreferrer"><figure id="figure-17" style="max-width: 90%; margin:auto;"><img src="images/filter_organism_name.png" alt="Organism name filter. " width="433" height="120" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 17</strong>:</span> Organism name filter&lt;/figcaption&gt;</figure></a></li>
+    <li>Instantiate <code class="language-plaintext highlighter-rouge">Homolog Group</code>, hide his label and filter his <code class="language-plaintext highlighter-rouge">Common Organism Name</code> with <code class="language-plaintext highlighter-rouge">human</code></li>
+  </ol>
+  <figure id="figure-17" style="max-width: 90%; margin:auto;"><img src="images/filter_organism_name.png" alt="Organism name filter. " width="433" height="120" loading="lazy" /><a target="_blank" href="images/filter_organism_name.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 17</strong>:</span> Organism name filter</figcaption></figure>
+  <ol>
     <li>From <code class="language-plaintext highlighter-rouge">Homolog Group</code>, instantiate another <code class="language-plaintext highlighter-rouge">Gene Symbol</code> and hide his <code class="language-plaintext highlighter-rouge">Label</code></li>
     <li>Finally, follow the <code class="language-plaintext highlighter-rouge">to neXtProt Gene</code> link and instantiate <code class="language-plaintext highlighter-rouge">Gene</code> (with a capital G)</li>
     <li><strong>Run &amp; preview</strong></li>
@@ -1425,8 +1433,10 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   <ol>
     <li>Instantiate <code class="language-plaintext highlighter-rouge">Entry</code></li>
     <li>Instantiate <code class="language-plaintext highlighter-rouge">Isoform</code> and hide the <code class="language-plaintext highlighter-rouge">Label</code></li>
-    <li>Many nodes are connected to <code class="language-plaintext highlighter-rouge">Isoform</code>. Use the <em>Filter links</em> field to filter nodes linked with a link named <code class="language-plaintext highlighter-rouge">location</code>
-<a href="images/filter_links.png" rel="noopener noreferrer"><figure id="figure-18" style="max-width: 90%; margin:auto;"><img src="images/filter_links.png" alt="Filter links. " width="669" height="353" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 18</strong>:</span> Filter links&lt;/figcaption&gt;</figure></a></li>
+    <li>Many nodes are connected to <code class="language-plaintext highlighter-rouge">Isoform</code>. Use the <em>Filter links</em> field to filter nodes linked with a link named <code class="language-plaintext highlighter-rouge">location</code></li>
+  </ol>
+  <figure id="figure-18" style="max-width: 90%; margin:auto;"><img src="images/filter_links.png" alt="Filter links. " width="669" height="353" loading="lazy" /><a target="_blank" href="images/filter_links.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 18</strong>:</span> Filter links</figcaption></figure>
+  <ol>
     <li>Instantiate the <code class="language-plaintext highlighter-rouge">Subcellular Location</code> node and hide <code class="language-plaintext highlighter-rouge">Uri</code></li>
     <li>Use the <em>Filter node</em> field to filter nodes with “location” in their name</li>
     <li>Instantiate <code class="language-plaintext highlighter-rouge">Uniprot subcellular Location CV</code> (you can use the node filter to clear up the screen)</li>
@@ -1456,7 +1466,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   </ol>
 </blockquote>
 
-<p><a href="images/results_table.png" rel="noopener noreferrer"><figure id="figure-19" style="max-width: 90%; margin:auto;"><img src="images/results_table.png" alt="preview table. " width="1125" height="201" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 19</strong>:</span> Results table&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-19" style="max-width: 90%; margin:auto;"><img src="images/results_table.png" alt="preview table. " width="1125" height="201" loading="lazy" /><a target="_blank" href="images/results_table.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 19</strong>:</span> Results table</figcaption></figure>
 
 <p>The <strong>Action</strong> column contain button to perform certain action:</p>
 
@@ -1477,7 +1487,7 @@ https://zenodo.org/record/3950862/files/nextprot_abstraction.ttl
   </ol>
 </blockquote>
 
-<p><a href="images/galaxy_history_results.png" rel="noopener noreferrer"><figure id="figure-20" style="max-width: 90%; margin:auto;"><img src="images/galaxy_history_results.png" alt="history results. " width="289" height="612" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 20</strong>:</span> Galaxy history with the two results&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-20" style="max-width: 90%; margin:auto;"><img src="images/galaxy_history_results.png" alt="history results. " width="289" height="612" loading="lazy" /><a target="_blank" href="images/galaxy_history_results.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 20</strong>:</span> Galaxy history with the two results</figcaption></figure>
 
 <p>Now that you have used AskOmics to generate this final tabular file, you can continue analysing it with other Galaxy tools.
 If you are done, don’t forget to close the AskOmics instance by going to the “User” &gt; “Active Interactive Tools” page.</p>
@@ -1646,7 +1656,7 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1674,11 +1684,7 @@ tools: []
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699492035'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

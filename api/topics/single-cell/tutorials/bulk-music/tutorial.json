@@ -10,7 +10,6 @@
   "priority": 1,
   "zenodo_link": "https://zenodo.org/record/5719228",
   "tags": [
-    "single-cell",
     "transcriptomics"
   ],
   "questions": [
@@ -129,7 +128,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "MuSiC Workflow",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json",

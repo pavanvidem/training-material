@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Contributing with GitHub via command-line</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1699405462' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1699405462' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699492035' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -116,7 +96,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "Students"
+    "educationalRole": "Instructors"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -127,7 +107,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-03-23 17:25:14 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -140,25 +121,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00064",
   "accessMode": [
     "textual",
     "visual"
@@ -183,11 +167,14 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/contributing/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Contributing with GitHub via command-line' tutorial",
+  "name": "Contributing with GitHub via command-line",
   "url": "https://training.galaxyproject.org/training-material/topics/contributing/tutorials/github-command-line-contribution/tutorial.html",
+  "version": 38,
   "timeRequired": "PT30M",
   "teaches": "Fork a repository on GitHub\n - Clone a remote repository locally\n - Create a branch\n - Commit changes\n - Push changes to a remote repository\n - Create a pull request\n - Update a pull request",
-  "keywords": "contributing",
+  "keywords": [
+    "Contributing to the Galaxy Training Material"
+  ],
   "description": "The questions this  addresses are:\n - How can I contribute to an open-source project with GitHub?\n - What is the GitHub flow?\n\n\nThe objectives are:\n - Fork a repository on GitHub\n - Clone a remote repository locally\n - Create a branch\n - Commit changes\n - Push changes to a remote repository\n - Create a pull request\n - Update a pull request\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -212,7 +199,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -233,7 +221,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0001-9852-1987",
@@ -258,7 +247,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699492035'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -350,7 +339,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -419,7 +408,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/cmonjeau/" class="contributor-badge contributor-cmonjeau"><img src="https://avatars.githubusercontent.com/cmonjeau?s=36" alt="Avatar" width="36" height="36">Cyril Monjeaud</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Avatar" width="36" height="36">Bérénice Batut</a>
+		Authors: <a href="/training-material/hall-of-fame/cmonjeau/" class="contributor-badge contributor-cmonjeau"><img src="https://avatars.githubusercontent.com/cmonjeau?s=36" alt="Cyril Monjeaud avatar" width="36" class="avatar" />
+    Cyril Monjeaud</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bebatut?s=36" alt="Bérénice Batut avatar" width="36" class="avatar" />
+    Bérénice Batut</a>
 	</div>
 
 </div>
@@ -536,8 +527,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00064">https://gxy.io/GTN:T00064</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00064">https://gxy.io/GTN:T00064</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 38 </div>
+
     </blockquote>
     </section>
 
@@ -557,7 +551,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 <p>The process of development of new content is open and transparent, using git and following the <a href="https://guides.github.com/introduction/flow/">GitHub flow</a>:</p>
 
-<p><a href="../../images/oss_development_process.png" rel="noopener noreferrer"><figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/oss_development_process.png" alt="Open source development process. " width="1947" height="582" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Open source development process&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/oss_development_process.png" alt="Open source development process. " width="1947" height="582" loading="lazy" /><a target="_blank" href="../../images/oss_development_process.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Open source development process</figcaption></figure>
 
 <ol>
   <li>Create a fork</li>
@@ -596,7 +590,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 <p>A fork is a copy of a repository. <a href="https://help.github.com/articles/fork-a-repo/">Forking</a> a repository allows you to freely experiment with changes without affecting the original project:</p>
 
-<p><a href="../../images/PR_schema_01.png" rel="noopener noreferrer"><figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_01.png" alt="Explanation of the forking. " width="1006" height="478" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Creation of a fork&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_01.png" alt="Explanation of the forking. " width="1006" height="478" loading="lazy" /><a target="_blank" href="../../images/PR_schema_01.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Creation of a fork</figcaption></figure>
 
 <p>Forking a repository is a simple two-step process:</p>
 
@@ -623,7 +617,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 <p>To modify the content of the repository, you need a copy of it on your computer. This step of importing a git repository is called “cloning”:</p>
 
-<p><a href="../../images/PR_schema_02.png" rel="noopener noreferrer"><figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_02.png" alt="Explanation of the cloning. " width="1282" height="872" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Cloning a repository&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_02.png" alt="Explanation of the cloning. " width="1282" height="872" loading="lazy" /><a target="_blank" href="../../images/PR_schema_02.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Cloning a repository</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-clone-the-github-repository"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Clone the GitHub repository</div>
@@ -673,7 +667,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 <p>When you’re working on a project, you’re going to have a bunch of different features or ideas in progress at any given time – some of which are ready to go, and others which are not. Branching exists to help you manage this workflow. You should develop different features on different branches to help keep the changes you make simple and easy to review.</p>
 
-<p><a href="../../images/PR_branches_01.png" rel="noopener noreferrer"><figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/PR_branches_01.png" alt="Divergence of a branch compared to main. " width="440" height="88" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 4</strong>:</span> When you create a branch in your project, you’re creating an environment where you can try out new ideas. Changes you make on a branch don’t affect the main branch&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/PR_branches_01.png" alt="Divergence of a branch compared to main. " width="440" height="88" loading="lazy" /><a target="_blank" href="../../images/PR_branches_01.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> When you create a branch in your project, you're creating an environment where you can try out new ideas. Changes you make on a branch don't affect the main branch</figcaption></figure>
 
 <p>Here for this tutorial, you will create a branch called “my_new_branch” in which you will modify the <code class="language-plaintext highlighter-rouge">CONTRIBUTORS.yaml</code> file, the file used to generate the <a href="/training-material/hall-of-fame.html">Hall of Fame</a>.</p>
 
@@ -705,13 +699,13 @@ Switched to a new branch 'my_new_branch'
 
 <p>This branch is added to your local copy:</p>
 
-<p><a href="../../images/PR_schema_03.png" rel="noopener noreferrer"><figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_03.png" alt="Creation of a branch on the local copy of the repository. " width="1007" height="872" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Creation of a branch on the local copy of the repository&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_03.png" alt="Creation of a branch on the local copy of the repository. " width="1007" height="872" loading="lazy" /><a target="_blank" href="../../images/PR_schema_03.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Creation of a branch on the local copy of the repository</figcaption></figure>
 
 <h1 id="make-your-changes-on-this-branch">Make your changes on this branch</h1>
 
 <p>You have created your first branch! Now you want to make the change in the <code class="language-plaintext highlighter-rouge">CONTRIBUTING.yaml</code> file. By changing a file in this branch, it will diverge from the <code class="language-plaintext highlighter-rouge">main</code> branch. It will contain data that is only on this new branch:</p>
 
-<p><a href="../../images/PR_branches_02.png" rel="noopener noreferrer"><figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/PR_branches_02.png" alt="Divergence of the branch compared to main. " width="546" height="90" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 6</strong>:</span> The changes on your branch will not be on the main branch&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/PR_branches_02.png" alt="Divergence of the branch compared to main. " width="546" height="90" loading="lazy" /><a target="_blank" href="../../images/PR_branches_02.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> The changes on your branch will not be on the main branch</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-make-changes-in-a-branch"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Make changes in a branch</div>
@@ -765,7 +759,7 @@ $ git commit -m "Add ..."
 </code></pre></div>      </div>
 
       <blockquote class="details">
-        <div class="box-title details-title" id="details-quot-push-origin-quot"><button class="gtn-boxify-button details" type="button" aria-controls="details-quot-push-origin-quot" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: &quot;push origin&quot;<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title details-title" id="details-quot-push-origin-quot"><button class="gtn-boxify-button details" type="button" aria-controls="details-quot-push-origin-quot" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: &quot;push origin&quot;</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
         <p>When you <code class="language-plaintext highlighter-rouge">git push</code>ed, you specified <code class="language-plaintext highlighter-rouge">origin</code>. Git repositories can know that forks exist in multiple places. When you clone one, it creates a “remote” (a remote repository) which it names <code class="language-plaintext highlighter-rouge">origin</code>, set to the URL that you used when you cloned. By having multiple remotes, you can manage more complex workflows.</p>
       </blockquote>
     </li>
@@ -787,13 +781,13 @@ $ git commit -m "Add ..."
 
 </blockquote>
 
-<p><a href="../../images/PR_schema_04.png" rel="noopener noreferrer"><figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_04.png" alt="Pushing changes to the fork from the local copy. " width="1171" height="872" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Pushing changes from the local copy to the fork on GitHub&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_04.png" alt="Pushing changes to the fork from the local copy. " width="1171" height="872" loading="lazy" /><a target="_blank" href="../../images/PR_schema_04.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Pushing changes from the local copy to the fork on GitHub</figcaption></figure>
 
 <h1 id="open-a-pull-request">Open a pull request</h1>
 
 <p>You pushed your changes to GitHub, but currently they are only on your fork. You want to have these changes in the main GitHub repository in order to appear on our <a href="/training-material/hall-of-fame.html">Hall of Fame</a> online. You can’t add or push directly the main GitHub repository, so you need to create what we call a pull request:</p>
 
-<p><a href="../../images/PR_schema_05.png" rel="noopener noreferrer"><figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_05.png" alt="Pull request. " width="1007" height="1012" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Pull Requests provide a way to notify project maintainers about the changes you’d like them to consider&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/PR_schema_05.png" alt="Pull request. " width="1007" height="1012" loading="lazy" /><a target="_blank" href="../../images/PR_schema_05.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Pull Requests provide a way to notify project maintainers about the changes you'd like them to consider</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-create-a-pull-request"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create a pull request</div>
@@ -824,7 +818,7 @@ $ git commit -m "Add ..."
           <p><a href="../../images/PR_create_menu.png" rel="noopener noreferrer"><img src="../../images/PR_create_menu.png" alt="Create pull request dropdown in the GitHub interface is shown, the draft pull request button option is highlighted. " width="362" height="239" loading="lazy" /></a></p>
 
           <blockquote class="details">
-            <div class="box-title details-title" id="details-quot-draft-pull-requests-quot"><button class="gtn-boxify-button details" type="button" aria-controls="details-quot-draft-pull-requests-quot" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: &quot;Draft pull requests&quot;<span class="fold-unfold fa fa-minus-square"></span></button></div>
+            <div class="box-title details-title" id="details-quot-draft-pull-requests-quot"><button class="gtn-boxify-button details" type="button" aria-controls="details-quot-draft-pull-requests-quot" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: &quot;Draft pull requests&quot;</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
             <p><a href="https://github.blog/2019-02-14-introducing-draft-pull-requests/#tag-your-work-in-progress">Creating a pull request as a draft</a> serves as an indication that you are still working on the content.
  Reviewers may comment on the current state and give general feedback, but they will know that they are not looking at the final version of your contribution.</p>
 
@@ -992,7 +986,7 @@ Reviewers can now approve and merge your pull request.</p>
 
 <p>With this tutorial, you have learned some basics <code class="language-plaintext highlighter-rouge">git</code> commands and principles:</p>
 
-<p><a href="../../images/PR_global_schema.png" rel="noopener noreferrer"><figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/PR_global_schema.png" alt="Summary of the links between GitHub, fork and local repository. " width="1380" height="1012" loading="lazy" />&lt;figcaption&gt;<span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Summary of the links between GitHub, fork and local repository&lt;/figcaption&gt;</figure></a></p>
+<figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/PR_global_schema.png" alt="Summary of the links between GitHub, fork and local repository. " width="1380" height="1012" loading="lazy" /><a target="_blank" href="../../images/PR_global_schema.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Summary of the links between GitHub, fork and local repository</figcaption></figure>
 
 <p>You also learned the GitHub flow and its cycle:</p>
 
@@ -1009,7 +1003,7 @@ Reviewers can now approve and merge your pull request.</p>
 <p>You can now contribute and help us to improve our tutorials!</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-git-in-depth"><button class="gtn-boxify-button details" type="button" aria-controls="details-git-in-depth" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Git in Depth<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-git-in-depth"><button class="gtn-boxify-button details" type="button" aria-controls="details-git-in-depth" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Git in Depth</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>This tutorial was a quick introduction to explain the basics of contributing to the training material. We recommend that everyone follow a more detailed git tutorials:</p>
   <ul>
     <li><a href="http://swcarpentry.github.io/git-novice/">Software Carpentry tutorial</a> which explains a bit more in detail some git commands and the concept of remote, local and stagging</li>
@@ -1311,7 +1305,7 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/afc517d9c63b0669a5c1f5c62c6978e8d6668ef9">afc517d</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1339,11 +1333,7 @@ tools: []
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1699405462'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699492035'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

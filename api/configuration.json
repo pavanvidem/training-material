@@ -133,7 +133,9 @@
       "resources": [
         "assets/js/theme.js"
       ],
-      "timestamp": 1699405462
+      "timestamp": 1699492035,
+      "hash": "f1f2de89",
+      "path": "/assets/js/bundle.f1f2de89.js"
     },
     "main": {
       "preload": true,
@@ -146,7 +148,9 @@
         "assets/js/list.min.js",
         "assets/js/main.js"
       ],
-      "timestamp": 1699405462
+      "timestamp": 1699492035,
+      "hash": "9d052497",
+      "path": "/assets/js/bundle.9d052497.js"
     }
   },
   "figurify": {
@@ -247,6 +251,7 @@
     "param-select": "fas fa-filter",
     "param-text": "fas fa-pencil-alt",
     "param-toggle": "fas fa-toggle-on",
+    "point-right": "fa fa-hand-o-right",
     "pref-info": "fas fa-user",
     "pref-password": "fas fa-unlock-alt",
     "pref-identities": "far fa-id-card-o",
@@ -284,13 +289,14 @@
     "workflow-run": "fas fa-play",
     "video": "fas fa-video",
     "video-slides": "far fa-play-circle",
-    "zenodo_link": "far fa-copy"
+    "zenodo_link": "far fa-copy",
+    "version": "fas fa-code-commit"
   },
   "serving": false,
   "boxify": {
   },
-  "git_revision": "afc517d9c63b0669a5c1f5c62c6978e8d6668ef9",
-  "git_revision_short": "afc517d",
+  "git_revision": "902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+  "git_revision_short": "902cca8",
   "gtn_fork": "pavanvidem",
   "git_tags": [
 
@@ -298,5 +304,5 @@
   "git_tags_recent": [
 
   ],
-  "age": 8.361396303901437
+  "age": 8.36413415468857
 }

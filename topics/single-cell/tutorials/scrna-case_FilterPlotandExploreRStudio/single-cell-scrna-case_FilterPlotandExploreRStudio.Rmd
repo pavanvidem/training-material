@@ -25,12 +25,14 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-date: '2023-10-08 14:46:45 +0000'
+date: '2023-10-13 13:40:31 +0000'
 link-citations: true
 anchor_sections: true
 code_download: true
 ---
 # Introduction
+
+<!--SNIPPET--><blockquote class="warning">   <div class="box-title warning-title" id="warning-notebook-based-tutorials-can-give-different-outputs"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Warning: Notebook-based tutorials can give different outputs</div>   <p>The nature of coding pulls the most recent tools to perform tasks. This can - and often does - change the outputs of an analysis. Be prepared, as you are unlikely to get outputs identical to a tutorial if you are running it in a programming environment like a Jupyter Notebook or R-Studio. That’s ok! The outputs should still be pretty close.</p> </blockquote> <!--END_SNIPPET-->
 
 # Setting your environment
 First thing's first, we need to load the packages we will be using. In order to use any functions of a package, we must first call the library of that package. In your console (likely in the lower left corner of your RStudio window), run the following lines of code to do so:
@@ -88,7 +90,7 @@ Now, in our RStudio environment, we should have all of the data sets necessary t
 Next we will add row and column names to our matrix. In the end, this will leave us with a matrix whose rows are genes, columns are cell barcodes, and each value in the matrix represent the expression value of a given gene in a given cell.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-about-seurat-objects"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-about-seurat-objects" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: About Seurat Objects<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-about-seurat-objects"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-about-seurat-objects" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: About Seurat Objects</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 The order of the dimensions, such that genes are the first and cells are the second is a set characteristic of Seurat objects.
 
 You will recieve an error if you try to label the first dimension with cell barcodes or the second with genes. This is because the Dimname slots are like empty fill in the blanks: if the number of labels input doesn't match the number of blanks in that dimension, that is the number of labels don't match the number of cells/genes, Seurat will not accept the labels.
@@ -101,7 +103,7 @@ dimnames(matrix.mtx) <- list(genes.tsv$V2, barcodes.tsv$V1)
 In a more typical Seurat pipeline, or on a local version of RStudio, this step would be replaced with a Read10x() step. Read10x() is Seurat's function to create a matrix and add in feature and barcode names simultaneously. However, due to the nature of how Galaxy's histories and interactive environments communicate with one another, we'll use this manual method.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-how-to-use-read10x"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-how-to-use-read10x" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: How to Use Read10X<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-how-to-use-read10x"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-how-to-use-read10x" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: How to Use Read10X</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 The only necessary parameter of Seurat's Read10X() fucntion is the file path to the directory (folder) containing the matrix.mtx, barcodes.tsv, and genes.tsv (sometimes also called features.tsv) files.
 
 So if the EBI SCXA Retrieval tool were to have output a data directory in the sixth history position, the following code would be able to import a labelled counts matrix called "labelled matrix" into our RStudio environment:
@@ -138,7 +140,7 @@ srt$Cell.Type<-exp_design.tsv$Sample.Characteristic.cell.type.
 srt$Factor.Value.Genotype<-exp_design.tsv$Factor.Value.genotype.
 ```
 :::{.tip}
-<div class="box-title tip-title" id="tip-syntax-lesson"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Syntax Lesson<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-syntax-lesson"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Syntax Lesson</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 The code preceding the left pointing arrow will indicate where to put your metadata (the name of your new metadata column: object$new_metadata_columnname), and the code following the arrow will denote where to find that metadata information (metadata_table$columnname)
 
 :::
@@ -179,14 +181,14 @@ VlnPlot(srt, group.by = "Individual",
   features = "nCount_RNA",
   log = TRUE)
 ```
-<a href="../../images/scrna-SeuratRStudio/plot1.png" rel="noopener noreferrer"><figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot1.png"  alt="Violin Plot split by Individual/Batch. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Violin Plot of counts split by Individual.</figcaption></figure></a>
+<figure id="figure-1" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot1.png"  alt="Violin Plot split by Individual/Batch. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot1.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Violin Plot of counts split by Individual.</figcaption></figure>
 
 This plot shows us the number of cells split by the individual (mouse) from which the cells came from. Now, depending on your experimental design, batch may be represented by something other than individual--like timepoint or even the wet lab researcher who isolated the cells.
 
 Ideally, we would like to see a relatively even distribution of counts for each individual (or batch) but if there isn’t, fear not, we can regress this variable out in a later step.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-syntax-lesson-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Syntax Lesson<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-syntax-lesson-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Syntax Lesson</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 In order to accurately assess potential batch effects, use the "group.by" parameter to indicate the variable which differed across experiments.
 
 :::
@@ -197,13 +199,13 @@ Now let's get an idea of how different variables, like the sex or genotype of th
     ```{r}
     VlnPlot(srt, group.by = "Sex",features = "nCount_RNA",log = TRUE)
     ```
-    <a href="../../images/scrna-SeuratRStudio/plot2.png" rel="noopener noreferrer"><figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot2.png"  alt="Violin Plot split by Sex. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Violin Plot of counts split by Sex.</figcaption></figure></a>
+    <figure id="figure-2" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot2.png"  alt="Violin Plot split by Sex. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot2.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Violin Plot of counts split by Sex.</figcaption></figure>
 
 2. Genotype?
     ```{r}
     VlnPlot(srt, group.by = "Genotype", features = "nCount_RNA", log = TRUE)
     ```
-    <a href="../../images/scrna-SeuratRStudio/plot3.png" rel="noopener noreferrer"><figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot3.png"  alt="Violin Plot split by Genotype. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Violin Plot of counts split by Genotype--Mutant versus Control.</figcaption></figure></a>
+    <figure id="figure-3" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot3.png"  alt="Violin Plot split by Genotype. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot3.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Violin Plot of counts split by Genotype--Mutant versus Control.</figcaption></figure>
 
 # Finding Our Filtering Parameters
 Now that we have a better understanding of what our data looks like, we can begin identifying those spurious reads and low quality cells and then remove them. First, we'll plot the percent mito (perc.mt) against the cell count (nCount_RNA) to get an idea of what threshold we should set for nCount:
@@ -211,7 +213,7 @@ Now that we have a better understanding of what our data looks like, we can begi
 ```{r}
 plot(x = srt$nCount_RNA, y = srt$perc.mt, main = "UMI Counts x Percent Mito", xlab = "UMI_count", ylab = "percent mito")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot4.png" rel="noopener noreferrer"><figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot4.png"  alt="UMI x mito. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> UMI counts x Percent mito.</figcaption></figure></a>
+<figure id="figure-4" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot4.png"  alt="UMI x mito. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot4.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> UMI counts x Percent mito.</figcaption></figure>
 We are looking for cell counts with high mitochondrial percentages in their feature expression.
 
 :::{.comment}
@@ -227,7 +229,7 @@ We can also zoom in on the x-axis to get a better idea of what threshold to set 
 ```{r}
 plot(x = srt$nCount_RNA, y = srt$perc.mt, main = "UMI Counts x Percent Mito", xlab = "UMI_count", ylab = "percent mito", xlim = c(0,1750))
 ```
-<a href="../../images/scrna-SeuratRStudio/plot5.png" rel="noopener noreferrer"><figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot5.png"  alt="UMI x mito zoomed in on X. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> UMI counts x Percent mito-Zoomed in on X.</figcaption></figure></a>
+<figure id="figure-5" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot5.png"  alt="UMI x mito zoomed in on X. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot5.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> UMI counts x Percent mito-Zoomed in on X.</figcaption></figure>
 
 :::{.comment}
 <div class="box-title comment-title" id="comment-interpretations"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Interpretations</div>
@@ -240,7 +242,7 @@ Now we can take a closer look at the y-axis to decide on a mito threshold to set
 ```{r}
 plot(x = srt$nCount_RNA, y = srt$perc.mt, main = "UMI Counts x Percent Mito", xlab = "UMI_count", ylab = "percent mito", ylim = c(0,3))
 ```
-<a href="../../images/scrna-SeuratRStudio/plot6.png" rel="noopener noreferrer"><figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot6.png"  alt="UMI x mito zoomed in Y. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> UMI counts x Percent mito-Zoomed in on Y.</figcaption></figure></a>
+<figure id="figure-6" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot6.png"  alt="UMI x mito zoomed in Y. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot6.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 6</strong>:</span> UMI counts x Percent mito-Zoomed in on Y.</figcaption></figure>
 
 :::{.comment}
 <div class="box-title comment-title" id="comment-interpretations-1"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Interpretations</div>
@@ -268,14 +270,14 @@ To set a threshold for gene count, let's plot the gene counts (nFeature_RNA) aga
 ```{r}
 plot(x = srt$nFeature_RNA, y = srt$perc.mt, main = "Gene Counts x Percent Mito", xlab = "gene_count", ylab = "percent mito")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot7.png" rel="noopener noreferrer"><figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot7.png"  alt="Gene x mito. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Gene counts x Percent mito.</figcaption></figure></a>
+<figure id="figure-7" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot7.png"  alt="Gene x mito. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot7.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 7</strong>:</span> Gene counts x Percent mito.</figcaption></figure>
 
 Once again, let's zoom in on the x-axis, but this time to get an idea of which nFeature_RNA threshold to set:
 
 ```{r}
 plot(x = srt$nFeature_RNA, y = srt$perc.mt, main = "Gene Counts x Percent Mito", xlab = "gene_count", ylab = "percent mito", xlim = c(0,1275))
 ```
-<a href="../../images/scrna-SeuratRStudio/plot8.png" rel="noopener noreferrer"><figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot8.png"  alt="Gene x mito--zoomed in. "  width="1354" height=746 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Gene counts x Percent mito zoomed in.</figcaption></figure></a>
+<figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot8.png"  alt="Gene x mito--zoomed in. "  width="1354" height=746 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot8.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> Gene counts x Percent mito zoomed in.</figcaption></figure>
 
 :::{.comment}
 <div class="box-title comment-title" id="comment-interpretations-2"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Interpretations</div>
@@ -295,7 +297,7 @@ prop.table(table(srt@meta.data$nFeature_RNA > 1275 | srt@meta.data$nFeature_RNA 
 Once we are happy with our filtering thresholds, it’s time to apply them to our data!
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-create-a-new-object"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-create-a-new-object" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Create a new object<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-create-a-new-object"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-create-a-new-object" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Create a new object</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 You will notice in the next line of code, we have indicated a new object name for this filtered (subset) data. This is good practice  so that you don't have to start all over in case you decide to change your filtering parameters, which you likely will, or if something goes awry.
 
 :::
@@ -319,7 +321,7 @@ Genes that do not appear in any cell, or even in only 1 or 2 cells, may break so
 We can use the filtered matrix we just extracted to create a new Seurat object, this time including the argument: min.cells = 3. This will remove any genes from our matrix that have less than 3 cells expressing them.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-more-thresholds"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-more-thresholds" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: More Thresholds<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-more-thresholds"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-more-thresholds" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: More Thresholds</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 Note that 3 is not necessarily the best number, rather it is a fairly conservative threshold. You could go as high as 10 or more.
 
 :::
@@ -381,7 +383,7 @@ Principal components (PCs) are calculated from highly dimensional data to find t
 We can calculate the first handful of principal components in our data to drastically reduce the number of dimensions:
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-running-computationally-demanding-steps-on-variable-features"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-computationally-demanding-steps-on-variable-features" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Running Computationally Demanding Steps on Variable Features<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-running-computationally-demanding-steps-on-variable-features"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-computationally-demanding-steps-on-variable-features" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Running Computationally Demanding Steps on Variable Features </span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 You'll notice that the RunPCA() function is run using the variable features from the previous step. This signficantly decreases the number of genes, and their expression changes, that must be grouped into principal components by this step.
 :::
 
@@ -394,7 +396,7 @@ To visualize how our principal components (PCs) represent our data, let's create
 ```{r}
 ElbowPlot(filtered_srt, ndims = 50)
 ```
-<a href="../../images/scrna-SeuratRStudio/plot9.png" rel="noopener noreferrer"><figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot9.png"  alt="PC Elbow Plot. "  width="973" height=709 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Elbow Plot: Varianvce Explained x PC.</figcaption></figure></a>
+<figure id="figure-9" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot9.png"  alt="PC Elbow Plot. "  width="973" height=709 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot9.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 9</strong>:</span> Elbow Plot: Varianvce Explained x PC.</figcaption></figure>
 
 :::{.comment}
 <div class="box-title comment-title" id="comment-interpretations-3"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: Interpretations</div>
@@ -431,7 +433,7 @@ Unfortunately, identifying clusters is not as majestic as biologists often think
 So, we’re going to make the best of it as a starting point and see what happens! We will define clusters from the kNN graph, based on how many connections cells have with one another. Roughly, this will depend on a resolution parameter for how granular you want to be.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-on-clustering-resolution"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-on-clustering-resolution" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: On Clustering Resolution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-on-clustering-resolution"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-on-clustering-resolution" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: On Clustering Resolution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 The resolution parameter available in the FindClusters() function allows for you, the bioinformatician, to dictate the granularity of the clusters.
 
 For example, a higher clustering resolution dictates increased granularity, and more stringent clusters. That is--cells must more closely resemble one another in order to be grouped into the same cluster than at a lower clustering resolution.
@@ -442,7 +444,7 @@ In general, I find it easiest to think of a higher resolution producing more clu
 Now that we have made note within our object of which cells cluster together, we can start to visualize our data! Two major visualizations for this data type are tSNE and UMAP. We can calculate the coordinates for both prior to visualization. For tSNE, the parameter perplexity can be changed to best represent the data, while for UMAP the main change would be to change the kNN graph above itself, via the FindNeighbors() function.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-on-umap"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-on-umap" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: On UMAP<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-on-umap"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-on-umap" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: On UMAP</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 UMAP is the most recently developed, and most widely used dimensionality reduction for visualization of principal component data. It has been optimized since tSNE to better preserve global structure and is less computationally demanding.
 
 :::
@@ -457,7 +459,7 @@ Now that we have run dimensionality reduction on our dataset, it is ready for vi
 ```{r}
 DimPlot(filtered_srt, reduction = "umap", label = TRUE, label.box = TRUE)+ NoLegend()
 ```
-<a href="../../images/scrna-SeuratRStudio/plot10.png" rel="noopener noreferrer"><figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot10.png"  alt="DimPlot colored by 0.5 resolution cluster. "  width="980" height=708 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> DimPlot colored by 0.5 resolution cluster.</figcaption></figure></a>
+<figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot10.png"  alt="DimPlot colored by 0.5 resolution cluster. "  width="980" height=708 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot10.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> DimPlot colored by 0.5 resolution cluster.</figcaption></figure>
 Good work! It looks like with a clustering resolution of 0.5, we are able to identify 7 clusters of cells in our data.
 
 We can also look for expression of particular genes and see how those map to our UMAP projection. This is often useful in getting an initial understanding of which clusters might be representative of which cell types.
@@ -465,12 +467,12 @@ We can also look for expression of particular genes and see how those map to our
 ```{r}
 FeaturePlot(filtered_srt, features = "Gapdh", order = TRUE)
 ```
-<a href="../../images/scrna-SeuratRStudio/plot11.png" rel="noopener noreferrer"><figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot11.png"  alt="FeaturePlot: Gapdh. "  width="980" height=708 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> FeaturePlot: Gapdh</figcaption></figure></a>
+<figure id="figure-11" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot11.png"  alt="FeaturePlot: Gapdh. "  width="980" height=708 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot11.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 11</strong>:</span> FeaturePlot: Gapdh</figcaption></figure>
 
 We just plotted a housekeeping gene, Gapdh, so the broad expression we observe is expected.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-weird-scale"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-weird-scale" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Weird scale?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-weird-scale"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-weird-scale" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Weird scale?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 If the scale of your data looks weird, it may be due to the DefaultAssay of your object. When we ran SCTransform, the function creates an entirely new assay within our Seurat object that includes scaled and normalized count values. This SCT Assay is what we want to visualize our expression values off of. So, if your scale is super broad, or goes negative, try running the following command before attempting to plot again:
 ```{r}
 DefaultAssay(filtered_srt)<-"SCT"
@@ -484,7 +486,7 @@ For example, we can plot early T-cell marker Il2ra and get an idea of which cell
 ```{r}
 FeaturePlot(filtered_srt, features = "Il2ra", order = TRUE)
 ```
-<a href="../../images/scrna-SeuratRStudio/plot12.png" rel="noopener noreferrer"><figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot12.png"  alt="FeaturePlot: Aif1. "  width="980" height=706 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> FeaturePlot: Il2ra</figcaption></figure></a>
+<figure id="figure-12" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot12.png"  alt="FeaturePlot: Aif1. "  width="980" height=706 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot12.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 12</strong>:</span> FeaturePlot: Il2ra</figcaption></figure>
 
 It is a good idea, when analyzing your own data, to plot some markers of cell types you expect to be present. Later on we can also use these FeaturePlots to visualize manual annotation of clusters.
 
@@ -496,7 +498,7 @@ Following an initial look at the DimPlots and FeaturePlots, we can take an even 
 In order to do so we can run cluster level differential expression tests. First, we will need to set our object's active identity to be the clusters. This will ensure that when Seurat's differential expression function is run, the groupings of cells across which it will compare are the clusters.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-what-are-identities"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-are-identities" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: What are Identities?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-what-are-identities"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-are-identities" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: What are Identities?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 Identities are, at their core, categorical metadata values. They are columns of cell-level metadata that somehow group the cells together. Examples of identities could be cluster number, cell type if/once known, genotype, etc.
 
 :::
@@ -506,7 +508,7 @@ Idents(filtered_srt)<- filtered_srt$seurat_clusters
 ```
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-syntax-lesson-2"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson-2" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Syntax Lesson<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-syntax-lesson-2"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-syntax-lesson-2" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Syntax Lesson</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 There are often many different ways to get the same job done in R, but especially when manipulating Seurat objects. We could alternatively set the active identity of our object with the following line of code too:
 
 ```{r}
@@ -561,7 +563,7 @@ Let's take another look at what our clusters look like:
 ```{r}
 DimPlot(object = filtered_srt, reduction = "umap", label = TRUE, label.box = TRUE, group.by = "seurat_clusters") + NoLegend()
 ```
-<a href="../../images/scrna-SeuratRStudio/plot10.png" rel="noopener noreferrer"><figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot10.png"  alt="DimPlot colored by 0.5 resolution cluster. "  width="980" height=708 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> DimPlot colored by 0.5 resolution cluster.</figcaption></figure></a>
+<figure id="figure-13" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot10.png"  alt="DimPlot colored by 0.5 resolution cluster. "  width="980" height=708 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot10.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 13</strong>:</span> DimPlot colored by 0.5 resolution cluster.</figcaption></figure>
 
 :::{.comment}
 <div class="box-title comment-title" id="comment-on-cluster-numbering"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment: On Cluster Numbering</div>
@@ -580,12 +582,12 @@ It would be nice to know what these cells are. This analysis (googling all of th
 Feel free to plot these markers onto our dataset to see where they fall. This is generally a useful method of discerning cell types and can be useful for initial annotations.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-plotting-markers"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-plotting-markers" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Plotting Markers<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-plotting-markers"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-plotting-markers" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Plotting Markers</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 To do so, simply use the same FeaturePlot() function we used above, but replace the feature parameter with your new marker of interest.
 ```{r}
 FeaturePlot(object = filtered_srt, features = c("Il2ra", "Cd8b1", "Cd8a", "Cd4", "Itm2a"), order = T, ncol = 3)
 ```
-<a href="../../images/scrna-SeuratRStudio/plot21.png" rel="noopener noreferrer"><figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot21.png"  alt="FeaturePlots of cell type markers. "  width="1389" height=619 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> FeaturePlots of our known cell type markers</figcaption></figure></a>
+<figure id="figure-14" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot21.png"  alt="FeaturePlots of cell type markers. "  width="1389" height=619 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot21.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 14</strong>:</span> FeaturePlots of our known cell type markers</figcaption></figure>
 :::
 
 We can then manually label the clusters in whatever way we please. [Dplyr](https://dplyr.tidyverse.org/reference/mutate.html)'s mutate() function allows us to incorporate conditional metadata. That is to say, we can ask the function to label cells based on the cluster in which they have been assigned:
@@ -603,7 +605,7 @@ Once we have labelled our clusters, we can visualize what our cell types actuall
 ```{r}
 DimPlot(object = filtered_srt, reduction = "umap", group.by = "celltype")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot13.png" rel="noopener noreferrer"><figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot13.png"  alt="DimPlot colored by labelled celltype. "  width="976" height=708 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> DimPlot colored by assigned cell type</figcaption></figure></a>
+<figure id="figure-15" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot13.png"  alt="DimPlot colored by labelled celltype. "  width="976" height=708 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot13.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 15</strong>:</span> DimPlot colored by assigned cell type</figcaption></figure>
 
 Now we can begin to feel a bit more oriented in exploring our data. The clusters are labelled with cell types, and our object has been processed enough such that we may now begin to answer some real biological questions! Now that we know what we’re dealing with, let’s examine the effect of our variable, real science!
 
@@ -613,7 +615,7 @@ Are there any differences in genotype? Or in biological terms, is there an impac
 ```{r}
 DimPlot(object = filtered_srt, reduction = "umap", group.by = "celltype", split.by = "Genotype")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot14.png" rel="noopener noreferrer"><figure id="figure-16" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot14.png"  alt="DimPlot colored by labelled celltype split by genotype. "  width="1813" height=707 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 16</strong>:</span> DimPlot colored by assigned cell typesplit by genotype</figcaption></figure></a>
+<figure id="figure-16" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot14.png"  alt="DimPlot colored by labelled celltype split by genotype. "  width="1813" height=707 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot14.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 16</strong>:</span> DimPlot colored by assigned cell typesplit by genotype</figcaption></figure>
 
 We can see that there seems to be a decrease in cellcounts across the celltypes in the het mutant... INTERESTING! What next? We might look further at the transcripts present in both those populations, and perhaps also look at the genotype marker table… So much to investigate! But before we set you off to explore to your heart’s delight, let’s also look at this a bit more technically.
 
@@ -625,7 +627,7 @@ First thing's first, is there a batch effect?
 ```{r}
 DimPlot(object = filtered_srt, reduction = "umap", group.by = "Individual")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot15.png" rel="noopener noreferrer"><figure id="figure-17" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot15.png"  alt="DimPlot colored by labelled celltype split by individual/batch. "  width="1005" height=700 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 17</strong>:</span> DimPlot colored by assigned cell types split by individual/batch</figcaption></figure></a>
+<figure id="figure-17" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot15.png"  alt="DimPlot colored by labelled celltype split by individual/batch. "  width="1005" height=700 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot15.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 17</strong>:</span> DimPlot colored by assigned cell types split by individual/batch</figcaption></figure>
 
 While some differences across batch are expected and nothing to be concerned about, the immature T-cells looks to be mainly comprised of Individual 3. There might be a bit of batch effect, so you could consider using batch correction on this dataset. However, if we focus our attention on the other cluster - mature T-cells - where there is batch mixing, we can still assess this biologically even without batch correction.
 
@@ -634,7 +636,7 @@ Additionally, we will also look at the confounding effect of sex:
 ```{r}
 DimPlot(object = filtered_srt, reduction = "umap", group.by = c("Sex", "Individual", "Genotype"))
 ```
-<a href="../../images/scrna-SeuratRStudio/plot16.png" rel="noopener noreferrer"><figure id="figure-18" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot16.png"  alt="DimPlot colored by Sex, Individual, and Genotype. "  width="1898" height=703 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 18</strong>:</span> DimPlot colored by Sex, Individual, and Genotype</figcaption></figure></a>
+<figure id="figure-18" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot16.png"  alt="DimPlot colored by Sex, Individual, and Genotype. "  width="1898" height=703 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot16.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 18</strong>:</span> DimPlot colored by Sex, Individual, and Genotype</figcaption></figure>
 
 
 We note that the one female sample - unfortunately one of merely three knockout samples - seems to be distributed in the same areas as the knockout samples at large, so luckily, this doesn’t seem to be a confounding factor and we can still learn from our data. Ideally, this experiment would be re-run with either more female samples all around or swapping out this female from the male sample.
@@ -644,7 +646,7 @@ Are there any clusters or differences being driven by sequencing depth, a techni
 ```{r}
 FeaturePlot(object = filtered_srt, reduction = "umap", features = "nCount_SCT")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot17.png" rel="noopener noreferrer"><figure id="figure-19" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot17.png"  alt="FeaturePlot colored by counts. "  width="955" height=705 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 19</strong>:</span> FeaturePlot colored by counts</figcaption></figure></a>
+<figure id="figure-19" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot17.png"  alt="FeaturePlot colored by counts. "  width="955" height=705 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot17.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 19</strong>:</span> FeaturePlot colored by counts</figcaption></figure>
 
 
 There doesn't visually appear to be any differences in sequencing depth across the clusters, but let's check out some of those other variables we grouped by:
@@ -652,7 +654,7 @@ There doesn't visually appear to be any differences in sequencing depth across t
 ```{r}
 FeaturePlot(object = filtered_srt, reduction = "umap", features = "nCount_SCT", split.by = "Individual")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot18.png" rel="noopener noreferrer"><figure id="figure-20" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot18.png"  alt="FeaturePlot colored by counts. "  width="1899" height=617 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 20</strong>:</span> FeaturePlot colored by counts split by Individual</figcaption></figure></a>
+<figure id="figure-20" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot18.png"  alt="FeaturePlot colored by counts. "  width="1899" height=617 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot18.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 20</strong>:</span> FeaturePlot colored by counts split by Individual</figcaption></figure>
 
 There we go! This might explain the dramatic shift in early to middle T-Cell between wildtype and knockout cells--the leftmost early to middle T-cells simply have a higher sequencing depth represented by Individual 3 (UMIs/cell) than the ones on the right side. Well, that explains some of the sub-cluster that we’re seeing in that splurge (specifically this likely accounts for the discernment between clusters 1, 2, and 5).
 
@@ -660,7 +662,7 @@ Luckily, and importantly, we don’t see the double negative or mature T-cells b
 
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-overprocessing"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-overprocessing" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Overprocessing<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-overprocessing"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-overprocessing" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Overprocessing</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 The less you can regress/modify your data, in general, the better--you want to stay as true as you can to the raw data, and only use maths to correct your data when you really need to (and not to create insights where there are none!).
 :::
 
@@ -670,13 +672,13 @@ Do you think we processed these samples well enough? We have seen in the previou
 ```{r}
 FeaturePlot(object = filtered_srt, reduction = "umap", features = "Hba-a1")
 ```
-<a href="../../images/scrna-SeuratRStudio/plot19.png" rel="noopener noreferrer"><figure id="figure-21" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot19.png"  alt="FeaturePlot of Hemoglobin. "  width="870" height=621 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 21</strong>:</span> FeaturePlot of Hemoglobin</figcaption></figure></a>
+<figure id="figure-21" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot19.png"  alt="FeaturePlot of Hemoglobin. "  width="870" height=621 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot19.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 21</strong>:</span> FeaturePlot of Hemoglobin</figcaption></figure>
 
 
 Hemoglobin--a red blood cell marker that should NOT be found in T-cells--appears throughout the entire dataset in low numbers and as a likely marker of Cluster 6. This suggests that some background noise may have been introduced by the media the cells were in. We might consider in the wet lab trying to get a purer, happier sample, with less background or in the dry lab, we can take advantage of techniques such as SoupX or others to remove this technical noise.
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-removing-noise"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-removing-noise" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Removing Noise<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-removing-noise"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-removing-noise" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Removing Noise</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 Adjusting the filtering settings (increasing minimum counts/cell, etc.) is often the place to start in these scenarios.
 :::
 
@@ -687,7 +689,7 @@ CellType_DimPlot<-DimPlot(object = filtered_srt, reduction = "umap", group.by = 
 Cd4_FeaturePlot<-FeaturePlot(object = filtered_srt, reduction = "umap", features = "Cd4")
 CellType_DimPlot | Cd4_FeaturePlot
 ```
-<a href="../../images/scrna-SeuratRStudio/plot20.png" rel="noopener noreferrer"><figure id="figure-22" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot20.png"  alt="Double Positive differentiation?"  width="1387" height=617 loading="lazy"><figcaption><span class="figcaption-prefix"><strong>Figure 22</strong>:</span> Double Positive differentiation?</figcaption></figure></a>
+<figure id="figure-22" style="max-width: 90%; margin:auto;"><img src="../../images/scrna-SeuratRStudio/plot20.png"  alt="Double Positive differentiation?"  width="1387" height=617 loading="lazy"><a target="_blank" href="../../images/scrna-SeuratRStudio/plot20.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 22</strong>:</span> Double Positive differentiation?</figcaption></figure>
 
 Important to note, lest all bioinformaticians combine forces to attack the biologists: just because a cluster doesn’t look like a cluster by eye is NOT enough to say it’s not a cluster! But looking at the biology here, we struggled to find marker genes to distinguish the double positive populations, which we know are also affected by depth of sequencing. That’s a reasonable argument that Clusters 1, 2, and 5 might not be all that different. Maybe we need more depth of sequencing across all those cells, or to compare these explicitly to each other (consider variations on FindMarkers!).
 

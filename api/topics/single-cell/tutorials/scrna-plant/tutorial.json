@@ -10,7 +10,6 @@
   ],
   "zenodo_link": "https://zenodo.org/record/4597857",
   "tags": [
-    "single-cell",
     "plants",
     "paper-replication"
   ],
@@ -136,7 +135,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "scRNA Plant Analysis",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-plant/tutorial.json",

@@ -60,7 +60,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "GO Enrichment Workflow",
+      "test_results": null,
+      "modified": "2023-11-09 01:07:21 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/goenrichment/tutorial.json",
