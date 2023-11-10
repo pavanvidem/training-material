@@ -165,7 +165,7 @@
           ],
           "name": "Virtual screening of the SARS-CoV-2 main protease with rDock and pose scoring",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/covid19-docking/tutorial.json",
@@ -425,7 +425,7 @@
           ],
           "name": "MD NAMD",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         },
         {
           "workflow": "main_workflow_charmmgui.ga",
@@ -441,7 +441,7 @@
           ],
           "name": "NAMD MD From CHARMM GUI",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/md-simulation-namd/tutorial.json",
@@ -558,7 +558,7 @@
           ],
           "name": "GROMACS Training Workflow",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/md-simulation-gromacs/tutorial.json",
@@ -595,6 +595,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://galaxy.mesocentre.uca.fr",
+            "name": "Galaxy@AuBi",
+            "usegalaxy": "false"
+          },
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
@@ -838,7 +843,7 @@
           ],
           "name": "Workflow constructed from history 'Hsp90-MDAnalysis'",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         },
         {
           "workflow": "main_workflow.ga",
@@ -854,7 +859,7 @@
           ],
           "name": "MD protein-ligand workflow (from PDB structure)",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/htmd-analysis/tutorial.json",
@@ -1239,7 +1244,7 @@
           ],
           "name": "Analysis using MDAnalysis",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         },
         {
           "workflow": "main_workflow.ga",
@@ -1255,7 +1260,7 @@
           ],
           "name": "Simple Analysis",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/analysis-md-simulations/tutorial.json",
@@ -1286,6 +1291,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://galaxy.mesocentre.uca.fr",
+            "name": "Galaxy@AuBi",
+            "usegalaxy": "false"
+          },
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
@@ -1456,7 +1466,7 @@
           ],
           "name": "CTB Workflow",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/cheminformatics/tutorial.json",
@@ -1740,7 +1750,7 @@
           ],
           "name": "Zauberkugel",
           "test_results": null,
-          "modified": "2023-11-09 01:07:16 +0000"
+          "modified": "2023-11-10 01:04:15 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/zauberkugel/tutorial.json",
