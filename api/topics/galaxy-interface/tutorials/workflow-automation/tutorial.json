@@ -54,6 +54,7 @@
     }
   ],
   "subtopic": "workflows",
+  "mathjax": null,
   "short_id": "T00162",
   "url": "/topics/galaxy-interface/tutorials/workflow-automation/tutorial.html",
   "topic_name": "galaxy-interface",
@@ -123,7 +124,7 @@
       ],
       "name": "vcf2lineage",
       "test_results": null,
-      "modified": "2023-11-14 01:06:43 +0000"
+      "modified": "2023-11-15 01:05:55 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json",

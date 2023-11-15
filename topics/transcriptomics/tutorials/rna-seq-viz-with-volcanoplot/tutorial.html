@@ -19,7 +19,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	console.log("Sentry: opt-in");
 	Sentry.init({
 		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		release: "galaxy-training-network@b0719d5e521924ffaa21ed0f329576bb55d0f58b",
 		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 		sampleRate: 0.1,
 		tracesSampleRate: 0.1,
@@ -55,10 +55,10 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699924001' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1700010352' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,7 +67,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Visualization of RNA-Seq results with Volcano Plot">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-05-18 09:34:29 +0000">
+<meta name="DC.date" content="2023-11-03 14:30:27 +0000">
 <meta name="DC.creator" content="Maria Doyle">
 
         
@@ -109,7 +109,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     "url": "https://training.galaxyproject.org",
     "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-05-18 09:34:29 +0000",
+  "dateModified": "2023-11-03 14:30:27 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Visualization of RNA-Seq results with Volcano Plot",
   "interactivityType": "mixed",
@@ -168,7 +168,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "learningResourceType": "hands-on tutorial",
   "name": "Visualization of RNA-Seq results with Volcano Plot",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html",
-  "version": 22,
+  "version": 23,
   "timeRequired": "PT30M",
   "teaches": "Create a volcano plot of RNA-seq data to visualize significant genes",
   "keywords": [
@@ -321,13 +321,13 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "mentions": [
 
   ],
-  "abstract": "# Introduction"
+  "abstract": "<a href=\"../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png\" rel=\"noopener noreferrer\"><img src=\"../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png\"  alt=\"Volcano plot highlighting significant genes. \"  style=\"float:right;width:60%\"  width=\"888\" height=894 loading=\"lazy\"></a>"
 }
         </script>
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -498,7 +498,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     <blockquote class="overview">
         <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png" width="88" height="31"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -864,7 +864,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -875,7 +875,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00304">https://gxy.io/GTN:T00304</a> </div>
         
 
-	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 22 </div>
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 23 </div>
 
     </blockquote>
     </section>
@@ -890,9 +890,8 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
                  
 
                 <section aria-label="Tutorial Content" id="tutorial-content">
-                <h1 id="introduction">Introduction</h1>
-
-<p><a href="../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png" rel="noopener noreferrer"><img src="../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png" alt="Volcano plot highlighting significant genes. " width="888" style="float:right" height="894" loading="lazy" /></a> Volcano plots are commonly used to display the results of RNA-seq or other omics experiments. A volcano plot is a type of scatterplot that shows statistical significance (P value) versus magnitude of change (fold change). It enables quick visual identification of genes with large fold changes that are also statistically significant. These may be the most biologically significant genes. In a volcano plot, the most upregulated genes are towards the right, the most downregulated genes are towards the left, and the most statistically significant genes are towards the top.</p>
+                <p><a href="../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png" rel="noopener noreferrer"><img src="../../images/rna-seq-viz-with-volcanoplot/volcanoplot.png" alt="Volcano plot highlighting significant genes. " style="float:right;width:60%" width="888" height="894" loading="lazy" /></a>
+Volcano plots are commonly used to display the results of RNA-seq or other omics experiments. A volcano plot is a type of scatterplot that shows statistical significance (P value) versus magnitude of change (fold change). It enables quick visual identification of genes with large fold changes that are also statistically significant. These may be the most biologically significant genes. In a volcano plot, the most upregulated genes are towards the right, the most downregulated genes are towards the left, and the most statistically significant genes are towards the top.</p>
 
 <p>To generate a volcano plot of RNA-seq results, we need a file of differentially expressed results which is provided for you here. To generate this file yourself, see the <a href="/training-material/topics/transcriptomics/tutorials/rna-seq-counts-to-genes/tutorial.html">RNA-seq counts to genes</a> tutorial. The file used here was generated from limma-voom but you could use a file from any RNA-seq differential expression tool, such as edgeR or DESeq2, as long as it has the required columns (see below).</p>
 
@@ -904,7 +903,6 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   <p>In this tutorial, we will deal with:</p>
 
 <ol id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#preparing-the-inputs" id="markdown-toc-preparing-the-inputs">Preparing the inputs</a>    <ol>
       <li><a href="#import-data" id="markdown-toc-import-data">Import data</a></li>
       <li><a href="#create-volcano-plot-highlighting-significant-genes" id="markdown-toc-create-volcano-plot-highlighting-significant-genes">Create volcano plot highlighting significant genes</a></li>
@@ -1364,7 +1362,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/b0719d5e521924ffaa21ed0f329576bb55d0f58b">b0719d5</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1392,7 +1390,7 @@ tools:
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699924001'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1700010352'></script>
+        
     </body>
 </html>

@@ -41,6 +41,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/yvanlebras/"
     }
   ],
+  "mathjax": null,
   "short_id": "T00128",
   "url": "/topics/ecology/tutorials/de-novo-rad-seq/tutorial.html",
   "topic_name": "ecology",
@@ -71,7 +72,7 @@
       ],
       "name": "de novo Rad Seq",
       "test_results": null,
-      "modified": "2023-11-14 01:06:43 +0000"
+      "modified": "2023-11-15 01:05:54 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/de-novo-rad-seq/tutorial.json",

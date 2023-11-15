@@ -50,6 +50,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/blankenberg/"
     }
   ],
+  "mathjax": null,
   "short_id": "T00272",
   "url": "/topics/statistics/tutorials/text-mining_simtext/tutorial.html",
   "topic_name": "statistics",
@@ -84,7 +85,7 @@
       ],
       "name": "Simtext training workflow",
       "test_results": null,
-      "modified": "2023-11-14 01:06:45 +0000"
+      "modified": "2023-11-15 01:05:56 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/statistics/tutorials/text-mining_simtext/tutorial.json",

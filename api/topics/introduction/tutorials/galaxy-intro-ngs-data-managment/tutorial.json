@@ -55,6 +55,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/blankenberg/"
     }
   ],
+  "mathjax": 7134,
   "short_id": "T00188",
   "url": "/topics/introduction/tutorials/galaxy-intro-ngs-data-managment/tutorial.html",
   "topic_name": "introduction",
@@ -115,7 +116,7 @@
       ],
       "name": "NGS_tutorial",
       "test_results": null,
-      "modified": "2023-11-14 01:06:43 +0000"
+      "modified": "2023-11-15 01:05:55 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/introduction/tutorials/galaxy-intro-ngs-data-managment/tutorial.json",

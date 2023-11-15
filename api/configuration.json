@@ -133,7 +133,7 @@
       "resources": [
         "assets/js/theme.js"
       ],
-      "timestamp": 1699924001,
+      "timestamp": 1700010352,
       "hash": "f1f2de89",
       "path": "/assets/js/bundle.f1f2de89.js"
     },
@@ -148,7 +148,7 @@
         "assets/js/list.min.js",
         "assets/js/main.js"
       ],
-      "timestamp": 1699924001,
+      "timestamp": 1700010352,
       "hash": "9d052497",
       "path": "/assets/js/bundle.9d052497.js"
     }
@@ -251,7 +251,7 @@
     "param-select": "fas fa-filter",
     "param-text": "fas fa-pencil-alt",
     "param-toggle": "fas fa-toggle-on",
-    "point-right": "fa fa-hand-o-right",
+    "point-right": "far fa-hand-point-right",
     "pref-info": "fas fa-user",
     "pref-password": "fas fa-unlock-alt",
     "pref-identities": "far fa-id-card-o",
@@ -295,8 +295,8 @@
   "serving": false,
   "boxify": {
   },
-  "git_revision": "902cca86953cf414a5c8d41f9f9c33de8dd1147d",
-  "git_revision_short": "902cca8",
+  "git_revision": "b0719d5e521924ffaa21ed0f329576bb55d0f58b",
+  "git_revision_short": "b0719d5",
   "gtn_fork": "pavanvidem",
   "git_tags": [
 
@@ -304,5 +304,5 @@
   "git_tags_recent": [
 
   ],
-  "age": 8.37782340862423
+  "age": 8.380561259411362
 }

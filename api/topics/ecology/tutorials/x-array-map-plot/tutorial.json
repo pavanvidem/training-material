@@ -11,6 +11,7 @@
       ]
     }
   ],
+  "level": "Introductory",
   "questions": [
     "What is xarray map plotting?",
     "How to plot NetCDF data using xarray map plotting tool?",
@@ -39,6 +40,7 @@
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/Quickbeasts51429/"
     }
   ],
+  "mathjax": null,
   "short_id": "T00136",
   "url": "/topics/ecology/tutorials/x-array-map-plot/tutorial.html",
   "topic_name": "ecology",
@@ -73,7 +75,7 @@
       ],
       "name": "Xarray_Map_Plotting_Workflow",
       "test_results": null,
-      "modified": "2023-11-14 01:06:43 +0000"
+      "modified": "2023-11-15 01:05:54 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/x-array-map-plot/tutorial.json",

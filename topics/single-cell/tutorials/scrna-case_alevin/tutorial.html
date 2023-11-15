@@ -19,7 +19,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	console.log("Sentry: opt-in");
 	Sentry.init({
 		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		release: "galaxy-training-network@b0719d5e521924ffaa21ed0f329576bb55d0f58b",
 		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 		sampleRate: 0.1,
 		tracesSampleRate: 0.1,
@@ -55,10 +55,10 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699924001' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1700010352' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,7 +67,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Generating a single cell matrix using Alevin">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-10-09 16:30:03 +0000">
+<meta name="DC.date" content="2023-11-03 14:30:27 +0000">
 <meta name="DC.creator" content="Wendi Bacon">
 <meta name="DC.creator" content="Jonathan Manning">
 
@@ -110,7 +110,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     "url": "https://training.galaxyproject.org",
     "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-10-09 16:30:03 +0000",
+  "dateModified": "2023-11-03 14:30:27 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Generating a single cell matrix using Alevin",
   "interactivityType": "mixed",
@@ -169,7 +169,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "learningResourceType": "hands-on tutorial",
   "name": "Generating a single cell matrix using Alevin",
   "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-case_alevin/tutorial.html",
-  "version": 18,
+  "version": 20,
   "timeRequired": "PT2H",
   "teaches": "Generate a cellxgene matrix for droplet-based single cell sequencing data\n - Interpret quality control (QC) plots to make informed decisions on cell thresholds\n - Find relevant information in GTF files for the particulars of their study, and include this in data matrix metadata",
   "keywords": [
@@ -346,13 +346,13 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
       "name": "paper-replication"
     }
   ],
-  "abstract": "# Introduction"
+  "abstract": "This tutorial will take you from raw FASTQ files to a cell x gene data matrix in AnnData format. What's a data matrix, and what's AnnData format? Well you'll find out! Importantly, this is the first step in processing single cell data in order to start analysing it. Currently you have a bunch of strings of `ATGGGCTT` etc. in your sequencing files, and what you need to know is how many cells you have and what genes appear in those cells. These steps are the most computationally heavy in the single cell world, as you're starting with 100s of millions of reads, each with 4 lines of text. Later on in analysis, this data becomes simple gene counts such as 'Cell A has 4 GAPDHs', which is a lot easier to store! Because of this data overload, we have downsampled the FASTQ files to speed up the analysis a bit. Saying that, you're still having to map loads of reads to the massive murine genome, so get yourself a cup of coffee and prepare to analyse!"
 }
         </script>
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -561,7 +561,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     <blockquote class="overview">
         <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png" width="88" height="31"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -884,7 +884,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 9, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -895,7 +895,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00245">https://gxy.io/GTN:T00245</a> </div>
         
 
-	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 18 </div>
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 20 </div>
 
     </blockquote>
     </section>
@@ -910,11 +910,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
                  
 
                 <section aria-label="Tutorial Content" id="tutorial-content">
-                <h1 id="introduction">Introduction</h1>
-
-<!-- This is a comment. -->
-
-<p>This tutorial will take you from raw FASTQ files to a cell x gene data matrix in AnnData format. What’s a data matrix, and what’s AnnData format? Well you’ll find out! Importantly, this is the first step in processing single cell data in order to start analysing it. Currently you have a bunch of strings of <code class="language-plaintext highlighter-rouge">ATGGGCTT</code> etc. in your sequencing files, and what you need to know is how many cells you have and what genes appear in those cells. These steps are the most computationally heavy in the single cell world, as you’re starting with 100s of millions of reads, each with 4 lines of text. Later on in analysis, this data becomes simple gene counts such as ‘Cell A has 4 GAPDHs’, which is a lot easier to store! Because of this data overload, we have downsampled the FASTQ files to speed up the analysis a bit. Saying that, you’re still having to map loads of reads to the massive murine genome, so get yourself a cup of coffee and prepare to analyse!</p>
+                <p>This tutorial will take you from raw FASTQ files to a cell x gene data matrix in AnnData format. What’s a data matrix, and what’s AnnData format? Well you’ll find out! Importantly, this is the first step in processing single cell data in order to start analysing it. Currently you have a bunch of strings of <code class="language-plaintext highlighter-rouge">ATGGGCTT</code> etc. in your sequencing files, and what you need to know is how many cells you have and what genes appear in those cells. These steps are the most computationally heavy in the single cell world, as you’re starting with 100s of millions of reads, each with 4 lines of text. Later on in analysis, this data becomes simple gene counts such as ‘Cell A has 4 GAPDHs’, which is a lot easier to store! Because of this data overload, we have downsampled the FASTQ files to speed up the analysis a bit. Saying that, you’re still having to map loads of reads to the massive murine genome, so get yourself a cup of coffee and prepare to analyse!</p>
 
 <blockquote class="agenda">
   <div class="box-title agenda-title" id="agenda">Agenda</div>
@@ -922,7 +918,6 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   <p>In this tutorial, we will cover:</p>
 
 <ol id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#generating-a-matrix" id="markdown-toc-generating-a-matrix">Generating a matrix</a>    <ol>
       <li><a href="#get-data" id="markdown-toc-get-data">Get Data</a></li>
     </ol>
@@ -1523,7 +1518,7 @@ Consider…is this a complete set of data?</p>
 
 <h1 id="mitochondrial-flagging">Mitochondrial flagging</h1>
 
-<p>We have assumed you will be combining multiple files - but if that’s not the case, you’ll need to perform this step to turn your column of <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">false</code> labelling the mitochondrial genes into some metrics telling you the % of mitochondrial genes in each cell. You can follow that step here in the <strong>Mithochondrial reads</strong> section in the following tutorial: <a href="/training-material/topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial.html">Combining datasets with Alevin tutorial</a>.</p>
+<p>We have assumed you will be combining multiple files - but if that’s not the case, you’ll need to perform this step to turn your column of <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">false</code> labelling the mitochondrial genes into some metrics telling you the % of mitochondrial genes in each cell. You can follow that step here: <a href="/training-material/topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial.html#mitochondrial-reads">Mitochondrial calculations</a>.</p>
 
 <h1 id="conclusion">Conclusion</h1>
 
@@ -1830,7 +1825,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/b0719d5e521924ffaa21ed0f329576bb55d0f58b">b0719d5</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1858,7 +1853,7 @@ tools:
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699924001'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1700010352'></script>
+        
     </body>
 </html>

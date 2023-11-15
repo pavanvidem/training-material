@@ -19,7 +19,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	console.log("Sentry: opt-in");
 	Sentry.init({
 		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		release: "galaxy-training-network@b0719d5e521924ffaa21ed0f329576bb55d0f58b",
 		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 		sampleRate: 0.1,
 		tracesSampleRate: 0.1,
@@ -55,10 +55,12 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699924001' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1700010352' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,7 +69,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="Taxonomic Profiling and Visualization of Metagenomic Data">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-10-23 09:44:54 +0000">
+<meta name="DC.date" content="2023-11-03 14:30:27 +0000">
 <meta name="DC.creator" content="Sophia Hampe">
 <meta name="DC.creator" content="Bérénice Batut">
 <meta name="DC.creator" content="Paul Zierep">
@@ -111,7 +113,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     "url": "https://training.galaxyproject.org",
     "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-10-23 09:44:54 +0000",
+  "dateModified": "2023-11-03 14:30:27 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Taxonomic Profiling and Visualization of Metagenomic Data",
   "interactivityType": "mixed",
@@ -170,7 +172,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "learningResourceType": "hands-on tutorial",
   "name": "Taxonomic Profiling and Visualization of Metagenomic Data",
   "url": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.html",
-  "version": 13,
+  "version": 14,
   "timeRequired": "PT2H",
   "teaches": "Explain what taxonomic assignment is\n - Explain how taxonomic assignment works\n - Apply Kraken and MetaPhlAn to assign taxonomic labels\n - Apply Krona and Pavian to visualize results of assignment and understand the output\n - Identify taxonomic classification tool that fits best depending on their data",
   "keywords": [
@@ -301,13 +303,13 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
       "name": "taxonomic profiling"
     }
   ],
-  "abstract": "# Introduction"
+  "abstract": "The term **\"microbiome\"** describes \"a characteristic microbial community occupying a reasonably well-defined habitat which has distinct physio-chemical properties. The term thus not only refers to the microorganisms involved but also encompasses their theatre of activity\" ({% cite whipps1988mycoparasitism %})."
 }
         </script>
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -503,7 +505,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     <blockquote class="overview">
         <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png" width="88" height="31"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -707,7 +709,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 23, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -718,7 +720,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00338">https://gxy.io/GTN:T00338</a> </div>
         
 
-	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 13 </div>
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 14 </div>
 
     </blockquote>
     </section>
@@ -733,9 +735,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
                  
 
                 <section aria-label="Tutorial Content" id="tutorial-content">
-                <h1 id="introduction">Introduction</h1>
-
-<p>The term <strong>“microbiome”</strong> describes “a characteristic microbial community occupying a reasonably well-defined habitat which has distinct physio-chemical properties. The term thus not only refers to the microorganisms involved but also encompasses their theatre of activity” (<span class="citation"><a href="#whipps1988mycoparasitism">Whipps <i>et al.</i> 1988</a></span>).</p>
+                <p>The term <strong>“microbiome”</strong> describes “a characteristic microbial community occupying a reasonably well-defined habitat which has distinct physio-chemical properties. The term thus not only refers to the microorganisms involved but also encompasses their theatre of activity” (<span class="citation"><a href="#whipps1988mycoparasitism">Whipps <i>et al.</i> 1988</a></span>).</p>
 
 <p>Microbiome data can be gathered from different environments such as soil, water or the human gut. The biological interest lies in general in the question how the microbiome present at a specific site influences this environment. To study a microbiome, we need to use indirect methods like metagenomics or metatranscriptomics.</p>
 
@@ -814,11 +814,8 @@ It is a collection of paired-end data with R1 being the forward reads and R2 bei
   <p>In this tutorial, we will cover:</p>
 
 <ol id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ol>
-      <li><a href="#taxonomic-profiling" id="markdown-toc-taxonomic-profiling">Taxonomic profiling</a></li>
-      <li><a href="#background-on-data" id="markdown-toc-background-on-data">Background on data</a></li>
-    </ol>
-  </li>
+  <li><a href="#taxonomic-profiling" id="markdown-toc-taxonomic-profiling">Taxonomic profiling</a></li>
+  <li><a href="#background-on-data" id="markdown-toc-background-on-data">Background on data</a></li>
   <li><a href="#prepare-galaxy-and-data" id="markdown-toc-prepare-galaxy-and-data">Prepare Galaxy and data</a></li>
   <li><a href="#k-mer-based-taxonomic-assignment-with-kraken2" id="markdown-toc-k-mer-based-taxonomic-assignment-with-kraken2">k-mer based taxonomic assignment with Kraken2</a></li>
   <li><a href="#visualization-of-taxonomic-assignment" id="markdown-toc-visualization-of-taxonomic-assignment">Visualization of taxonomic assignment</a>    <ol>
@@ -2095,7 +2092,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/b0719d5e521924ffaa21ed0f329576bb55d0f58b">b0719d5</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -2123,7 +2120,9 @@ tools:
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1700010352'></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </body>
 </html>

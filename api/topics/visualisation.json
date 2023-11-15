@@ -145,6 +145,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/gallardoalba/"
         }
       ],
+      "mathjax": null,
       "short_id": "T00321",
       "url": "/topics/visualisation/tutorials/circos/tutorial.html",
       "topic_name": "visualisation",
@@ -258,7 +259,7 @@
           ],
           "name": "Circos tutorial",
           "test_results": null,
-          "modified": "2023-11-14 01:06:45 +0000"
+          "modified": "2023-11-15 01:05:57 +0000"
         },
         {
           "workflow": "nature_workflow.ga",
@@ -283,7 +284,7 @@
           ],
           "name": "Circos: Nature workflow",
           "test_results": null,
-          "modified": "2023-11-14 01:06:45 +0000"
+          "modified": "2023-11-15 01:05:57 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/visualisation/tutorials/circos/tutorial.json",
@@ -392,7 +393,8 @@
           "gallantries"
         ]
       },
-      "short_id": null,
+      "mathjax": null,
+      "short_id": "T00373",
       "url": "/topics/visualisation/tutorials/circos-microbial/tutorial.html",
       "topic_name": "visualisation",
       "tutorial_name": "circos-microbial",
@@ -426,7 +428,7 @@
           ],
           "name": "Circos for E. Coli",
           "test_results": null,
-          "modified": "2023-11-14 01:06:45 +0000"
+          "modified": "2023-11-15 01:05:57 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/visualisation/tutorials/circos-microbial/tutorial.json",
@@ -692,6 +694,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/gallantries/"
         }
       ],
+      "mathjax": null,
       "short_id": "T00322",
       "url": "/topics/visualisation/tutorials/jbrowse/tutorial.html",
       "topic_name": "visualisation",
@@ -857,6 +860,7 @@
           "page": "https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/"
         }
       ],
+      "mathjax": null,
       "short_id": "S00101",
       "url": "/topics/visualisation/tutorials/introduction/slides.html",
       "topic_name": "visualisation",

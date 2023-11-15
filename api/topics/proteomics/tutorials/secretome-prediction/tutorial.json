@@ -44,8 +44,11 @@
   ],
   "subtopic": "post-process",
   "tags": [
-    "human"
+    "human",
+    "work-in-progress"
   ],
+  "draft": true,
+  "mathjax": null,
   "short_id": "T00235",
   "url": "/topics/proteomics/tutorials/secretome-prediction/tutorial.html",
   "topic_name": "proteomics",
@@ -76,7 +79,7 @@
       ],
       "name": "Secreted Proteins Via GO Annotation And WoLF PSORT For shCTSB Paper",
       "test_results": null,
-      "modified": "2023-11-14 01:06:44 +0000"
+      "modified": "2023-11-15 01:05:55 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/secretome-prediction/tutorial.json",

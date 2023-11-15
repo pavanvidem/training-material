@@ -19,7 +19,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	console.log("Sentry: opt-in");
 	Sentry.init({
 		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		release: "galaxy-training-network@b0719d5e521924ffaa21ed0f329576bb55d0f58b",
 		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 		sampleRate: 0.1,
 		tracesSampleRate: 0.1,
@@ -55,10 +55,10 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699924001' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1700010352' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,7 +67,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="16S Microbial analysis with Nanopore data">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-05-18 09:34:29 +0000">
+<meta name="DC.date" content="2023-11-03 14:30:27 +0000">
 <meta name="DC.creator" content="Cristóbal Gallardo">
 
         
@@ -109,7 +109,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     "url": "https://training.galaxyproject.org",
     "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-05-18 09:34:29 +0000",
+  "dateModified": "2023-11-03 14:30:27 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "16S Microbial analysis with Nanopore data",
   "interactivityType": "mixed",
@@ -168,7 +168,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "learningResourceType": "hands-on tutorial",
   "name": "16S Microbial analysis with Nanopore data",
   "url": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.html",
-  "version": 19,
+  "version": 20,
   "timeRequired": "PT2H",
   "teaches": "Use Nanopore data for studying soil metagenomics\n - Analyze and preprocess Nanopore reads\n - Use Kraken2 to assign a taxonomic labels",
   "keywords": [
@@ -245,13 +245,13 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
       "name": "nanopore"
     }
   ],
-  "abstract": "# Introduction"
+  "abstract": "__Healthy soils__ are an essential element in maintaining the planet’s ecological balance. That is why their protection must be considered a priority in order to guarantee the well-being of humanity. The alteration of microbial populations often precedes changes in the physical and chemical properties of soils, so monitoring their condition can serve to predict their future evolution, allowing to develop strategies to __mitigate ecosystem damage__."
 }
         </script>
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -422,7 +422,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     <blockquote class="overview">
         <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png" width="88" height="31"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -617,7 +617,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 18, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -628,7 +628,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00207">https://gxy.io/GTN:T00207</a> </div>
         
 
-	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 19 </div>
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 20 </div>
 
     </blockquote>
     </section>
@@ -643,11 +643,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
                  
 
                 <section aria-label="Tutorial Content" id="tutorial-content">
-                <h1 id="introduction">Introduction</h1>
-
-<!-- This is a comment. -->
-
-<p><strong>Healthy soils</strong> are an essential element in maintaining the planet’s ecological balance. That is why their protection must be considered a priority in order to guarantee the well-being of humanity. The alteration of microbial populations often precedes changes in the physical and chemical properties of soils, so monitoring their condition can serve to predict their future evolution, allowing to develop strategies to <strong>mitigate ecosystem damage</strong>.</p>
+                <p><strong>Healthy soils</strong> are an essential element in maintaining the planet’s ecological balance. That is why their protection must be considered a priority in order to guarantee the well-being of humanity. The alteration of microbial populations often precedes changes in the physical and chemical properties of soils, so monitoring their condition can serve to predict their future evolution, allowing to develop strategies to <strong>mitigate ecosystem damage</strong>.</p>
 
 <p>Advances in sequencing technologies have opened up the possibility of using the study of taxa present in bacterial communities as indicators of soil condition. For such an approach to be possible, variations in microbial populations need to be less affected by spatial factors than by human-derived alterations, which has been confirmed by various investigations (<span class="citation"><a href="#Hermans2016">Hermans <i>et al.</i> 2016</a></span>, <span class="citation"><a href="#Fierer2006">Fierer and Jackson 2006</a></span>).</p>
 
@@ -667,7 +663,6 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   <p>In this tutorial, we will cover:</p>
 
 <ol id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#background-on-data" id="markdown-toc-background-on-data">Background on data</a>    <ol>
       <li><a href="#the-datasets" id="markdown-toc-the-datasets">The datasets</a></li>
     </ol>
@@ -1316,7 +1311,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/b0719d5e521924ffaa21ed0f329576bb55d0f58b">b0719d5</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1344,7 +1339,7 @@ tools:
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699924001'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1700010352'></script>
+        
     </body>
 </html>

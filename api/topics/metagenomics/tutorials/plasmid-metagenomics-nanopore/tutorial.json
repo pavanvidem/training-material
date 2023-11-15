@@ -63,6 +63,7 @@
     "assembly",
     "amr"
   ],
+  "mathjax": null,
   "short_id": "T00209",
   "url": "/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.html",
   "topic_name": "metagenomics",
@@ -128,7 +129,7 @@
       ],
       "name": "Copy Of GTN Training - Antibiotic Resistance Detection",
       "test_results": null,
-      "modified": "2023-11-14 01:06:44 +0000"
+      "modified": "2023-11-15 01:05:55 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json",

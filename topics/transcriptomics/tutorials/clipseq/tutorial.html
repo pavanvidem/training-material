@@ -19,7 +19,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	console.log("Sentry: opt-in");
 	Sentry.init({
 		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		release: "galaxy-training-network@b0719d5e521924ffaa21ed0f329576bb55d0f58b",
 		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 		sampleRate: 0.1,
 		tracesSampleRate: 0.1,
@@ -55,10 +55,10 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699924001' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1700010352' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
@@ -67,7 +67,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="CLIP-Seq data analysis from pre-processing to motif detection">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-03-27 13:17:29 +0000">
+<meta name="DC.date" content="2023-11-03 14:30:27 +0000">
 <meta name="DC.creator" content="Florian Heyl">
 <meta name="DC.creator" content="Daniel Maticzka">
 <meta name="DC.creator" content="Bérénice Batut">
@@ -111,7 +111,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     "url": "https://training.galaxyproject.org",
     "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-03-27 13:17:29 +0000",
+  "dateModified": "2023-11-03 14:30:27 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "CLIP-Seq data analysis from pre-processing to motif detection",
   "interactivityType": "mixed",
@@ -170,7 +170,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "learningResourceType": "hands-on tutorial",
   "name": "CLIP-Seq data analysis from pre-processing to motif detection",
   "url": "https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/clipseq/tutorial.html",
-  "version": 48,
+  "version": 49,
   "timeRequired": "PT6H",
   "teaches": "Remove Adapters, Barcodes and Unique Molecular Identifiers (UMIs) from the reads\n - Align trimmed reads with STAR\n - De-duplicate the read library\n - Inspect the read mapping and de-duplication quality\n - Perform peak calling with PEAKachu\n - Analyse the peaks and find potential binding motifs and targets\n - Check the quality of the peak calling",
   "keywords": [
@@ -353,13 +353,13 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   "mentions": [
 
   ],
-  "abstract": "# Introduction"
+  "abstract": "The eCLIP data provided here is a subset of the eCLIP data of RBFOX2 from a study published by *Nostrand et al.* ({% cite VanNostrand2016 %}). The dataset contains the first biological replicate of RBFOX2 CLIP-seq and the input control experiment (FASTQ files). The data was changed and downsampled to reduce data processing time, consequently the data does not correspond to the original source pulled from *Nostrand et al.* ({% cite VanNostrand2016 %}). Also included is a text file (.txt) encompassing the chromosome sizes of hg38 and a genome annotation (.gtf) file taken from [Ensembl](http://ftp.ensemblorg.ebi.ac.uk/pub/release-74/gtf/homo_sapiens/)."
 }
         </script>
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699924001'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1700010352'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -532,7 +532,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
     <blockquote class="overview">
         <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png" width="88" height="31"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -784,7 +784,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 27, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -795,7 +795,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
         <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00288">https://gxy.io/GTN:T00288</a> </div>
         
 
-	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 48 </div>
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 49 </div>
 
     </blockquote>
     </section>
@@ -810,9 +810,7 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
                  
 
                 <section aria-label="Tutorial Content" id="tutorial-content">
-                <h1 id="introduction">Introduction</h1>
-
-<p>The eCLIP data provided here is a subset of the eCLIP data of RBFOX2 from a study published by <em>Nostrand et al.</em> (<span class="citation"><a href="#VanNostrand2016">Nostrand <i>et al.</i> 2016</a></span>). The dataset contains the first biological replicate of RBFOX2 CLIP-seq and the input control experiment (FASTQ files). The data was changed and downsampled to reduce data processing time, consequently the data does not correspond to the original source pulled from <em>Nostrand et al.</em> (<span class="citation"><a href="#VanNostrand2016">Nostrand <i>et al.</i> 2016</a></span>). Also included is a text file (.txt) encompassing the chromosome sizes of hg38 and a genome annotation (.gtf) file taken from <a href="http://ftp.ensemblorg.ebi.ac.uk/pub/release-74/gtf/homo_sapiens/">Ensembl</a>.</p>
+                <p>The eCLIP data provided here is a subset of the eCLIP data of RBFOX2 from a study published by <em>Nostrand et al.</em> (<span class="citation"><a href="#VanNostrand2016">Nostrand <i>et al.</i> 2016</a></span>). The dataset contains the first biological replicate of RBFOX2 CLIP-seq and the input control experiment (FASTQ files). The data was changed and downsampled to reduce data processing time, consequently the data does not correspond to the original source pulled from <em>Nostrand et al.</em> (<span class="citation"><a href="#VanNostrand2016">Nostrand <i>et al.</i> 2016</a></span>). Also included is a text file (.txt) encompassing the chromosome sizes of hg38 and a genome annotation (.gtf) file taken from <a href="http://ftp.ensemblorg.ebi.ac.uk/pub/release-74/gtf/homo_sapiens/">Ensembl</a>.</p>
 
 <p><strong>Table 1</strong>: Data from RBFOX2 CLIP-Seq and control experiment which we are going to use in this tutorial from a study published by <em>Nostrand et al.</em> ([2016](<span class="citation"><a href="#VanNostrand2016">Nostrand <i>et al.</i> 2016</a></span>). PE stands for a paired-end read library. Hep G2 is a human liver cancer cell line. Replicate is the number of the biological replicate. Stranded means, if the read-library is strand specific, i.e., in a specific forward-reverse direction.</p>
 
@@ -859,7 +857,6 @@ if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTra
   <p>In this tutorial, we will cover:</p>
 
 <ol id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#finding-binding-motifs-for-rbfox2" id="markdown-toc-finding-binding-motifs-for-rbfox2">Finding Binding Motifs for RBFOX2</a>    <ol>
       <li><a href="#step-1-get-data" id="markdown-toc-step-1-get-data">Step 1: Get data</a></li>
     </ol>
@@ -2062,7 +2059,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/b0719d5e521924ffaa21ed0f329576bb55d0f58b">b0719d5</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -2090,7 +2087,7 @@ tools:
 </footer>
 
 
-        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699924001'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1700010352'></script>
+        
     </body>
 </html>

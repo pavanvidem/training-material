@@ -49,6 +49,7 @@
     ],
     "video": false
   },
+  "mathjax": null,
   "short_id": "T00127",
   "url": "/topics/ecology/tutorials/champs-blocs/tutorial.html",
   "topic_name": "ecology",
@@ -79,7 +80,7 @@
       ],
       "name": "Champs blocs indicators",
       "test_results": null,
-      "modified": "2023-11-14 01:06:43 +0000"
+      "modified": "2023-11-15 01:05:54 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/champs-blocs/tutorial.json",
