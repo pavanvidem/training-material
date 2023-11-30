@@ -124,7 +124,7 @@
       ],
       "name": "vcf2lineage",
       "test_results": null,
-      "modified": "2023-11-29 01:07:17 +0000"
+      "modified": "2023-11-30 01:06:36 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json",
