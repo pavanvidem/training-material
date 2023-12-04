@@ -123,7 +123,7 @@
       ],
       "name": "Galaxy Intro Strands 2",
       "test_results": null,
-      "modified": "2023-12-03 01:10:15 +0000"
+      "modified": "2023-12-04 01:07:35 +0000"
     },
     {
       "workflow": "Galaxy-Workflow-galaxy-intro-strands.ga",
@@ -139,7 +139,7 @@
       ],
       "name": "Galaxy Intro Strands",
       "test_results": null,
-      "modified": "2023-12-03 01:10:15 +0000"
+      "modified": "2023-12-04 01:07:35 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/introduction/tutorials/galaxy-intro-strands/tutorial.json",
@@ -154,17 +154,17 @@
   "supported_servers": {
     "exact": [
       {
-        "url": "https://usegalaxy.be/",
-        "name": "UseGalaxy.be",
-        "usegalaxy": "true"
-      },
-      {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
         "usegalaxy": "true"
       }
     ],
     "inexact": [
+      {
+        "url": "https://usegalaxy.be/",
+        "name": "UseGalaxy.be",
+        "usegalaxy": "true"
+      },
       {
         "url": "https://usegalaxy.fr/",
         "name": "UseGalaxy.fr",
