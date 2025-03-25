@@ -246,6 +246,7 @@ Further, docking requires the coordinates of a binding site to be defined. Effec
 >
 > 1. {% tool [Prepare receptor](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_receptor/prepare_receptor/1.5.7+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Select a PDB file"*: 'Protein' PDB file.
+>    - Rename to 'Prepared receptor'
 > 2. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Compound library' file.
 >    - {% icon param-file %} *"Output format"*: `SDF`
@@ -298,8 +299,8 @@ Now that the protein and the ligand library have been correctly prepared and for
 
 > <hands-on-title>Perform docking</hands-on-title>
 >
-> 1. {% tool [Docking](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.1.2+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Receptor"*: 'Protein PDBQT' file.
+> 1. {% tool [VINA Docking](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.1.2+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Receptor"*: 'Protein receptor' file.
 >    - {% icon param-file %} *"Ligands"*: 'Prepared ligands' file. 
 >    - {% icon param-file %} *"Specify pH value for ligand protonation"*: `7.4` 
 >    - {% icon param-file %} *"Specify parameters"*: 'Upload a config file to specify parameters' 
