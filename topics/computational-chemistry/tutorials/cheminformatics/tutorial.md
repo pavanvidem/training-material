@@ -299,7 +299,7 @@ Now that the protein and the ligand library have been correctly prepared and for
 
 > <hands-on-title>Perform docking</hands-on-title>
 >
-> 1. {% tool [VINA Docking](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.1.2+galaxy0) %} with the following parameters:
+> 1. {% tool [VINA Docking](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.2.3+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Receptor"*: 'Protein receptor' file.
 >    - {% icon param-file %} *"Ligands"*: 'Prepared ligands' file. 
 >    - {% icon param-file %} *"Specify pH value for ligand protonation"*: `7.4` 
