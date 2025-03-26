@@ -247,9 +247,9 @@ Further, docking requires the coordinates of a binding site to be defined. Effec
 > 1. {% tool [Prepare receptor](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_receptor/prepare_receptor/1.5.7+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Select a PDB file"*: 'Protein' PDB file.
 >    - Rename to 'Prepared receptor'
-> 2. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0) %} with the following parameters:
+> 2. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Compound library' file.
->    - {% icon param-file %} *"Output format"*: `SDF`
+>    - {% icon param-file %} *"Output format"*: `MDL MOL format (sdf,mol)`
 >    - {% icon param-file %} *"Generate 3D coordinates"*: `Yes`
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
 >    - Leave all other options unchanged.
