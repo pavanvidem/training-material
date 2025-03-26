@@ -82,7 +82,7 @@ You can view the contents of the downloaded PDB file by pressing the 'View data'
 
 > <hands-on-title>Separate protein and ligand</hands-on-title>
 >
-> 1. {% tool [Search in textfiles (grep)](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1) %} with the following parameters:
+> 1. {% tool [Search in textfiles (grep)](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: Downloaded PDB file 'Hsp90 structure'
 >    - {% icon param-file %} *"that"*: `Don't match`
 >    - {% icon param-file %} *"Regular Expression"*: `HETATM`
@@ -90,7 +90,7 @@ You can view the contents of the downloaded PDB file by pressing the 'View data'
 >    - Rename the dataset **'Protein (PDB)'**.
 >
 >    The result is a file with all non-protein (`HETATM`) atoms removed.
-> 2. {% tool [Search in textfiles (grep)](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1) %} with the following parameters. Here, we use grep again to produce a file with only non-protein atoms.
+> 2. {% tool [Search in textfiles (grep)](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.5+galaxy0) %} with the following parameters. Here, we use grep again to produce a file with only non-protein atoms.
 >    - {% icon param-file %} *"Select lines from"*: Downloaded PDB file 'Hsp90 structure' 
 >    - {% icon param-file %} *"that"*: `Match`
 >    - {% icon param-file %} *"Regular Expression"*: `CT5` (the name of the ligand in the PDB file)
