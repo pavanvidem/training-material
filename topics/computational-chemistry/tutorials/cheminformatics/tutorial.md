@@ -98,7 +98,7 @@ You can view the contents of the downloaded PDB file by pressing the 'View data'
 >    - Rename the dataset **'Ligand (PDB)'**.
 >
 >    This produces a file which only contains ligand atoms.
-> 3. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0) %} with the following parameters:
+> 3. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: Ligand PDB file created in step 2.
 >    - {% icon param-file %} *"Output format"*: `MDL MOL format (sdf, mol)`
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
@@ -128,7 +128,7 @@ We will generate our compound library by searching ChEMBL for compounds which ha
 
 > <hands-on-title>Generate compound library</hands-on-title>
 >
-> 1. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0) %} with the following parameters:
+> 1. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Ligand' PDB file
 >    - {% icon param-file %} *"Output format"*: `SMILES format (SMI)`
 >    - Leave all other options as default.
@@ -254,7 +254,7 @@ Further, docking requires the coordinates of a binding site to be defined. Effec
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
 >    - Leave all other options unchanged.
 >    - Rename to 'Prepared ligands'
-> 3. {% tool [Calculate the box parameters for an AutoDock Vina job](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.4+galaxy0) %}  with the following parameters:
+> 3. {% tool [Calculate the box parameters using RDKit] for an AutoDock Vina job from a ligand or pocket input file (confounding box)(toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.5+galaxy0) %}  with the following parameters:
 >    - {% icon param-file %} *"Input ligand or pocket"*: `Ligand (MOL)` file.
 >    - {% icon param-file %} *"x-axis buffer"*: `5`
 >    - {% icon param-file %} *"y-axis buffer"*: `5`
@@ -299,7 +299,7 @@ Now that the protein and the ligand library have been correctly prepared and for
 
 > <hands-on-title>Perform docking</hands-on-title>
 >
-> 1. {% tool [VINA Docking](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.2.3+galaxy0) %} with the following parameters:
+> 1. {% tool [VINA Docking] tool to perform protein-ligand docking with Autodock Vina (toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.2.3+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Receptor"*: 'Protein receptor' file.
 >    - {% icon param-file %} *"Ligands"*: 'Prepared ligands' file. 
 >    - {% icon param-file %} *"Specify pH value for ligand protonation"*: `7.4` 
