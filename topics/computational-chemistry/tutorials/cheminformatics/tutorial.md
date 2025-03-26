@@ -98,7 +98,7 @@ You can view the contents of the downloaded PDB file by pressing the 'View data'
 >    - Rename the dataset **'Ligand (PDB)'**.
 >
 >    This produces a file which only contains ligand atoms.
-> 3. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
+> 3. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: Ligand PDB file created in step 2.
 >    - {% icon param-file %} *"Output format"*: `MDL MOL format (sdf, mol)`
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
@@ -128,7 +128,7 @@ We will generate our compound library by searching ChEMBL for compounds which ha
 
 > <hands-on-title>Generate compound library</hands-on-title>
 >
-> 1. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
+> 1. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Ligand' PDB file
 >    - {% icon param-file %} *"Output format"*: `SMILES format (SMI)`
 >    - Leave all other options as default.
@@ -247,7 +247,7 @@ Further, docking requires the coordinates of a binding site to be defined. Effec
 > 1. {% tool [Prepare receptor](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_receptor/prepare_receptor/1.5.7+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Select a PDB file"*: 'Protein' PDB file.
 >    - Rename to 'Prepared receptor'
-> 2. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
+> 2. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Compound library' file.
 >    - {% icon param-file %} *"Output format"*: `MDL MOL format (sdf,mol)`
 >    - {% icon param-file %} *"Generate 3D coordinates"*: `Yes`
@@ -322,7 +322,7 @@ It can be useful to visualize the compounds generated. There is a tool available
 
 > <hands-on-title>Visualization of chemical structures</hands-on-title>
 >
-> 1. {% tool [Visualisation](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_svg_depiction/openbabel_svg_depiction/3.1.1+galaxy0) %} with the following parameters:
+> 1. {% tool [Visualisation](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_svg_depiction/openbabel_svg_depiction/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: Compound library
 >    - {% icon param-file %} *"Embed molecule as CML"*: `No`
 >    - {% icon param-file %} *"Draw all carbon atoms"*: `No`
@@ -344,15 +344,15 @@ In this step, we will group similar molecules together. A key tool in cheminform
 Before clustering, let's label each compound. To do so add a second column to the SMILES compound library containing a label for each molecule. The ```Ligand SMILES``` file is also labelled something like ```/data/dnb02/galaxy_db/files/010/406/dataset_10406067.dat``` (the exact name will vary) and we would like to give it a more useful name. When labelling is complete, we can concatenate (join together) the library file with the original SMILES file for the ligand from the PDB file.
 
 > <hands-on-title>Calculate molecular fingerprints</hands-on-title>
-> 1. {% tool [Replace](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.3) %} with the following parameters:
+> 1. {% tool [Replace](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/9.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"File to process"*: `Ligand SMILES`.
 >    - {% icon param-file %} *"Find pattern"*: add the current label of the SMILES here. You can find it by clicking the 'view' button next to the `Ligand SMILES` dataset - it will look something like `/data/dnb02/galaxy_db/files/010/406/dataset_10406067.dat`.
 >    - {% icon param-file %} *"Replace with"*: `ligand`
-> 2. {% tool [Concatenate datasets](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/0.1.1) %} with the following parameters:
+> 2. {% tool [Concatenate datasets] tail-to-head (toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/1.0.0) %} with the following parameters:
 >    - {% icon param-file %} *"Datasets to concatenate"*: Output of the previous step.
 >    - Click on **Insert Dataset** and in the new selection box which appears, select 'Compound library'.
 >    - Run the step and rename the output dataset 'Labelled compound library'. 
-> 3. {% tool [Molecule to fingerprint](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_mol2fps/1.5) %} with the following parameters:
+> 3. {% tool [Molecule to fingerprint] conversion to several different fingerprint formats (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_mol2fps/1.5) %} with the following parameters:
 >    - {% icon param-file %} *"Molecule file"*: 'Labelled compound library' file.
 >    - {% icon param-file %} *"Type of fingerprint"*: `Open Babel FP2 fingerprints`
 >    - Rename to 'Fingerprints'.
@@ -363,10 +363,10 @@ Taylor-Butina clustering  ({% cite Butina1999 %}) provides a classification of t
 ![Image showing a Fingerprinting System]({% link topics/computational-chemistry/images/fingerprints.png %} "A simple fingerprinting system. Each 1 or 0 in the bitstring corresponds to the presence or absence of a particular feature in the molecule. In this case, the presence of phenyl, amine and carboxylic acid groups are encoded.")
 
 > <hands-on-title>Cluster molecules using molecular fingerprints</hands-on-title>
-> 1. {% tool [Taylor-Butina clustering](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_butina_clustering/1.5) %} with the following parameters:
+> 1. {% tool [Taylor-Butina clustering] of molecular fingerprints (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_butina_clustering/1.5) %} with the following parameters:
 >    - {% icon param-file %} *"Fingerprint dataset"*: 'Fingerprints' file.
 >    - {% icon param-file %} *"threshold"*: `0.8`
-> 2. {% tool [NxN clustering](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_nxn_clustering/1.5.1) %} with the following parameters:
+> 2. {% tool [NxN clustering] of molecular fingerprints (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_nxn_clustering/1.5.1) %} with the following parameters:
 >    - {% icon param-file %} *"Fingerprint dataset"*: 'Fingerprints' file.
 >    - {% icon param-file %} *"threshold"*: `0.0`
 >    - {% icon param-file %} *"Format of the resulting picture"*: `SVG`
@@ -391,20 +391,20 @@ From our collection of SD-files, we first extract all stored values into tabular
 
 > <hands-on-title>Process SD-files</hands-on-title>
 >
-> 1. {% tool [Extract values from an SD-file](toolshed.g2.bx.psu.edu/repos/bgruening/sdf_to_tab/sdf_to_tab/2020.03.4+galaxy0) %} with the following parameters:
+> 1. {% tool [Extract values from an SD-file] into a tabular file using RDKit (toolshed.g2.bx.psu.edu/repos/bgruening/sdf_to_tab/sdf_to_tab/2020.03.4+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input SD-file"*: Collection of SD-files generated by the docking step. (Remember to select the 'collection' icon!)
 >    - {% icon param-file %} *"Include the property name as header"*: `Yes` 
 >    - {% icon param-file %} *"Include SMILES as column in output"*: `Yes`
 >    - {% icon param-file %} *"Include molecule name as column in output"*: `Yes` 
 >    - Leave all other paramters unchanged.
-> 2. {% tool [Collapse Collection](toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/4.2) %} with the following parameters:
+> 2. {% tool [Collapse Collection] into single dataset in order of the collection (toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0) %} with the following parameters:
 >    - {% icon param-file %} *"Collection of files to collapse into single dataset"*: Collection of tabular files generated by the previous step.
 >    - {% icon param-file %} *"Keep one header line"*: `Yes` 
 >    - {% icon param-file %} *"Prepend File name"*: `No` 
 >
 >    {% snippet faqs/galaxy/tools_select_collection.md datatype="datatypes" %}
 >
-> 3. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0) %} with the following parameters:
+> 3. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: choose one of the SD-files from the collection generated by the docking step.
 >    - {% icon param-file %} *"Output format"*: `Protein Data Bank format (pdb)` 
 >    - {% icon param-file %} *"Split multi-molecule files into a collection"*: `Yes`
