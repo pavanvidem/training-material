@@ -316,7 +316,7 @@ The ChemicalToolbox contains a large number of cheminformatics tools. This secti
 
 (This section can also be completed while waiting for the docking, which can take some time to complete.)
 
-### Visualization
+## Visualization
 
 It can be useful to visualize the compounds generated. There is a tool available for this in Galaxy based on OpenBabel.
 
