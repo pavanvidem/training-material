@@ -98,7 +98,7 @@ You can view the contents of the downloaded PDB file by pressing the 'View data'
 >    - Rename the dataset **'Ligand (PDB)'**.
 >
 >    This produces a file which only contains ligand atoms.
-> 3. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
+> 3. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} - interconvert between various chemistry and molecular modeling data files with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: Ligand PDB file created in step 2.
 >    - {% icon param-file %} *"Output format"*: `MDL MOL format (sdf, mol)`
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
