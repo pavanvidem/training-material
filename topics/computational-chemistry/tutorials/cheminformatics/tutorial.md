@@ -363,7 +363,7 @@ Taylor-Butina clustering  ({% cite Butina1999 %}) provides a classification of t
 ![Image showing a Fingerprinting System]({% link topics/computational-chemistry/images/fingerprints.png %} "A simple fingerprinting system. Each 1 or 0 in the bitstring corresponds to the presence or absence of a particular feature in the molecule. In this case, the presence of phenyl, amine and carboxylic acid groups are encoded.")
 
 > <hands-on-title>Cluster molecules using molecular fingerprints</hands-on-title>
-> 1. {% tool [Taylor-Butina clustering] of molecular fingerprints (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_butina_clustering/1.5) %} with the following parameters:
+> 1. {% tool [Taylor-Butina clustering](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_butina_clustering/1.5) %} of molecular fingerprints with the following parameters:
 >    - {% icon param-file %} *"Fingerprint dataset"*: 'Fingerprints' file.
 >    - {% icon param-file %} *"threshold"*: `0.8`
 > 2. {% tool [NxN clustering] of molecular fingerprints (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_nxn_clustering/1.5.1) %} with the following parameters:
