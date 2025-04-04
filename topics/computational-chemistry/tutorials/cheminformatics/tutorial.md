@@ -352,7 +352,7 @@ Before clustering, let's label each compound. To do so add a second column to th
 >    - {% icon param-file %} *"Datasets to concatenate"*: Output of the previous step.
 >    - Click on **Insert Dataset** and in the new selection box which appears, select 'Compound library'.
 >    - Run the step and rename the output dataset 'Labelled compound library'. 
-> 3. {% tool [Molecule to fingerprint] conversion to several different fingerprint formats (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_mol2fps/1.5) %} with the following parameters:
+> 3. {% tool [Molecule to fingerprint](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_mol2fps/1.5) %} conversion to several different fingerprint formats with the following parameters:
 >    - {% icon param-file %} *"Molecule file"*: 'Labelled compound library' file.
 >    - {% icon param-file %} *"Type of fingerprint"*: `Open Babel FP2 fingerprints`
 >    - Rename to 'Fingerprints'.
