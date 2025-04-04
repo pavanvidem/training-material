@@ -366,7 +366,7 @@ Taylor-Butina clustering  ({% cite Butina1999 %}) provides a classification of t
 > 1. {% tool [Taylor-Butina clustering](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_butina_clustering/1.5) %} of molecular fingerprints with the following parameters:
 >    - {% icon param-file %} *"Fingerprint dataset"*: 'Fingerprints' file.
 >    - {% icon param-file %} *"threshold"*: `0.8`
-> 2. {% tool [NxN clustering] of molecular fingerprints (toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_nxn_clustering/1.5.1) %} with the following parameters:
+> 2. {% tool [NxN clustering](toolshed.g2.bx.psu.edu/repos/bgruening/chemfp/ctb_chemfp_nxn_clustering/1.5.1) %} of molecular fingerprints with the following parameters:
 >    - {% icon param-file %} *"Fingerprint dataset"*: 'Fingerprints' file.
 >    - {% icon param-file %} *"threshold"*: `0.0`
 >    - {% icon param-file %} *"Format of the resulting picture"*: `SVG`
