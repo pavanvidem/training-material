@@ -254,7 +254,7 @@ Further, docking requires the coordinates of a binding site to be defined. Effec
 >    - {% icon param-file %} *"Add hydrogens appropriate for pH"*: `7.4`
 >    - Leave all other options unchanged.
 >    - Rename to 'Prepared ligands'
-> 3. {% tool [Calculate the box parameters using RDKit] for an AutoDock Vina job from a ligand or pocket input file (confounding box)(toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.5+galaxy0) %}  with the following parameters:
+> 3. {% tool [Calculate the box parameters using RDKit](toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.5+galaxy0) %} for an AutoDock Vina job from a ligand or pocket input file (confounding box) with the following parameters:
 >    - {% icon param-file %} *"Input ligand or pocket"*: `Ligand (MOL)` file.
 >    - {% icon param-file %} *"x-axis buffer"*: `5`
 >    - {% icon param-file %} *"y-axis buffer"*: `5`
