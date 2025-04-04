@@ -128,7 +128,7 @@ We will generate our compound library by searching ChEMBL for compounds which ha
 
 > <hands-on-title>Generate compound library</hands-on-title>
 >
-> 1. {% tool [Compound conversion] - interconvert between various chemistry and molecular modeling data files (toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} with the following parameters:
+> 1. {% tool [Compound conversion](toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy1) %} - interconvert between various chemistry and molecular modeling data files with the following parameters:
 >    - {% icon param-file %} *"Molecular input file"*: 'Ligand' PDB file
 >    - {% icon param-file %} *"Output format"*: `SMILES format (SMI)`
 >    - Leave all other options as default.
