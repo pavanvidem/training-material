@@ -348,7 +348,7 @@ Before clustering, let's label each compound. To do so add a second column to th
 >    - {% icon param-file %} *"File to process"*: `Ligand SMILES`.
 >    - {% icon param-file %} *"Find pattern"*: add the current label of the SMILES here. You can find it by clicking the 'view' button next to the `Ligand SMILES` dataset - it will look something like `/data/dnb02/galaxy_db/files/010/406/dataset_10406067.dat`.
 >    - {% icon param-file %} *"Replace with"*: `ligand`
-> 2. {% tool [Concatenate datasets] tail-to-head (toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/1.0.0) %} with the following parameters:
+> 2. {% tool [Concatenate datasets](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/1.0.0) %} tail-to-head with the following parameters:
 >    - {% icon param-file %} *"Datasets to concatenate"*: Output of the previous step.
 >    - Click on **Insert Dataset** and in the new selection box which appears, select 'Compound library'.
 >    - Run the step and rename the output dataset 'Labelled compound library'. 
