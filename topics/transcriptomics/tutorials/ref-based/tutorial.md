@@ -12,6 +12,9 @@ tags:
     - drosophila
     - QC
     - cyoa
+    - deutsch
+    - español
+    - italiano
 level: Introductory
 zenodo_link: "https://zenodo.org/record/6457007"
 questions:
@@ -95,6 +98,11 @@ answer_histories:
   - label: "UseGalaxy.eu - results part 2"
     history: https://usegalaxy.eu/u/delislel/h/answers-gtn-refbased-20251118-part2
     date: 2025-11-18
+lang: en
+translations:
+  - de
+  - es
+  - it
 ---
 
 
