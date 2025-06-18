@@ -7,8 +7,6 @@ key_points:
 
 objectives:
  - Learn why you might want to use the Nb2workflow 
- - Watch a video demonstration and explore the generated code - Hello Galaxy Training Network!
- - Run it locally in Docker.
  - Install and explore the simple examples provided.
  - Modify and re-generate them to see how the changes affect the tool
  - Generate new simple Galaxy tools using your own scripts
@@ -32,13 +30,24 @@ requirements:
 contributors:
   - Andrei-EPFL
 
-
-
 ---
 
-# The Galaxy project
+Nb2worfklow and this tutorial are for developers and researchers interested in Galaxy, who routinely develop their own analysis in jupyter notebooks.
 
-[Galaxy](https://galaxyproject.org/) is a free, open-source platform for data analysis, workflow authoring, training and education, tool publication, infrastructure management, and more. Our goal is to develop astronomy-related software tools and make them publicly available on servers running the Galaxy system. Since Galaxy can be deployed on multiple servers, we maintain a dedicated [Galaxy staging server](https://galaxy.odahub.fr) where tools can be previewed and tested before being published more widely.
+
+> <agenda-title></agenda-title>
+>
+> 1. TOC
+> {:toc}
+>
+{: .agenda}
+
+
+# Annotating JuPyter notebooks
+
+![text](../../images/nb2workflow-annotating-nb-inputs.png "Text")
+
+![text2](../../images/nb2workflow-annotating-nb-outputs.png "Text2")
 
 
 # Converting a notebook repository into a Galaxy tool.
