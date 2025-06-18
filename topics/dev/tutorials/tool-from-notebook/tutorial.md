@@ -45,10 +45,34 @@ Nb2worfklow and this tutorial are for developers and researchers interested in G
 
 # Annotating JuPyter notebooks
 
-![text](../../images/nb2workflow-annotating-nb-inputs.png "Text")
 
-![text2](../../images/nb2workflow-annotating-nb-outputs.png "Text2")
+Once you built the Jupyter notebook one can check the [guide-development](https://odahub.io/docs/guide-development/) to properly adapt it for nb2workflow. Nevertheless check the hands-on below.
 
+
+> <hands-on-title>Annotating Jupyter notebooks</hands-on-title>
+> 
+> # Save figure and create data product
+>
+> ```
+> git clone https://github.com/esg-epfl-apc/nb2galaxy-example-repo.git
+> cd nb2galaxy-example-repo
+> ```
+> Open the following jupyter notebook
+> ```
+> example_nb2workflow.ipynb
+> ```
+> Save the figure as ```Image.png``` file and import ```from oda_api.data_products import PictureProduct```.
+> Read the file using  ```bin_image = PictureProduct.from_file('Image.png')```
+> # Annotate
+> Annotate the parameters in the second cell with ```#http://odahub.io/ontology#float``` or ```#http://odahub.io/ontology#integer```. Annotate the entire second cell with the tag *parameters*.
+> ![text](../../images/nb2workflow-annotating-nb-inputs.png "Text")
+> Annotate the ```bin_image``` parameter with ```#http://odahub.io/ontology#ODAPictureProduct```. Annotate the cell containing only this parameter with the tag *outputs*.
+> ![text2](../../images/nb2workflow-annotating-nb-outputs.png "Text2")
+> Check the following jupyter notebook as a finished example:
+> ```
+> example_nb2workflow_annotated.ipynb
+> ```
+{: .hands_on}
 
 # Converting a notebook repository into a Galaxy tool.
 
