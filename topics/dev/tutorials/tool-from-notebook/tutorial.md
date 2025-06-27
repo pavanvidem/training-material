@@ -212,3 +212,60 @@ nb2galaxy --environment_yml environment.yml --citations_bibfile CITATION.bib --h
 ```
 
 and `planemo lint` will pass. We can play around with the tool locally by using `planemo serve` as before.
+
+## Using input dataset
+
+Let's update the notebook so that it accepts a file as an input. It will be a csv file contining list of floats, the notebook will produce the plot of the polynomial with these floats as coefficients. It will also calculate the roots of this polynomial.
+
+We will first create an input file `dataset.csv` to be able to run a notebook (it will be used as a test data for the tool as well)
+
+```csv
+-1.2,3.2,6,-2.1
+```
+
+In the notebook, instead of `power` parameter, we use
+
+```python
+coeff_f = 'dataset.csv' # oda:POSIXPath
+```
+
+(every parameter annotated with `http://odahub.io/oontology#POSIXPath` or subclasses will be treated as an input dataset).
+
+Instead of calculating $x^{power}$ function, we will read coefficients from the input csv and use a `numpy.polynomial.Polynomial`
+
+```python
+coeff = np.genfromtxt(coeff_f, delimiter=',')
+p = Polynomial(coeff)
+```
+
+update the `plot` method invocation in the next cell
+
+```python
+x = np.linspace(min_, max_, 1000)
+plt.figure(figsize=(5, 4))
+im = plt.plot(x, p(x), label=f"{p}")
+plt.xlabel("x")
+plt.legend()
+plt.ylim(ymin, ymax)
+
+plt.savefig('.plot.png')
+```
+
+and add an additional output
+
+```python
+function_plot = '.plot.png' 
+roots = list(p.roots())
+```
+
+You can consult the notebook at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-3/example_nb2workflow.ipynb>.
+
+We will rename the tool, so let's cleanup a tool directory `rm -rf tooldir` and regenerate the tool with
+
+```bash
+nb2galaxy --name polynome --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
+```
+
+lint it with `planemo lint tooldir` and preview with `planemo serve tooldir`. The tool now has a dataset input and will produce two outputs, a plot image and a json expression with the list of roots of the given polynomial.
+
+![Galaxy screenshot](../../images/nb2galaxy-final-example-screen.png)
