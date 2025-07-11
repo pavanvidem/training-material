@@ -77,17 +77,19 @@ jupyter lab
 
 ## Tagging Inputs and Outputs
 
-The prepared notebook has "inputs" defined in the cell 2 and produces a plot as an "output". `nb2galaxy` recognizes papermill-like cell tags. In particular, you need to tag a "parameters" cell
+Since `nb2galaxy` recognizes cell tags following the **Papermill** convention, one needs to create dedicated cells for the **input** and **output** of the notebook and then tag them accordingly. In the current example, the second cell is tagged "parameters" and contains the  **input** values:
 
 ![parameters cell tag](../../images/nb2workflow-annotating-nb-inputs.png)
 
-and return an output product by saving a plot first and creating a tagged output cell
+and the fifth cell is tagged "outputs" and contains the **output**.
 
 ![outputs cell tag](../../images/nb2workflow-annotating-nb-outputs.png)
 
+On one hand, the **input** parameters require manual annotation (see details below). On the other hand, **output** types are automatically detected, e.g. the path to a saved `.png` figure and a list of `float` numbers in the current example.
+
 ## Defining Dependencies
 
-We need to declare dependencies of the notebook (hence Galaxy tool). As long as Galaxy uses `conda` for tool dependencies, the preferred way is to create an `environment.yml` file in the repo:
+The automatic conversion of the notebook to a Galaxy tool requires an explicit definition of the dependencies. As long as Galaxy uses `conda` to install tool dependencies, the preferred way is to create an `environment.yml` file, even though `nb2galaxy` supports both `environment.yml` and `requirements.txt`. Here's an example `environment.yml`:
 
 ```yaml
 name: nb2galaxy-example
@@ -98,19 +100,19 @@ dependencies:
   - matplotlib
 ```
 
-`nb2galaxy` supports both `environment.yml` and `requirements.txt`. The conversion module attempts to reconcile the dependencies listed in both `requirements.txt` and `environment.yml` using Conda. First, each package from `requirements.txt` is searched by Conda. If the package with the same name exists in the configured conda channels (only `conda-forge` by default), it is included in the final list of packages for reconciliation. Otherwise, the package is ignored, and a comment is added to the generated tool represented as an XML file.
+When both `environment.yml` and `requirements.txt` are present, `nb2galaxy` attempts to reconcile them using Conda. First, each package from `requirements.txt` is searched by `conda`. If the package with the same name exists in the configured conda channels (only `conda-forge` by default), it is included in the final list of packages for reconciliation. Otherwise, the package is ignored, and a comment is added to the generated tool represented as an XML file.
 
 In the end, all dependencies are resolved together to obtain fixed versions of the required packages that are written in the tool's XML file.
 
-## Converting notebook to Galaxy tool
+## Notebook to Galaxy tool conversion
 
-We are ready to create a very simple Galaxy tool now, using `nb2galaxy` CLI:
+At this stage, we can create a very simple Galaxy tool using `nb2galaxy` CLI:
 
 ```bash
 nb2galaxy --environment_yml environment.yml example_nb2workflow.ipynb ./tooldir
 ```
 
-Which produces tool description xml file and a python script file in the `./tooldir`
+This creates the `./tooldir` folder that contains a tool description `.xml` file and a python script file:
 
 ```
 tooldir/
@@ -120,7 +122,7 @@ tooldir/
 1 directory, 2 files
 ```
 
-The minimal tool created from the notebook is ready. We can preview it locally
+The minimal tool created from the notebook is ready. We can preview it locally with `planemo`:
 
 ```bash
 planemo serve ./tooldir
