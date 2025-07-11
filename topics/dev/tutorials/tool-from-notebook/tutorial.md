@@ -34,7 +34,7 @@ contributors:
 ---
 
 This tutorial is for developers and researchers interested in Galaxy, who routinely develop their own analysis in Jupyter notebooks.
-
+`nb2workflow` library, maintaned by the astronomy-oriented team, but is not limited to astronomy use-case.
 
 > <agenda-title></agenda-title>
 >
@@ -43,13 +43,17 @@ This tutorial is for developers and researchers interested in Galaxy, who routin
 >
 {: .agenda}
 
-# Generating Galaxy Tools From Jupyter notebooks
+# Convert an example Jupyter notebook into a Galaxy tool
 
 You will learn how to use the `nb2galaxy` module of the `nb2workflow` library to convert the jupyter notebook into the Galaxy tool.
 
-## Preparing environment
+plots a function $y=x^p$ in a given range. It 
 
-Throughout this tutorial, the jupyter-lab interface is used to edit notebooks. The example notebook is simple, only using basic numeric libraries, like `numpy` and `matplotlib`. The `nb2galaxy` is a part of the `nb2workflow` library, maintaned by the astronomy-oriented team, but isn't limited to astronomy use-case. To test a Galaxy tool or to preview it locally, `planemo` library is used. To create a virtual environment with the needed tools installed:
+## Environment Setup
+
+This tutorial uses the JupyterLab interface to edit notebooks, but any Jupyter-compatible editor (such as VS Code) will work just as well. 
+The example notebook relies only on the `numpy` and `matplotlib` libraries. Two additional packages are required: `nb2workflow`  that provides the `nb2galaxy` conversion module and `planemo`  which is used to test or preview the generated Galaxy tool locally.
+To create a virtual environment with all required packages:
 
 ```bash
 mkdir nb2galaxy-example
@@ -59,7 +63,7 @@ source .venv/bin/activate
 pip install jupyterlab numpy matplotlib nb2workflow[galaxy] planemo
 ```
 
-The example notebook plots a function $y=x^p$ in a given range. It can be downloaded from
+The example notebook can be downloaded from:
 
 ```bash
 wget https://raw.githubusercontent.com/esg-epfl-apc/nb2galaxy-example-repo/refs/tags/step-0/example_nb2workflow.ipynb
@@ -71,7 +75,7 @@ Open Jupyter lab to preview the notebook
 jupyter lab
 ```
 
-## Tagging Jupyter notebook
+## Tagging Inputs and Outputs
 
 The prepared notebook has "inputs" defined in the cell 2 and produces a plot as an "output". `nb2galaxy` recognizes papermill-like cell tags. In particular, you need to tag a "parameters" cell
 
@@ -80,6 +84,8 @@ The prepared notebook has "inputs" defined in the cell 2 and produces a plot as 
 and return an output product by saving a plot first and creating a tagged output cell
 
 ![outputs cell tag](../../images/nb2workflow-annotating-nb-outputs.png)
+
+## Defining Dependencies
 
 We need to declare dependencies of the notebook (hence Galaxy tool). As long as Galaxy uses `conda` for tool dependencies, the preferred way is to create an `environment.yml` file in the repo:
 
