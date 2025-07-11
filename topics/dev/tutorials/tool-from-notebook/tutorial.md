@@ -76,15 +76,14 @@ jupyter lab
 
 ## Tagging Inputs and Outputs
 
-Since `nb2galaxy` recognizes cell tags following the **Papermill** convention, one needs to create dedicated cells for the **input** and **output** of the notebook and then tag them accordingly. In the current example, the second cell is tagged "parameters" and contains the  **input** values:
+Since `nb2galaxy` recognizes cell tags following the **Papermill** convention, one needs to create dedicated cells for the **input** and **output** of the notebook and then tag them accordingly. In the current example, the second cell is tagged as "parameters" and contains the  **input** values:
 
 ![parameters cell tag](../../images/nb2workflow-annotating-nb-inputs.png)
 
-and the fifth cell is tagged "outputs" and contains the **output**.
+In order to obtain the **output**, one must save the figure to a file and provide its path in a new cell tagged as "outputs".
 
 ![outputs cell tag](../../images/nb2workflow-annotating-nb-outputs.png)
 
-On one hand, the **input** parameters require manual annotation in this case (see details below). On the other hand, **output** types are automatically detected, e.g. the path to a saved `.png` figure and a list of `float` numbers in the current example.
 
 ## Defining Dependencies
 
@@ -197,7 +196,7 @@ max_ = 10 # oda:Float
 power = 3 # oda:Integer
 ```
 
-We can also add labels that will be shown in the tool interface
+Implicitly, variable names are used as labels in the tool interface. However, one can provide custom labels using semantic annotations, allowing for more user-friendly descriptions to be displayed.
 
 ```python
 min_ = -10 # oda:Float; oda:label "Left bound of x-axis"
@@ -205,11 +204,11 @@ max_ = 10 # oda:Float; oda:label "Right bound of x-axis"
 power = 3 # oda:Integer
 ```
 
-Let's add optional y-axis bounds:
+Let us modify the notebook to add optional *y*-axis bounds:
 
 ![annotations](../../images/nb2workflow-annotating-nb-parameters-opt.png)
 
-The notebook to verify is available at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-2/example_nb2workflow.ipynb>
+The resulting Jupyter notebook is available at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-2/example_nb2workflow.ipynb>.
 
 Now we can recreate a tool 
 
