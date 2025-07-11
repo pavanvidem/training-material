@@ -47,7 +47,6 @@ This tutorial is for developers and researchers interested in Galaxy, who routin
 
 You will learn how to use the `nb2galaxy` module of the `nb2workflow` library to convert the jupyter notebook into the Galaxy tool.
 
-plots a function $y=x^p$ in a given range. It 
 
 ## Environment Setup
 
@@ -63,7 +62,7 @@ source .venv/bin/activate
 pip install jupyterlab numpy matplotlib nb2workflow[galaxy] planemo
 ```
 
-The example notebook can be downloaded from:
+The initial notebook, that is used to plot a function $y=x^p$ in a given range, can be downloaded from:
 
 ```bash
 wget https://raw.githubusercontent.com/esg-epfl-apc/nb2galaxy-example-repo/refs/tags/step-0/example_nb2workflow.ipynb
@@ -85,7 +84,7 @@ and the fifth cell is tagged "outputs" and contains the **output**.
 
 ![outputs cell tag](../../images/nb2workflow-annotating-nb-outputs.png)
 
-On one hand, the **input** parameters require manual annotation (see details below). On the other hand, **output** types are automatically detected, e.g. the path to a saved `.png` figure and a list of `float` numbers in the current example.
+On one hand, the **input** parameters require manual annotation in this case (see details below). On the other hand, **output** types are automatically detected, e.g. the path to a saved `.png` figure and a list of `float` numbers in the current example.
 
 ## Defining Dependencies
 
@@ -130,7 +129,7 @@ planemo serve ./tooldir
 
 ## Improving the tool
 
-Currently, the tool doesn't pass planemo linting
+In order to publish a tool on the UseGalaxy platform, the tool needs to pass the `planemo` linting. Currently, the example tool does not pass the test: 
 
 ```bash
 $ planemo lint ./tooldir/
@@ -148,9 +147,9 @@ Linting tool /home/dsavchenko/Projects/ESG/nb2galaxy-example-repo/tooldir/exampl
 Failed linting
 ```
 
-So we need to add help text and citations. `nb2galaxy` accepts help in `.rst` or `.md` format and citations as a bibfile.
+The tool requires a "help section" and citations. `nb2galaxy` can extract the "help section" from either `.rst` or `.md` files and, and citations from a BibTex `.bib` file.
 
-We create markdown file `galaxy_help.md` with a help text:
+Let us create a markdown file `galaxy_help.md` with the following help text:
 
 ```markdown
 This tool is a simple example, automatically created from a Jupyter notebook using `nb2galaxy`.
@@ -167,21 +166,22 @@ and a `CITATION.bib` file:
 }
 ```
 
-Regenerate the tool
+Finally, regenerate the tool
 
 ```bash
 nb2galaxy --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
 ```
 
-and now `planemo lint` passes.
+and the `planemo lint` should pass.
 
 ## Annotating input parameters
 
-The script automatically recognized types of the parameters to be all integers, based on the default values provided. One can change defaults, but we will use semantic annotations to explicitly provide types (other option is to use python type annotations, but we will see that semantic annotations allow for additional options).
+By default, `nb2galaxy` assumes all input parameters are of type `Integer`. Even though one can change the default configuration, one can explicitly provide parameter types using semantic annotations or python type annotations.
 
-Annotations should be placed in the comment following the parameter. The syntax is truncated turtle with subject ommited, the subject is input parameter, implicitly. Also, the `a` predicate may be ommited. By default, the astronomy-specific ontology, located at <https://odahub.io/ontology/>, but this may be configured using cli option. The `oda:` prefix is defined to abbreviate <http://odahub.io/ontology#> as well as `rdfs:` prefix.
+In this tutorial, we focus on semantic annotations because they allow for additional options. By default, the conversion module uses the astronomy-specific ontology, described at <https://odahub.io/ontology/>, although a different ontology can be specified via a CLI option. 
 
-Therefore, the annotated parameters will look like
+Semantic annotations are added as comments following the parameter assignment. The syntax follows the truncated Turtle format, where the input parameter is implicitly considered the subject and `a` predicate is optional.
+In the current example:
 
 ```python
 min_ = -10 # http://odahub.io/ontology#Float
@@ -189,15 +189,13 @@ max_ = 10 # http://odahub.io/ontology#Float
 power = 3 # http://odahub.io/ontology#Integer
 ```
 
-or
+To improve readability, one can use the `oda:` prefix as a shorthand for <http://odahub.io/ontology#>, similar to how `rdfs:` shortens <http://www.w3.org/2000/01/rdf-schema#>. With this abbreviation, the annotations become::
 
 ```python
 min_ = -10 # oda:Float
 max_ = 10 # oda:Float
 power = 3 # oda:Integer
 ```
-
-which are equivalent.
 
 We can also add labels that will be shown in the tool interface
 
