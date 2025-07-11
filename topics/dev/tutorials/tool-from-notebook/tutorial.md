@@ -51,7 +51,7 @@ You will learn how to use the `nb2galaxy` module of the `nb2workflow` library to
 ## Environment Setup
 
 This tutorial uses the JupyterLab interface to edit notebooks, but any Jupyter-compatible editor (such as VS Code) will work just as well. 
-The example notebook relies only on the `numpy` and `matplotlib` libraries. Two additional packages are required: `nb2workflow`  that provides the `nb2galaxy` conversion module and `planemo`  which is used to test or preview the generated Galaxy tool locally.
+The example notebook relies only on the `numpy` and `matplotlib` libraries. Two additional packages are required: `nb2workflow`  that provides the `nb2galaxy` conversion module and `planemo`  which is used to test and preview the generated Galaxy tool locally.
 To create a virtual environment with all required packages:
 
 ```bash
@@ -80,7 +80,7 @@ Since `nb2galaxy` recognizes cell tags following the **Papermill** convention, o
 
 ![parameters cell tag](../../images/nb2workflow-annotating-nb-inputs.png)
 
-In order to obtain the **output**, one must save the figure to a file and provide its path in a new cell tagged as "outputs".
+In order to obtain the **output**, one must save the figure to a file and provide its path in a new cell tagged as "outputs":
 
 ![outputs cell tag](../../images/nb2workflow-annotating-nb-outputs.png)
 
@@ -120,7 +120,7 @@ tooldir/
 1 directory, 2 files
 ```
 
-The minimal tool created from the notebook is ready. We can preview it locally with `planemo`:
+The minimal tool created from the notebook is ready. One can preview it locally with `planemo`:
 
 ```bash
 planemo serve ./tooldir
@@ -128,7 +128,7 @@ planemo serve ./tooldir
 
 ## Improving the tool
 
-In order to publish a tool on the UseGalaxy platform, the tool needs to pass the `planemo` linting. Currently, the example tool does not pass the test: 
+In order to publish a tool on the UseGalaxy platform, the tool needs to pass the `planemo` linting tests. Currently, the example tool does not pass the test: 
 
 ```bash
 $ planemo lint ./tooldir/
@@ -165,21 +165,21 @@ and a `CITATION.bib` file:
 }
 ```
 
-Finally, regenerate the tool
+Finally, by regenerating the tool
 
 ```bash
 nb2galaxy --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
 ```
 
-and the `planemo lint` should pass.
+the `planemo lint` tests should pass.
 
 ## Annotating input parameters
 
 By default, `nb2galaxy` assumes all input parameters are of type `Integer`. Even though one can change the default configuration, one can explicitly provide parameter types using semantic annotations or python type annotations.
 
-In this tutorial, we focus on semantic annotations because they allow for additional options. By default, the conversion module uses the astronomy-specific ontology, described at <https://odahub.io/ontology/>, although a different ontology can be specified via a CLI option. 
+In this tutorial, we focus on semantic annotations because they allow for additional options. Out of the box, the conversion module uses the astronomy-specific ontology, described at <https://odahub.io/ontology/>, although a different ontology can be specified via a CLI option. 
 
-Semantic annotations are added as comments following the parameter assignment. The syntax follows the truncated Turtle format, where the input parameter is implicitly considered the subject and `a` predicate is optional.
+Semantic annotations are added as comments following the parameter assignment. The syntax follows the truncated Turtle format, where the input parameter is implicitly considered the subject and the `a` predicate is optional.
 In the current example:
 
 ```python
@@ -188,7 +188,7 @@ max_ = 10 # http://odahub.io/ontology#Float
 power = 3 # http://odahub.io/ontology#Integer
 ```
 
-To improve readability, one can use the `oda:` prefix as a shorthand for <http://odahub.io/ontology#>, similar to how `rdfs:` shortens <http://www.w3.org/2000/01/rdf-schema#>. With this abbreviation, the annotations become::
+To improve readability, one can use the `oda:` prefix as a shorthand for <http://odahub.io/ontology#>, similar to how `rdfs:` shortens <http://www.w3.org/2000/01/rdf-schema#>. With this abbreviation, the annotations become:
 
 ```python
 min_ = -10 # oda:Float
@@ -196,7 +196,7 @@ max_ = 10 # oda:Float
 power = 3 # oda:Integer
 ```
 
-Implicitly, variable names are used as labels in the tool interface. However, one can provide custom labels using semantic annotations, allowing for more user-friendly descriptions to be displayed.
+Automatically, the variable names are used as labels in the tool interface. However, one can provide custom labels using semantic annotations, allowing for more user-friendly descriptions to be displayed:
 
 ```python
 min_ = -10 # oda:Float; oda:label "Left bound of x-axis"
@@ -210,13 +210,13 @@ Let us modify the notebook to add optional *y*-axis bounds:
 
 The resulting Jupyter notebook is available at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-2/example_nb2workflow.ipynb>.
 
-Now we can recreate a tool 
+By recreating the tool 
 
 ```bash
 nb2galaxy --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
 ```
 
-and `planemo lint` will pass. We can play around with the tool locally by using `planemo serve` as before.
+the `planemo lint` checks should pass and one can locally test the tool as before using `planemo serve`.
 
 ## Using input dataset
 
