@@ -104,7 +104,7 @@ In the end, all dependencies are resolved together to obtain fixed versions of t
 
 ## Notebook to Galaxy tool conversion
 
-At this stage, we can create a very simple Galaxy tool using `nb2galaxy` CLI:
+At this stage, one can create a very simple Galaxy tool using `nb2galaxy` CLI:
 
 ```bash
 nb2galaxy --environment_yml environment.yml example_nb2workflow.ipynb ./tooldir
@@ -128,7 +128,7 @@ planemo serve ./tooldir
 
 ## Improving the tool
 
-In order to publish a tool on the UseGalaxy platform, the tool needs to pass the `planemo` linting tests. Currently, the example tool does not pass the test: 
+In order to publish a tool on the UseGalaxy platform, the tool needs to pass the `planemo` linting tests. Currently, the example tool does not pass the tests: 
 
 ```bash
 $ planemo lint ./tooldir/
@@ -216,34 +216,34 @@ By recreating the tool
 nb2galaxy --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
 ```
 
-the `planemo lint` checks should pass and one can locally test the tool as before using `planemo serve`.
+the `planemo lint` checks should pass and one can locally test the tool using `planemo serve` as before.
 
-## Using input dataset
+## Working with Input Datasets
 
-Let's update the notebook so that it accepts a file as an input. It will be a csv file contining list of floats, the notebook will produce the plot of the polynomial with these floats as coefficients. It will also calculate the roots of this polynomial.
+Jupyter Notebooks often use datasets as inputs. In this section, we explain how to modify the previous notebook to accept a file as input. Specifically, the updated notebook should read polynomial coefficients from a `.csv` file, compute the roots and generate a plot of the corresponding polynomial function.
 
-We will first create an input file `dataset.csv` to be able to run a notebook (it will be used as a test data for the tool as well)
+Firstly, create an input file, `dataset.csv`, which allows to run the notebook. This file also serves as test data for the generated tool.)
 
 ```csv
 -1.2,3.2,6,-2.1
 ```
 
-In the notebook, instead of `power` parameter, we use
+Furthermore, replace the `power` input parameter from the notebook with:
 
 ```python
 coeff_f = 'dataset.csv' # oda:POSIXPath
 ```
 
-(every parameter annotated with `http://odahub.io/oontology#POSIXPath` or subclasses will be treated as an input dataset).
+where every parameter annotated with `http://odahub.io/oontology#POSIXPath` or its subclasses is treated as an input dataset.
 
-Instead of calculating $x^{power}$ function, we will read coefficients from the input csv and use a `numpy.polynomial.Polynomial`
+Read the polynomial coefficients from the input `.csv` file and use the `numpy.polynomial.Polynomial` function:
 
 ```python
 coeff = np.genfromtxt(coeff_f, delimiter=',')
 p = Polynomial(coeff)
 ```
 
-update the `plot` method invocation in the next cell
+Update the `plot` method invocation in the next cell
 
 ```python
 x = np.linspace(min_, max_, 1000)
@@ -256,21 +256,21 @@ plt.ylim(ymin, ymax)
 plt.savefig('.plot.png')
 ```
 
-and add an additional output
+and add an additional output for the polynomial roots
 
 ```python
 function_plot = '.plot.png' 
 roots = list(p.roots())
 ```
 
-You can consult the notebook at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-3/example_nb2workflow.ipynb>.
+You can consult the resulting notebook at <https://github.com/esg-epfl-apc/nb2galaxy-example-repo/blob/step-3/example_nb2workflow.ipynb>.
 
-We will rename the tool, so let's cleanup a tool directory `rm -rf tooldir` and regenerate the tool with
+Afterwards, cleanup the tool directory `rm -rf tooldir` and regenerate the tool using the new name `polynome`:
 
 ```bash
 nb2galaxy --name polynome --environment_yml environment.yml --citations_bibfile CITATION.bib --help_file galaxy_help.md example_nb2workflow.ipynb tooldir
 ```
 
-lint it with `planemo lint tooldir` and preview with `planemo serve tooldir`. The tool now has a dataset input and will produce two outputs, a plot image and a json expression with the list of roots of the given polynomial.
+Finally, lint the tool with `planemo lint tooldir` and preview it with `planemo serve tooldir`. The tool should accept a dataset as input and generate two outputs: a plot of the polynomial function and a JSON expression with the list of roots of the corresponding polynomial.
 
 ![Galaxy screenshot](../../images/nb2galaxy-final-example-screen.png)
