@@ -1,18 +1,23 @@
 ---
 
 layout: tutorial_hands_on
-title: "nb2workflow: Generating Galaxy Tools From Jupyter notebooks"
+title: "nb2workflow: Generating Galaxy Tools From Jupyter Notebooks"
 key_points:
-  - The nb2galaxy module of the nb2workflow library is an automated Galaxy tool generator for scientists and developers who routinely write Jupyter notebooks.
+  - The `nb2galaxy` module of the `nb2workflow` library is an automated Galaxy tool generator for scientists and developers who routinely write Jupyter Notebooks.
+  - `nb2workflow` is a Python package that can be easily installed via `pip`.
+  - Once a Jupyter Notebook is functional, only a clear separation and definition of the inputs and outputs - along with appropriate annotations and tags - is needed for conversion.
+  - The conversion module accepts additional files (e.g., help text, citations, environment specifications) to ensure the generated tool passes `planemo lint` checks.
 
 objectives:
  - Learn why you might want to use the nb2galaxy.
- - Install and explore the simple examples provided.
- - Modify and re-generate them to see how changes affect the tool.
- - Generate new simple Galaxy tools using your own scripts.
+ - Install the package and explore the provided example notebooks.
+ - Modify the examples and regenerate the tools to check the effects.
+ - Create new Galaxy tools from your own Jupyter Notebooks.
 
 questions:
- - What options exist for new-to-Galaxy developers to convert functioning Jupyter notebooks into Galaxy tools?
+ - How can new-to-Galaxy developers convert functioning Jupyter Notebooks into Galaxy tools?
+ - How are the inputs and outputs defined?
+ - How are the tool dependencies provided?
 
 time_estimation: 1H
 subtopic: tooldev
@@ -33,8 +38,8 @@ contributors:
 
 ---
 
-This tutorial is for developers and researchers interested in Galaxy, who routinely develop their own analysis in Jupyter notebooks.
-`nb2workflow` library, maintaned by the astronomy-oriented team, but is not limited to astronomy use-case.
+With the advance of python and Jupyter Notebooks, many astronomers have started using them for their data analysis pipelines. Therefore, members of the astronomy and data science communities have developed `nb2galaxy` -- a module of the `nb2workflow` library -- that allows for a quick and easy conversion of Jupyter Notebooks to Galaxy tools. Nonetheless, the use-case is not limited to astronomy, hence this tutorial is dedicated to developers and researchers interested in Galaxy, in general.
+
 
 > <agenda-title></agenda-title>
 >
