@@ -23,18 +23,23 @@ time_estimation: 1H
 subtopic: tooldev
 
 requirements:
+  - type: "internal"
     topic_name: introduction
     tutorials:
       - galaxy-intro-short
       - galaxy-intro-101-everyone
+  - type: "internal"
     topic_name: dev
     tutorials:
       - tool-integration
 
 
-contributors:
-  - Andrei-EPFL
-  - dsavchenko
+contributions:
+  authorship:
+    - dsavchenko
+    - Andrei-EPFL
+  editing:
+    - Andrei-EPFL
 
 ---
 
@@ -165,7 +170,7 @@ and a `CITATION.bib` file:
 ```bibtex
 @software{nb2galaxy-example,
   author = {Variu, Andrei and Savchenko, Denys},
-  title = {{Example of nb2galaxy}},
+  title = "Example of nb2galaxy",
   url = {https://github.com/esg-epfl-apc/nb2galaxy-example-repo},
   year = {2025}
 }
