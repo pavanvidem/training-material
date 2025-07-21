@@ -56,7 +56,7 @@ With the advance of python and Jupyter Notebooks, many astronomers have started 
 # Convert an example Jupyter notebook into a Galaxy tool
 
 This tutorial starts with the setup of the required enviornment and a very basic Jupyter Notebook. Afterwards, each section introduces one or more concepts related to the conversion. The tutorial ends with a more complex example of inputs and outputs.
-It is important to mention that the end result of this tutorial is a folder with a `.xml` file that describes the tool and other required files for the tool to function. In order for the tool to be on the UseGalaxy platform, one needs to publish the resulting folder on [toolshed](https://toolshed.g2.bx.psu.edu/) and ...
+It is important to mention that the end result of this tutorial is a folder with a `.xml` file that describes the tool and other required files for the tool to function. In order for the tool to be on the UseGalaxy platform, one needs to publish the resulting folder on [toolshed](https://toolshed.g2.bx.psu.edu/) and UseGalaxy.
 
 
 ## Environment Setup
