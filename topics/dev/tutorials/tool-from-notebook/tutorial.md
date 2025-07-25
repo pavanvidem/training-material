@@ -39,11 +39,10 @@ contributions:
     - dsavchenko
     - Andrei-EPFL
   funding:
-    - esg
+    - eurosciencegateway
     - oscars
     - acme
-    - astroordas (established)
-    - astoordas (explore)
+    - astroordas
   editing:
     - Andrei-EPFL
 
