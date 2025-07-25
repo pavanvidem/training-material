@@ -38,6 +38,12 @@ contributions:
   authorship:
     - dsavchenko
     - Andrei-EPFL
+  funding:
+    - esg
+    - oscars
+    - acme
+    - astroordas (established)
+    - astoordas (explore)
   editing:
     - Andrei-EPFL
 
