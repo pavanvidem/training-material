@@ -38,6 +38,8 @@ acme:
     name: ACME
     github: false
     joined: 2025-07
+    funding_id: 101131928
+    funding_database: cordis
     avatar: "https://www.acme-astro.eu/wp-content/uploads/acme-980x980.jpg"
     url: https://www.acme-astro.eu/acme-project/
 
