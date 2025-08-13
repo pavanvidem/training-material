@@ -42,13 +42,8 @@ acme:
     funding_database: cordis
     avatar: "https://www.acme-astro.eu/wp-content/uploads/acme-980x980.jpg"
     url: https://www.acme-astro.eu/acme-project/
-
-astroordas:
-    name: AstroORDAS
-    github: false
-    joined: 2025-07
-    avatar: "https://www.astro.unige.ch/astroordas/sites/default/files/astroORDAS-logo-03.png"
-    url: https://www.astro.unige.ch/astroordas/
+    funding_statement: |
+      This tutorial is part of a project that has received funding from the European Union’s Horizon Europe Research and innovation programme under Grant Agreement No 101131928.
 
 biont:
     name: BioNT

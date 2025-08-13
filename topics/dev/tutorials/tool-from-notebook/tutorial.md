@@ -42,7 +42,6 @@ contributions:
     - eurosciencegateway
     - oscars
     - acme
-    - astroordas
   editing:
     - Andrei-EPFL
 
@@ -290,3 +289,11 @@ nb2galaxy --name polynome --environment_yml environment.yml --citations_bibfile 
 Finally, lint the tool with `planemo lint tooldir` and preview it with `planemo serve tooldir`. The tool should accept a dataset as input and generate two outputs: a plot of the polynomial function and a JSON expression with the list of roots of the corresponding polynomial.
 
 ![Galaxy screenshot](../../images/nb2galaxy-final-example-screen.png)
+
+## Acknowledgements
+
+This tutorial is part of [EuroScienceGateway project](#funding).
+Parts of `nb2workflow` library is developed and tested with support from [OSCARS](#funding), [ACME](#funding),
+[AstroORDAS Explore](https://open-research-data-portal.ch/projects/development-of-open-research-data-analysis-services-supplementing-astronomical-open-research-data/) and
+[AstroORDAS Establish](https://www.swissuniversities.ch/fileadmin/swissuniversities/Dokumente/Hochschulpolitik/ORD/Calls/Approved_Projects_Track_B.pdf)
+projects.
