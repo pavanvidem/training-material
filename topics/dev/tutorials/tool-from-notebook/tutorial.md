@@ -161,7 +161,7 @@ Linting tool /home/dsavchenko/Projects/ESG/nb2galaxy-example-repo/tooldir/exampl
 Failed linting
 ```
 
-The tool requires a "help section" and citations. `nb2galaxy` can extract the "help section" from either `.rst` or `.md` files and, and citations from a BibTex `.bib` file.
+The tool requires a "help section" and citations. `nb2galaxy` can extract the "help section" from either `.rst` or `.md` files and citations from a BibTex `.bib` file.
 
 Let us create a markdown file `galaxy_help.md` with the following help text:
 
