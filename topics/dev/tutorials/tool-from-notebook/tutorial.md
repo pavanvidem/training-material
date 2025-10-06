@@ -237,7 +237,7 @@ the `planemo lint` checks should pass and one can locally test the tool using `p
 
 Jupyter Notebooks often use datasets as inputs. In this section, we explain how to modify the previous notebook to accept a file as input. Specifically, the updated notebook should read polynomial coefficients from a `.csv` file, compute the roots and generate a plot of the corresponding polynomial function.
 
-Firstly, create an input file, `dataset.csv`, which allows to run the notebook. This file also serves as test data for the generated tool.)
+Firstly, create an input file, `dataset.csv`, which allows to run the notebook. This file also serves as test data for the generated tool.
 
 ```csv
 -1.2,3.2,6,-2.1
