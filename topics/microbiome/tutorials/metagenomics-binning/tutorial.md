@@ -88,16 +88,19 @@ Each of these methods has its strengths and limitations, and the choice of binni
 - **Chimeric sequences**: Sequences that are the result of sequencing errors or contamination can lead to chimeric sequences, which can make it difficult to accurately bin reads.
 - **Strain variation**: Organisms within a species can exhibit significant genetic variation, which can make it difficult to distinguish between different strains in a metagenomic sample.
 
-There are plenty of computational tools to perform metafenomics binning. Some of the most widely used include:
+There are plenty of algorithms that perform metagenomic binning. Some of the most widely used include:
 
 - **MaxBin**  ({%cite maxbin2015%}): A popular de novo binning algorithm that uses a combination of sequence features and marker genes to cluster contigs into genome bins.
 - **MetaBAT** ({%cite Kang2019%}): Another widely used de novo binning algorithm that employs a hierarchical clustering approach based on tetranucleotide frequency and coverage information.
 - **CONCOCT** ({%cite Alneberg2014%}): A de novo binning tool that uses a clustering algorithm based on sequence composition and coverage information to group contigs into genome bins.
 - **MyCC** ({%cite Lin2016%}): A reference-based binning tool that uses sequence alignment to identify contigs belonging to the same genome or taxonomic group.
 - **GroopM** ({%cite Imelfort2014%}): A hybrid binning tool that combines reference-based and de novo approaches to achieve high binning accuracy.
-- **MetaWRAP** ({%cite Uritskiy2018%}): A comprehensive metagenomic analysis pipeline that includes various modules for quality control, assembly, binning, and annotation.
-- **Anvi'o** ({%cite Eren2015%}): A platform for visualizing and analyzing metagenomic data, including features for binning, annotation, and comparative genomics.
 - **SemiBin** ({%cite Pan2022%}): A command tool for metagenomic binning with deep learning, handles both short and long reads.
+- **Vamb** ({%cite nissen2021improved%}): An algorithm that uses variational autoencoders (VAEs) to encode sequence composition and coverage information.
+
+Other tools also include:
+- **MetaWRAP** ({%cite Uritskiy2018%}): A comprehensive metagenomic analysis pipeline that includes various modules for quality control, assembly, binning, and annotation.
+- **Anvi'o** ({%cite Eren2015%}): A platform for visualizing and analyzing metagenomic data, including features for binning, annotation, and comparative genomics. Uses CONCOCT as the default binning backend.
 
 A benchmark study of metagenomics software can be found at {%cite Sczyrba2017%}. MetaBAT 2 outperforms previous MetaBAT and other alternatives in both accuracy and computational efficiency . All are based on default parameters ({%cite Sczyrba2017%}).
 
