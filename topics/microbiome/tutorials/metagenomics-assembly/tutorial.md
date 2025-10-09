@@ -15,8 +15,8 @@ objectives:
   - "Explain the difference between co-assembly and individual assembly."
   - "Explain the difference between reads, contigs and scaffolds."
   - "Explain how tools based on de Bruijn graph work."
-  - "Evaluate the Quality of the Assembly with QUAST, Bowtie2, and CoverM-Contig."
-  - "Construct and apply simple assembly pipelines on short read data.""
+  - "Evaluate the quality of the Assembly with QUAST, Bowtie2, and CoverM-Contig."
+  - "Construct and apply simple assembly pipelines on short read data."
 time_estimation: "2H"
 key_points:
   - "Assembly groups reads into contigs and scaffolds."
@@ -78,7 +78,7 @@ Assembling seems intuitively similar to putting together a jigsaw puzzle. Essent
 > 2. Overlap Layout Consensus
 > 3. De Bruijn graphs. The following figure illustrates these strategies in brief.
 >
-> ![Image shows greedy extention, overlap layout consensus, and de Brujin graphs assembly algorithms](./images/assembly-algorithms.png "Assembly algorithms. Image from {% cite carpentries %}"){:width="70%"}
+> ![Image shows greedy extention, overlap layout consensus, and de Brujin graphs assembly algorithms.](./images/assembly-algorithms.png "Assembly algorithms. Image from {% cite carpentries %}."){:width="70%"}
 >
 > The nice paper {% cite miller2010 %} on assemblers based on these algorithms will help you to better understand how they work.
 {: .details}
@@ -262,7 +262,7 @@ Contrary to **MetaSPAdes**, **MEGAHIT** does not output **scaffolds**. **Scaffol
 > {: .hands_on}
 {: .comment}
 
-> <question-title></question-title>
+> <question-title>Contig metrics</question-title>
 >
 > 1. How many contigs has been for ERR2231568 sample?
 > 2. And for ERR2231572?
@@ -279,15 +279,13 @@ Contrary to **MetaSPAdes**, **MEGAHIT** does not output **scaffolds**. **Scaffol
 {: .question}
 
 > <details-title>Co-assembly with MetaSPAdes</details-title>
+> MetaSPAdes supports co-assembly by passing a list of paired-end read files. MEGAHIT, on the other hand, requires concatenating that list of paired-end read files into a single pair of forward and reverse files.
 >
-> > <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
-> >
-> > 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
-> >    - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
-> >        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
-> >     - *"Select k-mer detection option"*: `User specific`
-> >        - *"K-mer size values"*: `21,33,55,77`
-> {: .hands_on}
+> 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
+>    - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
+>        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
+>     - *"Select k-mer detection option"*: `User specific`
+>        - *"K-mer size values"*: `21,33,55,77`
 {: .details}
 
 # Quality control of assembly
@@ -312,28 +310,26 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 >    - *"Type of assembly"*: `Metagenome`
 >    - *"Output files"*: `HTML report`, `PDF report`, `Tabular reports`, `Log file`, `Key metric summary (metagenome mode)`, `Krona charts (metagenome mode without reference genomes)`
 >
-> 2. Inspect the HTML reports
+> 2. Inspect the HTML reports:
+> ![Screenshot of QUAST HTML report](./images/quast_html_report.png)
 {: .hands_on}
 
-> <comment-title></comment-title>
+> <hands-on-title>Import MetaQUAST results</hands-on-title>
 >
-> Since the QUAST process would take times we are just going to import the results:
+> 1. Since the QUAST process would take times we are just going to import the results from [Zenodo]({{ page.zenodo_link }}):
 >
-> > <hands-on-title>Import generated metaQUAST results</hands-on-title>
-> >
-> > 1. Import the metaQUAST report file from [Zenodo]({{ page.zenodo_link }}) or the Shared Data library:
-> >
-> >    ```text
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231567.html
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231568.html
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231569.html
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231570.html
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231571.html
-> >    {{ page.zenodo_link }}/files/QUAST_ERR2231572.html
-> >    ```
-> >
-> {: .hands_on}
-{: .comment}
+>    ```text
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231567.html
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231568.html
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231569.html
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231570.html
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231571.html
+>    {{ page.zenodo_link }}/files/QUAST_ERR2231572.html
+>    ```
+>
+> {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+{: .hands_on}
 
 QUAST main output are HTML reports which aggregate different metrics.
 
@@ -634,7 +630,7 @@ This viewer draws contigs ordered from longest to shortest. Let's inspect this v
 >
 > Open the Contig size viewer for ERR2231568 and define start as `0` and end as `500000`
 >
-> ![Image shows on the Icarus Contig size viewer for ERR2231568, with a zoom between 0 500000. Below the menu, the contigs are drawn from the longest on the left to the shortest on the right. Each contig is filled with a different color: green for correct, red for misassembled, etc. Below the contigs is dispayed a bar to navigate through the contigs](./images/ERR2231568-contig-size-viewer.png)
+> ![Image shows on the Icarus Contig Size Viewer for ERR2231568, with a zoom between 0 500000. Below the menu, the contigs are drawn from the longest on the left to the shortest on the right. Each contig is filled with a different color: green for correct, red for misassembled, etc. Below the contigs is dispayed a bar to navigate through the contigs](./images/ERR2231568-contig-size-viewer.png)
 >
 > 1. What is the color of the first contig? Why?
 > 2. What is the red contig?
