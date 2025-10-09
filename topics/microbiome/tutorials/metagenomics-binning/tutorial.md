@@ -4,17 +4,16 @@ title: Binning of metagenomic sequencing data
 zenodo_link: https://zenodo.org/record/7818827
 extra:
   zenodo_link_results: https://zenodo.org/record/7845138
-level: Introductory
+level: Intermediate
 questions:
 - What is metagenomic binning refers to?
-- Which tools should be used for metagenomic binning?
-- How to assess the quality of metagenomic data binning?
+- Which tools may be used for metagenomic binning?
+- How to assess the quality of metagenomic binning?
 objectives:
-- Describe what metagenomics binning is
-- Describe common problems in metagenomics binning
-- What software tools are available for metagenomics binning
-- Binning of contigs into metagenome-assembled genomes (MAGs) using MetaBAT 2 software
-- Evaluation of MAG quality and completeness using CheckM software
+- Describe what is metagenomics binning.
+- Describe common challenges in metagenomics binning.
+- Perform metagenomic binning using MetaBAT 2 software.
+- Evaluation of MAG quality and completeness using CheckM software.
 time_estimation: 2H
 key_points:
 - Metagenomics binning is a computational approach to grouping together DNA sequences
@@ -56,10 +55,13 @@ recordings:
 
 ---
 
-
 Metagenomics is the study of genetic material recovered directly from environmental samples, such as soil, water, or gut contents, without the need for isolation or cultivation of individual organisms. Metagenomics binning is a process used to classify DNA sequences obtained from metagenomic sequencing into discrete groups, or bins, based on their similarity to each other.
 
 The goal of metagenomics binning is to assign the DNA sequences to the organisms or taxonomic groups that they originate from, allowing for a better understanding of the diversity and functions of the microbial communities present in the sample. This is typically achieved through computational methods that include sequence similarity, composition, and other features to group the sequences into bins.
+
+> <comment-title></comment-title>
+> Before starting this tutorial, it is recommended to do the [**Metagenomics Assembly Tutorial**]({% link topics/microbiome/tutorials/metagenomics-assembly/tutorial.md %})
+{: .comment}
 
 There are several approaches to metagenomics binning, including:
 
@@ -76,7 +78,7 @@ There are several approaches to metagenomics binning, including:
 Each of these methods has its strengths and limitations, and the choice of binning method depends on the specific characteristics of the metagenomic data set and the research question being addressed.
 
 
-**Metagenomics binning is a complex process that involves many steps and can be challenging due to several problems that can occur during the process**. Some of the most common problems encountered in metagenomics binning include:
+**Metagenomic binning is a complex process that involves many steps and can be challenging due to several problems that can occur during the process**. Some of the most common problems encountered in metagenomic binning include:
 
 - **High complexity**: Metagenomic samples contain DNA from multiple organisms, which can lead to high complexity in the data.
 - **Fragmented sequences**: Metagenomic sequencing often generates fragmented sequences, which can make it difficult to assign reads to the correct bin.
@@ -99,7 +101,7 @@ There are plenty of computational tools to perform metafenomics binning. Some of
 
 A benchmark study of metagenomics software can be found at {%cite Sczyrba2017%}. MetaBAT 2 outperforms previous MetaBAT and other alternatives in both accuracy and computational efficiency . All are based on default parameters ({%cite Sczyrba2017%}).
 
-**In this tutorial, we will learn how to run metagenomic binning tools and evaluate the quality of the results**. In order to do that, we will use data from the study: [Temporal shotgun metagenomic dissection of the coffee fermentation ecosystem](https://www.ebi.ac.uk/metagenomics/studies/MGYS00005630#overview) and MetaBAT 2 algorithm. MetaBAT is a popular software tool for metagenomics binning, and there are several reasons why it is often used:
+**In this tutorial, we will learn how to run metagenomic binning tools and evaluate the quality of the results**. In order to do that, we will use data from the study: [Temporal shotgun metagenomic dissection of the coffee fermentation ecosystem](https://www.ebi.ac.uk/metagenomics/studies/MGYS00005630#overview) and the MetaBAT 2 algorithm. MetaBAT is a popular software tool for metagenomics binning, and there are several reasons why it is often used:
 - *High accuracy*: MetaBAT uses a combination of tetranucleotide frequency, coverage depth, and read linkage information to bin contigs, which has been shown to be highly accurate and efficient.
 - *Easy to use*: MetaBAT has a user-friendly interface and can be run on a standard desktop computer, making it accessible to a wide range of researchers with varying levels of computational expertise.
 - *Flexibility*: MetaBAT can be used with a variety of sequencing technologies, including Illumina, PacBio, and Nanopore, and can be applied to both microbial and viral metagenomes.
@@ -186,7 +188,7 @@ As explained before, there are many challenges to metagenomics binning. The most
 - Chimeric sequences.
 - Strain variation.
 
-![Image show the binning process where sequences are grouped together based on genome signatures like the kmer profiles of each contig, contig coverage, or GC content](./binning.png "Binning"){:width="60%"}
+![Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties.](./images/binning.png "Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties."){:width="60%"}
 
 In this tutorial we will learn how to use **MetaBAT 2** {%cite Kang2019%} tool through Galaxy. **MetaBAT** stands for "Metagenome Binning based on Abundance and Tetranucleotide frequency". It is:
 
@@ -198,19 +200,9 @@ We will use the uploaded assembled fasta files as input to the algorithm (For si
 > <hands-on-title>Individual binning of short-reads with MetaBAT 2</hands-on-title>
 > 1.  {% tool [MetaBAT 2](toolshed.g2.bx.psu.edu/repos/iuc/megahit/megahit/1.2.9+galaxy0) %} with parameters:
 >     - *"Fasta file containing contigs"*: `assembly fasta files`
-> <!--     - In *Advanced options*
->       - *"Percentage of good contigs considered for binning decided by connection among contigs"*: `default 95`
->       - *"Minimum score of an edge for binning"*: `default 60`
->       - *"Maximum number of edges per node"*: `default 200`
->       - *"TNF probability cutoff for building TNF graph"*: `default 0`
->       - *"Turn off additional binning for lost or small contigs?"*: `default "No"`
->       - *"Minimum mean coverage of a contig in each library for binning"*: `default 1`
->       - *"Minimum total effective mean coverage of a contig for binning "*: `default 1`
->       - *"For exact reproducibility"*: `default 0`
->     - In *Output options*
->       - *"Minimum size of a bin as the output"*: `default 200000`
->       - *"Output only sequence labels as a list in a column without sequences?"*: `default "No"`
->       - *"Save cluster memberships as a matrix format?"*: `"Yes"` -->
+>     - In **Advanced options**, keep all as **default**.
+>     - In **Output options:**
+>       - *"Save cluster memberships as a matrix format?"*: `"Yes"`
 >
 {: .hands_on}
 
@@ -249,15 +241,15 @@ These output files can be further analyzed and used for downstream applications 
 > {: .hands_on}
 {: .comment}
 
-> <question-title></question-title>
+> <question-title>Binning metrics</question-title>
 >
 > 1. How many bins has been for ERR2231567 sample?
-> 2. How many sequences are contained in the second bin?
+> 2. How many contigs are in the bin with most contigs? What about the one with the least?
 >
 > > <solution-title></solution-title>
 > >
-> > 1. There are 6 bins identified
-> > 2. 167 sequences are classified into the second bin.
+> > 1. There are 6 bins identified.
+> > 2. 7170 in the one with the most contigs, and 140 in the one with the least (these numbers may differ slightly depending on the version of MetaBAT2).
 > >
 > {: .solution}
 >
@@ -269,7 +261,7 @@ De-replication is the process of identifying sets of genomes that are the "same"
 
 A common use for genome de-replication is the case of individual assembly of metagenomic data. If metagenomic samples are collected in a series, a common way to assemble the short reads is with a “co-assembly”. That is, combining the reads from all samples and assembling them together. The problem with this is assembling similar strains together can severely fragment assemblies, precluding recovery of a good genome bin. An alternative option is to assemble each sample separately, and then “de-replicate” the bins from each assembly to make a final genome set.
 
-![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./individual-assembly.png "Individual assembly followed by de-replication vs co-assembly"){:width="80%"}
+![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./individual-assembly.png "Individual assembly followed by de-replication vs co-assembly."){:width="80%"}
 
 MetaBAT 2 does not explicitly perform dereplication in the sense of identifying groups of identical or highly similar genomes in a given dataset. Instead, MetaBAT 2 focuses on improving the accuracy of binning by leveraging various features such as read coverage, differential coverage across samples, and sequence composition. It aims to distinguish between different genomes present in the metagenomic dataset and assign contigs to the appropriate bins.
 
