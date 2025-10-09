@@ -53,7 +53,6 @@ recordings:
 
 ---
 
-
 Metagenomics involves the extraction, sequencing and analysis of combined genomic DNA from **entire microbiome** samples. It includes then DNA from **many different organisms**, with different taxonomic background.
 
 Reconstructing the genomes of microorganisms in the sampled communities is critical step in analyzing metagenomic data. To do that, we can use **assembly** and assemblers, *i.e.* computational programs that stich together the small fragments of sequenced DNA produced by sequencing instruments.
@@ -299,7 +298,7 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 
 > <hands-on-title>Evaluation assembly quality with metaQUAST</hands-on-title>
 >
-> 1. {% tool [QUAST](toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.2.0+galaxy1) %} with parameters:
+> 1. {% tool [QUAST](toolshed.g2.bx.psu.edu/repos/iuc/QUAST/QUAST/5.2.0+galaxy1) %} with parameters:
 >    - *"Assembly mode?*": `Individual assembly (1 contig file per samples)`
 >      - *"Use customized names for the input files?"*: `No, use dataset names`
 >        - {% icon param-collection %} *"Contigs/scaffolds file"*: output **MEGAHIT**
@@ -325,12 +324,12 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 > > 1. Import the metaQUAST report file from [Zenodo]({{ page.zenodo_link }}) or the Shared Data library:
 > >
 > >    ```text
-> >    {{ page.zenodo_link }}/files/quast_ERR2231567.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231568.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231569.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231570.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231571.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231572.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231567.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231568.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231569.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231570.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231571.html
+> >    {{ page.zenodo_link }}/files/QUAST_ERR2231572.html
 > >    ```
 > >
 > {: .hands_on}
@@ -401,7 +400,7 @@ On the top of each report is a table with in rows statistics for contigs larger 
 
     > <details-title>Alternative ways to compute coverage</details-title>
     >
-    > 2 alternative ways to compute coverage are to
+    > There are 2 alternative ways to compute coverage:
     > 1. Use [CoverM](https://github.com/wwood/CoverM), which is available in Galaxy
     >
     >    > <hands-on-title>Calculate coverage using CoverM</hands-on-title>
@@ -467,7 +466,7 @@ On the top of each report is a table with in rows statistics for contigs larger 
 
     QUAST identifies missassemblies by mapping the contigs to the reference genomes of the identified organisms. 3 types of misassemblies can be identified:
 
-    ![Image shows on the top a contig with a blue and a gren parts with white arrows (pointing on the right) on them and below a reference with 2 chromosomes. The 3 types of misassemblies are after schematized. Relocation: the blue and gren parts of the contig are on chr 1 but separated. Inversion: the blue and gren parts of the contig are on chr 1 but separated and with the arrows facing each other. Translocation: the blue part is on chr 1 and gren part on chr 2.](./images/quast_misassemblies.png "Source: <a href="https://quast.sourceforge.net/docs/manual.html#sec3.1.2">QUAST manual</a>"){:width="60%"}
+    ![Image shows on the top a contig with a blue and a gren parts with white arrows (pointing on the right) on them and below a reference with 2 chromosomes. The 3 types of misassemblies are after schematized. Relocation: the blue and gren parts of the contig are on chr 1 but separated. Inversion: the blue and gren parts of the contig are on chr 1 but separated and with the arrows facing each other. Translocation: the blue part is on chr 1 and gren part on chr 2.](./images/QUAST_misassemblies.png "Source: <a href="https://QUAST.sourceforge.net/docs/manual.html#sec3.1.2">QUAST manual</a>"){:width="60%"}
 
     1. **Relocation** occur based on signal from two mappings of the same contig against the same chromosome, with 2 cases:
         1. the 2 mappings are separated by an unmapped region of at least 1 kbp
