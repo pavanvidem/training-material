@@ -201,7 +201,7 @@ In this tutorial we will learn how to use **MetaBAT 2** {%cite Kang2019%} tool t
 We will use the uploaded assembled fasta files as input to the algorithm (For simplicity reasons all other parameters will be preserved with their default values).
 
 > <hands-on-title>Individual binning of short-reads with MetaBAT 2</hands-on-title>
-> 1.  {% tool [MetaBAT 2](toolshed.g2.bx.psu.edu/repos/iuc/megahit/megahit/1.2.9+galaxy0) %} with parameters:
+> 1.  {% tool [MetaBAT 2](https://toolshed.g2.bx.psu.edu/view/iuc/metabat2/01f02c5ddff8) %} with parameters:
 >     - *"Fasta file containing contigs"*: `assembly fasta files`
 >     - In **Advanced options**, keep all as **default**.
 >     - In **Output options:**
@@ -239,7 +239,7 @@ These output files can be further analyzed and used for downstream applications 
 > >    ```
 > >
 > >
-> > 2. Create a collection named `MEGAHIT Contig`, rename your pairs with the sample name
+> > 2. Create a collection named `MetaBAT2 Bins` and add the zip files to it.
 > >
 > {: .hands_on}
 {: .comment}
