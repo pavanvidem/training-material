@@ -31,6 +31,11 @@ contributions:
   authorship:
   - npechl
   - fpsom
+requirements:
+  - type: internal
+    topic: metagenomics
+    tutorials: 
+      - metagenomics-assembly
 subtopic: metagenomics
 tags:
 - binning
