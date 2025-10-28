@@ -296,7 +296,7 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 
 > <hands-on-title>Evaluation assembly quality with metaQUAST</hands-on-title>
 >
-> 1. {% tool [QUAST](toolshed.g2.bx.psu.edu/repos/iuc/QUAST/QUAST/5.2.0+galaxy1) %} with parameters:
+> 1. {% tool [QUAST](toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.2.0+galaxy1) %} with parameters:
 >    - *"Assembly mode?*": `Individual assembly (1 contig file per samples)`
 >      - *"Use customized names for the input files?"*: `No, use dataset names`
 >        - {% icon param-collection %} *"Contigs/scaffolds file"*: output **MEGAHIT**
