@@ -789,4 +789,4 @@ Once the choices made, metagenomic assembly can start:
 2. Assembly quality is evaluated with various metrics.
 3. The assembly graph can be visualized.
 
-Once all these steps done, we can move to the next phase to build Metagenomics Assembled Genomes (MAGs): [metagenomic binning](../metagenomics-binning/tutorial.md).
+Once all these steps done, we can move to the next phase to build Metagenomics Assembled Genomes (MAGs): [metagenomic binning]({% link topics/microbiome/tutorials/metagenomics-binning/tutorial.md %}).
