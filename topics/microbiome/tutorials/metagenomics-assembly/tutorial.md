@@ -319,12 +319,12 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 > 1. Since the QUAST process would take times we are just going to import the results from [Zenodo]({{ page.zenodo_link }}):
 >
 >    ```text
->    {{ page.zenodo_link }}/files/QUAST_ERR2231567.html
->    {{ page.zenodo_link }}/files/QUAST_ERR2231568.html
->    {{ page.zenodo_link }}/files/QUAST_ERR2231569.html
->    {{ page.zenodo_link }}/files/QUAST_ERR2231570.html
->    {{ page.zenodo_link }}/files/QUAST_ERR2231571.html
->    {{ page.zenodo_link }}/files/QUAST_ERR2231572.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231567.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231568.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231569.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231570.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231571.html
+>    {{ page.zenodo_link }}/files/quast_ERR2231572.html
 >    ```
 >
 > {% snippet faqs/galaxy/datasets_import_via_link.md %}
