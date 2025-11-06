@@ -462,7 +462,7 @@ On the top of each report is a table with in rows statistics for contigs larger 
 
     QUAST identifies missassemblies by mapping the contigs to the reference genomes of the identified organisms. 3 types of misassemblies can be identified:
 
-    ![Image shows on the top a contig with a blue and a gren parts with white arrows (pointing on the right) on them and below a reference with 2 chromosomes. The 3 types of misassemblies are after schematized. Relocation: the blue and gren parts of the contig are on chr 1 but separated. Inversion: the blue and gren parts of the contig are on chr 1 but separated and with the arrows facing each other. Translocation: the blue part is on chr 1 and gren part on chr 2.](./images/QUAST_misassemblies.png "Source: <a href="https://QUAST.sourceforge.net/docs/manual.html#sec3.1.2">QUAST manual</a>"){:width="60%"}
+    ![Image shows on the top a contig with a blue and a gren parts with white arrows (pointing on the right) on them and below a reference with 2 chromosomes. The 3 types of misassemblies are after schematized. Relocation: the blue and gren parts of the contig are on chr 1 but separated. Inversion: the blue and gren parts of the contig are on chr 1 but separated and with the arrows facing each other. Translocation: the blue part is on chr 1 and gren part on chr 2.](./images/quast_misassemblies.png "Source: <a href="https://quast.sourceforge.net/docs/manual.html#sec3.1.2">QUAST manual</a>"){:width="60%"}
 
     1. **Relocation** occur based on signal from two mappings of the same contig against the same chromosome, with 2 cases:
         1. the 2 mappings are separated by an unmapped region of at least 1 kbp
