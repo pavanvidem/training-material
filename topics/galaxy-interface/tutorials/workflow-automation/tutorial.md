@@ -73,7 +73,20 @@ If you are encountering similar problems as these in your research with Galaxy, 
 >
 {: .agenda}
 
-# Get workflows and data
+## A short guide to Planemo
+
+The main tool we will use in this tutorial is [Planemo](https://planemo.readthedocs.io/en/latest/readme.html), a command-line tool with a very wide range of functionality. If you ever developed a Galaxy tool, you probably encountered the `planemo test`, `planemo serve` and `planemo lint` subcommands. In this tutorial we will be using a different subcommand: `planemo run`.
+
+> <comment-title>Note</comment-title>
+> Planemo provides a more detailed tutorial on the [`planemo run` functionality here](https://planemo.readthedocs.io/en/latest/running.html). The pages on '[Best Practices for Maintaining Galaxy Workflows](https://planemo.readthedocs.io/en/latest/best_practices_workflows.html)' and '[Test Format](https://planemo.readthedocs.io/en/latest/test_format.html)' also contain a lot of useful information.
+{:.comment}
+
+For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
+
+
+# A quick tutorial with an existing workflow
+
+## Get workflows and data
 
 Workflows and data for this tutorial are hosted on [GitHub](https://github.com/usegalaxy-eu/workflow-automation-tutorial).
 
@@ -106,16 +119,6 @@ Workflows and data for this tutorial are hosted on [GitHub](https://github.com/u
 > The `pangolin/` folder holds the workflow and other material you will use in the second part of the tutorial, in which you will be setting up an automated system for assigning batches of SARS-CoV-2 variant data to viral lineages.
 >
 {: .hands_on}
-
-# A short guide to Planemo
-
-The main tool we will use in this tutorial is [Planemo](https://planemo.readthedocs.io/en/latest/readme.html), a command-line tool with a very wide range of functionality. If you ever developed a Galaxy tool, you probably encountered the `planemo test`, `planemo serve` and `planemo lint` subcommands. In this tutorial we will be using a different subcommand: `planemo run`.
-
-> <comment-title>Note</comment-title>
-> Planemo provides a more detailed tutorial on the [`planemo run` functionality here](https://planemo.readthedocs.io/en/latest/running.html). The pages on '[Best Practices for Maintaining Galaxy Workflows](https://planemo.readthedocs.io/en/latest/best_practices_workflows.html)' and '[Test Format](https://planemo.readthedocs.io/en/latest/test_format.html)' also contain a lot of useful information.
-{:.comment}
-
-For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
 ## Get the workflow and prepare the job file
 
