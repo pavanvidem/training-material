@@ -63,11 +63,10 @@ To allow your user to upload via TUS, you will need to:
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -14,3 +14,6 @@
+>    @@ -14,3 +14,5 @@
 >     # gxadmin (used in cleanup, and later monitoring.)
 >     - src: galaxyproject.gxadmin
->       version: 0.0.12
->    +# TUS (uploads)
+>       version: 0.0.14
 >    +- name: galaxyproject.tusd
 >    +  version: 0.0.1
 >    {% endraw %}

@@ -83,7 +83,7 @@ tutorial]({% link topics/admin/tutorials/gxadmin/tutorial.md %}).
 >       version: 0.1.11
 >    +# gxadmin (used in cleanup, and later monitoring.)
 >    +- src: galaxyproject.gxadmin
->    +  version: 0.0.12
+>    +  version: 0.0.14
 >    {% endraw %}
 >    ```
 >    {: data-commit="Add requirement"}

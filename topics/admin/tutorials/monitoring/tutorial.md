@@ -90,7 +90,7 @@ The available Ansible roles for InfluxDB unfortunately do not support configurin
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -43,3 +43,5 @@
+>    @@ -42,3 +42,5 @@
 >       version: 1.8.0
 >     - name: usegalaxy_eu.flower
 >       version: 1.0.2
@@ -296,7 +296,7 @@ Setting up Telegraf is again very simple. We just add a single role to our playb
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -45,3 +45,7 @@
+>    @@ -44,3 +44,7 @@
 >       version: 1.0.2
 >     - src: usegalaxy_eu.influxdb
 >       version: v6.0.7
@@ -458,7 +458,7 @@ There are some nice examples of dashboards available from the public Galaxies, w
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -49,3 +49,5 @@
+>    @@ -48,3 +48,5 @@
 >     - name: dj-wasabi.telegraf
 >       src: https://github.com/dj-wasabi/ansible-telegraf
 >       version: 6f6fdf7f5ead491560783d52528b79e9e088bd5b

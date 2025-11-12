@@ -193,8 +193,8 @@ If the terms "Ansible", "role" and "playbook" mean nothing to you, please checko
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -17,3 +17,6 @@
->     # TUS (uploads)
+>    @@ -16,3 +16,6 @@
+>       version: 0.0.14
 >     - name: galaxyproject.tusd
 >       version: 0.0.1
 >    +# CVMFS Support

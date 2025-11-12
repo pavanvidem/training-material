@@ -67,7 +67,7 @@ First we need to add our new Ansible role to `requirements.yml`:
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -54,3 +54,6 @@
+>    @@ -53,3 +53,6 @@
 >     # Training Infrastructure as a Service
 >     - src: galaxyproject.tiaas2
 >       version: 2.1.5

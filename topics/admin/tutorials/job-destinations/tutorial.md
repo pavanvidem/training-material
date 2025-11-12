@@ -182,7 +182,7 @@ And of course, Galaxy has an Ansible Role for that.
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -28,3 +28,6 @@
+>    @@ -27,3 +27,6 @@
 >       version: 0.0.3
 >     - src: galaxyproject.slurm
 >       version: 1.0.2

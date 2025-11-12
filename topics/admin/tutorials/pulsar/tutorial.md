@@ -164,7 +164,7 @@ Firstly we will add and configure another *role* to our Galaxy playbook - a comm
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -31,3 +31,10 @@
+>    @@ -30,3 +30,10 @@
 >     # TPV Linting
 >     - name: usegalaxy_eu.tpv_auto_lint
 >       version: 0.4.3
