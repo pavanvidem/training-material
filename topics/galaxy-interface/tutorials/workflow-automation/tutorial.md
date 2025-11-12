@@ -297,6 +297,38 @@ Planemo provides a useful profile feature which can help simplify long commands.
 >    {:.code-in}
 {: .hands_on}
 
+
+# Another tutorial "From scratch"
+
+## Creating a new workflow
+
+> <hands-on-title>Find a Galaxy instance</hands-on-title>
+> Logging into your favorite Galaxy instance: `https://usegalaxy.eu/` or `https://usegalaxy.fr/`
+{: .hands_on}
+
+> <hands-on-title>Create the workflow into Galaxy.</hands-on-title>
+> 1. Go to the workflow page
+> 2. Create a new workflow: `Fastq cleaning and check`
+>
+>    {% snippet faqs/galaxy/workflows_create_new.md %}
+>
+> 3. Add from Inputs an Input Dataset Collection
+>    - **Label**: `Fastq Inputs`
+>    - **Format(s)**: `fastqsanger.gz`
+>
+> 4. Add {% tool [Falco](toolshed.g2.bx.psu.edu/repos/iuc/falco/falco/1.2.4+galaxy0) %}
+> 5. Add {% tool [fastp](toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/1.0.1+galaxy3) %}
+> 6. Connect the **Fastq Inputs** to **Falco** and **fastp**
+> 7. Add {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.27+galaxy4) %}
+>    - **1: Results** -> **Which tool was used to generate logs?**: `FastQC`
+>    - **+ Insert Results**
+>    - **2: Results** -> **Which tool was used to generate logs?**: `fastp`
+> 8. Connect:
+>    - **Falco** / **text_file (txt)** to **MultiQC Result 1**
+>    - **fastp** / **report_json (json)** to **MultiQC Result 2**
+> 9. Select the desired outputs:
+{: .hands_on}
+
 # Automated runs of a workflow for SARS-CoV-2 lineage assignment
 
 It's now time to apply your newly acquired knowledge of workflow execution with Planemo to a relevant scientific problem.
