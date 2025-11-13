@@ -649,7 +649,7 @@ These annotations help researchers interpret the biological relevance of each va
 > <hands-on-title> Variant_sqlite-to-tabular </hands-on-title>
 >
 > 1. {% tool [SQLite to tabular](toolshed.g2.bx.psu.edu/repos/galaxyp/sqlite_to_tabular/sqlite_to_tabular/2.0.0) %} with the following parameters:
->    - {% icon param-file %} *"SQLite Database"* (sqlite): `variant_annotation.sqlite`
+>    - {% icon param-file %} *"SQLite Database"* (sqlite): `variant_annotation.sqlite` (Variant SQLite from **CustomProDB** {% icon tool %})
 >    - *"SQL query"*:
 >      ```
 >      SELECT var_pro_name,
@@ -770,6 +770,8 @@ This merged annotation file is especially important for neoantigen workflows bec
 >        - {% icon param-file %} `stringtie_bed_file`
 >
 >    The tool will append each dataset sequentially in the order provided, producing a single merged output.
+>    
+> 3. Rename the output to "Genomic-Variant-Protein-BED"
 >    
 {: .hands_on}
 
