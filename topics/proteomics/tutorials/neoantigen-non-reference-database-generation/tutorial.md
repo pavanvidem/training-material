@@ -361,7 +361,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as Indel-FASTA
@@ -371,7 +371,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as SNV-FASTA
@@ -381,7 +381,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as RPKM-FASTA
