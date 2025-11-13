@@ -84,6 +84,10 @@ The main tool we will use in this tutorial is [Planemo](https://planemo.readthed
 For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
 
+{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" default="Short-Version" %}
+
+<div class="Short-Version-with-an-existing-workflow" markdown="1">
+
 # A quick tutorial with an existing workflow
 
 ## Get workflows and data
@@ -269,36 +273,32 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 >    {:.code-in}
 {: .hands_on}
 
-## Using Planemo profiles
+</div>
 
-Planemo provides a useful profile feature which can help simplify long commands. The idea is that flags which need to be used multiple times in different invocations can be combined together and run as a single profile. Let's see how this works below.
-
-> <hands-on-title>Creating and using Planemo profiles</hands-on-title>
->
-> 1. Create a Planemo profile with the following command:
->    > <code-in-title>planemo run</code-in-title>
->    > ```shell
->    > planemo profile_create planemo-tutorial --galaxy_url <SERVER_URL> --galaxy_user_key <YOUR_API_KEY>
->    > ```
->    {:.code-in}
->
->    > <code-out-title>Terminal</code-out-title>
->    > ```shell
->    > Profile [planemo-tutorial] created.
->    > ```
->    > You can view and delete existing profiles using the `profile_list` and `profile_delete` subcommands.
->    {:.code-out}
-> 2. Now we can run our workflow yet again using the profile we have created:
->    > <code-in-title>planemo run</code-in-title>
->    > ```shell
->    > planemo run <WORKFLOW ID> tutorial-init-job.yml --profile planemo-tutorial --history_name "Test Planemo WF with profile" --tags "planemo-tutorial"
->    > ```
->    > This invokes the workflow with all the parameters specified in the profile `planemo-tutorial`.
->    {:.code-in}
-{: .hands_on}
-
+<div class="Long-Version-from-scratch" markdown="1">
 
 # Another tutorial "From scratch"
+
+## Get the toy data
+
+> <hands-on-title>Download some data</hands-on-title>
+> For this tutorial, we will use a training dataset: [M. tuberculosis bioinformatics training data](https://zenodo.org/records/3960260)
+
+> Download data for this tutorial using `curl` or `wget`.
+>
+> > <code-in-title>Bash</code-in-title>
+> > ```shell
+> > wget https://zenodo.org/record/3960260/files/004-2_1.fastq.gz
+> > wget https://zenodo.org/record/3960260/files/004-2_2.fastq.gz
+> > ```
+> {: .code-in}
+>
+> > <code-out-title>Folder contents</code-out-title>
+> > ```
+> > example  LICENSE  pangolin  README.md
+> > ```
+> {: .code-out}
+{: .hands_on}
 
 ## Creating a new workflow
 
@@ -327,6 +327,107 @@ Planemo provides a useful profile feature which can help simplify long commands.
 >    - **Falco** / **text_file (txt)** to **MultiQC Result 1**
 >    - **fastp** / **report_json (json)** to **MultiQC Result 2**
 > 9. Select the desired outputs:
+>    - In **fastp**, tick **out1 (input)**
+>    - In **MultiQC**, tick **html_report (html)**
+> 
+> 
+{: .hands_on}
+
+## Generate a job parameter template
+
+> <comment-title></comment-title>
+> Those following steps could be processed once when you discover your new workflow. It wouldn't be necessary at every update for example.
+{: .comment}
+
+> <hands-on-title>Download your workflow</hands-on-title>
+> {% snippet faqs/galaxy/workflow_download.md %}
+{: .hands_on}
+
+> <hands-on-title>Generate a job parameter.</hands-on-title>
+> We will use **Planemo** to generate a template for our job parameters before adaptating it.
+>
+> There are many way to install planemo: https://planemo.readthedocs.io/en/latest/installation.html.
+> 
+> > <tip-title>What about using Docker?</tip-title>
+> >
+> > An easy way to use planemo without "installation" for this turorial could be the Docker image provided by BioContainer
+> > > <code-in-title>Bash</code-in-title>
+> > > ```bash
+> > > docker run --rm -v $PWD:/data/ -w /data quay.io/biocontainers/planemo:0.75.31--pyhdfd78af_0 planemo --version
+> > > ```
+> > {: .code-in}
+> {: .tip}
+> 
+> > <code-in-title>Bash</code-in-title>
+> > ```bash
+> > planemo workflow_job_init Galaxy-Workflow-Fastq_cleaning_and_check.ga -o Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
+> >
+> > cat Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
+> > ```
+> {: .code-in}
+> 
+> > <code-out-title>Galaxy-Workflow-Fastq_cleaning_and_check-job.xml</code-out-title>
+> > ```yaml
+> > Fastq Inputs:
+> >   class: Collection
+> >   collection_type: list
+> >   elements:
+> >   - class: File
+> >     identifier: todo_element_name
+> >     path: todo_test_data_path.ext
+> > ```
+> {: .code-out}
+{: .hands_on}
+
+> <hands-on-title>Adapt the job parameter</hands-on-title>
+> Modify `Galaxy-Workflow-Fastq_cleaning_and_check-job.xml` to look like the following:
+> 
+> > ```yaml
+> > Fastq Inputs:
+> >   class: Collection
+> >   collection_type: list
+> >   elements:
+> >   - class: File
+> >     identifier: 004-2_1
+> >     path: 004-2_1.fastq.gz
+> >   - class: File
+> >     identifier: 004-2_2
+> >     path: 004-2_2.fastq.gz
+> > ```
+{: .hands_on}
+
+
+
+
+
+</div>
+
+## Using Planemo profiles
+
+Planemo provides a useful profile feature which can help simplify long commands. The idea is that flags which need to be used multiple times in different invocations can be combined together and run as a single profile. Let's see how this works below.
+
+> <hands-on-title>Creating and using Planemo profiles</hands-on-title>
+>
+> 1. Create a Planemo profile with the following command:
+>    > <code-in-title>planemo run</code-in-title>
+>    > ```shell
+>    > planemo profile_create planemo-tutorial --galaxy_url <SERVER_URL> --galaxy_user_key <YOUR_API_KEY>
+>    > ```
+>    {:.code-in}
+>
+>    > <code-out-title>Terminal</code-out-title>
+>    > ```shell
+>    > Profile [planemo-tutorial] created.
+>    > ```
+>    > You can view and delete existing profiles using the `profile_list` and `profile_delete` subcommands.
+>    {:.code-out}
+> 2. Now we can run our workflow yet again using the profile we have created:
+>    > <code-in-title>planemo run</code-in-title>
+>    > ```shell
+>    > planemo run <WORKFLOW ID> tutorial-init-job.yml --profile planemo-tutorial --history_name "Test Planemo WF with profile" --tags "planemo-tutorial"
+>    > ```
+>    > This invokes the workflow with all the parameters specified in the profile `planemo-tutorial`.
+>    {:.code-in}
 {: .hands_on}
 
 # Automated runs of a workflow for SARS-CoV-2 lineage assignment
