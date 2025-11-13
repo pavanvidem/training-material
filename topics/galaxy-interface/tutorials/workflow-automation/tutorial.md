@@ -327,7 +327,7 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 >    - In **fastp**, tick **out1 (input)**
 >    - In **MultiQC**, tick **html_report (html)**
 > 
-> 
+> ![This image show a preview of our workflow with tools as box and noodle as connectors).](./images/Workflow-Fastq_cleaning_and_check.png "Preview of our workflow")
 {: .hands_on}
 
 ## Create a job parameter template
@@ -430,6 +430,8 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > > fastp on data 22 Read 1 output__1ff3aedb-feb5-4b6e-82b7-a1399cdab879.fastqsanger.gz
 > > MultiQC on data 38, data 35, and others Webpage__e3cc631f-49b4-4c98-968d-a22fa4161568.html
 > > ```
+> > 
+> > ![This image show the MultiQC webpage).](./images/Workflow-Fastq_cleaning_and_check-multiqc.png "MultiQC result webpage")
 {: .hands_on}
 
 
