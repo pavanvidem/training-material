@@ -83,7 +83,6 @@ The main tool we will use in this tutorial is [Planemo](https://planemo.readthed
 
 For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
-
 {% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" default="Short-Version" %}
 
 <div class="Short-Version-with-an-existing-workflow" markdown="1">
@@ -261,9 +260,7 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 >    ```
 >
 > 3. Now we need to get the workflow ID:
->    1. Go to the workflows panel in Galaxy and find one of the workflows that have just been uploaded.
->    2. From the dropdown menu, select `Edit`, to take you to the workflow editing interface.
->    3. The URL in your browser will look something like `https://usegalaxy.eu/workflow/editor?id=34d18f081b73cb15`. Copy the part after `?id=` - this is the workflow ID.
+>    > {% snippet faqs/galaxy/workflows_get_id.md %}
 > 4. Run the `planemo run` subcommand using the new workflow ID.
 >
 >    > <code-in-title>planemo run</code-in-title>
@@ -333,7 +330,7 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 > 
 {: .hands_on}
 
-## Generate a job parameter template
+## Create a job parameter template
 
 > <comment-title></comment-title>
 > Those following steps could be processed once when you discover your new workflow. It wouldn't be necessary at every update for example.
@@ -396,8 +393,44 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 > > ```
 {: .hands_on}
 
+## Running the workflow on a remote external Galaxy instance
 
+Now we have a simple workflow, we can run it using `planemo run`. At this point you need to choose a Galaxy server on which you want the workflow to run. One of the big public servers would be a possible choice. You could also use a local Galaxy instance. Either way, once you've chosen a server, the next step is to get your API key.
 
+{% snippet faqs/galaxy/preferences_admin_api_key.md %}
+
+> <hands-on-title>Running our workflow</hands-on-title>
+> You can either provide the workflow file `.ga` or a workflow ID within a Galaxy instance.
+> Let's do it simple and "ecologic" with a workflow ID
+>
+> 1. Get the ID of your workflow just created:
+>    > {% snippet faqs/galaxy/workflows_get_id.md %}
+>
+> 2. Run the `planemo run` subcommand.
+>
+>    > <code-in-title>planemo run</code-in-title>
+>    > ```shell
+>    > planemo run <WORKFLOW_ID> Galaxy-Workflow-Fastq_cleaning_and_check-job.xml --galaxy_url <SERVER_URL> --galaxy_user_key <YOUR_API_KEY> --outdir . --download_outputs
+>    > ```
+>    {:.code-in}
+>
+>    > <comment-title>Checking within Galaxy</comment-title>
+>    > You may want to check the ongoing process or the results within the Galaxy instance interface. 
+>    {: .tip}
+>
+>    One potential disadvantage of the previous command is that it waits until the invoked workflow has fully completed. For our very small example, this doesn't matter, but for a workflow which takes hours or days to finish, it might be undesirable. Fortunately, `planemo run` provides a `--no_wait` flag which exits as soon as the workflow has been successfully scheduled.
+> 3. Enjoy your result files
+> > Contain of your directory:
+> > ```
+> > [...]
+> > 004-2_1.fastq.gz
+> > 004-2_2.fastq.gz
+> > Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
+> > fastp on data 21 Read 1 output__0876c0cd-52b0-4467-823e-387d087a5096.fastqsanger.gz
+> > fastp on data 22 Read 1 output__1ff3aedb-feb5-4b6e-82b7-a1399cdab879.fastqsanger.gz
+> > MultiQC on data 38, data 35, and others Webpage__e3cc631f-49b4-4c98-968d-a22fa4161568.html
+> > ```
+{: .hands_on}
 
 
 </div>
