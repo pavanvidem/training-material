@@ -292,6 +292,8 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|INDEL_\1`
 >
 > 2. Rename as Indel-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> SNV-Column Regex Find And Replace </hands-on-title>
@@ -314,6 +316,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|SNV_\1`
 >
 > 2. Rename as SNV-FASTA
+> 
 {: .hands_on}
 
 > <hands-on-title> RPKM -Column Regex Find And Replace </hands-on-title>
@@ -336,6 +339,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|RPKM_\1`
 >
 > 2. Rename as RPKM-FASTA
+> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -365,6 +369,8 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as Indel-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> SNV-Tabular-to-FASTA </hands-on-title>
@@ -375,6 +381,8 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as SNV-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> RPKM-Tabular-to-FASTA </hands-on-title>
@@ -385,6 +393,8 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as RPKM-FASTA
+>
+>    
 {: .hands_on}
 
 > <question-title></question-title>
@@ -420,7 +430,9 @@ In this workflow, FASTA Merge Files and Filter Unique Sequences consolidate all 
 >        - In *"Input FASTA File(s)"*:
 >            - {% icon param-repeat %} *"Insert Input FASTA File(s)"*
 >                - {% icon param-file %} *"FASTA File"*: `RPKM-FASTA` (output of **Tabular-to-FASTA** {% icon tool %})>
+> 
 > 2. Rename as `non-reference_CustomProDB_FASTA`
+>    
 {: .hands_on}
 
 > <question-title></question-title>
@@ -624,6 +636,8 @@ By executing an SQL query against the `genomic_mapping` table within the SQLite 
 >      FROM genomic_mapping
 >      ORDER BY pro_name, cds_start, cds_end
 >      ```
+>
+> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -658,6 +672,8 @@ These annotations help researchers interpret the biological relevance of each va
 >             annotation
 >      FROM variant_annotation
 >      ```
+>
+> 
 {: .hands_on}
 
 > <question-title></question-title>
