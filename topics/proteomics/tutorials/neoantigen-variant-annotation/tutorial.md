@@ -128,7 +128,7 @@ This step extracts information about novel peptides from Frapipe, which primaril
 >        - {% icon param-repeat %} *"Insert Database Table"*
 >            - {% icon param-file %} *"Tabular Dataset for Table"*: `Fragpipe-Peptide-Report.tabular` (Input dataset)
 >    - *"SQL Query to generate tabular output"*:
-> ``` sql
+> ```
 > SELECT t1.c1,t2.c14,t2.c4,t2.c5
 > FROM t1
 > INNER JOIN t2
@@ -260,9 +260,9 @@ In this step, we will use the Query Tabular tool to extract specific information
 >        - {% icon param-repeat %} *"Insert Database Table"*
 >            - {% icon param-file %} *"Tabular Dataset for Table"*: `out_file1` (output of **Convert** {% icon tool %})
 >        - {% icon param-repeat %} *"Insert Database Table"*
->            - {% icon param-file %} *"Tabular Dataset for Table"*: `Fragpipe-Peptide-Report.tabular` (Input dataset)
+>            - {% icon param-file %} *"Tabular Dataset for Table"*: `GffCompare_Annotated_GTF_to_BED.bed` (Input dataset)
 >    - *"SQL Query to generate tabular output"*:
-> ``` sql
+> ```
 > SELECT t1.c1,t1.c8,t1.c9,t1.c11,t1.c12,t2.c5,t2.c6,t1.c7
 > FROM t1
 > INNER JOIN t2
