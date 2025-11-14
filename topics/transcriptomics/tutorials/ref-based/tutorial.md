@@ -421,9 +421,9 @@ The main output of **STAR** is a BAM file.
 
 ## Inspection of the mapping results
 
-The BAM file contains information for all our reads, making it difficult to inspect and explore in text format. A powerful tool to visualize the content of BAM files is the Integrative Genomics Viewer (**IGV**, {% cite robinson2011integrative %}).
+The BAM file contains information for all our reads, making it difficult to inspect and explore in text format. A powerful tool to visualize the content of BAM files is the Integrative Genomics Viewer (**IGV**, {% cite robinson2011integrative %}). Alternatively or complementarily, you can use JBrowse2, a genome browser which is directly integrated into Galaxy.
 
-> <hands-on-title>Inspection of mapping results</hands-on-title>
+> <hands-on-title>Inspection of mapping results with IGV</hands-on-title>
 >
 > 1. Install [**IGV**](https://software.broadinstitute.org/software/igv/download) (if not already installed)
 > 2. Start IGV locally
@@ -487,6 +487,49 @@ The BAM file contains information for all our reads, making it difficult to insp
 >    >
 >    > Check the [IGV documentation on Sashimi plots](https://software.broadinstitute.org/software/igv/Sashimi) to find some clues
 >    {: .comment}
+>
+{: .hands_on}
+
+
+> <hands-on-title>Inspection of mapping results with JBrowse2</hands-on-title>
+>
+> 1. {% tool [JBrowse2](toolshed.g2.bx.psu.edu/repos/fubar/jbrowse2/jbrowse2/3.6.5+galaxy1) %} with the following parameters:
+>    - *"Action"*: `New JBrowse Instance`
+>    - In *"Genome Assembly"*:
+>        - {% icon param-repeat %} *"Insert Genome Assembly"*
+>            - *"Reference genome to display"*: `Use a built-in genome`
+>                - *"Select a reference genome"*: `Fly (Drosophila melanogaster): dm6 Full`
+>            - *"Default region to display"*: `chr4:540000..560000`
+>            - In *"Track Category"*:
+>                - {% icon param-repeat %} *"Insert Track Category"*
+>                    - *"Track Category Label"*: `BAM`
+>                    - In *"Track"*:
+>                        - {% icon param-repeat %} *"Insert Track"*
+>                            - *"Track Type"*: `BAM Pileups`
+>                                - *"BAM Track Data"*: `Use data from history`
+>                                    - {% icon param-collection %} *"BAM Track Data"*: `RNA STAR on collection N: mapped.bam` (output of **RNA STAR** {% icon tool %})
+>                - {% icon param-repeat %} *"Insert Track Category"*
+>                    - *"Track Category Label"*: `Genes`
+>                    - In *"Track"*:
+>                        - {% icon param-repeat %} *"Insert Track"*
+>                            - *"Track Type"*: `GFF/GFF3/BED Features`
+>                                - *"GFF/GFF3/BED Track Data"*: `Use data from history`
+>                                   - {% icon param-file %} *"GFF/GFF3/BED Track Data"*: `Drosophila_melanogaster.BDGP6.32.109.gtf.gz`
+>
+>    > <question-title></question-title>
+>    >
+>    > ![Screenshot of the JBrowse2 view on Chromosome 4](../../images/ref-based/junction_jbrowse2_screenshot.png "Screenshot of JBrowse2 on Chromosome 4")
+>    >
+>    > 1. What information appears at the top as grey peaks?
+>    > 2. What do the connecting lines between some of the aligned reads indicate?
+>    >
+>    > > <solution-title></solution-title>
+>    > >
+>    > > 1. The coverage plot: the sum of mapped reads at each position
+>    > > 2. They indicate junction events (or splice sites), *i.e.* reads that are mapped across an intron
+>    > >
+>    > {: .solution}
+>    {: .question}
 >
 {: .hands_on}
 
