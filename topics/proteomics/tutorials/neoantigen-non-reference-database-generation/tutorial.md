@@ -292,6 +292,8 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|INDEL_\1`
 >
 > 2. Rename as Indel-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> SNV-Column Regex Find And Replace </hands-on-title>
@@ -314,6 +316,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|SNV_\1`
 >
 > 2. Rename as SNV-FASTA
+> 
 {: .hands_on}
 
 > <hands-on-title> RPKM -Column Regex Find And Replace </hands-on-title>
@@ -336,6 +339,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Replacement"*: `generic|RPKM_\1`
 >
 > 2. Rename as RPKM-FASTA
+> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -361,30 +365,36 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as Indel-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> SNV-Tabular-to-FASTA </hands-on-title>
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as SNV-FASTA
+>
+> 
 {: .hands_on}
 
 > <hands-on-title> RPKM-Tabular-to-FASTA </hands-on-title>
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `out_file1` (output of **Column Regex Find And Replace** {% icon tool %})
->    - *"Title column(s)"*: `c['1']`
+>    - *"Title column(s)"*: `c1`
 >    - *"Sequence column"*: `c2`
 >
 > 2. Rename as RPKM-FASTA
+>
+>    
 {: .hands_on}
 
 > <question-title></question-title>
@@ -420,7 +430,9 @@ In this workflow, FASTA Merge Files and Filter Unique Sequences consolidate all 
 >        - In *"Input FASTA File(s)"*:
 >            - {% icon param-repeat %} *"Insert Input FASTA File(s)"*
 >                - {% icon param-file %} *"FASTA File"*: `RPKM-FASTA` (output of **Tabular-to-FASTA** {% icon tool %})>
+> 
 > 2. Rename as `non-reference_CustomProDB_FASTA`
+>    
 {: .hands_on}
 
 > <question-title></question-title>
@@ -624,6 +636,8 @@ By executing an SQL query against the `genomic_mapping` table within the SQLite 
 >      FROM genomic_mapping
 >      ORDER BY pro_name, cds_start, cds_end
 >      ```
+>
+> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -649,7 +663,7 @@ These annotations help researchers interpret the biological relevance of each va
 > <hands-on-title> Variant_sqlite-to-tabular </hands-on-title>
 >
 > 1. {% tool [SQLite to tabular](toolshed.g2.bx.psu.edu/repos/galaxyp/sqlite_to_tabular/sqlite_to_tabular/2.0.0) %} with the following parameters:
->    - {% icon param-file %} *"SQLite Database"* (sqlite): `variant_annotation.sqlite`
+>    - {% icon param-file %} *"SQLite Database"* (sqlite): `variant_annotation.sqlite` (Variant SQLite from **CustomProDB** {% icon tool %})
 >    - *"SQL query"*:
 >      ```
 >      SELECT var_pro_name,
@@ -658,6 +672,8 @@ These annotations help researchers interpret the biological relevance of each va
 >             annotation
 >      FROM variant_annotation
 >      ```
+>
+> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -770,6 +786,8 @@ This merged annotation file is especially important for neoantigen workflows bec
 >        - {% icon param-file %} `stringtie_bed_file`
 >
 >    The tool will append each dataset sequentially in the order provided, producing a single merged output.
+>    
+> 3. Rename the output to "Genomic-Variant-Protein-BED"
 >    
 {: .hands_on}
 
