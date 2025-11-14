@@ -109,7 +109,7 @@ First we need to add our new Ansible Roles to the `requirements.yml`:
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -38,3 +38,8 @@
+>    @@ -37,3 +37,8 @@
 >       version: 1.4.4
 >     - src: galaxyproject.pulsar
 >       version: 1.0.10

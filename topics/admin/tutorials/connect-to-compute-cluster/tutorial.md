@@ -100,7 +100,7 @@ be taken into consideration when choosing where to run jobs and what parameters 
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -23,3 +23,8 @@
+>    @@ -22,3 +22,8 @@
 >     # Singularity/Apptainer
 >     - src: usegalaxy_eu.apptainer
 >       version: 0.0.3
