@@ -83,7 +83,7 @@ The main tool we will use in this tutorial is [Planemo](https://planemo.readthed
 
 For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
-{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" option3="Automated runs of a workflow for SARS-CoV-2 lineage assignment" default="Short-Version" %}
+{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" option3="Automated runs of a workflow for SARS-CoV-2 lineage assignment" default="Short-Version-with-an-existing-workflow" %}
 
 <div class="Short-Version-with-an-existing-workflow" markdown="1">
 
@@ -337,18 +337,18 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > <hands-on-title>Adapt the job parameter</hands-on-title>
 > Modify `Galaxy-Workflow-Fastq_cleaning_and_check-job.xml` to look like the following:
 > 
-> > ```yaml
-> > Fastq Inputs:
-> >   class: Collection
-> >   collection_type: list
-> >   elements:
-> >   - class: File
-> >     identifier: 018-1_1
-> >     path: 018-1_1.fastq.gz
-> >   - class: File
-> >     identifier: 018-1_2
-> >     path: 018-1_2.fastq.gz
-> > ```
+> ```yaml
+> Fastq Inputs:
+>   class: Collection
+>   collection_type: list
+>   elements:
+>   - class: File
+>     identifier: 018-1_1
+>     path: 018-1_1.fastq.gz
+>   - class: File
+>     identifier: 018-1_2
+>     path: 018-1_2.fastq.gz
+> ```
 {: .hands_on}
 
 ## Running the workflow on a remote external Galaxy instance
@@ -363,7 +363,6 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 >
 > 1. Get the ID of your workflow just created:
 >    > {% snippet faqs/galaxy/workflows_get_id.md %}
->
 > 2. Run the `planemo run` subcommand.
 >
 >    > <code-in-title>planemo run</code-in-title>
@@ -374,7 +373,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 >
 >    > <comment-title>Checking within Galaxy</comment-title>
 >    > You may want to check the ongoing process or the results within the Galaxy instance interface. 
->    {: .tip}
+>    {: .comment}
 >
 >    One potential disadvantage of the previous command is that it waits until the invoked workflow has fully completed. For our very small example, this doesn't matter, but for a workflow which takes hours or days to finish, it might be undesirable. Fortunately, `planemo run` provides a `--no_wait` flag which exits as soon as the workflow has been successfully scheduled.
 > 3. Enjoy your result files
@@ -390,6 +389,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > > ```
 > > 
 > > ![This image show the MultiQC webpage).](./images/Workflow-Fastq_cleaning_and_check-multiqc.png "MultiQC result webpage")
+>
 {: .hands_on}
 
 </div>
