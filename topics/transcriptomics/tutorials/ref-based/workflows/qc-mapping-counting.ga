@@ -325,14 +325,15 @@
                                 "output_name": "text_file"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine Falco results",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -354,10 +355,10 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"ConnectedValue\"}}]}}], \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}]}}], \"title\": \"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
-                        "uuid": "12c04a3a-06c3-4305-a985-bf25a9ca16f1",
+                        "uuid": "36c6fb9f-7d19-46e2-8e6b-20e7d4cbcb68",
                         "when": null,
                         "workflow_outputs": [
                             {
@@ -553,14 +554,15 @@
                                 "output_name": "report"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine cutadapt results",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -582,7 +584,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"cutadapt\", \"__current_case__\": 5, \"input\": {\"__class__\": \"ConnectedValue\"}}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"cutadapt\", \"__current_case__\": 5, \"input\": {\"__class__\": \"ConnectedValue\"}}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "fe09dd01-4a43-44f7-bce7-0cb22ddb04bb",
@@ -817,7 +819,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"algo\": {\"params\": {\"settingsType\": \"default\", \"__current_case__\": 0}}, \"chimOutType\": \"\", \"filter\": {\"basic_filters\": null, \"output_params2\": {\"output_select2\": \"no\", \"__current_case__\": 1}}, \"oformat\": {\"outSAMattributes\": [\"NH\", \"HI\", \"AS\", \"nM\", \"ch\"], \"HI_offset\": \"1\", \"outSAMprimaryFlag\": \"OneBestScore\", \"outSAMmapqUnique\": \"60\"}, \"outWig\": {\"outWigType\": \"bedGraph\", \"__current_case__\": 1, \"outWigTypeSecondWord\": \"\", \"outWigStrand\": true, \"outWigReferencesPrefix\": \"-\", \"outWigNorm\": true}, \"perf\": {\"outBAMsortingBinsN\": \"50\", \"winAnchorMultimapNmax\": \"50\"}, \"refGenomeSource\": {\"geneSource\": \"indexed\", \"__current_case__\": 0, \"GTFconditional\": {\"GTFselect\": \"without-gtf-with-gtf\", \"__current_case__\": 1, \"genomeDir\": \"dm6full\", \"sjdbGTFfile\": {\"__class__\": \"ConnectedValue\"}, \"sjdbOverhang\": \"36\", \"quantmode_output\": {\"quantMode\": \"GeneCounts\", \"__current_case__\": 1}}}, \"singlePaired\": {\"sPaired\": \"paired_collection\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}}, \"twopass\": {\"twopassMode\": \"None\", \"__current_case__\": 0, \"twopass_read_subset\": \"\", \"sj_precalculated\": \"\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"algo\": {\"params\": {\"settingsType\": \"default\", \"__current_case__\": 0}}, \"chimOutType\": \"\", \"filter\": {\"basic_filters\": null, \"output_params2\": {\"output_select2\": \"no\", \"__current_case__\": 1}}, \"oformat\": {\"outSAMattributes\": [\"NH\", \"HI\", \"AS\", \"nM\", \"ch\"], \"HI_offset\": \"1\", \"outSAMprimaryFlag\": \"OneBestScore\", \"outSAMmapqUnique\": \"60\", \"wasp_conditional\": {\"waspOutputMode\": \"\", \"__current_case__\": 1}}, \"outWig\": {\"outWigType\": \"bedGraph\", \"__current_case__\": 1, \"outWigTypeSecondWord\": \"\", \"outWigStrand\": true, \"outWigReferencesPrefix\": \"-\", \"outWigNorm\": true}, \"perf\": {\"outBAMsortingBinsN\": \"50\", \"winAnchorMultimapNmax\": \"50\"}, \"refGenomeSource\": {\"geneSource\": \"indexed\", \"__current_case__\": 0, \"GTFconditional\": {\"GTFselect\": \"without-gtf-with-gtf\", \"__current_case__\": 1, \"genomeDir\": \"dm6full\", \"sjdbGTFfile\": {\"__class__\": \"ConnectedValue\"}, \"sjdbGTFfeatureExon\": \"exon\", \"sjdbOverhang\": \"36\", \"quantmode_output\": {\"quantMode\": \"GeneCounts\", \"__current_case__\": 1}}}, \"singlePaired\": {\"sPaired\": \"paired_collection\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}}, \"twopass\": {\"twopassMode\": \"None\", \"__current_case__\": 0, \"twopass_read_subset\": \"\", \"sj_precalculated\": \"\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "2.7.11b+galaxy0",
                         "type": "tool",
                         "uuid": "2f28336b-f441-48d2-b8ea-fc4d0ef80b17",
@@ -856,14 +858,15 @@
                                 "output_name": "output_log"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine STAR Results",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -885,7 +888,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"star\", \"__current_case__\": 28, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"log\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"star\", \"__current_case__\": 28, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"log\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "a6097d54-33ac-4c3e-a1bd-5a15253fce6a",
@@ -1783,14 +1786,15 @@
                                 "output_name": "output"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine results on reads per chromosome",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -1812,7 +1816,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"samtools\", \"__current_case__\": 24, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"idxstats\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false,\"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"samtools\", \"__current_case__\": 24, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"idxstats\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "5a4d87b3-0d53-47c8-8beb-e656a96293b5",
@@ -1836,14 +1840,15 @@
                                 "output_name": "metrics_file"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine results of duplicate reads",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -1865,7 +1870,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"picard\", \"__current_case__\": 17, \"output\": [{\"__index__\": 0, \"type\": \"markdups\", \"input\": {\"__class__\": \"ConnectedValue\"}}]}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false,\"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"picard\", \"__current_case__\": 17, \"output\": [{\"__index__\": 0, \"type\": \"markdups\", \"input\": {\"__class__\": \"ConnectedValue\"}}]}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "727920a3-7efe-4d36-a987-f00cec4e32e2",
@@ -1889,14 +1894,15 @@
                                 "output_name": "output"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine read distribution on known features",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -1918,7 +1924,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"rseqc\", \"__current_case__\": 22, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"read_distribution\", \"__current_case__\": 6, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false,\"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"rseqc\", \"__current_case__\": 22, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"read_distribution\", \"__current_case__\": 6, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "252a2aee-0d82-41da-91f2-2d6069e2f095",
@@ -1942,14 +1948,15 @@
                                 "output_name": "outputtxt"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine gene body coverage",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -1971,7 +1978,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"rseqc\", \"__current_case__\": 22, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"gene_body_coverage\", \"__current_case__\": 1, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false,\"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"rseqc\", \"__current_case__\": 22, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"gene_body_coverage\", \"__current_case__\": 1, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "583d5c19-a909-4017-ad5d-4cfec35470e4",
@@ -2619,14 +2626,15 @@
                                 "output_name": "output_summary"
                             }
                         },
-                        "inputs": [],
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool MultiQC",
+                                "name": "image_content_input"
+                            }
+                        ],
                         "label": "Combine read asignments statistics",
                         "name": "MultiQC",
                         "outputs": [
-                            {
-                                "name": "png_plot",
-                                "type": "input"
-                            },
                             {
                                 "name": "html_report",
                                 "type": "html"
@@ -2648,7 +2656,7 @@
                             "owner": "iuc",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"featureCounts\", \"__current_case__\": 9, \"input\": {\"__class__\": \"ConnectedValue\"}}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"image_content_input\": {\"__class__\": \"RuntimeValue\"}, \"png_plots\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"featureCounts\", \"__current_case__\": 9, \"input\": {\"__class__\": \"ConnectedValue\"}}}], \"saveLog\": \"false\", \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.27+galaxy4",
                         "type": "tool",
                         "uuid": "827c9a6d-ce71-4348-a220-73ff53e221d8",
