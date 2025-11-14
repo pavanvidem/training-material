@@ -75,7 +75,7 @@ This tutorial will go cover how to set up such a service on your own Galaxy serv
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -51,3 +51,6 @@
+>    @@ -50,3 +50,6 @@
 >       version: 6f6fdf7f5ead491560783d52528b79e9e088bd5b
 >     - src: cloudalchemy.grafana
 >       version: 0.14.2

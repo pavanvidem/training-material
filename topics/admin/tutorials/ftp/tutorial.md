@@ -85,7 +85,7 @@ If the terms "Ansible", "role" and "playbook" mean nothing to you, please checko
 >    ```diff
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
->    @@ -57,3 +57,6 @@
+>    @@ -56,3 +56,6 @@
 >     # Sentry
 >     - name: mvdbeek.sentry_selfhosted
 >       src: https://github.com/mvdbeek/ansible-role-sentry/archive/main.tar.gz
