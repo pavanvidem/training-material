@@ -1,6 +1,6 @@
 ---
 layout: tutorial_hands_on
-title: Audio data annotation with NEAL (Nature + Energy Audio labeler).
+title: Audio data annotation with NEAL (Nature + Energy Audio labeler)
 objectives:
   - Learning the use of a Galaxy interactive tool
   - Learning the use of NEAL interactive tool 
@@ -10,11 +10,21 @@ key_points:
   - Get audio data from an external source
   - Start, use and stop an interactive tool
   - Annotate audio files
+tags:
+  - ecology
+  - biodiversity
+  - sound
+  - media annotation
 contributions:
   authorship:
     - PaulineSGN
     - haswane
-    - yvanlebras  
+    - yvanlebras
+  funding:
+    - pndb
+
+
+subtopic: ecologymediaannotation
 ---
 
 This tutorial is designed to guide you through the annotation of audio data via the NEAL interactive tool. 

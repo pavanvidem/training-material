@@ -1,3 +1,81 @@
+GTN_GTN:1762449267
+
+A	shared/images/neoantigen_lp.png
+GTN_GTN:1762439057
+
+A	topics/fair/images/1-empty-file-sources-list.png
+A	topics/fair/images/2-create-new.png
+A	topics/fair/images/3-invenio-template-filled.png
+A	topics/fair/images/3-zenodo-template-filled.png
+A	topics/fair/images/4-instance-created-zenodo.png
+A	topics/fair/images/4-instance-created.png
+A	topics/fair/images/5-upload-import-zenodo.png
+A	topics/fair/images/5-upload-import.png
+A	topics/fair/images/choose-remote-files-zenodo.png
+A	topics/fair/images/choose-remote-files.png
+A	topics/fair/images/export-history-zenodo.png
+A	topics/fair/images/export-history.png
+A	topics/fair/images/galaxy-user-preferences.png
+A	topics/fair/images/inveniordm-logo.svg
+A	topics/fair/images/production-zenodo-pat.png
+A	topics/fair/images/upload-tool.png
+A	topics/fair/images/zenodo-gradient-logo.svg
+A	topics/fair/images/zenodo-pat.png
+A	topics/fair/tutorials/inveniordm-integration/faqs/index.md
+A	topics/fair/tutorials/inveniordm-integration/tutorial.md
+A	topics/fair/tutorials/zenodo-in-galaxy/faqs/index.md
+A	topics/fair/tutorials/zenodo-in-galaxy/tutorial.md
+A	topics/introduction/tutorials/galaxy-cite/faqs/index.md
+A	topics/introduction/tutorials/galaxy-cite/tutorial.md
+GTN_GTN:1762437655
+
+A	shared/images/workflow_editor_hide_output.png
+GTN_GTN:1762349969
+
+A	assets/fontawesome/css/svg.css
+A	assets/fontawesome/css/svg.min.css
+GTN_GTN:1762170992
+
+R099	metadata/git-mod-88977ca8482a9e05a234661f1b2e796b7459dab3.txt	metadata/git-mod-dca00c4abcd4a5b2f4b6b33a2ade698e130a4643.txt
+R099	metadata/git-pub-88977ca8482a9e05a234661f1b2e796b7459dab3.txt	metadata/git-pub-dca00c4abcd4a5b2f4b6b33a2ade698e130a4643.txt
+GTN_GTN:1762162811
+
+A	topics/assembly/images/denovo_assembly/banner.png
+A	topics/assembly/images/denovo_assembly/busco_draft_assembly.png
+A	topics/assembly/images/denovo_assembly/busco_plot_bacillales_odb10.png
+A	topics/assembly/images/denovo_assembly/busco_reference_assembly.png
+A	topics/assembly/images/denovo_assembly/busco_table_draft_assembly.png
+A	topics/assembly/images/denovo_assembly/busco_unicycler_assembly.png
+A	topics/assembly/images/denovo_assembly/galaxy_rerun.png
+A	topics/assembly/images/denovo_assembly/hybrid_assembly_slides.pdf
+A	topics/assembly/images/denovo_assembly/image001.jpg
+A	topics/assembly/images/denovo_assembly/import_history.PNG
+A	topics/assembly/images/denovo_assembly/melbioinf_logo.png
+A	topics/assembly/images/denovo_assembly/nanoplot_histogram.PNG
+A	topics/assembly/images/denovo_assembly/nanoplot_table.PNG
+A	topics/assembly/images/denovo_assembly/nanopore_illumina_hybrid_assembly.png
+A	topics/assembly/images/denovo_assembly/quast_draft_assembly.png
+A	topics/assembly/images/denovo_assembly/quast_num_contigs.png
+A	topics/assembly/images/denovo_assembly/quast_table_statistics.png
+A	topics/assembly/images/denovo_assembly/quast_unicycler_assembly.png
+A	topics/assembly/images/denovo_assembly/sample_bacterial_growth.png
+A	topics/assembly/images/denovo_assembly/sequence_counts.PNG
+A	topics/assembly/images/denovo_assembly/sequence_quality.PNG
+A	topics/assembly/images/denovo_assembly/tutorial.pdf
+A	topics/assembly/images/denovo_assembly/unicycler_hybrid_assembly.png
+A	topics/assembly/tutorials/hybrid_denovo_assembly/data-library.yaml
+A	topics/assembly/tutorials/hybrid_denovo_assembly/faqs/index.md
+A	topics/assembly/tutorials/hybrid_denovo_assembly/tutorial.md
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/Hybrid-Genome-Assembly-Tutorial-Workflow-tests.yml
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/Hybrid-Genome-Assembly-Tutorial-Workflow.ga
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/index.md
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/busco_sum_polish_assembly.txt
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/busco_sum_raw_assembly.txt
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/busco_sum_ref.txt
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/busco_sum_unicy_assembly.txt
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/report_html_polish_assembly.html
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/report_html_raw_assembly.html
+A	topics/assembly/tutorials/hybrid_denovo_assembly/workflows/test-data/report_html_unicy_assembly.html
 GTN_GTN:1761575057
 
 R100	events/2025-03-06-biont-fair	events/2025-03-06-biont-fair.md
