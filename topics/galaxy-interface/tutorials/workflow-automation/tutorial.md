@@ -83,7 +83,7 @@ The main tool we will use in this tutorial is [Planemo](https://planemo.readthed
 
 For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
-{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" default="Short-Version" %}
+{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" option3="Automated runs of a workflow for SARS-CoV-2 lineage assignment" default="Short-Version" %}
 
 <div class="Short-Version-with-an-existing-workflow" markdown="1">
 
@@ -234,77 +234,34 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 >    {:.code-in}
 {: .hands_on}
 
-## Using Galaxy workflow and dataset IDs
-
-We've now executed the same workflow twice. If you inspect your histories and workflows through the Galaxy web interface, you will see that a new workflow was created on the server for each invocation, and both `Dataset 1` and `Dataset 2` were uploaded twice. This is undesirable - we are creating a lot of clutter and the uploads are creating additional unnecessary work for the Galaxy server.
-
-Every object associated with Galaxy, including workflows, datasets and dataset collections, have hexadecimal IDs associated with them, which look something like `6b15dfc0393f172c`. Once the datasets and workflows we need have been uploaded to Galaxy once, we can use these IDs in our subsequent workflow invocations.
-
-> <hands-on-title>Running our workflow using dataset and workflow IDs</hands-on-title>
->
-> 1. Navigate to one of the histories to get dataset IDs for the input datasets. For each one:
->    1. Click on the {% icon galaxy-info %} *View details* icon on the dataset in the history.
->    2. Under the heading `Dataset Information`, find the row `History Content API ID` and copy the hexadecimal ID next to it.
-> 2. Modify `tutorial-init-job.yml` to look like the following:
->
->    ```yaml
->    Dataset 1:
->      class: File
->      # path: dataset1.txt
->      galaxy_id: <ID OF DATASET 1>
->    Dataset 2:
->      class: File
->      # path: dataset2.txt
->      galaxy_id: <ID OF DATASET 2>
->    Number of lines: 3
->    ```
->
-> 3. Now we need to get the workflow ID:
->    > {% snippet faqs/galaxy/workflows_get_id.md %}
-> 4. Run the `planemo run` subcommand using the new workflow ID.
->
->    > <code-in-title>planemo run</code-in-title>
->    > ```shell
->    > planemo run <WORKFLOW ID> tutorial-init-job.yml --galaxy_url <SERVER_URL> --galaxy_user_key <YOUR_API_KEY> --history_name "Test Planemo WF with Planemo" --tags "planemo-tutorial" --no_wait
->    > ```
->    {:.code-in}
-{: .hands_on}
-
 </div>
 
 <div class="Long-Version-from-scratch" markdown="1">
 
-# Another tutorial "From scratch"
+# A longer tutorial "From scratch" to CLI
 
 ## Get the toy data
 
 > <hands-on-title>Download some data</hands-on-title>
 > For this tutorial, we will use a training dataset: [M. tuberculosis bioinformatics training data](https://zenodo.org/records/3960260)
-
 > Download data for this tutorial using `curl` or `wget`.
 >
 > > <code-in-title>Bash</code-in-title>
 > > ```shell
-> > wget https://zenodo.org/record/3960260/files/004-2_1.fastq.gz
-> > wget https://zenodo.org/record/3960260/files/004-2_2.fastq.gz
+> > wget https://zenodo.org/record/3960260/files/018-1_1.fastq.gz
+> > wget https://zenodo.org/record/3960260/files/018-1_2.fastq.gz
 > > ```
 > {: .code-in}
->
-> > <code-out-title>Folder contents</code-out-title>
-> > ```
-> > example  LICENSE  pangolin  README.md
-> > ```
-> {: .code-out}
 {: .hands_on}
 
 ## Creating a new workflow
 
 > <hands-on-title>Find a Galaxy instance</hands-on-title>
-> Logging into your favorite Galaxy instance: `https://usegalaxy.eu/` or `https://usegalaxy.fr/`
+> Logging into your favorite Galaxy instance (Ex: `https://usegalaxy.eu/` or `https://usegalaxy.fr/`)
 {: .hands_on}
 
 > <hands-on-title>Create the workflow into Galaxy.</hands-on-title>
-> 1. Go to the workflow page
+> 1. Go to the workflow panel {% icon galaxy-workflows-activity %}
 > 2. Create a new workflow: `Fastq cleaning and check`
 >
 >    {% snippet faqs/galaxy/workflows_create_new.md %}
@@ -326,6 +283,7 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 > 9. Select the desired outputs:
 >    - In **fastp**, tick **out1 (input)**
 >    - In **MultiQC**, tick **html_report (html)**
+> 10. 
 > 
 > ![This image show a preview of our workflow with tools as box and noodle as connectors).](./images/Workflow-Fastq_cleaning_and_check.png "Preview of our workflow")
 {: .hands_on}
@@ -337,13 +295,13 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 {: .comment}
 
 > <hands-on-title>Download your workflow</hands-on-title>
-> {% snippet faqs/galaxy/workflow_download.md %}
+> {% snippet faqs/galaxy/workflows_download.md %}
 {: .hands_on}
 
 > <hands-on-title>Generate a job parameter.</hands-on-title>
 > We will use **Planemo** to generate a template for our job parameters before adaptating it.
 >
-> There are many way to install planemo: https://planemo.readthedocs.io/en/latest/installation.html.
+> There are many way to install planemo: <https://planemo.readthedocs.io/en/latest/installation.html>
 > 
 > > <tip-title>What about using Docker?</tip-title>
 > >
@@ -385,11 +343,11 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 > >   collection_type: list
 > >   elements:
 > >   - class: File
-> >     identifier: 004-2_1
-> >     path: 004-2_1.fastq.gz
+> >     identifier: 018-1_1
+> >     path: 018-1_1.fastq.gz
 > >   - class: File
-> >     identifier: 004-2_2
-> >     path: 004-2_2.fastq.gz
+> >     identifier: 018-1_2
+> >     path: 018-1_2.fastq.gz
 > > ```
 {: .hands_on}
 
@@ -423,21 +381,22 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > > Contain of your directory:
 > > ```
 > > [...]
-> > 004-2_1.fastq.gz
-> > 004-2_2.fastq.gz
+> > 018-1_1.fastq.gz
+> > 018-1_2.fastq.gz
 > > Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
-> > fastp on data 21 Read 1 output__0876c0cd-52b0-4467-823e-387d087a5096.fastqsanger.gz
-> > fastp on data 22 Read 1 output__1ff3aedb-feb5-4b6e-82b7-a1399cdab879.fastqsanger.gz
-> > MultiQC on data 38, data 35, and others Webpage__e3cc631f-49b4-4c98-968d-a22fa4161568.html
+> > 018-1_1.fastq_cleaned__b09ee414-9968-4e46-9415-535a5ddf2e0c.fastqsanger.gz
+> > 018-1_2.fastq_cleaned__b61fd0af-6353-4222-a031-04af0b1ee993.fastqsanger.gz
+> > multiqc_report__82059f85-70ca-4e66-804a-beae024e108c.html
 > > ```
 > > 
 > > ![This image show the MultiQC webpage).](./images/Workflow-Fastq_cleaning_and_check-multiqc.png "MultiQC result webpage")
 {: .hands_on}
 
-
 </div>
 
-## Using Planemo profiles
+## Going further
+
+### Using Planemo profiles
 
 Planemo provides a useful profile feature which can help simplify long commands. The idea is that flags which need to be used multiple times in different invocations can be combined together and run as a single profile. Let's see how this works below.
 
@@ -464,6 +423,48 @@ Planemo provides a useful profile feature which can help simplify long commands.
 >    > This invokes the workflow with all the parameters specified in the profile `planemo-tutorial`.
 >    {:.code-in}
 {: .hands_on}
+
+### Using Galaxy workflow and dataset IDs
+
+If you execute the same workflow twice. If you inspect your histories and workflows through the Galaxy web interface, you will see that a new workflow was created on the server for each invocation, and both `Dataset 1` and `Dataset 2` were uploaded twice. This is undesirable - we are creating a lot of clutter and the uploads are creating additional unnecessary work for the Galaxy server.
+
+Every object associated with Galaxy, including workflows, datasets and dataset collections, have hexadecimal IDs associated with them, which look something like `6b15dfc0393f172c`. Once the datasets and workflows we need have been uploaded to Galaxy once, we can use these IDs in our subsequent workflow invocations.
+
+> <hands-on-title>Running our workflow using dataset and workflow IDs</hands-on-title>
+>
+> 1. Navigate to one of the histories to get dataset IDs for the input datasets. For each one:
+>    1. Click on the {% icon galaxy-info %} *View details* icon on the dataset in the history.
+>    2. Under the heading `Dataset Information`, find the row `History Content API ID` and copy the hexadecimal ID next to it.
+> 2. Modify `tutorial-init-job.yml` to look like the following:
+>
+>    ```yaml
+>    Dataset 1:
+>      class: File
+>      # path: dataset1.txt
+>      galaxy_id: <ID OF DATASET 1>
+>    Dataset 2:
+>      class: File
+>      # path: dataset2.txt
+>      galaxy_id: <ID OF DATASET 2>
+>    Number of lines: 3
+>    ```
+>
+> 3. Now we need to get the workflow ID:
+>    > {% snippet faqs/galaxy/workflows_get_id.md %}
+> 4. Run the `planemo run` subcommand using the new workflow ID.
+>
+>    > <code-in-title>planemo run</code-in-title>
+>    > ```shell
+>    > planemo run <WORKFLOW ID> tutorial-init-job.yml --galaxy_url <SERVER_URL> --galaxy_user_key <YOUR_API_KEY> --history_name "Test Planemo WF with Planemo" --tags "planemo-tutorial" --no_wait
+>    > ```
+>    {:.code-in}
+{: .hands_on}
+
+### Ensuring Workflows meet Best Practices
+
+{% snippet faqs/galaxy/workflows_best_practices.md %}
+
+<div class="Automated-runs-of-a-workflow-for-SARS-CoV-2-lineage-assignment" markdown="1">
 
 # Automated runs of a workflow for SARS-CoV-2 lineage assignment
 
@@ -706,6 +707,7 @@ For example, it might be the case that you want to run multiple different workfl
 
 The [Galaxy SARS-CoV-2 genome surveillance bot](https://github.com/usegalaxy-eu/ena-cog-uk-wfs/) provides an example of a more advanced customized workflow execution solution, combining Planemo commands, custom BioBlend scripts and bash scripts, which then get run automatically via continuous integration (CI) on a Jenkins server.
 
+</div>
 
 # Conclusion
 
