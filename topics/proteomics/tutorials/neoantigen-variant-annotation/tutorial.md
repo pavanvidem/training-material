@@ -117,7 +117,7 @@ This tutorial introduces the process of annotating neoantigens using the PepPoin
 ## Mutation to Peptide Mapping with Query Tabular
 
 In this step, we will use the Query Tabular tool to perform a SQL query on a tabular dataset. This tool allows you to filter and extract data from a dataset by applying SQL commands, making it ideal for working with structured data such as CSV or TSV files. You will use it to join tables, select relevant columns, and generate a new output based on the criteria specified in the query. This step helps in refining and organizing the data for further analysis.
-This step extracts information about novel peptides from Frapipe, which primarily includes protein details and the location of the peptide on the protein.
+This step extracts information about novel peptides from FragPipe, which primarily includes protein details and the location of the peptide on the protein.
 
 > <hands-on-title> Query Tabular </hands-on-title>
 >
