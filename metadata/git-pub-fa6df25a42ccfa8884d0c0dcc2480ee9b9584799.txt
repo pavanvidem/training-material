@@ -1,3 +1,10 @@
+GTN_GTN:1763115556
+
+A	news/_posts/2025-11-13-gta-date-2026
+GTN_GTN:1762772247
+
+R099	metadata/git-mod-dca00c4abcd4a5b2f4b6b33a2ade698e130a4643.txt	metadata/git-mod-710231e823f4ba321c74352b3643dae77bc5fe12.txt
+R099	metadata/git-pub-dca00c4abcd4a5b2f4b6b33a2ade698e130a4643.txt	metadata/git-pub-710231e823f4ba321c74352b3643dae77bc5fe12.txt
 GTN_GTN:1762449267
 
 A	shared/images/neoantigen_lp.png
