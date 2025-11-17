@@ -30,6 +30,8 @@ contributions:
   authorship:
     - plushz
     - bebatut
+    - vinisalazar
+    - paulzierep
   funding:
     - gallantries
 subtopic: metagenomics
@@ -193,7 +195,7 @@ If samples differ like described, **individual assembly** is preferred. In the c
 
 ![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./images/individual-assembly.png "Individual assembly followed by de-replication vs co-assembly. Source: dRep documentation"){:width="80%"}
 
-For more information on dereplication, check out the [metagenomic binning tutorial](../metagenomics-binning/tutorial.md).
+For more information on dereplication, check out the [metagenomic binning tutorial]({% link topics/microbiome/tutorials/metagenomics-binning/tutorial.md %}).
 
 In this tutorial, to show all steps, we will run an **individual assembly**.
 
@@ -235,9 +237,9 @@ Both tools are available in Galaxy. But currently, only MEGAHIT can be used in i
 
 **MEGAHIT** produced a collection of output assemblies - one per sample - that can be used for the subsequent step of **metagenomic binning**. The output contains **contigs**, contiguous lengths of genomic sequences in which bases are known to a high degree of certainty.
 
-<comment-title>Scaffolds</comment-title>
-Contrary to **MetaSPAdes**, **MEGAHIT** does not output **scaffolds**. **Scaffolds** are segments of genome sequence reconstructed fron contigs and gaps. The gaps occur when reads from the two sequenced ends of at least one fragment overlap with other reads from two different contigs (as long as the arrangement is otherwise consistent with the contigs being adjacent). It is possible to estimate the number of bases between contigs based on fragment lengths.
-{:. comment}
+> <comment-title>Scaffolds</comment-title>
+> Contrary to **MetaSPAdes**, **MEGAHIT** does not output **scaffolds**. **Scaffolds** are segments of genome sequence reconstructed fron contigs and gaps. The gaps occur when reads from the two sequenced ends of at least one fragment overlap with other reads from two different contigs (as long as the arrangement is otherwise consistent with the contigs being adjacent). It is possible to estimate the number of bases between contigs based on fragment lengths.
+{: .comment}
 
 > <comment-title></comment-title>
 >
