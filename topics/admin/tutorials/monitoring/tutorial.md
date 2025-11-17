@@ -93,7 +93,7 @@ The available Ansible roles for InfluxDB unfortunately do not support configurin
 >    @@ -42,3 +42,5 @@
 >       version: 1.8.0
 >     - name: usegalaxy_eu.flower
->       version: 1.0.2
+>       version: 2.1.0
 >    +- src: usegalaxy_eu.influxdb
 >    +  version: v6.0.7
 >    {% endraw %}
@@ -297,7 +297,7 @@ Setting up Telegraf is again very simple. We just add a single role to our playb
 >    --- a/requirements.yml
 >    +++ b/requirements.yml
 >    @@ -44,3 +44,7 @@
->       version: 1.0.2
+>       version: 2.1.0
 >     - src: usegalaxy_eu.influxdb
 >       version: v6.0.7
 >    +# Monitoring
