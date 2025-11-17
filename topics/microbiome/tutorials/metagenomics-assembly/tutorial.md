@@ -203,6 +203,10 @@ In this tutorial, to show all steps, we will run an **individual assembly**.
 > Sometimes it is important to run both individual assembly and co-assembly, and use both outputs to get better results for that dataset.
 {: .comment}
 
+> <comment-title>How to group reads for assembly strategies</comment-title>
+> {% snippet faqs/galaxy/fastq_groupmerge.md %}
+{: .comment}
+
 As mentioned in the introduction, several tools are available for metagenomic assembly. But 2 are the most used ones:
 
 - **MetaSPAdes** ({%cite nurk2017%}): an short-read assembler designed specifically for large and complex metagenomics datasets.
@@ -305,7 +309,7 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 >      - *"Reads options"*: `Illumina paired-end reads in paired collection`
 >
 >          > <comment-title></comment-title>
->          > To make the job quicker, you can select `Disabled` here. The raw reads will then not been mapped to the assembly to compute metrics, like the coverage.
+>          > To make the job quicker, you can select `Disabled` here. The raw reads will then not be mapped to the assembly to compute metrics, like the coverage.
 >          {: .comment}
 >
 >      - {% icon param-collection %} *"FASTQ/FASTA files"*: `Raw reads`
@@ -346,6 +350,10 @@ On the top of each report is a table with in rows statistics for contigs larger 
       A base in the reference genome is counted as aligned if at least one contig has at least one alignment to this base.
 
       We did not provide any reference there, but metaQUAST try to identify genome content of the metagenome by aligning contigs to [SILVA](https://www.arb-silva.de/) 16S rRNA database. For each assembly, 50 reference genomes with top scores are chosen. The full reference genomes of the identified organisms are afterwards downloaded from NCBI to map the assemblies on them and compute the genome fractions.
+
+      > <comment-title>Metagenome reference</comment-title>
+      > The alignment to automatically downloaded genomes for metagenomes is rather ambiguous and time-consuming. Most large-scale pipelines skip this step and set the **Maximum number of reference genomes (per each assembly) to download after searching in the SILVA database\*** option to `0`.
+      {: .comment}
 
       For each identified genomes, the genome fraction is given when clicking on **Genome fraction (%)**
 
