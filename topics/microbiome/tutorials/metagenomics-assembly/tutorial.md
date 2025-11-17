@@ -122,7 +122,7 @@ In case of a not very large dataset it's more convenient to upload data directly
 
 > <hands-on-title>Upload data into Galaxy</hands-on-title>
 >
-> 2. Import the sequence read raw data (\*.fastqsanger.gz) from [Zenodo]({{ page.zenodo_link }}) or a data library:
+> 1. Import the sequence read raw data (\*.fastqsanger.gz) from [Zenodo]({{ page.zenodo_link }}) or a data library:
 >
 >    ```text
 >    {{ page.zenodo_link }}/files/ERR2231567_1.fastqsanger.gz
@@ -147,7 +147,7 @@ In case of a not very large dataset it's more convenient to upload data directly
 >    > In case of large dataset, we can use FTP server or the [Galaxy Rule-based Uploader]({% link topics/galaxy-interface/tutorials/upload-rules/tutorial.md %}).
 >    {: .comment}
 >
-> 3. Create a paired collection named `Raw reads`, rename your pairs with the sample name
+> 2. Create a paired collection named `Raw reads`, rename your pairs with the sample name
 >
 >    {% snippet faqs/galaxy/collections_build_list_paired.md %}
 >
@@ -201,10 +201,9 @@ In this tutorial, to show all steps, we will run an **individual assembly**.
 
 > <comment-title>Why not both?</comment-title>
 > Sometimes it is important to run both individual assembly and co-assembly, and use both outputs to get better results for that dataset.
-{: .comment}
-
-> <comment-title>How to group reads for assembly strategies</comment-title>
-> {% snippet faqs/galaxy/fastq_groupmerge.md %}
+>
+> > {% snippet faqs/galaxy/fastq_groupmerge.md %}
+>
 {: .comment}
 
 As mentioned in the introduction, several tools are available for metagenomic assembly. But 2 are the most used ones:
