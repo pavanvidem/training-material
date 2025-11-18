@@ -283,8 +283,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > 9. Select the desired outputs:
 >    - In **fastp**, tick **out1 (input)**
 >    - In **MultiQC**, tick **html_report (html)**
-> 10. 
-> 
+>
 > ![This image show a preview of our workflow with tools as box and noodle as connectors).](./images/Workflow-Fastq_cleaning_and_check.png "Preview of our workflow")
 {: .hands_on}
 
@@ -302,7 +301,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > We will use **Planemo** to generate a template for our job parameters before adaptating it.
 >
 > There are many way to install planemo: <https://planemo.readthedocs.io/en/latest/installation.html>
-> 
+>
 > > <tip-title>What about using Docker?</tip-title>
 > >
 > > An easy way to use planemo without "installation" for this turorial could be the Docker image provided by BioContainer
@@ -312,7 +311,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > > > ```
 > > {: .code-in}
 > {: .tip}
-> 
+>
 > > <code-in-title>Bash</code-in-title>
 > > ```bash
 > > planemo workflow_job_init Galaxy-Workflow-Fastq_cleaning_and_check.ga -o Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
@@ -320,7 +319,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > > cat Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
 > > ```
 > {: .code-in}
-> 
+>
 > > <code-out-title>Galaxy-Workflow-Fastq_cleaning_and_check-job.xml</code-out-title>
 > > ```yaml
 > > Fastq Inputs:
@@ -336,7 +335,7 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 
 > <hands-on-title>Adapt the job parameter</hands-on-title>
 > Modify `Galaxy-Workflow-Fastq_cleaning_and_check-job.xml` to look like the following:
-> 
+>
 > ```yaml
 > Fastq Inputs:
 >   class: Collection
@@ -362,7 +361,9 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 > Let's do it simple and "ecologic" with a workflow ID
 >
 > 1. Get the ID of your workflow just created:
->    > {% snippet faqs/galaxy/workflows_get_id.md %}
+>
+>    {% snippet faqs/galaxy/workflows_get_id.md %}
+>
 > 2. Run the `planemo run` subcommand.
 >
 >    > <code-in-title>planemo run</code-in-title>
@@ -372,23 +373,24 @@ Now we have a simple workflow, we can run it using `planemo run`. At this point 
 >    {:.code-in}
 >
 >    > <comment-title>Checking within Galaxy</comment-title>
->    > You may want to check the ongoing process or the results within the Galaxy instance interface. 
+>    > You may want to check the ongoing process or the results within the Galaxy instance interface.
 >    {: .comment}
 >
 >    One potential disadvantage of the previous command is that it waits until the invoked workflow has fully completed. For our very small example, this doesn't matter, but for a workflow which takes hours or days to finish, it might be undesirable. Fortunately, `planemo run` provides a `--no_wait` flag which exits as soon as the workflow has been successfully scheduled.
 > 3. Enjoy your result files
-> > Contain of your directory:
-> > ```
-> > [...]
-> > 018-1_1.fastq.gz
-> > 018-1_2.fastq.gz
-> > Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
-> > 018-1_1.fastq_cleaned__b09ee414-9968-4e46-9415-535a5ddf2e0c.fastqsanger.gz
-> > 018-1_2.fastq_cleaned__b61fd0af-6353-4222-a031-04af0b1ee993.fastqsanger.gz
-> > multiqc_report__82059f85-70ca-4e66-804a-beae024e108c.html
-> > ```
-> > 
-> > ![This image show the MultiQC webpage).](./images/Workflow-Fastq_cleaning_and_check-multiqc.png "MultiQC result webpage")
+>
+>    Contents of your directory:
+>    ```
+>    [...]
+>    018-1_1.fastq.gz
+>    018-1_2.fastq.gz
+>    Galaxy-Workflow-Fastq_cleaning_and_check-job.xml
+>    018-1_1.fastq_cleaned__b09ee414-9968-4e46-9415-535a5ddf2e0c.fastqsanger.gz
+>    018-1_2.fastq_cleaned__b61fd0af-6353-4222-a031-04af0b1ee993.fastqsanger.gz
+>    multiqc_report__82059f85-70ca-4e66-804a-beae024e108c.html
+>    ```
+>
+>    ![This image show the MultiQC webpage).](./images/Workflow-Fastq_cleaning_and_check-multiqc.png "MultiQC result webpage")
 >
 {: .hands_on}
 
@@ -450,7 +452,9 @@ Every object associated with Galaxy, including workflows, datasets and dataset c
 >    ```
 >
 > 3. Now we need to get the workflow ID:
->    > {% snippet faqs/galaxy/workflows_get_id.md %}
+>
+>    {% snippet faqs/galaxy/workflows_get_id.md %}
+>
 > 4. Run the `planemo run` subcommand using the new workflow ID.
 >
 >    > <code-in-title>planemo run</code-in-title>
