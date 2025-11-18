@@ -32,6 +32,7 @@ contributions:
   - npechl
   - fpsom
   - paulzierep
+  - vinisalazar
 requirements:
   - type: internal
     topic: metagenomics
