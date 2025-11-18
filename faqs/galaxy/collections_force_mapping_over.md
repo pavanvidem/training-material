@@ -6,7 +6,7 @@ layout: faq
 contributors: [paulzierep]
 ---
 
-### To map over or not to map over
+## To map over or not to map over
 
 Galaxy tools can either **use a collection as a single input** or **map over** a collection to process each element individually.
 Whether a collection is consumed as a whole or mapped over depends entirely on **how the tool is designed**.
@@ -19,9 +19,8 @@ Other tools can process an entire collection at once. For example {% tool [colle
 
 ![Screenshot showing column join without mapping over.]({% link faqs/galaxy/images/column_join_no_mapping_over.png %})
 
----
 
-### The catch
+## The catch
 
 Some tools *allow* a collection as a single input, but you may want them to process **each element one-by-one** instead.
 A common example is {% tool [metaspades](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %}:
@@ -30,22 +29,21 @@ However, in many workflows you want to assemble each sample **individually**, no
 
 Because the tool form does not offer an option to switch this behavior, you can **force mapping-over** by creating a **nested list**.
 
----
 
-### Solution - Create a nested collection
+## Solution - Create a nested collection
 
 Convert your original collection into a **collection of collections** (`list:list:`).
 This forces any tool - including ones that normally process the whole collection - to run on **each subcollection individually**.
 
 ### Solution for Galaxy Server with Version > 25.1: Create a nested collection using Nest collection
 
-Use the {% tool [Nest collection](__NEST__) %}  tool to convert your original collection into a **collection of collections**. 
+Use the {% tool [Nest collection](__NEST__) %}  tool to convert your original collection into a **collection of collections**.
 
 ### Solution for Galaxy Server with Version < 25.1: Create a nested collection using APPLY_RULES
 
-Use the {% tool [Apply rules](__APPLY_RULES__) %}  tool to convert your original collection into a **collection of collections**. 
+Use the {% tool [Apply rules](__APPLY_RULES__) %}  tool to convert your original collection into a **collection of collections**.
 
-1. Open {% tool [Apply rules](__APPLY_RULES__) %} 
+1. Open {% tool [Apply rules](__APPLY_RULES__) %}
 2. Select your collection
 3. Click **Edit**
 
