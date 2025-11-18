@@ -31,6 +31,7 @@ contributions:
   authorship:
   - npechl
   - fpsom
+  - paulzierep
 requirements:
   - type: internal
     topic: metagenomics
@@ -109,12 +110,7 @@ Other tools also include:
 
 A benchmark study of metagenomics software can be found at {%cite Sczyrba2017%}. MetaBAT 2 outperforms previous MetaBAT and other alternatives in both accuracy and computational efficiency . All are based on default parameters ({%cite Sczyrba2017%}).
 
-**In this tutorial, we will learn how to run metagenomic binning tools and evaluate the quality of the results**. In order to do that, we will use data from the study: [Temporal shotgun metagenomic dissection of the coffee fermentation ecosystem](https://www.ebi.ac.uk/metagenomics/studies/MGYS00005630#overview) and the MetaBAT 2 algorithm. MetaBAT is a popular software tool for metagenomics binning, and there are several reasons why it is often used:
-- *High accuracy*: MetaBAT uses a combination of tetranucleotide frequency, coverage depth, and read linkage information to bin contigs, which has been shown to be highly accurate and efficient.
-- *Easy to use*: MetaBAT has a user-friendly interface and can be run on a standard desktop computer, making it accessible to a wide range of researchers with varying levels of computational expertise.
-- *Flexibility*: MetaBAT can be used with a variety of sequencing technologies, including Illumina, PacBio, and Nanopore, and can be applied to both microbial and viral metagenomes.
-- *Scalability*: MetaBAT can handle large-scale datasets, and its performance has been shown to improve with increasing sequencing depth.
-- *Compatibility*: MetaBAT outputs MAGs in standard formats that can be easily integrated into downstream analyses and tools, such as taxonomic annotation and functional prediction.
+**In this tutorial, we will learn how to run metagenomic binning tools and evaluate the quality of the results**. In order to do that, we will use data from the study: [Temporal shotgun metagenomic dissection of the coffee fermentation ecosystem](https://www.ebi.ac.uk/metagenomics/studies/MGYS00005630#overview) and one or multiple of the Binning algorithms available in Galaxy.
 
 For an in-depth analysis of the structure and functions of the coffee microbiome, a temporal shotgun metagenomic study (six time points) was performed. The six samples have been sequenced with Illumina MiSeq utilizing whole genome sequencing.
 
@@ -131,13 +127,30 @@ Based on the 6 original dataset of the coffee fermentation system, we generated 
 
 # Prepare analysis history and data
 
-MetaBAT 2 takes metagenomic sequencing data as input, typically in the form of assembled contigs in fasta format and coverage information in bam format. Specifically, MetaBAT 2 requires two input files:
+Metagenomic binners take typically two data typs as input: assembled contigs in fasta format and coverage information in bam format.
 
 - A fasta file containing the assembled contigs, which can be generated from raw metagenomic sequencing reads using an assembler such as MEGAHIT, SPAdes, or IDBA-UD.
 
 - A bam file containing the read coverage information for each contig, which can be generated from the same sequencing reads using mapping software such as Bowtie2 or BWA.
 
-MetaBAT 2 also requires a configuration file specifying various parameters and options for the binning process, such as the minimum contig length, the maximum number of clusters to generate, and the maximum expected contamination level.
+> <comment-title>Can Bins be generated without coverage information</comment-title>
+>
+> Not all binners require coverage information — some, like MetaBAT2, can operate using only genomic composition (e.g. tetranucleotide frequencies) when coverage files are not available. This is especially useful for single-sample datasets or legacy data where coverage cannot easily be calculated.
+>
+> Other tools that support composition-only binning include:
+> - **MaxBin 2** (can run with composition alone, but performs better with depth)
+> - **SolidBin** (supports single-sample binning based on sequence features)
+> - **VAMB** (primarily uses deep learning on composition, coverage optional)
+>
+> That said, including coverage information generally increases binning accuracy, especially for:
+> - Differentiating closely related strains
+> - Datasets with uneven abundance
+> - Multi-sample metagenomics workflows (e.g. differential coverage binning)
+>
+> In summary: yes, it’s possible to bin without coverage, but coverage-aware workflows are recommended when available, as they reduce contamination and improve completeness.
+>
+{: .comment}
+
 
 To run binning, we first need to get the data into Galaxy. Any analysis should get its own Galaxy history. So let's start by creating a new one:
 
@@ -159,7 +172,7 @@ In case of a not very large dataset it's more convenient to upload data directly
 
 > <hands-on-title>Upload data into Galaxy</hands-on-title>
 >
-> 2. Import the sequence read data (\*.fasta) from [Zenodo]({{ page.zenodo_link }}) or a data library:
+> 1. Import the contigs (\*.fasta) from [Zenodo]({{ page.zenodo_link }}) or a data library:
 >
 >    ```text
 >    {{ page.zenodo_link }}/files/contigs_ERR2231567.fasta
@@ -178,11 +191,47 @@ In case of a not very large dataset it's more convenient to upload data directly
 >    > In case of large dataset, we can use FTP server or the [Galaxy Rule-based Uploader]({% link topics/galaxy-interface/tutorials/upload-rules/tutorial.md %}).
 >    {: .comment}
 >
-> 3. Create a collection named `Raw reads`, rename your pairs with the sample name
+> 2. Create a collection named `Contigs`
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
+> 3. Also import the raw reads in fastq format (\*.fasta) from [Zenodo]({{ page.zenodo_link }}) or a data library:
+>
+>    ```text
+>    {{ page.zenodo_link }}/files/contigs_ERR2231567.fasta
+>    {{ page.zenodo_link }}/files/contigs_ERR2231568.fasta
+>    {{ page.zenodo_link }}/files/contigs_ERR2231569.fasta
+>    {{ page.zenodo_link }}/files/contigs_ERR2231570.fasta
+>    {{ page.zenodo_link }}/files/contigs_ERR2231571.fasta
+>    {{ page.zenodo_link }}/files/contigs_ERR2231572.fasta
+>    ```
+> 2. Create a collection named `Raw reads`
+>
+>    {% snippet faqs/galaxy/collections_build_list.md %}
+
+
 {: .hands_on}
+
+
+# Preparation for binning
+
+As explained before we need coverage information in bam format as a requirement for all binners. Some binners need a specific format for the coverage information, but this will be covered in the version specific to the desired binner. For now we will map the raw reads to the contigs to get a bam file with the coverage information. This bam file also needs to be sorted for the downstream binners.
+
+> <hands-on-title>Map reads to contigs</hands-on-title>
+> 1.  {% tool [Bowtie2](toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.5.4+galaxy0) %} with parameters:
+>     - In **Is this single or paired library**, choose **Paired-end**.
+>     - *"FASTQ Paired Dataset"*: `Reads`
+>     - In **Will you select a reference genome from your history or use a built-in index?**, choose **Use a genome from the histroy and build index**.
+>     - *"Select reference genome"*: `Contigs`
+>
+{: .hands_on}
+
+> <hands-on-title>Sort bam files</hands-on-title>
+> 1.  {% tool [Samtools sort](toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0.7) %} with parameters:
+>     - *"BAM File"*: `Output of Bowtie2`
+>     - In **Primary sort key**, choose **coordinate**.
+{: .hands_on}
+
 
 # Binning
 
@@ -198,70 +247,22 @@ As explained before, there are many challenges to metagenomics binning. The most
 
 ![Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties.](./images/binning.png "Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties."){:width="60%"}
 
-In this tutorial we will learn how to use **MetaBAT 2** {%cite Kang2019%} tool through Galaxy. **MetaBAT** stands for "Metagenome Binning based on Abundance and Tetranucleotide frequency". It is:
+In this tutorial, we offer dedicated versions, which highlight each of the following binners:
 
-> Grouping large fragments assembled from shotgun metagenomic sequences to deconvolute complex microbial communities, or metagenome binning, enables the study of individual organisms and their interactions. Here we developed automated metagenome binning software, called MetaBAT, which integrates empirical probabilistic distances of genome abundance and tetranucleotide frequency. On synthetic datasets MetaBAT on average achieves 98percent precision and 90% recall at the strain level with 281 near complete unique genomes. Applying MetaBAT to a human gut microbiome data set we recovered 176 genome bins with 92% precision and 80% recall. Further analyses suggest MetaBAT is able to recover genome fragments missed in reference genomes up to 19%, while 53 genome bins are novel. In summary, we believe MetaBAT is a powerful tool to facilitate comprehensive understanding of complex microbial communities.
-{: .quote author="Kang et al, 2019" }
+{% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" default="MetaBAT 2" %}
 
-We will use the uploaded assembled fasta files as input to the algorithm (For simplicity reasons all other parameters will be preserved with their default values).
-
-> <hands-on-title>Individual binning of short-reads with MetaBAT 2</hands-on-title>
-> 1.  {% tool [MetaBAT 2](https://toolshed.g2.bx.psu.edu/view/iuc/metabat2/01f02c5ddff8) %} with parameters:
->     - *"Fasta file containing contigs"*: `assembly fasta files`
->     - In **Advanced options**, keep all as **default**.
->     - In **Output options:**
->       - *"Save cluster memberships as a matrix format?"*: `"Yes"`
->
-{: .hands_on}
-
-The output files generated by MetaBAT 2 include (some of the files below are optional and not produced unless it is required by the user):
-
-1. The final set of genome bins in FASTA format (`.fa`)
-2. A summary file with information on each genome bin, including its length, completeness, contamination, and taxonomy classification (`.txt`)
-3. A file with the mapping results showing how each contig was assigned to a genome bin (`.bam`)
-4. A file containing the abundance estimation of each genome bin (`.txt`)
-5. A file with the coverage profile of each genome bin (`.txt`)
-6. A file containing the nucleotide composition of each genome bin (`.txt`)
-7. A file with the predicted gene sequences of each genome bin (`.faa`)
-
-These output files can be further analyzed and used for downstream applications such as functional annotation, comparative genomics, and phylogenetic analysis.
-
-> <comment-title></comment-title>
->
-> Since the binning process would take some we are just going to import the results of the binning previously run.
->
-> > <hands-on-title>Import generated assembly files</hands-on-title>
-> >
-> > 1. Import the six folders containg binning result files from [Zenodo]({{ page.extra.zenodo_link_results }}) or the Shared Data library:
-> >
-> >    ```text
-> >    {{ page.extra.zenodo_link_results }}/files/26_%20MetaBAT2%20on%20data%20ERR2231567_%20Bins.zip
-> >    {{ page.extra.zenodo_link_results }}/files/38_%20MetaBAT2%20on%20data%20ERR2231568_%20Bins.zip
-> >    {{ page.extra.zenodo_link_results }}/files/47_%20MetaBAT2%20on%20data%20ERR2231569_%20Bins.zip
-> >    {{ page.extra.zenodo_link_results }}/files/57_%20MetaBAT2%20on%20data%20ERR2231570_%20Bins.zip
-> >    {{ page.extra.zenodo_link_results }}/files/65_%20MetaBAT2%20on%20data%20ERR2231571_%20Bins.zip
-> >    {{ page.extra.zenodo_link_results }}/files/74_%20MetaBAT2%20on%20data%20ERR2231572_%20Bins.zip
-> >    ```
-> >
-> >
-> > 2. Create a collection named `MetaBAT2 Bins` and add the zip files to it.
-> >
-> {: .hands_on}
-{: .comment}
-
-> <question-title>Binning metrics</question-title>
->
-> 1. How many bins has been for ERR2231567 sample?
-> 2. How many contigs are in the bin with most contigs? What about the one with the least?
->
-> > <solution-title></solution-title>
-> >
-> > 1. There are 6 bins identified.
-> > 2. 7170 in the one with the most contigs, and 140 in the one with the least (these numbers may differ slightly depending on the version of MetaBAT2).
-> >
-> {: .solution}
->
-{: .question}
+<div class="MetaBAT2" markdown="1">
+{% include topics/microbiome/tutorials/metagenomics-binning/metabet2_version.md %}
+</div>
+<div class="MaxBin2" markdown="1">
+{% include topics/microbiome/tutorials/metagenomics-binning/maxbin2_version.md %}
+</div>
+<div class="SemiBin" markdown="1">
+{% include topics/microbiome/tutorials/metagenomics-binning/semibin_version.md %}
+</div>
+<div class="CONCOCT" markdown="1">
+{% include topics/microbiome/tutorials/metagenomics-binning/concoct_version.md %}
+</div>
 
 # De-replication
 
