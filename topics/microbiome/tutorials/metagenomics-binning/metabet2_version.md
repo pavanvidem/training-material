@@ -14,7 +14,7 @@ MetaBAT is a popular software tool for metagenomics binning, and there are sever
 We will use the uploaded assembled fasta files as input to the algorithm (For simplicity reasons all other parameters will be preserved with their default values).
 
 > <hands-on-title>Individual binning of short-reads with MetaBAT 2</hands-on-title>
-> 1.  {% tool [MetaBAT 2](https://toolshed.g2.bx.psu.edu/view/iuc/metabat2/01f02c5ddff8) %} with parameters:
+> 1.  {% tool [MetaBAT 2](toolshed.g2.bx.psu.edu/repos/iuc/metabat2/metabat2/2.17+galaxy0) %} with parameters:
 >     - *"Fasta file containing contigs"*: `assembly fasta files`
 >     - In **Advanced options**, keep all as **default**.
 >     - In **Output options:**

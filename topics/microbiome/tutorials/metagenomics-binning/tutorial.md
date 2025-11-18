@@ -250,7 +250,7 @@ As explained before, there are many challenges to metagenomics binning. The most
 
 In this tutorial, we offer dedicated versions, which highlight each of the following binners:
 
-{% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" default="MetaBAT 2" %}
+{% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" default="MetaBAT2" %}
 
 <div class="MetaBAT2" markdown="1">
 {% include topics/microbiome/tutorials/metagenomics-binning/metabet2_version.md %}
