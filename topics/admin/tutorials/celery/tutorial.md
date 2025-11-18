@@ -117,7 +117,7 @@ First we need to add our new Ansible Roles to the `requirements.yml`:
 >    +- name: geerlingguy.redis
 >    +  version: 1.8.0
 >    +- name: usegalaxy_eu.flower
->    +  version: 1.0.2
+>    +  version: 2.1.0
 >    {% endraw %}
 >    ```
 >    {: data-commit="Add requirement" data-ref="add-req"}
@@ -428,7 +428,7 @@ Now that everything is running, we want to test celery and watch it processing t
 We can simply do that by starting an upload to our Galaxy.
 
 > <hands-on-title>Test Celery and monitor tasks with Flower</hands-on-title>
-> 1. First, open a new tab and enter your machines hostname followed by `/flower/dashboard` then log in with `username: admin` and you password.
+> 1. First, open a new tab and enter your machines hostname followed by `/flower/dashboard` then log in with `username: admin` and your password.
 >    You should see an overview with active workers.  
 >    Keep that tab open
 > 2. In split view, open a second browser window and open your Galaxy page.
