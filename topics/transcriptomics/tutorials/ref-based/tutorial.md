@@ -1560,7 +1560,7 @@ DESeq2 requires to provide for each factor, counts of samples in each category. 
 >
 >    We will now extract from the names the factors:
 >
-> 3. {% tool [Replace Text in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.3+galaxy1) %}
+> 3. {% tool [Replace Text in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2) %}
 >      - {% icon param-file %} *"File to process"*: output of **Extract element identifiers** {% icon tool %}
 >      - In *"Replacement"*:
 >         - In *"1: Replacement"*
@@ -1832,7 +1832,7 @@ The ID for each gene is something like FBgn0003360, which is an ID from the corr
 >    {{ page.zenodo_link }}/files/Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz
 >    ```
 >
-> 2. {% tool [Annotate DESeq2/DEXSeq output tables](toolshed.g2.bx.psu.edu/repos/iuc/deg_annotate/deg_annotate/1.1.0) %} with:
+> 2. {% tool [Annotate DESeq2/DEXSeq output tables](toolshed.g2.bx.psu.edu/repos/iuc/deg_annotate/deg_annotate/1.1.0+galaxy1) %} with:
 >    - {% icon param-file %} *"Tabular output of DESeq2/edgeR/limma/DEXSeq"*: the `DESeq2 result file` (output of **DESeq2** {% icon tool %})
 >    - *"Input file type"*: `DESeq2/edgeR/limma`
 >    - {% icon param-file %} *"Reference annotation in GFF/GTF format"*: imported gtf `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
@@ -1873,7 +1873,7 @@ The annotated table contains no column names, which makes it difficult to read. 
 
 > <hands-on-title>Add column names</hands-on-title>
 >
-> 1. Create a new file (`header`) from the following (header line of the DESeq2 output)
+> 1. Create a new **tabular** dataset (`header`) from the following (header line of the DESeq2 output)
 >
 >    ```text
 >    GeneID	Base mean	log2(FC)	StdErr	Wald-Stats	P-value	P-adj	Chromosome	Start	End	Strand	Feature	Gene symbol
@@ -1993,7 +1993,7 @@ In the first column we have the gene identifiers. They are unique, but difficult
 
 > <hands-on-title>Plot the heatmap of the normalized counts of these genes for the samples</hands-on-title>
 >
-> 1. {% tool [heatmap2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_heatmap2/ggplot2_heatmap2/3.1.3.1+galaxy0) %} to plot the heatmap:
+> 1. {% tool [heatmap2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_heatmap2/ggplot2_heatmap2/3.2.0+galaxy1) %} to plot the heatmap:
 >    - {% icon param-file %} *"Input should have column headers"*: `Normalized counts for the most differentially expressed genes`
 >    - *"Data transformation"*: `Log2(value+1) transform my data`
 >    - *"Enable data clustering"*: `Yes`
@@ -2041,7 +2041,7 @@ The Z-score $$z_{i,j}$$ for a gene $$i$$ in a sample $$j$$ given the normalized 
 >
 > > <hands-on-title>Compute the Z-score of all genes</hands-on-title>
 > >
-> > 1. {% tool [Table Compute](toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy0) %} with the following parameters to >  first substract the mean values per row
+> > 1. {% tool [Table Compute](toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy2) %} with the following parameters to >  first substract the mean values per row
 > >    - *"Input Single or Multiple Tables"*: `Single Table`
 > >      - {% icon param-file %} *"Table"*: `Normalized counts file on data ... and others` (output of **DESeq2** {% icon tool %})
 > >      - *"Type of table operation"*: `Perform a full table operation`
@@ -2050,7 +2050,7 @@ The Z-score $$z_{i,j}$$ for a gene $$i$$ in a sample $$j$$ given the normalized 
 > >
 > >            The `table.mean(1)` expression computes the mean for each row (here the genes) and `table.sub(table.mean(1), 0)` substracts each value by the mean of the row (computed with `table.mean(1)`)
 > >
-> > 2. {% tool [Table Compute](toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy0) %} with the following parameters:
+> > 2. {% tool [Table Compute](toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy2) %} with the following parameters:
 > >    - *"Input Single or Multiple Tables"*: `Multiple Table`
 > >      - Click on {% icon param-repeat %} *"Insert Tables"*
 > >      - In *"1: Tables"*:
@@ -2098,7 +2098,7 @@ We would like now to plot a heatmap for the Z-scores:
 
 > <hands-on-title>Plot the Z-score of the most differentially expressed genes</hands-on-title>
 >
-> 1. {% tool [heatmap2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_heatmap2/ggplot2_heatmap2/3.1.3.1+galaxy0) %} to plot the heatmap:
+> 1. {% tool [heatmap2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_heatmap2/ggplot2_heatmap2/3.2.0+galaxy1) %} to plot the heatmap:
 >    - {% icon param-file %} *"Input should have column headers"*: `Normalized counts for the most differentially expressed genes`
 >    - *"Data transformation"*: `Plot the data as it is`
 >    - *"Compute z-scores prior to clustering"*: `Compute on rows`
@@ -2126,7 +2126,7 @@ We have extracted genes that are differentially expressed in treated (PS gene-de
 
 > <hands-on-title>Prepare the first dataset for goseq</hands-on-title>
 >
-> 1. {% tool [Compute](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.0) %} on rows with the following parameters:
+> 1. {% tool [Compute](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} on rows with the following parameters:
 >    - {% icon param-file %} *"Input file"*: the `DESeq2 result file` (output of **DESeq2** {% icon tool %})
 >    - In *"Expressions"*:
 >      - {% icon param-text %} *"Add expression"*: `bool(float(c7)<0.05)`
@@ -2221,7 +2221,7 @@ We have now the two required input files for goseq.
     >
     > > <solution-title></solution-title>
     > >
-    > > 1. 60 GO terms (0.50%) are over-represented and 7 (0.07%) under-represented.
+    > > 1. 60 GO terms (0.49%) are over-represented and 7 (0.06%) under-represented.
     > >
     > >    {% tool [Filter data on any column using simple expressions](Filter1) %} on c8 (adjusted p-value for over-represented GO terms) and c9 (adjusted p-value for under-represented GO terms)
     > >
@@ -2291,7 +2291,7 @@ For example, the pathway `dme00010` represents the glycolysis process (conversio
     > > <solution-title></solution-title>
     > >
     > > 1. The file has 128 lines including an header, so 127 KEGG pathways have been identified.
-    > > 2. 2 KEGG pathways (2.34%) are over-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c6 (adjusted p-value for over-represented KEGG pathways)
+    > > 2. 2 KEGG pathways (1.56%) are over-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c6 (adjusted p-value for over-represented KEGG pathways)
     > > 3. The 2 KEGG pathways over-represented are `01100` and `00010`. By searching on the [KEGG database](https://www.genome.jp/kegg/kegg2.html) for them, we can find more information about these pathways: `01100` corresponds to all metabolic pathways and `00010` to pathway for Glycolysis / Gluconeogenesis.
     > > 4. No KEGG pathway is under-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c7 (adjusted p-value for under-represented KEGG pathways)
     > {: .solution}
