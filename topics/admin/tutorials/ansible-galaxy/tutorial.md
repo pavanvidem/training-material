@@ -1777,7 +1777,7 @@ Galaxy is now configured with an admin user, a database, and a place to store da
 
 > <hands-on-title>Status Check</hands-on-title>
 >
-> 1. Log in and check the status with `sudo galaxyctl status`
+> 1. Log in and check the status with `sudo galaxyctl status` (You may need to run `sudo galaxyctl -c /srv/galaxy/config/galaxy.yml status` when running the first time.)
 >
 >    > <code-in-title>Bash</code-in-title>
 >    > ```bash
