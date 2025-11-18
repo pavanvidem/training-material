@@ -83,7 +83,7 @@ The main tool we will use in this tutorial is [Planemo](https://planemo.readthed
 
 For the purposes of this tutorial, we assume you have a recent version of Planemo (0.74.4 or later) installed in a virtual environment. If you don't, please follow the [installation instructions](https://planemo.readthedocs.io/en/latest/installation.html#pip).
 
-{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" option3="Automated runs of a workflow for SARS-CoV-2 lineage assignment" default="Short-Version-with-an-existing-workflow" %}
+{% include _includes/cyoa-choices.html option1="Short Version with an existing workflow" option2="Long Version from scratch" option3="Automated runs of a workflow for SARS-CoV-2 lineage assignment" default="Short Version with an existing workflow" %}
 
 <div class="Short-Version-with-an-existing-workflow" markdown="1">
 
