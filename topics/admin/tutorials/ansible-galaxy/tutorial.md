@@ -1777,7 +1777,7 @@ Galaxy is now configured with an admin user, a database, and a place to store da
 
 > <hands-on-title>Status Check</hands-on-title>
 >
-> 1. Log in and check the status with `sudo galaxyctl status`
+> 1. Log in and check the status with `sudo galaxyctl status` (You may need to run `sudo galaxyctl -c /srv/galaxy/config/galaxy.yml status` when running the first time.)
 >
 >    > <code-in-title>Bash</code-in-title>
 >    > ```bash
@@ -2247,18 +2247,18 @@ A basic job configuration looks like this:
 {% raw %}
 ```yml
 runners:
-  local_runner:
-    load: galaxy.jobs.runners.local:LocalJobRunner
-    workers: 4
-execution:
-  default: local_env
-  environments:
-    local_env:
-      runner: local_runner
-      tmp_dir: true
-tools:
-- id: bwa
-  environment: local_env
+    local_runner:
+      load: galaxy.jobs.runners.local:LocalJobRunner
+      workers: 4
+  execution:
+    default: local_env
+    environments:
+      local_env:
+        runner: local_runner
+        tmp_dir: true
+  tools:
+    - class: local
+      environment: local_env
 ```
 {% endraw %}
 
@@ -2266,7 +2266,7 @@ The above job configuration defines a *runner* and an *execution* to allow Galax
 
 Firstly, the `runners` section contains a plugin called `local_runner` which loads the python code module for supporting local jobs. Next, the `execution` section contains an environment named `local_env` using the runner `local_runner`. It is also set as the default. So now everytime a user clicks "Execute" on a tool form, Galaxy will run the corresponding job locally using the python code specified.
 
-Finally, we have explicitly mapped the tool `bwa` to run in the `local_env` environment. This is more useful once you begin defining additional environments (especially those that run on clusters).
+Finally, we have explicitly mapped the `local` class of tools to run in the `local_env` environment. These special tools aren't parameterized for remote execution - expression tools, upload, etc.
 
 > <tip-title>Want to use something else?</tip-title>
 > There are a lot of other plugins available for Galaxy for using other resources such as docker containers, kubernetes clusters, Pulsar servers, and HPC clusters to name a few. See the Galaxy documentation on [job configuration](https://docs.galaxyproject.org/en/master/admin/jobs.html) for more details on these plugins and their configuration.
