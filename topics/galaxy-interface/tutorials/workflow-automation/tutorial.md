@@ -28,6 +28,7 @@ contributions:
   authorship:
     - simonbray
     - wm75
+    - lecorguille
   funding:
     - elixir-europe
     - deNBI
