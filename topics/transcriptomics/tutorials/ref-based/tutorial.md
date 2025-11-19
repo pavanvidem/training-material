@@ -84,17 +84,17 @@ recordings:
 input_histories:
   - label: "Usegalaxy.eu - inputs part 1"
     history: https://usegalaxy.eu/u/delislel/h/inputs-gtn-refbased-20251118
-    date: "2025-11-18"
+    date: 2025-11-18
   - label: "Usegalaxy.eu - inputs part 2"
     history: https://usegalaxy.eu/u/delislel/h/inputs-gtn-refbased-20251118-part2
-    date: "2025-11-18"
+    date: 2025-11-18
 answer_histories:
   - label: "UseGalaxy.eu - results part 1"
     history: https://usegalaxy.eu/u/delislel/h/answers-gtn-refbased-20251118-part1
-    date: "2025-11-18"
+    date: 2025-11-18
   - label: "UseGalaxy.eu - results part 2"
     history: https://usegalaxy.eu/u/delislel/h/answers-gtn-refbased-20251118-part2
-    date: "2025-11-18"
+    date: 2025-11-18
 ---
 
 
