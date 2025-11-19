@@ -622,7 +622,7 @@ The BAM file contains information for all our reads, making it difficult to insp
 > > <hands-on-title>Check gene body coverage</hands-on-title>
 > >
 > > 1. {% tool [Samtools view](toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.21+galaxy0) %} with the following parameters:
-> >    - {% icon param-collection %} *"SAM/BAM/CRAM data set"*: `mapped_reads` (output of **RNA STAR** {% icon tool %})
+> >    - {% icon param-collection %} *"SAM/BAM/CRAM data set"*: `RNA STAR on collection N: mapped.bam` (output of **RNA STAR** {% icon tool %})
 > >    - *"What would you like to look at?"*: `A filtered/subsampled selection of reads`
 > >        - In *"Configure subsampling"*:
 > >            - *"Subsample alignment"*: `Specify a target # of reads`
@@ -1801,7 +1801,7 @@ Comment wrt beta prior option: the default setting for DESeq2 changed from betaP
 
     5. An [MA plot](https://en.wikipedia.org/wiki/MA_plot):
 
-        This displays the global view of the relationship between the expression change of conditions (log ratios, M), the average expression strength of the genes (average mean, A), and the ability of the algorithm to detect differential gene expression. The genes that passed the significance threshold (adjusted p-value < 0.1) are colored in red.
+        This displays the global view of the relationship between the expression change of conditions (log ratios, M), the average expression strength of the genes (average mean, A), and the ability of the algorithm to detect differential gene expression. The genes that passed the significance threshold (adjusted p-value < 0.1) are colored in blue.
 
 - A summary file with the following values for each gene:
 
@@ -2258,7 +2258,7 @@ We have now the two required input files for goseq.
     >
     > > <solution-title></solution-title>
     > >
-    > > 1. 60 GO terms (0.49%) are over-represented and 7 (0.06%) under-represented.
+    > > 1. 60 GO terms (0.50%) are over-represented and 7 (0.07%) under-represented.
     > >
     > >    {% tool [Filter data on any column using simple expressions](Filter1) %} on c8 (adjusted p-value for over-represented GO terms) and c9 (adjusted p-value for under-represented GO terms)
     > >
@@ -2328,7 +2328,7 @@ For example, the pathway `dme00010` represents the glycolysis process (conversio
     > > <solution-title></solution-title>
     > >
     > > 1. The file has 128 lines including an header, so 127 KEGG pathways have been identified.
-    > > 2. 2 KEGG pathways (1.56%) are over-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c6 (adjusted p-value for over-represented KEGG pathways)
+    > > 2. 2 KEGG pathways (2.34%) are over-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c6 (adjusted p-value for over-represented KEGG pathways)
     > > 3. The 2 KEGG pathways over-represented are `01100` and `00010`. By searching on the [KEGG database](https://www.genome.jp/kegg/kegg2.html) for them, we can find more information about these pathways: `01100` corresponds to all metabolic pathways and `00010` to pathway for Glycolysis / Gluconeogenesis.
     > > 4. No KEGG pathway is under-represented, using {% tool [Filter data on any column using simple expressions](Filter1) %} on c7 (adjusted p-value for under-represented KEGG pathways)
     > {: .solution}
