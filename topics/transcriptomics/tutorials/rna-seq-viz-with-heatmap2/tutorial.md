@@ -10,8 +10,22 @@ objectives:
 time_estimation: "1h"
 key_points:
   - "Heatmaps can be used to visualize the expression of genes in RNA-Seq samples"
-contributors:
-  - mblue9
+
+contributions:
+  authorship:
+    - mblue9
+  editing:
+    - lldelisle
+
+input_histories:
+  - label: "Usegalaxy.eu"
+    history: https://usegalaxy.eu/u/delislel/h/inputs-gtn-heatmap2-20251120
+    date: 2025-11-20
+
+answer_histories:
+  - label: "UseGalaxy.eu"
+    history: https://usegalaxy.eu/u/delislel/h/results-gtn-heatmap2-20251120
+    date: 2025-11-20
 ---
 
 
