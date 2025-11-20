@@ -1035,7 +1035,9 @@
             "workflow_outputs": []
         }
     },
-    "tags": [],
+    "tags": [
+        "transcriptomics"
+    ],
     "uuid": "1a4aef65-3514-418f-bf44-521173ece180",
     "version": 5
 }
