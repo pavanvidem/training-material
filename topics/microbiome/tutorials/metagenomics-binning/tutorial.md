@@ -333,6 +333,7 @@ we have provided the results here as well.
 > 2. Create a collection for each bin set called e.g. maxbin, semibin ... by selecting only the bins created by this binner and creating a collection:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
+{: .hands_on}
 
 Once each bin set is converting into one collection they can be converted into a contig to bin mapping table. Perform this step for every bin set.
 
