@@ -362,10 +362,10 @@ A picture says more than 1000 words! Accordingly, we aim to delve deeper into th
 
 > <hands-on-title> Visualize the Content of Poem One </hands-on-title>
 >
-> 1. Run {% icon workflow-run %} {% tool [Generate a word cloud](toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy2) %} with the following parameters:
+> 1. Run {% icon workflow-run %} {% tool [Generate a word cloud](toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Input file"*: `SoY_Cheap_Repo_cleaned.txt` (output of **Replace Text** {% icon tool %})
 >    - *"Do you want to select a special font?"*: `Use the default DroidSansMono font`
->    - *"Color option"*: `Color`
+>    - *"Color option"*: `Colormap`
 >    - *"Scaling of words by frequency (0 - 1)"*: `0.8`
 >
 >    > <comment-title> Adapting the Word Cloud </comment-title>
@@ -377,14 +377,14 @@ A picture says more than 1000 words! Accordingly, we aim to delve deeper into th
 
 We also rerun {%icon dataset-rerun %} the word cloud with the second poem.
 
-The word cloud for the second text is created in the same way. We suggest rerunning the tool with the second text, but with the same parameters you used for creating the first word cloud image, for better comparability. That makes both comparable.
+The word cloud for the second text is created in the same way. We suggest rerunning the tool with the second text, using the same parameters as those for creating the first word cloud image for better comparability. That makes both comparable.
 
 > <hands-on-title> Visualize the Content of Poem Two </hands-on-title>
 >
-> 1. Run {% icon workflow-run %} {% tool [Generate a word cloud](toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy2) %} with the following parameters:
+> 1. Run {% icon workflow-run %} {% tool [Generate a word cloud](toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Input file"*: `SoY_Univ_Mag_cleaned.txt` (output of **Replace Text** {% icon tool %})
 >    - *"Do you want to select a special font?"*: `Use the default DroidSansMono font`
->    - *"Color option"*: `Color`
+>    - *"Color option"*: `Colormap`
 >    - *"Scaling of words by frequency (0 - 1)"*: `0.8`
 >
 >    > <comment-title> Uniqueness of the Word Cloud </comment-title>
@@ -433,7 +433,7 @@ Regular Expressions help again by changing all spaces with line breaks with just
 
 > <hands-on-title> Changing Layout of Poem One </hands-on-title>
 >
-> 1. Run {% icon workflow-run %} {% tool [Replace Text - in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy0) %} with the following parameters:
+> 1. Run {% icon workflow-run %} {% tool [Replace Text - in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"File to process"*: `SoY_Cheap_Repo_cleaned.txt`
 >    - In *"Replacement"*:
 >        - {% icon param-repeat %} *"Insert Replacement"*
@@ -457,7 +457,7 @@ When you click on the eye {% icon galaxy-eye %} icon of the data set in the hist
 
 > <hands-on-title> Changing Layout of Poem Two </hands-on-title>
 >
-> 1. Run {% icon workflow-run %} {% tool [Replace Text - in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy0) %} with the following parameters:
+> 1. Run {% icon workflow-run %} {% tool [Replace Text - in entire line](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"File to process"*: `SoY_Univ_Mag_cleaned.txt`
 >    - In *"Replacement"*:
 >        - {% icon param-repeat %} *"Insert Replacement"*
