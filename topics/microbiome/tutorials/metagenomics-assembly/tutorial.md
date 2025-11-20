@@ -200,7 +200,7 @@ For more information on dereplication, check out the [metagenomic binning tutori
 In this tutorial, to show all steps, we will run an **individual assembly**.
 
 > <comment-title>Why not both?</comment-title>
-> Sometimes it is important to run both individual assembly and co-assembly, and use both outputs to get better results for that dataset.
+> It is also possible to run both individual assembly and co-assembly, and this approach can recover MAGs effectively. In this case: individual assembly can recover MAGs with a low amount of contamination, while co-assembly also allows for the recovery of low-abundance MAGs, with the downside of potentially more contamination. Although this approach can be effective, it also requires high computational resources and should be considered carefully.
 >
 > > {% snippet faqs/galaxy/fastq_groupmerge.md %}
 >
@@ -269,7 +269,7 @@ Both tools are available in Galaxy. But currently, only MEGAHIT can be used in i
 
 > <question-title>Contig metrics</question-title>
 >
-> 1. How many contigs has been for ERR2231568 sample?
+> 1. How many contigs have been assembled for sample ERR2231568 ?
 > 2. And for ERR2231572?
 > 3. What is the minimum length of the contigs?
 >
@@ -348,7 +348,7 @@ On the top of each report is a table with in rows statistics for contigs larger 
 
       A base in the reference genome is counted as aligned if at least one contig has at least one alignment to this base.
 
-      We did not provide any reference there, but metaQUAST try to identify genome content of the metagenome by aligning contigs to [SILVA](https://www.arb-silva.de/) 16S rRNA database. For each assembly, 50 reference genomes with top scores are chosen. The full reference genomes of the identified organisms are afterwards downloaded from NCBI to map the assemblies on them and compute the genome fractions.
+      We did not provide any reference genome, but metaQUAST tries to identify the genome content of the metagenome by aligning contigs to [SILVA](https://www.arb-silva.de/) 16S rRNA database. For each assembly, 50 reference genomes with top scores are chosen. The full reference genomes of the identified organisms are afterwards downloaded from NCBI to map the assemblies on them and compute the genome fractions.
 
       > <comment-title>Metagenome reference</comment-title>
       > The alignment to automatically downloaded genomes for metagenomes is rather ambiguous and time-consuming. Most large-scale pipelines skip this step and set the **Maximum number of reference genomes (per each assembly) to download after searching in the SILVA database\*** option to `0`.
