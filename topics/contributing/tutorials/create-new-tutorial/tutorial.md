@@ -126,7 +126,7 @@ Once the topic has been chosen, we can create the tutorial. An ideal tutorial in
 - a YAML file `data-library.yaml`  with the links to the input data needed for the tutorial
 
 The most important file is the `tutorial.md`, where the content of the tutorial is. The other files are not mandatory. They are there to support the tutorial and make it robust and usable across many environments. But they can help a lot in the development of a new tutorial.
-The `data-library.yaml` file allows running automated tests on the GTN, improving the quality of your tutorial. Additionally, when you have filled this, your dataset becomes accessible from within Galaxy's data libraries, allowing you quicker access during training courses.
+The `data-library.yaml` is used by Galaxy servers to create a *Shared Data Library* containing your tutorial data, allowing you quicker access during training courses. If you have defined a `zenodo_link` in your tutorial metadata, then the `data-library.yaml` file will be automatically added by one of the GTN GitHub Actions if it is missing, so there is no need to add it yourself. 
 
 # Create the workflow
 
