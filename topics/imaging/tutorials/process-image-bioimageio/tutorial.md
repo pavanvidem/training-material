@@ -17,8 +17,9 @@ key_points:
 - Input image and model need to be compatible in size and axes
 - Galaxy returns both the predicted image and its tensor as output
 tags:
-- bioimaging
-- AI
+- Image segmentation
+- Image annotation
+- Deep learning
 contributions:
   authorship:
     - dianichj

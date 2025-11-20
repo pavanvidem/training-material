@@ -35,10 +35,11 @@ contributions:
     - fiesta
     - oscars
 tags:
-- imageanalysis
-- segmentation
-- voronoi
-
+- Tessellation
+- Image segmentation
+- Object counting
+- Overlay
+- Multi-channel image
 ---
 
 

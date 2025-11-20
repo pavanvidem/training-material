@@ -22,9 +22,9 @@ key_points:
 - All repositories require some metadata, so collecting the metadata alongside data acquisition will make this process easier.
 
 tags:
-- fair
-- data management
-- bioimaging
+- Data management
+- Metadata
+- Bioimaging
 
 priority: 4
 

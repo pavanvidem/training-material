@@ -19,7 +19,10 @@ key_points:
 contributors:
 - sunyi000 
 - maulakhan
-
+tags: 
+  - Image segmentation
+  - Image annotation
+  - Deep learning
 ---
 
 

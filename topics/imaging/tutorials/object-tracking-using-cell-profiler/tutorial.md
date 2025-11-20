@@ -23,6 +23,10 @@ contributions:
     - sunyi000
     - beatrizserrano
     - jkh1
+
+tags:
+  - Isolated object tracking
+  - Multi-channel image
 ---
 
 

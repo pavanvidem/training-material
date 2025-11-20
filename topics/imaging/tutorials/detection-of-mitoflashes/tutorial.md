@@ -21,9 +21,9 @@ contributions:
     - dianichj
     - kostrykin
 tags:
-  - bioimaging
-  - mitoflash
-  - mitochondria
+  - Isolated object tracking
+  - Temporal analysis
+  - Time-lapse data
     
 ---
 

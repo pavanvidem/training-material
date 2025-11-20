@@ -20,9 +20,9 @@ key_points:
 - REMBI describes useful guidelines for bioimaging that can help unification and FARIfication of the data.
 
 tags:
-- fair
-- data management
-- bioimaging
+- Data management
+- Metadata
+- Bioimaging
 
 priority: 5
 

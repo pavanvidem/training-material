@@ -26,6 +26,9 @@ contributions:
   reviewing:
     - kostrykin
     - beatrizserrano
+tags:
+  - Image segmentation
+  - Tissue imaging
 ---
 
 

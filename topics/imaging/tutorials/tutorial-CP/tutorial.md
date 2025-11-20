@@ -31,6 +31,10 @@ contributions:
     - jkh1
 
 zenodo_link: ''
+tags:
+  - Image segmentation
+  - Object feature extraction
+  - Multi-channel image
 ---
 
 

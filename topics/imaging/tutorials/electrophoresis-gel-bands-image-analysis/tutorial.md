@@ -21,10 +21,11 @@ requirements:
     tutorials:
       - imaging-introduction
 tags:
-- RNA
-- DNA
-- Protein
-- bioimaging
+  - ROI selection
+  - Conversion
+  - Object feature extraction
+  - Multi-channel image
+
 contributions:
   authorship:
     - reytakop
