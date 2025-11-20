@@ -221,7 +221,7 @@ When an Interactive Tool's Docker container starts, it will be assigned a random
 
 As you can see, the client only ever speaks to nginx on the Galaxy server running on the standard https port (443), never directly to the interactive tool (which may be running on a node that does not even have a public IP address). By default, the mapping of GxIT invocation and its corresponding host/port is kept in a SQLite database known as the *Interactive Tools Session Map*, and the path to this database is important, since both Galaxy and the proxy need access to it.
 
-The GIE Proxy is written in [Node.js][nodejs]. A straightforward method to set it up is to use Galaxy's process manager, [Gravity](https://gravity.readthedocs.io/), to install and configure it.
+The GxIT Proxy is written in [Node.js][nodejs]. A straightforward method to set it up is to use Galaxy's process manager, [Gravity](https://gravity.readthedocs.io/), to install and configure it.
 
 [nodejs]: https://nodejs.org/
 [usegalaxy_eu-gie_proxy]: https://galaxy.ansible.com/usegalaxy_eu/gie_proxy
@@ -230,17 +230,17 @@ The GIE Proxy is written in [Node.js][nodejs]. A straightforward method to set i
 
 > <hands-on-title>Installing and configuring the Proxy using Gravity</hands-on-title>
 >
-> 1. Edit the group variables file, `group_vars/galaxyservers.yml`; the GIE Proxy configuration lives under the `gravity['galaxy_config']['gx_it_proxy']` section. The available settings are:
+> 1. Edit the group variables file, `group_vars/galaxyservers.yml`; the GxIT Proxy configuration lives under the `gravity['galaxy_config']['gx_it_proxy']` section. The available settings are:
 >
 >
 >    | Setting         | Type    | Description                                                                                                                                                                                                                                         |
 >    |-----------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
->    | `enable`        | bool    | Set to `true` to enable the GIE Proxy. Defaults to `false`.                                                                                                                                                                                           |
->    | `version`       | str     | Version specifier for the GIE Proxy Node.js package. Defaults to `>=0.0.6`.                                                                                                                                                                         |
+>    | `enable`        | bool    | Set to `true` to enable the GxIT Proxy. Defaults to `false`.                                                                                                                                                                                           |
+>    | `version`       | str     | Version specifier for the GxIT Proxy Node.js package. Defaults to `>=0.0.6`.                                                                                                                                                                         |
 >    | `ip`            | str     | Public-facing IP of the proxy. Defaults to `localhost`.                                                                                                                                                                                             |
 >    | `port`          | int     | Public-facing port of the proxy. Defaults to `4002`.                                                                                                                                                                                                |
 >    | `sessions`      | str     | Path to the Interactive Tools Session Map database. Defaults to `database/interactivetools_map.sqlite`.                                                                                                                                             |
->    | `verbose`       | bool    | Include verbose messages in the GIE Proxy. Defaults to `true`.                                                                                                                                                                                      |
+>    | `verbose`       | bool    | Include verbose messages in the GxIT Proxy. Defaults to `true`.                                                                                                                                                                                      |
 >    | `forward_ip`    | str     | Forward all requests to this IP. This is an advanced option that is only needed when proxying to remote interactive tool container that cannot be reached through the local network.                                                                |
 >    | `forward_port`  | int     | Forward all requests to this port. This is an advanced option that is only needed when proxying to remote interactive tool container that cannot be reached through the local network.                                                              |
 >    | `reverse_proxy` | str     | Rewrite location blocks with proxy port. This is an advanced option that is only needed when proxying to remote interactive tool container that cannot be reached through the local network. Defaults to `false`.                                   |
@@ -343,7 +343,7 @@ As explained in the previous section, we will proxy the Interactive Tools Proxy 
 >        access_log  syslog:server=unix:/dev/log;
 >        error_log   syslog:server=unix:/dev/log;
 >
->        # Proxy all requests to the GIE Proxy application
+>        # Proxy all requests to the GxIT Proxy application
 >        location / {
 >            proxy_redirect off;
 >            proxy_http_version 1.1;
