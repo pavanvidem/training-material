@@ -2040,7 +2040,7 @@ To extract the normalized counts for the interesting genes, we join the normaliz
 
 We now have a table with 114 lines (the 113 most differentially expressed genes and a header) and the normalized counts for these genes across the 7 samples.
 
-In the first column we have the gene identifiers. They are unique, but difficult to understand. If you want to work with the (more familiar) gene symbols, you can use "c21,c2-c8" for the column selection. However, be aware, gene symbols might not be unique and further down, when using the goseq tool, you need to switch to "Gene Symbol" as the "Gene ID format".
+In the first column we have the gene identifiers. They are unique, but difficult to understand. If you want to work with the (more familiar) gene symbols, you can use "c21,c2-c8" for the column selection. However, be aware, gene symbols might not be unique.
 
 > <hands-on-title>Plot the heatmap of the normalized counts of these genes for the samples</hands-on-title>
 >
