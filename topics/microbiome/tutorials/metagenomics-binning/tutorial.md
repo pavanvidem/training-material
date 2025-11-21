@@ -84,7 +84,7 @@ There are several approaches to metagenomics binning, including:
 
 ## Binning challanges
 
-**Metagenomic binning is a complex process that involves many steps and can be challenging due to several problems that can occur during the process**. Some of the most common problems encountered in metagenomic binning include:
+Metagenomic binning is a complex process that involves many steps and can be challenging due to several problems that can occur during the process. Some of the most common problems encountered in metagenomic binning include:
 
 - **High complexity**: Metagenomic samples contain DNA from multiple organisms, which can lead to high complexity in the data.
 - **Fragmented sequences**: Metagenomic sequencing often generates fragmented sequences, which can make it difficult to assign reads to the correct bin.
@@ -286,7 +286,7 @@ As explained before, there are many challenges to metagenomics binning. The most
 
 In this tutorial, we offer dedicated versions, which highlight each of the following binners:
 
-{% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" default="MetaBAT2" %}
+{% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" option5="COMEBin" default="MetaBAT2" %}
 
 <div class="MetaBAT2" markdown="1">
 {% include topics/microbiome/tutorials/metagenomics-binning/metabet2_version.md %}
@@ -300,11 +300,14 @@ In this tutorial, we offer dedicated versions, which highlight each of the follo
 <div class="CONCOCT" markdown="1">
 {% include topics/microbiome/tutorials/metagenomics-binning/concoct_version.md %}
 </div>
+<div class="COMEBin" markdown="1">
+{% include topics/microbiome/tutorials/metagenomics-binning/comebin_version.md %}
+</div>
 
 # Bin refinement
 
 Now, that you have produced bins with your favorite Binning algorithms you can refine the recovered bins. 
-Thereore, you need to convert the bins into a contig to bin mapping table, combine the tables from each binner into one collection and
+Therefore, you need to convert the bins into a contig to bin mapping table, combine the tables from each binner into one collection and
 use Binette to creat consensus bins. An alternative tool would be {% tool [DAS Tool](toolshed.g2.bx.psu.edu/repos/iuc/das_tool/das_tool/1.1.7+galaxy1) %} which is also available in Galaxy.
 
 For the refinement we will use the bins created by all the binners used before. If you do not want to run them all by yourself,
@@ -385,65 +388,11 @@ Once each bin set is converting into one collection they can be converted into a
 >
 {: .question}
 
-
-# De-replication
-
-De-replication is the process of identifying sets of genomes that are the "same" in a list of genomes, and removing all but the “best” genome from each redundant set. How similar genomes need to be to be considered “same”, how to determine which genome is “best”, and other important decisions are discussed in [Important Concepts](https://drep.readthedocs.io/en/latest/choosing_parameters.html).
-
-A common use for genome de-replication is the case of individual assembly of metagenomic data. If metagenomic samples are collected in a series, a common way to assemble the short reads is with a “co-assembly”. That is, combining the reads from all samples and assembling them together. The problem with this is assembling similar strains together can severely fragment assemblies, precluding recovery of a good genome bin. An alternative option is to assemble each sample separately, and then “de-replicate” the bins from each assembly to make a final genome set.
-
-![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./individual-assembly.png "Individual assembly followed by de-replication vs co-assembly."){:width="80%"}
-
-Several tools have been designed for the proccess of de-replication. **`dRep`** is a software tool designed for the dereplication of genomes in metagenomic datasets. The goal is to retain a representative set of genomes to improve downstream analyses, such as taxonomic profiling and functional annotation.
-
-An typical workflow of how `dRep` works for dereplication in metagenomics includes:
-
-- *Genome Comparison*: `dR> <comment-title></comment-title>
->
-> Since the CheckM process would take some time we are just going to import the results:
->
-> > <hands-on-title>Import generated `CheckM lineage_wf` results</hands-on-title>
-> >
-> > 1. Import the `CheckM lineage_wf` report files from [Zenodo]({{ page.extra.zenodo_link_results }}) or the Shared Data library:
-> >
-> >    ```text
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231567__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231568__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231569__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231570__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231571__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231572__Bin_statistics.txt
-> >    ```
-> >
-> {: .hands_on}
-{: .comment}ep` uses a pairwise genome comparison approach to assess the similarity between genomes in a given metagenomic dataset.
-
-- *Clustering*: Based on the genome similarities, `dRep` performs clustering to group similar genomes into "genome clusters." Each cluster represents a group of closely related genomes.
-
-- *Genome Quality Assessment*: `dRep` evaluates the quality of each genome within a cluster. It considers factors such as completeness, contamination, and strain heterogeneity.
-
-- *Genome Selection*: Within each genome cluster, `dRep` selects a representative genome based on user-defined criteria. This representative genome is considered as the "dereplicated" version of the cluster.
-
-- *Dereplication Output*: The output of `dRep` includes information about the dereplicated genomes, including their identity, completeness, and contamination. The user can choose a threshold for genome similarity to control the level of dereplication.
-
-> <hands-on-title>General list of actions for de-replication</hands-on-title>
-> 1. Create new history
-> 2. Assemble each sample separately using your favorite assembler
-> 3. Perform a co-assembly to catch low-abundance microbes
-> 4. Bin each assembly separately using your favorite binner
-> 5. Bin co-assembly using your favorite binner
-> 6. Pull the bins from all assemblies together
-> 7. rRun **`dRep`** on them
-> 8. Perform downstream analysis on the de-replicated genome list
->
-{: .hands_on}
-
-
 # Checking the quality of the bins
 
 Once binning is done, it is important to check its quality.
 
-Binning results can be evaluated with **CheckM** ({%cite Parks2015%}). CheckM is a software tool used in metagenomics binning to assess the completeness and contamination of genome bins. Metagenomics binning is the process of separating DNA fragments from a mixed community of microorganisms into individual bins, each representing a distinct genome.
+Binning results can be evaluated with **CheckM** ({%cite Parks2015%}). CheckM is a software tool used in metagenomics binning to assess the completeness and contamination of genome bins. 
 
 CheckM compares the genome bins to a set of universal single-copy marker genes that are present in nearly all bacterial and archaeal genomes. By identifying the presence or absence of these marker genes in the bins, CheckM can estimate the completeness of each genome bin (i.e., the percentage of the total set of universal single-copy marker genes that are present in the bin) and the degree of contamination (i.e., the percentage of marker genes that are found in more than one bin).
 
@@ -463,48 +412,17 @@ Based on the previous analysis we will use **CheckM lineage_wf**: *Assessing the
 
 `CheckM lineage_wf` is a specific workflow within the CheckM software tool that is used for taxonomic classification of genome bins based on their marker gene content. This workflow uses a reference database of marker genes and taxonomic information to classify the genome bins at different taxonomic levels, from domain to species.
 
+Now you can investigate the completeness and contamination of any of your previously generated genome bins as well as the refined set.
+
 > <hands-on-title>Assessing the completeness and contamination of genome bins using lineage-specific marker sets with `CheckM lineage_wf`</hands-on-title>
 > 1.  {% tool [CheckM lineage_wf](toolshed.g2.bx.psu.edu/repos/iuc/checkm_lineage_wf/checkm_lineage_wf/1.2.0+galaxy0) %} with parameters:
 >     - *"Bins"*: `Folder containing the produced bins`
-><!--      - In *Advanced options*
->       - *"Percentage of good contigs considered for binning decided by connection among contigs"*: `default 95`
->       - *"Minimum score of an edge for binning"*: `default 60`
->       - *"Maximum number of edges per node"*: `default 200`
->       - *"TNF probability cutoff for building TNF graph"*: `default 0`
->       - *"Turn off additional binning for lost or small contigs?"*: `default "No"`
->       - *"Minimum mean coverage of a contig in each library for binning"*: `default 1`
->       - *"Minimum total effective mean coverage of a contig for binning "*: `default 1`
->       - *"For exact reproducibility"*: `default 0`
->     - In *Output options*
->       - *"Minimum size of a bin as the output"*: `default 200000`
->       - *"Output only sequence labels as a list in a column without sequences?"*: `default "No"`
->       - *"Save cluster memberships as a matrix format?"*: `"Yes"` -->
->
 {: .hands_on}
 
-> <comment-title></comment-title>
->
-> Since the CheckM process would take some time we are just going to import the results:
->
-> > <hands-on-title>Import generated `CheckM lineage_wf` results</hands-on-title>
-> >
-> > 1. Import the `CheckM lineage_wf` report files from [Zenodo]({{ page.extra.zenodo_link_results }}) or the Shared Data library:
-> >
-> >    ```text
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231567__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231568__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231569__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231570__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231571__Bin_statistics.txt
-> >    {{ page.extra.zenodo_link_results }}/files/CheckM_lineage_wf_on_data_ERR2231572__Bin_statistics.txt
-> >    ```
-> >
-> {: .hands_on}
-{: .comment}
 
 The output of "CheckM lineage_wf" includes several files and tables that provide information about the taxonomic classification and quality assessment of genome bins. Here are some of the key outputs:
 
-- **CheckM Lineage Workflow Output Report**: This report provides a summary of the quality assessment performed by CheckM. It includes statistics such as the number of genomes analyzed, their completeness, contamination, and other quality metrics.
+- **CheckM Lineage Workflow Output Report (Bin statistics)**: This report provides a summary of the quality assessment performed by CheckM. It includes statistics such as the number of genomes analyzed, their completeness, contamination, and other quality metrics.
 
 - **Lineage-specific Quality Assessment**: CheckM generates lineage-specific quality assessment files for each analyzed genome. These files contain detailed information about the completeness and contamination of the genome based on its taxonomic lineage.
 
@@ -516,9 +434,120 @@ The output of "CheckM lineage_wf" includes several files and tables that provide
 
 It should be noted that "CheckM lineage_wf" offers a range of optional outputs that can be generated to provide additional information to the user.
 
+To keep it simple we will check the bin statistics to investigate the performance of our previous binning efforts.
+
+> <question-title>Binning performance</question-title>
+>
+> 1. Which binner created the best bins?
+> 2. How well did the bin refinement work?
+>
+> > <solution-title></solution-title>
+> >
+> > **MetaBAT2**
+> >
+> > | Bin ID | Marker lineage        | # genomes | # markers | # marker sets | 0  | 1  | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity |
+> > |--------|------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
+> > | 1      | k__Bacteria (UID203)   | 5449      | 103        | 58             | 89 | 14 | 0  | 0  | 0  | 0  | 15.67        | 0.00          | 0.00                  |
+> >
+> > **SemiBin**
+> >
+> > | Bin ID     | Marker lineage        | # genomes | # markers | # marker sets | 0  | 1  | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity |
+> > |------------|------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
+> > | SemiBin_0  | k__Bacteria (UID203)   | 5449      | 103        | 58             | 89 | 14 | 0  | 0  | 0  | 0  | 15.67        | 0.00          | 0.00                  |
+> >
+> > **MaxBin**
+> >
+> > | Bin ID | Marker lineage        | # genomes | # markers | # marker sets | 0  | 1  | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity |
+> > |--------|------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
+> > | 001    | k__Bacteria (UID203)   | 5449      | 103        | 58             | 92 | 11 | 0  | 0  | 0  | 0  | 10.50        | 0.00          | 0.00                  |
+> > | 002    | k__Bacteria (UID203)   | 5449      | 103        | 58             | 99 | 4  | 0  | 0  | 0  | 0  | 6.90         | 0.00          | 0.00                  |
+> >
+> > **CONCOCT**
+> >
+> > | Bin ID | Marker lineage         | # genomes | # markers | # marker sets | 0  | 1  | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity |
+> > |--------|-------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
+> > | 0      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 1      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 2      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 3      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 4      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 5      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 6      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 7      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 8      | root (UID1)             | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> > | 9      | k__Bacteria (UID203)    | 5449      | 103        | 58             | 89 | 14 | 0  | 0  | 0  | 0  | 15.67        | 0.00          | 0.00                  |
+> >
+> > **Binette**
+> >
+> > | Bin ID        | Marker lineage        | # genomes | # markers | # marker sets | 0  | 1  | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity |
+> > |---------------|------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
+> > | binette_bin1  | k__Bacteria (UID203)   | 5449      | 103        | 58             | 89 | 14 | 0  | 0  | 0  | 0  | 15.67        | 0.00          | 0.00                  |
+> > | binette_bin2  | root (UID1)            | 5656      | 56         | 24             | 56 | 0  | 0  | 0  | 0  | 0  | 0.00         | 0.00          | 0.00                  |
+> >
+> > **MetaBAT2** and **SemiBin** generated the best‐performing bins in this dataset, each recovering one bin with ~15.7% completeness and no detectable contamination. 
+> >
+> > **MaxBin** produced bins of lower completeness (10.5% and 6.9%), but still without contamination. 
+> >
+> > **CONCOCT** largely failed to recover meaningful bins in this dataset: most bins show 0% completeness. This often occurs with CONCOCT on small assemblies or uneven coverage, because its Gaussian clustering model struggles when the number of contigs is low or the variation in coverage is insufficient.
+> >
+> > **Binette** produced one bin essentially identical in quality to the MetaBAT2/SemiBin bins (~15.7% completeness), plus a root-level bin with no completeness. Binette therefore could recover the most completely bin sucessful. The additional
+loq quality bin, would have normally be filtered by Binette if the `Set minimus completeness` parameter would be set to a reasonable values, often > 75 % for true biological data.
+> >
+> {: .solution}
+>
+{: .question}
+
+> <comment-title>CheckM2</comment-title>
+> CheckM2 ({%cite Chklovski2023CheckM2%}) is the successor of CheckM, but CheckM is still widely used, since its marker-based logic can be more interpretable in a biological sense. E.g. to date (2025-11-21) NCBI still allows to submit MAGs to genbank if either checkM or checkM2 has a completeness of > 90% (see the [NCBI WGS/MAG submission guidelines](https://www.ncbi.nlm.nih.gov/genbank/wgsfaq/#metagen)).
+>
+> **Key differences compared to CheckM1**:
+>
+> * CheckM1 relies primarily on lineage-specific single-copy marker genes to estimate completeness and contamination of microbial genomes.
+> * CheckM2 uses a machine-learning (gradient boost / ML) approach trained on simulated and experimental genomes, and does *not* strictly require a well-represented lineage in its marker database. 
+> * CheckM2 is reported to be more accurate and faster for both bacterial and archaeal lineages, especially when dealing with novel or very reduced-genome lineages (e.g., candidate phyla, CPR/DPANN) where classical marker-gene methods may struggle. 
+> * The database of CheckM2 can be updated more rapidly with new high-quality reference genomes, which supports scalability and improved performance over time.
+>
+> If you’re working with MAGs from under-represented taxa (novel lineages) or very small genomes (streamlined bacteria/archaea), CheckM2 tends to give more reliable estimates of completeness/contamination. For more “standard” microbial genomes from well-studied taxa, CheckM1 may still work well, but you may benefit from the improved performance with CheckM2.
+>
+{: .comment}
+
+# De-replication
+
+De-replication is the process of identifying sets of genomes that are the "same" in a list of genomes, and removing all but the “best” genome from each redundant set. How similar genomes need to be to be considered “same”, how to determine which genome is “best”, and other important decisions are discussed in [Important Concepts](https://drep.readthedocs.io/en/latest/choosing_parameters.html).
+
+A common use for genome de-replication is the case of individual assembly of metagenomic data. If metagenomic samples are collected in a series, a common way to assemble the short reads is with a “co-assembly”. That is, combining the reads from all samples and assembling them together. The problem with this is assembling similar strains together can severely fragment assemblies, precluding recovery of a good genome bin. An alternative option is to assemble each sample separately, and then “de-replicate” the bins from each assembly to make a final genome set.
+
+![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./individual-assembly.png "Individual assembly followed by de-replication vs co-assembly"){:width="80%"}
+
+Several tools have been designed for the proccess of de-replication. **`dRep`** is a software tool designed for the dereplication of genomes in metagenomic datasets. The goal is to retain a representative set of genomes to improve downstream analyses, such as taxonomic profiling and functional annotation.
+
+An typical workflow of how `dRep` works for dereplication in metagenomics includes:
+
+- *Genome Comparison*: `dRep` uses a pairwise genome comparison approach to assess the similarity between genomes in a given metagenomic dataset.
+
+- *Clustering*: Based on the genome similarities, `dRep` performs clustering to group similar genomes into "genome clusters." Each cluster represents a group of closely related genomes.
+
+- *Genome Quality Assessment*: `dRep` evaluates the quality of each genome within a cluster. It considers factors such as completeness, contamination, and strain heterogeneity.
+
+- *Genome Selection*: Within each genome cluster, `dRep` selects a representative genome based on user-defined criteria. This representative genome is considered as the "dereplicated" version of the cluster.
+
+- *Dereplication Output*: The output of `dRep` includes information about the dereplicated genomes, including their identity, completeness, and contamination. The user can choose a threshold for genome similarity to control the level of dereplication.
+
+> <hands-on-title>General list of actions for de-replication</hands-on-title>
+> 1. Create new history
+> 2. Assemble each sample separately using your favorite assembler
+> 3. Perform a co-assembly to catch low-abundance microbes
+> 4. Bin each assembly separately using your favorite binner
+> 5. Bin co-assembly using your favorite binner
+> 6. Pull the bins from all assemblies together
+> 7. Run **`dRep`** on them
+> 8. Perform downstream analysis on the de-replicated genome list
+>
+{: .hands_on}
+
 # Conclusions
 
-In summary, this tutorial shows a step-by-step on how to bin metagenomic contigs using MetaBAT 2.
+In summary, this tutorial shows a step-by-step on how to bin metagenomic contigs using various Binners, including Bin refinement.
 
 It is critical to select the appropriate binning tool for a specific metagenomics study, as different binning methods may have different strengths and limitations depending on the type of metagenomic data being analyzed. By comparing the outcomes of several binning techniques, researchers can increase the precision and accuracy of genome binning.
 
