@@ -162,7 +162,7 @@ be taken into consideration when choosing where to run jobs and what parameters 
 >    +  CPUs: 2         # Here you would need to figure out how many cores your machine has. For this training we will use 2 but in real life, look at `htop` or similar.
 >    +slurm_config:
 >    +  SlurmdParameters: config_overrides   # Ignore errors if the host actually has cores != 2
->    +  SelectType: select/cons_res
+>    +  SelectType: select/cons_tres
 >    +  SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
 >    +
 >     # TUS
