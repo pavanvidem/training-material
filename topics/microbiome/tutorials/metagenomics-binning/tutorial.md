@@ -232,6 +232,7 @@ In case of a not very large dataset it's more convenient to upload data directly
 > 4. Create a collection named `Reads`
 >
 >    {% snippet faqs/galaxy/collections_build_list_paired.md %}
+{: .hands_on}
 
 > <comment-title>Why do we use collections here?</comment-title>
 > In this tutorial, collections are not strictly necessary because we are working with only one contig file and its paired-end reads. However, in real metagenomic studies, it is common to process many samples—sometimes hundreds or even thousands—and in those cases, collections become essential for managing data efficiently.  
@@ -492,7 +493,6 @@ To keep it simple we will check the bin statistics to investigate the performanc
 > >
 > > **Binette** produced one bin essentially identical in quality to the MetaBAT2/SemiBin bins (~15.7% completeness), plus a root-level bin with no completeness. Binette therefore could recover the most completely bin sucessful. The additional
 loq quality bin, would have normally be filtered by Binette if the `Set minimus completeness` parameter would be set to a reasonable values, often > 75 % for true biological data.
-> >
 > {: .solution}
 >
 {: .question}
