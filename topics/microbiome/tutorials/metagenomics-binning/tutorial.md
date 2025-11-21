@@ -33,8 +33,8 @@ contributions:
   - vinisalazar
 requirements:
   - type: internal
-    topic: metagenomics
-    tutorials: 
+    topic_name: microbiome
+    tutorials:
       - metagenomics-assembly
 subtopic: metagenomics
 tags:
