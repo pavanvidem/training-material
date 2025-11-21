@@ -11,7 +11,7 @@ learning_path_cta: admin-training
 # Using the community CTAs feature opts you into managing your own requirements list here a bit manually
 community_ctas:
   - description: |
-      Experienced admins are on Matrix, do not hesitate to ask questions there
+      Galaxy admins chat on Matrix, do not hesitate to ask questions there
     link: https://matrix.to/#/#galaxyproject_admins:gitter.im
     link_text: Community Matrix Chat
     icon: comment
@@ -61,4 +61,4 @@ editorial_board:
   - martenson
   - mira-miracoli
 
-gitter: galaxyproject/admins/toto
+gitter: galaxyproject/admins
