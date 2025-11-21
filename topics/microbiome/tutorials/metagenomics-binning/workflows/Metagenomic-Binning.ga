@@ -1105,7 +1105,7 @@
             "workflow_outputs": []
         }
     },
-    "tags": [],
+    "tags": ["microbiome", "microgalaxy", "binning"],
     "uuid": "b949eaf7-bf7c-4284-b0b8-fb7a94737de1",
     "version": 6
 }
