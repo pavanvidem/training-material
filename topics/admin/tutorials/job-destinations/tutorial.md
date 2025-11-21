@@ -729,7 +729,7 @@ Lastly, we need to write a rule in TPV that will read the value of the job resou
 >         max_mem: 8
 >         params:
 >    -      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores}
->    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --time={params['walltime']}:00:00
+>    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --time={entity.params.get('walltime')}:00:00
 >    {% endraw %}
 >    ```
 >    {: data-commit="process resource params in TPV"}
