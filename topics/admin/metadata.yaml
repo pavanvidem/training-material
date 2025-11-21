@@ -15,11 +15,15 @@ community_ctas:
     link: https://matrix.to/#/#galaxyproject_admins:gitter.im
     link_text: Community Matrix Chat
     icon: comment
+    width: 6
+    primary_color: true
   - description: |
       Administrating your own (small) (local) instance? Other admins are meeting regularly to discuss issues/problems and solutions. If you are interested, check out the webpage:
     link: https://galaxyproject.org/community/sig/small-scale-admins/
     link_text: Small scale Galaxy Admins Community of Practice Website
     icon: comment
+    width: 6
+    primary_color: true
 
 docker_image: "quay.io/galaxy/admin-training"
 og_image: "/assets/images/gat.png"
