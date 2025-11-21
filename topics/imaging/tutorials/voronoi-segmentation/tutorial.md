@@ -2,6 +2,7 @@
 layout: tutorial_hands_on
 
 title: Voronoi segmentation
+level: Intermediate
 zenodo_link: https://zenodo.org/records/15172302
 questions:
   - How do I partition an image into regions based on which object they are nearest to (Voronoi segmentation)?

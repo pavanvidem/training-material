@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
-
 title: Training Custom YOLO Models for Segmentation of Bioimages
+level: Intermediate
 zenodo_link: https://zenodo.org/records/16096782
 questions:
 - Why use YOLO for segmentation in bioimage analysis?

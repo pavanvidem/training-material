@@ -2,6 +2,7 @@
 layout: tutorial_hands_on
 
 title: Object tracking using CellProfiler
+level: Intermediate
 zenodo_link: https://doi.org/10.5281/zenodo.4567084
 requirements:
   -

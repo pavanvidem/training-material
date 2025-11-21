@@ -2,6 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Nucleoli segmentation and feature extraction using CellProfiler"
+level: Intermediate
 questions:
 - How do I run an image analysis pipeline on public data using CellProfiler?
 - How do I analyse the DNA channel of fluorescence siRNA screens?

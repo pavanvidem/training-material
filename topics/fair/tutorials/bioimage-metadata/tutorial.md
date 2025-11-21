@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: FAIR Bioimage Metadata
-
+level: Introductory
 zenodo_link: ''
 
 questions:
