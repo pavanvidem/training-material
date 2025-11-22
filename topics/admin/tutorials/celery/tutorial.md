@@ -249,11 +249,11 @@ First we need to add our new Ansible Roles to the `requirements.yml`:
 >        --- a/group_vars/galaxyservers.yml
 >        +++ b/group_vars/galaxyservers.yml
 >        @@ -272,6 +272,7 @@ rabbitmq_config:
->         
+>
 >         rabbitmq_vhosts:
 >           - /pulsar/pulsar_au
 >        +  - galaxy_internal
->         
+>
 >         rabbitmq_users:
 >           - user: admin
 >        @@ -281,6 +282,13 @@ rabbitmq_users:
@@ -267,7 +267,7 @@ First we need to add our new Ansible Roles to the `requirements.yml`:
 >        +    password: "{{ vault_rabbitmq_password_flower }}"
 >        +    tags: administrator
 >        +    vhost: galaxy_internal
->         
+>
 >         # TUS
 >         galaxy_tusd_port: 1080
 >        {% endraw %}

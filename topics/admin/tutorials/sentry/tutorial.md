@@ -448,15 +448,15 @@ In addition to sending logging errors to Sentry you can also collect failing too
 >         dest: "{{ tpv_mutable_dir }}/tpv_rules_local.yml"
 >    +  - src: files/galaxy/config/error_reports.yml
 >    +    dest: "{{ galaxy_config.galaxy.error_report_file }}"
->     
+>
 >     galaxy_config_templates:
 >       - src: templates/galaxy/config/container_resolvers_conf.yml.j2
 >    @@ -197,6 +200,7 @@ tpv_privsep: true
->     
+>
 >     galaxy_local_tools:
 >     - testing.xml
 >    +- job_properties.xml
->     
+>
 >     # Certbot
 >     certbot_auto_renew_hour: "{{ 23 |random(seed=inventory_hostname)  }}"
 >    {% endraw %}
@@ -509,7 +509,7 @@ It is also possible to report errors from the Pulsar server. You can either use 
 >             auto_init: true
 >             auto_install: true
 >    +  sentry_dsn: "{{ vault_pulsar_sentry_dsn }}"
->     
+>
 >     # Pulsar should use the same job metrics plugins as Galaxy. This will automatically set `job_metrics_config_file` in
 >     # `pulsar_yaml_config` and create `{{ pulsar_config_dir }}/job_metrics_conf.yml`.
 >    {% endraw %}

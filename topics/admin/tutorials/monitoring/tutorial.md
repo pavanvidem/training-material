@@ -387,7 +387,7 @@ Setting up Telegraf is again very simple. We just add a single role to our playb
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
 >    @@ -333,3 +333,12 @@ flower_ui_users:
->     
+>
 >     flower_environment_variables:
 >       GALAXY_CONFIG_FILE: "{{ galaxy_config_file }}"
 >    +
@@ -794,7 +794,7 @@ You can run the playbook now, or wait until you have configured Telegraf below:
 >    +    privs: SELECT
 >    +    objs: ALL_IN_SCHEMA
 >    +
->     
+>
 >     # PostgreSQL Backups
 >     postgresql_backup_dir: /data/backups
 >    {% endraw %}

@@ -215,7 +215,7 @@ Now, we will configure Galaxy to run tools using Apptainer containers, which wil
 >    @@ -117,6 +120,12 @@ galaxy_config_files:
 >       - src: files/galaxy/themes.yml
 >         dest: "{{ galaxy_config.galaxy.themes_config_file }}"
->     
+>
 >    +galaxy_config_templates:
 >    +  - src: templates/galaxy/config/container_resolvers_conf.yml.j2
 >    +    dest: "{{ galaxy_config.galaxy.container_resolvers_config_file }}"
@@ -224,7 +224,7 @@ Now, we will configure Galaxy to run tools using Apptainer containers, which wil
 >    +
 >     galaxy_extra_dirs:
 >       - /data
->     
+>
 >    {% endraw %}
 >    ```
 >    {: data-commit="Configure the container and dependency resolvers"}
