@@ -118,7 +118,7 @@ To demonstrate a real-life scenario and {TPV}'s role in it, let's plan on settin
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -157,6 +157,9 @@ galaxy_config_templates:
+>    @@ -158,6 +158,9 @@ galaxy_config_templates:
 >     galaxy_extra_dirs:
 >       - /data
 >     
@@ -208,7 +208,7 @@ And of course, Galaxy has an Ansible Role for that.
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -140,6 +140,8 @@ galaxy_config:
+>    @@ -141,6 +141,8 @@ galaxy_config:
 >               - job-handlers
 >               - workflow-schedulers
 >     
@@ -217,7 +217,7 @@ And of course, Galaxy has an Ansible Role for that.
 >     galaxy_config_files_public:
 >       - src: files/galaxy/welcome.html
 >         dest: "{{ galaxy_mutable_config_dir }}/welcome.html"
->    @@ -156,6 +158,11 @@ galaxy_config_templates:
+>    @@ -157,6 +159,11 @@ galaxy_config_templates:
 >     
 >     galaxy_extra_dirs:
 >       - /data
@@ -265,7 +265,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -26,34 +26,18 @@ galaxy_job_config:
+>    @@ -27,34 +27,18 @@ galaxy_job_config:
 >       handling:
 >         assign: ['db-skip-locked']
 >       execution:
@@ -308,7 +308,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >       tools:
 >         - class: local # these special tools that aren't parameterized for remote execution - expression tools, upload, etc
 >           environment: local_env
->    @@ -149,6 +133,8 @@ galaxy_config_files_public:
+>    @@ -150,6 +134,8 @@ galaxy_config_files_public:
 >     galaxy_config_files:
 >       - src: files/galaxy/themes.yml
 >         dest: "{{ galaxy_config.galaxy.themes_config_file }}"
@@ -480,7 +480,7 @@ on settings that have worked well in the usegalaxy.* federation. The rule file c
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -37,6 +37,7 @@ galaxy_job_config:
+>    @@ -38,6 +38,7 @@ galaxy_job_config:
 >             function: map_tool_to_destination
 >             rules_module: tpv.rules
 >             tpv_config_files:
@@ -632,7 +632,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -39,9 +39,17 @@ galaxy_job_config:
+>    @@ -40,9 +40,17 @@ galaxy_job_config:
 >             tpv_config_files:
 >               - https://gxy.io/tpv/db.yml
 >               - "{{ tpv_config_dir }}/tpv_rules_local.yml"
@@ -650,7 +650,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >     
 >     galaxy_config:
 >       galaxy:
->    @@ -61,6 +69,7 @@ galaxy_config:
+>    @@ -62,6 +70,7 @@ galaxy_config:
 >         object_store_store_by: uuid
 >         id_secret: "{{ vault_id_secret }}"
 >         job_config: "{{ galaxy_job_config }}" # Use the variable we defined above
@@ -658,7 +658,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >         # SQL Performance
 >         slow_query_log_threshold: 5
 >         enable_per_request_sql_debugging: true
->    @@ -142,6 +151,8 @@ galaxy_config_templates:
+>    @@ -143,6 +152,8 @@ galaxy_config_templates:
 >         dest: "{{ galaxy_config.galaxy.container_resolvers_config_file }}"
 >       - src: templates/galaxy/config/dependency_resolvers_conf.xml
 >         dest: "{{ galaxy_config.galaxy.dependency_resolvers_config_file }}"
