@@ -195,17 +195,11 @@ Congratulations, you've set up TUS for Galaxy.
 >
 > 2. Check the active status of tusd by `systemctl status galaxy-tusd`.
 >
-> 3. Upload a small file! (Pasted text will not pass via TUS)
+> 3. Follow the tusd logs with `journalctl -fu galaxy-tusd`
 >
-> 4. Check the directory `/data/tus/` has been created and it's contents
+> 4. Upload a small file! (Pasted text will not pass via TUS)
 >
->    > <code-in-title>Bash</code-in-title>
->    > ```
->    > sudo tree /data/tus/
->    > ```
->    {: .code-in}
->
-> 5. You'll see files in that directory, a file that's been uploaded and an 'info' file which contains metadata about the upload.
+> 5. Make sure you see `event=UploadFinished` in the tusd logs
 >
 {: .hands_on}
 
