@@ -66,7 +66,7 @@ It is an easy way to set your instance apart, and make it more identifiable.
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
 >    @@ -35,6 +35,9 @@ galaxy_job_config:
->     
+>
 >     galaxy_config:
 >       galaxy:
 >    +    # Branding
@@ -139,14 +139,14 @@ This page can be used to communicate what your instance is about, and share news
 >    @@ -99,6 +99,10 @@ galaxy_config:
 >               - job-handlers
 >               - workflow-schedulers
->     
+>
 >    +galaxy_config_files_public:
 >    +  - src: files/galaxy/welcome.html
 >    +    dest: "{{ galaxy_mutable_config_dir }}/welcome.html"
 >    +
 >     galaxy_extra_dirs:
 >       - /data
->     
+>
 >    {% endraw %}
 >    ```
 >    {: data-commit="Add welcome url to the config"}
@@ -192,7 +192,7 @@ This page can be used to communicate what your instance is about, and share news
 >    +		alias {{ galaxy_mutable_config_dir }}/welcome.html;
 >     		expires 24h;
 >     	}
->     
+>
 >    {% endraw %}
 >    ```
 >    {: data-commit="Fix the nginx routes for the welcome page"}
@@ -249,14 +249,14 @@ You can even offer several options, to allow users to switch to the default if t
 >    @@ -103,6 +104,10 @@ galaxy_config_files_public:
 >       - src: files/galaxy/welcome.html
 >         dest: "{{ galaxy_mutable_config_dir }}/welcome.html"
->     
+>
 >    +galaxy_config_files:
 >    +  - src: files/galaxy/themes.yml
 >    +    dest: "{{ galaxy_config.galaxy.themes_config_file }}"
 >    +
 >     galaxy_extra_dirs:
 >       - /data
->     
+>
 >    {% endraw %}
 >    ```
 >    {: data-commit="Add brand"}

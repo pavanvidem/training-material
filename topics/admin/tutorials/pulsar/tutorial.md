@@ -309,7 +309,7 @@ More information about the rabbitmq ansible role can be found [in the repository
 >    @@ -228,6 +231,47 @@ slurm_config:
 >       SelectType: select/cons_res
 >       SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
->     
+>
 >    +#Install pip docker package for ansible
 >    +pip_install_packages:
 >    +  - name: docker
@@ -855,7 +855,7 @@ For this tutorial, we will configure Galaxy to run the BWA and BWA-MEM tools on 
 >    +    scheduling:
 >    +      require:
 >    +        - pulsar
->     
+>
 >     destinations:
 >       local_env:
 >    {% endraw %}

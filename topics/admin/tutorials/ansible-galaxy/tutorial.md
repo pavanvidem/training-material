@@ -1093,7 +1093,7 @@ The configuration is quite simple thanks to the many sensible defaults that are 
 >    +        pools:
 >    +          - job-handlers
 >    +          - workflow-schedulers
->     
+>
 >     galaxy_extra_dirs:
 >       - /data
 >    {% endraw %}
@@ -1127,7 +1127,7 @@ The configuration is quite simple thanks to the many sensible defaults that are 
 >     # Use the stdout_callback when running ad-hoc commands.
 >     bin_ansible_callbacks = True
 >    +vault_password_file = .vault-password.txt
->     
+>
 >     # Show diffs of changes
 >     [diff]
 >    {% endraw %}
@@ -1896,7 +1896,7 @@ For this, we will use NGINX (pronounced "engine X" /ˌɛndʒɪnˈɛks/ EN-jin-EK
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
 >    @@ -53,3 +53,55 @@ galaxy_config:
->     
+>
 >     galaxy_extra_dirs:
 >       - /data
 >    +
@@ -2284,7 +2284,7 @@ Finally, we have explicitly mapped the `local` class of tools to run in the `loc
 >    @@ -14,6 +14,24 @@ miniconda_version: 25.3
 >     miniconda_distribution: miniconda
 >     miniconda_channels: ['conda-forge']
->     
+>
 >    +# Galaxy Job Configuration
 >    +galaxy_job_config:
 >    +  runners:

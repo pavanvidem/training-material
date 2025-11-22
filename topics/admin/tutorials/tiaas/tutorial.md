@@ -155,7 +155,7 @@ This tutorial will go cover how to set up such a service on your own Galaxy serv
 >    +    objs: role_id_seq,galaxy_group_id_seq,group_role_association_id_seq,user_group_association_id_seq
 >    +    type: sequence
 >    +    privs: USAGE,SELECT
->     
+>
 >     # PostgreSQL Backups
 >     postgresql_backup_dir: /data/backups
 >    {% endraw %}
@@ -325,7 +325,7 @@ In order to achieve this, we first need some way to sort the jobs of the trainin
 >    @@ -35,6 +35,15 @@ tools:
 >           require:
 >             - pulsar
->     
+>
 >    +roles:
 >    +  training.*:
 >    +    max_cores: 2
@@ -355,7 +355,7 @@ In order to achieve this, we first need some way to sort the jobs of the trainin
 >    +      require:
 >    +        - slurm
 >    +        - training
->     
+>
 >       pulsar:
 >         runner: pulsar_runner
 >    {% endraw %}

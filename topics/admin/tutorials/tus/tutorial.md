@@ -132,7 +132,7 @@ To allow your user to upload via TUS, you will need to:
 >    @@ -28,6 +28,22 @@ server {
 >     		proxy_set_header Upgrade $http_upgrade;
 >     	}
->     
+>
 >    +	location /api/upload/resumable_upload {
 >    +		# Disable request and response buffering
 >    +		proxy_request_buffering     off;

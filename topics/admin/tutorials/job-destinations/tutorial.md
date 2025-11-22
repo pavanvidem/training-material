@@ -121,7 +121,7 @@ To demonstrate a real-life scenario and {TPV}'s role in it, let's plan on settin
 >    @@ -158,6 +158,9 @@ galaxy_config_templates:
 >     galaxy_extra_dirs:
 >       - /data
->     
+>
 >    +galaxy_local_tools:
 >    +- testing.xml
 >    +
@@ -211,14 +211,14 @@ And of course, Galaxy has an Ansible Role for that.
 >    @@ -141,6 +141,8 @@ galaxy_config:
 >               - job-handlers
 >               - workflow-schedulers
->     
+>
 >    +galaxy_job_config_file: "{{ galaxy_config_dir }}/galaxy.yml"
 >    +
 >     galaxy_config_files_public:
 >       - src: files/galaxy/welcome.html
 >         dest: "{{ galaxy_mutable_config_dir }}/welcome.html"
 >    @@ -157,6 +159,11 @@ galaxy_config_templates:
->     
+>
 >     galaxy_extra_dirs:
 >       - /data
 >    +  - "{{ galaxy_config_dir }}/{{ tpv_config_dir_name }}"
@@ -226,7 +226,7 @@ And of course, Galaxy has an Ansible Role for that.
 >    +galaxy_extra_privsep_dirs:
 >    +  - "{{ tpv_mutable_dir }}"
 >    +tpv_privsep: true
->     
+>
 >     galaxy_local_tools:
 >     - testing.xml
 >    {% endraw %}
@@ -314,7 +314,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >         dest: "{{ galaxy_config.galaxy.themes_config_file }}"
 >    +  - src: files/galaxy/config/tpv_rules_local.yml
 >    +    dest: "{{ tpv_mutable_dir }}/tpv_rules_local.yml"
->     
+>
 >     galaxy_config_templates:
 >       - src: templates/galaxy/config/container_resolvers_conf.yml.j2
 >    {% endraw %}
@@ -566,7 +566,7 @@ can be matched up so that only desired combinations are compatible with each oth
 >    +          not user or user.email not in admin_users
 >    +        fail: Unauthorized. Only admins can execute this tool.
 >    +
->     
+>
 >     destinations:
 >       local_env:
 >    {% endraw %}
@@ -647,7 +647,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >    +    - id: testing
 >    +      environment: tpv_dispatcher
 >    +      resources: testing
->     
+>
 >     galaxy_config:
 >       galaxy:
 >    @@ -62,6 +70,7 @@ galaxy_config:
@@ -664,7 +664,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >         dest: "{{ galaxy_config.galaxy.dependency_resolvers_config_file }}"
 >    +  - src: templates/galaxy/config/job_resource_params_conf.xml.j2
 >    +    dest: "{{ galaxy_config.galaxy.job_resource_params_file }}"
->     
+>
 >     galaxy_extra_dirs:
 >       - /data
 >    {% endraw %}
@@ -721,7 +721,7 @@ Lastly, we need to write a rule in TPV that will read the value of the job resou
 >    +        cores: int(job.get_param_values(app)['__job_resource']['cores'])
 >    +        params:
 >    +           walltime: "{int(job.get_param_values(app)['__job_resource']['time'])}"
->     
+>
 >     destinations:
 >       local_env:
 >    @@ -45,4 +53,4 @@ destinations:
