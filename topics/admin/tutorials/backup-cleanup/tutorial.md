@@ -239,7 +239,7 @@ We're setting a couple of variables to control the automatic backups, they'll be
 
 > <hands-on-title>Configuring PostgreSQL Backups</hands-on-title>
 >
-> 1. Edit `group_vars/galaxyservers.yml` and add some variables to configure PostgreSQL:
+> 1. Edit `group_vars/dbservers.yml` and add some variables to configure PostgreSQL:
 >    {% raw %}
 >    ```diff
 >    --- a/group_vars/dbservers.yml
