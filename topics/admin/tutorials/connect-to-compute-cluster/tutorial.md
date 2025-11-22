@@ -151,7 +151,7 @@ be taken into consideration when choosing where to run jobs and what parameters 
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -196,6 +196,16 @@ nginx_ssl_role: usegalaxy_eu.certbot
+>    @@ -197,6 +197,16 @@ nginx_ssl_role: usegalaxy_eu.certbot
 >     nginx_conf_ssl_certificate: /etc/ssl/certs/fullchain.pem
 >     nginx_conf_ssl_certificate_key: /etc/ssl/user/privkey-www-data.pem
 >     
@@ -389,7 +389,7 @@ At the top of the stack sits Galaxy. Galaxy must now be configured to use the cl
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -20,14 +20,27 @@ galaxy_job_config:
+>    @@ -21,14 +21,27 @@ galaxy_job_config:
 >         local_runner:
 >           load: galaxy.jobs.runners.local:LocalJobRunner
 >           workers: 4
