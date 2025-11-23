@@ -103,7 +103,7 @@ This tutorial will go cover how to set up such a service on your own Galaxy serv
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -352,3 +352,8 @@ telegraf_plugins_extra:
+>    @@ -353,3 +353,8 @@ telegraf_plugins_extra:
 >           - timeout = "10s"
 >           - data_format = "influx"
 >           - interval = "15s"
@@ -341,7 +341,7 @@ In order to achieve this, we first need some way to sort the jobs of the trainin
 >    @@ -62,6 +71,19 @@ destinations:
 >         max_mem: 8
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --time={params['walltime']}:00:00
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={entity.params['walltime']}:00:00
 >    +  slurm-training:
 >    +    inherits: singularity
 >    +    runner: slurm

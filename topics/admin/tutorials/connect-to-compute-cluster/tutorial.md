@@ -151,7 +151,7 @@ be taken into consideration when choosing where to run jobs and what parameters 
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -197,6 +197,16 @@ nginx_ssl_role: usegalaxy_eu.certbot
+>    @@ -197,6 +197,17 @@ nginx_ssl_role: usegalaxy_eu.certbot
 >     nginx_conf_ssl_certificate: /etc/ssl/certs/fullchain.pem
 >     nginx_conf_ssl_certificate_key: /etc/ssl/user/privkey-www-data.pem
 >
@@ -160,9 +160,10 @@ be taken into consideration when choosing where to run jobs and what parameters 
 >    +slurm_nodes:
 >    +- name: localhost # Name of our host
 >    +  CPUs: 2         # Here you would need to figure out how many cores your machine has. For this training we will use 2 but in real life, look at `htop` or similar.
+>    +  RealMemory: 8192  # Adjust based on available memory. For this training 8192 is sufficient.
 >    +slurm_config:
 >    +  SlurmdParameters: config_overrides   # Ignore errors if the host actually has cores != 2
->    +  SelectType: select/cons_res
+>    +  SelectType: select/cons_tres
 >    +  SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
 >    +
 >     # TUS
