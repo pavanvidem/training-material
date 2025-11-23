@@ -306,7 +306,7 @@ More information about the rabbitmq ansible role can be found [in the repository
 >     certbot_domains:
 >      - "{{ inventory_hostname }}"
 >     certbot_agree_tos: --agree-tos
->    @@ -228,6 +231,47 @@ slurm_config:
+>    @@ -229,6 +232,47 @@ slurm_config:
 >       SelectType: select/cons_tres
 >       SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
 >
@@ -807,7 +807,7 @@ For this tutorial, we will configure Galaxy to run the BWA and BWA-MEM tools on 
 >    @@ -54,3 +54,18 @@ destinations:
 >         max_mem: 8
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --time={entity.params.get('walltime')}:00:00
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={params['walltime']}:00:00
 >    +
 >    +  pulsar:
 >    +    runner: pulsar_runner

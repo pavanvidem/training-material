@@ -361,7 +361,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >    +    runner: slurm
 >    +    max_accepted_cores: 16
 >    +    params:
->    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores}
+>    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)}
 >    +
 >    {% endraw %}
 >    ```
@@ -373,8 +373,8 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >
 >    Destinations must also be defined in TPV itself. Importantly, note that any destinations defined in the job conf are ignored by TPV. Therefore, we have moved all destinations from the job conf to TPV. In addition, we have removed some
 >    redundancy by using the "inherits" clause in the `slurm` destination. This means that slurm will inherit all of the settings defined for singularity, but selectively override some settings. We have additionally
->    defined the `native_specification` param for SLURM, which is what SLURM uses to allocate resources per job. Note the use of the `{cores}`
->    parameter within the native specification, which TPV will replace at runtime with the value of cores assigned to the tool.
+>    defined the `native_specification` param for SLURM, which is what SLURM uses to allocate resources per job. Note the use of the `{cores}` and `{mem}`
+>    parameter within the native specification, which TPV will replace at runtime with the value of cores and memory assigned to the tool.
 >
 >    Finally, we have also defined a new property named `max_accepted_cores`, which is the maximum amount of cores this destination will accept. Since the testing tool requests 2 cores, but only the `slurm`
 >    destination is able to accept jobs greater than 1 core, TPV will automatically route the job to the best matching destination, in this case, slurm.
@@ -441,7 +441,7 @@ Now that we've configured the resource requirements for a single tool, let's see
 >    @@ -27,4 +34,3 @@ destinations:
 >         max_accepted_cores: 16
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores}
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)}
 >    -
 >    {% endraw %}
 >    ```
@@ -513,7 +513,7 @@ on settings that have worked well in the usegalaxy.* federation. The rule file c
 >    +    max_cores: 2
 >    +    max_mem: 8
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores}
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)}
 >    {% endraw %}
 >    ```
 >    {: data-commit="TPV clamp max cores and mem"}
@@ -728,8 +728,8 @@ Lastly, we need to write a rule in TPV that will read the value of the job resou
 >         max_cores: 2
 >         max_mem: 8
 >         params:
->    -      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores}
->    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --time={entity.params.get('walltime')}:00:00
+>    -      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)}
+>    +      native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={params['walltime']}:00:00
 >    {% endraw %}
 >    ```
 >    {: data-commit="process resource params in TPV"}
