@@ -807,7 +807,7 @@ For this tutorial, we will configure Galaxy to run the BWA and BWA-MEM tools on 
 >    @@ -54,3 +54,18 @@ destinations:
 >         max_mem: 8
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={params['walltime']}:00:00
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={entity.params['walltime']}:00:00
 >    +
 >    +  pulsar:
 >    +    runner: pulsar_runner

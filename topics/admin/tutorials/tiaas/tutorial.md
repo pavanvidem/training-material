@@ -341,7 +341,7 @@ In order to achieve this, we first need some way to sort the jobs of the trainin
 >    @@ -62,6 +71,19 @@ destinations:
 >         max_mem: 8
 >         params:
->           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={params['walltime']}:00:00
+>           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={entity.params['walltime']}:00:00
 >    +  slurm-training:
 >    +    inherits: singularity
 >    +    runner: slurm
