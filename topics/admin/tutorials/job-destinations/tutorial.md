@@ -265,7 +265,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -27,34 +27,18 @@ galaxy_job_config:
+>    @@ -27,34 +27,15 @@ galaxy_job_config:
 >       handling:
 >         assign: ['db-skip-locked']
 >       execution:
@@ -299,16 +299,13 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >    -        - name: APPTAINER_TMPDIR
 >    -          value: /tmp
 >    +      tpv_dispatcher:
->    +        runner: dynamic
->    +        type: python
->    +        function: map_tool_to_destination
->    +        rules_module: tpv.rules
+>    +        runner: dynamic_tpv
 >    +        tpv_config_files:
 >    +          - "{{ tpv_config_dir }}/tpv_rules_local.yml"
 >       tools:
 >         - class: local # these special tools that aren't parameterized for remote execution - expression tools, upload, etc
 >           environment: local_env
->    @@ -150,6 +134,8 @@ galaxy_config_files_public:
+>    @@ -150,6 +131,8 @@ galaxy_config_files_public:
 >     galaxy_config_files:
 >       - src: files/galaxy/themes.yml
 >         dest: "{{ galaxy_config.galaxy.themes_config_file }}"
@@ -321,7 +318,7 @@ We want our tool to run with more than one core. To do this, we need to instruct
 >    ```
 >    {: data-commit="Add TPV to job config"}
 >
->  Note that we set the default execution environment to the tpv_dispatcher, added the tpv_dispatcher itself as a dynamic runner, and removed all other destinations.
+>  Note that we set the default execution environment to the tpv_dispatcher, added the tpv_dispatcher environment using the dynamic_tpv runner, and removed all other destinations.
 >  Adding TPV as a runner will cause Galaxy to automatically install the `total-perspective-vortex` package on startup as a conditional dependency.
 >  Finally, we added a new config file named `tpv_rules_local.yml`, which we will create next.
 >
@@ -480,9 +477,9 @@ on settings that have worked well in the usegalaxy.* federation. The rule file c
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -38,6 +38,7 @@ galaxy_job_config:
->             function: map_tool_to_destination
->             rules_module: tpv.rules
+>    @@ -35,6 +35,7 @@ galaxy_job_config:
+>           tpv_dispatcher:
+>             runner: dynamic_tpv
 >             tpv_config_files:
 >    +          - https://gxy.io/tpv/db.yml
 >               - "{{ tpv_config_dir }}/tpv_rules_local.yml"
@@ -632,7 +629,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -40,9 +40,17 @@ galaxy_job_config:
+>    @@ -37,9 +37,17 @@ galaxy_job_config:
 >             tpv_config_files:
 >               - https://gxy.io/tpv/db.yml
 >               - "{{ tpv_config_dir }}/tpv_rules_local.yml"
@@ -650,7 +647,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >
 >     galaxy_config:
 >       galaxy:
->    @@ -62,6 +70,7 @@ galaxy_config:
+>    @@ -59,6 +67,7 @@ galaxy_config:
 >         object_store_store_by: uuid
 >         id_secret: "{{ vault_id_secret }}"
 >         job_config: "{{ galaxy_job_config }}" # Use the variable we defined above
@@ -658,7 +655,7 @@ Such form elements can be added to tools without modifying each tool's configura
 >         # SQL Performance
 >         slow_query_log_threshold: 5
 >         enable_per_request_sql_debugging: true
->    @@ -143,6 +152,8 @@ galaxy_config_templates:
+>    @@ -140,6 +149,8 @@ galaxy_config_templates:
 >         dest: "{{ galaxy_config.galaxy.container_resolvers_config_file }}"
 >       - src: templates/galaxy/config/dependency_resolvers_conf.xml
 >         dest: "{{ galaxy_config.galaxy.dependency_resolvers_config_file }}"
