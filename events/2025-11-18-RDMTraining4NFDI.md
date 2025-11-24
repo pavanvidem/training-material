@@ -20,7 +20,7 @@ mode: online
 contributions:
   organisers: [Sch-Da, teresa-m]
   instructors: [Sch-Da, teresa-m, bgruening]
-
+  funding: [nfdi4plants, deKCD]
 
 infrastructure:
   tiaas: true    # tiaas = Training Infrastructure as a Service, and can be requested (for free) from all major Galaxies
