@@ -400,9 +400,7 @@ The outputs from the iPepGen workflow, specifically the HLA allele genotypes and
 
 # Rerunning on your own data
 
-To rerun this entire analysis at once, you can use our workflow.
-
-### If users encounter failed tools and/or workflows, we recommend that users review that the appropriate inputs are selected before re-running.
+To rerun this entire analysis at once, you can use our workflow. If users encounter failed tools and/or workflows, we recommend that users review that the appropriate inputs are selected before re-running.
 
 Below we show how to do this:
 
