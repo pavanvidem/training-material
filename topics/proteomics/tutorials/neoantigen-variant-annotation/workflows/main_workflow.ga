@@ -2,6 +2,12 @@
     "a_galaxy_workflow": "true",
     "annotation": "Updated DEMO: Genomic Annotation of Peptides separately for Assembly peptides(STRINGTIE) and SAV/INDEL(CustomProDB)",
     "comments": [],
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "GalaxyP"
+        }
+    ],
     "format-version": "0.1",
     "license": "CC-BY-4.0",
     "name": "iPepGen_Peptide_Annotation_Workflow",
