@@ -177,6 +177,37 @@ In this step, the Filter tool is used to refine the results from the previous IE
 >
 {: .question}
 
+## Peptide Annotation Using FASTA-to-Tabular
+The **FASTA-to-Tabular** converter transforms peptide FASTA sequences into a tabular format that is easier to filter, join, and annotate. This step is commonly used before submitting peptides to annotation tools such as for database lookups.
+
+
+> <hands-on-title> Peptide annotation </hands-on-title>
+>
+> 1. {% tool [FASTA-to-Tabular](toolshed.g2.bx.psu.edu/repos/iuc/fasta_slider/fasta_to_tabular/1.1.1) %} with the following parameters:
+>    - {% icon param-file %} *"Convert these sequences"* → the peptide FASTA file  
+>    - *"How many columns to divide title string into?"*: `1`  
+>    - *"How many title characters to keep?"*: `0`
+>
+>    This tool converts the peptide FASTA into a structured tabular format, preserving full header information in a single column. The resulting table provides clean sequence identifiers that can be linked to genomic, variant, and immunological metadata in later steps.
+>
+{: .hands_on}
+
+> <question-title></question-title>
+>
+> 1. Why do we keep the entire FASTA title string as a single column?  
+> 2. How does converting FASTA to tabular format support downstream annotation workflows (e.g., HLA binding, variant mapping, epitope analysis)?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. A single-column title ensures that peptide identifiers remain intact and can be reliably matched across tools that expect exact header strings—especially important for workflows combining genomics and proteomics metadata.  
+> > 2. Many annotation tools require tabular inputs. Converting FASTA to tabular enables joins, filtering, SQL-based queries, and integration with peptide-centric metadata (variant origin, binding scores, validation status, etc.), allowing seamless downstream analysis.
+> >
+> {: .solution}
+>
+{: .question}
+
+
+
 ## Refining Results Using Table Operations
 
 ### Pivoting the table to aggregate affinity scores
@@ -207,6 +238,59 @@ Specifically:
 >
 {: .hands_on}
 
+## Identifying Weak Neopeptides (SQLite Query)
+The **Query Tabular (using sqlite sql)** tool extracts identifiers for weak-binding or otherwise filtered neopeptides from a tabular/SQLite-backed dataset. This step can be used to pull peptide IDs for downstream HLA-binding review, reporting, or separate IEDB-based workflows.
+
+> <hands-on-title> Weak peptides and HLA binding </hands-on-title>
+>
+> 1. {% tool [Query Tabular: sqlite sql](toolshed.g2.bx.psu.edu/repos/galaxyp/query_tabular/query_tabular/3.3.2) %} with the following parameters:
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table1): `Peptide Annotation` (output of **FASTA-to-Tabular**)
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table2): `IEDB Binding Affinity - Weak Peptides` (output of **Table Compute - Weak peptides**)
+>    - *"Save the sqlite database in your history"*: `Yes`
+>    - *"SQL Query to generate tabular output"*:
+>      ```
+>      SELECT t2.*
+>      FROM t1
+>      JOIN t2
+>      ON t1.c2 = t2.icore
+>      ```
+>
+> 2. Run the query to obtain a deduplicated, ordered list of weak-binding peptide identifiers for downstream review or submission to IEDB/HLA pipelines.
+> 
+{: .hands_on}
+
+> <hands-on-title> Weak-binding neopeptides </hands-on-title>
+>
+> 1. {% tool [Query Tabular: sqlite sql](toolshed.g2.bx.psu.edu/repos/galaxyp/query_tabular/query_tabular/3.3.2) %} with the following parameters:
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table): `peptide_table_for_sql` (output of **Query Tabular - Weak peptides**)
+>    - *"Save the sqlite database in your history"*: `Yes`
+>    - *"SQL Query to generate tabular output"*:
+>      ```
+>      SELECT t1.icore
+>      FROM t1
+>      ORDER BY t1.icore
+>      ```
+>
+> 2. Run the query to obtain a deduplicated, ordered list of weak-binding peptide identifiers for downstream review or submission to IEDB/HLA pipelines.
+> 
+{: .hands_on}
+
+> <question-title></question-title>
+>
+> 1. What is the purpose of extracting `icore` in this query?  
+> 2. How can the output of this step be used in an IEDB workflow?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. `icore` typically represents a canonical peptide identifier used to join HLA-binding results with peptide metadata; extracting it enables targeted follow-up.  
+> > 2. The list can be used to submit only weak-binding or candidate peptides to separate IEDB prediction workflows or for manual curation and reporting.
+> >
+> {: .solution}
+>
+{: .question}
+
+
+
 
 > <hands-on-title> Strong-Table Compute </hands-on-title>
 >
@@ -224,6 +308,42 @@ Specifically:
 >
 {: .hands_on}
 
+## Identifying Strong Neopeptides (SQLite Query)
+The **Query Tabular (using sqlite sql)** tool extracts identifiers for strong-binding or otherwise filtered neopeptides from a tabular/SQLite-backed dataset. This step can be used to pull peptide IDs for downstream HLA-binding review, reporting, or separate IEDB-based workflows.
+
+> <hands-on-title> Strong peptides and HLA binding </hands-on-title>
+>
+> 1. {% tool [Query Tabular: sqlite sql](toolshed.g2.bx.psu.edu/repos/galaxyp/query_tabular/query_tabular/3.3.2) %} with the following parameters:
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table1): `Peptide Annotation` (output of **FASTA-to-Tabular**)
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table2): `IEDB Binding Affinity - Strong Peptides` (output of **Table Compute - Strong peptides**)
+>    - *"Save the sqlite database in your history"*: `Yes`
+>    - *"SQL Query to generate tabular output"*:
+>      ```
+>      SELECT t2.*
+>      FROM t1
+>      JOIN t2
+>      ON t1.c2 = t2.icore
+>      ```
+>
+> 2. Run the query to obtain a deduplicated, ordered list of strong-binding peptide identifiers for downstream review or submission to IEDB/HLA pipelines.
+> 
+{: .hands_on}
+
+> <hands-on-title> Strong-binding neopeptides </hands-on-title>
+>
+> 1. {% tool [Query Tabular: sqlite sql](toolshed.g2.bx.psu.edu/repos/galaxyp/query_tabular/query_tabular/3.3.2) %} with the following parameters:
+>    - {% icon param-file %} *"Tabular Dataset for Table"* (table): `peptide_table_for_sql` (output of **Query Tabular - Strong peptides**)
+>    - *"Save the sqlite database in your history"*: `Yes`
+>    - *"SQL Query to generate tabular output"*:
+>      ```
+>      SELECT t1.icore
+>      FROM t1
+>      ORDER BY t1.icore
+>      ```
+>
+> 2. Run the query to obtain a deduplicated, ordered list of strong-binding peptide identifiers for downstream review or submission to IEDB/HLA pipelines.
+> 
+{: .hands_on}
 
 > <question-title></question-title>
 >
@@ -239,53 +359,6 @@ Specifically:
 >
 {: .question}
 
-## Extract Peptide column from the tabular
-
-> <hands-on-title>  Weak Peptide extraction </hands-on-title>
->
-> 1. {% tool [Cut](Cut1) %} with the following parameters:
->    - *"Cut columns"*: `c1`
->    - {% icon param-file %} *"From"*: `out_file1` (output of **Table Compute (Weak Peptides)** {% icon tool %})
->
->
->
-{: .hands_on}
-
-
-> <hands-on-title> Strong Peptide extraction </hands-on-title>
->
-> 1. {% tool [Cut](Cut1) %} with the following parameters:
->    - *"Cut columns"*: `c1`
->    - {% icon param-file %} *"From"*: `out_file1` (output of **Table Compute (Strong Peptides)** {% icon tool %})
->
->
-{: .hands_on}
-
-### Removing headers
-
-In this sub-step, the Remove Beginning tool is used to clean the data by removing unnecessary rows or headers from the start of the table. After performing the Pivot operation in the previous step, the dataset may include extra header rows or metadata that aren't needed for analysis. This tool helps streamline the data by removing these initial rows, ensuring that only relevant information remains for further processing.
-
-By applying the Remove Beginning tool, the user ensures that any unwanted starting rows—such as those containing column names, labels, or metadata that might have been carried over from previous operations—are removed, leaving the dataset clean and ready for the next analysis step.
-
-> <hands-on-title> Weak- Remove beginning </hands-on-title>
->
-> 1. {% tool [Remove beginning](Remove beginning1) %} with the following parameters:
->    - {% icon param-file %} *"from"*: `table` (output of **Cut (Weak peptides)** {% icon tool %})
-> 
-> 2. Rename file as "IEDB Predicted Weak Binding Peptides".
->
->
-{: .hands_on}
-
-> <hands-on-title> Strong- Remove beginning </hands-on-title>
->
-> 1. {% tool [Remove beginning](Remove beginning1) %} with the following parameters:
->    - {% icon param-file %} *"from"*: `table` (output of **Cut (Strong peptides)** {% icon tool %})
->
-> 2. Rename file as "IEDB Predicted Strong Binding Peptides".
->
-> 
-{: .hands_on}
 
 
 ## Annotation of Strong and Weak Binder Peptides
@@ -324,7 +397,11 @@ Given the increasing demand for personalized cancer treatments, this workflow re
 
 # Rerunning on your own data
 
-To rerun this entire analysis at once, you can use our workflow. Below we show how to do this:
+To rerun this entire analysis at once, you can use our workflow.
+
+### If users encounter failed tools and/or workflows, we recommend that users review that the appropriate inputs are selected before re-running.
+
+Below we show how to do this:
 
 
 > <hands-on-title>Running the Workflow</hands-on-title>
@@ -350,5 +427,4 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 This new [One-Click Neoantigen Workflow](https://usegalaxy.eu/u/galaxyp/w/ipepgen-one-click-workflow) brings together all key modules of the neoantigen discovery process into a single, streamlined analysis within Galaxy. Instead of launching each tutorial separately, users can now execute the entire end-to-end pipeline—from database creation to HLA binding prediction—with just one click —without ever leaving Galaxy.
 
 # Disclaimer
-
 Please note that all the software tools used in this workflow are subject to version updates and changes. As a result, the parameters, functionalities, and outcomes may differ with each new version. Additionally, if the protein sequences are downloaded at different times, the number of sequences may also vary due to updates in the reference databases or tool modifications. We recommend the users to verify the specific versions of software tools used to ensure the reproducibility and accuracy of results.
