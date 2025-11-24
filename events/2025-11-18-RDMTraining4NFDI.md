@@ -58,7 +58,6 @@ program:
         time: "11:40 to 12:00"
 
 ---
-# Introduction to Galaxy
 
 Researchers who want to follow good scientific practice and research data management are often confronted with high software costs, a lack of programming skills, and limited computing resources. 
 One solution to address all these problems is Galaxy, an open source data analysis platform, supporting researchers from diverse domains, including the  Humanities. 
