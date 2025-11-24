@@ -338,7 +338,7 @@ In order to achieve this, we first need some way to sort the jobs of the trainin
 >     destinations:
 >       local_env:
 >         runner: local_runner
->    @@ -62,6 +71,19 @@ destinations:
+>    @@ -64,6 +73,19 @@ destinations:
 >         max_mem: 8
 >         params:
 >           native_specification: --nodes=1 --ntasks=1 --cpus-per-task={cores} --mem={round(mem*1024)} --time={entity.params['walltime']}:00:00
