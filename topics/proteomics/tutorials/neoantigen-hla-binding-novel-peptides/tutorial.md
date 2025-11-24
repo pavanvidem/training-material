@@ -394,6 +394,9 @@ This workflow is particularly relevant in the neoantigen discovery process, as i
 
 Given the increasing demand for personalized cancer treatments, this workflow represents a vital approach for accelerating the identification of clinically relevant neoantigens, thus advancing the field of cancer immunotherapy and personalized medicine.
 
+The outputs from the iPepGen workflow, specifically the HLA allele genotypes and verified neoantigen candidate peptide sequences, serve as input to the pVACbind software suite, which we deployed as a Galaxy tool.  pVACbind is part of the personalized Variant Antigens in Cancer tool suite (pVACtools).  The pVACbind software bundles numerous complementary tools for predicting binding of input peptide sequences to HLA protein complexes (both class I and II) coded by specific allele genotypes, as well as two deep learning algorithms, DeepImmuno and BigMHC, for predicting immunogenicity of HLA alleles and bound peptides.  The Galaxy tool outputs a tabular file with aggregated results across all of the algorithms selected by the user, as well as a filtered output showing only those peptide and allele combination scores indicating high potential for immunogenicity.  The (pVACbind)[https://pvactools.readthedocs.io/en/latest/pvacbind.html] software is well documented and provides users with ample information about the bundled tools and how to interpret results for assisting in prioritizing peptides for further experimental testing as immunotherapy agents.
+
+![pvac-process]({% link topics/proteomics/images/neoantigen/pvac.PNG %})
 
 # Rerunning on your own data
 
@@ -418,6 +421,9 @@ Below we show how to do this:
 >
 >    {% snippet faqs/galaxy/workflows_run.md %}
 >
+> **Disclaimer:**
+> If any step in this workflow fails, please ensure that the input files have been correctly generated and formatted by the preceding tools. Workflow failures often result from improperly called or incomplete input data rather than errors in the workflow itself. Users are responsible for verifying their input before troubleshooting workflow issues.
+> 
 {: .hands_on}
 
 # Are you feeling adventurous? ✨
