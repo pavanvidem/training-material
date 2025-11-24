@@ -170,10 +170,10 @@ PepQuery2 is a tool used to validate novel peptides and proteins by searching ma
 >            - *"Precursor Unit"*: `ppm`
 >        - In *"PSM"*:
 >            - *"Fragmentation Method"*: `CID/HCD`
->            - *"Minimum Charge"*: `2`
+>            - *"Minimum Charge"*: `1`
 >            - *"Maximum Charge"*: `3`
->            - *"Minimum length of peptide"*: `8`
->            - *"Maximum length of peptide"*: `9`
+>            - *"Minimum length of peptide"*: `9`
+>            - *"Maximum length of peptide"*: `11`
 >    - *"Use fast mode for searching"*: `Yes`
 >
 >
@@ -241,8 +241,8 @@ Tabular-to-FASTA is a tool used to convert tabular data into the FASTA format, c
 >
 > 1. {% tool [Tabular-to-FASTA](toolshed.g2.bx.psu.edu/repos/devteam/tabular_to_fasta/tab2fasta/1.1.1) %} with the following parameters:
 >    - {% icon param-file %} *"Tab-delimited file"*: `output` (output of **Query Tabular** {% icon tool %})
->    - *"Title column(s)"*: `c['2']`
->    - *"Sequence column"*: `c1`
+>    - *"Title column(s)"*: `2`
+>    - *"Sequence column"*: `1`
 >
 >
 {: .hands_on}
