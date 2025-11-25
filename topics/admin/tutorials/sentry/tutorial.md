@@ -504,7 +504,7 @@ It is also possible to report errors from the Pulsar server. You can either use 
 >    ```diff
 >    --- a/group_vars/pulsarservers.yml
 >    +++ b/group_vars/pulsarservers.yml
->    @@ -45,6 +45,7 @@ pulsar_yaml_config:
+>    @@ -44,6 +44,7 @@ pulsar_yaml_config:
 >           - type: conda
 >             auto_init: true
 >             auto_install: true
