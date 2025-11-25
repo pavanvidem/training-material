@@ -913,7 +913,7 @@ Once the playbook run is complete and your Galaxy server has restarted, run the 
 
 In a _high availability_ setup, multiple redundant copies of Galaxy run simultaneously behind a load balancer to minimize downtime and service interruptions.
 
-As explained in [one of the previous sections](#installing-the-interactive-tools-proxy), the Galaxy Interactive Tools Proxy redirects requests to each Interactive Tool's host and port. By default, the mapping of GxIT invocations to their corresponding host/port is kept in a SQLite database known as the _Interactive Tools Session Map_.
+As explained in [one of the previous sections](#enabling-the-interactive-tools-proxy), the Galaxy Interactive Tools Proxy redirects requests to each Interactive Tool's host and port. By default, the mapping of GxIT invocations to their corresponding host/port is kept in a SQLite database known as the _Interactive Tools Session Map_.
 
 By design, [SQLite is the wrong choice for high availability setups][sqlite_situations_where_a_client_server_rdbms_may_work_better], the showstopper being that the SQLite database file would have to be shared over a network filesystem, which are usually associated with too high latencies for RDBMS use. For this reason, Galaxy and the Interactive Tools Proxy can also store the **Session Map in a PostgreSQL database**. 
 
