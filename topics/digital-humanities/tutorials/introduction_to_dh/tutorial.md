@@ -249,6 +249,7 @@ We also use this tool on the second file.
 > <hands-on-title> Delete Hyperlink in Text Two </hands-on-title>
 >
 > 1. Run {% icon workflow-run %} {% tool [Remove beginning](Remove beginning1) %} with the following parameters:
+>    - *"Remove first"*: `1` (lines)
 >    - {% icon param-file %} *"from"*: `2: SoY_Univ_Mag_Source.txt`
 >
 >    {% snippet faqs/galaxy/tools_rerun.md %}
