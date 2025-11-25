@@ -610,7 +610,7 @@ Some of the other options we will be using are:
 >    ```diff
 >    --- /dev/null
 >    +++ b/group_vars/pulsarservers.yml
->    @@ -0,0 +1,51 @@
+>    @@ -0,0 +1,50 @@
 >    +galaxy_server_hostname: "{{ groups['galaxyservers'][0] }}" # Important!!!
 >    +# Put your Galaxy server's fully qualified domain name (FQDN) (or the FQDN of the RabbitMQ server) above.
 >    +
@@ -632,11 +632,10 @@ Some of the other options we will be using are:
 >    +  - drmaa
 >    +  # kombu needed if using a message queue
 >    +  - kombu
->    +  # amqp 5.0.3 changes behaviour in an unexpected way, pin for now.
->    +  - 'amqp==5.0.2'
->    +  # psutil and pylockfile are optional dependencies but can make Pulsar
->    +  # more robust in small ways.
+>    +  # psutil allows pulsar's local job runner to kill processes effictively.
 >    +  - psutil
+>    +  # temporary patch until setuptools is eliminated
+>    +  - setuptools
 >    +
 >    +pulsar_yaml_config:
 >    +  staging_directory: "{{ pulsar_staging_dir }}"
