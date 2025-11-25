@@ -280,16 +280,6 @@ The GxIT Proxy is written in [Node.js][nodejs]. A straightforward method to set 
 >    ansible-playbook galaxy.yml
 >    ```
 >
-> 3. Update the Galaxy service units:
->    ```
->    ansible galaxyservers -m shell -a "galaxyctl update" -b
->    ```
->
-> 4. Start the service:
->    ```
->    ansible galaxyservers -m shell -a "galaxyctl start gx-it-proxy" -b
->    ```
->
 {: .hands_on}
 
 [nodeenv]: https://github.com/ekalinin/nodeenv
