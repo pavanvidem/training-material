@@ -346,6 +346,7 @@ Using regex (regular expressions) for find and replace is a powerful technique f
 >    {% snippet faqs/galaxy/analysis_regular_expressions.md %}
 >
 > 2. Rename the output FASTA as `Arriba-Fusion-Database.fasta`
+> 
 {: .hands_on}
 
 
@@ -372,8 +373,11 @@ To rerun this entire analysis at once, you can use our workflow. Below, we show 
 >
 >    {% snippet faqs/galaxy/workflows_run.md %}
 >
-> **Disclaimer:**
-> If any step in this workflow fails, please ensure that the input files have been correctly generated and formatted by the preceding tools. Workflow failures often result from improperly called or incomplete input data rather than errors in the workflow itself. Users are responsible for verifying their input before troubleshooting workflow issues.
+> <comment-title>DISCLAIMER</comment-title>
+>
+> - If any step in this workflow fails, please ensure that the input files have been correctly generated and formatted by the preceding tools. Workflow failures often result from improperly called or incomplete input data rather than errors in the workflow itself. Users are responsible for verifying their input before troubleshooting workflow issues.
+>
+> {: .comment}
 >
 {: .hands_on}
 
