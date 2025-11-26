@@ -2,6 +2,7 @@
 layout: tutorial_hands_on
 title: FAIR Bioimage Metadata
 level: Introductory
+subtopic: introduction
 zenodo_link: ''
 
 questions:
