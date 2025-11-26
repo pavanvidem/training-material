@@ -142,7 +142,7 @@ This step extracts information about novel peptides from FragPipe, which primari
 
 ## Annotation and Filtering
 
-Because the annotation structures differ between **assembly-derived peptides** and **SAV (single-amino-acid–variant) peptides**, we apply separate text-formatting procedures for each. We first format the assembly-derived peptide annotations, followed by the SAV annotations; the two are then merged to generate unified peptide annotations for downstream processing with **PepPointer**.
+Because the annotation structures differ between **assembly-derived peptides** and **SAV (single-amino-acid–variant) peptides**, we apply separate text-formatting procedures for each. We first format the assembly-derived peptide annotations, followed by the SAV annotations, and will be processed separately with **PepPointer**.
 
 ### Extracting assembly-derived peptides
 The **Select lines that match an expression** tool is used to extract only the rows corresponding to StringTie-assembled transcripts from a mixed text file. StringTie typically labels transcript or gene identifiers with the prefix `STRG`. By filtering for lines containing `STRG`, we keep only the relevant transcript entries and discard header or unrelated lines. This cleaned file is then used for downstream integration with genomic and variant annotations.
@@ -220,7 +220,7 @@ In this step, we will use the Column Regex Find And Replace tool to find and rep
 >
 > 1. {% tool [Column Regex Find And Replace](toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.3) %} with the following parameters:
 >    - {% icon param-file %} *"Select cells from"*: `out_file1` (output of **Convert** {% icon tool %})
->    - *"using column"*: `c3`
+>    - *"using column"*: `3`
 >    - In *"Check"*:
 >        - {% icon param-repeat %} *"Insert Check"*
 >            - *"Find Regex"*: `u_`
@@ -273,6 +273,18 @@ In this step, we will use the Query Tabular tool to extract specific information
 > 2. Rename file to "assembly_formatted_table".
 > 
 {: .hands_on}
+
+
+
+
+
+
+[insert text manipulation - Assembly]
+[table processing - Assembly]
+[BED-file for PepPointer - Assembly]
+[peppointer - assembly]
+[Novel peptides with annotation - assembly]
+
 
 
 ### Extracting SAV-derived peptides
@@ -340,7 +352,7 @@ The **Cut Columns** tool is used to extract only the fields required for downstr
 
 ## Editing SAV Annotation Columns Using Column Regex Find and Replace
 
-The **Column Regex Find and Replace** tool is used in this step to clean and standardize SAV (Single Amino-acid Variant) annotation fields. SAV entries often begin with prefixes such as `SNV_` or `INDEL_`, which must be reformatted to a consistent delimiter-based structure (`SNV|`, `INDEL|`) to be compatible with downstream peptide-annotation tools such as PepPointer. This formatting step ensures that SAV annotations can later be merged accurately with assembly-derived peptides, despite their inherently different annotation structures.
+The **Column Regex Find and Replace** tool is used in this step to clean and standardize SAV (Single Amino-acid Variant) annotation fields. SAV entries often begin with prefixes such as `SNV_` or `INDEL_`, which must be reformatted to a consistent delimiter-based structure (`SNV|`, `INDEL|`) to be compatible with downstream peptide-annotation tools such as PepPointer.
 
 > <hands-on-title> Editing SAV Annotations </hands-on-title>
 >
@@ -421,34 +433,8 @@ The **Column Regex Find and Replace** tool is used in this step to clean and sta
 > 
 {: .hands_on}
 
-Because the annotation formats differ between **assembly-derived peptides** and **SAV-derived peptides**, we process them separately before merging. We first perform text formatting on the assembly peptide annotations, followed by formatting of the SAV annotations, and finally merge both sets for unified peptide annotation using **PepPointer**.
+Because the annotation formats differ between **assembly-derived peptides** and **SAV-derived peptides**, we must process them separately. We first perform text formatting on the assembly peptide annotations, followed by formatting of the SAV annotations, and finally process both sets for separate peptide annotation using **PepPointer**.
 
-## Merging Assembly and SAV Annotation Tables
-
-The **Concatenate Datasets** tool merges the formatted assembly-derived peptide annotations with the processed SAV-derived annotations into a single unified table. This consolidated dataset allows all peptide sources—assembly, genomic, and SAV—to be passed into **PepPointer** for final peptide-level annotation. Concatenation ensures that variant-driven peptides and assembly-derived peptides are integrated into one harmonized file before downstream processing.
-
-> <hands-on-title> Concatenate Assembly and SAV tables </hands-on-title>
->
-> 1. {% tool [Concatenate datasets](toolshed.g2.bx.psu.edu/repos/iuc/concatenate/concatenate/1.0.0) %} with:
->    - {% icon param-file %} *“Concatenate Dataset (input1)”*: `assembly_formatted_table` (output of **Query Tabular (assembly)** {% icon tool %})
->    - *“Select (input2)”*: `sav_formatted_table` (output of **Column Regex Find And Replace (SAV)** {% icon tool %})
->   
->
-{: .hands_on}
-
-> <question-title></question-title>
->
-> 1. Why do we merge assembly and SAV annotations before running PepPointer?  
-> 2. What considerations should be taken into account when concatenating tables?
->
-> > <solution-title></solution-title>
-> >
-> > 1. PepPointer requires all peptide sources to be provided together so it can assign unified peptide-level annotations, including genomic, variant, and transcript context.  
-> > 2. Column order and formatting must match between tables to ensure correct alignment after concatenation.  
-> >
-> {: .solution}
->
-{: .question}
 
 
 ### Performing calculations to convert proteomic coordinates to genomic coordinates.
