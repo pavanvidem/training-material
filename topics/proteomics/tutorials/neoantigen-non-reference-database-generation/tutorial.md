@@ -847,12 +847,10 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
-> 1. **Import the workflow** into Galaxy:
->
->    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/proteomics/tutorials/neoantigen-non-reference-database-generation/workflows/main_workflow.ga" title="Neoantigen non-reference Database Generation" %}
->
->
-> 2. Run **Workflow** {% icon workflow %} using the following parameters:
+>  1. **Import the workflow** into Galaxy:
+>    - (Neoantigen Non-Reference Database Generation)[https://tinyurl.com/ipepgen-nonref-wf]
+> 
+>  2. Run **Workflow** {% icon workflow %} using the following parameters:
 >    - *"Send results to a new history"*: `No`
 >    - {% icon param-file %} *"Human Reference Genome Annotation"*: `Homo_sapiens.GRCh38_canon.106.gtf`
 >    - {% icon param-file %} *"Human Uniprot (with isoforms) and cRAP Database"*: `HUMAN_CRAP.fasta`
