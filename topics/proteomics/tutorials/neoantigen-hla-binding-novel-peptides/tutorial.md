@@ -408,9 +408,7 @@ Below we show how to do this:
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
 > 1. **Import the workflow** into Galaxy:
->
->    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/proteomics/tutorials/neoantigen-hla-binding-novel-peptides/workflows/main_workflow.ga" title="HLA Binding for Novel Peptides" %}
->
+>    - (Neoantigen IEDB Binding HLA Alleles)[https://tinyurl.com/ipepgen-iedb-pep-wf]
 >
 > 2. Run **Workflow** {% icon workflow %} using the following parameters:
 >    - *"Send results to a new history"*: `No`
