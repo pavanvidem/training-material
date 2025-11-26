@@ -25,3 +25,13 @@ references:
     title: "Workflows for microscopy image analysis and cellular phenotyping"
     link: "https://www.sciencedirect.com/science/article/pii/S0168165617315444"
     summary: ""
+subtopics:
+- id: introduction
+  title: "Introduction"
+  description: "Start here if you are new to Image Analysis in Galaxy"
+- id: end-to-end
+  title: "Analyses"
+  description: "These tutorials will help you analyse your image data"
+- id: advanced
+  title: "Advanced topics"
+  description: "Tutorials covering advanced topics"
