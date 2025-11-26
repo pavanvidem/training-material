@@ -319,10 +319,8 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
-> 1. **Import the workflow** into Galaxy:
->
->    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/proteomics/tutorials/neoantigen-fragpipe-discovery/workflows/main_workflow.ga" title="Fragpipe Discovery" %}
->
+>  1. **Import the workflow** into Galaxy:
+>    - (Neoantigen Database Search)[https://tinyurl.com/ipepgen-dbsearch-wf]
 >
 > 2. Run **Workflow** {% icon workflow %} using the following parameters:
 >    - *"Send results to a new history"*: `No`
