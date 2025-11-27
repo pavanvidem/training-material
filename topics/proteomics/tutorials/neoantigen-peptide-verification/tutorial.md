@@ -377,7 +377,7 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 
 
 > <hands-on-title>Running the Workflow</hands-on-title>
-
+>
 >  1. **Import the workflow** into Galaxy:
 >    - (Neoantigen Peptide Verification)[https://tinyurl.com/ipepgen-pepquery-wf]
 > 
