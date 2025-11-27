@@ -669,13 +669,26 @@ A few Interactive Tool wrappers are provided with Galaxy, but they are [commente
 >    ```
 >    {% endraw %}
 >
-> 5. Run the playbook:
+> 5. If you've configured container resolvers, make sure the explit docker container resolver is enabled, e.g in templates/galaxy/config/container_resolvers_conf.yml.j2
+>    {% raw %}
+>    ```diff
+>    --- a/templates/galaxy/config/container_resolvers_conf.yml.j2
+>    +++ b/templates/galaxy/config/container_resolvers_conf.yml.j2
+>    @@ -9,3 +9,4 @@
+>     - type: build_mulled_singularity
+>       auto_install: False
+>       cache_directory: "{{ galaxy_mutable_data_dir }}/cache/singularity/built/"
+>     +- type: explicit
+>    ```
+>    {% endraw %}
+>
+> 6. Run the playbook:
 >
 >    ```
 >    ansible-playbook galaxy.yml
 >    ```
 >
-> 6. Follow the Galaxy logs with `galaxyctl follow`.
+> 7. Follow the Galaxy logs with `galaxyctl follow`.
 >
 {: .hands_on}
 
