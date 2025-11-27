@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 title: FAIR Bioimage Metadata
 level: Introductory
-subtopic: introduction
+subtopic: fair-data
 zenodo_link: ''
 
 questions:
@@ -38,7 +38,6 @@ contributions:
   funding:
     - elixir-uk-dash
     - elixir-europe
-subtopic: fair-data
 
 requirements:
   - type: "internal"
