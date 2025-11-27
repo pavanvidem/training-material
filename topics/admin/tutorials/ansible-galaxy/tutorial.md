@@ -998,7 +998,7 @@ The configuration is quite simple thanks to the many sensible defaults that are 
 >    +++ b/group_vars/galaxyservers.yml
 >    @@ -13,3 +13,17 @@ miniconda_prefix: "{{ galaxy_tool_dependency_dir }}/_conda"
 >     miniconda_version: 25.3
->     miniconda_distribution: miniconda
+>     miniconda_distribution: miniforge
 >     miniconda_channels: ['conda-forge']
 >    +
 >    +galaxy_config:
@@ -2282,7 +2282,7 @@ Finally, we have explicitly mapped the `local` class of tools to run in the `loc
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
 >    @@ -14,6 +14,24 @@ miniconda_version: 25.3
->     miniconda_distribution: miniconda
+>     miniconda_distribution: miniforge
 >     miniconda_channels: ['conda-forge']
 >
 >    +# Galaxy Job Configuration
