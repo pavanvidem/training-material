@@ -857,7 +857,8 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 >    - {% icon param-file %} *"RNA-Seq_Reads_1 (forward strand)"*: `RNA-Seq_Reads_1.fastqsanger.gz`
 >    - {% icon param-file %} *"RNA-Seq_Reads_2 (reverse strand)"*: `RNA-Seq_Reads_2.fastqsanger.gz`
 >
->    {% snippet faqs/galaxy/workflows_run.md %}
+> 
+> {% snippet faqs/galaxy/workflows_run.md %}
 >
 > 
 > <comment-title>DISCLAIMER</comment-title>
