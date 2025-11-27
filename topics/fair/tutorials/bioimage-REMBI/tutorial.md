@@ -2,8 +2,8 @@
 layout: tutorial_hands_on
 title: REMBI - Recommended Metadata for Biological Images – metadata guidelines for bioimaging data
 level: Introductory
-subtopic: introduction
 zenodo_link: ''
+subtopic: fair-data
 
 questions:
 - What is REMBI and why should I use it?
@@ -36,7 +36,6 @@ contributions:
   funding:
     - elixir-uk-dash
     - elixir-europe
-subtopic: fair-data
 
 requirements:
   - type: "internal"
