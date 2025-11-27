@@ -224,9 +224,6 @@ As you can see, the client only ever speaks to nginx on the Galaxy server runnin
 The GxIT Proxy is written in [Node.js][nodejs]. A straightforward method to set it up is to use Galaxy's process manager, [Gravity](https://gravity.readthedocs.io/), to install and configure it.
 
 [nodejs]: https://nodejs.org/
-[usegalaxy_eu-gie_proxy]: https://galaxy.ansible.com/usegalaxy_eu/gie_proxy
-[usegalaxy_eu-gie_proxy-readme]: https://github.com/usegalaxy-eu/ansible-gie-proxy/blob/master/README.md
-[usegalaxy_eu-gie_proxy-defaults]: https://github.com/usegalaxy-eu/ansible-gie-proxy/blob/master/defaults/main.yml
 
 > <hands-on-title>Installing and configuring the Proxy using Gravity</hands-on-title>
 >
