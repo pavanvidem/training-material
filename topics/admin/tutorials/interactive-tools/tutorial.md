@@ -310,13 +310,13 @@ As explained in the previous section, we will proxy the Interactive Tools Proxy 
 >    ```yaml
 >    nginx_ssl_servers:
 >      - galaxy
->      - galaxy-gie-proxy
+>      - galaxy-gxit-proxy
 >    ```
 >    {% endraw %}
 >
->    The nginx configuration `galaxy-gie-proxy` doesn't exist yet, but we'll create it in a moment.
+>    The nginx configuration `galaxy-gxit-proxy` doesn't exist yet, but we'll create it in a moment.
 >
-> 2. Create `templates/nginx/galaxy-gie-proxy.j2` with the following contents:
+> 2. Create `templates/nginx/galaxy-gxit-proxy.j2` with the following contents:
 >
 >    {% raw %}
 >    ```nginx
@@ -592,6 +592,7 @@ A few Interactive Tool wrappers are provided with Galaxy, but they are [commente
 >    <toolbox monitor="true">
 >        <section id="interactivetools" name="Interactive Tools">
 >            <tool file="interactive/interactivetool_ethercalc.xml" />
+>            <tool file="interactive/interactivetool_jupyter_notebook_1.0.1.xml" />
 >        </section>
 >    </toolbox>
 >    ```
@@ -640,6 +641,8 @@ A few Interactive Tool wrappers are provided with Galaxy, but they are [commente
 >    +            require_container: true
 >    +    tools:
 >    +      - id: interactive_tool_ethercalc
+>    +        environment: local_interactive_env
+>    +      - id: interactive_tool_jupyter_notebook
 >    +        environment: local_interactive_env
 >    ```
 >
@@ -1002,13 +1005,13 @@ The next step is configuring Galaxy and the Interactive Tool Proxy to use the ne
 >    galaxy_config:
 >      galaxy:
 >        # ... existing configuration options in the `galaxy` section ...
->        # interactivetools_map: "{{ gie_proxy_sessions_path }}"  # comment, remove or leave this line in place (it will be overridden by the option below)
->        interactivetoolsproxy_map: "{{ gie_proxy_sessions_path }}"
+>        # interactivetools_map: "{{  galaxy_config.gravity.gx_it_proxy.sessions }}"  # comment, remove or leave this line in place (it will be overridden by the option below)
+>        interactivetoolsproxy_map: "{{ gxit_proxy_sessions_path }}"
 >        # ... other existing configuration options in the `galaxy` section ...
 >
 >    # ... other existing configurations ... #
 >
->    gie_proxy_sessions_path: "postgresql:///gxitproxy?host=/var/run/postgresql"
+>    gxit_proxy_sessions_path: "postgresql:///gxitproxy?host=/var/run/postgresql"
 >    ```
 >    {% endraw %}
 >
