@@ -1126,7 +1126,11 @@ module Gtn
       if crosstopic_tutorials
         materials = process_pages(site, site.pages)
         crosstopic_tutorials.each do |tuto|
-          resource_pages += materials.select { |x| x['topic_name'] == tuto["topic"] && x['tutorial_name'] == tuto["tutorial"] }
+          addtutorial = materials.select { |x| x['topic_name'] == tuto["topic"] && x['tutorial_name'] == tuto["tutorial"] }
+          if tuto["priority"]
+            addtutorial[0]['priority'] = tuto["priority"]
+          end
+          resource_pages += addtutorial
         end
       end
 
