@@ -291,7 +291,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Find Regex"*: `^(.*)$`
 >            - *"Replacement"*: `generic|INDEL_\1`
 >
-> 2. Rename as Indel-FASTA
+> 2. Rename as "Indel-FASTA"
 >
 > 
 {: .hands_on}
@@ -315,7 +315,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Find Regex"*: `^(.*)$`
 >            - *"Replacement"*: `generic|SAV_\1`
 >
-> 2. Rename as SAV-FASTA
+> 2. Rename as "SAV-FASTA"
 > 
 {: .hands_on}
 
@@ -338,7 +338,7 @@ In this workflow, Column Regex Find And Replace cleans and formats the data in a
 >            - *"Find Regex"*: `^(.*)$`
 >            - *"Replacement"*: `generic|RPKM_\1`
 >
-> 2. Rename as RPKM-FASTA
+> 2. Rename as "RPKM-FASTA"
 > 
 {: .hands_on}
 
@@ -368,7 +368,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Title column(s)"*: `1`
 >    - *"Sequence column"*: `2`
 >
-> 2. Rename as Indel-FASTA
+> 2. Rename as "Indel-FASTA"
 >
 > 
 {: .hands_on}
@@ -380,7 +380,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Title column(s)"*: `1`
 >    - *"Sequence column"*: `2`
 >
-> 2. Rename as SAV-FASTA
+> 2. Rename as "SAV-FASTA"
 >
 > 
 {: .hands_on}
@@ -392,7 +392,7 @@ In this workflow, Tabular-to-FASTA converts the formatted tabular data back into
 >    - *"Title column(s)"*: `1`
 >    - *"Sequence column"*: `2`
 >
-> 2. Rename as RPKM-FASTA
+> 2. Rename as "RPKM-FASTA"
 >
 >    
 {: .hands_on}
@@ -836,6 +836,8 @@ Merging non-reference databases with the known human protein sequence involves i
 >        - In *"Input FASTA File(s)"*:
 >            - {% icon param-repeat %} *"Insert Input FASTA File(s)"*
 >                - {% icon param-file %} *"FASTA File"*: `translation_fasta` (output of **Translate BED transcripts** {% icon tool %})
+>             
+> 2. Rename to `Human_cRAP_Non_reference_transcripts_dB` (final output will be a FASTA file)
 >
 >
 {: .hands_on}
