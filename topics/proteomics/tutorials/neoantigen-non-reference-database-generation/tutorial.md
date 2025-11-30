@@ -855,14 +855,14 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
 >  1. **Import the workflow** into Galaxy:
->    - [Neoantigen Non-Reference Database Generation](https://tinyurl.com/ipepgen-nonref-wf)
+>     - [Neoantigen Non-Reference Database Generation](https://tinyurl.com/ipepgen-nonref-wf)
 > 
->  2. Run **Workflow** {% icon workflow %} using the following parameters:
->    - *"Send results to a new history"*: `No`
->    - {% icon param-file %} *"Human Reference Genome Annotation"*: `Homo_sapiens.GRCh38_canon.106.gtf`
->    - {% icon param-file %} *"Human Uniprot (with isoforms) and cRAP Database"*: `HUMAN_CRAP.fasta`
->    - {% icon param-file %} *"RNA-Seq_Reads_1 (forward strand)"*: `RNA-Seq_Reads_1.fastqsanger.gz`
->    - {% icon param-file %} *"RNA-Seq_Reads_2 (reverse strand)"*: `RNA-Seq_Reads_2.fastqsanger.gz`
+>  3. Run **Workflow** {% icon workflow %} using the following parameters:
+>     - *"Send results to a new history"*: `No`
+>     - {% icon param-file %} *"Human Reference Genome Annotation"*: `Homo_sapiens.GRCh38_canon.106.gtf`
+>     - {% icon param-file %} *"Human Uniprot (with isoforms) and cRAP Database"*: `HUMAN_CRAP.fasta`
+>     - {% icon param-file %} *"RNA-Seq_Reads_1 (forward strand)"*: `RNA-Seq_Reads_1.fastqsanger.gz`
+>     - {% icon param-file %} *"RNA-Seq_Reads_2 (reverse strand)"*: `RNA-Seq_Reads_2.fastqsanger.gz`
 >
 > 
 > {% snippet faqs/galaxy/workflows_run.md %}
