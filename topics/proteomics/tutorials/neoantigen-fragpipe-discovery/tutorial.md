@@ -320,14 +320,14 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
 >  1. **Import the workflow** into Galaxy:
->    - [Neoantigen Database Search](https://tinyurl.com/ipepgen-dbsearch-wf)
+>     - [Neoantigen Database Search](https://tinyurl.com/ipepgen-dbsearch-wf)
 >
-> 2. Run **Workflow** {% icon workflow %} using the following parameters:
->    - *"Send results to a new history"*: `No`
->    - {% icon param-file %} *"Non-Reference protein database"*: `Human_cRAP_Non_reference_transcripts_dB.fasta`
->    - {% icon param-file %} *"Fusion protein database"*: `Arriba-Fusion-Database.fasta`
->    - {% icon param-file %} *"Input raw file"*: `STS_26T_2_Eclipse_02102024.raw`
->    - {% icon param-file %} *"Experimental design file for Fragpipe"*: `Experimental-Design-Fragpipe.tabular`
+> 3. Run **Workflow** {% icon workflow %} using the following parameters:
+>     - *"Send results to a new history"*: `No`
+>     - {% icon param-file %} *"Non-Reference protein database"*: `Human_cRAP_Non_reference_transcripts_dB.fasta`
+>     - {% icon param-file %} *"Fusion protein database"*: `Arriba-Fusion-Database.fasta`
+>     - {% icon param-file %} *"Input raw file"*: `STS_26T_2_Eclipse_02102024.raw`
+>     - {% icon param-file %} *"Experimental design file for Fragpipe"*: `Experimental-Design-Fragpipe.tabular`
 >
 >    {% snippet faqs/galaxy/workflows_run.md %}
 >
