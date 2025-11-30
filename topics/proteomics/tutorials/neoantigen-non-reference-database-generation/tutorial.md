@@ -855,7 +855,7 @@ To rerun this entire analysis at once, you can use our workflow. Below we show h
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
 >  1. **Import the workflow** into Galaxy:
->    - (Neoantigen Non-Reference Database Generation)[https://tinyurl.com/ipepgen-nonref-wf]
+>    - [Neoantigen Non-Reference Database Generation](https://tinyurl.com/ipepgen-nonref-wf)
 > 
 >  2. Run **Workflow** {% icon workflow %} using the following parameters:
 >    - *"Send results to a new history"*: `No`
