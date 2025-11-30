@@ -530,7 +530,12 @@ In this workflow, converting GffCompare's annotated GTF output to BED format all
 >
 > 1. {% tool [Convert gffCompare annotated GTF to BED](toolshed.g2.bx.psu.edu/repos/galaxyp/gffcompare_to_bed/gffcompare_to_bed/0.2.1) %} with the following parameters:
 >    - {% icon param-file %} *"GTF annotated by gffCompare"*: `transcripts_annotated` (output of **GffCompare** {% icon tool %})
->    - *"filter gffCompare class_codes to convert"*: `j : Potentially novel isoform (fragment): at least one splice junction is shared with a reference transcript` `e : Single exon transfrag overlapping a reference exon and at least 10 bp of a reference intron, indicating a possible pre-mRNA fragment.` `i : A transfrag falling entirely within a reference intron` `p : Possible polymerase run-on fragment (within 2Kbases of a reference transcript)` `u : Unknown, intergenic transcript`
+>    - *"filter gffCompare class_codes to convert"*:  
+`j : Potentially novel isoform (fragment): at least one splice junction is shared with a reference transcript`  
+`e : Single exon transfrag overlapping a reference exon and at least 10 bp of a reference intron, indicating a possible pre-mRNA fragment.`  
+`i : A transfrag falling entirely within a reference intron`  
+`p : Possible polymerase run-on fragment (within 2Kbases of a reference transcript)`  
+`u : Unknown, intergenic transcript`  
 >
 >
 {: .hands_on}
@@ -556,7 +561,7 @@ Translate BED transcripts is a tool that translates BED files containing transcr
 
 In this workflow, translating BED files to FASTA sequences is essential for obtaining the actual nucleotide sequences of the annotated transcripts. This step enables the user to analyze the sequences further, for example, by identifying functional regions, and sequence motifs, or conducting downstream analysis like mutation detection or variant calling.
 
-> <hands-on-title> **Translate BED transcripts** </hands-on-title>
+> <hands-on-title> Translate BED transcripts </hands-on-title>
 >
 > 1. {% tool [Translate BED transcripts](toolshed.g2.bx.psu.edu/repos/galaxyp/translate_bed/translate_bed/0.1.0) %} with the following parameters:
 >    - {% icon param-file %} *"A BED file with 12 columns"*: `output` (output of **Convert gffCompare annotated GTF to BED** {% icon tool %})
