@@ -368,7 +368,7 @@ To rerun this entire analysis at once, you can use our workflow. Below, we show 
 > <hands-on-title>Running the Workflow</hands-on-title>
 >
 > 1. **Import the workflow** into Galaxy:
->    - (Neoantigen Fusion Database Generation)[https://tinyurl.com/ipepgen-gene-fusion-wf]
+>    - [Neoantigen Fusion Database Generation](https://tinyurl.com/ipepgen-gene-fusion-wf)
 >
 >
 > 2. Run **Workflow** {% icon workflow %} using the following parameters:
