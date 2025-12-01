@@ -1,9 +1,8 @@
-## MaxBin2
-
-In this tutorial version we will learn how to use MaxBin2 {%cite maxbin2015%} through Galaxy. MaxBin2 is an automated metagenomic binning tool that uses an Expectation-Maximization algorithm to group contigs into genome bins based on abundance, tetranucleotide frequency, and single-copy marker genes.
-
 ## Bin contigs using MaxBin2
 
+**MaxBin2** ({% cite maxbin2015 %}) is an automated metagenomic binning tool that uses an Expectation-Maximization algorithm to group contigs into genome bins based on abundance, tetranucleotide frequency, and single-copy marker genes.
+
+The first step when using tools like MetaBAT or MaxBin2 is to compute contig depths from the raw alignment data. Both tools require per-contig depth tables as input, as their binning algorithms rely on summarized coverage statistics at the contig level. However, standard BAM files store read-level alignment information, which must first be processed to generate the necessary contig-level coverage data. This preprocessing step ensures compatibility with the input requirements of these binning tools.
 > <hands-on-title> Calculate contig depths </hands-on-title>
 >
 > 1. {% tool [Calculate contig depths](toolshed.g2.bx.psu.edu/repos/iuc/metabat2_jgi_summarize_bam_contig_depths/metabat2_jgi_summarize_bam_contig_depths/2.17+galaxy0) %} with the following parameters:
@@ -11,15 +10,9 @@ In this tutorial version we will learn how to use MaxBin2 {%cite maxbin2015%} th
 >        - {% icon param-file %} *"Sorted bam files"*: output of **Samtools sort** {% icon tool %}
 >        - *"Select a reference genome?"*: `No`
 >
->    > <comment-title> Why not use bam directly </comment-title>
->    >
->    > MetaBAT and MaxBin2 only accept per-contig depth tables because that is the specific input format their binning algorithm requires.
->    > BAM files contain read-level alignment data.
->    > These binners need summarized, contig-level coverage statistics.
->    {: .comment}
 >
 {: .hands_on}
-
+We can now launch the proper binning with MaxBin2
 > <hands-on-title> Individual binning of short-reads with MaxBin2 </hands-on-title>
 >
 > 1. {% tool [MaxBin2](toolshed.g2.bx.psu.edu/repos/mbernt/maxbin2/maxbin2/2.2.7+galaxy6) %} with the following parameters:
