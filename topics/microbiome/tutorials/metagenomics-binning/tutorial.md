@@ -484,12 +484,10 @@ To keep it simple, we will check the bin statistics to investigate the performan
 > > |---------------|------------------------|-----------|------------|----------------|----|----|----|----|----|----|--------------|---------------|-----------------------|
 > > | binette_bin1  | k__Bacteria (UID203)   | 5449      | 103        | 58             | 89 | 14 | 0  | 0  | 0  | 0  | 15.67        | 0.00          | 0.00                  |
 > > 2. Let's look at **Binette** stats:
-> >
 > >    Bin ID | Marker lineage | # genomes | # markers | # marker sets | 0 | 1 | 2 | 3 | 4 | 5+ | Completeness | Contamination | Strain heterogeneity
 > >    --- | --- | --- | --- | --- | --- | --- | ---| --- | --- | --- | --- | --- | ---
 > >    binette_bin1 | k__Bacteria (UID203) | 5449    | 103 | 58 | 89 | 14 | 0 | 0 | 0 | 0 | 15.67 | 0.00 | 0.00
 > >    binette_bin2 | root (UID1) | 5656 | 56 | 24 | 56 | 0 | 0 | 0 | 0 | 0 | 0.00 | 0.00 | 0.00
-> >
 > >
 > > **Binette** produced one bin essentially identical in quality to the MetaBAT2/SemiBin bins (~15.7% completeness), plus a root-level bin with no completeness. Binette could recover the most completely successful bin. The additional
 loq quality bin, would have normally been filtered by Binette if the `Set minimus completeness` parameter were set to a reasonable value, often > 75 % for true biological data.
