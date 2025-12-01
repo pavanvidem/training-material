@@ -31,6 +31,8 @@ contributions:
   - npechl
   - fpsom
   - vinisalazar
+  editing:
+  - bebatut
 requirements:
   - type: internal
     topic_name: microbiome
@@ -60,9 +62,9 @@ recordings:
 
 ---
 
-Metagenomics is the study of genetic material recovered directly from environmental samples, such as soil, water, or gut contents, without the need for isolation or cultivation of individual organisms. Metagenomics binning is a process used to classify DNA sequences obtained from metagenomic sequencing into discrete groups, or bins, based on their similarity to each other.
+Metagenomics is the study of genetic material recovered directly from environmental samples, such as soil, water, or gut contents, without the need for isolating or cultivating individual organisms. Metagenomics binning is a process used to classify DNA sequences obtained from metagenomic sequencing into discrete groups, or bins, based on their similarity to each other.
 
-The goal of metagenomics binning is to assign the DNA sequences to the organisms or taxonomic groups that they originate from, allowing for a better understanding of the diversity and functions of the microbial communities present in the sample. This is typically achieved through computational methods that include sequence similarity, composition, and other features to group the sequences into bins.
+The goal of metagenomics binning is to assign DNA sequences to the organisms or taxonomic groups from which they originate, allowing for a better understanding of the diversity and functions of the microbial communities present in the sample. This is typically achieved through computational methods that include sequence similarity, composition, and other features to group the sequences into bins.
 
 > <comment-title></comment-title>
 > Before starting this tutorial, it is recommended to do the [**Metagenomics Assembly Tutorial**]({% link topics/microbiome/tutorials/metagenomics-assembly/tutorial.md %})
@@ -82,7 +84,7 @@ There are several approaches to metagenomics binning, including:
 
 - **Supervised machine learning-based binning**: This method uses machine learning algorithms trained on annotated reference genomes to classify metagenomic data into bins. This approach can achieve high accuracy but requires a large number of annotated genomes for training.
 
-## Binning challanges
+## Binning challenges
 
 Metagenomic binning is a complex process that involves many steps and can be challenging due to several problems that can occur during the process. Some of the most common problems encountered in metagenomic binning include:
 
@@ -96,12 +98,12 @@ Metagenomic binning is a complex process that involves many steps and can be cha
 
 ## Common binners
 
-There are plenty of algorithms that perform metagenomic binning. Some of the most widely used include:
+There are different algorithms and tools performing metagenomic binning. The most widely used include:
 
-* **MaxBin** ({%cite maxbin2015%}): A popular de novo binning algorithm that uses a combination of sequence features and marker genes to cluster contigs into genome bins.
-* **MetaBAT** ({%cite Kang2019%}): Another widely used de novo binning algorithm that employs a hierarchical clustering approach based on tetranucleotide frequency and coverage information.
-* **CONCOCT** ({%cite Alneberg2014%}): A de novo binning tool that uses a clustering algorithm based on sequence composition and coverage information to group contigs into genome bins.
-* **MyCC** ({%cite Lin2016%}): A reference-based binning tool that uses sequence alignment to identify contigs belonging to the same genome or taxonomic group.
+* **MaxBin** ({% cite maxbin2015 %}): A popular de novo binning algorithm that uses a combination of sequence features and marker genes to cluster contigs into genome bins.
+* **MetaBAT** ({% cite Kang2019 %}): Another widely used de novo binning algorithm that employs a hierarchical clustering approach based on tetranucleotide frequency and coverage information.
+* **CONCOCT** ({% cite Alneberg2014 %}): A de novo binning tool that uses a clustering algorithm based on sequence composition and coverage information to group contigs into genome bins.
+* **MyCC** ({% cite Lin2016 %}): A reference-based binning tool that uses sequence alignment to identify contigs belonging to the same genome or taxonomic group.
 * **GroopM** ({%cite Imelfort2014%}): A hybrid binning tool that combines reference-based and de novo approaches to achieve high binning accuracy.
 * **SemiBin** ({%cite Pan2022%}): A command-line tool for metagenomic binning with deep learning; handles both short and long reads.
 * **Vamb** ({%cite nissen2021improved%}): An algorithm that uses variational autoencoders (VAEs) to encode sequence composition and coverage information.
@@ -111,18 +113,15 @@ There are plenty of algorithms that perform metagenomic binning. Some of the mos
 
 There are also bin refinement tools, which can evaluate, combine, and improve the raw bins produced by primary binners such as MetaBAT2, CONCOCT, MaxBin2, or SemiBin. These tools help remove contamination, merge complementary bins, and recover higher-quality MAGs.
 
-* **MetaWRAP** ({%cite Uritskiy2018%}):
-  A comprehensive metagenomic analysis pipeline that includes modules for quality control, assembly, binning (wrapping multiple binners), refinement, reassembly, and annotation. Provides an easy-to-use framework for producing high-quality MAGs from raw reads.
+* **MetaWRAP** ({% cite Uritskiy2018 %}): A comprehensive metagenomic analysis pipeline that includes modules for quality control, assembly, binning (wrapping multiple binners), refinement, reassembly, and annotation. It provides an easy-to-use framework for producing high-quality MAGs from raw reads.
 
-* **DAS Tool** ({%cite Sieber2018DASTool%}):
-  A bin-refinement tool that combines results from multiple binners (e.g., MetaBAT2, MaxBin2, CONCOCT, SemiBin) into a consensus set of optimized, non-redundant bins. DAS Tool improves overall bin quality by integrating strength from several algorithms.
+* **DAS Tool** ({% cite Sieber2018DASTool %}): A bin-refinement tool that combines results from multiple binners (e.g., MetaBAT2, MaxBin2, CONCOCT, SemiBin) into a consensus set of optimized, non-redundant bins. DAS Tool improves overall bin quality by integrating the strengths from several algorithms.
 
-* **Binnette** ({%cite Mainguy2024Binette%}):
-  Binette is a fast and accurate bin refinement tool that constructs high-quality MAGs from the outputs of multiple binning tools. It generates hybrid bins using set operations on overlapping contigs — intersection, difference, and union — and evaluates their quality with CheckM2 to select the best bins. Compared to metaWRAP, Binette is faster and can process an unlimited number of input bin sets, making it highly scalable for large and complex metagenomic datasets.
+* **Binnette** ({% cite Mainguy2024Binette %}): A fast and accurate bin refinement tool that constructs high-quality MAGs from the outputs of multiple binning tools. It generates hybrid bins using set operations on overlapping contigs — intersection, difference, and union — and evaluates their quality with CheckM2 to select the best bins. Compared to metaWRAP, Binette is faster and can process an unlimited number of input bin sets, making it highly scalable for large and complex metagenomic datasets.
 
 ## Anvi’o: Interactive bin refinement
 
-**Anvi’o** ({%cite Eren2015%}) is a platform for **interactive visualization and manual refinement** of metagenomic bins. While it can run automated binning (defaulting to **CONCOCT**), its main strength lies in allowing users to:
+**Anvi’o** ({% cite Eren2015 %}) is a platform for **interactive visualization and manual refinement** of metagenomic bins. While it can run automated binning (defaulting to **CONCOCT**), its main strength lies in allowing users to:
 
 * Inspect contig-level coverage, GC content, and single-copy gene presence
 * Visualize connections between contigs in a network view
@@ -135,19 +134,19 @@ This interactive approach is particularly useful when automated binning produces
 
 Each of these binning methods has its own strengths and limitations, and the choice of a binning tool often depends on the characteristics of the metagenomic dataset and the research question. Practical guidance on which binner to use for specific datasets and environments can be drawn from benchmark studies such as {%cite NatureBinner2025%}.
 
-!["Benchmark for many Binners"](./images/Binning_Benchmark.png "Benchmark of multiple Binners on Activated sludge and Human Gut Microbiome, taken from {%cite NatureBinner2025%}"){:width="60%"}
+![The image displays four heatmaps (labeled g, h, i, j) comparing the performance of various binning methods across different datasets related to human gut and activated sludge microbiomes. Each heatmap shows numerical values representing metrics for methods such as CONCOCT, MaxBin 2, MetaBAT 2, VAMB, CLMB, MetaDecoder, BinnY, MetaBinner, SemiBin 2, and COMEBin. The columns correspond to different sequence types: short co-assembly, short single, short multi-sample, long single, long multi-sample, hybrid single, and hybrid multi-sample. The color gradient from light to dark red indicates the magnitude of the values, with darker shades representing higher values. The heatmaps provide a visual comparison of how each method performs across these different sequence types and datasets.](./images/Binning_Benchmark.png "Benchmark of multiple binners on activated sludge and human gut microbiome ({%cite NatureBinner2025%})"){:width="60%"}
 
 Additionally, the CAMI I and II challenges provide standardized simulated datasets that highlight the strengths and weaknesses of different binners, helping researchers select the most appropriate tool for their analysis.
 
-!["Benchmark for many Binners based on CAMI"](./images/CAMI_Binners.png "Benchmark of multiple Binners in the CAMI challenge, taken from {%cite Meyer2022%}"){:width="60%"}
+![This image visually compares the performance of various metagenomic binning tools across multiple environments, including Marine GSA, Marine MA, Strain-madness GSA, Strain-madness MA, Plant-associated GSA, and Plant-associated MA. The top row (a) uses box plots to show the distribution of genome counts recovered from each environment, with sample sizes (n) indicated for each category. The middle section (b) features horizontal bar charts illustrating the number of genomes recovered by different binning tools—such as MetaBinner, UltraBinner, CONCOCT, MetaWRAP, Vamb, MaxBin, MetaBAT, and Autometa—specifically for the Marine GSA environment. Similarly, the bottom section (c) presents bar charts for the Marine MA environment, highlighting the number of genomes recovered by each tool. The image effectively summarizes the efficiency and effectiveness of these tools in different metagenomic contexts.](./images/CAMI_Binners.png "Benchmark of multiple binners on the CAMI datasets ({%cite Meyer2022%})"){:width="60%"}
 
 A general approach is to perform binning using multiple binners that have shown good performance for the specific dataset, followed by bin refinement to generate an improved bin set that retains the best bins from the analysis.
 
 Does using more binners always improve results? In practice, one must also consider computational resources and time constraints. Running many binners can be very time-consuming and resource-intensive, especially for large studies. In some cases, adding extra binners does not lead to a meaningful increase in bin quality, so the choice of binners should be made carefully. Overall, identifying the optimal combination of binners remains an active area of research, and clear, widely accepted guidelines are still being established.
 
-# Mock binning dataset for this training
+## Mock binning dataset for this training
 
-Read mapping and binning real metagenommic datasets is a computational demanding task and time consuming. To demonstrate the basics of binning in this tutorial we generated a small mock dataset, that is just large enough to produce bins for all binners in this tutorial. The same binners can be applied for any real life datasets, but as said, plan in some time, up to weeks in some cases.
+Read mapping and binning real metagenomic datasets is a computationally demanding and time-consuming task. To demonstrate the basics of binning in this tutorial, we generated a small mock dataset that is just large enough to produce bins for all binners in this tutorial. The same binners can be applied for any real-life datasets, but as said, plan in some time, up to weeks in some cases.
 
 > <agenda-title></agenda-title>
 >
@@ -160,25 +159,25 @@ Read mapping and binning real metagenommic datasets is a computational demanding
 
 # Prepare analysis history and data
 
-Metagenomic binners take typically two data typs as input: assembled contigs in fasta format and coverage information in bam format.
+Metagenomic binners typically take two types of data as input: 
 
 - A fasta file containing the assembled contigs, which can be generated from raw metagenomic sequencing reads using an assembler such as MEGAHIT, SPAdes, or IDBA-UD.
 
-- A bam file containing the read coverage information for each contig, which can be generated from the same sequencing reads using mapping software such as Bowtie2 or BWA.
+- A BAM file containing the read coverage information for each contig, which can be generated from the same sequencing reads using mapping software such as Bowtie2 or BWA.
 
-> <comment-title>Can Bins be generated without coverage information</comment-title>
+> <comment-title>Can Bins be generated without coverage information?</comment-title>
 >
-> Not all binners require coverage information — some, like MetaBAT2, can operate using only genomic composition (e.g. tetranucleotide frequencies) when coverage files are not available. This is especially useful for single-sample datasets or legacy data where coverage cannot easily be calculated.
+> Not all binners require coverage information. Some, like MetaBAT2, can operate using only genomic composition (e.g., tetranucleotide frequencies) when coverage files are not available. This is especially useful for single-sample datasets or legacy data where coverage cannot easily be calculated.
 >
 > Other tools that support composition-only binning include:
-> - **MaxBin 2** (can run with composition alone, but performs better with depth)
-> - **SolidBin** (supports single-sample binning based on sequence features)
-> - **VAMB** (primarily uses deep learning on composition, coverage optional)
+> - **MaxBin 2**, which can run with composition alone, but performs better with depth.
+> - **SolidBin**, which supports single-sample binning based on sequence features.
+> - **VAMB**, which primarily uses deep learning on composition, coverage optional.
 >
 > That said, including coverage information generally increases binning accuracy, especially for:
 > - Differentiating closely related strains
 > - Datasets with uneven abundance
-> - Multi-sample metagenomics workflows (e.g. differential coverage binning)
+> - Multi-sample metagenomics workflows (e.g., differential coverage binning)
 >
 > In summary: yes, it’s possible to bin without coverage, but coverage-aware workflows are recommended when available, as they reduce contamination and improve completeness.
 >
@@ -223,13 +222,14 @@ In case of a not very large dataset it's more convenient to upload data directly
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 3. Also import the raw reads in fastq format (\*.fasta) from [Zenodo]({{ page.zenodo_link }}) or a data library:
+> 3. Import the raw reads in fastq format from [Zenodo]({{ page.zenodo_link }}) or a data library:
 >
 >    ```text
 >    {{ page.zenodo_link }}/files/reads_forward.fastqsanger.gz
 >    {{ page.zenodo_link }}/files/reads_reverse.fastqsanger.gz
 >    ```
-> 4. Create a collection named `Reads`
+>
+> 4. Create a paired collection named `Reads`
 >
 >    {% snippet faqs/galaxy/collections_build_list_paired.md %}
 {: .hands_on}
@@ -242,9 +242,11 @@ In case of a not very large dataset it's more convenient to upload data directly
 
 # Preparation for binning
 
-As explained before we need coverage information in bam format as a requirement for all binners. Some binners need a specific format for the coverage information, but this will be covered in the version specific to the desired binner. For now we will map the quality controled reads to the contigs to get a bam file with the coverage information. This bam file also needs to be sorted for the downstream binners.
+As explained before, we need coverage information in a BAM file as a requirement for all binners. Some binners need a specific format for the coverage information, but this will be covered in the version specific to the desired binner. For now, we will map the quality-controlled reads to the contigs to get a BAM file with the coverage information. This BAM file also needs to be sorted for the downstream binners.
 
-Make sure the reads are quality controlled. E.g. following the QC toturial TODO.
+> <comment-title></comment-title>
+> Make sure the reads are quality-controlled, e.g., by following the [**Quality Control** tutorial]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %})
+{: .comment}
 
 > <hands-on-title> Map reads to contigs </hands-on-title>
 >
@@ -261,7 +263,9 @@ Make sure the reads are quality controlled. E.g. following the QC toturial TODO.
 >
 {: .hands_on}
 
-> <hands-on-title> Sort bam files </hands-on-title>
+Let's now sort the BAM files.
+
+> <hands-on-title> Sort BAM files </hands-on-title>
 >
 > 1. {% tool [Samtools sort](toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0.7) %} with the following parameters:
 >    - {% icon param-file %} *"BAM File"*: output of **Bowtie2** {% icon tool %}
@@ -269,7 +273,7 @@ Make sure the reads are quality controlled. E.g. following the QC toturial TODO.
 >
 {: .hands_on}
 
-The sorted bam file can be used as input for any of the binning tools.
+The sorted BAM file can be used as input for any of the binning tools.
 
 # Binning
 
@@ -283,9 +287,9 @@ As explained before, there are many challenges to metagenomics binning. The most
 - Chimeric sequences.
 - Strain variation.
 
-![Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties.](./images/binning.png "Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties."){:width="60%"}
+![The image illustrates the concept of metagenomic binning, where sequences called contigs are grouped into distinct bins based on their similarities. On the left side, a set of colored contigs (represented as horizontal lines in red, yellow, and green) is shown. An arrow labeled "Binning" points to the right, where these contigs are organized into three separate ovals labeled Bin 1, Bin 2, and Bin 3. Each bin contains contigs of similar colors, indicating that they have been grouped together based on shared characteristics, such as origin or genetic similarity. This process helps in categorizing and analyzing genetic material from complex metagenomic datasets.](./images/binning.png "Metagenomic binning involves grouping contigs into 'bins' based on sequence composition, coverage, or other properties."){:width="60%"}
 
-In this tutorial, we offer dedicated versions, which highlight each of the following binners:
+In this tutorial, we offer several versions, each highlighting a different binners:
 
 {% include _includes/cyoa-choices.html option1="MetaBAT2" option2="MaxBin2" option3="SemiBin" option4="CONCOCT" option5="COMEBin" default="MetaBAT2" %}
 
@@ -307,9 +311,14 @@ In this tutorial, we offer dedicated versions, which highlight each of the follo
 
 # Bin refinement
 
-Now, that you have produced bins with your favorite Binning algorithms you can refine the recovered bins. 
-Therefore, you need to convert the bins into a contig to bin mapping table, combine the tables from each binner into one collection and
-use Binette to creat consensus bins. An alternative tool would be {% tool [DAS Tool](toolshed.g2.bx.psu.edu/repos/iuc/das_tool/das_tool/1.1.7+galaxy1) %} which is also available in Galaxy.
+Now that we have produced bins with our favorite binner, we can refine the recovered bins. 
+Therefore, we need to 
+
+1. Convert the bins into a contig-to-bin mapping table,
+2. Combine the tables from each binner into one collection, and
+3. Use **Binette** ({% cite Mainguy2024Binette %}) to create consensus bins.
+
+   An alternative tool would be {% tool [DAS Tool](toolshed.g2.bx.psu.edu/repos/iuc/das_tool/das_tool/1.1.7+galaxy1) %}  ({% cite Sieber2018DASTool %}) which is also available in Galaxy.
 
 For the refinement we will use the bins created by all the binners used before. If you do not want to run them all by yourself,
 we have provided the results here as well. 
