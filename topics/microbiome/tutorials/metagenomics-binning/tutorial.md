@@ -119,7 +119,6 @@ There are also bin refinement tools, which can evaluate, combine, and improve th
 
 * **Binnette** ({% cite Mainguy2024Binette %}): A fast and accurate bin refinement tool that constructs high-quality MAGs from the outputs of multiple binning tools. It generates hybrid bins using set operations on overlapping contigs — intersection, difference, and union — and evaluates their quality with CheckM2 to select the best bins. Compared to metaWRAP, Binette is faster and can process an unlimited number of input bin sets, making it highly scalable for large and complex metagenomic datasets.
 
-## Anvi’o: Interactive bin refinement
 
 **Anvi’o** ({% cite Eren2015 %}) is a platform for **interactive visualization and manual refinement** of metagenomic bins. While it can run automated binning (defaulting to **CONCOCT**), its main strength lies in allowing users to:
 
