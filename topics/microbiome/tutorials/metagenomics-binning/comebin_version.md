@@ -1,10 +1,11 @@
-## COMEbin
+## Bin contigs using COMEbin
 
-COMEbin is a relatively new binner that has shown remarkably strong performance in recent benchmarking studies.
-However, it also has several drawbacks. 
-* Due to its implementation, it cannot operate reliably on small test datasets, and therefore we cannot include it in this tutorial. 
-* It requires substantial computational resources and long runtimes.
-* The tool also suffers from other technical issues that can cause runs to fail. 
+**COMEbin** ({% cite  Wang2024COMEBin %}) is a relatively new binner that has shown remarkably strong performance in recent benchmarking studies.
+However, the tool has several notable limitations:
+
+- **Dataset Size Constraints**: Its implementation is not optimized for small test datasets, making it unsuitable for inclusion in this tutorial.
+- **Resource Intensity**: It demands significant computational resources and extended runtimes, which can be prohibitive.
+- **Technical Instability**: The tool is prone to technical issues that may result in failed runs.
 
 These problems cannot be resolved on the Galaxy side, and the tool is currently only lightly maintained upstream.
 
@@ -12,12 +13,11 @@ Nevertheless, because COMEbin can produce some of the best-performing bins when 
 
 > <warning-title>Do not run COMEBin</warning-title>
 >
-> As said: Due to its implementation, it cannot operate reliably on small test datasets, and therefore we cannot include it in this tutorial. Do not run it on the tutorial dataset — it will fail. 
+> As explained above, due to its implementation, it cannot operate reliably on small test datasets, and therefore, we cannot include it in this tutorial. Do not run it on the tutorial dataset — it will fail. 
 >
 {: .warning}
 
 
-###  Bin contigs using COMEbin
 
 > <hands-on-title> Individual binning of short reads with COMEbin </hands-on-title>
 >
@@ -27,7 +27,7 @@ Nevertheless, because COMEbin can produce some of the best-performing bins when 
 >
 >    > <comment-title> Parameters </comment-title>
 >    >
->    > The Batch size should be less then the number of contigs. But if this is the case for the batch size of 1014 your input data is likely too small to run with this tool !
+>    > The batch size should be less than the number of contigs. But if this is the case for the batch size of 1014, your input data is likely too small to run with this tool!
 >    {: .comment}
 >
 {: .hands_on}
