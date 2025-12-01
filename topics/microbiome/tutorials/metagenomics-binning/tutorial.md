@@ -109,6 +109,20 @@ There are different algorithms and tools performing metagenomic binning. The mos
 * **Vamb** ({% cite nissen2021improved %}): An algorithm that uses variational autoencoders (VAEs) to encode sequence composition and coverage information.
 * **ComeBin** ({% cite Wang2024COMEBin %}): A metagenomic binning tool that integrates both composition and abundance features with machine learning-based clustering to improve binning accuracy across complex microbial communities.
 
+## So many options, what binner to use ?
+
+Each of these binning methods has its own strengths and limitations, and the choice of a binning tool often depends on the characteristics of the metagenomic dataset and the research question. Practical guidance on which binner to use for specific datasets and environments can be drawn from benchmark studies such as {%cite NatureBinner2025%}.
+
+![The image displays four heatmaps (labeled g, h, i, j) comparing the performance of various binning methods across different datasets related to human gut and activated sludge microbiomes. Each heatmap shows numerical values representing metrics for methods such as CONCOCT, MaxBin 2, MetaBAT 2, VAMB, CLMB, MetaDecoder, BinnY, MetaBinner, SemiBin 2, and COMEBin. The columns correspond to different sequence types: short co-assembly, short single, short multi-sample, long single, long multi-sample, hybrid single, and hybrid multi-sample. The color gradient from light to dark red indicates the magnitude of the values, with darker shades representing higher values. The heatmaps provide a visual comparison of how each method performs across these different sequence types and datasets.](./images/Binning_Benchmark.png "Benchmark of multiple binners on activated sludge and human gut microbiome ({%cite NatureBinner2025%})"){:width="60%"}
+
+Another useful approach to investigate the performance of binners is to use simulated datasets. Therefore, the CAMI challenges ({%cite Meyer2022%}) were introduced. CAMI, which stands for Critical Assessment of Metagenome Interpretation, is an international community-driven initiative that organizes benchmarking challenges to objectively evaluate the performance of metagenomic tools. This includes the benchmarking of binners based on standardized, realistically simulated microbial communities that vary in complexity, strain diversity, and abundance.
+
+![This image visually compares the performance of various metagenomic binning tools across multiple environments, including Marine GSA, Marine MA, Strain-madness GSA, Strain-madness MA, Plant-associated GSA, and Plant-associated MA. The top row (a) uses box plots to show the distribution of genome counts recovered from each environment, with sample sizes (n) indicated for each category. The middle section (b) features horizontal bar charts illustrating the number of genomes recovered by different binning tools—such as MetaBinner, UltraBinner, CONCOCT, MetaWRAP, Vamb, MaxBin, MetaBAT, and Autometa—specifically for the Marine GSA environment. Similarly, the bottom section (c) presents bar charts for the Marine MA environment, highlighting the number of genomes recovered by each tool. The image effectively summarizes the efficiency and effectiveness of these tools in different metagenomic contexts.](./images/CAMI_Binners.png "Benchmark of multiple binners on the CAMI datasets ({%cite Meyer2022%})"){:width="60%"}
+
+A general approach is to perform binning using multiple binners that have shown good performance for the specific dataset, followed by bin refinement to generate an improved bin set that retains the best bins from the analysis.
+
+Does using more binners always improve results? In practice, one must also consider computational resources and time constraints. Running many binners can be very time-consuming and resource-intensive, especially for large studies. In some cases, adding extra binners does not lead to a meaningful increase in bin quality, so the choice of binners should be made carefully. Overall, identifying the optimal combination of binners remains an active area of research, and clear, widely accepted guidelines are still being established.
+
 ## Bin refinement
 
 There are also bin refinement tools, which can evaluate, combine, and improve the raw bins produced by primary binners such as MetaBAT2, CONCOCT, MaxBin2, or SemiBin. These tools help remove contamination, merge complementary bins, and recover higher-quality MAGs.
@@ -119,7 +133,6 @@ There are also bin refinement tools, which can evaluate, combine, and improve th
 
 * **Binnette** ({% cite Mainguy2024Binette %}): A fast and accurate bin refinement tool that constructs high-quality MAGs from the outputs of multiple binning tools. It generates hybrid bins using set operations on overlapping contigs — intersection, difference, and union — and evaluates their quality with CheckM2 to select the best bins. Compared to metaWRAP, Binette is faster and can process an unlimited number of input bin sets, making it highly scalable for large and complex metagenomic datasets.
 
-
 **Anvi’o** ({% cite Eren2015 %}) is a platform for **interactive visualization and manual refinement** of metagenomic bins. While it can run automated binning (defaulting to **CONCOCT**), its main strength lies in allowing users to:
 
 * Inspect contig-level coverage, GC content, and single-copy gene presence
@@ -128,20 +141,6 @@ There are also bin refinement tools, which can evaluate, combine, and improve th
 * Annotate bins and link them to taxonomic or functional information
 
 This interactive approach is particularly useful when automated binning produces ambiguous or low-quality bins, enabling **high-confidence MAG reconstruction**.
-
-## So many options, what binner to use ?
-
-Each of these binning methods has its own strengths and limitations, and the choice of a binning tool often depends on the characteristics of the metagenomic dataset and the research question. Practical guidance on which binner to use for specific datasets and environments can be drawn from benchmark studies such as {%cite NatureBinner2025%}.
-
-![The image displays four heatmaps (labeled g, h, i, j) comparing the performance of various binning methods across different datasets related to human gut and activated sludge microbiomes. Each heatmap shows numerical values representing metrics for methods such as CONCOCT, MaxBin 2, MetaBAT 2, VAMB, CLMB, MetaDecoder, BinnY, MetaBinner, SemiBin 2, and COMEBin. The columns correspond to different sequence types: short co-assembly, short single, short multi-sample, long single, long multi-sample, hybrid single, and hybrid multi-sample. The color gradient from light to dark red indicates the magnitude of the values, with darker shades representing higher values. The heatmaps provide a visual comparison of how each method performs across these different sequence types and datasets.](./images/Binning_Benchmark.png "Benchmark of multiple binners on activated sludge and human gut microbiome ({%cite NatureBinner2025%})"){:width="60%"}
-
-Additionally, the CAMI I and II challenges provide standardized simulated datasets that highlight the strengths and weaknesses of different binners, helping researchers select the most appropriate tool for their analysis.
-
-![This image visually compares the performance of various metagenomic binning tools across multiple environments, including Marine GSA, Marine MA, Strain-madness GSA, Strain-madness MA, Plant-associated GSA, and Plant-associated MA. The top row (a) uses box plots to show the distribution of genome counts recovered from each environment, with sample sizes (n) indicated for each category. The middle section (b) features horizontal bar charts illustrating the number of genomes recovered by different binning tools—such as MetaBinner, UltraBinner, CONCOCT, MetaWRAP, Vamb, MaxBin, MetaBAT, and Autometa—specifically for the Marine GSA environment. Similarly, the bottom section (c) presents bar charts for the Marine MA environment, highlighting the number of genomes recovered by each tool. The image effectively summarizes the efficiency and effectiveness of these tools in different metagenomic contexts.](./images/CAMI_Binners.png "Benchmark of multiple binners on the CAMI datasets ({%cite Meyer2022%})"){:width="60%"}
-
-A general approach is to perform binning using multiple binners that have shown good performance for the specific dataset, followed by bin refinement to generate an improved bin set that retains the best bins from the analysis.
-
-Does using more binners always improve results? In practice, one must also consider computational resources and time constraints. Running many binners can be very time-consuming and resource-intensive, especially for large studies. In some cases, adding extra binners does not lead to a meaningful increase in bin quality, so the choice of binners should be made carefully. Overall, identifying the optimal combination of binners remains an active area of research, and clear, widely accepted guidelines are still being established.
 
 ## Mock binning dataset for this training
 
@@ -517,7 +516,7 @@ A common use for genome de-replication is the case of individual assembly of met
 
 ![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./individual-assembly.png "Individual assembly followed by de-replication vs co-assembly"){:width="80%"}
 
-Several tools have been designed for the process of de-replication. **dRep** ({% cite olm2017drep %) is a software tool designed for the dereplication of genomes in metagenomic datasets. The goal is to retain a representative set of genomes to improve downstream analyses, such as taxonomic profiling and functional annotation.
+Several tools have been designed for the process of de-replication. **dRep** ({% cite olm2017drep %}) is a software tool designed for the dereplication of genomes in metagenomic datasets. The goal is to retain a representative set of genomes to improve downstream analyses, such as taxonomic profiling and functional annotation.
 
 An typical workflow of how dRep works for dereplication in metagenomics includes:
 
