@@ -10,11 +10,11 @@ description: |
 #cover-image: events/images/Galaxy_AGT2026.png
 cover-image-alt: logo for the Advanced Galaxy Training
 
-date_start: 2026-10-XX (Monday noon)
-date_end: 2026-10-XX+5 (Friday noon)
+date_start: 2026-10-12 (Monday noon)
+date_end: 2026-10-16 (Friday noon)
 
 
-#cost: free
+cost: 750-1500 euros (To be confirmed)
 audience: Data scientists, Advanced Galaxy Users and Team leaders with data that will require batch processing (production). The training will be done in French, while materials (slides) will be in English.
 #contact_email: academy@galaxyproject.org
 
@@ -33,16 +33,20 @@ contributions:
     organisers:
         - abretaud
         - bebatut
+        - lecorguille
     instructors:
-#        - ahmedhamidawan
+        - abretaud
+        - bebatut
+        - lecorguille
+        - Full list to be confirmed
 #    funding:
 #        - eurosciencegateway
 
 location:
-  name: Paris (To be confirmed)
+  name: Paris (Exact lcoation to be confirmed)
 #  address: Werthmannstrasse 4
 #  postcode: 79104
-  city: Paris (To be confirmed)
+  city: Paris
   country: France
 
 infrastructure:
@@ -99,5 +103,9 @@ You can find an overview of the program [here](https://docs.google.com/spreadshe
 
 ## Registaion
 
-The number of places in this workshop is limited to 20 participants. The course takes place only in person (not online, not hybrid). There are no fees for the workshop but you need to care for your accommodation, travel costs and catering by yourself. The course will take place if at least 10 participants register.
+The number of places in this workshop is limited to 20 participants. The course takes place only in person (not online, not hybrid). The course will take place if at least 10 participants register.
+Registration will open in May 2026, stay tuned.
+
+
+
 
