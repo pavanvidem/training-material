@@ -38,9 +38,8 @@ contributions:
         - abretaud
         - bebatut
         - lecorguille
-        - Full list to be confirmed
-#    funding:
-#        - eurosciencegateway
+   funding:
+        - IFB
 
 location:
   name: Paris (Exact lcoation to be confirmed)
@@ -62,15 +61,11 @@ infrastructure:
 # Add GTN tutorials by supplying the topic and tutorial name
 
 program:
-  - section: "Advanced Galaxy Training"
-    description: |
-      Below you will find an overview of the program (still in development) .
-    tutorials:
-      - type: custom
-        name: "[Program overview](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)"
-        description: |
-          [Program overview](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)
-
+    - section: "Monday (afternoon only): Welcome & Workflow development"  # section title is optiona
+    - section: "Tuesday: Workflow FAIRyfication and RO-crate, GTN & documentation"
+    - section: "Wednesday: Galaxy CLI & API and scaling up with Galaxy"
+    - section: "Thursday: Galaxy and data (Bring your own storage) and Bring Your Own Workflow"
+    - section: "Friday (morning only): Bring Your Own Workflow"
 ---
 
 # Welcome to the Advanced Galaxy Training: From development to batch processing and publication
