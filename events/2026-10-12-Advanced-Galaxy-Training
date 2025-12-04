@@ -39,7 +39,7 @@ contributions:
         - bebatut
         - lecorguille
    funding:
-        - IFB
+        - ifb
 
 location:
   name: Paris (Exact lcoation to be confirmed)
@@ -61,11 +61,58 @@ infrastructure:
 # Add GTN tutorials by supplying the topic and tutorial name
 
 program:
-    - section: "Monday (afternoon only): Welcome & Workflow development"  # section title is optiona
-    - section: "Tuesday: Workflow FAIRyfication and RO-crate, GTN & documentation"
-    - section: "Wednesday: Galaxy CLI & API and scaling up with Galaxy"
-    - section: "Thursday: Galaxy and data (Bring your own storage) and Bring Your Own Workflow"
-    - section: "Friday (morning only): Bring Your Own Workflow"
+  - section: "Monday"  # section title is optional
+    description: |
+      Introduction & Welcome
+    tutorials:
+      - type: custom
+        name: Introduction and Welcome
+        time: "13:00 - 15:10"
+      - type: custom
+        name: Workflow development
+        time: "15:10 - 17:30"
+
+  - section: "Tuesday"  # section title is optional
+    description: |
+      FAIRification & documentation
+    tutorials:
+      - type: custom
+        name: Workflow FAIRyfication
+        time: "9:00 - 12:00"
+      - type: custom
+        name: RO-crate, GTN and documentation
+        time: "13:00 - 17:00"
+
+  - section: "Wednesday"  # section title is optional
+    description: |
+      Scaling up projects with Galaxy
+    tutorials:
+      - type: custom
+        name: CLI & API
+        time: "9:00 - 12:00"
+      - type: custom
+        name: API & production
+        time: "13:00 - 17:00"
+
+  - section: "Thursday"  # section title is optional
+    description: |
+      Bring your own
+    tutorials:
+      - type: custom
+        name: Galaxy and storage (Bring your own storage)
+        time: "9:00 - 12:00"
+      - type: custom
+        name: Bring Your Own Workflow
+        time: "13:00 - 17:00"
+
+  - section: "Friday"  # section title is optional
+    description: |
+      Bring Your Own Workflow
+    tutorials:
+      - type: custom
+        name: Bring Your Own Workflow
+        time: "9:00 - 12:00"
+
 ---
 
 # Welcome to the Advanced Galaxy Training: From development to batch processing and publication
