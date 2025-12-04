@@ -183,13 +183,15 @@ In these cases, co-assembly is reasonable if:
 - Longitudinal sampling of the same site
 - Related samples
 
+{% snippet faqs/galaxy/fastq_groupmerge.md %}
+
 Examples where co-assembly would be reasonable:
 - Repeated sampling of the **same patient** along a particular amount of time.
 - Multiple samples taken from the **same site** and **similar environmental conditions**, eg. a patch of soil during the same sampling season.
 
 Examples where co-assembly would NOT be recommended:
 - Samples from different patients.
-- Samples from the same site, but over different seasons or under different environmental conditions, eg. a patch of soil before and after a bushfire event, a marine site under upwelling vs. under normal conditions.
+If samples differ as described, **individual assembly** is preferred. In the case of individual assembly, **contigs should be binned** per sample and an extra step of **de-replication** should be used as binning:
 
 If samples differ like described, **individual assembly** is preferred. In the case of individual assembly, if **contigs are binned** after, an extra step of **de-replication** should be used:
 
