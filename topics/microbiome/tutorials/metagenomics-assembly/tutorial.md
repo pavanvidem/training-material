@@ -294,11 +294,14 @@ Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used 
 > <details-title>Co-assembly with MetaSPAdes</details-title>
 > MetaSPAdes supports co-assembly by passing a list of paired-end read files. MEGAHIT, on the other hand, requires concatenating that list of paired-end read files into a single pair of forward and reverse files.
 >
-> 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
->    - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
->        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
->     - *"Select k-mer detection option"*: `User specific`
->        - *"K-mer size values"*: `21,33,55,77`
+> > <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
+> > 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
+> >     - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
+> >        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
+> >     - *"Select k-mer detection option"*: `User specific`
+> >        - *"K-mer size values"*: `21,33,55,77`
+> > 
+> {: .hands_on}
 {: .details}
 
 # Quality control of assembly
@@ -342,7 +345,25 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 >
 > {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-{: .hands_on}
+> <comment-title></comment-title>
+>
+> If the QUAST process takes too much time, we can import the results:
+>
+> > <hands-on-title>Import generated QUAST results</hands-on-title>
+> >
+> > 1. Import the QUAST report file from [Zenodo]({{ page.zenodo_link }}) or the Shared Data library:
+> >
+> >    ```text
+> >    {{ page.zenodo_link }}/files/quast_ERR2231567.html
+> >    {{ page.zenodo_link }}/files/quast_ERR2231568.html
+> >    {{ page.zenodo_link }}/files/quast_ERR2231569.html
+> >    {{ page.zenodo_link }}/files/quast_ERR2231570.html
+> >    {{ page.zenodo_link }}/files/quast_ERR2231571.html
+> >    {{ page.zenodo_link }}/files/quast_ERR2231572.html
+> >    ```
+> >
+> {: .hands_on}
+{: .comment}
 
 QUAST main output are HTML reports which aggregate different metrics.
 
@@ -356,10 +377,10 @@ On the top of each report is a table with in rows statistics for contigs larger 
 
       A base in the reference genome is counted as aligned if at least one contig has at least one alignment to this base.
 
-      We did not provide any reference genome, but metaQUAST tries to identify the genome content of the metagenome by aligning contigs to [SILVA](https://www.arb-silva.de/) 16S rRNA database. For each assembly, 50 reference genomes with top scores are chosen. The full reference genomes of the identified organisms are afterwards downloaded from NCBI to map the assemblies on them and compute the genome fractions.
+      We did not provide any reference genome, but QUAST tries to identify the genome content of the metagenome by aligning contigs to [SILVA](https://www.arb-silva.de/) 16S rRNA database. For each assembly, 50 reference genomes with top scores are chosen. The full reference genomes of the identified organisms are downloaded from NCBI to map the assemblies on them and compute the genome fractions.
 
       > <comment-title>Metagenome reference</comment-title>
-      > The alignment to automatically downloaded genomes for metagenomes is rather ambiguous and time-consuming. Most large-scale pipelines skip this step and set the **Maximum number of reference genomes (per each assembly) to download after searching in the SILVA database\*** option to `0`.
+      > The alignment to automatically downloaded genomes for metagenomes is rather ambiguous and time-consuming. Most large-scale pipelines skip this step and set the **Maximum number of reference genomes (per each assembly) to download after searching in the SILVA database*** option to `0`.
       {: .comment}
 
       For each identified genomes, the genome fraction is given when clicking on **Genome fraction (%)**
