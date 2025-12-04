@@ -191,7 +191,7 @@ Examples where co-assembly would NOT be recommended:
 - Samples from different patients.
 - Samples from the same site, but over different seasons or under different environmental conditions, eg. a patch of soil before and after a bushfire event, a marine site under upwelling vs. under normal conditions.
 
-If samples differ like described, **individual assembly** is preferred. In the case of individual assembly, if **contigs are binned** after, an extra step of **de-replication** should be used:
+If samples differ as described, **individual assembly** is preferred. In the case of individual assembly, **contigs should be binned** per sample and an extra step of **de-replication** should be used as binning:
 
 ![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./images/individual-assembly.png "Individual assembly followed by de-replication vs co-assembly. Source: dRep documentation"){:width="80%"}
 
