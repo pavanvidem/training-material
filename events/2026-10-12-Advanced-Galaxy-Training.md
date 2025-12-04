@@ -38,7 +38,7 @@ contributions:
         - abretaud
         - bebatut
         - lecorguille
-   funding:
+    funding:
         - ifb
 
 location:
