@@ -73,7 +73,7 @@ program:
 
 ---
 
-# Welcome to the Advanced Galaxy Training : From development to batch processing and publication
+# Welcome to the Advanced Galaxy Training: From development to batch processing and publication
 
 Embark on a deep dive into the world of Galaxy, the leading platform for data-intensive biomedical research. This workshop is designed for data scientists, advanced Galaxy users and team leaders with data that will require batch processing (production). 
 This comprehensive workshop will increase your proficiency in workflow development and testing in Galaxy using the command line, ensure your workflows are FAIR through the use of RO-Crate and automatic documentation generation, scale your processes by batch processing on Galaxy using CLI and API.
