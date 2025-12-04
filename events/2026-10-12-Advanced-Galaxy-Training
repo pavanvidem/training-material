@@ -60,9 +60,12 @@ infrastructure:
 
 # Program of your course
 # Add GTN tutorials by supplying the topic and tutorial name
+
 program:
-You can find an overview of the program [here](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)
+    You can find an overview of the program [here](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)
+
 ---
+
 # Welcome to the Advanced Galaxy Training : From development to batch processing and publication
 
 Embark on a deep dive into the world of Galaxy, the leading platform for data-intensive biomedical research. This workshop is designed for data scientists, advanced Galaxy users and team leaders with data that will require batch processing (production). 
