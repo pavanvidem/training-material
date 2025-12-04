@@ -193,11 +193,12 @@ Examples where co-assembly would NOT be recommended:
 - Samples from different patients.
 If samples differ as described, **individual assembly** is preferred. In the case of individual assembly, **contigs should be binned** per sample and an extra step of **de-replication** should be used as binning:
 
-If samples differ as described, **individual assembly** is preferred. In the case of individual assembly, **contigs should be binned** per sample and an extra step of **de-replication** should be used as binning:
+If samples differ as described, **individual assembly** is preferred. In the case of individual assembly, **contigs should be binned** per sample and an extra step of **de-replication** should be used after binning:
 
-![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./images/individual-assembly.png "Individual assembly followed by de-replication vs co-assembly. Source: dRep documentation"){:width="80%"}
 
-For more information on dereplication, check out the [metagenomic binning tutorial]({% link topics/microbiome/tutorials/metagenomics-binning/tutorial.md %}).
+> <comment-title></comment-title>
+> For more information on dereplication, check out the [metagenomic binning tutorial]({% link topics/microbiome/tutorials/metagenomics-binning/tutorial.md %}).
+{: .comment}
 
 In this tutorial, to show all steps, we will run an **individual assembly**.
 
@@ -220,7 +221,12 @@ As mentioned in the introduction, several tools are available for metagenomic as
 
   It makes use of the Succinct de Bruijn Graph (SdBG) approach to achieve low memory assembly.
 
-Both tools are available in Galaxy. But currently, only MEGAHIT can be used in individual mode for several samples.
+Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used in individual mode for several samples, as a option in the wrapper.
+**MetaSPAdes** performs co-assembly by default if multiple samples are supplied. However, individually assembly can be enforced:
+
+{% snippet faqs/galaxy/collections_force_mapping_over.md %}
+
+# Assembly with MEGAHIT
 
 > <hands-on-title>Individual assembly of short-reads with MEGAHIT</hands-on-title>
 > 1.  {% tool [MEGAHIT](toolshed.g2.bx.psu.edu/repos/iuc/megahit/megahit/1.2.9+galaxy2) %} with parameters:
