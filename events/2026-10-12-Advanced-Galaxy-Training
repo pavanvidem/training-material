@@ -62,7 +62,14 @@ infrastructure:
 # Add GTN tutorials by supplying the topic and tutorial name
 
 program:
-    You can find an overview of the program [here](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)
+  - section: "Advanced Galaxy Training"
+    description: |
+      Below you will find an overview of the program (still in development) .
+    tutorials:
+      - type: custom
+        name: "[Program overview](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)"
+        description: |
+          [Program overview](https://docs.google.com/spreadsheets/d/1k5ho82zilv4zgm94w_DLEnvxfLRhfO135KI6RHuXx44/edit?usp=sharing)
 
 ---
 
