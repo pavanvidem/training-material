@@ -77,12 +77,17 @@ abretaud:
       - eurosciencegateway
       - elixir-europe
 
+abdullahkahraman:
+    name: Abdullah Kahraman
+    github: false
+    joined: 2025-10
+
 abdulrahmanazab:
     name: Abdulrahman Azab
     joined: 2019-01
     affiliations:
       - eurosciencegateway
-
+      
 abueg:
     name: Linelle Abueg
     twitter: llabueg
@@ -192,6 +197,12 @@ andrewr:
     affiliations:
       - minnesotauni
     joined: 2024-05
+
+
+annahenger:
+    name: Anna Henger
+    github: false
+    joined: 2025-10
 
 annatrigos:
     name: Anna Trigos
@@ -434,6 +445,9 @@ bfranicevic:
     affiliations:
       - elixir-europe
 
+BirdmanRidesAgain :
+    name : Keiler Collier
+    joined: 2025-08
 
 breakthewall:
     name: Joan Hérisson
@@ -527,6 +541,14 @@ Camila-goclowski:
 carloscheemendonca:
     name: Carlos Chee Mendonça
     joined: 2025-01
+
+carolegoble:
+    name: Carole Goble
+    joined: 2025-08
+    elixir_node: uk
+    affiliations:
+      - elixir-europe
+      - uni-manchester
 
 charitylaw:
     name: Charity Law
@@ -666,6 +688,7 @@ Sch-Da:
       - uni-freiburg
       - deKCD
       - elixir-europe
+      - nfdi4culture
 
 dadrasarmin:
     name: Armin Dadras
@@ -919,6 +942,14 @@ cumbof:
     orcid: 0000-0003-2920-5838
     joined: 2018-02
 
+fbacall:
+    name: Finn Bacall
+    joined: 2025-08
+    elixir_node: uk
+    affiliations:
+      - elixir-europe
+      - uni-manchester
+
 felicitas215:
     name: Felicitas Kindel
     email: f.kindel@fz-juelich.de
@@ -1071,6 +1102,13 @@ GokceOGUZ:
     location:
       country: SG
 
+GraceAHall:
+    name: Grace Hall
+    joined: 2025-09
+    affiliations:
+      - unimelb
+      - melbournebioinformatics
+      
 guerler:
     name: Aysam Guerler
     joined: 2017-09
@@ -1085,10 +1123,18 @@ guillaume-gricourt:
 hvelab:
     name: Helena Vela
     joined: 2024-09
+    contact_for_training: true
+    affiliations:
+      - biont
 
 hannahkimincompbio:
     name: Hannah Kim
     joined: 2024-09
+
+haswane:
+    github: false
+    name: Haswane Chei
+    joined: 2025-06
 
 hchiapello:
     name: Hélène Chiapello
@@ -1340,6 +1386,7 @@ jkreplak:
 
 jochenblom:
     name: Jochen Blom
+    elixir_node: de
     joined: 2025-04
 
 joelvdavies:
@@ -1593,15 +1640,17 @@ lgallegovillar:
 
 lldelisle:
     name: Lucille Delisle
-    email: lucille.delisle@epfl.ch
+    email: lucille.delisle@unige.ch
     orcid: 0000-0002-1964-4960
     joined: 2019-08
     elixir_node: ch
+    matrix: 'lldelisle:matrix.org'
     contact_for_training: true
+    maintainer_contact: matrix
     location:
       country: CH
-      lat: 46.52
-      lon: 6.56
+      lat: 46.19
+      lon: 6.15
     affiliations:
       - elixir-europe
 
@@ -1610,6 +1659,8 @@ lisanna:
     joined: 2023-09
     email: lisanna.paladin@gmail.com
     orcid: 0000-0003-0011-9397
+    elixir_node: de
+    contact_for_training: true
     affiliations:
       - elixir-europe
       - embl-ebi
@@ -1862,6 +1913,8 @@ Melkeb:
 melpetera:
     name: Mélanie Petera
     joined: 2019-06
+    affiliations:
+      - metabohub
 
 meltemktn:
     name: Meltem Kutnu
@@ -1945,6 +1998,12 @@ mirelaminkova:
     affiliations:
       - surf
 
+mittler-works:
+    name: Nils Mittler
+    joined: 2025-06
+    affiliations:
+      - deKCD
+
 moffmade:
     name: Cory Maughmer
     joined: 2018-06
@@ -1955,7 +2014,7 @@ moheydarian:
     orcid: 0000-0001-9449-9364
     joined: 2017-09
 
-Morphy427: 
+Morphy427:
     name: Elouan Le Mestric
     joined: 2025-05
 
@@ -1990,6 +2049,10 @@ mwolfien:
     name: Markus Wolfien
     joined: 2017-09
 
+martindemko:
+    name: Martin Demko
+    joined: 2025-09
+
 martinwolst:
     name: Martin Wolstencroft
     joined: 2024-01
@@ -2006,6 +2069,11 @@ Nilchia:
       - uni-freiburg
       - elixir-europe
       - spoc
+    email: nilchia@informatik.uni-freiburg.de
+    linkedin: nilchia
+    matrix: 'nilchia:matrix.org'
+    elixir_node: de
+
 
 smza:
     name: Munazah Andrabi
@@ -2331,6 +2399,13 @@ polkhe:
     affiliations:
       - uni-freiburg
 
+pokapok-vracape:
+    name: Virginie Racape
+    joined: 2025-08
+    email: virginie.racape@pokapok.org
+    affiliations:
+      - fairease
+      
 ppalagi:
     name: Patricia Palagi
     joined: 2022-09
@@ -2526,6 +2601,17 @@ sanjaysrikakulam:
       - elixir-europe
       - eurosciencegateway
 
+santamccloud:
+    name: Santino Faack
+    joined: 2025-07
+    affiliations:
+      - uni-freiburg
+
+santinofaack:
+    name: Santino Faack
+    github: false
+    joined: 2025-10
+
 saramorsy:
     name: Sara Morsy
     joined: 2021-10
@@ -2581,6 +2667,12 @@ sebastian-schaaf:
     former_affiliations:
       - eurosciencegateway
 
+sebastian-preissl:
+    name: Sebastian Preissl
+    github: false
+    joined: 2025-09
+
+
 sonalhenson:
     name: Sonal Henson
     joined: 2023-09
@@ -2618,6 +2710,9 @@ shiltemann:
 silviadg87:
     name: Silvia Di Giorgio
     joined: 2025-05
+    contact_for_training: true
+    affiliations:
+      - biont
 
 Shorla:
     name: Olushola Ogunkelu
@@ -2767,12 +2862,18 @@ supernord:
     orcid: 0000-0002-2977-5032
     elixir_node: au
     affiliations:
-      - elixir-europe
+      - unimelb
+      - AustralianBioCommons
 
 sunyi000:
     name: Yi Sun
     email: yi.sun@embl.de
     joined: 2021-03
+
+maulakhan:
+    name: Arif ul Maula Khan
+    email: arif.khan@embl.de
+    joined: 2025-07
 
 Swathi266:
     name: Swathi Nataraj
@@ -2962,6 +3063,14 @@ tuncK:
     name:  Tunc Kayikcioglu
     joined: 2023-10
 
+uwwint:
+    name: Uwe Winter
+    joined: 2025-09
+    elixir_node: au
+    affiliations:
+      - unimelb
+      - AustralianBioCommons
+
 valentinmarcon:
     name: Valentin Marcon
     joined: 2017-09
@@ -2973,6 +3082,14 @@ vdda:
 VerenaMoo:
     name: Verena Moosmann
     joined: 2024-12
+
+vinisalazar:
+    name: Vini Salazar
+    joined: 2025-10
+    orcid: 0000-0002-8362-3195
+    affiliations:
+        - unimelb
+        - melbournebioinformatics
 
 vivekbhr:
     name: Vivek Bhardwaj
@@ -3063,7 +3180,15 @@ xtrojak:
 yguitton:
     name: Yann Guitton
     joined: 2019-06
-
+    email: yann.guitton@inrae.fr
+    orcid: 0000-0002-4479-0636
+    location:
+      country: FR
+      lat: 47.76
+      lon: -0.32
+    affiliations:
+      - metabohub
+      
 yhoogstrate:
     name: Youri Hoogstrate
     joined: 2017-09
