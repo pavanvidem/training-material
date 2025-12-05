@@ -7,7 +7,7 @@ cover-image-alt: "microgalaxy logo"
 editorial_board:
 - bebatut
 funding:
-- elixir
+- elixir-europe
 
 title: Building and Annotating Metagenome-Assembled Genomes (MAGs) from Metagenomics Reads
 description: |
