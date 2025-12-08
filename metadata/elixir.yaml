@@ -11,8 +11,8 @@ summary: |
 
 tag_based: true
 
-og_image: /assets/images/GMOD-cogs.png
-logo: /training-material/shared/images/elixir.png
+og_image: /shared/images/elixir.png
+logo: /training-material/assets/images/elixir/ELIXIR_logo_neagtive_white.png
 logo_alt: "The ELIXIR logo where the X is DNA"
 
 editorial_board:
