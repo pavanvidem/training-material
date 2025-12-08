@@ -6,8 +6,10 @@ cover-image-alt: "microgalaxy logo"
 
 editorial_board:
 - bebatut
+- paulzierep
 funding:
 - elixir-europe
+- de.NBI
 
 title: Building and Annotating Metagenome-Assembled Genomes (MAGs) from Metagenomics Reads
 description: |
