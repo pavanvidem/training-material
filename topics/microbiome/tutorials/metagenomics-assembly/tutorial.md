@@ -314,21 +314,21 @@ Once assembly is done, it is important to check its quality.
 
 Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the metagenomics mode of **QUAST** ({%cite gurevich2013%}).
 
-> <hands-on-title>Evaluation assembly quality with metaQUAST</hands-on-title>
+> <hands-on-title>Evaluation of assembly quality with metaQUAST</hands-on-title>
 >
 > 1. {% tool [QUAST](toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.2.0+galaxy1) %} with parameters:
->    - *"Assembly mode?*": `Individual assembly (1 contig file per samples)`
->      - *"Use customized names for the input files?"*: `No, use dataset names`
->        - {% icon param-collection %} *"Contigs/scaffolds file"*: output **MEGAHIT**
->      - *"Reads options"*: `Illumina paired-end reads in paired collection`
+>     - *"Assembly mode?"*: `Individual assembly (1 contig file per samples)`
+>       - *"Use customized names for the input files?"*: `No, use dataset names`
+>         - {% icon param-collection %} *"Contigs/scaffolds file"*: output **MEGAHIT**
+>       - *"Reads options"*: `Illumina paired-end reads in paired collection`
 >
->          > <comment-title></comment-title>
->          > To make the job quicker, you can select `Disabled` here. The raw reads will then not be mapped to the assembly to compute metrics, like the coverage.
->          {: .comment}
+>       > <comment-title>Tip</comment-title>
+>       > To speed up the processing, you may choose `Disabled` here. In this case, raw reads will **not** be mapped back to the assembly to compute metrics such as read coverage.
+>       {: .comment}
 >
->      - {% icon param-collection %} *"FASTQ/FASTA files"*: `Raw reads`
->    - *"Type of assembly"*: `Metagenome`
->    - *"Output files"*: `HTML report`, `PDF report`, `Tabular reports`, `Log file`, `Key metric summary (metagenome mode)`, `Krona charts (metagenome mode without reference genomes)`
+>       - {% icon param-collection %} *"FASTQ/FASTA files"*: `Raw reads`
+>     - *"Type of assembly"*: `Metagenome`
+>     - *"Output files"*: `HTML report`, `PDF report`, `Tabular reports`, `Log file`, `Key metric summary (metagenome mode)`, `Krona charts (metagenome mode without reference genomes)`
 >
 > 2. Inspect the HTML reports:
 > ![Screenshot of QUAST HTML report](./images/quast_html_report.png)
