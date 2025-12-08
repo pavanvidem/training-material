@@ -9,7 +9,7 @@ editorial_board:
 - paulzierep
 funding:
 - elixir-europe
-- de.NBI
+- deNBI
 
 title: Building and Annotating Metagenome-Assembled Genomes (MAGs) from Metagenomics Reads
 description: |
