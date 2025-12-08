@@ -292,12 +292,14 @@ Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used 
 {: .question}
 
 > <details-title>Co-assembly with MetaSPAdes</details-title>
-> MetaSPAdes supports co-assembly by passing a list of paired-end read files. MEGAHIT, on the other hand, requires concatenating that list of paired-end read files into a single pair of forward and reverse files.
->
+> MetaSPAdes supports co-assembly by passing a list of paired-end read files.
 > > <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
 > > 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
 > >     - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
 > >        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
+>          > <comment-title></comment-title>
+>          > To do individual assembly with MetaSPADes follow the previous FAQ to create a nested list of the samples.
+>          {: .comment}
 > >     - *"Select k-mer detection option"*: `User specific`
 > >        - *"K-mer size values"*: `21,33,55,77`
 > > 
@@ -785,35 +787,6 @@ When clicking on the genome name, the contigs are displayed according to their m
 > >
 > {: .question}
 {: .details}
-<!--# De-replication
-
-De-replication is the process of identifying sets of genomes that are the "same" in a list of genomes, and removing all but the “best” genome from each redundant set. How similar genomes need to be to be considered “same”, how to determine which genome is “best”, and other important decisions are discussed in [Important Concepts](https://drep.readthedocs.io/en/latest/choosing_parameters.html).
-
-A common use for genome de-replication is the case of individual assembly of metagenomic data. If metagenomic samples are collected in a series, a common way to assemble the short reads is with a “co-assembly”. That is, combining the reads from all samples and assembling them together. The problem with this is assembling similar strains together can severely fragment assemblies, precluding recovery of a good genome bin. An alternative option is to assemble each sample separately, and then “de-replicate” the bins from each assembly to make a final genome set.
-
-![Image shows the process of individual assembly on two strains and five samples, after individual assembly of samples two samples are chosen for de-replication process. In parallel, co-assembly on all five samples is performed](./images/individual-assembly.png "Individual assembly followed by de-replication vs co-assembly"){:width="80%"}
-
-If we have different samples, then we do an individual assembly for each sample. In the figure above we see that after individual assembly we have results for every individual assembly represented with pie charts. Different colours on these charts show different strains (organisms). Every chart has a different percentage of every strain which means that the assemblies contain different strains in different proportions in each sample.
-
-Afterwards, we do the process of de-replication. We try to combine all the assemblies and try to identify which genomes are the most proper.
-
-Individual assembly is a good practice as well as co-assembly. They both have pros and cons and that are just different techniques.
-
-Co-assembly is a more common practice. But in case of co-assembly the genome might be more fragmented afterwards (like it is shown in the figure)  and sometimes it can be less proper. However, it should be decided in every single case which approach to use (co- or individual). More comprehensive information about de-replication you can learn from paper {%cite evans2020%} to get more intuition about how de-replication works.
-
-> <hands-on-title>General list of actions for de-replication</hands-on-title>
-> 1. Create new history
-> 2. Assemble each sample separately using your favorite assembler
-> 3. Perform a co-assembly to catch low-abundance microbes
-> 4. Bin each assembly separately using your favorite binner
-> 5. Bin co-assembly using your favorite binner
-> 6. Pull the bins from all assemblies together
-> 7. rRun **dRep** on them
-> 8. Perform downstream analysis on the de-replicated genome list
->
-{: .hands_on}
-
-We will perform steps from 1 to 3 in this tutorial a bit later while steps 4 - 8 will be considered in the following tutorial - Binning tutorial.-->
 
 # Conclusion
 
