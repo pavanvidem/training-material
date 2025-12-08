@@ -205,7 +205,7 @@ In this tutorial, to show all steps, we will run an **individual assembly**.
 > <comment-title>Why not both?</comment-title>
 > It is also possible to run both individual assembly and co-assembly, and this approach can recover MAGs effectively. In this case: individual assembly can recover MAGs with a low amount of contamination, while co-assembly also allows for the recovery of low-abundance MAGs, with the downside of potentially more contamination. Although this approach can be effective, it also requires high computational resources and should be considered carefully.
 >
-> > {% snippet faqs/galaxy/fastq_groupmerge.md %}
+> {% snippet faqs/galaxy/fastq_groupmerge.md %}
 >
 {: .comment}
 
@@ -293,17 +293,19 @@ Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used 
 
 > <details-title>Co-assembly with MetaSPAdes</details-title>
 > MetaSPAdes supports co-assembly by passing a list of paired-end read files.
-> > <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
-> > 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with following parameters
-> >     - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
-> >        - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
->          > <comment-title></comment-title>
->          > To do individual assembly with MetaSPADes follow the previous FAQ to create a nested list of the samples.
->          {: .comment}
-> >     - *"Select k-mer detection option"*: `User specific`
-> >        - *"K-mer size values"*: `21,33,55,77`
-> > 
-> {: .hands_on}
+>
+> <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
+> 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with the following parameters:
+>     - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
+>       - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
+>
+>       > <comment-title>Tip</comment-title>
+>       > To run **individual assembly** instead, follow the previous FAQ to create a **nested list of samples**.
+>       {: .comment}
+>
+>     - *"Select k-mer detection option"*: `User specific`
+>       - *"K-mer size values"*: `21,33,55,77`
+{: .hands_on}
 {: .details}
 
 # Quality control of assembly
