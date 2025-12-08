@@ -349,25 +349,8 @@ Assemblies can be evaluated with **metaQUAST** ({%cite mikheenko2016%}), the met
 >
 > {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-> <comment-title></comment-title>
->
-> If the QUAST process takes too much time, we can import the results:
->
-> > <hands-on-title>Import generated QUAST results</hands-on-title>
-> >
-> > 1. Import the QUAST report file from [Zenodo]({{ page.zenodo_link }}) or the Shared Data library:
-> >
-> >    ```text
-> >    {{ page.zenodo_link }}/files/quast_ERR2231567.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231568.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231569.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231570.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231571.html
-> >    {{ page.zenodo_link }}/files/quast_ERR2231572.html
-> >    ```
-> >
-> {: .hands_on}
-{: .comment}
+{: .hands_on}
+
 
 QUAST main output are HTML reports which aggregate different metrics.
 
