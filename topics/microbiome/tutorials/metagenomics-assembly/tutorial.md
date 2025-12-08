@@ -278,7 +278,7 @@ Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used 
 > <question-title>Contig metrics</question-title>
 >
 > 1. How many contigs have been assembled for sample ERR2231568 ?
-> 2. And for ERR2231572?
+> 2. And how many have been assembled for ERR2231572?
 > 3. What is the minimum length of the contigs?
 >
 > > <solution-title></solution-title>
