@@ -1142,10 +1142,9 @@ We will reformat the output of **STAR** to be similar to the output of **feature
 
 > <hands-on-title>Reformatting STAR output</hands-on-title>
 >
-> 1. {% tool [Select last](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/9.5+galaxy2) %} lines from a dataset (tail) to remove the first 4 lines with the following parameters:
+> 1. {% tool [Remove beginning](Remove beginning1) %} to remove the first 4 lines with the following parameters:
+>    - *"Remove first"*: `4` (lines)
 >    - {% icon param-collection %} *"Text file"*: `RNA STAR on collection N: reads per gene` (output of **RNA STAR** {% icon tool %})
->    - *"Operation"*: `Keep everything from this line on`
->    - *"Number of lines"*: `5`
 >
 > 2. {% tool [Cut](Cut1) %} columns from a table with the following parameters:
 >    - *"Cut columns"*: `c1,c2`
