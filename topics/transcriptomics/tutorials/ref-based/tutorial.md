@@ -1689,7 +1689,7 @@ DESeq2 requires to provide for each factor, counts of samples in each category. 
 >
 >    We will now split the collection by treatment. We need to find a pattern which will be present into only one of the 2 categories. We will use the word `untreat`:
 >
-> 3. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.3+galaxy1) %} (grep) with the following parameters:
+> 3. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.5+galaxy2) %} (grep) with the following parameters:
 >    - *"Select lines from"*: `Extract element identifiers on data XXX` (output of  **Extract element identifiers** {% icon tool %})
 >    - *"that"*: `Match`
 >    - *"Regular Expression"*: `untreat`
@@ -1703,7 +1703,7 @@ DESeq2 requires to provide for each factor, counts of samples in each category. 
 >
 > We will repeat the same process using `single`
 >
-> 6. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.3+galaxy1) %} (grep) with the following parameters:
+> 6. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.5+galaxy2) %} (grep) with the following parameters:
 >    - *"Select lines from"*: `Extract element identifiers on data XXX` (output of  **Extract element identifiers** {% icon tool %})
 >    - *"that"*: `Match`
 >    - *"Regular Expression"*: `single`
