@@ -120,16 +120,16 @@ program:
       Bring Your Own Workflow (BYOW)
     tutorials:
       - type: custom
-        name: BYOW : Group work
+        name: BYOW - Group work
         time: "9:00 - 10:15"
       - type: custom
-        name: BYOW : Group work
+        name: BYOW - Group work
         time: "10:45 - 12:00"
       - type: custom
-        name: BYOW : Group work
+        name: BYOW - Group work
         time: "13:30 - 15:00"
       - type: custom
-        name: BYOW : Group work
+        name: BYOW - Group work
         time: "15:30 - 17:00"
 
   - section: "Friday"  # section title is optional
@@ -137,7 +137,7 @@ program:
       Storage & closing
     tutorials:
       - type: custom
-        name: BYOW : Group recap
+        name: BYOW - Group recap
         time: "9:00 - 9:30"
       - type: custom
         name: Bring Your Own storage, IDC & data
