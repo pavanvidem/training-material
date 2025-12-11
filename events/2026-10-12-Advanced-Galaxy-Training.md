@@ -63,55 +63,89 @@ infrastructure:
 program:
   - section: "Monday"  # section title is optional
     description: |
-      Introduction & Welcome
+      Introduction
     tutorials:
       - type: custom
         name: Introduction and Welcome
-        time: "13:00 - 15:10"
+        time: "13:00 - 15:20"
       - type: custom
         name: Workflow development
-        time: "15:10 - 17:30"
+        time: "15:50 - 17:00"
 
   - section: "Tuesday"  # section title is optional
     description: |
       FAIRification & documentation
     tutorials:
       - type: custom
-        name: Workflow FAIRyfication
-        time: "9:00 - 12:00"
+        name: Recap of the previous day & Galaxy France
+        time: "9:00 - 9:30"
       - type: custom
-        name: RO-crate, GTN and documentation
-        time: "13:00 - 17:00"
+        name: Workflow FAIRyfication
+        time: "9:30 - 10:30"
+      - type: custom
+        name: Workflow FAIRyfication
+        time: "11:00 - 12:00"
+      - type: custom
+        name: RO-crate & Galaxy Training Network (GTN)
+        time: "13:30 - 15:30"
+      - type: custom
+        name: Documentation: From a workflow to a tutorial
+        time: "16:00 - 17:00"
 
   - section: "Wednesday"  # section title is optional
     description: |
       Scaling up projects with Galaxy
     tutorials:
       - type: custom
-        name: CLI & API
-        time: "9:00 - 12:00"
+        name: Recap of the previous day & Big projects using Galaxy
+        time: "9:00 - 9:30"
       - type: custom
-        name: API & production
-        time: "13:00 - 17:00"
-
+        name: Command Line Interface (CLI) & Planemo run
+        time: "9:30 - 10:30"
+      - type: custom
+        name: API & Bioblend
+        time: "11:00 - 12:00"
+      - type: custom
+        name: API & Bioblend
+        time: "13:30 - 15:00"
+      - type: custom
+        name: Documentation: Moving to production scale on Galaxy
+        time: "15:30 - 16:30"
+      - type: custom
+        name: Bring Your Own Workflow (BYOW) : Explanation & group preparation
+        time: "16:30 - 17:00"
+        
   - section: "Thursday"  # section title is optional
     description: |
-      Bring your own
+      Bring Your Own Workflow (BYOW)
     tutorials:
       - type: custom
-        name: Galaxy and storage (Bring your own storage)
-        time: "9:00 - 12:00"
+        name: BYOW : Group work
+        time: "9:00 - 10:15"
       - type: custom
-        name: Bring Your Own Workflow
-        time: "13:00 - 17:00"
+        name: BYOW : Group work
+        time: "10:45 - 12:00"
+      - type: custom
+        name: BYOW : Group work
+        time: "13:30 - 15:00"
+      - type: custom
+        name: BYOW : Group work
+        time: "15:30 - 17:00"
 
   - section: "Friday"  # section title is optional
     description: |
-      Bring Your Own Workflow
+      Storage & closing
     tutorials:
       - type: custom
-        name: Bring Your Own Workflow
-        time: "9:00 - 12:00"
+        name: BYOW : Group recap
+        time: "9:00 - 9:30"
+      - type: custom
+        name: Bring Your Own storage, IDC & data
+        time: "9:30 - 10:00"
+      - type: custom
+        name: Closing remarks
+        time: "10:15 - 11:45"
+
 
 ---
 
