@@ -89,7 +89,7 @@ program:
         name: RO-crate & Galaxy Training Network (GTN)
         time: "13:30 - 15:30"
       - type: custom
-        name: Documentation: From a workflow to a tutorial
+        name: From a workflow to a tutorial
         time: "16:00 - 17:00"
 
   - section: "Wednesday"  # section title is optional
@@ -109,10 +109,10 @@ program:
         name: API & Bioblend
         time: "13:30 - 15:00"
       - type: custom
-        name: Documentation: Moving to production scale on Galaxy
+        name: Moving to production scale on Galaxy
         time: "15:30 - 16:30"
       - type: custom
-        name: Bring Your Own Workflow (BYOW) : Explanation & group preparation
+        name: Bring Your Own Workflow (BYOW) - Explanation & group preparation
         time: "16:30 - 17:00"
         
   - section: "Thursday"  # section title is optional
