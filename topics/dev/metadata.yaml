@@ -7,18 +7,25 @@ edam_ontology: ["topic_3372"]
 
 community_ctas:
   - description: |
-      Join us and discuss Galaxy tool development on our Matrix channel
-    link: https://matrix.to/#/#galaxy-iuc_iuc:gitter.im
-    link_text: Community Matrix Chat
+      Join us and discuss Galaxy project code development on our Matrix channel
+    link: https://matrix.to/#/#galaxyproject_dev:gitter.im
+    link_text: Galaxy project code development Chat
     icon: comment
-    width: 6
+    width: 4
     primary_color: true
   - description: |
-      Check out Galaxy Tools Developers special interest group for all aspects of Galaxy tool development and maintenance - from wrapping and testing to publication, review, and long-term support.
+      Join us and discuss Galaxy tool development on our Matrix channel
+    link: https://matrix.to/#/#galaxy-iuc_iuc:gitter.im
+    link_text: Galaxy tool developement Chat
+    icon: comment
+    width: 4
+    primary_color: true
+  - description: |
+      Join Galaxy Tools Developers special interest group for all aspects of Galaxy tool development.
     link: https://galaxyproject.org/community/sig/tool-developers/
     link_text: Galaxy Tool Developers (SIG)
-    icon: comment
-    width: 6
+    icon: cofest
+    width: 4
     primary_color: true
 
 docker_image: "quay.io/galaxy/dev-training"
