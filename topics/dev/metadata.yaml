@@ -16,7 +16,7 @@ community_ctas:
   - description: |
       Join us and discuss Galaxy tool development on our Matrix channel
     link: https://matrix.to/#/#galaxy-iuc_iuc:gitter.im
-    link_text: Galaxy tool developement Chat
+    link_text: Galaxy tool development Chat
     icon: comment
     width: 4
     primary_color: true
