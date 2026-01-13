@@ -54,7 +54,7 @@ In this tutorial, we will show how DICOM series and DICOM datasets can be conver
 
 # Getting the Image Data
 
-In this tutorial, we will be using a publicly available CT dataset of a torso, scanned between the thorax chest and the pelvis.
+In this tutorial, we will be using a publicly available CT dataset of a human torso, scanned between the thorax and the pelvis.
 
 
 > <hands-on-title>Data upload</hands-on-title>
@@ -120,7 +120,7 @@ CT image data, such as the dataset that we are using in this tutorial, typically
 
 However, the image data may also contain values outside of the range of –1000 to 3071 HU that correspond to, for example, parts of the CT imaging setup, or imaging artifacts. To effectively “erase” those parts from the image data, we will clip the image intensities to the meaningful range of –1000 to 3071 HU as a final step of pre-processing:
 
-> <hands-on-title>Clipping the image image intensities</hands-on-title>
+> <hands-on-title>Clipping the image intensities</hands-on-title>
 >
 > 1. {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input image"*: Output of {% tool [Scale image](toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0) %}
@@ -134,11 +134,242 @@ xxx
 
 # Skeletal Segmentation
 
-xxx
+The imaged section of the torso in our dataset contains parts of prominent skeletal structures such as the pelvis, the spine, and the thorax. Segmentation of these structures is easy due to the distinct ranges of the Hounsfield scale:
+
+> <hands-on-title>Skeletal segmentation in a CT image</hands-on-title>
+>
+> 1. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Input image"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Thresholding method"*: `Manual`
+>    - *"Threshold value"*: `150`
+{: .hands_on}
+
+Lets inspect the segmentation result using a 3-D overlay of the input image and the segmentation mask:
+
+> <hands-on-title>Visualization of 3-D segmentation results</hands-on-title>
+>
+> 1. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
+>    - *"Color map"*: `BrBG`
+>      - *"Ramp function"*: `Enabled`
+>        - *"Ramp start"*: `Absolute intensity value`
+>        - *"Intensity value"*: `50`
+>        - *"Ramp end"*: `Absolute intensity value`
+>        - *"Intensity value"*: `150`
+>    - *"Camera parameters"*:
+>      - *"Distance"*: `350`
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
+>    - *"Render mask overlay"*: `Render mask overlay`
+>      - *"Mask overlay (3-D)"*: Output of {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %}
+{: .hands_on}
+
+It can be seen from the visualization that objects corresponding to parts of the imaging setup (behind the spine) also fall into the selected HU range, and is thus falsely included in the segmentation skeletal segmentation result (leakage). To improve the segmentation result, we will thus remove all objects from the segmentation that are behind the spine and pelvis. To identify the spine and pelvis in the segmentation result, we exploit that they correspond to the largest connected component in our segmentation.
+
+The first step is to determine the sizes of the connected components:
+
+> <hands-on-title>Feature extraction for the connected components of the segmentation result</hands-on-title>
+>
+> 1. {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0) %} with the following parameters to assign a unique label to each connected component of the segmentation result:
+>    - *"Mode"*: `Connected component analysis`
+>    - {% icon param-file %} *"Binary image"*: Output of {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0)  %}
+>
+> 2. {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %} with the following parameters to measure the size and location of each connected component:
+>    - {% icon param-file %} *"Label map"*: Output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0)  %}
+>    - *"Available features"*:
+>      - `Label from the label map`
+>      - `Area`
+>      - `Centroid`
+{: .hands_on}
+
+Next, we inspect the tabular output yielded by the {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %} tool:
+
+|label|area   |centroid_x       |centroid_y        |centroid_z       |
+|:----|:------|:----------------|:-----------------|:----------------|
+|1    |61710.0|88.83420839410144|103.37395883973424|36.61537838275806|
+|2    |10465.0|97.36292403248925|139.6089823220258 |52.41691352126135|
+|3    |1.0    |87.0             |137.0             |0.0              |
+|4    |2.0    |44.0             |159.0             |0.5              |
+|5    |7.0    |132.0            |159.0             |3.0              |
+|6    |6.0    |48.5             |160.0             |1.0              |
+|…    |…      |…                |…                 |…                |
+
+In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis points from the back of the torso to the front). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
+
+Since this coordinate corresponds to the centroid of the spine and pelvis, removing all objects with a y-coordinate of more than 103.37 pixels is likely to also remove some ribs—which we do not want to happen. Hence, we will add a tolerance margin for objects: Instead of strictly removing all objects that are behind the centroid of the spine and pelvis, we will only remove those that are 1,5cm or further behind.
+
+The size of the margin needs to be given in pixels. To determine that, we inspect the standard output of the {% tool [Scale image](toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0) %} tool, that contains many details:
+
+> <hands-on-title>Inspect the standard output of the "Scale image" tool</hands-on-title>
+>
+> 1. Expand the history item for the output of the {% tool [Scale image](toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0) %} tool.
+>
+> 2. Click on the {% icon details %} icon.
+>
+> 3. Scroll down to the **Job Information** section to view the "Tool Standard Output" log:
+>
+>  > <code-out-title>Standard output of the "Scale image" tool</code-out-title>
+>  > ```
+>  > Input axes: ZYX
+>  > Input resolution: (1.137778101526753, 1.137778101526753), unit: mm, z_position: -248.60999337383177, z_spacing: 2.4999998490566036
+>  > scale: (1, 1, 1.0, 0.35156242119108805, 0.35156242119108805)
+>  > order: 1
+>  > preserve_range: True
+>  > channel_axis: 5
+>  > anti_aliasing: True
+>  > anti_aliasing_sigma: (0, 0, 0, 0.9222225410383957, 0.9222225410383957, 0)
+>  > Output shape: (107, 180, 180)
+>  > Output axes: ZYX
+>  > Output resolution: (0.4000000241509449, 0.4000000241509449), unit: mm, z_position: -248.60999337383177, z_spacing: 2.4999998490566036
+>  > ```
+>  {: .code-out}
+{: .hands_on}
+
+What we are interested in here is the line for the `Output resolution`. The first tuple `(0.4000000241509449, 0.4000000241509449)` corresponds to the number of pixels per millimeter along the x- and y-axes. From this we can deduce with basic algebra, that one pixel corresponds to 2,5mm along the y-axis (in fact, we can also read off the value for the `z_spacing`, which is identical due to the isotropic re-sampling). Thus, a margin of 1,5cm corresponds to 6 pixels.
+
+With this information, we can now write a *rules* file for removing the leakage from the segmentation result:
+
+> <hands-on-title>Write a rules file to remove spurious objects from the segmentation</hands-on-title>
+>
+> 1. Create a new file via the {% icon galaxy-upload %} **Upload Data** tool in Galaxy, use the name `rules_skeletal`, paste the following content, and set the format to tabular:
+>    ```
+>    feature   	min	max
+>    centroid_y	0	109.37
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" name="rules_skeletal" %}
+{: .hands_on}
+
+The upper bound of 109.37 for the y-coordinate of the centroids of the objects that we will retain in the segmentation is obtained by adding the margin of 6 pixels to the previously determined y-coordinate of the centroid of the spine and pelvis.
+
+Now we are all set to remove the leakage from the segmentation result:
+
+> <hands-on-title>Remove spurious objects from the segmentation</hands-on-title>
+>
+> 1. {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Label map"*: Output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0) %}
+>    - {% icon param-file %} *"Features"*: Output of {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %}
+>    - {% icon param-file %} *"Rules"*: `rules_skeletal`
+>
+> 2. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
+>    - *"Color map"*: `BrBG`
+>      - *"Ramp function"*: `Enabled`
+>        - *"Ramp start"*: `Absolute intensity value`
+>        - *"Intensity value"*: `50`
+>        - *"Ramp end"*: `Absolute intensity value`
+>        - *"Intensity value"*: `150`
+>    - *"Camera parameters"*:
+>      - *"Distance"*: `350`
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
+>    - *"Render mask overlay"*: `Render mask overlay`
+>      - *"Mask overlay (3-D)"*: Output of {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %}
+{: .hands_on}
 
 # Vessel Segmentation
 
-xxx
+As another example of the segmentation of anatomical structures, we will now perform a segmentation of the aortic bifurcation, a key vascular landmark where the abdominal aorta divides into the left and right common iliac arteries. Vessel segmentation is very different from skeletal segmentation, because vessels do not exhibit a specific HU intensity value and generally have a very low contrast compared to the surrounding tissue. Moreover, they often are very thin, elongated structures, with and without branches, which poses additional challenges compared to segmentation of large connected image regions.
+
+In CT imaging, vessels usually appear as thin lines of subtly higher intensity than the surrounding tissue (just like the ridges of mountains on a relief map). Image filters that enhance such structures are thus called *ridge filters*. The most prominent ridge filter for vessel enhancement in 3-D images is the Frangi filter ({% cite Frangi1998 %}).
+
+Our workflow for the segmentation of the aortic bifurcation is as follows:
+
+- First, we will apply a *Frangi filter* to perform image enhancement for vessels and other vessel-like structures. The responses of Frangi filters range between 0 and 1, which directly indicates the "vesselness" of an image point.
+- Second, we will perform *hysteresis thresholding* to segment connected parts of the vascular tree with a particularly high filter response (i.e. a particularly high vesselness).
+- Third, we will apply *feature extraction* and *label map filtering* to select the largest connected component of the segmented vascular tree (like we did for skeletal segmentation).
+
+The individual workflow steps are as follows:
+
+> <hands-on-title>Vessel segmentation and feature extraction</hands-on-title>
+>
+> 1. {% tool [Apply ridge filter](toolshed.g2.bx.psu.edu/repos/imgteam/ridge_filter/ridge_filter_skimage/0.22.0+galaxy2) %} with the following parameters:
+>    - {% icon param-file %} *"Input image"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Filter"*: `Frangi vesselness filter`
+>    - *"Mode of operation"*: `Enhance bright ridges (high image intensities)`
+>    - *"Minimum sigma"*: `0.5`
+>    - *"Maximum sigma"*: `1.5`
+>    - *"Number of sigma steps for multi-scale analysis"*: `3`
+>    - *"Alpha"*: `0.5`
+>    - *"Beta"*: `0.5`
+>    - *"Gamma"*: `5.0`
+>
+> 2. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Input image"*: Output of {% tool [Apply ridge filter](toolshed.g2.bx.psu.edu/repos/imgteam/ridge_filter/ridge_filter_skimage/0.22.0+galaxy2) %}
+>    - *"Thresholding method"*: `Manual`
+>    - *"Threshold value"*: `0.25`
+>    - *"Second threshold value for hysteresis thresholding"*: `0.3`
+>
+> 3. {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0) %} with the following parameters:
+>    - *"Mode"*: `Connected component analysis`
+>    - {% icon param-file %} *"Binary image"*: Output of {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0)  %}
+>
+> 4. {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Label map"*: Output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0)  %}
+>    - *"Available features"*:
+>      - `Label from the label map`
+>      - `Area`
+>
+> 5. {% tool [Sort](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/9.5+galaxy2) %} with the following parameters:
+>    - {% icon param-file %} *"Sort Query"*: Output of {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %}
+>    - *"Number of header lines"*: `1`
+>    - *"Column selections"*: `1: Column selections`
+>      - *"on column"*: `Column 2`
+>      - *"in"*: `Descending order`
+>      - *"Flavor"*: `Fast numeric sort (-n)`
+{: .hands_on}
+
+We inspect the tabular output yielded by the {% tool [Sort](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/9.5+galaxy2) %} tool:
+
+|label|area   |
+|:----|:------|
+|26   |11167.0|
+|132  |8739.0 |
+|176  |2910.0 |
+|175  |2821.0 |
+|42   |2157.0 |
+|…    |…      |
+
+From this table, we can deduce that the largest connected component is the one with label 26. We now create the corresponding *rules* file for removing all other components from the segmentation:
+
+> <hands-on-title>Segmentation and visualization of the aortic bifurcation</hands-on-title>
+>
+> 1. Create a new file via the {% icon galaxy-upload %} **Upload Data** tool in Galaxy, use the name `rules_aorticbif`, paste the following content, and set the format to tabular:
+>    ```
+>    feature	min	max
+>    label  	26	26
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" name="rules_aorticbif" %}
+>
+> 2. {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Label map"*: Output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0) %}
+>    - {% icon param-file %} *"Features"*: Output of {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %}
+>    - {% icon param-file %} *"Rules"*: `rules_aorticbif`
+>
+> 3. Create a new file via the {% icon galaxy-upload %} **Upload Data** tool in Galaxy, use the name `colormap_white`, paste the following content, and set the format to tabular:
+>    ```
+>    color    	intensity	type
+>    #ffffff00	0       	relative
+>    #ffffffff	1       	relative
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" name="colormap_white" %}
+>
+> 4. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %}
+>    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
+>    - *"Color map"*: `Custom`
+>    - {% icon param-file %} *"Custom color map"*: `colormap_white`
+>    - *"Add a color bar"*: `No`
+>    - *"Camera parameters"*:
+>      - *"Distance"*: `250`
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
+>    - *"Render mask overlay"*: `No overlay`
+{: .hands_on}
 
 The obtained visualization shows the segmentation of the aortic bifurcation.
 
