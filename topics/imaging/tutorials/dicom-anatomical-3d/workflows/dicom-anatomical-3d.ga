@@ -188,9 +188,9 @@
     "creator": [
         {
             "class": "Person",
-            "familyName": "Kostrykin",
-            "givenName": "Leonid",
-            "identifier": "https://orcid.org/0000-0003-1323-3762"
+            "name":"Leonid Kostrykin",
+            "identifier": "https://orcid.org/0000-0003-1323-3762",
+            "url":"https://github.com/kostrykin/"
         }
     ],
     "format-version": "0.1",
