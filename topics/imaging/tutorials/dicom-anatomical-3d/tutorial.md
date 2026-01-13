@@ -116,7 +116,7 @@ Some of the tools that we will be using in our analysis require that the voxel s
 
 If the image data already would have been isotropic, this tool would yield the original data.
 
-CT image data, such as the dataset that we are using in this tutorial, typically have intensity values that correspond to the Hounsfield scale. Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical HU values are –1000 HU for air, –700 to –200 HU for skin tissue, –200 to –50 HU for fat tissue, 0 HU for water, –20 to 140 HU for muscle tissue, and 220 to 3071 HU for bone tissue (e.g., {% cite chougule2018clinical %}).
+CT image data, such as the dataset that we are using in this tutorial, typically have intensity values that correspond to the Hounsfield scale. Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical HU values are –1000 HU for air, –700 to –200 HU for skin tissue, –200 to –50 HU for fat tissue, 0 HU for water, –20 to 140 HU for muscle tissue, and 200 to 3071 HU for bone tissue (e.g., {% cite chougule2018clinical %}).
 
 However, the image data may also contain values outside of the range of –1000 to 3071 HU that correspond to, for example, parts of the CT imaging setup, or imaging artifacts. To effectively “erase” those parts from the image data, we will clip the image intensities to the meaningful range of –1000 to 3071 HU as a final step of pre-processing:
 
@@ -132,6 +132,32 @@ However, the image data may also contain values outside of the range of –1000 
 
 xxx
 
+> <hands-on-title>Visual inspection via pre-rendered video</hands-on-title>
+>
+> 1. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} with the following parameters:
+>    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Unit of the intensity values"*: `Hounsfield`
+>    - *"Rendering mode"*: `Maximum Intensity Projection (MIP)`
+>    - *"Color map"*: `rainbow`
+>    - *"Camera parameters"*:
+>      - *"Distance"*: `350`
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
+{: .hands_on}
+
+Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to inspect the obtained visualization:
+
+<!--
+    Command to compress screen recordings to reasonable file size:
+    ffmpeg -ss 0.5 -t 16 -i input.mov -vf "fps=15,scale=-1:512:flags=lanczos" -c:v libx264 -preset slow -crf 26 -movflags +faststart -pix_fmt yuv420p -an output.mp4
+
+    An alternative is to use webp, but this yields larger files with worse quality:
+    ffmpeg -ss 0.5 -t 16 -i input.mov -vf "fps=12,scale=-1:400:flags=lanczos" -loop 0 -c:v libwebp_anim -quality 40 -compression_level 5 -speed 2 -an output.webp
+-->
+<video loop="true" autoplay="autoplay" muted width="100%">
+    <source src="../../images/dicom-anatomical-3d/mip_rainbow.mp4" type="video/mp4"/>
+</video>
+
 # Skeletal Segmentation
 
 The imaged section of the torso in our dataset contains parts of prominent skeletal structures such as the pelvis, the spine, and the thorax. Segmentation of these structures is easy due to the distinct ranges of the Hounsfield scale:
@@ -141,29 +167,47 @@ The imaged section of the torso in our dataset contains parts of prominent skele
 > 1. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input image"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
 >    - *"Thresholding method"*: `Manual`
->    - *"Threshold value"*: `150`
+>    - *"Threshold value"*: `120`
+>
+>    > <question-title></question-title>
+>    >
+>    > Why do we use a threshold value of just 120, if the typical range of HU values for bone tissue starts at about 200 HU?
+>    >
+>    > > <solution-title></solution-title>
+>    > > Some bones in the imaged data rare quite thin (e.g., the ends of the ribs). When we re-sampled the image data to an isotropic voxel size, we chose to *down-sample* the image data. A consequence of this is that voxel intensity values are locally averaged, which can lead to reduced intensity values of thin structures.
+>    > {: .solution }
+>    {: .question}
 {: .hands_on}
 
 Lets inspect the segmentation result using a 3-D overlay of the input image and the segmentation mask:
 
 > <hands-on-title>Visualization of 3-D segmentation results</hands-on-title>
 >
-> 1. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+> 1. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Unit of the intensity values"*: `Hounsfield`
 >    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
 >    - *"Color map"*: `BrBG`
 >      - *"Ramp function"*: `Enabled`
->        - *"Ramp start"*: `Absolute intensity value`
->        - *"Intensity value"*: `50`
->        - *"Ramp end"*: `Absolute intensity value`
->        - *"Intensity value"*: `150`
+>        - *"Ramp start"*:
+           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Intensity value"*: `100`
+>        - *"Ramp end"*:
+           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Intensity value"*: `150`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `350`
->    - *"Video parameters"*:
->      - *"Frames"*: `400`
 >    - *"Render mask overlay"*: `Render mask overlay`
 >      - *"Mask overlay (3-D)"*: Output of {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %}
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
 {: .hands_on}
+
+Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to inspect the obtained visualization:
+
+<video loop="true" autoplay="autoplay" muted width="100%">
+    <source src="../../images/dicom-anatomical-3d/segm_skeletal1.mp4" type="video/mp4"/>
+</video>
 
 It can be seen from the visualization that objects corresponding to parts of the imaging setup (behind the spine) also fall into the selected HU range, and is thus falsely included in the segmentation skeletal segmentation result (leakage). To improve the segmentation result, we will thus remove all objects from the segmentation that are behind the spine and pelvis. To identify the spine and pelvis in the segmentation result, we exploit that they correspond to the largest connected component in our segmentation.
 
@@ -252,22 +296,40 @@ Now we are all set to remove the leakage from the segmentation result:
 >    - {% icon param-file %} *"Features"*: Output of {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %}
 >    - {% icon param-file %} *"Rules"*: `rules_skeletal`
 >
-> 2. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+> 2. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %}
+>    - *"Unit of the intensity values"*: `Hounsfield`
 >    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
 >    - *"Color map"*: `BrBG`
 >      - *"Ramp function"*: `Enabled`
->        - *"Ramp start"*: `Absolute intensity value`
->        - *"Intensity value"*: `50`
->        - *"Ramp end"*: `Absolute intensity value`
->        - *"Intensity value"*: `150`
+>        - *"Ramp start"*:
+           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Intensity value"*: `100`
+>        - *"Ramp end"*:
+           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Intensity value"*: `150`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `350`
->    - *"Video parameters"*:
->      - *"Frames"*: `400`
 >    - *"Render mask overlay"*: `Render mask overlay`
 >      - *"Mask overlay (3-D)"*: Output of {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %}
+>    - *"Video parameters"*:
+>      - *"Frames"*: `400`
 {: .hands_on}
+
+Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to visually inspect the improved segmentation result:
+
+<video loop="true" autoplay="autoplay" muted width="100%">
+    <source src="../../images/dicom-anatomical-3d/segm_skeletal2.mp4" type="video/mp4"/>
+</video>
+
+> <question-title>Further improvements of the segmentation result</question-title>
+>
+> The visualization above shows that there are still small, spurious objects included in the segmentation. How can these be removed?
+>
+> > <solution-title></solution-title>
+> > Add another rule to the `rules_skeletal` file that you have created, then re-run the {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %} tool. That rule should be for the `area` feature and impose a reasonable `min` value for the minimum size of retained connected components. The value for `max` could be `100000`, for example.
+> {: .solution }
+{: .question}
 
 # Vessel Segmentation
 
@@ -351,26 +413,31 @@ From this table, we can deduce that the largest connected component is the one w
 >
 > 3. Create a new file via the {% icon galaxy-upload %} **Upload Data** tool in Galaxy, use the name `colormap_white`, paste the following content, and set the format to tabular:
 >    ```
->    color    	intensity	type
->    #ffffff00	0       	relative
->    #ffffffff	1       	relative
+>    color	intensity	type
+>    #ffffff00	0	relative
+>    #ffffffff	1 	relative
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" name="colormap_white" %}
 >
-> 4. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy1) %} with the following parameters:
+> 4. {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Input image (3-D)"*: Output of {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %}
+>    - *"Unit of the intensity values"*: `No unit`
 >    - *"Rendering mode"*: `Direct Volume Rendering (DVR)`
 >    - *"Color map"*: `Custom`
 >    - {% icon param-file %} *"Custom color map"*: `colormap_white`
 >    - *"Add a color bar"*: `No`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `250`
+>    - *"Render mask overlay"*: `No overlay`
 >    - *"Video parameters"*:
 >      - *"Frames"*: `400`
->    - *"Render mask overlay"*: `No overlay`
 {: .hands_on}
 
-The obtained visualization shows the segmentation of the aortic bifurcation.
+The obtained visualization shows the segmentation of the aortic bifurcation:
+
+<video loop="true" autoplay="autoplay" muted width="100%">
+    <source src="../../images/dicom-anatomical-3d/segm_aorticbif.mp4" type="video/mp4"/>
+</video>
 
 Vessel segmentation is generally challenging and still an active field of research. Segmentation of whole vascular trees may require more sophisticated methods (e.g., {% cite Glsn2008 %}, {% cite Biesdorf2015 %}).

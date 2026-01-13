@@ -3,6 +3,152 @@
     "annotation": "",
     "comments": [
         {
+            "child_steps": [
+                5,
+                8,
+                11,
+                12
+            ],
+            "color": "turquoise",
+            "data": {
+                "title": "Pre-processing"
+            },
+            "id": 0,
+            "position": [
+                323.23772980255615,
+                530
+            ],
+            "size": [
+                1040,
+                200
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                6
+            ],
+            "child_steps": [
+                14,
+                16,
+                18,
+                20,
+                28
+            ],
+            "color": "yellow",
+            "data": {
+                "title": "Segmentation of the Aortic Bifurcation"
+            },
+            "id": 5,
+            "position": [
+                1500,
+                900
+            ],
+            "size": [
+                1080,
+                550
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                4
+            ],
+            "child_steps": [
+                4,
+                19,
+                21,
+                23,
+                25
+            ],
+            "color": "pink",
+            "data": {
+                "title": "Create Rules for Bone Segmentation"
+            },
+            "id": 3,
+            "position": [
+                1520,
+                220
+            ],
+            "size": [
+                760,
+                560
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                3,
+                6,
+                7,
+                9,
+                10
+            ],
+            "color": "pink",
+            "data": {
+                "title": "Create Rule Templates"
+            },
+            "id": 1,
+            "position": [
+                600,
+                800
+            ],
+            "size": [
+                760,
+                320
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                3
+            ],
+            "child_steps": [
+                13,
+                15,
+                17,
+                27
+            ],
+            "color": "yellow",
+            "data": {
+                "title": "Bone Segmentation"
+            },
+            "id": 2,
+            "position": [
+                1500,
+                0
+            ],
+            "size": [
+                1080,
+                800
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                7
+            ],
+            "child_steps": [
+                22,
+                24,
+                26
+            ],
+            "color": "pink",
+            "data": {
+                "title": "Create Rules for Segmentation of the Aortic Bifurcation"
+            },
+            "id": 6,
+            "position": [
+                1520,
+                1140
+            ],
+            "size": [
+                760,
+                290
+            ],
+            "type": "frame"
+        },
+        {
             "color": "pink",
             "data": {
                 "bold": true,
@@ -37,152 +183,6 @@
                 60
             ],
             "type": "text"
-        },
-        {
-            "child_comments": [
-                7
-            ],
-            "child_steps": [
-                25,
-                21,
-                23
-            ],
-            "color": "pink",
-            "data": {
-                "title": "Create Rules for Segmentation of the Aortic Bifurcation"
-            },
-            "id": 6,
-            "position": [
-                1520,
-                1140
-            ],
-            "size": [
-                760,
-                290
-            ],
-            "type": "frame"
-        },
-        {
-            "child_comments": [
-                4
-            ],
-            "child_steps": [
-                24,
-                22,
-                20,
-                18,
-                3
-            ],
-            "color": "pink",
-            "data": {
-                "title": "Create Rules for Bone Segmentation"
-            },
-            "id": 3,
-            "position": [
-                1520,
-                220
-            ],
-            "size": [
-                760,
-                560
-            ],
-            "type": "frame"
-        },
-        {
-            "child_comments": [
-                6
-            ],
-            "child_steps": [
-                27,
-                13,
-                15,
-                17,
-                19
-            ],
-            "color": "yellow",
-            "data": {
-                "title": "Segmentation of the Aortic Bifurcation"
-            },
-            "id": 5,
-            "position": [
-                1500,
-                900
-            ],
-            "size": [
-                1080,
-                550
-            ],
-            "type": "frame"
-        },
-        {
-            "child_comments": [
-                3
-            ],
-            "child_steps": [
-                26,
-                16,
-                14,
-                12
-            ],
-            "color": "yellow",
-            "data": {
-                "title": "Bone Segmentation"
-            },
-            "id": 2,
-            "position": [
-                1500,
-                0
-            ],
-            "size": [
-                1080,
-                800
-            ],
-            "type": "frame"
-        },
-        {
-            "child_steps": [
-                2,
-                5,
-                6,
-                8,
-                9
-            ],
-            "color": "pink",
-            "data": {
-                "title": "Create Rule Templates"
-            },
-            "id": 1,
-            "position": [
-                600,
-                800
-            ],
-            "size": [
-                760,
-                320
-            ],
-            "type": "frame"
-        },
-        {
-            "child_steps": [
-                11,
-                10,
-                7,
-                4
-            ],
-            "color": "turquoise",
-            "data": {
-                "title": "Pre-processing"
-            },
-            "id": 0,
-            "position": [
-                323.23772980255615,
-                530
-            ],
-            "size": [
-                1040,
-                200
-            ],
-            "type": "frame"
         }
     ],
     "format-version": "0.1",
@@ -201,6 +201,33 @@
             "inputs": [
                 {
                     "description": "",
+                    "name": "Bones Threshold Value (HU)"
+                }
+            ],
+            "label": "Bones Threshold Value (HU)",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 80
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 100.0, \"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "02e2054a-9afb-4ef5-9357-a2f3acab3b26",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
                     "name": "Y-Tolerance for Bones Segmentation (pixel)"
                 }
             ],
@@ -215,15 +242,15 @@
             "tool_state": "{\"default\": 6.0, \"validators\": [{\"min\": 0.0, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
             "tool_version": null,
             "type": "parameter_input",
-            "uuid": "1677ad95-a7ec-44e3-b9fc-a19ce29b5bee",
+            "uuid": "959fb1ee-4bd2-4fd6-9f3e-9de0710c460c",
             "when": null,
             "workflow_outputs": []
         },
-        "1": {
+        "2": {
             "annotation": "",
             "content_id": null,
             "errors": null,
-            "id": 1,
+            "id": 2,
             "input_connections": {},
             "inputs": [
                 {
@@ -242,15 +269,15 @@
             "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\", \"fields\": null, \"column_definitions\": null}",
             "tool_version": null,
             "type": "data_collection_input",
-            "uuid": "79ad0459-66ea-425d-8ccb-3b32e7e8de75",
+            "uuid": "e24ba524-7288-4f1e-9aea-7a7c8e761273",
             "when": null,
             "workflow_outputs": []
         },
-        "2": {
+        "3": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_text_file_with_recurring_lines/9.5+galaxy2",
             "errors": null,
-            "id": 2,
+            "id": 3,
             "input_connections": {},
             "inputs": [],
             "label": "Create header",
@@ -285,18 +312,18 @@
             "tool_uuid": null,
             "tool_version": "9.5+galaxy2",
             "type": "tool",
-            "uuid": "b3686b7b-1354-4d23-966f-f3da91393801",
+            "uuid": "3afe759d-b200-4525-90e7-f1d0fc401664",
             "when": null,
             "workflow_outputs": []
         },
-        "3": {
+        "4": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/compose_text_param/compose_text_param/0.1.1",
             "errors": null,
-            "id": 3,
+            "id": 4,
             "input_connections": {
                 "components_1|param_type|component_value": {
-                    "id": 0,
+                    "id": 1,
                     "output_name": "output"
                 }
             },
@@ -325,18 +352,18 @@
             "tool_uuid": null,
             "tool_version": "0.1.1",
             "type": "tool",
-            "uuid": "cd7ba708-9be3-457a-8685-12088a6e5fd5",
+            "uuid": "40be833d-3a62-4cef-ba6d-356ef118d815",
             "when": null,
             "workflow_outputs": []
         },
-        "4": {
+        "5": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/highdicom_dicom2tiff/highdicom_dicom2tiff/0.27.0+galaxy0",
             "errors": null,
-            "id": 4,
+            "id": 5,
             "input_connections": {
                 "input": {
-                    "id": 1,
+                    "id": 2,
                     "output_name": "output"
                 }
             },
@@ -365,18 +392,18 @@
             "tool_uuid": null,
             "tool_version": "0.27.0+galaxy0",
             "type": "tool",
-            "uuid": "41dd5174-e02f-469d-9305-ce2f1933d3ea",
+            "uuid": "9855dabc-d01e-451f-b58b-bce526ec5e02",
             "when": null,
             "workflow_outputs": []
         },
-        "5": {
+        "6": {
             "annotation": "Add row",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/add_line_to_file/add_line_to_file/0.1.0",
             "errors": null,
-            "id": 5,
+            "id": 6,
             "input_connections": {
                 "infile": {
-                    "id": 2,
+                    "id": 3,
                     "output_name": "outfile"
                 }
             },
@@ -405,18 +432,18 @@
             "tool_uuid": null,
             "tool_version": "0.1.0",
             "type": "tool",
-            "uuid": "c8c207ba-cbd2-4f65-977c-796e047d87e3",
+            "uuid": "3c966822-c7c0-4e6f-924b-c0f13cd89bde",
             "when": null,
             "workflow_outputs": []
         },
-        "6": {
+        "7": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/add_line_to_file/add_line_to_file/0.1.0",
             "errors": null,
-            "id": 6,
+            "id": 7,
             "input_connections": {
                 "infile": {
-                    "id": 2,
+                    "id": 3,
                     "output_name": "outfile"
                 }
             },
@@ -445,18 +472,18 @@
             "tool_uuid": null,
             "tool_version": "0.1.0",
             "type": "tool",
-            "uuid": "2e025346-777b-4f10-a823-7714487a53b5",
+            "uuid": "6a879b5c-9962-4467-beac-53375d72506d",
             "when": null,
             "workflow_outputs": []
         },
-        "7": {
+        "8": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/concat_channels/ip_concat_channels/0.5",
             "errors": null,
-            "id": 7,
+            "id": 8,
             "input_connections": {
                 "inputs": {
-                    "id": 4,
+                    "id": 5,
                     "output_name": "output"
                 }
             },
@@ -485,41 +512,7 @@
             "tool_uuid": null,
             "tool_version": "0.5",
             "type": "tool",
-            "uuid": "ee84622f-86d8-401a-b783-ad52b334b011",
-            "when": null,
-            "workflow_outputs": []
-        },
-        "8": {
-            "annotation": "",
-            "content_id": "Convert characters1",
-            "errors": null,
-            "id": 8,
-            "input_connections": {
-                "input": {
-                    "id": 5,
-                    "output_name": "outfile"
-                }
-            },
-            "inputs": [],
-            "label": null,
-            "name": "Convert",
-            "outputs": [
-                {
-                    "name": "out_file1",
-                    "type": "tabular"
-                }
-            ],
-            "position": {
-                "left": 1130,
-                "top": 850
-            },
-            "post_job_actions": {},
-            "tool_id": "Convert characters1",
-            "tool_state": "{\"condense\": true, \"convert_from\": \"s\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"strip\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
-            "tool_uuid": null,
-            "tool_version": "1.0.1",
-            "type": "tool",
-            "uuid": "f0d806f6-ecf0-4a90-a4dd-34905d50dddd",
+            "uuid": "45d63f0b-5af7-4b0d-85a4-80c353d32821",
             "when": null,
             "workflow_outputs": []
         },
@@ -545,6 +538,40 @@
             ],
             "position": {
                 "left": 1130,
+                "top": 850
+            },
+            "post_job_actions": {},
+            "tool_id": "Convert characters1",
+            "tool_state": "{\"condense\": true, \"convert_from\": \"s\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"strip\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "e7ead969-eef7-47a7-8ea8-2bffb3d023f4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "Convert characters1",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input": {
+                    "id": 7,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1130,
                 "top": 980
             },
             "post_job_actions": {},
@@ -553,18 +580,18 @@
             "tool_uuid": null,
             "tool_version": "1.0.1",
             "type": "tool",
-            "uuid": "39ccd782-d5a1-43f2-aebd-4400b29f5aed",
+            "uuid": "15f31739-a708-4216-9b9d-84944a4c13f1",
             "when": null,
             "workflow_outputs": []
         },
-        "10": {
+        "11": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0",
             "errors": null,
-            "id": 10,
+            "id": 11,
             "input_connections": {
                 "input": {
-                    "id": 7,
+                    "id": 8,
                     "output_name": "output"
                 }
             },
@@ -593,18 +620,18 @@
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy0",
             "type": "tool",
-            "uuid": "1c0b689f-888f-4bbe-8c92-952e5f25be18",
+            "uuid": "723363c6-0daf-4d7b-9cbb-34511a61fc1f",
             "when": null,
             "workflow_outputs": []
         },
-        "11": {
+        "12": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0",
             "errors": null,
-            "id": 11,
+            "id": 12,
             "input_connections": {
                 "input": {
-                    "id": 10,
+                    "id": 11,
                     "output_name": "output"
                 }
             },
@@ -633,22 +660,35 @@
             "tool_uuid": null,
             "tool_version": "0.7.3+galaxy0",
             "type": "tool",
-            "uuid": "be7a1f32-b10b-4936-abeb-b3c35358c78a",
+            "uuid": "7adb47bf-1843-4fdc-9cd3-478340acc7df",
             "when": null,
             "workflow_outputs": []
         },
-        "12": {
+        "13": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0",
             "errors": null,
-            "id": 12,
+            "id": 13,
             "input_connections": {
                 "input": {
-                    "id": 11,
+                    "id": 12,
+                    "output_name": "output"
+                },
+                "th_method|threshold1": {
+                    "id": 0,
                     "output_name": "output"
                 }
             },
-            "inputs": [],
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Threshold image",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool Threshold image",
+                    "name": "th_method"
+                }
+            ],
             "label": null,
             "name": "Threshold image",
             "outputs": [
@@ -659,7 +699,7 @@
             ],
             "position": {
                 "left": 1550,
-                "top": 79.99904000000049
+                "top": 50
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0",
@@ -669,22 +709,22 @@
                 "owner": "imgteam",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert_output\": false, \"th_method\": {\"method_id\": \"manual\", \"__current_case__\": 0, \"threshold1\": \"100.0\", \"threshold2\": null, \"offset\": \"0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"invert_output\": false, \"th_method\": {\"method_id\": \"manual\", \"__current_case__\": 0, \"threshold1\": {\"__class__\": \"ConnectedValue\"}, \"threshold2\": null, \"offset\": \"0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy0",
             "type": "tool",
-            "uuid": "00c88559-2744-4824-a568-77b53df896d5",
+            "uuid": "c4fafada-e614-4cd6-b309-91cc21dbea9f",
             "when": null,
             "workflow_outputs": []
         },
-        "13": {
+        "14": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/ridge_filter/ridge_filter_skimage/0.22.0+galaxy2",
             "errors": null,
-            "id": 13,
+            "id": 14,
             "input_connections": {
                 "input": {
-                    "id": 11,
+                    "id": 12,
                     "output_name": "output"
                 }
             },
@@ -713,18 +753,18 @@
             "tool_uuid": null,
             "tool_version": "0.22.0+galaxy2",
             "type": "tool",
-            "uuid": "61caffe2-d3d0-461d-b738-cb875e70e413",
+            "uuid": "74b983a7-aed2-442b-ae0c-44af8a51c221",
             "when": null,
             "workflow_outputs": []
         },
-        "14": {
+        "15": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0",
             "errors": null,
-            "id": 14,
+            "id": 15,
             "input_connections": {
                 "setup|input": {
-                    "id": 12,
+                    "id": 13,
                     "output_name": "output"
                 }
             },
@@ -758,18 +798,18 @@
             "tool_uuid": null,
             "tool_version": "0.7.3+galaxy0",
             "type": "tool",
-            "uuid": "b121377e-3db5-4a64-8aa6-b708612f1919",
+            "uuid": "3e5935a5-a214-4060-9c27-620362447d41",
             "when": null,
             "workflow_outputs": []
         },
-        "15": {
+        "16": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0",
             "errors": null,
-            "id": 15,
+            "id": 16,
             "input_connections": {
                 "input": {
-                    "id": 13,
+                    "id": 14,
                     "output_name": "output"
                 }
             },
@@ -798,18 +838,18 @@
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy0",
             "type": "tool",
-            "uuid": "803141cb-8a1b-40a0-9b80-9f096c6be108",
+            "uuid": "295ba5bc-54d0-4a7e-a144-2e92f6c641bf",
             "when": null,
             "workflow_outputs": []
         },
-        "16": {
+        "17": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1",
             "errors": null,
-            "id": 16,
+            "id": 17,
             "input_connections": {
                 "labels": {
-                    "id": 14,
+                    "id": 15,
                     "output_name": "output"
                 }
             },
@@ -838,18 +878,18 @@
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy1",
             "type": "tool",
-            "uuid": "aa1eaf26-dc6d-4166-93b1-39461d2713d8",
+            "uuid": "10a4fe77-a465-4b92-be2c-152d8ea69e00",
             "when": null,
             "workflow_outputs": []
         },
-        "17": {
+        "18": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0",
             "errors": null,
-            "id": 17,
+            "id": 18,
             "input_connections": {
                 "setup|input": {
-                    "id": 15,
+                    "id": 16,
                     "output_name": "output"
                 }
             },
@@ -883,18 +923,18 @@
             "tool_uuid": null,
             "tool_version": "0.7.3+galaxy0",
             "type": "tool",
-            "uuid": "85738f84-087b-4d87-b321-24907893a22c",
+            "uuid": "c06b7ecd-6451-4e4f-94d8-44822617cf36",
             "when": null,
             "workflow_outputs": []
         },
-        "18": {
+        "19": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
             "errors": null,
-            "id": 18,
+            "id": 19,
             "input_connections": {
                 "tables_0|table": {
-                    "id": 16,
+                    "id": 17,
                     "output_name": "output"
                 }
             },
@@ -928,18 +968,18 @@
             "tool_uuid": null,
             "tool_version": "3.3.2",
             "type": "tool",
-            "uuid": "ef58da8b-5906-4719-a512-1fbd66756c9f",
+            "uuid": "1490e262-4d58-4bf6-9b6c-324e49521543",
             "when": null,
             "workflow_outputs": []
         },
-        "19": {
+        "20": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1",
             "errors": null,
-            "id": 19,
+            "id": 20,
             "input_connections": {
                 "labels": {
-                    "id": 17,
+                    "id": 18,
                     "output_name": "output"
                 }
             },
@@ -968,22 +1008,22 @@
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy1",
             "type": "tool",
-            "uuid": "de5cd2c1-0bad-4b22-95d2-03ccdc178743",
+            "uuid": "8c817cfc-3652-47e2-9a9c-3d9c1ff18c16",
             "when": null,
             "workflow_outputs": []
         },
-        "20": {
+        "21": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1",
             "errors": null,
-            "id": 20,
+            "id": 21,
             "input_connections": {
                 "input": {
-                    "id": 18,
+                    "id": 19,
                     "output_name": "output"
                 },
                 "ops|expressions_0|cond": {
-                    "id": 3,
+                    "id": 4,
                     "output_name": "out1"
                 }
             },
@@ -1012,18 +1052,18 @@
             "tool_uuid": null,
             "tool_version": "2.1",
             "type": "tool",
-            "uuid": "0ff704a7-c4ed-4634-9964-b79e299d8997",
+            "uuid": "9b6bcce8-3667-4292-b563-407ef8544baf",
             "when": null,
             "workflow_outputs": []
         },
-        "21": {
+        "22": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
             "errors": null,
-            "id": 21,
+            "id": 22,
             "input_connections": {
                 "tables_0|table": {
-                    "id": 19,
+                    "id": 20,
                     "output_name": "output"
                 }
             },
@@ -1057,18 +1097,18 @@
             "tool_uuid": null,
             "tool_version": "3.3.2",
             "type": "tool",
-            "uuid": "877bf4d6-226f-4e89-8186-a73e8b33fe3f",
+            "uuid": "59c8df95-12aa-41df-8eec-e5c1c1af9786",
             "when": null,
             "workflow_outputs": []
         },
-        "22": {
+        "23": {
             "annotation": "",
             "content_id": "param_value_from_file",
             "errors": null,
-            "id": 22,
+            "id": 23,
             "input_connections": {
                 "input1": {
-                    "id": 20,
+                    "id": 21,
                     "output_name": "out_file1"
                 }
             },
@@ -1091,18 +1131,18 @@
             "tool_uuid": null,
             "tool_version": "0.1.0",
             "type": "tool",
-            "uuid": "c1d1557d-52d1-4e8f-b252-ede633e7b466",
+            "uuid": "687a745d-1703-4a78-a876-b9fd7a0ce568",
             "when": null,
             "workflow_outputs": []
         },
-        "23": {
+        "24": {
             "annotation": "",
             "content_id": "param_value_from_file",
             "errors": null,
-            "id": 23,
+            "id": 24,
             "input_connections": {
                 "input1": {
-                    "id": 21,
+                    "id": 22,
                     "output_name": "output"
                 }
             },
@@ -1125,22 +1165,22 @@
             "tool_uuid": null,
             "tool_version": "0.1.0",
             "type": "tool",
-            "uuid": "e3702d2e-ecd7-467d-add7-8cf026f255be",
+            "uuid": "ede82e40-5bf0-4594-9c85-ffa9d3bb3f39",
             "when": null,
             "workflow_outputs": []
         },
-        "24": {
+        "25": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2",
             "errors": null,
-            "id": 24,
+            "id": 25,
             "input_connections": {
                 "infile": {
-                    "id": 8,
+                    "id": 9,
                     "output_name": "out_file1"
                 },
                 "replacements_0|replace_pattern": {
-                    "id": 22,
+                    "id": 23,
                     "output_name": "text_param"
                 }
             },
@@ -1177,22 +1217,22 @@
             "tool_uuid": null,
             "tool_version": "9.5+galaxy2",
             "type": "tool",
-            "uuid": "fc21ce28-5d35-42a0-ac22-08570057b86e",
+            "uuid": "d7498213-3618-4844-8603-793ce35463e7",
             "when": null,
             "workflow_outputs": []
         },
-        "25": {
+        "26": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2",
             "errors": null,
-            "id": 25,
+            "id": 26,
             "input_connections": {
                 "infile": {
-                    "id": 9,
+                    "id": 10,
                     "output_name": "out_file1"
                 },
                 "replacements_0|replace_pattern": {
-                    "id": 23,
+                    "id": 24,
                     "output_name": "text_param"
                 }
             },
@@ -1229,26 +1269,26 @@
             "tool_uuid": null,
             "tool_version": "9.5+galaxy2",
             "type": "tool",
-            "uuid": "7280c9cf-3a77-46de-8a25-89b34f331c7c",
+            "uuid": "0636d14b-91a6-4282-a9bf-3d0d75938c3a",
             "when": null,
             "workflow_outputs": []
         },
-        "26": {
+        "27": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1",
             "errors": null,
-            "id": 26,
+            "id": 27,
             "input_connections": {
                 "features": {
-                    "id": 16,
+                    "id": 17,
                     "output_name": "output"
                 },
                 "labels": {
-                    "id": 14,
+                    "id": 15,
                     "output_name": "output"
                 },
                 "rules": {
-                    "id": 24,
+                    "id": 25,
                     "output_name": "outfile"
                 }
             },
@@ -1277,32 +1317,32 @@
             "tool_uuid": null,
             "tool_version": "0.7.3+galaxy1",
             "type": "tool",
-            "uuid": "83cecf3c-43f3-458c-9cb3-fa6c2c8df8f0",
+            "uuid": "28a17d1b-ee0a-4bc4-8db9-6e576175fd85",
             "when": null,
             "workflow_outputs": [
                 {
                     "label": "Bones",
                     "output_name": "output",
-                    "uuid": "474033f9-4df8-431b-a47e-442ef59da1a7"
+                    "uuid": "1ad126cd-e950-47b1-8611-7033d07c534f"
                 }
             ]
         },
-        "27": {
+        "28": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1",
             "errors": null,
-            "id": 27,
+            "id": 28,
             "input_connections": {
                 "features": {
-                    "id": 19,
+                    "id": 20,
                     "output_name": "output"
                 },
                 "labels": {
-                    "id": 17,
+                    "id": 18,
                     "output_name": "output"
                 },
                 "rules": {
-                    "id": 25,
+                    "id": 26,
                     "output_name": "outfile"
                 }
             },
@@ -1331,18 +1371,18 @@
             "tool_uuid": null,
             "tool_version": "0.7.3+galaxy1",
             "type": "tool",
-            "uuid": "570f3d60-50ee-4ea4-b4d9-175f5e876ff8",
+            "uuid": "59e9962a-ed2e-4584-8d0f-8e81e8730ec0",
             "when": null,
             "workflow_outputs": [
                 {
                     "label": "Aortic Bifurcation",
                     "output_name": "output",
-                    "uuid": "56994625-cf96-4a74-a91b-a5453aa480b2"
+                    "uuid": "7a178d62-0b87-4554-bac4-1874735e05d6"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "d459b635-d25d-4b1a-995c-bf3b178eee92",
-    "version": 3
+    "uuid": "f8012f47-508b-4cb2-af0c-0c73834e7353",
+    "version": 2
 }
