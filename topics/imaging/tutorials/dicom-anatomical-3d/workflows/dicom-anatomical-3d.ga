@@ -3,78 +3,22 @@
     "annotation": "",
     "comments": [
         {
-            "child_steps": [
-                5,
-                8,
-                11,
-                12
-            ],
-            "color": "turquoise",
-            "data": {
-                "title": "Pre-processing"
-            },
-            "id": 0,
-            "position": [
-                323.23772980255615,
-                530
-            ],
-            "size": [
-                1040,
-                200
-            ],
-            "type": "frame"
-        },
-        {
-            "child_comments": [
-                6
-            ],
-            "child_steps": [
-                14,
-                16,
-                18,
-                20,
-                28
-            ],
-            "color": "yellow",
-            "data": {
-                "title": "Segmentation of the Aortic Bifurcation"
-            },
-            "id": 5,
-            "position": [
-                1500,
-                900
-            ],
-            "size": [
-                1080,
-                550
-            ],
-            "type": "frame"
-        },
-        {
-            "child_comments": [
-                4
-            ],
-            "child_steps": [
-                4,
-                19,
-                21,
-                23,
-                25
-            ],
             "color": "pink",
             "data": {
-                "title": "Create Rules for Bone Segmentation"
+                "bold": true,
+                "size": 1,
+                "text": "Rules: Keep only the largest connected component"
             },
-            "id": 3,
+            "id": 7,
             "position": [
-                1520,
-                220
+                2030,
+                1370
             ],
             "size": [
-                760,
-                560
+                240,
+                60
             ],
-            "type": "frame"
+            "type": "text"
         },
         {
             "child_steps": [
@@ -104,10 +48,10 @@
                 3
             ],
             "child_steps": [
-                13,
-                15,
+                27,
                 17,
-                27
+                15,
+                13
             ],
             "color": "yellow",
             "data": {
@@ -126,12 +70,64 @@
         },
         {
             "child_comments": [
+                6
+            ],
+            "child_steps": [
+                28,
+                14,
+                16,
+                18,
+                20
+            ],
+            "color": "yellow",
+            "data": {
+                "title": "Segmentation of the Aortic Bifurcation"
+            },
+            "id": 5,
+            "position": [
+                1500,
+                900
+            ],
+            "size": [
+                1080,
+                550
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                4
+            ],
+            "child_steps": [
+                25,
+                23,
+                21,
+                19,
+                4
+            ],
+            "color": "pink",
+            "data": {
+                "title": "Create Rules for Bone Segmentation"
+            },
+            "id": 3,
+            "position": [
+                1520,
+                220
+            ],
+            "size": [
+                760,
+                560
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
                 7
             ],
             "child_steps": [
+                26,
                 22,
-                24,
-                26
+                24
             ],
             "color": "pink",
             "data": {
@@ -167,22 +163,34 @@
             "type": "text"
         },
         {
-            "color": "pink",
+            "child_steps": [
+                12,
+                11,
+                8,
+                5
+            ],
+            "color": "turquoise",
             "data": {
-                "bold": true,
-                "size": 1,
-                "text": "Rules: Keep only the largest connected component"
+                "title": "Pre-processing"
             },
-            "id": 7,
+            "id": 0,
             "position": [
-                2030,
-                1370
+                323.23772980255615,
+                530
             ],
             "size": [
-                240,
-                60
+                1040,
+                200
             ],
-            "type": "text"
+            "type": "frame"
+        }
+    ],
+    "creator": [
+        {
+            "class": "Person",
+            "familyName": "Kostrykin",
+            "givenName": "Leonid",
+            "identifier": "https://orcid.org/0000-0003-1323-3762"
         }
     ],
     "format-version": "0.1",
@@ -682,10 +690,6 @@
             "inputs": [
                 {
                     "description": "runtime parameter for tool Threshold image",
-                    "name": "input"
-                },
-                {
-                    "description": "runtime parameter for tool Threshold image",
                     "name": "th_method"
                 }
             ],
@@ -709,7 +713,7 @@
                 "owner": "imgteam",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"invert_output\": false, \"th_method\": {\"method_id\": \"manual\", \"__current_case__\": 0, \"threshold1\": {\"__class__\": \"ConnectedValue\"}, \"threshold2\": null, \"offset\": \"0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert_output\": false, \"th_method\": {\"method_id\": \"manual\", \"__current_case__\": 0, \"threshold1\": {\"__class__\": \"ConnectedValue\"}, \"threshold2\": null, \"offset\": \"0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
             "tool_uuid": null,
             "tool_version": "0.25.2+galaxy0",
             "type": "tool",
@@ -1382,7 +1386,9 @@
             ]
         }
     },
-    "tags": [],
-    "uuid": "f8012f47-508b-4cb2-af0c-0c73834e7353",
-    "version": 2
+    "tags": [
+        "imaging"
+    ],
+    "uuid": "f36d2efe-136d-4f6c-b393-6f33e41ef7be",
+    "version": 3
 }
