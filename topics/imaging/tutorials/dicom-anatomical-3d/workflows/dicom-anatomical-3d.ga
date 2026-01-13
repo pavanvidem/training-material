@@ -201,18 +201,18 @@
     },
     "steps": {
         "0": {
-            "annotation": "",
+            "annotation": "Bones Threshold Value (HU)",
             "content_id": null,
             "errors": null,
             "id": 0,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "",
-                    "name": "Bones Threshold Value (HU)"
+                    "description": "Bones Threshold Value (HU)",
+                    "name": "bones_threshold_huv"
                 }
             ],
-            "label": "Bones Threshold Value (HU)",
+            "label": "bones_threshold_huv",
             "name": "Input parameter",
             "outputs": [],
             "position": {
@@ -228,23 +228,23 @@
             "workflow_outputs": []
         },
         "1": {
-            "annotation": "",
+            "annotation": "Y-Tolerance for Bones Segmentation (pixel)",
             "content_id": null,
             "errors": null,
             "id": 1,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "",
-                    "name": "Y-Tolerance for Bones Segmentation (pixel)"
+                    "description": "Y-Tolerance for Bones Segmentation (pixel)",
+                    "name": "y_tol_bones_px"
                 }
             ],
-            "label": "Y-Tolerance for Bones Segmentation (pixel)",
+            "label": "y_tol_bones_px",
             "name": "Input parameter",
             "outputs": [],
             "position": {
                 "left": 0,
-                "top": 350
+                "top": 370
             },
             "tool_id": null,
             "tool_state": "{\"default\": 6.0, \"validators\": [{\"min\": 0.0, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
@@ -255,18 +255,18 @@
             "workflow_outputs": []
         },
         "2": {
-            "annotation": "",
+            "annotation": "DICOM Series",
             "content_id": null,
             "errors": null,
             "id": 2,
             "input_connections": {},
             "inputs": [
                 {
-                    "description": "",
-                    "name": "DICOM Series"
+                    "description": "DICOM Series",
+                    "name": "dicom_series"
                 }
             ],
-            "label": "DICOM Series",
+            "label": "dicom_series",
             "name": "Input dataset collection",
             "outputs": [],
             "position": {
@@ -1325,9 +1325,9 @@
             "when": null,
             "workflow_outputs": [
                 {
-                    "label": "Bones",
+                    "label": "segm_bones",
                     "output_name": "output",
-                    "uuid": "1ad126cd-e950-47b1-8611-7033d07c534f"
+                    "uuid": "8fa03bee-9e05-4f98-9816-20a6ab4d37cb"
                 }
             ]
         },
@@ -1379,9 +1379,9 @@
             "when": null,
             "workflow_outputs": [
                 {
-                    "label": "Aortic Bifurcation",
+                    "label": "segm_aorticbif",
                     "output_name": "output",
-                    "uuid": "7a178d62-0b87-4554-bac4-1874735e05d6"
+                    "uuid": "9d82b7c6-8f5c-4523-aac2-21ec66030e62"
                 }
             ]
         }
@@ -1389,6 +1389,6 @@
     "tags": [
         "imaging"
     ],
-    "uuid": "f36d2efe-136d-4f6c-b393-6f33e41ef7be",
-    "version": 3
+    "uuid": "cd628e55-27c7-4a0a-b19b-d8a4a61bda46",
+    "version": 4
 }
