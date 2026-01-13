@@ -203,10 +203,10 @@ Lets inspect the segmentation result using a 3-D overlay of the input image and 
 >    - *"Color map"*: `BrBG`
 >      - *"Ramp function"*: `Enabled`
 >        - *"Ramp start"*:
-           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Type of the intensity value"*: `Absolute intensity value`
 >          - *"Intensity value"*: `100`
 >        - *"Ramp end"*:
-           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Type of the intensity value"*: `Absolute intensity value`
 >          - *"Intensity value"*: `150`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `350`
@@ -316,10 +316,10 @@ Now we are all set to remove the leakage from the segmentation result:
 >    - *"Color map"*: `BrBG`
 >      - *"Ramp function"*: `Enabled`
 >        - *"Ramp start"*:
-           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Type of the intensity value"*: `Absolute intensity value`
 >          - *"Intensity value"*: `100`
 >        - *"Ramp end"*:
-           - *"Type of the intensity value"*: `Absolute intensity value`
+>          - *"Type of the intensity value"*: `Absolute intensity value`
 >          - *"Intensity value"*: `150`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `350`
