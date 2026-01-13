@@ -89,7 +89,7 @@ In this tutorial, we will be using a publicly available CT dataset of a human to
 
 # Pre-processing
 
-In this DICOM series, each DICOM dataset contains the z-slice of the 3-D image. The z-axis is the longitudinal axis (i.e. from the bottom to the top of the torso). The metadata of each DICOM dataset in the series contains the z-position of the slice, so the order of the individual DICOM datasets in the collection does not matter (note that for other images, in general, this information might be missing in the metadata, in which case the order of the datasets might be crucial).
+In this DICOM series, each DICOM dataset contains the z-slice of the 3-D image. The metadata of each DICOM dataset in the series contains the z-position of the slice, so the order of the individual DICOM datasets in the collection does not matter (note that for other images, in general, this information might be missing in the metadata, in which case the order of the datasets might be crucial).
 
 Our first step will be to convert the DICOM series into a single TIFF image, that represents the whole 3-D dataset.
 
@@ -130,7 +130,20 @@ However, the image data may also contain values outside of the range of –1000 
 
 # Exploring the Image Data
 
-xxx
+Galaxy's built-in TIFF viewer can be used to roughly explore the image data. To do so, click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Clip image intensities](toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0) %} tool. This will bring up a basic user interface that shows a z-slice of the 3-D image, along with the option to navigate to a different slice along the *z-axis* (slices are presented as "pages"). The viewer shows the *x-axis* as *left-to-right* and the *y-axis* as *top-to-bottom*.
+
+![Galaxy's built-in TIFF viewer](../../images/dicom-anatomical-3d/tiff_viewer.png "Galaxy's built-in TIFF viewer.")
+
+The buttons in the toolbar can be used to zoom and pan the view, or this can be accomplished by using the scroll wheel or dragging the image with a pressed mouse button. Even though this viewer is very simple, we can make two important observations that provide some rough orientation within the image data that we are dealing with:
+
+1. The *y-axis* is the **sagittal axis** (from the front to the back of the torso).
+2. The *z-axis* is the **longitudinal axis** (from the bottom to the top of the torso).
+
+![Anatomical axes](../../images/dicom-anatomical-3d/axes.jpg "Anatomical axes. <a href='https://commons.wikimedia.org/wiki/File:Anatomical_axes.jpg'>Edoarado and Mikael H&auml;ggstr&ouml;m</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons.")
+
+We will now use this information to get a visually more informative representation of the image data by creating a 3-D volume rendering (geometrical projection of the 3-D image data onto the 2-D screen plane).
+
+Inspecting 3-D data as a 2-D projection is intrinsically challenging because it requires transformations of the data that inherently reduce the information along the way—but we as humans, who are also subject to this limitation due to our two-dimensional vision, we have learned to deal with it naturally *by taking looks from different angles*. The tool that we are going to use for visualization mimics this intuition by generating *videos* instead of plain images, that use different angles for the projection:
 
 > <hands-on-title>Visual inspection via pre-rendered video</hands-on-title>
 >
@@ -143,6 +156,11 @@ xxx
 >      - *"Distance"*: `350`
 >    - *"Video parameters"*:
 >      - *"Frames"*: `400`
+>
+>    > <comment-title>How do we establish proper orientation of the image data in 3-D?</comment-title>
+>    >
+>    > The parameter for the *"Coordinate system"* is set to `Point Z to the top` by default. This is the setting that we must use here, since we have identified the z-axis as the *longitudinal* axis. For other image data it might be necessary to instead `Point Y to the top`.
+>    {: .comment}
 {: .hands_on}
 
 Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to inspect the obtained visualization:
@@ -157,6 +175,8 @@ Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool 
 <video loop="true" autoplay="autoplay" muted width="100%">
     <source src="../../images/dicom-anatomical-3d/mip_rainbow.mp4" type="video/mp4"/>
 </video>
+
+The *Maximum Intensity Projection (MIP)* is useful to get an idea of the spatial distribution of the image intensities within the image. At each time step of the video, the MIP is computed by casting a ray from each image pixel through the 3-D volume of image intensities, and taking the maximum intensity value along the line by sampling the image intensities at fixed steps (the rendering technique is thus called *ray marching*).
 
 # Skeletal Segmentation
 
@@ -203,7 +223,7 @@ Lets inspect the segmentation result using a 3-D overlay of the input image and 
 >      - *"Frames"*: `400`
 {: .hands_on}
 
-Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to inspect the obtained visualization:
+The *Direct Volume Rendering (DVR)* is rendering technique similar to MIP, but instead of taking the maximum intensity for each image pixel it simulates the absorption of light and thus produces realistically looking surface renderings. Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %} tool to inspect the obtained visualization:
 
 <video loop="true" autoplay="autoplay" muted width="100%">
     <source src="../../images/dicom-anatomical-3d/segm_skeletal1.mp4" type="video/mp4"/>
@@ -239,7 +259,7 @@ Next, we inspect the tabular output yielded by the {% tool [Extract image featur
 |6    |6.0    |48.5             |160.0             |1.0              |
 |…    |…      |…                |…                 |…                |
 
-In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis points from the back of the torso to the front). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
+In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *sagittal axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
 
 Since this coordinate corresponds to the centroid of the spine and pelvis, removing all objects with a y-coordinate of more than 103.37 pixels is likely to also remove some ribs—which we do not want to happen. Hence, we will add a tolerance margin for objects: Instead of strictly removing all objects that are behind the centroid of the spine and pelvis, we will only remove those that are 1,5cm or further behind.
 
@@ -324,7 +344,7 @@ Click on the {% icon galaxy-eye %} (eye) icon next to the output of the {% tool 
 
 > <question-title>Further improvements of the segmentation result</question-title>
 >
-> The visualization above shows that there are still small, spurious objects included in the segmentation. How can these be removed?
+> The visualization above shows that there are still small, spurious objects included in the segmentation. How to remove these?
 >
 > > <solution-title></solution-title>
 > > Add another rule to the `rules_skeletal` file that you have created, then re-run the {% tool [Filter label map by rules](toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1) %} tool. That rule should be for the `area` feature and impose a reasonable `min` value for the minimum size of retained connected components. The value for `max` could be `100000`, for example.
