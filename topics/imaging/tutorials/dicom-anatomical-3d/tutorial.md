@@ -30,6 +30,8 @@ tags:
   - Object feature extraction
   - Medical imaging
   - Computed tomography
+  - 3D image
+  - Volume rendering
 
 ---
 
