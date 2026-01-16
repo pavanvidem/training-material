@@ -15,7 +15,7 @@ objectives:
   - "Learn to use generic image analysis tools for analysis of medical images."
 key_points:
 - "DICOM images are best converted to TIFF that is well supported by a majority of image analysis tools in Galaxy."
-- "Computer tomography images usually permit direct identification of materials and tissues based on the intensity values."
+- "Computed tomography images usually permit direct identification of materials and tissues based on the intensity values."
 - "Ridge filters help enhancing and segmenting thin, elongated structures, such as vessels."
 time_estimation: "1H"
 contributions:
@@ -37,7 +37,7 @@ Image data in medical imaging is often stored and exchanged in the DICOM file fo
 
 Even though, technically, DICOM datasets can contain heterogeneous frames for different axes (e.g., z-slices and temporal frames), in practice, the frames of a DICOM dataset are usually designated for only one specific purpose and axis (e.g., z-slices or temporal frames). For such cases, DICOM series are more widely adopted: A list of DICOM datasets can form a DICOM series to store multi-dimensional data (e.g., a list of 3-D images for consecutive time steps, or just the z-slices of a 3-D image, where each slice is a single DICOM dataset).
 
-In this tutorial, we will show how DICOM series and DICOM datasets can be converted to TIFF, which is a general-purpose image file format that is well-supported by a majority of tools in Galaxy. We will use that to showcase segmentation and visualization of anatomical structures in 3-D image data from computer tomography (CT). The Galaxy Image Analysis tools and techniques utilized in this tutorial are domain-agnostic and can also be adapted to other imaging modalities (e.g., 3-D cell imaging).
+In this tutorial, we will show how DICOM series and DICOM datasets can be converted to TIFF, which is a general-purpose image file format that is well-supported by a majority of tools in Galaxy. We will use that to showcase segmentation and visualization of anatomical structures in 3-D image data from computed tomography (CT). The Galaxy Image Analysis tools and techniques utilized in this tutorial are domain-agnostic and can also be adapted to other imaging modalities (e.g., 3-D cell imaging).
 
 > <agenda-title></agenda-title>
 >
