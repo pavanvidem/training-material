@@ -27,6 +27,9 @@ tags:
   - Image segmentation
   - Conversion
   - Overlay
+  - Object feature extraction
+  - Medical imaging
+  - Computed tomography
 
 ---
 
