@@ -192,7 +192,7 @@ The imaged section of the torso in our dataset contains parts of prominent skele
 >    > Why do we use a threshold value of just 120, if the typical range of HU values for bone tissue starts at about 200 HU?
 >    >
 >    > > <solution-title></solution-title>
->    > > Some bones in the imaged data rare quite thin (e.g., the ends of the ribs). When we re-sampled the image data to an isotropic voxel size, we chose to *down-sample* the image data. A consequence of this is that voxel intensity values are locally averaged, which can lead to reduced intensity values of thin structures.
+>    > > Some bones in the imaged data are quite thin (e.g., the ends of the ribs). This leads to partial volume effects: voxels at the edges of thin structures contain a mixture of bone and surrounding soft tissue (e.g., cartilage), resulting in intermediate intensity values lower than pure bone. When we re-sampled the image data to an isotropic voxel size, we chose to *down-sample* the image data. A consequence of this is that voxel intensity values are locally averaged, which can lead to reduced intensity values of thin structures.
 >    > {: .solution }
 >    {: .question}
 {: .hands_on}
