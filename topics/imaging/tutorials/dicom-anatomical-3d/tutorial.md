@@ -105,7 +105,7 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 >
 >    > <comment-title>Why do we convert DICOM to TIFF?</comment-title>
 >    >
->    > Although DICOM is the medical imaging standard, in research, it is convenient to use to TIFF for image analysis because:
+>    > Although DICOM is *the* standard file format in medical imaging, in research, it is convenient to use to TIFF for image analysis for several reasons:
 >    > 
 >    > **Advantages of TIFF for image analysis:**
 >    > - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported by programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
