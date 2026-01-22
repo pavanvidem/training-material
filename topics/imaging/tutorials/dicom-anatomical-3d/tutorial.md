@@ -108,7 +108,7 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 >    > Although DICOM is the medical imaging standard, in research, it is convenient to use to TIFF for image analysis because:
 >    > 
 >    > **Advantages of TIFF for image analysis:**
->    > - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported across programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
+>    > - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported by programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
 >    > - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of seperate DICOM datasets.
 >    > - **Metadata handling:** The extensive clinical metadata of DICOM (e.g., patient info, acquisition protocols) can be challenging to parse and process for general-purpose image analysis tools.
 >    > 
