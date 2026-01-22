@@ -134,8 +134,8 @@ Galaxy's built-in TIFF viewer can be used to roughly explore the image data. To 
 
 The buttons in the toolbar can be used to zoom and pan the view, or this can be accomplished by using the scroll wheel or dragging the image with a pressed mouse button. Even though this viewer is very simple, we can make two important observations that provide some rough orientation within the image data that we are dealing with:
 
-1. The *y-axis* is the **anterior-posterior axis** (from the front to the back of the torso).
-2. The *z-axis* is the **superior-inferior or cranial-caudal axis** (from the bottom to the top of the torso).
+1. The *y-axis* is the **anteroposterior axis** (or *anterior-posterior*, from the front to the back of the torso).
+2. The *z-axis* is the **craniocaudal axis** (or *cranial-caudal*, from the bottom to the top of the torso).
 
 ![Anatomical axes](../../images/dicom-anatomical-3d/axes.jpg "Anatomical axes. <a href='https://commons.wikimedia.org/wiki/File:Anatomical_axes.jpg'>Edoarado and Mikael H&auml;ggstr&ouml;m</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons.")
 
@@ -157,7 +157,7 @@ Inspecting 3-D data as a 2-D projection is intrinsically challenging because it 
 >
 >    > <comment-title>How do we establish proper orientation of the image data in 3-D?</comment-title>
 >    >
->    > The parameter for the *"Coordinate system"* is set to `Point Z to the top` by default. This is the setting that we must use here, since we have identified the z-axis as the *longitudinal* axis. For other image data it might be necessary to instead `Point Y to the top`.
+>    > The parameter for the *"Coordinate system"* is set to `Point Z to the top` by default. This is the setting that we must use here, since we have identified the z-axis as the *craniocaudal* axis. For other image data it might be necessary to instead `Point Y to the top`.
 >    {: .comment}
 {: .hands_on}
 
@@ -257,7 +257,7 @@ Next, we inspect the tabular output yielded by the {% tool [Extract image featur
 |6    |6.0    |48.5             |160.0             |1.0              |
 |…    |…      |…                |…                 |…                |
 
-In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *sagittal axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
+In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *anteroposterior axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
 
 Since this coordinate corresponds to the centroid of the spine and pelvis, removing all objects with a y-coordinate of more than 103.37 pixels is likely to also remove some ribs—which we do not want to happen. Hence, we will add a tolerance margin for objects: Instead of strictly removing all objects that are behind the centroid of the spine and pelvis, we will only remove those that are 1,5cm or further behind.
 
