@@ -56,7 +56,6 @@ In this tutorial, we will show how DICOM series and DICOM datasets can be conver
 
 In this tutorial, we will be using a publicly available CT dataset of a human torso, scanned between the thorax and the pelvis.
 
-
 > <hands-on-title>Data upload</hands-on-title>
 >
 > 1. If you are logged in, create a new history for this tutorial
@@ -495,3 +494,9 @@ The obtained visualization shows the segmentation of the aortic bifurcation:
 </video>
 
 Vessel segmentation is generally challenging and still an active field of research. Segmentation of whole vascular trees may require more sophisticated methods (e.g., {% cite Glsn2008 %}, {% cite Biesdorf2015 %}).
+
+# Fully automated workflow
+
+This tutorial contained several interactive steps that required inspection of data from previous steps. Note that this steps can also be automated, as we show in the supplemental workflow:
+
+{% snippet faqs/galaxy/workflows_run_trs.md path="topics/imaging/tutorials/dicom-anatomical-3d/workflows/dicom-anatomical-3d.ga" title="Segmentation of Anatomical Structures in Medical Images" %}
