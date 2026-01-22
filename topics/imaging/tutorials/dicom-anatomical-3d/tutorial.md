@@ -356,13 +356,14 @@ As another example of the segmentation of anatomical structures, we will now per
 In CT imaging, vessels usually appear as thin lines of subtly higher intensity than the surrounding tissue (just like the ridges of mountains on a relief map). Image filters that enhance such structures are thus called *ridge filters*. The most prominent ridge filter for vessel enhancement in 3-D images is the Frangi filter ({% cite Frangi1998 %}).
 > <comment-title>Contrast-enhanced vs. non-contrast vessel imaging</comment-title>
 >
-> Vessel segmentation feasibility is highly dependent on imaging protocol:
+> Vessel segmentation feasibility is highly dependent on the imaging protocol:
 >
 > **Non-contrast CT:**
 > - Blood vessels: ~30–50 HU (similar to muscle: 40–60 HU)
+> - Can also be much less due to *partial volume effects*
 > - Minimal contrast with surrounding tissue
-> - Frangi filter unreliable except for the largest vessels (e.g., aorta, IVC)
-> - Not suitable for detailed vascular segmentation
+> - Less suited for detailed vascular examination (e.g., segmentation of whole vessel trees)
+> - Frangi filter unreliable for very thin vessels (e.g., coronary vessels)
 >
 > **Contrast-enhanced CT (CTA):**
 > - Contrast-filled vessels: 250–400 HU (with iodinated contrast agent)
@@ -370,6 +371,7 @@ In CT imaging, vessels usually appear as thin lines of subtly higher intensity t
 > - Frangi filter performs reliably for vessel detection
 > - Clinical standard for vascular imaging and segmentation
 >
+> The image data used in this tutorial is *non-contrast* CT.
 {: .comment}
 Our workflow for the segmentation of the aortic bifurcation is as follows:
 
