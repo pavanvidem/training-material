@@ -263,15 +263,16 @@ The first step is to determine the sizes of the connected components:
 
 Next, we inspect the tabular output yielded by the {% tool [Extract image features](toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1) %} tool:
 
-|label|area   |centroid_x       |centroid_y        |centroid_z       |
-|:----|:------|:----------------|:-----------------|:----------------|
-|1    |61710.0|88.83420839410144|103.37395883973424|36.61537838275806|
-|2    |10465.0|97.36292403248925|139.6089823220258 |52.41691352126135|
-|3    |1.0    |87.0             |137.0             |0.0              |
-|4    |2.0    |44.0             |159.0             |0.5              |
-|5    |7.0    |132.0            |159.0             |3.0              |
-|6    |6.0    |48.5             |160.0             |1.0              |
-|…    |…      |…                |…                 |…                |
+> |label|area   |centroid_x       |centroid_y        |centroid_z       |
+> |:----|:------|:----------------|:-----------------|:----------------|
+> |1    |61710.0|88.83420839410144|103.37395883973424|36.61537838275806|
+> |2    |10465.0|97.36292403248925|139.6089823220258 |52.41691352126135|
+> |3    |1.0    |87.0             |137.0             |0.0              |
+> |4    |2.0    |44.0             |159.0             |0.5              |
+> |5    |7.0    |132.0            |159.0             |3.0              |
+> |6    |6.0    |48.5             |160.0             |1.0              |
+> |…    |…      |…                |…                 |…                |
+{: .matrix}
 
 In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *anteroposterior axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in voxels).
 
@@ -437,14 +438,15 @@ The individual workflow steps are as follows:
 
 We inspect the tabular output yielded by the {% tool [Sort](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/9.5+galaxy2) %} tool:
 
-|label|area   |
-|:----|:------|
-|26   |11167.0|
-|132  |8739.0 |
-|176  |2910.0 |
-|175  |2821.0 |
-|42   |2157.0 |
-|…    |…      |
+> |label|area   |
+> |:----|:------|
+> |26   |11167.0|
+> |132  |8739.0 |
+> |176  |2910.0 |
+> |175  |2821.0 |
+> |42   |2157.0 |
+> |…    |…      |
+{: .matrix}
 
 From this table, we can deduce that the largest connected component is the one with label 26. We now create the corresponding *rules* file for removing all other components from the segmentation:
 
