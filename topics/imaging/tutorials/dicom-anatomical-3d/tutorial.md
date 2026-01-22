@@ -101,7 +101,22 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 >    - *"Scaling of values"*: `Preserve range of values`
 >    - *"Sort images before concatenating"*: `Sort images by their position along the Z-axis`
 {: .hands_on}
-
+> <comment-title>Why convert DICOM to TIFF?</comment-title>
+>
+> Although DICOM is the medical imaging standard, we convert to TIFF for research image analysis because:
+>
+> **Advantages of TIFF for analysis:**
+> - **Tool compatibility:** Most image analysis tools in Galaxy and other scientific computing platforms are optimized for standard formats like TIFF
+> - **Simpler structure:** TIFF has more straightforward data organization for computational processing
+> - **Metadata handling:** DICOM's extensive clinical metadata (patient info, acquisition protocols) can be complex for general-purpose image analysis tools to parse
+> - **Universal support:** TIFF is widely supported across programming languages (Python, MATLAB) and visualization tools
+> - **File size:** Single multi-dimensional TIFF files are often easier to manage than hundreds of individual DICOM files
+>
+> **Important considerations:**
+> - **Metadata preservation is critical:** During conversion, spatial calibration data (voxel spacing, slice positions, orientation) must be preserved. Without this, measurements will be in "pixels" rather than physical units (mm, cm), rendering quantitative analysis meaningless.
+> - **DICOM advantages:** DICOM remains essential for clinical workflows, PACS integration, and regulatory compliance. For pure clinical use, stay in DICOM format.
+>
+{: .comment}
 Some of the tools that we will be using in our analysis require that the voxel size of the image is isotropic. To ensure that this is the case, we will re-sample the image data to an isotropic voxel size:
 
 > <hands-on-title>Re-sample image data for isotropic pixel/voxel sizes</hands-on-title>
