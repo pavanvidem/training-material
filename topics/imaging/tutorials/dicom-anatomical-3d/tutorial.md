@@ -21,6 +21,8 @@ time_estimation: "1H"
 contributions:
   authorship:
     - kostrykin
+  reviewing:
+    - dianichj
   funding:
     - deNBI
 tags:
