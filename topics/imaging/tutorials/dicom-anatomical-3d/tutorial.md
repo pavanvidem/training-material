@@ -257,11 +257,11 @@ Next, we inspect the tabular output yielded by the {% tool [Extract image featur
 |6    |6.0    |48.5             |160.0             |1.0              |
 |…    |…      |…                |…                 |…                |
 
-In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *anteroposterior axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in pixels).
+In this table, each row corresponds to a connected component in the segmentation result (identified by its unique label). The centroid of the connected components tells us where the components are located (the y-axis is the *anteroposterior axis* and points from the front to the back of the torso). By inspecting this table, we can easily conclude that the centroid of the largest connected component is located at a y-coordinate of 103.37 (in voxels).
 
-Since this coordinate corresponds to the centroid of the spine and pelvis, removing all objects with a y-coordinate of more than 103.37 pixels is likely to also remove some ribs—which we do not want to happen. Hence, we will add a tolerance margin for objects: Instead of strictly removing all objects that are behind the centroid of the spine and pelvis, we will only remove those that are 1,5cm or further behind.
+Since this coordinate corresponds to the centroid of the spine and pelvis, removing all objects with a y-coordinate of more than 103.37 voxels is likely to also remove some ribs—which we do not want to happen. Hence, we will add a tolerance margin for objects: Instead of strictly removing all objects that are behind the centroid of the spine and pelvis, we will only remove those that are 1,5cm or further behind.
 
-The size of the margin needs to be given in pixels. To determine that, we inspect the standard output of the {% tool [Scale image](toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0) %} tool, that contains many details:
+The size of the margin needs to be given in voxels. To determine that, we inspect the standard output of the {% tool [Scale image](toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0) %} tool, that contains many details:
 
 > <hands-on-title>Inspect the standard output of the "Scale image" tool</hands-on-title>
 >
@@ -288,7 +288,7 @@ The size of the margin needs to be given in pixels. To determine that, we inspec
 >  {: .code-out}
 {: .hands_on}
 
-What we are interested in here is the line for the `Output resolution`. The first tuple `(0.4000000241509449, 0.4000000241509449)` corresponds to the number of pixels per millimeter along the x- and y-axes. From this we can deduce with basic algebra, that one pixel corresponds to 2,5mm along the y-axis (in fact, we can also read off the value for the `z_spacing`, which is identical due to the isotropic re-sampling). Thus, a margin of 1,5cm corresponds to 6 pixels.
+What we are interested in here is the line for the `Output resolution`. The first tuple `(0.4000000241509449, 0.4000000241509449)` corresponds to the number of voxels per millimeter along the x- and y-axes. From this we can deduce with basic algebra, that one voxel corresponds to 2,5mm along the y-axis (in fact, we can also read off the value for the `z_spacing`, which is identical due to the isotropic re-sampling). Thus, a margin of 1,5cm corresponds to 6 voxels.
 
 With this information, we can now write a *rules* file for removing the leakage from the segmentation result:
 
@@ -303,7 +303,7 @@ With this information, we can now write a *rules* file for removing the leakage 
 >    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" name="rules_skeletal" %}
 {: .hands_on}
 
-The upper bound of 109.37 for the y-coordinate of the centroids of the objects that we will retain in the segmentation is obtained by adding the margin of 6 pixels to the previously determined y-coordinate of the centroid of the spine and pelvis.
+The upper bound of 109.37 for the y-coordinate of the centroids of the objects that we will retain in the segmentation is obtained by adding the margin of 6 voxels to the previously determined y-coordinate of the centroid of the spine and pelvis.
 
 Now we are all set to remove the leakage from the segmentation result:
 
