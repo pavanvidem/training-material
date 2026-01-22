@@ -105,17 +105,15 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 {: .hands_on}
 > <comment-title>Why convert DICOM to TIFF?</comment-title>
 >
-> Although DICOM is the medical imaging standard, we convert to TIFF for research image analysis because:
+> Although DICOM is the medical imaging standard, in research, it is convenient to use to TIFF for image analysis because:
 >
-> **Advantages of TIFF for analysis:**
-> - **Tool compatibility:** Most image analysis tools in Galaxy and other scientific computing platforms are optimized for standard formats like TIFF
-> - **Simpler structure:** TIFF has more straightforward data organization for computational processing
-> - **Metadata handling:** DICOM's extensive clinical metadata (patient info, acquisition protocols) can be complex for general-purpose image analysis tools to parse
-> - **Universal support:** TIFF is widely supported across programming languages (Python, MATLAB) and visualization tools
-> - **File size:** Single multi-dimensional TIFF files are often easier to manage than hundreds of individual DICOM files
+> **Advantages of TIFF for image analysis:**
+> - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported across programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
+> - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of seperate DICOM datasets.
+> - **Metadata handling:** The extensive clinical metadata of DICOM (e.g., patient info, acquisition protocols) can be challenging to parse and process for general-purpose image analysis tools.
 >
 > **Important considerations:**
-> - **Metadata preservation is critical:** During conversion, spatial calibration data (voxel spacing, slice positions, orientation) must be preserved. Without this, measurements will be in "pixels" rather than physical units (mm, cm), rendering quantitative analysis meaningless.
+> - **Metadata preservation is critical:** During conversion, spatial calibration data (voxel spacing, slice positions, orientation) must be preserved. Without these informations, it is not possible to translate spatial image analysis readouts (e.g., object sizes) into physical units (e.g., mm, cm), rendering quantitative analysis meaningless.
 > - **DICOM advantages:** DICOM remains essential for clinical workflows, PACS integration, and regulatory compliance. For pure clinical use, stay in DICOM format.
 >
 {: .comment}
