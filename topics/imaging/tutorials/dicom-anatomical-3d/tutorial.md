@@ -102,21 +102,22 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 >    - *"Concatenation axis"*: `Z-axis (concatenate images as slices of a 3-D image or image sequence)`
 >    - *"Scaling of values"*: `Preserve range of values`
 >    - *"Sort images before concatenating"*: `Sort images by their position along the Z-axis`
+>
+>    > <comment-title>Why do we convert DICOM to TIFF?</comment-title>
+>    >
+>    > Although DICOM is the medical imaging standard, in research, it is convenient to use to TIFF for image analysis because:
+>    > 
+>    > **Advantages of TIFF for image analysis:**
+>    > - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported across programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
+>    > - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of seperate DICOM datasets.
+>    > - **Metadata handling:** The extensive clinical metadata of DICOM (e.g., patient info, acquisition protocols) can be challenging to parse and process for general-purpose image analysis tools.
+>    > 
+>    > **Important considerations:**
+>    > - **Metadata preservation is critical:** During conversion, spatial calibration data (voxel spacing, slice positions, orientation) must be preserved. Without these informations, it is not possible to translate spatial image analysis readouts (e.g., object sizes) into physical units (e.g., mm, cm), rendering quantitative analysis meaningless.
+>    > - **DICOM advantages:** DICOM remains essential for clinical workflows, PACS integration, and regulatory compliance. For pure clinical use, stay in DICOM format.
+>    {: .comment}
 {: .hands_on}
-> <comment-title>Why convert DICOM to TIFF?</comment-title>
->
-> Although DICOM is the medical imaging standard, in research, it is convenient to use to TIFF for image analysis because:
->
-> **Advantages of TIFF for image analysis:**
-> - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported across programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
-> - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of seperate DICOM datasets.
-> - **Metadata handling:** The extensive clinical metadata of DICOM (e.g., patient info, acquisition protocols) can be challenging to parse and process for general-purpose image analysis tools.
->
-> **Important considerations:**
-> - **Metadata preservation is critical:** During conversion, spatial calibration data (voxel spacing, slice positions, orientation) must be preserved. Without these informations, it is not possible to translate spatial image analysis readouts (e.g., object sizes) into physical units (e.g., mm, cm), rendering quantitative analysis meaningless.
-> - **DICOM advantages:** DICOM remains essential for clinical workflows, PACS integration, and regulatory compliance. For pure clinical use, stay in DICOM format.
->
-{: .comment}
+
 Some of the tools that we will be using in our analysis require that the voxel size of the image is isotropic. To ensure that this is the case, we will re-sample the image data to an isotropic voxel size:
 
 > <hands-on-title>Re-sample image data for isotropic pixel/voxel sizes</hands-on-title>
