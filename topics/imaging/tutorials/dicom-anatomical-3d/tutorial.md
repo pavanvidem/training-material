@@ -134,8 +134,8 @@ Galaxy's built-in TIFF viewer can be used to roughly explore the image data. To 
 
 The buttons in the toolbar can be used to zoom and pan the view, or this can be accomplished by using the scroll wheel or dragging the image with a pressed mouse button. Even though this viewer is very simple, we can make two important observations that provide some rough orientation within the image data that we are dealing with:
 
-1. The *y-axis* is the **sagittal axis** (from the front to the back of the torso).
-2. The *z-axis* is the **longitudinal axis** (from the bottom to the top of the torso).
+1. The *y-axis* is the **anterior-posterior axis** (from the front to the back of the torso).
+2. The *z-axis* is the **superior-inferior or cranial-caudal axis** (from the bottom to the top of the torso).
 
 ![Anatomical axes](../../images/dicom-anatomical-3d/axes.jpg "Anatomical axes. <a href='https://commons.wikimedia.org/wiki/File:Anatomical_axes.jpg'>Edoarado and Mikael H&auml;ggstr&ouml;m</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons.")
 
