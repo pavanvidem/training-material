@@ -129,9 +129,9 @@ Some of the tools that we will be using in our analysis require that the voxel s
 
 If the image data already would have been isotropic, this tool would yield the original data.
 
-CT image data, such as the dataset that we are using in this tutorial, typically have intensity values that correspond to the Hounsfield scale. Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical HU values are –1000 HU for air, –700 to –200 HU for skin tissue, –200 to –50 HU for fat tissue, 0 HU for water, –20 to 140 HU for muscle tissue, and 200 to 3071 HU for bone tissue (e.g., {% cite chougule2018clinical %}).
+CT image data, such as the dataset that we are using in this tutorial, typically have intensity values that correspond to the Hounsfield scale. Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical Hounsfield unit (HU) values are −1000 HU for air, approximately −950 to −650 HU for normally aerated lung tissue, −190 to −30 HU for subcutaneous fat, 0 HU for water, +30 to +60 HU for muscle tissue, and >+150 HU for bone tissue (often >+1000 HU for cortical bone; e.g., {% cite chougule2018clinical %}, {% cite LimFat2011 %}). In research, often larger ranges are used to account for pathological cases or contrast enhancement (e.g., –29 to +150 HU for muscle tissue).
 
-However, the image data may also contain values outside of the range of –1000 to 3071 HU that correspond to, for example, parts of the CT imaging setup, or imaging artifacts. To effectively “erase” those parts from the image data, we will clip the image intensities to the meaningful range of –1000 to 3071 HU as a final step of pre-processing:
+The image data may also contain values outside of the range of –1000 to 3071 HU that correspond to, for example, parts of the CT imaging setup, or imaging artifacts. To effectively “erase” those parts from the image data, we will clip the image intensities to the meaningful range of –1000 to 3071 HU as a final step of pre-processing:
 
 > <hands-on-title>Clipping the image intensities</hands-on-title>
 >
@@ -204,7 +204,7 @@ The imaged section of the torso in our dataset contains parts of prominent skele
 >
 >    > <question-title></question-title>
 >    >
->    > Why do we use a threshold value of just 120, if the typical range of HU values for bone tissue starts at about 200 HU?
+>    > Why do we use a threshold value of just 120, if the typical range of HU values for bone tissue starts at about 150 HU?
 >    >
 >    > > <solution-title></solution-title>
 >    > > Some bones in the imaged data are quite thin (e.g., the ends of the ribs). This leads to *partial volume effects*: voxels at the edges of thin structures contain a mixture of bone and surrounding soft tissue (e.g., cartilage), resulting in intermediate intensity values lower than pure bone. When we re-sampled the image data to an isotropic voxel size, we chose to *down-sample* the image data. A consequence of this is that voxel intensity values are locally averaged, which can lead to reduced intensity values of thin structures.
