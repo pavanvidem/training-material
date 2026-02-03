@@ -54,7 +54,6 @@ awspolly:
 
 # our real contributors <3 (please add yourself in alphabetical order)
 
-
 a-asai:
     name: Atsushi Asai
     email: tbudcm7zk@i.softbank.jp
@@ -1021,6 +1020,12 @@ jellescholtalbers:
     github: false
     joined: 2026-01
 
+jnussbaum:
+    gtn-halloffame: "no"
+    name: Johannes Nussbaum
+    github: true
+    joined: 2026-01
+
 jyotiprakashmohanty:
     gtn-halloffame: "no"
     name: Jyoti Prakash Mohanty
@@ -1165,7 +1170,6 @@ mingli:
     joined: 2026-01
 
 mirandaembl:
-    gtn-halloffame: "no"
     name: Eduardo Jacobo Miranda Ackerman
     joined: 2025-05
     elixir_node: de
@@ -1372,7 +1376,7 @@ sarahmaman:
 
 Sch-Da:
     name: Daniela Schneider
-    joined: 2024-10
+    joined: 2024-06
     email: schneidd@informatik.uni-freiburg.de
     matrix: 'schn_da:matrix.org'
     orcid: 0000-0001-9536-5587
@@ -1457,16 +1461,18 @@ desmond-jasper:
     joined: 2020-04
 
 dianichj:
-        name: Diana Chiang Jurado
-        email: dianachj@informatik.uni-freiburg.de
-        orcid: 0000-0002-5857-1477
-        joined: 2024-08
-        affiliations:
-          - spoc
+    name: Diana Chiang Jurado
+    email: dianachj@informatik.uni-freiburg.de
+    orcid: 0000-0002-5857-1477
+    joined: 2024-08
+    affiliations:
+        - spoc
+        - uni-freiburg
+        - nfdi4bioimage
 
 DinithiRajapaksha:
-        name: Dinithi Rajapaksha
-        joined: 2024-09
+    name: Dinithi Rajapaksha
+    joined: 2024-09
 
 dirowa:
     name: Donny Vrins
@@ -2845,15 +2851,6 @@ mira-miracoli:
       - elixir-europe
       - deNBI
       - eurosciencegateway
-
-mirandaembl :
-    name: Eduardo Jacobo Miranda Ackerman
-    joined: 2025-05
-    elixir_node: de
-    orcid: '0009-0005-0673-021X'
-    affiliations:
-      - deKCD
-      - embl-ebi
 
 miRlyKayleigh:
     name: Kayleigh Smith
