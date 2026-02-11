@@ -6,7 +6,7 @@ destination:
   synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
 items:
 - name: Imaging
-  description: Segmentation of Anatomical Structures in Medical 3-D Images
+  description: Image analysis using Galaxy
   items:
   - name: Segmentation of Anatomical Structures in Medical 3-D Images
     items:
