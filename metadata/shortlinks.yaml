@@ -712,6 +712,8 @@ name:
   microbiome/mags-building: "/topics/microbiome/tutorials/mags-building/tutorial.html"
   statistics/image_learner: "/topics/statistics/tutorials/image_learner/tutorial.html"
   statistics/image_learner/slides: "/topics/statistics/tutorials/image_learner/slides.html"
+  imaging/biapy: "/topics/imaging/tutorials/biapy/tutorial.html"
+  imaging/iscc-suite: "/topics/imaging/tutorials/iscc-suite/tutorial.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2475,6 +2477,10 @@ id:
   S00140: "/topics/statistics/tutorials/image_learner/slides.html"
   E00045: "/events/2026-02-09-love-data-week-ufr.html"
   W00372: "/topics/statistics/tutorials/image_learner/workflows/main_workflow.html"
+  T00571: "/topics/imaging/tutorials/biapy/tutorial.html"
+  W00373: "/topics/imaging/tutorials/biapy/workflows/BiaPy.html"
+  T00572: "/topics/imaging/tutorials/iscc-suite/tutorial.html"
+  W00374: "/topics/imaging/tutorials/iscc-suite/workflows/ISCC---image-analysis-workflow-example.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"
