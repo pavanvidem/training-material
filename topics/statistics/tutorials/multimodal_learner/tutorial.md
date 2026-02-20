@@ -16,12 +16,13 @@ key_points:
 - Multimodal Learner trains a late-fusion model with modality-specific encoders and a learned fusion network.
 - The HANCOCK dataset provides a predefined train/test split for recurrence prediction.
 - ROC AUC and class-wise metrics help explain model performance and error patterns.
-contributors:
-- paulocilasjr
-- khaivandangusf2210
-- afpybus
-- qchiujunhao
-- jgoecks
+contributions:
+  authorship:
+  - paulocilasjr
+  - khaivandangusf2210
+  - afpybus
+  - qchiujunhao
+  - jgoecks
 tags:
 - Multimodal Learning
 - GLEAM
