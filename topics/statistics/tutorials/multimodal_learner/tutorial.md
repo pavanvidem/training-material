@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 level: Intermediate
 title: Gleam Multimodal Learner - Head and Neck cancer Recurrence Prediction with HANCOCK
-zenodo_link: https://zenodo.org/records/17933596
+zenodo_link: https://zenodo.org/records/18603388
 questions:
   - "How does Multimodal Learner combine tabular, text, and image modalities in a single model?"
   - "How do we configure Multimodal Learner with different modalities?"
@@ -162,9 +162,9 @@ Multimodal Learner trains **late-fusion prediction models** using **AutoGluon Mu
 > 2. Import the dataset files from Zenodo:
 >
 >    ```
->    https://zenodo.org/records/17933596/files/HANCOCK_train_split.csv
->    https://zenodo.org/records/17933596/files/HANCOCK_test_split.csv
->    https://zenodo.org/records/17727354/files/tma_cores_cd3_cd8_images.zip
+>    https://zenodo.org/records/18603388/files/HANCOCK_train_split.csv
+>    https://zenodo.org/records/18603388/files/HANCOCK_test_split.csv
+>    https://zenodo.org/records/18603388/files/CD3_CD8_images.zip
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
