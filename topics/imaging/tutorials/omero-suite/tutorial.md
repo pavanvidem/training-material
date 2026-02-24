@@ -95,7 +95,7 @@ The window above the tool parameters will now turn green! This mean that the too
 
 **Really important:** each tool need its own credentials... but do not worry, this needs to be done just one time!
 
-You can find [here](https://artifact.galaxyproject.org/news/2026-01-12-tool-credentials-system/) more information for the Galaxy credential system.
+You can find [Something better here](https://artifact.galaxyproject.org/news/2026-01-12-tool-credentials-system/) more information for the Galaxy credential system.
 
 **Please Notice**: OMERO password and username, will be stored in the job working directory.
     This directory only exists during the runtime of the job and should only be accessible by the system user that runs the job.
