@@ -40,10 +40,19 @@ This tutorial aims to familiarize you with the Galaxy user interface, with a spe
 
 ## Overview
 
+Galaxy can be used at different stages of the data life cycle, covering the steps from data collection to data reuse.
+
 ![RDM life cycle]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-overview.png %}){: style="width:50%"}
+
+TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly ?
+
+
+In this tutorial, we will provide a hands-on introduction to the Galaxy platform across the different stages of the research data life cycle.
 
 
 ## Collect: Data import
+
+
 
 ![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-collect.png %}){: style="width:50%"}
 
