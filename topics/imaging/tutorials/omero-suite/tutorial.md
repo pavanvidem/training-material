@@ -93,7 +93,7 @@ The window above the tool parameters will now turn green! This mean that the too
 
 ![credential_5.png](../../images/omero-suite/credential_5.png)
 
-**Really important:** each tool needs its own credentials... but do not worry, this needs to be done just once!
+**Really important:** each tool needs its own credentials... but do not worry, greating a new group needs to be done just once per tool!
 
 You can find [here](https://artifact.galaxyproject.org/news/2026-01-12-tool-credentials-system/) more detailed information on the Galaxy credential system.
 
