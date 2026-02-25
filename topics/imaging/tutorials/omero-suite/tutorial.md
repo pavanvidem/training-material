@@ -71,13 +71,13 @@ Before starting you need to set up your OMERO credential.
 
 Setting up the credentials for a specific OMERO tool is easy and allows to save multiple OMERO instance within one tool!
 
-When opening an OMERO tool you will see the following orange windows above the tool parameters. This means that no credentials are set-up at the moment. 
+When opening any OMERO tool, you will see the following orange windows above the tool parameters. This means that no credentials are set up at the moment. 
 
 Click on **"Provide Credentials"**
 
 ![credential_1.png](../../images/omero-suite/credential_1.png)
 
-A new windows will open. Click on **OMERO Credentials** and then on **+ Create new group**
+A pop-up window will open. Click on **OMERO Credentials** and then on **+ Create new group**
 
 ![credential_2.png](../../images/omero-suite/credential_2.png)
 
@@ -85,7 +85,7 @@ Add now a **Group Name** and input your OMERO username and password. Optionally,
 
 ![credential_3.png](../../images/omero-suite/credential_3.png)
 
-Your group is now created! Click on **Use this group** to select this credentials and then **Save Groups Selection**.
+Your group is now created! Click on **Use this group** to select these credentials and then **Save Group Selection**.
 
 ![credential_4.png](../../images/omero-suite/credential_4.png)
 
@@ -93,14 +93,11 @@ The window above the tool parameters will now turn green! This mean that the too
 
 ![credential_5.png](../../images/omero-suite/credential_5.png)
 
-**Really important:** each tool need its own credentials... but do not worry, this needs to be done just one time!
+**Really important:** each tool needs its own credentials... but do not worry, this needs to be done just once!
 
-You can find [Something better here](https://artifact.galaxyproject.org/news/2026-01-12-tool-credentials-system/) more information for the Galaxy credential system.
+You can find [here](https://artifact.galaxyproject.org/news/2026-01-12-tool-credentials-system/) more detailed information on the Galaxy credential system.
 
-**Please Notice**: OMERO password and username, will be stored in the job working directory.
-    This directory only exists during the runtime of the job and should only be accessible by the system user that runs the job.
-    However, please be aware that your username and password **may be exposed** to users with administrative rights.
-    We are working on increasing the security of the OMERO suite
+**Please note**: the OMERO password and username will be stored in the job working directory. This directory only exists during the runtime of the job and should only be accessible by the system user who runs the job. However, please be aware that your username and password **may be exposed** to users with administrative rights.
 
 # Prepare your data
 
