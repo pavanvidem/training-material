@@ -39,7 +39,7 @@ tags:
 
 Image data in medical imaging is often stored and exchanged in the DICOM file format. A DICOM dataset is a file that contains rich metadata (patient, study info) and the actual medical image data stored as pixels (for 2-D images) or voxel (for 3-D images). The image data can be single-channel or multi-channel, and it can also be organized in multiple frames (e.g., spatial tiles of a mosaic, z-slices of a 3-D image, or time steps).
 
-Even though, technically, DICOM datasets can contain heterogeneous frames for different axes (e.g., z-slices and temporal frames), in practice, the frames of a DICOM dataset are usually designated for only one specific purpose and axis (e.g., z-slices or temporal frames). For such cases, DICOM series are more widely adopted: A list of DICOM datasets can form a DICOM series to store multi-dimensional data (e.g., a list of 3-D images for consecutive time steps, or just the z-slices of a 3-D image, where each slice is a single DICOM dataset).
+Even though, technically, DICOM datasets can contain heterogeneous frames for different axes (e.g., z-slices and temporal frames), in practice, the frames of a DICOM dataset are usually designated for only one specific purpose and axis (e.g., single z-slices or temporal frames). For such cases, DICOM series are more widely adopted: A list of DICOM datasets can form a DICOM series to store multi-dimensional data (e.g., a list of 3-D images for consecutive time steps, or just the z-slices of a 3-D image, where each slice is a single DICOM dataset).
 
 In this tutorial, we will show how DICOM series and DICOM datasets can be converted to TIFF, which is a general-purpose image file format that is well-supported by a majority of tools in Galaxy. We will use that to showcase segmentation and visualization of anatomical structures in 3-D image data from computed tomography (CT). The Galaxy Image Analysis tools and techniques utilized in this tutorial are domain-agnostic and can also be adapted to other imaging modalities (e.g., 3-D cell imaging).
 
@@ -108,7 +108,7 @@ Our first step will be to convert the DICOM series into a single TIFF image, tha
 >    > 
 >    > **Advantages of TIFF for image analysis:**
 >    > - **Tool compatibility:** Most image analysis and visualization tools in Galaxy and other scientific computing platforms are optimized for standard, general-purpose image formats like TIFF. In addition, TIFF is also well-supported by programming languages (e.g., Python, MATLAB), which can be handy for advanced analyses.
->    > - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of seperate DICOM datasets.
+>    > - **Simpler structure:** TIFF has more straightforward data organization for computational processing. A single multi-dimensional TIFF file is easier to handle than hundreds or thousands of separate DICOM datasets.
 >    > - **Metadata handling:** The extensive clinical metadata of DICOM (e.g., patient info, acquisition protocols) can be challenging to parse and process for general-purpose image analysis tools.
 >    > 
 >    > **Important considerations:**
@@ -304,7 +304,7 @@ The size of the margin needs to be given in voxels. To determine that, we inspec
 >  {: .code-out}
 {: .hands_on}
 
-What we are interested in here is the line for the `Output resolution`. The first tuple `(0.4000000241509449, 0.4000000241509449)` corresponds to the number of voxels per millimeter along the x- and y-axes. From this we can deduce with basic algebra, that one voxel corresponds to 2,5mm along the y-axis (in fact, we can also read off the value for the `z_spacing`, which is identical due to the isotropic re-sampling). Thus, a margin of 1,5cm corresponds to 6 voxels.
+What we are interested in here is the line for the `Output resolution`. The first tuple `(0.4000000241509449, 0.4000000241509449)` corresponds to the number of voxels per millimeter along the x- and y-axes. From this, we can deduce, using basic algebra, that one voxel corresponds to 2.5 mm along the y-axis (in fact, we can also read off the value for the `z_spacing`, which is identical due to the isotropic re-sampling). Thus, a margin of 1,5 cm corresponds to 6 voxels.
 
 With this information, we can now write a *rules* file for removing the leakage from the segmentation result:
 
