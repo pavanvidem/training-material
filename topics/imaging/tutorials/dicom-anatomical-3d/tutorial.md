@@ -129,7 +129,12 @@ Some of the tools that we will be using in our analysis require that the voxel s
 
 If the image data already would have been isotropic, this tool would yield the original data.
 
-CT image data, such as the dataset that we are using in this tutorial, typically have intensity values that correspond to the Hounsfield scale. Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical Hounsfield unit (HU) values are −1000 HU for air, approximately −950 to −650 HU for normally aerated lung tissue, −190 to −30 HU for subcutaneous fat, 0 HU for water, +30 to +60 HU for muscle tissue, and >+150 HU for bone tissue (often >+1000 HU for cortical bone; e.g., {% cite chougule2018clinical %}, {% cite LimFat2011 %}). In research, often larger ranges are used to account for pathological cases or contrast enhancement (e.g., –29 to +150 HU for muscle tissue).
+CT image data, such as the dataset that we are using in this tutorial, typically has intensity values that correspond to the Hounsfield scale:
+
+> The *Hounsfield* scale, named after Sir Godfrey Hounsfield, is a quantitative scale for describing radiodensity. It is frequently used in CT scans, where its value is also termed *CT number*.
+{: .quote cite="https://en.wikipedia.org/w/index.php?title=Hounsfield_scale&oldid=1313893505" author="Wikipedia contributors"}
+
+Using Hounsfield Units (HU) is advantageous, because it allows to directly identify specific materials or tissues solely based on the image intensities. Typical Hounsfield unit (HU) values are −1000 HU for air, approximately −950 to −650 HU for normally aerated lung tissue, −190 to −30 HU for subcutaneous fat, 0 HU for water, +30 to +60 HU for muscle tissue, and >+150 HU for bone tissue (often >+1000 HU for cortical bone; e.g., {% cite chougule2018clinical %}, {% cite LimFat2011 %}). In research, often larger ranges are used to account for pathological cases or contrast enhancement (e.g., –29 to +150 HU for muscle tissue).
 
 The image data may also contain values outside of the range of –1000 to 3071 HU that correspond to, for example, parts of the CT imaging setup, or imaging artifacts. To effectively “erase” those parts from the image data, we will clip the image intensities to the meaningful range of –1000 to 3071 HU as a final step of pre-processing:
 
