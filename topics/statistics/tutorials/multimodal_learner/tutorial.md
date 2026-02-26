@@ -131,7 +131,7 @@ cd3_path and cd8_path: image filenames (or relative paths) for CD3 and CD8 TMA i
 >
 > 8) Provide the images as one **ZIP** archive.
 >
-> A python script for preprocessing can be found at: [HANCOCK_preprocessing](https://github.com/goeckslab/gleam_use_cases/tree/main/multimodal_learner)
+> A Python script for preprocessing can be found at: [HANCOCK_preprocessing](https://github.com/goeckslab/gleam_use_cases/tree/main/multimodal_learner)
 >
 {:  .comment}
 
