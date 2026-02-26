@@ -234,7 +234,7 @@ The HTML report is designed to help you answer two questions quickly: **how well
 - **Calibration and threshold behavior**  
   Calibration plots help you decide whether predicted probabilities can be interpreted as risk. Threshold views show how changing the cutoff trades off false negatives versus false positives. The configuration used was **0.25** decision threshold to make this tradeoff explicit (rather than relying on the default 0.5).
 - **Configuration and reproducibility**  
-  Confirm that the report  match your intended setup: which modalities were used, chosen text and image backbones, missing-image handling, split strategy, random seed, and time budget.
+  Confirm that the report  matches your intended setup: which modalities were used, chosen text and image backbones, missing-image handling, split strategy, random seed, and time budget.
 
 # Results and Benchmark Comparison
 
