@@ -125,7 +125,7 @@ cd3_path and cd8_path: image filenames (or relative paths) for CD3 and CD8 TMA i
 >
 > 5) Use filenames in the table that match entries for each patient.
 >
-> 6) Preserve the reference benchmark split and avoids leakage across patients.
+> 6) Preserve the reference benchmark split and avoid leakage across patients.
 >
 > 7) Save the dataset as a .csv file.
 >
