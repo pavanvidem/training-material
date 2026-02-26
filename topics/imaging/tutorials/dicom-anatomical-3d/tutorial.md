@@ -23,6 +23,7 @@ contributions:
     - kostrykin
   reviewing:
     - dianichj
+    - beatrizserrano
   funding:
     - deNBI
 tags:
@@ -129,7 +130,7 @@ Some of the tools that we will be using in our analysis require that the voxel s
 
 If the image data already would have been isotropic, this tool would yield the original data.
 
-CT image data, such as the dataset that we are using in this tutorial, typically has intensity values that correspond to the Hounsfield scale:
+CT image data, such as the dataset used in this tutorial, typically has intensity values that correspond to the Hounsfield scale:
 
 > The *Hounsfield* scale, named after Sir Godfrey Hounsfield, is a quantitative scale for describing radiodensity. It is frequently used in CT scans, where its value is also termed *CT number*.
 {: .quote cite="https://en.wikipedia.org/w/index.php?title=Hounsfield_scale&oldid=1313893505" author="Wikipedia contributors"}
