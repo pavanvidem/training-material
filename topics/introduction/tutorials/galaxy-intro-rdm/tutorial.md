@@ -86,19 +86,14 @@ In Galaxy, *server* and *instance* are often used interchangeably. These terms b
 {: .hands_on}
 
 The Galaxy homepage is divided into four sections (panels):
-* The Activity Bar on the left: _This is where you will navigate to the resources in Galaxy (Tools, Workflows, Histories etc.)_
-* Currently active "Activity Panel" on the left: _By default, the {% icon tool %} **Tools** activity will be active and its panel will be expanded_
-* Viewing panel in the middle: _The main area for context for your analysis_
-* History of analysis and files on the right: _Shows your "current" history; i.e.: Where any new files for your analysis will be stored_
+- The **Activity Bar** on the left: _This is where you will navigate to the resources in Galaxy (Tools, Workflows, Histories etc.)_
+- Currently active **"Activity Panel"** on the left: _By default, the {% icon tool %} **Tools** activity will be active and its panel will be expanded_
+- **Viewing panel** in the middle: _The main area for context for your analysis_
+- **History** of analysis and files on the right: _Shows your "current" history; i.e.: Where any new files for your analysis will be stored_
 
 ![Screenshot of the Galaxy interface with aforementioned structure](../../images/galaxy_interface.png)
 
 The first time you use Galaxy, there will be no files in your history panel.
-
-### The Galaxy History
-
-Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets; which tools were used to create them, which version, and which parameter settings. Everything you need to write the methods section of your journal publication.
-
 
 
 ## Collect: Data import
@@ -118,10 +113,13 @@ Your "History" is in the panel at the right. This is where all the files you imp
     - from shared data library
 ```
 
+### The Galaxy History
+
+Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets; which tools were used to create them, which version, and which parameter settings. Everything you need to write the methods section of your journal publication.
 Before we begin, let's name our history. It is recommended to create a new history for each analysis that you perform, and giving your histories good names will help keep your analyses organized.
 
 
-### Name your current history
+#### Name your current history
 
 > <hands-on-title>Name history</hands-on-title>
 > 1. Go to the **History** panel (on the right)
@@ -144,30 +142,33 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >
 {: .hands_on}
 
+
 ### Upload a dataset
 
-```
+<!--
 https://zenodo.org/records/18803585/files/olympics-2010-winter.tsv
 https://zenodo.org/records/18803585/files/olympics-2008-summer.tsv
 https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
-```
+-->
 
 > <comment-title> Galaxy Data Import Options </comment-title>
 > There are various ways to get data into Galaxy
-> - Uploading from your computer
-> - Import from URL
-> - Import directly from data repositories, e.g.
+> - Uploading from **your computer**
+> - Import from **URL**
+> - Import directly from **data repositories**, e.g.
 >   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
-> - Bring-your-own-data (e.g. Dropbox)
-> - Connections to your LIMS system
+> - **Bring-your-own-data** (e.g. Dropbox, Gdrive)
+> - Connections to your **LIMS** system
 >
-> For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org)
-{: comment}
+> TODO: link to pages that give more info on these?
+>
+{: .comment}
 
-The "Activity Bar" can be seen on the left-most part of the interface.
+For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org)
+
 
 > <hands-on-title>Upload a file from URL</hands-on-title>
 > 1. At the top of the **Activity Bar**, click the {% icon galaxy-upload %} **Upload** activity
@@ -216,6 +217,19 @@ This file contains a table listing all athletes who competed in the 2010 Winter 
 {: .hands_on}
 
 
+TODO: question box asking about number of athletes, which city was this olympics in?
+
+
+### Dataset attributes
+
+
+- TODO: expand history item, look at infor there
+- TODO: go to dataset details, highlight size, hash and other metadata
+- TODO: change file name to include city (Oslo)
+- TODO: add propagating tags "winter" and "2010"
+
+
+
 ## Process: Data preparation and QC
 
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
@@ -236,6 +250,21 @@ This file contains a table listing all athletes who competed in the 2010 Winter 
 - history system: create new history, show switching, drag & drop
 - scaling: create collection in new history, put both files in, run the compute step again on collection
 ```
+
+### Use a tool
+
+Let's calculate the age from the birthyear of the athletes and year of the Olympic games.
+
+> <hands-on-title>Use a tool</hands-on-title>
+>
+{: .hands_on}
+
+This tool will run and a new output dataset will appear at the top of your history panel.
+
+{% snippet faqs/galaxy/tutorial_mode.md %}
+
+
+### Tool provenance
 
 
 
