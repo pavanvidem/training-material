@@ -1,12 +1,14 @@
 ---
 layout: tutorial_hands_on
-title: Galaxy Introduction for Data Stewards
+title: Introduction to Galaxy as an RDM platform
 zenodo_link:
 level: Introductory
 questions:
 - Which RDM features does Galaxy offer?
 objectives:
 - Familiarize yourself with the basics of Galaxy
+- Learn how to import data
+- Learn how to process and analyze data
 - Learn how to share your work
 
 time_estimation: 2H
@@ -50,11 +52,80 @@ TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly ?
 In this tutorial, we will provide a hands-on introduction to the Galaxy platform across the different stages of the research data life cycle.
 
 
+## Basics of Galaxy
+
+## Create an account on a Galaxy instance/server
+If you already have an account, skip to the next section!
+
+In Galaxy, *server* and *instance* are often used interchangeably. These terms basically mean that different regions have different Galaxy servers/instances, with slightly different tool installations and appearances. If you don't have a specific server/instance in mind, we recommend registering at one of the main public servers/instances, detailed below.
+
+{% snippet faqs/galaxy/account_create.md %}
+
+## What does Galaxy look like?
+
+> <hands-on-title>Log in to Galaxy</hands-on-title>
+> 1. Open your favorite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
+> 2. Browse to your Galaxy instance
+> 3. Log in or register
+>
+> ![Screenshot of Galaxy Australia with the register or login button highlighted](../../images/galaxy-login.png)
+>
+>   > <comment-title>Different Galaxy servers</comment-title>
+>   >  This is an image of Galaxy Australia, located at [usegalaxy.org.au](https://usegalaxy.org.au/)
+>   >
+>   > The particular Galaxy server that you are using may look slightly different and have a different web address.
+>   >
+>   > You can also find more possible Galaxy servers at the top of this tutorial in **Available on these Galaxies**
+>   {: .comment}
+{: .hands_on}
+
+The Galaxy homepage is divided into four sections (panels):
+* The Activity Bar on the left: _This is where you will navigate to the resources in Galaxy (Tools, Workflows, Histories etc.)_
+* Currently active "Activity Panel" on the left: _By default, the {% icon tool %} **Tools** activity will be active and its panel will be expanded_
+* Viewing panel in the middle: _The main area for context for your analysis_
+* History of analysis and files on the right: _Shows your "current" history; i.e.: Where any new files for your analysis will be stored_
+
+![Screenshot of the Galaxy interface with aforementioned structure](../../images/galaxy_interface.png)
+
+The first time you use Galaxy, there will be no files in your history panel.
+
+### The Galaxy History
+
+Your "History" is in the panel at the right. It is a record of the actions you have taken. It tracks the provenance of all datasets imported to or created in Galaxy
+
+#### Name your current history
+
+> <hands-on-title>Name history</hands-on-title>
+> 1. Go to the **History** panel (on the right)
+> 2. Click {% icon galaxy-pencil %} (**Edit**) next to the history name (which by default is "Unnamed history")
+>
+>    ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value. An input box is below it.]({% link shared/images/rename_history.png %}){:width="250px"}
+>
+>    > <comment-title></comment-title>
+>    >
+>    > In some previous versions of Galaxy, you will need to click the history name to rename it as shown here:
+>    > ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value.](../../../../shared/images/rename_history_old.png){:width="320px"}
+>    {: .comment}
+>
+> 3. Type in a new name, for example, "My Analysis"
+> 4. Click **Save**
+>
+> > <comment-title>Renaming not an option?</comment-title>
+> > If renaming does not work, it is possible you aren't logged in, so try logging in to Galaxy first. Anonymous users are only permitted to have one history, and they cannot rename it.
+> {: .comment}
+>
+{: .hands_on}
+
+
+
 ## Collect: Data import
 
-
-
 ![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-collect.png %}){: style="width:50%"}
+
+Before you can analyse your data, it must first be imported into Galxy. There are a variety of ways to upload data,
+1. upload from your local machine
+2. upload from URL
+3. import from  integration
 
 
 - show different data import options
@@ -86,5 +157,11 @@ In this tutorial, we will provide a hands-on introduction to the Galaxy platform
 
 ## Reuse
 
+TODO: download a workflow and run it. voronoi segmentation? show collections by running it on all 2 images? --> check how quickly this runs
+
 ![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-reuse.png %}){: style="width:50%"}
+
+Workflows shared with you by others can easily be rerun.  To illustrate this fact, we will now get a workflow from WorkflowHub, import it into Galaxy, and run it.
+
+https://zenodo.org/records/15281843/files/images_and_seeds.zip
 
