@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: Introduction to Galaxy as an RDM platform
-zenodo_link:
+zenodo_link: https://zenodo.org/records/18803585/
 level: Introductory
 questions:
 - Which RDM features does Galaxy offer?
@@ -11,7 +11,7 @@ objectives:
 - Learn how to process and analyze data
 - Learn how to share your work
 
-time_estimation: 2H
+time_estimation: 3H
 key_points:
 subtopic: core
 priority: 3
@@ -28,7 +28,10 @@ contributions:
 
 This tutorial aims to familiarize you with the Galaxy user interface, with a special focus on highlighting Galaxy's many RDM (Research Data Management) features.
 
-{% snippet faqs/galaxy/analysis_results_may_vary.md %}
+Galaxy has over 10,000 available tools in it's [Tool Shed](), covering a wide variety of scientific domains, ranging from life sciences, to astronomy, and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
+
+To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is "What is the age distribution of Olympic ahtletes?".
+
 
 > <agenda-title></agenda-title>
 >
@@ -44,15 +47,18 @@ This tutorial aims to familiarize you with the Galaxy user interface, with a spe
 
 Galaxy can be used at different stages of the data life cycle, covering the steps from data collection to data reuse.
 
+
 ![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:50%"}
 
-TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly ?
+TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly , add or link to life cycle description
 
 
 In this tutorial, we will provide a hands-on introduction to the Galaxy platform across the different stages of the research data life cycle.
 
 
-## Basics of Galaxy
+## The Galaxy Web Interface
+
+Before we go into the stages of the RDM life cycle, let's start with the basics and log into Galaxy and explore the graphical user interface.
 
 ### Create an account on a Galaxy instance/server
 If you already have an account, skip to the next section!
@@ -91,9 +97,31 @@ The first time you use Galaxy, there will be no files in your history panel.
 
 ### The Galaxy History
 
-Your "History" is in the panel at the right. It is a record of the actions you have taken. It tracks the provenance of all datasets imported to or created in Galaxy
+Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets; which tools were used to create them, which version, and which parameter settings. Everything you need to write the methods section of your journal publication.
 
-#### Name your current history
+
+
+## Collect: Data import
+
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
+
+```
+- import olympics winter data from Zenodo via URL
+  - show dataset attributes, rename file
+- import olympics summer data from Zenodo via repository browse
+- add dataset tags
+
+
+- discuss different data import options
+    - import from popular data repositories (SRA/NCBI)
+    - from BYOS
+    - from shared data library
+```
+
+Before we begin, let's name our history. It is recommended to create a new history for each analysis that you perform, and giving your histories good names will help keep your analyses organized.
+
+
+### Name your current history
 
 > <hands-on-title>Name history</hands-on-title>
 > 1. Go to the **History** panel (on the right)
@@ -107,7 +135,7 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 >    > ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value.](../../../../shared/images/rename_history_old.png){:width="320px"}
 >    {: .comment}
 >
-> 3. Type in a new name, for example, "My Analysis"
+> 3. Type in a new name, for example, "Olympics Data Analysis"
 > 4. Click **Save**
 >
 > > <comment-title>Renaming not an option?</comment-title>
@@ -116,24 +144,76 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 >
 {: .hands_on}
 
-
-
-## Collect: Data import
-
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
+### Upload a dataset
 
 ```
-- import olympics summer data from Zenodo via URL
-- import olympics winter data from Zenodo via repository browse
-- add dataset tags
-
-
-- discuss different data import options
-    - import from popular data repositories (SRA/NCBI)
-    - from BYOS
-    - from shared data library
+https://zenodo.org/records/18803585/files/olympics-2010-winter.tsv
+https://zenodo.org/records/18803585/files/olympics-2008-summer.tsv
+https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
 ```
 
+> <comment-title> Galaxy Data Import Options </comment-title>
+> There are various ways to get data into Galaxy
+> - Uploading from your computer
+> - Import from URL
+> - Import directly from data repositories, e.g.
+>   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
+>   - OMERO (Image database)
+>   - Copernicus (Climate Data)
+>   - many more (See "Get Data" section of the Tool panel in Galaxy)
+> - Bring-your-own-data (e.g. Dropbox)
+> - Connections to your LIMS system
+>
+> For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org)
+{: comment}
+
+The "Activity Bar" can be seen on the left-most part of the interface.
+
+> <hands-on-title>Upload a file from URL</hands-on-title>
+> 1. At the top of the **Activity Bar**, click the {% icon galaxy-upload %} **Upload** activity
+>
+>    ![upload data button shown in the galaxy interface](../../images/upload-data.png)
+>
+>    This brings up a box:
+>
+>    ![the complicated galaxy upload dialog, the 'regular' tab is active with a large textarea to paste subsequent URL](../../images/upload-box.png)
+>
+> 3. Click **Paste/Fetch data**
+> 4. Paste in the address of a file:
+>
+>    ```
+>    https://zenodo.org/records/18803585/files/olympics-2010-winter.tsv
+>    ```
+>
+> 5. Click **Start**
+> 6. Click **Close**
+>
+{: .hands_on}
+
+Your uploaded file is now in your current history.
+When the file has uploaded to Galaxy, it will turn green.
+
+> <comment-title></comment-title>
+> After this you will see your first history item (called a "dataset") in Galaxy's right panel. It will go through
+> the gray (preparing/queued) and yellow (running) states to become green (success).
+>
+{: .comment}
+
+What is this file?
+
+> <hands-on-title>View the dataset content</hands-on-title>
+> 1. Click the {% icon galaxy-eye %} (eye) icon next to the dataset name, to look at the file content
+>
+>    ![galaxy history view showing a single dataset olympics-2010-winter.tsv. Display link is being hovered.]({% link topics/introduction/images/galaxy-intro-rdm/eye-icon.png %}){:width="25%"}
+{: .hands_on}
+
+The contents of the file will be displayed in the central Galaxy panel. If the dataset is large, you will see a warning message which explains that only the first megabyte is shown.
+
+
+This file contains a table listing all athletes who competed in the 2010 Winter Olympics in Oslo.
+
+![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an ahtlete, and each column provides further information about this athlete including birthyear, weight, medals.")
+{: .hands_on}
 
 
 ## Process: Data preparation and QC
@@ -141,13 +221,15 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
 
 ```
-- compute age column for summer olympics
+- compute age column for winter olympics
 - show tool run provenance, mention this will be used to extract workflow at end of tutorial
 
-- rerun tool on winter olympics
+- rerun tool on summer olympics
   - intentional error due to NA value orso
   - show bug report stdout/stderr
   - set error handling params on compute tool to deal with this (or remove lines?)
+
+- link to data manipulation olympics tutorial for more data prep tools
 
 - optional section: show OpenRefine to perform same tasks
 
@@ -157,7 +239,7 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 
 
 
-## Analyse:
+## Analyse: Calculate results
 
 
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
@@ -179,7 +261,7 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 ```
 
 
-## Preserve
+## Preserve: Export data, history, and workflow
 
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:50%"}
 
@@ -191,7 +273,7 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 ```
 
 
-## Share
+## Share: Share or publish data and workflow
 
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:50%"}
 
@@ -205,7 +287,7 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 ```
 
 
-## Reuse
+## Reuse: Find and run workflow shared by others
 
 ![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
 
@@ -214,6 +296,8 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 	- CYOA choice between Voronoi tuto workflow and digital humanities workflow?
 - import the data for it (can we show a third way to import data?)
 - run and view results
+
+- show account options while we wait (e.g. permanently deleting, quota and how to request more storage)
 ```
 
 
