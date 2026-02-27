@@ -44,7 +44,7 @@ This tutorial aims to familiarize you with the Galaxy user interface, with a spe
 
 Galaxy can be used at different stages of the data life cycle, covering the steps from data collection to data reuse.
 
-![RDM life cycle]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-overview.png %}){: style="width:50%"}
+![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:50%"}
 
 TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly ?
 
@@ -54,14 +54,14 @@ In this tutorial, we will provide a hands-on introduction to the Galaxy platform
 
 ## Basics of Galaxy
 
-## Create an account on a Galaxy instance/server
+### Create an account on a Galaxy instance/server
 If you already have an account, skip to the next section!
 
 In Galaxy, *server* and *instance* are often used interchangeably. These terms basically mean that different regions have different Galaxy servers/instances, with slightly different tool installations and appearances. If you don't have a specific server/instance in mind, we recommend registering at one of the main public servers/instances, detailed below.
 
 {% snippet faqs/galaxy/account_create.md %}
 
-## What does Galaxy look like?
+### What does Galaxy look like?
 
 > <hands-on-title>Log in to Galaxy</hands-on-title>
 > 1. Open your favorite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
@@ -120,46 +120,102 @@ Your "History" is in the panel at the right. It is a record of the actions you h
 
 ## Collect: Data import
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-collect.png %}){: style="width:50%"}
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
 
-Before you can analyse your data, it must first be imported into Galxy. There are a variety of ways to upload data,
-1. upload from your local machine
-2. upload from URL
-3. import from  integration
+```
+- import olympics summer data from Zenodo via URL
+- import olympics winter data from Zenodo via repository browse
+- add dataset tags
 
 
-- show different data import options
-	- zenodo URL
+- discuss different data import options
     - import from popular data repositories (SRA/NCBI)
     - from BYOS
+    - from shared data library
+```
+
 
 
 ## Process: Data preparation and QC
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-process.png %}){: style="width:50%"}
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
+
+```
+- compute age column for summer olympics
+- show tool run provenance, mention this will be used to extract workflow at end of tutorial
+
+- rerun tool on winter olympics
+  - intentional error due to NA value orso
+  - show bug report stdout/stderr
+  - set error handling params on compute tool to deal with this (or remove lines?)
+
+- optional section: show OpenRefine to perform same tasks
+
+- history system: create new history, show switching, drag & drop
+- scaling: create collection in new history, put both files in, run the compute step again on collection
+```
 
 
 
 ## Analyse:
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-analyse.png %}){: style="width:50%"}
+
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
+
+```
+- sort table by age column, ascending
+- get top 5 youngest ahtletes
+- show a visualisation, age histogram?
+
+- discuss plethora of domain-specific tools, link to community pages and subdomains
+
+- extract workflow from history, remove OpenRefine and Rstudio steps if done
+- show workflow editor, edit input collection name
+- import zip file of olympics data from other years, unzip to collection, run workflow on this
+
+- optional section: show Rstudio Interactive tool, create a plot in R
+  - export plot to galaxy
+  - export R history
+```
 
 
 ## Preserve
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-preserve.png %}){: style="width:50%"}
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:50%"}
+
+```
+- history download
+- workflow download
+- RO-crate export?
+- other?
+```
 
 
 ## Share
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-share.png %}){: style="width:50%"}
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:50%"}
+
+```
+- share workflow
+- share history
+- show published histories
+- discuss workflowhub, IWC
+
+- examples of publications citing workflows/histories/tutorials
+```
 
 
 ## Reuse
 
-TODO: download a workflow and run it. voronoi segmentation? show collections by running it on all 2 images? --> check how quickly this runs
+![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
 
-![]({% link topics/introduction/images/galaxy-intro-data-stewards/rdm-reuse.png %}){: style="width:50%"}
+```
+- download a workflow from WorkflowHub and run it
+	- CYOA choice between Voronoi tuto workflow and digital humanities workflow?
+- import the data for it (can we show a third way to import data?)
+- run and view results
+```
+
 
 Workflows shared with you by others can easily be rerun.  To illustrate this fact, we will now get a workflow from WorkflowHub, import it into Galaxy, and run it.
 
