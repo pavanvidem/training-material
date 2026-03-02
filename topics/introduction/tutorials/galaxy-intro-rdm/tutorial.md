@@ -172,7 +172,7 @@ https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
 >
 {: .comment}
 
-For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org)
+For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org).
 
 
 > <hands-on-title>Upload a file from URL</hands-on-title>
