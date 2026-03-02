@@ -160,8 +160,13 @@ https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
-> - **Bring-your-own-data** (e.g. Dropbox, Gdrive)
+> - **Bring-your-own-data** (e.g. Dropbox, Gdrive, OneData, eLabFTW)
+>
+>   {% snippet faqs/galaxy/manage_your_repositories.md %}
+>
 > - Connections to your **LIMS** system
+>
+>   {% snippet faqs/galaxy/importing-data-from-sierra-lims.md %}
 >
 > TODO: link to pages that give more info on these?
 >
@@ -171,6 +176,7 @@ For this tutorial, we will import datasets from the general-purpose FAIR data re
 
 
 > <hands-on-title>Upload a file from URL</hands-on-title>
+>
 > 1. At the top of the **Activity Bar**, click the {% icon galaxy-upload %} **Upload** activity
 >
 >    ![upload data button shown in the galaxy interface](../../images/upload-data.png)
@@ -217,11 +223,43 @@ This file contains a table listing all athletes who competed in the 2010 Winter 
 {: .hands_on}
 
 
-TODO: question box asking about number of athletes, which city was this olympics in?
+> <question-title> Explore the dataset </question-title>
+>
+> 1. How many athletes participated in this Olympics?
+> 2. What was the location of this Olympic games?
+>
+> > <solution-title></solution-title>
+> > 1. 4402 athletes. Each row signifies an athlete, there are 4403 rows, one of which is the header row.
+> > 2. Vancouver. This information is given in column 13.
+> {: .solution}
+{: .question}
 
 
-### Dataset attributes
+### Dataset attributes (metadata)
 
+Let's have a look at the metadata that Galaxy tracks for your datasets.
+
+> <hands-on-title> Explore metadata </hands-on-title>
+>
+> 1. **Expand** the item in your history by clicking on its name
+>    - Here you will see a peek of the contents, some basic file attributes such as the format, number of lines, and number of columns
+>
+>    ![the history item expanded, showing dataset preview, number of links, and a series of buttons]({% link topics/introduction/images/galaxy-intro-rdm/file-expanded.png %})
+>
+> 2. **Click** on the **"Dataset Details"** {% icon details %} button
+>    - Here you can see further metadata such as file size, creation date, hash, format, original URL, and more
+>
+>    ![dataset details]({% link topics/introduction/images/galaxy-intro-rdm/dataset-details.png %})
+>
+>    - Scrolling down you will also see details of the upload job that performed the import. We will look more closely at this later.
+>
+> 3. **Rename** the file to include the city of the Olympic. You can do this by **editing the dataset attributes**
+>    - This can be done by clicking on the **Edit** tab at the top of your screen, or the pencil icon {% icon galaxy-pencil %} on the expanded dataset.
+>    - For example, rename it to `2010 Winter Olympics Vancouver`
+>
+>    {% snippet faqs/galaxy/dataset_rename.md %}
+>
+{: .hands_on}
 
 - TODO: expand history item, look at infor there
 - TODO: go to dataset details, highlight size, hash and other metadata
@@ -282,7 +320,7 @@ This tool will run and a new output dataset will appear at the top of your histo
 
 - extract workflow from history, remove OpenRefine and Rstudio steps if done
 - show workflow editor, edit input collection name
-- import zip file of olympics data from other years, unzip to collection, run workflow on this
+- import zip file of olympics data from other years, unzip to collection, add tags to collection elements (collection operations tool, based on file), run workflow on this
 
 - optional section: show Rstudio Interactive tool, create a plot in R
   - export plot to galaxy
