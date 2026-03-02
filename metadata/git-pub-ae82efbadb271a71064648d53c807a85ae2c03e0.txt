@@ -1,3 +1,37 @@
+GTN_GTN:1772123462
+
+A	faqs/galaxy/bulk_change_datatype.md
+A	topics/imaging/images/dicom-anatomical-3d/axes.jpg
+A	topics/imaging/images/dicom-anatomical-3d/mip_rainbow.mp4
+A	topics/imaging/images/dicom-anatomical-3d/segm_aorticbif.mp4
+A	topics/imaging/images/dicom-anatomical-3d/segm_skeletal1.mp4
+A	topics/imaging/images/dicom-anatomical-3d/segm_skeletal2.mp4
+A	topics/imaging/images/dicom-anatomical-3d/tiff_viewer.png
+A	topics/imaging/tutorials/dicom-anatomical-3d/data-library.yaml
+A	topics/imaging/tutorials/dicom-anatomical-3d/faqs/index.md
+A	topics/imaging/tutorials/dicom-anatomical-3d/tutorial.bib
+A	topics/imaging/tutorials/dicom-anatomical-3d/tutorial.md
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/dicom-anatomical-3d-tests.yml
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/dicom-anatomical-3d.ga
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/index.md
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5213
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5243
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5273
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5303
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5363
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5393
+A	topics/imaging/tutorials/dicom-anatomical-3d/workflows/test-data/dicom_series/5423
+GTN_GTN:1771940970
+
+R098	events/2025-05-18-galaxy-academy.md	events/2026-05-18-galaxy-academy.md
+GTN_GTN:1771852074
+
+A	news/_posts/2026-02-23-common-misconceptions-about-galaxy.md
+A	news/images/misconceptions.png
+GTN_GTN:1771836382
+
+R099	metadata/git-mod-0e078d434baa8c4f17a94d606dd020c28bb53c41.txt	metadata/git-mod-326b422749cb5f76982a63bf781e479e31ab5fe8.txt
+R099	metadata/git-pub-0e078d434baa8c4f17a94d606dd020c28bb53c41.txt	metadata/git-pub-326b422749cb5f76982a63bf781e479e31ab5fe8.txt
 GTN_GTN:1771494594
 
 A	redirects/architecture-slides.md
