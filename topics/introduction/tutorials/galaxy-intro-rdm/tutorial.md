@@ -19,6 +19,8 @@ priority: 3
 contributions:
   authorship:
     - shiltemann
+  editing:
+    - Sch-Da
   funding:
     - uni-freiburg
     - nfdi4plants
@@ -67,6 +69,8 @@ In Galaxy, *server* and *instance* are often used interchangeably. These terms b
 
 {% snippet faqs/galaxy/account_create.md %}
 
+TODO: highlight single sign-on options
+
 ### What does Galaxy look like?
 
 > <hands-on-title>Log in to Galaxy</hands-on-title>
@@ -98,7 +102,7 @@ The first time you use Galaxy, there will be no files in your history panel.
 
 ## Collect: Data import
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
+![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
 
 ```
 - import olympics winter data from Zenodo via URL
@@ -257,20 +261,20 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 >    - This can be done by clicking on the **Edit** tab at the top of your screen, or the pencil icon {% icon galaxy-pencil %} on the expanded dataset.
 >    - For example, rename it to `2010 Winter Olympics Vancouver`
 >
->    {% snippet faqs/galaxy/dataset_rename.md %}
+>    {% snippet faqs/galaxy/datasets_rename.md %}
 >
 {: .hands_on}
 
 - TODO: expand history item, look at infor there
 - TODO: go to dataset details, highlight size, hash and other metadata
 - TODO: change file name to include city (Oslo)
-- TODO: add propagating tags "winter" and "2010"
+- TODO: add propagating tags "winter" and "2010" (or wait until we create the new hisory, after people can observe that it is hard to distinguish where each new dataste came from)
 
 
 
 ## Process: Data preparation and QC
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
+![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
 
 ```
 - compute age column for winter olympics
@@ -309,7 +313,7 @@ This tool will run and a new output dataset will appear at the top of your histo
 ## Analyse: Calculate results
 
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
+![The RDM lifecycle with the analyse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
 
 ```
 - sort table by age column, ascending
@@ -330,19 +334,20 @@ This tool will run and a new output dataset will appear at the top of your histo
 
 ## Preserve: Export data, history, and workflow
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:50%"}
+![The RDM lifecycle with the preserve stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:50%"}
 
 ```
 - history download
 - workflow download
 - RO-crate export?
+- Daniela's suggestion: export to repository using https://usegalaxy.eu/root?tool_id=export_remote
 - other?
 ```
 
 
 ## Share: Share or publish data and workflow
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:50%"}
+![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:50%"}
 
 ```
 - share workflow
@@ -356,7 +361,7 @@ This tool will run and a new output dataset will appear at the top of your histo
 
 ## Reuse: Find and run workflow shared by others
 
-![]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
+![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
 
 ```
 - download a workflow from WorkflowHub and run it
