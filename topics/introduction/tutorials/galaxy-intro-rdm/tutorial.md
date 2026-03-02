@@ -281,7 +281,7 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
   - show bug report stdout/stderr
   - set error handling params on compute tool to deal with this (or remove lines?)
 
-- link to data manipulation olympics tutorial for more data prep tools
+- link to [data manipulation olympics tutorial](https://gxy.io/GTN:T00184) for more data prep tools
 
 - optional section: show OpenRefine to perform same tasks
 
