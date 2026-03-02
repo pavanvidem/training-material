@@ -731,6 +731,7 @@ name:
   dev/architecture-startup/slides: "/topics/dev/tutorials/architecture-startup/slides.html"
   dev/architecture-tasks/slides: "/topics/dev/tutorials/architecture-tasks/slides.html"
   dev/architecture-tests/slides: "/topics/dev/tutorials/architecture-tests/slides.html"
+  imaging/dicom-anatomical-3d: "/topics/imaging/tutorials/dicom-anatomical-3d/tutorial.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2515,6 +2516,11 @@ id:
   S00154: "/topics/dev/tutorials/architecture-startup/slides.html"
   S00155: "/topics/dev/tutorials/architecture-tasks/slides.html"
   S00156: "/topics/dev/tutorials/architecture-tests/slides.html"
+  T00574: "/topics/imaging/tutorials/dicom-anatomical-3d/tutorial.html"
+  F00472: "/faqs/galaxy/bulk_change_datatype.html"
+  N00123: "/news/2026/02/23/common-misconceptions-about-galaxy.html"
+  E00046: "/events/2026-05-18-galaxy-academy.html"
+  W00375: "/topics/imaging/tutorials/dicom-anatomical-3d/workflows/dicom-anatomical-3d.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"
