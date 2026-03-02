@@ -3,8 +3,14 @@ title: Múltiples herramientas similares disponibles
 area: tools
 box_type: tip
 layout: faq
-contributors:
-- shiltemann
+contributions:
+  authorship:
+    - shiltemann
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 

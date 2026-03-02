@@ -3,10 +3,16 @@ title: Creación de una colección emparejada
 area: collections
 box_type: tip
 layout: faq
-contributors:
-- shiltemann
-- hexylena
-- lldelisle
+contributions:
+  authorship:
+    - shiltemann
+    - hexylena
+    - lldelisle
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 

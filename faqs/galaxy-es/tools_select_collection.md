@@ -3,10 +3,16 @@ title: Selección de una colección de conjuntos de datos como entrada
 area: tools
 box_type: tip
 layout: faq
-contributors:
-- bebatut
-- shiltemann
-- hexylena
+contributions:
+  authorship:
+    - bebatut
+    - shiltemann
+    - hexylena
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 

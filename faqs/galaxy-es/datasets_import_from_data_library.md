@@ -3,12 +3,18 @@ title: Importar datos de una biblioteca de datos
 area: data upload
 box_type: tip
 layout: faq
-contributors:
-- bebatut
-- shiltemann
-- nsoranzo
-- hexylena
-- wm75
+contributions:
+  authorship:
+    - bebatut
+    - shiltemann
+    - nsoranzo
+    - hexylena
+    - wm75
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 

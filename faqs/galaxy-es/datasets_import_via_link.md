@@ -3,7 +3,13 @@ title:  Importación por medio de enlaces
 area: data upload
 box_type: tip
 layout: faq
-contributors: [nomadscientist]
+contributions:
+  authorship:
+    - nomadscientist
+  translation:
+    - hvelab
+  funding:
+    - biont
 ---
 
 * Copia los enlaces

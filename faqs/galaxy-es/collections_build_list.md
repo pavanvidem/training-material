@@ -3,9 +3,15 @@ title: Crear una colección de conjuntos de datos
 area: collections
 box_type: tip
 layout: faq
-contributors:
-- shiltemann
-- hexylena
+contributions:
+  authorship:
+    - shiltemann
+    - hexylena
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 

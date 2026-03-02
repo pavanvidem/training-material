@@ -3,12 +3,18 @@ title: Cambiar el nombre de un conjunto de datos
 area: datasets
 box_type: tip
 layout: faq
-contributors:
-- bebatut
-- nsoranzo
-- shiltemann
-- wm75
-- hexylena
+contributions:
+  authorship:
+    - bebatut
+    - nsoranzo
+    - shiltemann
+    - wm75
+    - hexylena
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 optional_parameters:
   name: The new name for the dataset
 examples:

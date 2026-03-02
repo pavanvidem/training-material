@@ -3,7 +3,13 @@ title: Uso del scratchbook para ver varios conjuntos de datos
 area: features
 box_type: tip
 layout: faq
-contributors: [nomadscientist]
+contributions:
+  authorship:
+    - nomadscientist
+  translation:
+    - hvelab
+  funding:
+    - biont
 ---
 
 Si deseas ver dos o más conjuntos de datos al mismo tiempo, puedes usar la función **Scratchbook** en Galaxy:

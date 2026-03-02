@@ -3,8 +3,14 @@ title: Cambiar la versión de la herramienta
 area: tools
 box_type: tip
 layout: faq
-contributors:
-- shiltemann
+contributions:
+  authorship:
+    - shiltemann
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 
