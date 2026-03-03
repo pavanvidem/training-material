@@ -32,7 +32,7 @@ This tutorial aims to familiarize you with the Galaxy user interface, with a spe
 
 Galaxy has over 10,000 available tools in it's [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences, to astronomy, and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
 
-To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is "What is the age distribution of Olympic ahtletes?".
+To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic ahtletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily be repeated on different datasets, and shared with others.
 
 
 > <agenda-title></agenda-title>
@@ -172,8 +172,6 @@ https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
 >
 >   {% snippet faqs/galaxy/importing-data-from-sierra-lims.md %}
 >
-> TODO: link to pages that give more info on these?
->
 {: .comment}
 
 For this tutorial, we will import datasets from the general-purpose FAIR data repository [Zenodo](https://zenodo.org).
@@ -224,7 +222,6 @@ The contents of the file will be displayed in the central Galaxy panel. If the d
 This file contains a table listing all athletes who competed in the 2010 Winter Olympics in Oslo.
 
 ![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an ahtlete, and each column provides further information about this athlete including birthyear, weight, medals.")
-{: .hands_on}
 
 
 > <question-title> Explore the dataset </question-title>
@@ -252,10 +249,9 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 >
 > 2. **Click** on the **"Dataset Details"** {% icon details %} button
 >    - Here you can see further metadata such as file size, creation date, hash, format, original URL, and more
->
->    ![dataset details]({% link topics/introduction/images/galaxy-intro-rdm/dataset-details.png %})
->
 >    - Scrolling down you will also see details of the upload job that performed the import. We will look more closely at this later.
+>
+>    ![dataset details]({% link topics/introduction/images/galaxy-intro-rdm/dataset-details.png %} "Screenshot of the dataset details")
 >
 > 3. **Rename** the file to include the city of the Olympic. You can do this by **editing the dataset attributes**
 >    - This can be done by clicking on the **Edit** tab at the top of your screen, or the pencil icon {% icon galaxy-pencil %} on the expanded dataset.
@@ -263,13 +259,9 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 >
 >    {% snippet faqs/galaxy/datasets_rename.md %}
 >
+>    ![the renamed dataset]({% link topics/introduction/images/galaxy-intro-rdm/dataset-renamed.png %})
+>
 {: .hands_on}
-
-- TODO: expand history item, look at infor there
-- TODO: go to dataset details, highlight size, hash and other metadata
-- TODO: change file name to include city (Oslo)
-- TODO: add propagating tags "winter" and "2010" (or wait until we create the new hisory, after people can observe that it is hard to distinguish where each new dataste came from)
-
 
 
 ## Process: Data preparation and QC
@@ -293,21 +285,145 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 - scaling: create collection in new history, put both files in, run the compute step again on collection
 ```
 
+The first steps of an analysis are often data cleaning and quality control steps.
+Galaxy offers many tools that can help prepare your data for analysis, such as format conversions and data manipulation tools.
+
 ### Use a tool
 
-Let's calculate the age from the birthyear of the athletes and year of the Olympic games.
+Recall that our research question in this tutorial is "What is the age distribution of Olympic ahtletes?"
+Looking at the dataset, you will see that we do not have an "age" column in our table. We do however, have a column with the birth year
+of each athlete, and a column containing the year of the olympics. Let's prepare our data for analysis by calculating a new age column
+based on these two existing columns.
+
+
+> <hands-on-title>Find a tool</hands-on-title>
+>
+> 1. Search for the tool {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
+>    - Click on **Tools** in the Activity bar
+>    - Enter "Compute" in the search bar
+>
+> 2. Open the tool
+>    - You will see the tool form in the center panel of Galaxy
+>
+> 3. Scroll down to the **Help** section and read about the tool
+>    - Here you will always find usage information about the tool, including citations and links to tutorials explaining the tool.
+>    - How could we use this tool to add an age column to our dataset?
+>
+>    ![tool help section]({% link topics/introduction/images/galaxy-intro-rdm/tool-help.png %} "Help section of the Compute tool")
+>
+{: .hands_on}
+
+We can use this tool to comute an age column for our dataset, but first we must ask ourselves some questions:
+
+> <question-title> Explore the dataset </question-title>
+>
+> 1. Which column contains the birth year information
+> 2. Which column contains the year of the Olympics?
+> 3. How can we compute the age of the athelete from these columns?
+>
+> > <solution-title></solution-title>
+> > 1. column 4 (c4)
+> > 2. column 10 (c10)
+> > 3. we subtract the columns, `c10-c4`
+> {: .solution}
+{: .question}
+
+
+We now have what we need to add an age column to our dataset, let's do it:
 
 > <hands-on-title>Use a tool</hands-on-title>
+>
+> 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
+>    - *"Input file"*: `2010 Winter Olympics Vancouver`
+>    - *"Input has a header line with column names?"*: Yes
+>    - *"Expressions"*
+>      - {% icon plus %} Insert Expressions
+>        - *"Add expression"*: `c10-c4`
+>        - *"Mode of the operation"*: Append
+>        - *"The new column name"*: `age`
+> 2. **Run** the tool
 >
 {: .hands_on}
 
 This tool will run and a new output dataset will appear at the top of your history panel.
+
+> <hands-on-title> Check the results </hands-on-title>
+>
+> 1. **View** {% icon galaxy-eye %} the resulting file
+>    - make sure the new column is added, and the column header is "age"
+>
+> > <question-title> </question-title>
+> >
+> > 1. What age is the first Olympian, *Muhammad Abbas*?
+> >
+> > > <solution-title></solution-title>
+> > > 1. Age 23. The new column is added at the end if all went well.
+> > {: .solution}
+> {: .question}
+>
+>
+{: .hands_on}
+
 
 {% snippet faqs/galaxy/tutorial_mode.md %}
 
 
 ### Tool provenance
 
+We already examined the attributes for the file we uploaded. For datasets that result from running tools, Galaxy tracks even more provenance.
+Let's look at this now
+
+> <hands-on-title> Explore metadata </hands-on-title>
+>
+> 1. **Expand** the item in your history by clicking on its name
+> 2. **Click** on the **"Dataset Details"** {% icon details %} button
+>
+{: .hands_on}
+
+Here you will see all the metadata that Galaxy keeps track of. It has all the same basic information as we saw with the uploaded file.
+In addition, it shows which tool produced this output, complete with exact parameter settings and tool version.
+
+![tool parameters of our tool run]({% link topics/introduction/images/galaxy-intro-rdm/tool-provenance.png %} "Parameters of the job (tool run) that produced this dataset")
+
+![job information of our tool run]({% link topics/introduction/images/galaxy-intro-rdm/job-information.png %} "Job information of our tool run. ")
+
+
+
+> <question-title> Examine the Job metadata </question-title>
+>
+> 1. What was the version of the tool that produced your dataset?
+> 3. What was the command that was run behind the scenes?
+>
+> > <solution-title></solution-title>
+> > 1. Version 2.1. This can be found under *"Job Information -> Galaxy Tool ID"*, where the last part is the version. E.g. `toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1`. Note that this may be different for you if a newer version has been released since writing this tutorial.
+> > 2. The command that is run can be found under *"Job Information -> Command Line"*. It will be something like:
+> >    ```
+> >    python '/opt/galaxy/shed_tools/toolshed.g2.bx.psu.edu/repos/devteam/column_maker/aff5135563c6/column_maker/column_maker.py' --column-types int,str,str,int,float,float,str,str,str,int,str,str,str,str,str  --header --file '/data/jwd07/main/097/599/97599988/configs/tmp1vp1f4gh' --fail-on-non-existent-columns --fail-on-non-computable '/data/dnb12/galaxy_db/files/7/a/6/dataset_7a6bad76-3181-45e2-a460-31cbe2a6e4a3.dat' '/data/jwd07/main/097/599/97599988/outputs/dataset_5ce07003-fe0c-4836-8f16-b64f25dc9219.dat'
+> >    ```
+> {: .solution}
+{: .question}
+
+### Re-run a tool
+
+#### Troubleshooting errors
+
+something went wrong, how do we find out what
+
+#### Keeping your history clean
+
+deleting datasets, undeleting, purging
+
+
+
+### Scaling up
+
+#### Multiple histories
+
+#### Dataset tags
+
+#### Dataset collections
+
+#### Run a tool on a collection
 
 
 ## Analyse: Calculate results
