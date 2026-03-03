@@ -1011,7 +1011,7 @@ jannemarkustoivonen:
     name: Janne Markus Toivonen
     github: false
     joined: 2026-01
-    
+
 jeffreyperkel:
     gtn-halloffame: "no"
     name: Jeffrey Perkel
@@ -1636,7 +1636,7 @@ ethering:
     joined: 2019-10
 
 etzm:
-    name: Martin Etzrodt 
+    name: Martin Etzrodt
     joined: 2026-01
     orcid: 0000-0003-1928-3904
     affiliations:
@@ -2615,7 +2615,7 @@ poterlowicz-lab:
     elixir_node: uk
     affiliations:
       - elixir-europe
-      
+
 maartenpaul:
     name: Maarten Paul
     email: m.w.paul@lacdr.leidenuniv.nl
@@ -4245,7 +4245,7 @@ rmassei:
     joined: 2024-11
     affiliations:
       - nfdi4bioimage
-      - ufz
+      - helmholtz-ufz
 
 sfragkoul:
     name: Stella Fragkouli
