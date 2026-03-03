@@ -267,6 +267,13 @@ elixir-goblet-ttt:
     github: false
     avatar: "/training-material/shared/images/elixir.png"
 
+embl:
+    short_name: EMBL
+    name: European Molecular Biology Laboratory
+    url: https://www.embl.org
+    github: false
+    ror: "01zjc6908"
+
 embl-ebi:
     short_name: EMBL-EBI
     name: European Bioinformatics Institute
@@ -608,9 +615,8 @@ tb-capt:
     avatar: "/training-material/shared/images/tb_capt.svg"
     github: false
 
-ufz:
+helmholtz-ufz:
     name: UFZ - Helmholtz-Zentrum für Umweltforschung UFZ
-    github: https://github.com/Helmholtz-UFZ
     url: https://www.ufz.de/
     avatar: /training-material/shared/images/logos/UFZ-logo.png
 
