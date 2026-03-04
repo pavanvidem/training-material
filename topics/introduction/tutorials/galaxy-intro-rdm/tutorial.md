@@ -319,7 +319,7 @@ We can use this tool to comute an age column for our dataset, but first we must 
 >
 > 1. Which column contains the birth year information
 > 2. Which column contains the year of the Olympics?
-> 3. How can we compute the age of the athelete from these columns?
+> 3. How can we compute the age of the athlete from these columns?
 >
 > > <solution-title></solution-title>
 > > 1. column 4 (c4)
@@ -392,7 +392,7 @@ In addition, it shows which tool produced this output, complete with exact param
 > <question-title> Examine the Job metadata </question-title>
 >
 > 1. What was the version of the tool that produced your dataset?
-> 3. What was the command that was run behind the scenes?
+> 2. What was the command that was run behind the scenes?
 >
 > > <solution-title></solution-title>
 > > 1. Version 2.1. This can be found under *"Job Information -> Galaxy Tool ID"*, where the last part is the version. E.g. `toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1`. Note that this may be different for you if a newer version has been released since writing this tutorial.
@@ -403,11 +403,130 @@ In addition, it shows which tool produced this output, complete with exact param
 > {: .solution}
 {: .question}
 
+
 ### Re-run a tool
+
+Our file only contained information for a single Olympics, let's have a look at a second Olympics as well.
+
+
+> <hands-on-title> Re-run the tool on a different dataset </hands-on-title>
+>
+> 1. **Upload** a second file from Zenodo, as before
+>
+>    ```
+>    https://zenodo.org/records/18803585/files/olympics-2008-summer.tsv
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+> 2. Hit the **Re-run** {% icon dataset-rerun %} button on the output from the **Compute tool**
+>    - You will see the tool form with the exact same settings we used before
+>    - Because Galaxy tracks all the parameter settings, it is easy to repeat a tool on new data, without having to choose all the parameters again.
+>
+>    ![rerun button]({% link topics/introduction/images/galaxy-intro-rdm/rerun-tool.png %})
+>
+> 3. Change the input dataset to the summer olympics file we just uploaded
+>    - Run the tool
+>
+> > <question-title> How did it go? </question-title>
+> >
+> > 1. What do you see?
+> >
+> > > <solution-title></solution-title>
+> > > 1. If all went well, something went wrong in this step. That is, your dataset turned red instead of green. Not to worry, we will show you how to troubleshoot errors next.
+> > >
+> > >    ![a red failed dataset in history]({% link topics/introduction/images/galaxy-intro-rdm/dataset-failed.png %})
+> > >
+> > {: .solution}
+> {: .question}
+>
+>
+{: .hands_on}
+
+Oh no! The dataset turned red! This means something went wrong. In the next section we will show you how you can troubleshoot errors in Galaxy.
+
 
 #### Troubleshooting errors
 
-something went wrong, how do we find out what
+So something went wrong with one of your tools. This will happen now and then, and can have different causes. It might be something you can fix yourself (e.g. a problem with the input dataset), or it might be something that needs to be fixed in Galaxy (e.g. a bug in the tool). Next we will see how you can find more information about the error, and submit a bug report if you think it might be a problem with the tool.
+
+
+> <hands-on-title> Troubleshoot a failed tool </hands-on-title>
+>
+> 1. Click on the **bug icon** {% icon galaxy-bug %} on the failed (red) dataset
+>
+>    ![the bug icon on a historty item]({% link topics/introduction/images/galaxy-intro-rdm/tool-bug.png %})
+>
+{: .hands_on}
+
+![Error tab of dataset details]({% link topics/introduction/images/galaxy-intro-rdm/galaxy-bugreport.png %} "the error tab of the dataset details page. This page shows us the error message (stderr) and other tool logs (stdout). It also has a form to submit a bug report at the bottom.")
+
+The error messages can sometimes be a bit cryptic, but the more you use the tools the easier it will get. If you do not know how to fix the error yourself, you can submit a bug report at the bottom of this page. This will be sent to the administrators of the Galaxy you are using.
+
+
+> <question-title> Examine the Error message </question-title>
+>
+> 1. Can you guess what went wrong based on the error message?
+> 2. Is this something we can fix? how?
+>
+> > <solution-title></solution-title>
+> > 1. The error message says `could not convert string to float: 'NA'`. This suggests there is a line in the input file that contains unexpected value (`NA`). This is a common way to denote a missing value, but if we assume this column to be a number and use it in our calculation
+> >    things can go wrong.
+> >
+> >    ```
+> >    Failed to convert some of the columns in line #1859 to their expected types.
+> >    The error was: "could not convert string to float: 'NA'" for the line:
+> >    "19504	Cha Yong-Hwa	F	NA	145	39	North Korea	PRK	2008 Summer	2008
+> >     Summer	Beijing	Gymnastics	Gymnastics Women's Individual All-Around	NA"
+> >    ```
+> >
+> > 2. Yes, since the problem is with our input file, this is something we can fix ourself.
+> >    - One solution could be to remove all lines that contain `NA` in the birth year column.
+> >    - Another would be to replace all `NA` values with `nan` (not a number), which is the appropriate way to indicate missing values in numeric columns
+> >    - In our case, there is an easier option: we can tell the **Compute** {% icon tool %} tool how to deal with such cases.
+> >
+> {: .solution}
+{: .question}
+
+The error is caused because Galaxy is trying to interpret the birthyear column as a number, but cannot do this for columns
+containing an "NA" value. We can tell the **Compute** {% icon tool %} tool not autodetect the column type, and tell it what to
+
+
+So now that we know what caused the error, let's fix it by re-running our tool once more, with different error-handling settings.
+
+
+> <hands-on-title> Re-run the tool with error handling parameters </hands-on-title>
+>
+> 1. **Re-run** {% icon dataset-rerun %} the failed (red) dataset
+>    - Expand the **Error Handling** section at the bottom of the tool form
+>      - *"Autodetect column types"*: `No`
+>      - *"If an expression cannot be computed for a row"*: `Skip the row`
+>    - *"Add Expression"*: `int(c10)-int(c4)`
+>      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool to not autodetect anymore, we need to tell it how to interpret the values in the column.
+>
+> 2. Run the tool
+>
+>    ![expression of the tool form]({% link topics/introduction/images/galaxy-intro-rdm/compute-error-handling-expression.png %})
+>
+>    ![error handling section of the tool form]({% link topics/introduction/images/galaxy-intro-rdm/compute-error-handling.png %})
+>
+>
+> > <question-title> </question-title>
+> >
+> > 1. What age is the first Olympian in this file, *Ragnhild Margrethe Aamodt *?
+> >
+> > > <solution-title></solution-title>
+> > > 1. Age 27. The age column is the last one.
+> > {: .solution}
+> {: .question}
+{: .hands_on}
+
+If this solution seemed a bit cryptic, don't worry too much, there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
+
+TODO: a tip box with alternative solutions? remove lines from file with a tool? replace NA with nan with a tool?
+
+TODO: optional section with OpenRefine
+
 
 #### Keeping your history clean
 
