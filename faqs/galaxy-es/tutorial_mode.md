@@ -13,6 +13,7 @@ contributions:
   funding:
     - biont
 ---
+
 Las herramientas se actualizan constantemente a nuevas versiones. Tu Galaxy puede tener múltiples versiones de la misma herramienta. Por defectos, se te mostrará la última versión de cada una de ellas. Esta puede NO SER la misma herramienta utilizada en el tutorial que estás accedediendo. Además, si utilizaas una herramienta más nueva en el mismo paso... ¡puede fallar! Para asegurarte de que utilizas la misma versión de una herramienta en un tutorial concreto, utiliza el modo **Tutorial mode**.
 
   - Abre tu Galaxy server
