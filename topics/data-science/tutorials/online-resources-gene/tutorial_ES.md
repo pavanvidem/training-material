@@ -25,6 +25,9 @@ contributions:
   - lisanna
   - bebatut
   - teresa-m
+  translation:
+  - hvelab
+  - unode
   funding:
   - biont
 lang: es

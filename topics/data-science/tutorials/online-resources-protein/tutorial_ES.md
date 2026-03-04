@@ -31,6 +31,10 @@ contributions:
   authorship:
   - lisanna
   - bebatut
+  translation:
+  - hvelab
+  - unode
+  - ocaisa
   funding:
   - biont
 lang: es

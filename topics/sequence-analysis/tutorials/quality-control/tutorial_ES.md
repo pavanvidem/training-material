@@ -45,10 +45,15 @@ contributions:
   - r1corre
   - stephanierobin
   - neoformit
+  translation:
+  - hvelab
+  - unode
+  - ocaisa
   editing:
   - Swathi266
   funding:
   - gallantries
+  - biont
 recordings:
 - youtube_id: coaMGvZazoc
   length: 50M

@@ -3,10 +3,16 @@ title: Puntuación de calidad
 area: format
 box_type: details
 layout: faq
-contributors:
-- bebatut
-- nakucher
-- hexylena
+contributions:
+  authorship:
+    - bebatut
+    - nakucher
+    - hexylena
+  translation:
+    - hvelab
+    - unode
+  funding:
+    - biont
 ---
 
 
