@@ -21,12 +21,11 @@ time_estimation: 1H30M
 level: Introductory
 subtopic: basics
 key_points:
-- Perform quality control on every dataset before running any other bioinformatics
-  analysis
-- Assess the quality metrics and improve quality if necessary
-- Check the impact of the quality control
-- Different tools are available to provide additional quality metrics
-- For paired-end reads analyze the forward and reverse reads together
+- Realiza controles de calidad en cada conjunto de datos antes de ejecutar cualquier otro análisis bioinformático.
+- Evalúa las métricas de calidad y mejora la calidad si es necesario.
+- Comprueba el impacto del control de calidad.
+- Están disponibles diferentes herramientas para proporcionar métricas de calidad adicionales.
+- Para lecturas paired‑end, analiza juntas las lecturas forward y reverse.
 lang: es
 tags:
   - deutsch

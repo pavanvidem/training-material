@@ -30,9 +30,8 @@ objectives:
 - Realizar y visualizar un análisis de enriquecimiento de rutas KEGG
 time_estimation: 8h
 key_points:
-- A spliced mapping tool should be used on eukaryotic RNA-Seq data
-- Numerous factors should be taken into account when running a differential gene expression
-  analysis
+- Se debe usar una herramienta de mapeo con conciencia de empalmes para datos RNA‑Seq eucariotas
+- Numerosos factores deben tenerse en cuenta al ejecutar un análisis de expresión génica diferencial
 follow_up_training:
 - type: internal
   topic_name: transcriptomics

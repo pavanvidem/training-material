@@ -15,11 +15,11 @@ objectives:
 - "Aprender a compartir tu trabajo"
 time_estimation: 3H
 key_points:
-- "Galaxy provides an easy-to-use graphical user interface for often complex commandline tools"
-- "Galaxy keeps a full record of your analysis in a history"
-- "Workflows enable you to repeat your analysis on different data"
-- "Galaxy can connect to external sources for data import and visualization purposes"
-- "Galaxy provides ways to share your results and methods with others"
+- "Galaxy proporciona una interfaz gráfica fácil de usar para herramientas complejas de línea de comandos"
+- "Galaxy guarda un registro completo de tu análisis en un historial"
+- "Los workflows te permiten repetir tu análisis con distintos datos"
+- "Galaxy puede conectarse a fuentes externas para importar datos y visualizaciones"
+- "Galaxy ofrece formas de compartir tus resultados y métodos con otros"
 subtopic: next-steps
 contributions:
   authorship:

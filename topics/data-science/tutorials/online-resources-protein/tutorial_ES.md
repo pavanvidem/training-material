@@ -18,13 +18,10 @@ objectives:
 - Utiliza identificadores únicos para conectar bases de datos, descargar datos de genes y proteínas, visualizar y comparar características de secuencias.
 time_estimation: 1H
 key_points:
-- How to navigate UniProtKB entries, accessing comprehensive details about proteins,
-  such as their functions, taxonomy, and interactions
-- The Variant and Feature viewer are your tools to visually explore protein variants,
-  domains, modifications, and other key sequence features.
-- Expand your understanding by utilizing external links to cross-reference data and
-  uncover complex relationships.
-- Explore the History tab for access to previous versions of entry annotations.
+- Cómo navegar por las entradas de UniProtKB, accediendo a detalles exhaustivos sobre proteínas, como su función, taxonomía e interacciones.
+- El Variant y el Feature viewer son herramientas útiles para explorar visualmente variantes, dominios, modificaciones y otras características clave de la secuencia.
+- Amplía tu comprensión utilizando enlaces externos para cruzar referencias de datos y descubrir relaciones complejas.
+- Explora la pestaña Historia para acceder a versiones anteriores de las anotaciones de la entrada.
 requirements:
 - type: internal
   topic_name: data-science

@@ -12,9 +12,9 @@ objectives:
 - Utilizar un buscador de genomas para entender tus datos 
 time_estimation: 1h
 key_points:
-- Know your data!
-- Mapping is not trivial
-- There are many mapping algorithms, it depends on your data which one to choose
+- ¡Conoce tus datos!
+- El mapeo no es trivial.
+- Existen muchos algoritmos de mapeo; depende de tus datos cuál elegir.
 subtopic: basics
 requirements:
 - type: internal

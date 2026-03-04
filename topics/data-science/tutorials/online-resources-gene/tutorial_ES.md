@@ -14,15 +14,12 @@ objectives:
 - Partiendo de una búsqueda por texto, navega por múltiples recursos web para examinar distintos tipos de información sobre un gen, presentada en diversos formatos de archivo. 
 time_estimation: 1H
 key_points:
-- You can search for genes and proteins using specific text on the NCBI genome.
-- Once you find a relevant gene or protein, you can obtain its sequence and annotation
-  in various formats from NCBI.
-- You can also learn about the chromosome location and the exon-intron composition
-  of the gene of interest.
-- NCBI offers a BLAST tool to perform similarity searches with sequences.
-- You can further explore the resources included in this tutorial to learn more about
-  the gene-associated conditions and the variants.
-- You can input a FASTA file containing a sequence of interest for BLAST searches.
+- Puedes buscar genes y proteínas usando texto específico en el genoma de NCBI.
+- Una vez encuentres un gen o proteína relevante, puedes obtener su secuencia y anotación en varios formatos desde NCBI.
+- También puedes conocer la localización cromosómica y la composición de exones‑intrones del gen de interés.
+- NCBI ofrece una herramienta BLAST para realizar búsquedas de similitud con secuencias.
+- Puedes explorar más recursos incluidos en este tutorial para aprender sobre condiciones asociadas al gen y sus variantes.
+- Puedes introducir un archivo FASTA con una secuencia de interés para búsquedas BLAST.
 contributions:
   authorship:
   - lisanna
