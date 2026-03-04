@@ -1,6 +1,6 @@
 ---
 title: Utilizar modo tutorial
-description: Tutorial mode saves you screen space, finds the tools you need, and ensures you use the correct versions for the tutorials to run.
+description: El modo tutorial te permite usar menos espacio en pantalla, encontrar las herramientas que necesitas y asegurarte de usar las versiones correctas para que los tutoriales funcionen.
 area: tools
 layout: faq
 box_type: tip

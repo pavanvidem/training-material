@@ -1,6 +1,6 @@
 ---
 title: Añadir una etiqueta
-description: Tags can help you to better organize your history and track datasets.
+description: Las etiquetas pueden ayudarte a organizar mejor tu historial y a hacer un seguimiento de los conjuntos de datos.
 area: datasets
 layout: faq
 box_type: tip

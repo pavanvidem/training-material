@@ -1,7 +1,6 @@
 ---
 title: Creación de un nuevo fichero
-description: Galaxy allows you to create new files from the upload menu. You can supply
-  the contents of the file.
+description: Galaxy permite crear nuevos ficheros desde el menú de carga. Puedes proporcionar el contenido del fichero.
 area: datasets
 box_type: tip
 layout: faq

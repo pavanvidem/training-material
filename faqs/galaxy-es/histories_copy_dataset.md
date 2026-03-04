@@ -1,7 +1,6 @@
 ---
 title: Copiar un conjunto de datos entre historiales
-description: Sometimes you may want to use a dataset in multiple histories. You do
-  not need to re-upload the data, but you can copy datasets from one history to another.
+description: A veces puedes querer usar un conjunto de datos en varios historiales. No es necesario volver a subir los datos; puedes copiar conjuntos de datos de un historial a otro.
 area: histories
 box_type: tip
 layout: faq

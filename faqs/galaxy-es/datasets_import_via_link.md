@@ -1,5 +1,5 @@
 ---
-title:  Importación por medio de enlaces
+title: Importación por medio de enlaces
 area: data upload
 box_type: tip
 layout: faq
