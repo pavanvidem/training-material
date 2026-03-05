@@ -81,6 +81,7 @@ cesnet:
     email: galaxy@cesnet.cz
     joined: 2020-01
     url: https://www.cesnet.cz/
+    avatar: "/training-material/shared/images/logos/CESNET_LOGO.png"
     ror: "050dkka69"
 
 carpentries:
@@ -130,7 +131,7 @@ eirene:
     gtn-halloffame: "no"
 
 elixir-cz:
-    name: ELIXIR Czech
+    name: ELIXIR Czechia
     url: https://www.elixir-czech.cz/
     github: false
     gtn-halloffame: "no"
