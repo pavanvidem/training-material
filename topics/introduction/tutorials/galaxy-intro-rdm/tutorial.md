@@ -298,7 +298,7 @@ based on these two existing columns.
 
 > <hands-on-title>Find a tool</hands-on-title>
 >
-> 1. Search for the tool {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
+> 1. Search for the tool {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
 >    - Click on **Tools** in the Activity bar
 >    - Enter "Compute" in the search bar
 >
@@ -335,11 +335,11 @@ We now have what we need to add an age column to our dataset, let's do it:
 >
 > 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
 >    - *"Input file"*: `2010 Winter Olympics Vancouver`
->    - *"Input has a header line with column names?"*: Yes
+>    - *"Input has a header line with column names?"*: `Yes`
 >    - *"Expressions"*
 >      - {% icon plus %} Insert Expressions
 >        - *"Add expression"*: `c10-c4`
->        - *"Mode of the operation"*: Append
+>        - *"Mode of the operation"*: `Append`
 >        - *"The new column name"*: `age`
 > 2. **Run** the tool
 >
@@ -350,7 +350,7 @@ This tool will run and a new output dataset will appear at the top of your histo
 > <hands-on-title> Check the results </hands-on-title>
 >
 > 1. **View** {% icon galaxy-eye %} the resulting file
->    - make sure the new column is added, and the column header is "age"
+>    - make sure the new column was successfully added, and the column header is "age"
 >
 > > <question-title> </question-title>
 > >
@@ -408,10 +408,29 @@ In addition, it shows which tool produced this output, complete with exact param
 
 Our file only contained information for a single Olympics, let's have a look at a second Olympics as well.
 
+We will import another file from Zenodo, but in a slightly different way. Instead of providing the download URL for the dataset, we can also browse Zenodo repositories (and many other data repositories) directly from the Galaxy upload menu.
 
-> <hands-on-title> Re-run the tool on a different dataset </hands-on-title>
+> <hands-on-title> Upload a second dataset </hands-on-title>
 >
-> 1. **Upload** a second file from Zenodo, as before
+> 1. **Option 1:** Choose from Repository
+>    - Open the **Upload** window
+>    - At the bottom, click on  "Choose from Repository"
+>
+>      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/upload-from-repositories.png %})
+>
+>    - Search for *"Zenodo"* at the top
+>      - If you do not find anything, this is not supported on your Galaxy yet, please skip to option 2 below
+>    - Search for the repository with the same name as this tutorial *"Introduction to Galaxy as an RDM platform"*
+>
+>      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-search.png %})
+>
+>    - Select the file `olympics-2010-summer.tsv`
+>
+>      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-repo-import.png %})
+>
+>    - Click **Start**
+>
+> 2. **Option 2:** From URL (same as before)
 >
 >    ```
 >    https://zenodo.org/records/18803585/files/olympics-2008-summer.tsv
@@ -419,13 +438,30 @@ Our file only contained information for a single Olympics, let's have a look at 
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-> 2. Hit the **Re-run** {% icon dataset-rerun %} button on the output from the **Compute tool**
+> > <question-title> Examine the file </question-title>
+> >
+> > 1. Which Olympics is this file for? Which city was it held in?
+> >
+> > > <solution-title></solution-title>
+> > > 1. This file is from the 2008 summer Olympics in Beijing
+> > >
+> > {: .solution}
+> {: .question}
+{: .hands_on}
+
+
+Now that we have a second dataset, we want to run the same **Compute** {% icon tool %} tool on this data so that we get an age column.
+We could open the tool again, and re-configure all the settings, but there is an easier way to repeat what we did before.
+
+> <hands-on-title> Re-run a tool </hands-on-title>
+>
+> 1. Click the **Re-run** {% icon dataset-rerun %} button on the output from the **Compute tool**
 >    - You will see the tool form with the exact same settings we used before
 >    - Because Galaxy tracks all the parameter settings, it is easy to repeat a tool on new data, without having to choose all the parameters again.
 >
 >    ![rerun button]({% link topics/introduction/images/galaxy-intro-rdm/rerun-tool.png %})
 >
-> 3. Change the input dataset to the summer olympics file we just uploaded
+> 2. **Change the input dataset** to the summer olympics file we just uploaded
 >    - Run the tool
 >
 > > <question-title> How did it go? </question-title>
@@ -480,6 +516,8 @@ The error messages can sometimes be a bit cryptic, but the more you use the tool
 > >     Summer	Beijing	Gymnastics	Gymnastics Women's Individual All-Around	NA"
 > >    ```
 > >
+> >    Apparently, no birth year was known for this athlete from North Korea
+> >
 > > 2. Yes, since the problem is with our input file, this is something we can fix ourself.
 > >    - One solution could be to remove all lines that contain `NA` in the birth year column.
 > >    - Another would be to replace all `NA` values with `nan` (not a number), which is the appropriate way to indicate missing values in numeric columns
@@ -501,10 +539,10 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 >    - Expand the **Error Handling** section at the bottom of the tool form
 >      - *"Autodetect column types"*: `No`
 >      - *"If an expression cannot be computed for a row"*: `Skip the row`
->    - *"Add Expression"*: `int(c10)-int(c4)`
+>    - Change the *"Expression"* parameter to: `int(c10)-int(c4)`
 >      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool to not autodetect anymore, we need to tell it how to interpret the values in the column.
+>    - Run the tool
 >
-> 2. Run the tool
 >
 >    ![expression of the tool form]({% link topics/introduction/images/galaxy-intro-rdm/compute-error-handling-expression.png %})
 >
@@ -513,7 +551,7 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 >
 > > <question-title> </question-title>
 > >
-> > 1. What age is the first Olympian in this file, *Ragnhild Margrethe Aamodt *?
+> > 1. What age is the first Olympian in this file, *Ragnhild Margrethe Aamodt*?
 > >
 > > > <solution-title></solution-title>
 > > > 1. Age 27. The age column is the last one.
@@ -523,26 +561,206 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 
 If this solution seemed a bit cryptic, don't worry too much, there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
 
-TODO: a tip box with alternative solutions? remove lines from file with a tool? replace NA with nan with a tool?
-
 TODO: optional section with OpenRefine
 
 
 #### Keeping your history clean
 
-deleting datasets, undeleting, purging
+If you have failed items in your history, you might want to delete them. This helps keep your history organized.
 
+
+> <hands-on-title> Delete failed dataset </hands-on-title>
+>
+> 1. Click on the **trashcan icon** {% icon galaxy-delete %} on the failed (red) dataset
+>
+>
+> > <tip-title> Deleted by accident? </tip-title>
+> >
+> > Did you accidentally delete a dataset you didn't mean to delete? Not to worry, your data is not gone yet.
+> > You can show these deleted datasets in your history, and **undelete** them.
+> >
+> > 1. Click on  **include deleted** {% icon galaxy-delete %} at the top of your history
+> >    - so not on the dataset, but at the top of the history panel
+> >    - you will see the deleted dataset appear in your history again
+> >   - if you expand the deleted dataset, the delete icon has turned into an undelete icon
+> >
+> >    ![history option to include deleted datasets]({% link topics/introduction/images/galaxy-intro-rdm/history-include-deleted.png %})
+> >
+> {: .tip}
+{: .hands_on}
+
+Your dataset is now gone from your history. But deleting it does not remove it completely yet. So if you delete something by accident, you can still view it and undelete it.
+
+You can also delete datasets in bulk
+
+{% snippet faqs/galaxy/datasets_deleting.md %}
+
+Sometimes you really want to permanently delete a dataset, for example to free up your storage quota. By default you get 250 GB storage (exact number may depend on your Galaxy), and usually more can be requested temporarily. If you are running out of storage space, you can *purge* (permanently delete) datasets as well. This cannot be undone.
+
+{% snippet faqs/galaxy/datasets_purging_datasets.md %}
+
+We recommend always keeping your history clean, and deleting any failed steps.
+
+
+> <comment-title> More data cleaning and preprocessing tools </comment-title>
+>
+> Galaxy offers a wide range of basic file manipulation tools that are very helpful for data cleaning.
+> Operations such as file transformations, filtering, sorting, grouping, joining, splitting, etc are all possible inside Galaxy
+>
+> For more practice with such tools, please see our [Data Manipulation Olympics tutorial]({% link topics/introduction/tutorials/data-manipulation-olympics/tutorial.md %})
+>
+{: .comment}
 
 
 ### Scaling up
 
+Now that we have preprocessed our data, we can continue our analysis, but before we do that, let's explore some more
+Galaxy RDM features that can help you manage your research data and analyses.
+
+
 #### Multiple histories
+
+You can have multiple histories in Galaxy, to organize your different analyses. We will now start a second history,
+and show you how you can switch between histories and move data from one history to another.
+
+
+> <hands-on-title> Create a second History </hands-on-title>
+>
+> 1. Create a new History
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>
+> 2. **Name** {% icon galaxy-pencil %} your history
+>    - call it "Multi-Olympics Analysis"
+>
+{: .hands_on}
+
+You have now created a new, empty history. You can easily switch back and forth between histories as needed
+
+{% snippet faqs/galaxy/histories_switch.md %}
+
+We will continue our analysis in this new history, and use collections and dataset tags to analyze multiple datasets simultaneously,
+and keeping our data organized.
+
+To avoid re-uploading our Olympics dataset and duplicating that data, we can simply copy the files from our previous history
+
+> <hands-on-title> Copy datasets from another history  </hands-on-title>
+>
+> 1. View your histories side by side. Instructions are in the box below:
+>
+>    {% snippet faqs/galaxy/histories_side_by_side_view.md %}
+>
+>    ![multi-history view]({% link topics/introduction/images/galaxy-intro-rdm/multi-history.png %})
+>
+> 2. **Drag-and-drop** datasets between histories
+>    - drag the Winter Olympics file to the new history
+>    - do the same for the Summer Olympics file
+>
+>    ![multi-history view after file copy]({% link topics/introduction/images/galaxy-intro-rdm/multi-history-after.png %})
+>
+{: .hands_on}
+
+We now have both our datasets in our new history. By doing it this way, rather than re-uploading the files, we do not increase our storage usage.
 
 #### Dataset tags
 
+You may have noticed in our first history that the results from the **Compute** {% icon tool %} tool were named *Compute on dataset 1* and *Compute on dataset 3*. To make it a bit more clear for ourselves which dataset was generated from which input file, we can add **dataset tags** {% icon galaxy-tags %}
+
+> <hands-on-title> Add dataset tags </hands-on-title>
+>
+> 1. Add two dataset tags to the Winter Olympics file
+>    - Make sure all tags start with a hashtag (`#`), then they will also be added to any datasets derived from it during analysis.
+>    - tag 1: `#winter`
+>    - tag 2: `#Vancouver`
+>    - tag 3: `#2010`
+>
+>    {% snippet faqs/galaxy/datasets_add_tag.md %}
+>
+> 2. Do the same for the Summer Olympics file:
+>    - tag 1: `#summer`
+>    - tag 2: `#Beijing`
+>    - tag 3: `#2008`
+>
+>    ![datasets with tags added]({% link topics/introduction/images/galaxy-intro-rdm/datasets-tagged.png %})
+>
+{: .hands_on}
+
+
 #### Dataset collections
 
+In order to easily run analysis on multiple datasets at once, we can create *dataset collections* in Galaxy:
+
+> <hands-on-title> Create a collection </hands-on-title>
+>
+> 1. Create a collection out of our two olympic datasets
+>
+>    {% snippet faqs/galaxy/collections_autobuild_list.md %}
+>
+>    ![dataset collection builder]({% link topics/introduction/images/galaxy-intro-rdm/collection.png %})
+>
+> 2. Your history now has a single item in it
+>    - it tells you what is inside *"a list with 2 tabular datasets"*
+>
+>    ![collection history item]({% link topics/introduction/images/galaxy-intro-rdm/collection-new.png %})
+>
+> 3. **Click on the collection** to see the files inside it
+>
+>    ![collection contents]({% link topics/introduction/images/galaxy-intro-rdm/collection-files.png %})
+>
+> 4. **Return to the history view** by clicking the link at the top of the history panel
+>    - The link will be called something like *"History: Multi-Olympics Data Analysis:*
+>
+{: .hands_on}
+
+
+We can now treat this collection the same way as a single dataset. If we use a collection as input of a tool, that tool will be run on each of
+the datasets inside the collection. The result will again be a collection, this time with all the result files.
+
+
 #### Run a tool on a collection
+
+Now that we have set up our inputs as a collection with tags, lets see how to run the **Compute** {% icon tool %} tool on both datasets in the collection at once.
+
+> <hands-on-title> Run a tool on a collection </hands-on-title>
+>
+> 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
+>    - {% icon param-collection %} *"Input file"*: `Olympics Dataset` (collection)
+>      - in front of this parameter, click on the {% icon param-collection %} icon to switch to collection input
+>    - *"Input has a header line with column names?"*: `Yes`
+>    - *"Expressions"*
+>      - {% icon plus %} Insert Expressions
+>        - *"Add expression"*: `int(c10)-int(c4)`
+>        - *"Mode of the operation"*: `Append`
+>        - *"The new column name"*: `age`
+>    - Expand the **Error Handling** section at the bottom of the tool form
+>      - *"Autodetect column types"*: `No`
+>      - *"If an expression cannot be computed for a row"*: `Skip the row`
+>
+>    {% snippet faqs/galaxy/tools_select_collection.md %}
+>
+> 2. **View** the results
+>
+> > <question-title> What is our output? </question-title>
+> >
+> > 1. How many outputs were created? Are the files the same as before?
+> > 2. What happened with the tags?
+> >
+> > > <solution-title></solution-title>
+> > > 1. One output collection was created, with two files inside. The files themselves are the same as before.
+> > > 2. The tags from our input datasets were also added to the results
+> > >
+> > {: .solution}
+> {: .question}
+>
+{: .hands_on}
+
+Collections allow you to easily run tools on multiple datasets at once. We have 2 datasets in our collection, but you can have as many as
+you like, even hundreds or thousands.
+
+Now that we have everything in Galaxy set up for analysis, and our data pre-processed to the right format, we can start to
+answer our research question, ***"What is the age distribution of Olympic ahtletes?"***.
+
+
 
 
 ## Analyse: Calculate results
