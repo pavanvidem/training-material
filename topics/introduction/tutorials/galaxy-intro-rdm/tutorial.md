@@ -334,7 +334,7 @@ We now have what we need to add an age column to our dataset, let's do it:
 > <hands-on-title>Use a tool</hands-on-title>
 >
 > 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
->    - *"Input file"*: `2010 Winter Olympics Vancouver`
+>    - {% icon param-file %} *"Input file"*: `2010 Winter Olympics Vancouver`
 >    - *"Input has a header line with column names?"*: `Yes`
 >    - *"Expressions"*
 >      - {% icon plus %} Insert Expressions
@@ -404,6 +404,57 @@ In addition, it shows which tool produced this output, complete with exact param
 {: .question}
 
 
+### Visualise a dataset
+
+
+> <hands-on-title> Visualise a dataset </hands-on-title>
+>
+> 1. Expand the output from **Compute** {% icon tool %}
+> 2. Click on the **visualise** {% icon galaxy-visualise %} icon
+>
+>    ![visualisation button]({% link topics/introduction/images/galaxy-intro-rdm/visualise-button.png %})
+>
+> 3. Select the **Boxplot** option
+>
+>    ![visualisation options]({% link topics/introduction/images/galaxy-intro-rdm/visualise-options.png %})
+>
+> 4. Change **Column of y-axis values** to `Column: 16` (our new age column)
+>
+{: .hands_on}
+
+This is a quick way to get a feeling for our data.
+
+![histogram visualisation]({% link topics/introduction/images/galaxy-intro-rdm/visualisation-boxplot-labels.png %} "screenshot of the resulting boxplot. Hovering your mouse over the plot shows you the labels")
+
+> <question-title></question-title>
+>
+> 1. What age range were our athletes?
+>
+> > <solution-title></solution-title>
+> > 1. Based on the box plot, it looks like our youngest athelete was 15, and our oldest 51. The mean age was 25.
+> {: .solution}
+{: .question}
+
+
+> <tip-title> Save your visualisation </tip-title>
+>
+> 1. Click on the **Save** {% icon cloud-upload %} icon at the top-right
+>
+>    ![visualisation save button]({% link topics/introduction/images/galaxy-intro-rdm/viz-save.png %})
+>
+> 2. In the Activity bar, click on **Visualization**
+> 3. Click on **Saved Visualizations** at the top of the panel
+>
+>    ![saved visualisations]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-saved.png %})
+>
+> 4. Here you will find your saved visualisations
+>    - Here you can view, adjust, rename your previously saved visualisaions
+>
+>    ![saved visualisations list]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-list.png %})
+>
+{: .tip}
+
+
 ### Re-run a tool
 
 Our file only contained information for a single Olympics, let's have a look at a second Olympics as well.
@@ -430,7 +481,7 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >
 >    - Click **Start**
 >
-> 2. **Option 2:** From URL (same as before)
+> 2. **Option 2:** From URL (same method as before)
 >
 >    ```
 >    https://zenodo.org/records/18803585/files/olympics-2008-summer.tsv
@@ -461,7 +512,7 @@ We could open the tool again, and re-configure all the settings, but there is an
 >
 >    ![rerun button]({% link topics/introduction/images/galaxy-intro-rdm/rerun-tool.png %})
 >
-> 2. **Change the input dataset** to the summer olympics file we just uploaded
+> 2. **Change the input dataset** {% icon param-file %} to the summer olympics file we just uploaded
 >    - Run the tool
 >
 > > <question-title> How did it go? </question-title>
@@ -482,7 +533,7 @@ We could open the tool again, and re-configure all the settings, but there is an
 Oh no! The dataset turned red! This means something went wrong. In the next section we will show you how you can troubleshoot errors in Galaxy.
 
 
-#### Troubleshooting errors
+### Troubleshooting errors
 
 So something went wrong with one of your tools. This will happen now and then, and can have different causes. It might be something you can fix yourself (e.g. a problem with the input dataset), or it might be something that needs to be fixed in Galaxy (e.g. a bug in the tool). Next we will see how you can find more information about the error, and submit a bug report if you think it might be a problem with the tool.
 
@@ -537,7 +588,7 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 >
 > 1. **Re-run** {% icon dataset-rerun %} the failed (red) dataset
 >    - Expand the **Error Handling** section at the bottom of the tool form
->      - *"Autodetect column types"*: `No`
+>      - {% icon param-toggle %} *"Autodetect column types"*: `No`
 >      - *"If an expression cannot be computed for a row"*: `Skip the row`
 >    - Change the *"Expression"* parameter to: `int(c10)-int(c4)`
 >      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool to not autodetect anymore, we need to tell it how to interpret the values in the column.
@@ -561,10 +612,33 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 
 If this solution seemed a bit cryptic, don't worry too much, there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
 
-TODO: optional section with OpenRefine
+#### Starring your favourite tools
+
+Since Galaxy has so many tools to choose from, once you find one that is useful for you, you will likely want to use it more often.
+To make it easier to find your favorite tools, you can star them.
+
+> <hands-on-title> Star/Favourite a tool </hands-on-title>
+>
+> 1. **Star** {% icon galaxy-star %} the **Compute** {% icon tool %} tool
+>
+>    {% snippet faqs/galaxy/tools_favorite.md %}
+>
+> 2. You can access your favorite tools by clicking on the {% icon galaxy-star %} icon at the top of the **Tool Panel**
+>    - this will filter the tool panel for the tools you have starred and your most-used tools
+>
+{: .hands_on}
 
 
-#### Keeping your history clean
+
+
+### Optional: Use OpenRefine instead
+
+Galaxy also offers various *Ineractive Tools*. For example, we could have performed these preprocessing steps with OpenRefine as well (I think?)
+
+TODO: finish this section
+
+
+### Keeping your history clean
 
 If you have failed items in your history, you might want to delete them. This helps keep your history organized.
 
@@ -721,6 +795,8 @@ the datasets inside the collection. The result will again be a collection, this 
 
 Now that we have set up our inputs as a collection with tags, lets see how to run the **Compute** {% icon tool %} tool on both datasets in the collection at once.
 
+Remember that you starred {% icon galaxy-star %} the compute tool, so you can use that to easily find it again now!
+
 > <hands-on-title> Run a tool on a collection </hands-on-title>
 >
 > 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
@@ -733,7 +809,7 @@ Now that we have set up our inputs as a collection with tags, lets see how to ru
 >        - *"Mode of the operation"*: `Append`
 >        - *"The new column name"*: `age`
 >    - Expand the **Error Handling** section at the bottom of the tool form
->      - *"Autodetect column types"*: `No`
+>      - {% icon param-toggle %} *"Autodetect column types"*: `No`
 >      - *"If an expression cannot be computed for a row"*: `Skip the row`
 >
 >    {% snippet faqs/galaxy/tools_select_collection.md %}
@@ -773,7 +849,7 @@ answer our research question, ***"What is the age distribution of Olympic ahtlet
 - get top 5 youngest ahtletes
 - show a visualisation, age histogram?
 
-- discuss plethora of domain-specific tools, link to community pages and subdomains
+- discuss plethora of domain-specific tools, link to community pages and subdomains, how to get help
 
 - extract workflow from history, remove OpenRefine and Rstudio steps if done
 - show workflow editor, edit input collection name
@@ -783,6 +859,76 @@ answer our research question, ***"What is the age distribution of Olympic ahtlet
   - export plot to galaxy
   - export R history
 ```
+
+> <comment-title> Domain-specific analysis tools </comment-title>
+>
+> Because this is an intro tutorial, our "analysis" will be quite basic. But Galaxy offers thousand of tools covering
+> a wide range of scientific domains. From life sciences, to ecology, climate, astronomy, digital humanities, and many more.
+>
+> Galaxy has a lot of computational power behind it, so whether you need a simple calculation or a complex algorithm requiring a supercomputer,
+> Galaxy can handle it.
+>
+> If you are interested in a specific domain, have a look at the following resources:
+> - [Galaxy Special Interest Groups (SIGs)](https://galaxyproject.org/community/sig/)
+> - Galaxy Labs (aka subsites or subdomains)
+>
+>   {% snippet faqs/galaxy/galaxy_labs.md %}
+>
+> And the following GTN resources:
+> - [GTN Tutorials by Topic](https://training.galaxyproject.org)
+> - [GTN Learning Pathways](https://training.galaxyproject.org/learning-pathways)
+>
+{: .comment}
+
+
+### Plan our approach
+
+Recall that our research question in this tutorial is ***"What is the age distribution of Olympic ahtletes?"***
+
+> <question-title> What to do? </question-title>
+>
+> 1. How would you approach answering our research question?
+> 2. Can you find tools in Galaxy that might help you do this?
+>
+> > <solution-title></solution-title>
+> > 1. There are several things we might like to compute in order to answer our question, perhaps
+> >    - What is the average age of our Olympians?
+> >    - What is the standard deviation?
+> >    - What ages are the oldest and youngest Olympians?
+> >    - What does the histogram look like for the age distribution?
+> >    - Create a boxplot for the age distribution
+> >
+> > 2. If you already know the name of the tool you want to use, you can simply enter this in the search bar. But often you might not know the name of the tool, then just search for some related keywords
+> >
+> >    Try searching for terms like:
+> >    - statistics, mean, average, minimum, maximum, summary, column
+> >
+> >    The tool **Summary Statistics - for any numerical column** {% icon tool %} looks interesting!
+> >
+> {: .solution}
+{: .question}
+
+Let's do some analysis based on our plan.
+
+### Get summary statistics for our age column
+
+> <hands-on-title> Summary Statistics </hands-on-title>
+>
+> 1. {% tool [**Summary Statistics** for any numerical column ](Summary_Statistics1) %} with the following parameters:
+>    - {% icon param-collection %} *"Summary statistics on"*: output from **Compute** {% icon tool %}
+>      - remember to switch to collection input {% icon param-collection %}
+>    - *"Column or expression"*: `c16`
+>
+{: .hands_on}
+
+### Create a histogram
+
+
+### Optional exercise: find the top-5 oldest and youngest athletes
+
+### Optional section: Use R-studio to create the histogram
+
+TODO
 
 
 ## Preserve: Export data, history, and workflow
