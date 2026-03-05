@@ -5,26 +5,21 @@ level: Introductory
 draft: true
 zenodo_link: https://zenodo.org/record/8304465
 questions:
-- How to employ bioinformatics resources to investigate a specific protein family
-  (opsins)?
-- How to navigate the Genome Data Viewer to find opsins in the human genome?
-- How to identify genes associated with opsins and analyze their chromosome locations?
-- How to explore literature and clinical contexts for the OPN1LW gene?
-- How to use protein sequences files to perform similarity searches using BLAST?
+  - Wie kann man bioinformatische Ressourcen nutzen, um eine bestimmte Proteinfamilie (Opsine) zu untersuchen?
+  - Wie navigiert man im Genome Data Viewer, um Opsine im menschlichen Genom zu finden?
+  - Wie identifiziert man Gene, die mit Opsinen assoziiert sind, und analysiert ihre Chromosomenlage?
+  - Wie erkundet man Literatur und klinische Kontexte für das Gen OPN1LW?
+  - Wie nutzt man Proteinsequenzdateien für Ähnlichkeitssuchen mittels BLAST?
 objectives:
-- Starting from a text search, navigate multiple web resources to examine multiple
-  types of information about a gene, conveyed through multiple file formats.
+  - Ausgehend von einer Textsuche mehrere Webressourcen anzusteuern, um verschiedene Arten von Informationen über ein Gen zu untersuchen, dargestellt in verschiedenen Dateiformaten.
 time_estimation: 1H
 key_points:
-- You can search for genes and proteins using specific text on the NCBI genome.
-- Once you find a relevant gene or protein, you can obtain its sequence and annotation
-  in various formats from NCBI.
-- You can also learn about the chromosome location and the exon-intron composition
-  of the gene of interest.
-- NCBI offers a BLAST tool to perform similarity searches with sequences.
-- You can further explore the resources included in this tutorial to learn more about
-  the gene-associated conditions and the variants.
-- You can input a FASTA file containing a sequence of interest for BLAST searches.
+  - Sie können nach Genen und Proteinen mit bestimmten Textbegriffen im NCBI‑Genom suchen.
+  - Sobald Sie ein relevantes Gen oder Protein gefunden haben, können Sie dessen Sequenz und Annotation in verschiedenen Formaten von NCBI erhalten.
+  - Sie können auch mehr über die Chromosomenlage und die Exon‑Intron‑Zusammensetzung des interessierenden Gens erfahren.
+  - NCBI bietet ein BLAST‑Tool, um Ähnlichkeitssuchen mit Sequenzen durchzuführen.
+  - Sie können die in diesem Tutorial enthaltenen Ressourcen weiter erkunden, um mehr über genassoziierte Zustände und Varianten zu lernen.
+  - Sie können eine FASTA‑Datei mit einer interessierenden Sequenz für BLAST‑Suchen eingeben.
 contributions:
   authorship:
   - lisanna

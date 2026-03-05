@@ -1,7 +1,6 @@
 ---
 title: Kopieren eines Datensatzes zwischen Historien
-description: Sometimes you may want to use a dataset in multiple histories. You do
-  not need to re-upload the data, but you can copy datasets from one history to another.
+description: Manchmal möchten Sie ein Dataset in mehreren Histories verwenden. Sie müssen die Daten nicht erneut hochladen, sondern können Datasets von einer History in eine andere kopieren.
 area: histories
 box_type: tip
 layout: faq

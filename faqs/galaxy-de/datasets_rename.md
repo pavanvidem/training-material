@@ -16,7 +16,7 @@ contributions:
   funding:
     - biont
 optional_parameters:
-  name: The new name for the dataset
+  name: Der neue Name für den Datensatz
 examples:
   Without prescribing a name: {}
   Suggest the user rename the dataset genomes.fa:

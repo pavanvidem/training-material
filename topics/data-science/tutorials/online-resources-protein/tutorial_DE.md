@@ -4,33 +4,24 @@ title: Ein Protein entlang der UniProt-Seite
 level: Introductory
 zenodo_link: ''
 questions:
-- How can you search for proteins using text, gene, or protein names?
-- How do you interpret the information at the top of the UniProt entry page?
-- What types of information can you expect from different download formats, such as
-  FASTA and JSON?
-- How is the function of a protein like opsins described in the "Function" section?
-- What structured information is found in the "Names and Taxonomy",  "Subcellular
-  location", "Disease & Variants", "PTM/Processing" sections?
-- How to learn about the protein expression, interactions, structure, family, sequence
-  and similar proteins?
-- How do the "Variant viewer" and "Feature viewer" tabs assist in mapping protein
-  information along the sequence?
-- What does the "Publications" tab list, and how can you filter publications?
-- What is the significance of tracking entry annotation changes over time?
+- Wie kann man Proteine mit Text-, Gen‑ oder Protein‑Namen suchen?
+- Wie interpretiert man die Informationen oben auf der UniProt‑Eintragsseite?
+- Welche Arten von Informationen kann man aus verschiedenen Download‑Formaten wie FASTA und JSON erwarten?
+- Wie wird die Funktion eines Proteins wie Opsine im Abschnitt „Funktion“ beschrieben?
+- Welche strukturierten Informationen ﬁndet man in den Abschnitten „Namen und Taxonomie“, „Subzelluläre Lage“, „Krankheit & Varianten“, „PTM/Verarbeitung“?
+- Wie erfährt man etwas über Protein‑Expression, Wechselwirkungen, Struktur, Familie, Sequenz und ähnliche Proteine?
+- Wie helfen die Tabs „Variant Viewer“ und „Feature Viewer“, Proteininformationen entlang der Sequenz abzubilden?
+- Was listet der Tab „Publikationen“ und wie kann man Publikationen filtern?
+- Was bedeutet es, Änderungen in der Eintrags‑Annotation im Laufe der Zeit nachzuverfolgen?
 objectives:
-- By exploring protein entries in UniProtKB, interpret protein function, taxonomy,
-  structure, interactions, variants, and more.
-- Use unique identifiers to connect databases, download gene and protein data, visualize
-  and compare sequence features.
+- Durch das Erkunden von Protein‑Einträgen in UniProtKB soll man Funktion, Taxonomie, Struktur, Wechselwirkungen, Varianten und mehr interpretieren können.
+- Eindeutige Identifikatoren nutzen, um Datenbanken zu verbinden, Gen‑ und Protein‑Daten herunterzuladen, Sequenzmerkmale zu visualisieren und zu vergleichen.
 time_estimation: 1H
 key_points:
-- How to navigate UniProtKB entries, accessing comprehensive details about proteins,
-  such as their functions, taxonomy, and interactions
-- The Variant and Feature viewer are your tools to visually explore protein variants,
-  domains, modifications, and other key sequence features.
-- Expand your understanding by utilizing external links to cross-reference data and
-  uncover complex relationships.
-- Explore the History tab for access to previous versions of entry annotations.
+- Wie man in UniProtKB‑Einträgen navigiert und umfassende Details über Proteine wie Funktion, Taxonomie und Wechselwirkungen abruft.
+- Der „Variant Viewer“ und der „Feature Viewer“ sind Werkzeuge zur visuellen Erkundung von Proteinvarianten, Domänen, Modifikationen und anderen Sequenzmerkmalen.
+- Das Verständnis erweitern durch externe Links zur Querverweis‑Datenrecherche und komplexen Zusammenhängen.
+- Die Historie‑Registerkarte nutzen, um frühere Versionen von Eintrags‑Annotationen anzuzeigen.
 requirements:
 - type: internal
   topic_name: data-science

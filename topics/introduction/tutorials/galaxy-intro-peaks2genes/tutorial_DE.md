@@ -4,23 +4,22 @@ title: Von Peaks zu Genen
 zenodo_link: https://doi.org/10.5281/zenodo.1025586
 level: Introductory
 questions:
-- How to use Galaxy?
-- How to get from peak regions to a list of gene names?
+- Wie benutzt man Galaxy?
+- Wie erhält man aus Peak‑Regionen eine Liste von Gen‑Namen?
 objectives:
-- Familiarize yourself with the basics of Galaxy
-- Learn how to obtain data from external sources
-- Learn how to run tools
-- Learn how histories work
-- Learn how to create a workflow
-- Learn how to share your work
-time_estimation: 3H
+- Mit den Grundlagen von Galaxy vertraut werden
+- Lernen, wie man Daten aus externen Quellen bezieht
+- Lernen, wie man Werkzeuge ausführt
+- Lernen, wie Histories funktionieren
+- Lernen, wie man einen Workflow erstellt
+- Lernen, wie man seine Arbeit teilt
+time_estimation: 3 Stunden
 key_points:
-- Galaxy provides an easy-to-use graphical user interface for often complex commandline
-  tools
-- Galaxy keeps a full record of your analysis in a history
-- Workflows enable you to repeat your analysis on different data
-- Galaxy can connect to external sources for data import and visualization purposes
-- Galaxy provides ways to share your results and methods with others
+- Galaxy bietet eine benutzerfreundliche grafische Oberfläche für oft komplexe Kommandozeilen‑Werkzeuge
+- Galaxy hält eine vollständige Aufzeichnung Ihrer Analyse in einer History
+- Workflows ermöglichen es, Ihre Analyse auf verschiedene Daten zu wiederholen
+- Galaxy kann sich mit externen Quellen zur Datenimport‑ und Visualisierungszwecken verbinden
+- Galaxy bietet Möglichkeiten, Ihre Ergebnisse und Methoden mit anderen zu teilen
 subtopic: next-steps
 contributions:
   authorship:

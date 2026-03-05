@@ -16,7 +16,6 @@ contributions:
 ---
 
 
-
 1. Klicken Sie auf {% icon param-collection %} **Datensatzsammlung** vor dem Eingabeparameter, dem Sie die Sammlung übergeben wollen.
 2. Wählen Sie die zu verwendende Sammlung aus der Liste aus
 

@@ -1,8 +1,6 @@
 ---
 title: Erstellen eines neuen Verlaufs
-description: Histories are an important part of Galaxy, most people use a new history
-  for every new analysis. Always make sure to give your histories good names, so you
-  can easily find your results back later.
+description: Histories sind ein wichtiger Teil von Galaxy. Die meisten Benutzer verwenden für jede neue Analyse eine neue History. Achten Sie immer darauf, Ihren Histories aussagekräftige Namen zu geben, damit Sie Ihre Ergebnisse später leicht wiederfinden können.
 area: histories
 box_type: tip
 layout: faq

@@ -1,6 +1,6 @@
 ---
 title: Umbenennen eines Verlaufs
-description: Explains how to rename a history
+description: Erklärt, wie man eine History umbenennt
 area: histories
 box_type: tip
 layout: faq

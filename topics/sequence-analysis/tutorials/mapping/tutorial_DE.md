@@ -3,18 +3,18 @@ layout: tutorial_hands_on
 title: Mapping
 zenodo_link: https://doi.org/10.5281/zenodo.1324070
 questions:
-- What is mapping?
-- What two things are crucial for a correct mapping?
-- What is BAM?
+  - Was ist Mapping?
+  - Welche zwei Dinge sind entscheidend für ein korrektes Mapping?
+  - Was ist eine BAM‑Datei?
 objectives:
-- Run a tool to map reads to a reference genome
-- Explain what is a BAM file and what it contains
-- Use genome browser to understand your data
+  - Ein Tool ausführen, um Reads auf ein Referenzgenom zu mappen
+  - Erklären, was eine BAM‑Datei ist und was sie enthält
+  - Einen Genom‑Browser benutzen, um die Daten zu verstehen
 time_estimation: 1h
 key_points:
-- Know your data!
-- Mapping is not trivial
-- There are many mapping algorithms, it depends on your data which one to choose
+  - Kenne deine Daten!
+  - Mapping ist nicht trivial
+  - Es gibt viele Mapping‑Algorithmen, abhängig von deinen Daten musst du den passenden wählen
 subtopic: basics
 requirements:
 - type: internal
