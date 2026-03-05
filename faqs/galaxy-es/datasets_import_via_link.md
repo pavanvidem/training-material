@@ -1,9 +1,15 @@
 ---
-title:  Importación por medio de enlaces
+title: Importación por medio de enlaces
 area: data upload
 box_type: tip
 layout: faq
-contributors: [nomadscientist]
+contributions:
+  authorship:
+    - nomadscientist
+  translation:
+    - hvelab
+  funding:
+    - biont
 ---
 
 * Copia los enlaces
@@ -52,5 +58,4 @@ contributors: [nomadscientist]
 {% endif %}
 {% if include.renaming == undefined or include.renaming == true %}
 * Galaxy utiliza los URLs como nombres de forma predeterminada , así que los tendrás que cambiar a algunos que sean más útiles o informativos.
-the window
 {% endif %}
