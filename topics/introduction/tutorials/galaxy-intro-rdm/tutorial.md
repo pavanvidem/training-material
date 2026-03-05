@@ -32,7 +32,7 @@ This tutorial aims to familiarize you with the Galaxy user interface, with a spe
 
 Galaxy has over 10,000 available tools in it's [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences, to astronomy, and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
 
-To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic ahtletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily be repeated on different datasets, and shared with others.
+To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic athletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily be repeated on different datasets, and shared with others.
 
 
 > <agenda-title></agenda-title>
@@ -221,7 +221,7 @@ The contents of the file will be displayed in the central Galaxy panel. If the d
 
 This file contains a table listing all athletes who competed in the 2010 Winter Olympics in Oslo.
 
-![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an ahtlete, and each column provides further information about this athlete including birthyear, weight, medals.")
+![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an athlete, and each column provides further information about this athlete including birthyear, weight, medals.")
 
 
 > <question-title> Explore the dataset </question-title>
@@ -290,7 +290,7 @@ Galaxy offers many tools that can help prepare your data for analysis, such as f
 
 ### Use a tool
 
-Recall that our research question in this tutorial is "What is the age distribution of Olympic ahtletes?"
+Recall that our research question in this tutorial is "What is the age distribution of Olympic athletes?"
 Looking at the dataset, you will see that we do not have an "age" column in our table. We do however, have a column with the birth year
 of each athlete, and a column containing the year of the olympics. Let's prepare our data for analysis by calculating a new age column
 based on these two existing columns.
@@ -834,7 +834,7 @@ Collections allow you to easily run tools on multiple datasets at once. We have 
 you like, even hundreds or thousands.
 
 Now that we have everything in Galaxy set up for analysis, and our data pre-processed to the right format, we can start to
-answer our research question, ***"What is the age distribution of Olympic ahtletes?"***.
+answer our research question, ***"What is the age distribution of Olympic athletes?"***.
 
 
 
@@ -846,7 +846,7 @@ answer our research question, ***"What is the age distribution of Olympic ahtlet
 
 ```
 - sort table by age column, ascending
-- get top 5 youngest ahtletes
+- get top 5 youngest athletes
 - show a visualisation, age histogram?
 
 - discuss plethora of domain-specific tools, link to community pages and subdomains, how to get help
@@ -883,7 +883,7 @@ answer our research question, ***"What is the age distribution of Olympic ahtlet
 
 ### Plan our approach
 
-Recall that our research question in this tutorial is ***"What is the age distribution of Olympic ahtletes?"***
+Recall that our research question in this tutorial is ***"What is the age distribution of Olympic athletes?"***
 
 > <question-title> What to do? </question-title>
 >
