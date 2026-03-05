@@ -77,9 +77,11 @@ bmbf:
     gtn-halloffame: "no"
 
 cesnet:
-    name: cesnet
-    joined: 2025-09
+    name: CESNET (Czech Education and Scientific NETwork)
+    email: galaxy@cesnet.cz
+    joined: 2020-01
     url: https://www.cesnet.cz/
+    ror: "050dkka69"
 
 carpentries:
     name: The Carpentries
