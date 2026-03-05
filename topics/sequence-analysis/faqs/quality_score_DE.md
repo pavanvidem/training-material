@@ -3,10 +3,16 @@ title: Qualitätswerte
 area: format
 box_type: details
 layout: faq
-contributors:
-- bebatut
-- nakucher
-- hexylena
+contributions:
+  authorship:
+  - bebatut
+  - nakucher
+  - hexylena
+  translation:
+  - Tillsa
+  - unode
+  funding:
+  - biont
 ---
 
 

@@ -34,10 +34,14 @@ contributions:
   editing:
   - teresa-m
   - dadrasarmin
+  translation:
+  - Tillsa
+  - unode
   funding:
   - elixir-europe
   - deNBI
   - uni-freiburg
+  - biont
 lang: de
 tags:
   - english

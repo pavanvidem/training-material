@@ -31,6 +31,9 @@ contributions:
   authorship:
   - lisanna
   - bebatut
+  translation:
+  - Tillsa
+  - unode
   funding:
   - biont
 lang: de
