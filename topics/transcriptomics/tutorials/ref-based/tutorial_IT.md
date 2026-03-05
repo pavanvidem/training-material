@@ -1912,7 +1912,7 @@ Ora vorremmo estrarre i geni più differenzialmente espressi dal trattamento con
 >    > > <solution-title></solution-title>
 >    > > 
 >    > > 1. Otteniamo 113 geni (114 righe compresa l'intestazione), ovvero l'11,79% dei geni significativamente espressi in modo differenziato.
->    > > 2. Il gene *Pasilla* può essere trovato con una rapida ricerca (o anche usando {% tool [Filtra i dati su qualsiasi colonna usando semplici espressioni](Filtro1) %}) )
+>    > > 2. Il gene *Pasilla* può essere trovato con una rapida ricerca (o anche usando {% tool [Filtra i dati su qualsiasi colonna usando semplici espressioni](Filter1) %}) )
 > > > 
 > > {: .solution}
 > > 
