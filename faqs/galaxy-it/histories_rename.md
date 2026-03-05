@@ -1,6 +1,6 @@
 ---
 title: Rinominare una cronologia
-description: Explains how to rename a history
+description: Spiega come rinominare una history
 area: histories
 box_type: tip
 layout: faq

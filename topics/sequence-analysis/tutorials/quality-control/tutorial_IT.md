@@ -3,15 +3,15 @@ layout: tutorial_hands_on
 title: Controllo qualità
 zenodo_link: https://zenodo.org/records/61771
 questions:
-- How to perform quality control of NGS raw data?
-- What are the quality parameters to check for a dataset?
-- How to improve the quality of a dataset?
+- Come eseguire il controllo di qualità dei dati grezzi NGS?
+- Quali sono i parametri di qualità da verificare in un dataset?
+- Come migliorare la qualità di un dataset?
 objectives:
-- Assess short reads FASTQ quality using FASTQE 🧬😎 and FastQC
-- Assess long reads FASTQ quality using Nanoplot and PycoQC
-- Perform quality correction with Cutadapt (short reads)
-- Summarise quality metrics MultiQC
-- Process single-end and paired-end data
+- Valutare la qualità di short reads FASTQ usando FASTQE e FastQC
+- Valutare la qualità di long reads FASTQ usando Nanoplot e PycoQC
+- Eseguire la correzione della qualità con Cutadapt (short reads)
+- Riassumere le metriche di qualità con MultiQC
+- Processare dati single‑end e paired‑end
 follow_up_training:
 - type: internal
   topic_name: sequence-analysis
@@ -21,12 +21,11 @@ time_estimation: 1H30M
 level: Introductory
 subtopic: basics
 key_points:
-- Perform quality control on every dataset before running any other bioinformatics
-  analysis
-- Assess the quality metrics and improve quality if necessary
-- Check the impact of the quality control
-- Different tools are available to provide additional quality metrics
-- For paired-end reads analyze the forward and reverse reads together
+- Eseguire il controllo di qualità su ogni dataset prima di qualsiasi altra analisi bioinformatica
+- Valutare le metriche di qualità e migliorare la qualità se necessario
+- Verificare l’impatto del controllo di qualità
+- Sono disponibili diversi strumenti che forniscono metriche di qualità aggiuntive
+- Per paired‑end analizzare insieme le letture forward e reverse
 lang: it
 tags:
   - deutsch

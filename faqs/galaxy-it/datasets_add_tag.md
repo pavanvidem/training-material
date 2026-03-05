@@ -1,6 +1,6 @@
 ---
 title: Aggiunta di un tag
-description: Tags can help you to better organize your history and track datasets.
+description: I tag possono aiutarti a organizzare meglio la cronologia e a tenere traccia dei dataset.
 area: datasets
 layout: faq
 box_type: tip

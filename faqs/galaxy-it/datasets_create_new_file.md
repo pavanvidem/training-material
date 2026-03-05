@@ -1,7 +1,6 @@
 ---
 title: Creare un nuovo file
-description: Galaxy allows you to create new files from the upload menu. You can supply
-  the contents of the file.
+description: Galaxy permette di creare nuovi file dal menu di caricamento. È possibile fornire direttamente il contenuto del file.
 area: datasets
 box_type: tip
 layout: faq

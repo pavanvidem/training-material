@@ -21,15 +21,14 @@ contributions:
   funding:
     - biont
 optional_parameters:
-  reset_form: Tell the user to reset the form first
-  collection: Adds step to click the collection button
-  collection_type: Suggests a collection type
-  link: (Deprecated) Instead of collections use a link-type input
-  link2: (Deprecated) Second link
-  format: Suggests a format for the user to set
-  genome: Suggests a genome for the user to set
-  pairswaptext: Provides a filter for the pair detection
-  collection_name_convention: Suggests a naming convention for the collection
+  reset_form: Suggerisci all’utente di resettare prima il modulo
+  collection: Aggiunge il passo per cliccare il pulsante raccolta
+  collection_type: Suggerisce il tipo di raccolta
+  link: (Deprecato) Al posto delle raccolte usa un input di tipo link
+  link2: (Deprecato) Secondo formato di link suggerito da impostare
+  genome: Suggerisce un genome da impostare per l’utente
+  pairswaptext: Fornisce un filtro per il rilevamento delle coppie
+  collection_name_convention: Suggerisce una convenzione di denominazione per la raccolta
 examples:
   Import a list of files:
     collection: 'true'

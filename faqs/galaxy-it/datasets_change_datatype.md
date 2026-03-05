@@ -1,7 +1,6 @@
 ---
 title: Modifica del tipo di dato
-description: Galaxy will try to autodetect the datatype of your files, but you may
-  need to manually set this occasionally.
+description: Galaxy cercherà di rilevare automaticamente il tipo di dati dei tuoi file, ma potrebbe essere necessario impostarlo manualmente in alcuni casi.
 area: datasets
 box_type: tip
 layout: faq

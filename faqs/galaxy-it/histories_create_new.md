@@ -1,8 +1,6 @@
 ---
 title: Creare una nuova cronologia
-description: Histories are an important part of Galaxy, most people use a new history
-  for every new analysis. Always make sure to give your histories good names, so you
-  can easily find your results back later.
+description: Le "Histories" sono una parte importante di Galaxy; la maggior parte degli utenti utilizza una nuova history per ogni nuova analisi. Assicurati sempre di dare alle tue history nomi chiari, in modo da poter ritrovare facilmente i risultati in seguito.
 area: histories
 box_type: tip
 layout: faq

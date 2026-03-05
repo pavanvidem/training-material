@@ -1,7 +1,6 @@
 ---
 title: Copiare un set di dati tra le cronologie
-description: Sometimes you may want to use a dataset in multiple histories. You do
-  not need to re-upload the data, but you can copy datasets from one history to another.
+description: A volte può essere utile usare un dataset in più cronologie. Non è necessario caricare di nuovo i dati, puoi semplicemente copiare i dataset da una cronologia all’altra.
 area: histories
 box_type: tip
 layout: faq
