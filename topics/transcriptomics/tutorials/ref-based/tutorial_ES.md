@@ -855,7 +855,7 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
    > > 
    > > > <comment-title>¿Cómo sería si la biblioteca estuviera trenzada?</comment-title>
    > > > 
-   > > > ![pyGenomeTracks USvsRS](../../images/pyGenomeTracks_USvsRS.png "Cobertura STAR para el strand 1 en azul y el strand 2 en rojo para librerías unstranded y reverse stranded") Observe que la cobertura en la hebra 1 es muy baja para la muestra stranded_PE mientras que el gen es forward. Esto significa que la biblioteca de stranded_PE es de cadena inversa. Por el contrario, para unstranded_PE la escala es comparable para ambas cadenas. {: .comment} {: .solution}
+   > > > ![pyGenomeTracks USvsRS](../../images/ref-based/pyGenomeTracks_USvsRS.png "Cobertura STAR para el strand 1 en azul y el strand 2 en rojo para librerías unstranded y reverse stranded") Observe que la cobertura en la hebra 1 es muy baja para la muestra stranded_PE mientras que el gen es forward. Esto significa que la biblioteca de stranded_PE es de cadena inversa. Por el contrario, para unstranded_PE la escala es comparable para ambas cadenas. {: .comment} {: .solution}
    > 
    {: .question}
 

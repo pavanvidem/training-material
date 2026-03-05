@@ -143,8 +143,7 @@ Empecemos con una historial vacío.
 > 
 >    {% snippet faqs/galaxy-es/datasets_import_via_link.md format="interval" %}
 > 
->    > <tip-title>Importación de datos a Galaxy</tip-title> Hay [más opciones]({% link
->    > topics/galaxy-interface/tutorials/get-data/slides.html %}) para usuarios avanzados.
+>    > <tip-title>Importación de datos a Galaxy</tip-title> Hay [más opciones]({% link topics/galaxy-interface/tutorials/get-data/slides.html %}) para usuarios avanzados.
 >    {: .tip}
 > 
 {: .hands_on}
@@ -355,9 +354,7 @@ Para convertir los nombres de los cromosomas tenemos por tanto que hacer dos cos
 
 > <hands-on-title>Ajustar nombres de cromosomas</hands-on-title>
 > 
-> 1. {% tool [Replace
->    Text](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_column/1.1.3)
->    %} en una columna específica con la siguiente configuración:
+> 1. {% tool [Replace Text](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_column/1.1.3) %} en una columna específica con la siguiente configuración:
 >     - *"File to process "*: nuestro fichero pico `GSE37268_mof3.out.hpeak.txt.gz`
 >     - *"in column "*: `1`
 >     - *"Find pattern "*: `[0-9]+`

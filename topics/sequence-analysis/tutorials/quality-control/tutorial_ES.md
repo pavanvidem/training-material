@@ -373,8 +373,7 @@ Podemos ejecutar una herramienta de recorte como Cutadapt para eliminar este ada
 > <tip-title>Toma un atajo</tip-title>
 > 
 > Las siguientes secciones detallan algunos de los otros gráficos generados por FastQC. Tenga en cuenta que algunos gráficos/módulos pueden dar advertencias, pero son normales para el tipo de datos con los que está trabajando, como se explica a continuación y [en el FAQ de FASTQC](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/). Los otros gráficos nos dan información para entender más profundamente la calidad de los datos, y para ver si se pueden hacer cambios en el laboratorio para obtener datos de mayor calidad en el futuro. Estas secciones son **opcionales**, y si desea saltárselas puede hacerlo:
->   - Vaya directamente a la [siguiente sección](#trim-and-filter---short-reads) para aprender sobre el recorte de datos de extremos pareados
-> 
+>   - Vaya directamente a la [siguiente sección](#recorte-y-filtrado---lecturas-cortas) para aprender sobre el recorte de datos de extremos pareados
 {: .tip}
 
 ### Calidad de la secuencia por mosaico
