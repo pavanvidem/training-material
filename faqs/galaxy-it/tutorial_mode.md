@@ -10,7 +10,7 @@ contributions:
     - shiltemann
     - nomadscientist
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - unode
   funding:

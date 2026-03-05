@@ -8,7 +8,7 @@ contributions:
     - shiltemann
     - annefou
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - unode
   funding:

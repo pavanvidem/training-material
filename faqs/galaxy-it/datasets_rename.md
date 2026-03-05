@@ -11,7 +11,7 @@ contributions:
     - wm75
     - hexylena
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

@@ -31,6 +31,10 @@ contributions:
   authorship:
   - lisanna
   - bebatut
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
   funding:
   - biont
 lang: it

@@ -33,10 +33,17 @@ follow_up_training:
 level: Introductory
 edam_ontology:
 - topic_0102
-contributors:
-- joachimwolff
-- bebatut
-- hexylena
+contributions:
+  authorship:
+  - joachimwolff
+  - bebatut
+  - hexylena
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
+  funding:
+  - biont
 recordings:
 - captioners:
   - shiltemann

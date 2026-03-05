@@ -12,7 +12,7 @@ contributions:
     - shiltemann
     - nekrut
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - unode
   funding:

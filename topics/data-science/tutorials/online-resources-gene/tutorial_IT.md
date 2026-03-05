@@ -25,6 +25,10 @@ contributions:
   - lisanna
   - bebatut
   - teresa-m
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
   funding:
   - biont
 lang: it

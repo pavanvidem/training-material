@@ -16,7 +16,7 @@ contributions:
     - nsoranzo
     - nekrut
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

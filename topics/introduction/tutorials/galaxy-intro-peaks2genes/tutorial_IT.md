@@ -34,10 +34,15 @@ contributions:
   editing:
   - teresa-m
   - dadrasarmin
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
   funding:
   - elixir-europe
   - deNBI
   - uni-freiburg
+  - biont
 lang: it
 tags:
   - deutsch

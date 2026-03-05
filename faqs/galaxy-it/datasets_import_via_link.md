@@ -14,7 +14,7 @@ contributions:
     - nekrut
     - mblue9
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

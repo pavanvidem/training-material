@@ -57,6 +57,12 @@ contributions:
   editing:
   - hexylena
   - clsiguret
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
+  funding:
+  - biont
 recordings:
 - youtube_id: AeiW3IItO_c
   speakers:

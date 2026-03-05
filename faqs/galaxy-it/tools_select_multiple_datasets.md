@@ -10,7 +10,7 @@ contributions:
     - hexylena
     - shiltemann
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

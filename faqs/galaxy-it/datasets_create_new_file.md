@@ -13,7 +13,7 @@ contributions:
     - hexylena
     - simonbray
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

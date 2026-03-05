@@ -13,7 +13,7 @@ contributions:
     - bebatut
     - lldelisle
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - hvelab
     - unode

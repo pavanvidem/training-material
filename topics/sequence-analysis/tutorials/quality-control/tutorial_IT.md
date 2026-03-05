@@ -48,8 +48,14 @@ contributions:
   - neoformit
   editing:
   - Swathi266
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
+  - ocaisa
   funding:
   - gallantries
+  - biont
 recordings:
 - youtube_id: coaMGvZazoc
   length: 50M

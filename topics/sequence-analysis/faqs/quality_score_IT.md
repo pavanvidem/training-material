@@ -3,10 +3,17 @@ title: Punteggi di qualità
 area: format
 box_type: details
 layout: faq
-contributors:
-- bebatut
-- nakucher
-- hexylena
+contributions:
+  authorship:
+  - bebatut
+  - nakucher
+  - hexylena
+  translation:
+  - lisanna
+  - silviadg87
+  - unode
+  funding:
+  - biont
 ---
 
 

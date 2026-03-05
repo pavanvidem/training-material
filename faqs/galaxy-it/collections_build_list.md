@@ -8,7 +8,7 @@ contributions:
     - shiltemann
     - hexylena
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - unode
   funding:

@@ -7,7 +7,7 @@ contributions:
   authorship:
     - shiltemann
   translation:
-    - paladin
+    - lisanna
     - silviadg87
     - unode
   funding:
