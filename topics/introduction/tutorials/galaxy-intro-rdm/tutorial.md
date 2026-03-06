@@ -104,18 +104,6 @@ The first time you use Galaxy, there will be no files in your history panel.
 
 ![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
 
-```
-- import olympics winter data from Zenodo via URL
-  - show dataset attributes, rename file
-- import olympics summer data from Zenodo via repository browse
-- add dataset tags
-
-
-- discuss different data import options
-    - import from popular data repositories (SRA/NCBI)
-    - from BYOS
-    - from shared data library
-```
 
 ### The Galaxy History
 
@@ -268,22 +256,6 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 
 ![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
 
-```
-- compute age column for winter olympics
-- show tool run provenance, mention this will be used to extract workflow at end of tutorial
-
-- rerun tool on summer olympics
-  - intentional error due to NA value orso
-  - show bug report stdout/stderr
-  - set error handling params on compute tool to deal with this (or remove lines?)
-
-- link to [data manipulation olympics tutorial](https://gxy.io/GTN:T00184) for more data prep tools
-
-- optional section: show OpenRefine to perform same tasks
-
-- history system: create new history, show switching, drag & drop
-- scaling: create collection in new history, put both files in, run the compute step again on collection
-```
 
 The first steps of an analysis are often data cleaning and quality control steps.
 Galaxy offers many tools that can help prepare your data for analysis, such as format conversions and data manipulation tools.
@@ -547,6 +519,8 @@ So something went wrong with one of your tools. This will happen now and then, a
 >    ![the bug icon on a historty item]({% link topics/introduction/images/galaxy-intro-rdm/tool-bug.png %})
 >
 {: .hands_on}
+
+You will now see details about the error in the center panel:
 
 ![Error tab of dataset details]({% link topics/introduction/images/galaxy-intro-rdm/galaxy-bugreport.png %} "the error tab of the dataset details page. This page shows us the error message (stderr) and other tool logs (stdout). It also has a form to submit a bug report at the bottom.")
 
@@ -996,13 +970,14 @@ But this doesn't scale to a large number of datasets. So as the final step of ou
 
 Awesome, we now have a pretty good answer to our question. We have some basic summary statistics for each Olympics, and a montage of histogram plots.
 
+Next, we would like to repeat all this for **all** Olympic games.
+
 Note that we chose our montage to be 2 images wide because we only had 2, but when we run it on more datasets at once we might want to change this. We will do this later.
 
-Next, we would like to repeat all this for **all** Olympic games.
 
 ### Extract workflow from our history
 
-To make it easy to repeat this entire analysis, we will create a **workflow** based on our current history.
+To make it easy to repeat this entire analysis without a lot of clicking, we will create a **workflow** based on our analysis history.
 
 > <hands-on-title>Extract workflow from history </hands-on-title>
 >
@@ -1019,16 +994,15 @@ To make it easy to repeat this entire analysis, we will create a **workflow** ba
 >    ![Selection of steps for Extract Workflow from history.]({% link topics/introduction/images/galaxy-intro-rdm/workflow-extract.png %})
 >
 > 3. Replace the **Workflow name** to something more descriptive, for example: `Olympic Age distribution`.
+>    - Here you can also uncheck any steps you forgot to delete when you cleaned up your history
 >
-> 4. Here you can also uncheck any steps you do not with to include
->
-> 5. Click the **Create Workflow** button near the top.
+> 4. Click the **Create Workflow** button near the top.
 >
 >    You will get a message that the workflow was created.
 >
 {: .hands_on}
 
-Next, we will run this workflow on *all* Olympic games
+Next, we will run this workflow on *all* Olympic games.
 
 
 ### Run workflow on all Olympics
@@ -1077,18 +1051,18 @@ Next, let's view the workflow in the workflow editor
 >
 >    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflows.png %})
 >
->    You can see all available actions for the workflow on the workflow card, e.g. edit, copy, rename, share etc. Any other options (e.g.: delete, export etc.) are available by clicking the {% icon galaxy-dropdown %} **Workflow actions** button on the top right of the card.
+>    You can see all available actions for the workflow on the workflow card, e.g. copy, download, share, edit and run
 >
 > 2. Click the {% icon galaxy-wf-edit %} (*Edit*) button on the bottom right of the workflow card.
 >
 > 3. Play around with the editor
->    - you can move boxes around
->    - you can add tools and make connections between tools
->    - you can click on a tool and change parameters
+>    - You can move boxes around
+>    - You can add tools and make connections between tools
+>    - You can click on a tool and change parameters
 >
->    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
+>    ![workflows editor]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
 >
->    We will only make 1 change: since we will have many more histograms, lets make the montage image 4 plots wide
+>    **We will only make 1 change:** since we will have many more histograms, lets make the montage image 4 plots wide
 >
 > 4. Click on the Montage tool
 >    - a panel with the tool's configuration will open on the right
@@ -1130,7 +1104,10 @@ Our analysis will now be run on all 51 olympics files. This may take a bit of ti
 
 Once your workflow is finished, you should get a final montage image with 51 histograms
 
-![final montage image]({% link topics/introduction/images/galaxy-intro-rdm/montage-all.png %})
+![final montage image]({% link topics/introduction/images/galaxy-intro-rdm/montage-all.png %} "Montage of histograms for all 51 Olympic games in our dataset")
+
+
+TODO: question box?
 
 
 
