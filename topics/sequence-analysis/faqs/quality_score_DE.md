@@ -4,15 +4,9 @@ area: format
 box_type: details
 layout: faq
 contributions:
-  authorship:
-  - bebatut
-  - nakucher
-  - hexylena
-  translation:
-  - Tillsa
-  - unode
-  funding:
-  - biont
+  authorship: [bebatut, nakucher, hexylena]
+  translation: [Tillsa, unode]
+  funding: [biont]
 ---
 
 
