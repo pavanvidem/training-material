@@ -61,7 +61,7 @@ recordings:
 ---
 
 
-We stumbled upon a paper ({% cite Li2012 %}) called *"The histone acetyltransferase MOF is a key regulator of the embryonic stem cell core transcriptional network"*. The paper contains the analysis of possible target genes of an interesting protein called Mof. The targets were obtained by ChIP-seq in mice and the raw data is available through [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37268){:target="_blank"}.
+We stumbled upon a paper ({% cite Li2012 %}) called *"The histone acetyltransferase MOF is a key regulator of the embryonic stem cell core transcriptional network"*. The paper contains the analysis of possible target genes of an interesting protein called Mof. The targets were obtained by ChIP-seq in mice and the raw data is available through [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37268).
 However, the list of genes is neither in the supplement of the paper, nor part of the GEO submission.
 The closest thing we could find is a file in GEO containing a list of the regions where the signal is significantly enriched (so called *peaks*):
 
@@ -128,7 +128,7 @@ Let's start with a fresh history.
 
 > <hands-on-title>Data upload</hands-on-title>
 >
-> 1. Download the list of peak regions (the file [GSE37268_mof3.out.hpeak.txt.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE37268&format=file&file=GSE37268%5Fmof3%2Eout%2Ehpeak%2Etxt%2Egz)) from [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37268){:target="_blank"} to your computer
+> 1. Download the list of peak regions (the file [GSE37268_mof3.out.hpeak.txt.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE37268&format=file&file=GSE37268%5Fmof3%2Eout%2Ehpeak%2Etxt%2Egz)) from [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37268) to your computer
 > 2. Click on the upload button in the upper left of the interface
 >
 >    ![Upload data icon](../../../galaxy-interface/images/upload_button.png)
