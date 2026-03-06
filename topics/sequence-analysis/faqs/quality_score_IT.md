@@ -1,19 +1,19 @@
 ---
-title: Punteggi di qualità
+title: "Punteggi di qualità"
 area: format
 box_type: details
 layout: faq
 contributions:
   authorship:
-  - bebatut
-  - nakucher
-  - hexylena
+    - bebatut
+    - nakucher
+    - hexylena
   translation:
-  - lisanna
-  - silviadg87
-  - unode
+    - lisanna
+    - silviadg87
+    - unode
   funding:
-  - biont
+    - biont
 ---
 
 
