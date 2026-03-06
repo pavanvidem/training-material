@@ -356,7 +356,7 @@ Wir können ein Trimming-Tool wie Cutadapt einsetzen, um diesen Adapter zu entfe
 > <tip-title>Eine Abkürzung nehmen</tip-title>
 > 
 > In den folgenden Abschnitten werden einige der anderen von FastQC erzeugten Diagramme ausführlich beschrieben. Beachten Sie, dass einige Plots/Module Warnungen ausgeben können, aber für die Art der Daten, mit denen Sie arbeiten, normal sind, wie unten und [in den FASTQC-FAQ](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/) beschrieben. Die anderen Diagramme geben uns Informationen, um die Qualität der Daten besser zu verstehen und um zu sehen, ob im Labor Änderungen vorgenommen werden können, um in Zukunft Daten von höherer Qualität zu erhalten. Diese Abschnitte sind **optional**, und wenn Sie sie überspringen möchten, können Sie das tun:
->   - Springen Sie direkt zum [nächsten Abschnitt](#trim-and-filter---short-reads), um mehr über das Trimmen von Paired-End-Daten zu erfahren
+>   - Springen Sie direkt zum [nächsten Abschnitt](#trimmen-und-filtern---kurze-reads), um mehr über das Trimmen von Paired-End-Daten zu erfahren
 {: .tip}
 
 ### Qualität der Sequenz pro Kachel

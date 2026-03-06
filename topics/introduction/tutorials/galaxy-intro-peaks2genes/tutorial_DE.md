@@ -675,8 +675,7 @@ Analyse problemlos weitergeben oder veröffentlichen.
 > 10. Drücken Sie **Auto Re-layout**, um unsere Ansicht aufzuräumen ![Auto
 >     re-layouting](../../images/intro_07.png)
 > 11. Klicken Sie auf das {% icon galaxy-save %} **Speichern** (oben), um Ihre
->     Änderungen zu speichern ![Save workflow button]({% link
->     topics/contributing/images/save_workflow.png %}){: width="50%"}
+>     Änderungen zu speichern ![Save workflow button]({% link topics/contributing/images/save_workflow.png %}){: width="50%"}
 > 
 > > <tip-title>Zwischenschritte ausblenden</tip-title>
 > > Bei der Ausführung eines Workflows ist der Benutzer in der Regel in erster Linie an dem Endprodukt und nicht
@@ -685,8 +684,7 @@ Analyse problemlos weitergeben oder veröffentlichen.
 > > einen bestimmten Workflow angezeigt und welche ausgeblendet werden sollen. Dieses
 > > Verhalten wird durch das kleine Sternchen neben jedem Ausgabedatensatz gesteuert:
 > > 
-> > ![Workflow-Editor
-> > Markierungsausgabe](../../../../shared/images/workflow_editor_mark_output.png)
+> > ![Workflow-Editor Markierungsausgabe](../../../../shared/images/workflow_editor_mark_output.png)
 > > 
 > > Wenn Sie auf dieses Sternchen für einen der Ausgabedatensätze klicken, werden *nur*
 > > die Dateien mit einem Sternchen angezeigt, und alle Ausgaben ohne Sternchen werden
