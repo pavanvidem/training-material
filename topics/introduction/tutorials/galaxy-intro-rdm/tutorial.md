@@ -354,10 +354,12 @@ This tool will run and a new output dataset will appear at the top of your histo
 >
 > > <question-title> </question-title>
 > >
-> > 1. What age is the first Olympian, *Muhammad Abbas*?
+> > 1. What column number is our new "age" column?
+> > 2. What age is the first Olympian in our file, *Muhammad Abbas*?
 > >
 > > > <solution-title></solution-title>
-> > > 1. Age 23. The new column is added at the end if all went well.
+> > > 1. The column was added at the end, column 16.
+> > > 2. Age 23.
 > > {: .solution}
 > {: .question}
 >
@@ -612,6 +614,11 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 
 If this solution seemed a bit cryptic, don't worry too much, there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
 
+If you get an error message that you don't understand, or don't know how to solve, you can always ask for help in one of our **support channels**.
+
+{% snippet faqs/galaxy/support.md %}
+
+
 #### Starring your favourite tools
 
 Since Galaxy has so many tools to choose from, once you find one that is useful for you, you will likely want to use it more often.
@@ -801,7 +808,7 @@ Remember that you starred {% icon galaxy-star %} the compute tool, so you can us
 >
 > 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
 >    - {% icon param-collection %} *"Input file"*: `Olympics Dataset` (collection)
->      - in front of this parameter, click on the {% icon param-collection %} icon to switch to collection input
+>      - In front of this parameter, click on the {% icon param-collection %} icon to switch to collection input
 >    - *"Input has a header line with column names?"*: `Yes`
 >    - *"Expressions"*
 >      - {% icon plus %} Insert Expressions
@@ -814,7 +821,7 @@ Remember that you starred {% icon galaxy-star %} the compute tool, so you can us
 >
 >    {% snippet faqs/galaxy/tools_select_collection.md %}
 >
-> 2. **View** the results
+> 2. **View** {% icon galaxy-eye %} the results
 >
 > > <question-title> What is our output? </question-title>
 > >
@@ -844,21 +851,6 @@ answer our research question, ***"What is the age distribution of Olympic athlet
 
 ![The RDM lifecycle with the analyse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
 
-```
-- sort table by age column, ascending
-- get top 5 youngest athletes
-- show a visualisation, age histogram?
-
-- discuss plethora of domain-specific tools, link to community pages and subdomains, how to get help
-
-- extract workflow from history, remove OpenRefine and Rstudio steps if done
-- show workflow editor, edit input collection name
-- import zip file of olympics data from other years, unzip to collection, add tags to collection elements (collection operations tool, based on file), run workflow on this
-
-- optional section: show Rstudio Interactive tool, create a plot in R
-  - export plot to galaxy
-  - export R history
-```
 
 > <comment-title> Domain-specific analysis tools </comment-title>
 >
@@ -901,9 +893,11 @@ Recall that our research question in this tutorial is ***"What is the age distri
 > > 2. If you already know the name of the tool you want to use, you can simply enter this in the search bar. But often you might not know the name of the tool, then just search for some related keywords
 > >
 > >    Try searching for terms like:
-> >    - statistics, mean, average, minimum, maximum, summary, column
+> >    - statistics, mean, average, minimum, maximum, standard deviation, summary, column, histogram, boxplot
 > >
 > >    The tool **Summary Statistics - for any numerical column** {% icon tool %} looks interesting!
+> >
+> >    As does the **Histogram - of a numeric column** {% icon tool %}
 > >
 > {: .solution}
 {: .question}
@@ -919,16 +913,225 @@ Let's do some analysis based on our plan.
 >      - remember to switch to collection input {% icon param-collection %}
 >    - *"Column or expression"*: `c16`
 >
+> 2. **View** {% icon galaxy-eye %} the results
+>    - it should look something like this:
+>
+>      ```
+>      #sum 	mean 	stdev 	0% 	25% 50% 75% 100%
+>      114999 	26.1243 5.01207 15 	23 	25 	29 	51
+>      ```
+>
+> > <question-title> </question-title>
+> >
+> > 1. Which of these two Olympics game had the youngest contestants on average?
+> > 2. What was the age of the oldest contestant in each Olympics?
+> >
+> > > <solution-title></solution-title>
+> > > 1. The 2008 Summer Olympics. Compare the *mean* of each output. For the 2010 Winter games this was 26.1243, and for the 2008 Summer games it was 25.7341
+> > > 2. The value of the 100th percentile indicates the highest value encountered. For 2008 this was 67 year, for 2010 it was 51.
+> > >
+> > {: .solution}
+> {: .question}
+>
 {: .hands_on}
+
+This is great, we know know some summary statistics for the age distribution of the Olympics. Let's see if we can also create a visual representation.
+
 
 ### Create a histogram
 
+A picture is worth a 1000 words, so let's see if we can plot the age distribution as well.
+We already created a boxplot before, let's try a histogram this time. We will also use a tool rather than a Galaxy visualisation,
+so that we get an output file with the plot in our history.
 
-### Optional exercise: find the top-5 oldest and youngest athletes
+The tool we are goint to use for this is **Histogram with ggplot2** {% icon tool %}. This tool will plot every compatible column in the
+input dataset. Since we are only interested in the age column, we will extract this colum first, and then plot it.
 
-### Optional section: Use R-studio to create the histogram
+In order to make it easier to compare
 
-TODO
+> <hands-on-title> Create a Histogram Plot </hands-on-title>
+>
+> 1. {% tool [Remove columns - by heading](toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0) %} with the following parameters:
+>    - {% icon param-collection %} *"Tabular file"*: output from **Compute** {% icon tool %} (collection)
+>    - *"Header name"*: `age`
+>    - {% icon param-toggle %} *"Keep named columns"*: `Yes`
+>
+> 2. **View** {% icon galaxy-eye %} the outputs
+>    - make sure the output is as expected (a file containing only the age column)
+>
+> 3. {% tool [Histogram with ggplot2](toolshed.g2.bx.psu.edu/repos/devteam/histogram/histogram_rpy/1.0.5) %} with the following parameters:
+>    - *"Plot title"*: enter a good title, e.g. `Age distribution of athletes`
+>    - *"Label for x axis"*: `Age`
+>    - *"Label for y axis"*: `Count`
+>    - *"Bin width for plotting"*: `1`
+>
+> 4. **View** {% icon galaxy-eye %} the resulting plots side by side using the **Window Manager** {% icon galaxy-scratchbook %}
+>
+>    {% snippet faqs/galaxy/features_scratchbook.md %}
+>
+{: .hands_on}
+
+
+The Window Manager is an easy way to quickly compare two datasets.
+
+![the histograms side by side]({% link topics/introduction/images/galaxy-intro-rdm/histogram-scratchbook.png %})
+
+But this doesn't scale to a large number of datasets. So as the final step of our analysis, let's create a montage of our histograms.
+
+
+> <hands-on-title> Create a montage of plots </hands-on-title>
+>
+> 1. {% tool [**Image Montage** - with ImageMagick](toolshed.g2.bx.psu.edu/repos/bgruening/imagemagick_image_montage/imagemagick_image_montage/7.1.2-2+galaxy1) %} with the following parameters
+>    - {% icon param-collection %} *"Image"*: Output from **Histogram** {% icon tool %}
+>    - *"# of images wide"*: `2`
+>    - *"Add a Title to the image"*: `Age distribution of athletes in Olympic Games`
+>    - *"Add the name of the files as image labels."*: `Yes`
+>    - *"Point size of the labels and/or title"*: `60`
+>
+{: .hands_on}
+
+
+![montage of histograms]({% link topics/introduction/images/galaxy-intro-rdm/montage.png %})
+
+
+Awesome, we now have a pretty good answer to our question. We have some basic summary statistics for each Olympics, and a montage of histogram plots.
+
+Note that we chose our montage to be 2 images wide because we only had 2, but when we run it on more datasets at once we might want to change this. We will do this later.
+
+Next, we would like to repeat all this for **all** Olympic games.
+
+### Extract workflow from our history
+
+To make it easy to repeat this entire analysis, we will create a **workflow** based on our current history.
+
+> <hands-on-title>Extract workflow from history </hands-on-title>
+>
+> 1. **Clean up** your history: remove any failed (red) jobs from your history by clicking the {% icon galaxy-delete %} button.
+>
+>    This will make the creation of the workflow easier.
+>
+> 2. Click {% icon galaxy-history-options %} (**History options**) at the top of your history panel and select **Extract workflow**.
+>
+>    !['Extract Workflow' entry in the history options menu]({% link topics/introduction/images/galaxy-intro-rdm/extract-wf.png %})
+>
+>    The central panel will show the content of the history in reverse order (oldest on top), and you will be able to choose which steps to include in the workflow.
+>
+>    ![Selection of steps for Extract Workflow from history.]({% link topics/introduction/images/galaxy-intro-rdm/workflow-extract.png %})
+>
+> 3. Replace the **Workflow name** to something more descriptive, for example: `Olympic Age distribution`.
+>
+> 4. Here you can also uncheck any steps you do not with to include
+>
+> 5. Click the **Create Workflow** button near the top.
+>
+>    You will get a message that the workflow was created.
+>
+{: .hands_on}
+
+Next, we will run this workflow on *all* Olympic games
+
+
+### Run workflow on all Olympics
+
+
+> <hands-on-title>New history</hands-on-title>
+>
+> 1. **Create** a new history
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>
+> 2. **Rename** {% icon galaxy-pencil %} your history, *e.g.* "All Olympics"
+>
+>    {% snippet faqs/galaxy/histories_rename.md %}
+>
+> 3. **Upload** the zip file with all olympic datasets from Zenodo
+>
+>    ```
+>    https://zenodo.org/records/18803585/files/olympics-all.zip
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+> 4. {% tool [**Unzip** - a file](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Input file"*: `olympics-all.zip`
+>
+> > <question-title> </question-title>
+> >
+> > 1. How many Olympic games do we have data for?
+> >
+> > > <solution-title></solution-title>
+> > > 1. Our collection contains 51 datasets, one per Olympics
+> > {: .solution}
+> {: .question}
+>
+{: .hands_on}
+
+
+Next, let's view the workflow in the workflow editor
+
+> <hands-on-title>View the workflow in the editor</hands-on-title>
+>
+> 1. Click the {% icon galaxy-workflows-activity %} **Workflows** activity in the activity bar.
+>
+>    Here you have a list of all your workflows _(the **My Workflows** tab is active by default)_.
+>
+>    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflows.png %})
+>
+>    You can see all available actions for the workflow on the workflow card, e.g. edit, copy, rename, share etc. Any other options (e.g.: delete, export etc.) are available by clicking the {% icon galaxy-dropdown %} **Workflow actions** button on the top right of the card.
+>
+> 2. Click the {% icon galaxy-wf-edit %} (*Edit*) button on the bottom right of the workflow card.
+>
+> 3. Play around with the editor
+>    - you can move boxes around
+>    - you can add tools and make connections between tools
+>    - you can click on a tool and change parameters
+>
+>    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
+>
+>    We will only make 1 change: since we will have many more histograms, lets make the montage image 4 plots wide
+>
+> 4. Click on the Montage tool
+>    - a panel with the tool's configuration will open on the right
+>    - change the value for **# of images wide** to 4
+>
+>     ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor-parameter.png %})
+>
+> 5. **Save** {% icon dataset-save %} the workflow via the {% icon dataset-save %} icon at the top right
+>
+> 6. Exit the editor by clicking on the Home button (Galaxy logo) at the left of the top menu bar
+>
+{: .hands_on}
+
+
+Now it's time to run our workflow
+
+> <hands-on-title>Run the workflow</hands-on-title>
+>
+> 1. Click the {% icon galaxy-workflows-activity %} **Workflows** activity in the activity bar.
+>
+> 2. Click the {% icon workflow-run %} (*Run workflow*) button on the bottom right of the workflow card.
+>
+>    The central panel will change to allow you to configure and launch the workflow.
+>
+>    ![workflow run menu]({% link topics/introduction/images/galaxy-intro-rdm/workflow-run.png %})
+>
+> 3. Make sure the input of the workflow is our collection with 51 datasets.
+>
+> 4. Click **Run Workflow** {% icon workflow-run %} at top right
+>    - You will now see the *workflow invocation* screen
+>    - Here you can see the progress of the workflow
+>    - You can find all your previous workflow runs (invocations) in the Activity bar under Workflow Invocations {% icon galaxy-panelview %}
+>
+>    ![workflow invocation]({% link topics/introduction/images/galaxy-intro-rdm/workflow-invocation.png %})
+>
+{: .hands_on}
+
+Our analysis will now be run on all 51 olympics files. This may take a bit of time (~5-10 minutes or more depending on how busy Galaxy is at the moment), so now is a good time to **grab a coffee**. You can also already proceed to the next section while you wait.
+
+Once your workflow is finished, you should get a final montage image with 51 histograms
+
+![final montage image]({% link topics/introduction/images/galaxy-intro-rdm/montage-all.png %})
+
 
 
 ## Preserve: Export data, history, and workflow
