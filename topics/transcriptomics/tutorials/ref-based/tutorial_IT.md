@@ -1713,9 +1713,10 @@ Se è presente una variazione indesiderata (ad esempio effetti di batch), è sem
     2. Heatmap della matrice delle distanze campione-campione (con clustering) basata sui conteggi normalizzati.
 
        La heatmap fornisce una panoramica delle somiglianze e delle differenze tra i campioni: il colore rappresenta la distanza tra i campioni. Il blu scuro indica una distanza minore, cioè campioni più simili in base ai conteggi normalizzati
+
        > <question-title></question-title>
        > 
-       > ![Heatmap delle distanze campione-campione](../../images/ref-based/deseq2_sample_dample_distance_heatmap.png "Heatmap delle distanze campione-campione")
+       > ![Heatmap delle distanze campione-campione](../../images/ref-based/deseq2_sample_sample_distance_heatmap.png "Heatmap delle distanze campione-campione")
        > 
        > Come sono raggruppati i campioni?
        > 

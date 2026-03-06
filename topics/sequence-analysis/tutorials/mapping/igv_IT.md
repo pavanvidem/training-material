@@ -34,7 +34,7 @@ Le letture hanno una direzione: sono mappate, rispettivamente, sul filamento ava
 > 
 >    ![Seleziona genoma in IGV](../../images/igv_select_genome.png "Seleziona genoma in IGV")
 > 
-> Una descrizione generale dell'interfaccia utente del browser IGV è disponibile qui: [Descrizione del browser IGV]({% link argomenti/introduzione/tutorial/igv-introduzione/tutorial.md %})
+> Una descrizione generale dell'interfaccia utente del browser IGV è disponibile qui: [Descrizione del browser IGV]({% link topics/introduction/tutorials/igv-introduction/tutorial.md %})
 > 
 {: .comment}
 
