@@ -18,7 +18,7 @@ contributions:
 
 Aber was bedeutet dieser Qualitätswert?
 
-Der Qualitätsscore für jede Sequenz ist eine Zeichenkette, eine für jede Base der Nukleotidsequenz, um die Wahrscheinlichkeit einer falschen Identifizierung jeder Base zu charakterisieren. Der Score wird unter Verwendung der ASCII-Zeichentabelle (mit [einigen historischen Unterschieden] (https://en.wikipedia.org/wiki/FASTQ_format#Encoding)) kodiert:
+Der Qualitätsscore für jede Sequenz ist eine Zeichenkette, eine für jede Base der Nukleotidsequenz, um die Wahrscheinlichkeit einer falschen Identifizierung jeder Base zu charakterisieren. Der Score wird unter Verwendung der ASCII-Zeichentabelle (mit [einigen historischen Unterschieden](https://en.wikipedia.org/wiki/FASTQ_format#Encoding)) kodiert:
 
 Um Platz zu sparen, zeichnet der Sequenzer ein [ASCII-Zeichen](http://drive5.com/usearch/manual/quality_score.html) auf, um die Punktzahlen 0-42 darzustellen. Zum Beispiel entspricht 10 einem "+" und 40 einem "I". FastQC weiß, wie dies zu übersetzen ist. Dies wird oft als "Phred"-Bewertung bezeichnet.
 
