@@ -1,5 +1,5 @@
 ---
-title: Qualitätswerte
+title: "Qualitätswerte"
 area: format
 box_type: details
 layout: faq
