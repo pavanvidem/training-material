@@ -10,7 +10,6 @@
 > 2. Wenn Sie nicht über IGV verfügen
 >     1. Klicken Sie auf `Mouse mm10` (oder den richtigen Organismus) in `display with IGV`, um die Reads in den IGV-Browser zu laden
 > 4. Zoom auf die `{{ include.region_to_zoom }}`
-> 
 {: .hands_on}
 
 Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstrang abgebildet. Wenn Sie den Mauszeiger über einen Read bewegen, werden zusätzliche Informationen angezeigt
@@ -20,12 +19,10 @@ Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstr
 > 1. Was könnte es bedeuten, wenn ein Balken in der Abdeckungsansicht farbig ist?
 > 2. Was könnte der Grund dafür sein, dass eine Anzeige weiß statt grau ist?
 > 
-> > <lösungs-title></lösungs-title>
+> > <solution-title></solution-title>
 > > 1. Wenn ein Nukleotid in mehr als 20% der qualitätsgewichteten Reads von der Referenzsequenz abweicht, färbt IGV den Balken im Verhältnis zur Anzahl der Reads jeder Base.
 > > 2. Sie haben eine Abbildungsqualität gleich Null. Die Interpretation dieser Mapping-Qualität hängt vom Mapping-Aligner ab, da einige häufig verwendete Aligner diese Konvention verwenden, um einen Read mit mehreren Alignments zu markieren. In einem solchen Fall wird der Read auch auf eine andere Stelle mit gleich guter Platzierung abgebildet. Es ist auch möglich, dass der Read nicht eindeutig platziert werden kann, aber die anderen Platzierungen nicht unbedingt gleichwertige Treffer ergeben.
-> > 
 > {: .solution }
-> 
 {: .question}
 
 > <comment-title>Tipps für IGV</comment-title>
@@ -35,7 +32,6 @@ Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstr
 >    ![Genom in IGV auswählen](../../images/igv_select_genome.png "Genom in IGV auswählen")
 > 
 > Eine allgemeine Beschreibung der Benutzeroberfläche des IGV-Browsers finden Sie hier: [IGV Browser Beschreibung]({% link topics/introduction/tutorials/igv-introduction/tutorial.md %})
-> 
 {: .comment}
 
 

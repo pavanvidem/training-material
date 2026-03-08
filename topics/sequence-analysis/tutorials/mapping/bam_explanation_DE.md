@@ -1,6 +1,6 @@
 Eine BAM-Datei ([Binary Alignment Map](https://en.wikipedia.org/wiki/SAM_(file_format))) ist eine komprimierte Binärdatei, in der die Lesesequenzen gespeichert sind und in der angegeben ist, ob sie an eine Referenzsequenz (z. B. ein Chromosom) angeglichen wurden, und wenn ja, an welcher Position auf der Referenzsequenz sie angeglichen wurden.
 
-> <hands-on-title>Inspect a BAM/SAM file</hands-on-title>
+> <hands-on-title>Inspektion einer BAM/SAM-Datei</hands-on-title>
 > 
 > 1. Untersuchen Sie die {% icon param-file %} Ausgabe von **{{ include.mapper }}** {% icon tool %}
 > 
@@ -30,12 +30,9 @@ Eine BAM-Datei (oder eine SAM-Datei, die nicht komprimierte Version) besteht aus
 > 1. Welche Informationen finden Sie in einer SAM/BAM-Datei?
 > 2. Was sind die zusätzlichen Informationen im Vergleich zu einer FASTQ-Datei?
 > 
-> > <lösungs-title></lösungs-title>
+> > <solution-title></solution-title>
 > > 1. Sequenzen und Qualitätsinformationen, wie ein FASTQ
 > > 2. Mapping-Informationen, Position des Read auf dem Chromosom, Mapping-Qualität, etc
-> > 
 > {: .solution }
-> 
 {: .question}
-
 

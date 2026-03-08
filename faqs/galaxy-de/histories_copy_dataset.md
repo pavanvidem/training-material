@@ -25,9 +25,12 @@ Es gibt 3 Möglichkeiten, Datensätze zwischen Historien zu kopieren
 
     1. Klicken Sie auf das Symbol {% icon galaxy-gear %}, das sich am Anfang der Liste der Datensätze im Verlaufsfenster befindet
     2. Klicken Sie auf **Datensätze kopieren**
-    3. Wählen Sie die gewünschten Dateien {% if include.history_name %}
-    4. "Neuer Verlauf mit dem Namen:" `{{ include.history_name }}` {% else %}
-    4. Geben Sie der "Neuen Historie" einen passenden Namen {% endif %}
+    3. Wählen Sie die gewünschten Dateien
+    {% if include.history_name %}
+    4. "Neuer Verlauf mit dem Namen:" `{{ include.history_name }}`
+    {% else %}
+    4. Geben Sie der "Neuen Historie" einen passenden Namen
+    {% endif %}
     5. Validieren durch 'Kopieren von Verlaufsdaten'
     5. Klicken Sie auf den neuen Namen der Historie in dem grünen Feld, das gerade erschienen ist, um zu dieser Historie zu wechseln
 

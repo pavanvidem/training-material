@@ -41,24 +41,25 @@ follow_up_training:
   - rna-seq-genes-to-pathways
 contributions:
   authorship:
-  - bebatut
-  - malloryfreeberg
-  - moheydarian
-  - erxleben
-  - pavanvidem
-  - blankclemens
-  - mblue9
-  - nsoranzo
-  - pvanheus
-  - lldelisle
+    - bebatut
+    - malloryfreeberg
+    - moheydarian
+    - erxleben
+    - pavanvidem
+    - blankclemens
+    - mblue9
+    - nsoranzo
+    - pvanheus
+    - lldelisle
   editing:
-  - hexylena
-  - clsiguret
+    - hexylena
+    - clsiguret
   translation:
-  - Tillsa
-  - unode
+    - Tillsa
+    - unode
   funding:
-  - biont
+    - deNBI
+    - biont
 recordings:
 - youtube_id: AeiW3IItO_c
   speakers:
@@ -102,20 +103,20 @@ In diesem Tutorial wird die Analyse der Genexpressionsdaten Schritt für Schritt
 
 Jede Probe ist ein separates biologisches Replikat der entsprechenden Bedingung (behandelt oder unbehandelt). Außerdem stammen zwei der behandelten und zwei der unbehandelten Proben aus einem Paired-End-Sequenzierungsassay, während die übrigen Proben aus einem Single-End-Sequenzierungsexperiment stammen.
 
-> <comment-title>Full data</comment-title>
->
+> <comment-title>Vollständige Daten</comment-title>
+> 
 > Die Originaldaten sind im NCBI Gene Expression Omnibus (GEO) unter der Zugriffsnummer [GSE18508](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18508) verfügbar. Die RNA-Seq-Rohdaten wurden aus den Dateien des Sequence Read Archive (SRA) extrahiert und in FASTQ-Dateien umgewandelt.
->
+> 
 {: .comment}
 
 >
 > <agenda-title></agenda-title>
 >
 > In diesem Tutorium werden wir uns mit folgenden Themen beschäftigen:
->
+> 
 > 1. TOC
 > {:toc}
->
+> 
 {: .agenda}
 
 # Daten hochladen
@@ -209,18 +210,16 @@ Leider unterstützt die aktuelle Version von MultiQC (das Tool, das wir zum Komb
 >    > > <solution-title></solution-title>
 >    > >
 >    > > Die Leselänge der beiden Paare beträgt 37 bp.
->    > >
+>    > > 
 >    > {: .solution}
 >    {: .question}
->
+> 
 >    Da es mühsam ist, alle diese Berichte einzeln zu prüfen, werden wir sie mit {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %} kombinieren.
->
+> 
 > 4. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.24.1+galaxy0) %} um die Falco-Berichte mit den folgenden Parametern zu aggregieren:
 >    - In *"Results "*:
 >        - *"Ergebnisse "*
->            - *"Mit welchem Tool wurden die Protokolle erstellt? "*: `FastQC`
->
->              **Falco** ist ein einfacher Ersatz für *FastQC* und wir können seine Ausgabe an MultiQC weitergeben, als ob sie von dem ursprünglichen Tool erzeugt worden wäre.
+>            - *"Mit welchem Tool wurden die Protokolle erstellt? "*: `FastQC` (**Falco** ist ein einfacher Ersatz für *FastQC* und wir können seine Ausgabe an MultiQC weitergeben, als ob sie von dem ursprünglichen Tool erzeugt worden wäre.)
 >                - In *"FastQC output "*:
 >                    - {% icon param-repeat %} *"FastQC-Ausgabe einfügen "*
 >                        - {% icon param-collection %} *"FastQC-Ausgabe "*: `Falco on collection N: RawData` (Ausgabe von **Falco** {% icon tool %})
@@ -288,9 +287,7 @@ Wir sollten die Reads trimmen, um Basen zu entfernen, die mit hoher Unsicherheit
 >    - In *"Additional outputs to generate "*
 >       - Auswählen: `Report: Cutadapt's per-adapter statistics. You can use this file with MultiQC.`
 >
->
->    {% snippet topics/sequence-analysis/tutorials/quality-control/trimming_question_DE.md %}
->
+>      {% include topics/sequence-analysis/tutorials/quality-control/trimming_question_DE.md %}
 >
 > 2. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %} um die Cutadapt-Berichte mit den folgenden Parametern zu aggregieren:
 >    - In *"Results "*:
@@ -304,14 +301,12 @@ Wir sollten die Reads trimmen, um Basen zu entfernen, die mit hoher Unsicherheit
 >    > 2. Wie viele Basenpaare wurden aufgrund schlechter Qualität aus den Forward Reads entfernt? Und aus den Reverse-Reads?
 >    >
 >    > > <solution-title></solution-title>
->    > >
->    > > 1. 147.810 (1,4%) Reads waren zu kurz für `GSM461177_untreat_paired` und 1.101.875 (9%) für `GSM461180_treat_paired`. ![Cutadapt Filtered reads](../../images/ref-based/cutadapt_filtered_reads_plot.png "Cutadapt Filtered reads")
+>    > > 
+>    > > 1. 147.810 (1,4%) Reads waren zu kurz für `GSM461177_untreat_paired` und 1.101.875 (9%) für `GSM461180_treat_paired`.
+>    > >    ![Cutadapt Filtered reads](../../images/ref-based/cutadapt_filtered_reads_plot.png "Cutadapt Filtered reads")
 >    > > 2. Die MultiQC-Ausgabe gibt nur den Anteil der insgesamt getrimmten Bp an, nicht für jeden einzelnen Read. Um diese Information zu erhalten, müssen Sie auf die einzelnen Berichte zurückgreifen. Für `GSM461177_untreat_paired` wurden 5.072.810 bp von den Forward Reads (Read 1) und 8.648.619 bp von den Reverse Reads (Read 2) aus Qualitätsgründen abgeschnitten. Für `GSM461180_treat_paired` wurden 10.224.537 bp aus den Forward Reads und 51.746.850 bp aus den Reverse Reads entfernt. Dies ist keine Überraschung; wir haben gesehen, dass am Ende der Reads die Qualität bei den Reverse Reads stärker abnimmt als bei den Forward Reads, insbesondere bei `GSM461180_treat_paired`.
->    > >
 >    > {: .solution }
->    >
 >    {: .question}
->
 {: .hands_on}
 
 # Mapping
@@ -321,7 +316,6 @@ Um aus den Reads einen Sinn zu machen, müssen wir zunächst herausfinden, woher
 > <comment-title></comment-title>
 >
 > Möchten Sie mehr über die Prinzipien des Mappings erfahren? Folgen Sie unserem [training]({% link topics/sequence-analysis/tutorials/mapping/tutorial.md %}).
->
 {: .comment}
 
 In dieser Studie haben die Autoren *Drosophila melanogaster*-Zellen verwendet. Wir sollten daher die qualitätskontrollierten Sequenzen auf das Referenzgenom von *Drosophila melanogaster* abbilden.
@@ -368,8 +362,8 @@ Daher können sie nicht einfach auf das Genom zurückgemappt werden, wie wir es 
 
 Wir werden unsere Reads mit Hilfe von **STAR** ({% cite dobin2013star %}) auf das Genom von *Drosophila melanogaster* mappen.
 
-> <hands-on-title>Spliced mapping</hands-on-title>
->
+> <hands-on-title>Gespleißtes Mapping</hands-on-title>
+> 
 > 1. Importieren Sie die Ensembl-Gen-Annotation für *Drosophila melanogaster* (`Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`) aus der Shared Data-Bibliothek, falls verfügbar, oder von [Zenodo]({{ page.zenodo_link }}/files/Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz) in Ihre aktuelle Galaxy-History
 >
 >    ```text
@@ -385,9 +379,8 @@ Wir werden unsere Reads mit Hilfe von **STAR** ({% cite dobin2013star %}) auf da
 >    >
 >    > Um diese spezielle Datei zu erstellen, wurde die Annotationsdatei von Ensembl heruntergeladen, das eine umfassendere Datenbank von Transkripten bereitstellt, und wurde weiter angepasst, damit sie mit dem dm6-Genom funktioniert, das auf kompatiblen Galaxy-Servern installiert ist.
 >    >
->    >
 >    {: .comment}
->
+> 
 > 2. {% tool [RNA STAR](toolshed.g2.bx.psu.edu/repos/iuc/rgrnastar/rna_star/2.7.11a+galaxy0) %} mit den folgenden Parametern, um Ihre Reads auf das Referenzgenom zu mappen:
 >    - *"Single-end oder paired-end reads "*: `Paired-end (as collection)`
 >       - {% icon param-collection %} *"RNA-Seq FASTQ/FASTA paired reads "*: die `Cutadapt on collection N: Reads` (Ausgabe von **Cutadapt** {% icon tool %})
@@ -395,9 +388,7 @@ Wir werden unsere Reads mit Hilfe von **STAR** ({% cite dobin2013star %}) auf da
 >       - *"Referenzgenom mit oder ohne Annotation "*: `use genome reference without builtin gene-model but provide a gtf`
 >           - *"Referenzgenom auswählen "*: `Fly (Drosophila melanogaster): dm6 Full`
 >           - {% icon param-file %} *"Genmodell (gff3,gtf) Datei für Spleißverbindungen "*: die importierte `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
->           - *"Länge der genomischen Sequenz um annotierte Kreuzungen "*: `36`
->
->             Dieser Parameter sollte Länge der Reads - 1 sein
+>           - *"Länge der genomischen Sequenz um annotierte Kreuzungen "*: `36` (Dieser Parameter sollte Länge der Reads - 1 sein)
 >                - *"Ausgabe pro Gen/Transkript "*: `Per gene read counts (GeneCounts)`
 >    - *"Compute coverage "*:
 >       - `Yes in bedgraph format`
@@ -424,17 +415,15 @@ Wir werden unsere Reads mit Hilfe von **STAR** ({% cite dobin2013star %}) auf da
 >    > >    ![STAR Alignment Scores](../../images/ref-based/star_alignment_plot.png "Alignment scores")
 >    > >
 >    > >    Wir hätten bei der minimalen Leselänge strenger sein können, um diese nicht gemappten Reads aufgrund ihrer Länge zu vermeiden.
->    > >
 >    > {: .solution}
 >    {: .question}
->
 {: .hands_on}
 
 Dem **MultiQC**-Bericht zufolge werden etwa 80 % der Reads für beide Proben genau einmal auf das Referenzgenom abgebildet. Wir können mit der Analyse fortfahren, da nur Prozentsätze unter 70% auf mögliche Kontaminationen untersucht werden sollten. Beide Proben weisen einen geringen Prozentsatz (weniger als 10 %) von Reads auf, die an mehreren Stellen des Referenzgenoms gemappt wurden. Dies liegt im normalen Bereich für Illumina Short-Read-Sequenzierung, kann aber bei neueren Long-Read-Sequenzierungsdatensätzen, die größere wiederholte Regionen im Referenzgenom umfassen können, niedriger sein und wird bei 3'-End-Bibliotheken höher sein.
 
 Die Hauptausgabe von **STAR** ist eine BAM-Datei.
 
-{% include topics/sequence-analysis/tutorials/mapping/bam_explanation.md mapper="RNA STAR" %}
+{% include topics/sequence-analysis/tutorials/mapping/bam_explanation_DE.md mapper="RNA STAR" %}
 
 ## Inspektion der Mapping-Ergebnisse
 
@@ -451,12 +440,11 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 >    > <comment-title></comment-title>
 >    >
 >    > Damit dieser Schritt funktioniert, müssen Sie entweder IGV oder [Java Web Start](https://www.java.com/en/download/faq/java_webstart.xml) auf Ihrem Rechner installiert haben. Die Fragen in diesem Abschnitt können jedoch auch durch die Betrachtung der IGV-Screenshots unten beantwortet werden.
+>    > 
+>    > Weitere Informationen finden Sie in der [IGV-Dokumentation](https://software.broadinstitute.org/software/igv/AlignmentData).
 >    >
->    > Weitere Informationen finden Sie in der [IGV-Dokumentation] (https://software.broadinstitute.org/software/igv/AlignmentData).
->    >
-> >
-> {: .comment}
->
+>    {: .comment}
+> 
 > 6. **IGV** {% icon tool %}: Zoom auf `chr4:540,000-560,000` (Chromosom 4 zwischen 540 kb und 560 kb)
 >
 >    > <question-title></question-title>
@@ -471,11 +459,9 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 >    > > 1. Der Coverage Plot: die Summe der gemappten Reads an jeder Position
 >    > > 2. Sie kennzeichnen Kreuzungsereignisse (oder Spleißstellen), *d.h.* Reads, die über ein Intron gemappt werden
 >    > >
-> > >
-> > {: .solution}
-> >
-> {: .question}
->
+>    > {: .solution}
+>    {: .question}
+> 
 > 7. **IGV** {% icon tool %}: Untersuchen Sie die Spleißverbindungen mithilfe eines **Sashimi-Plots**
 >
 >    > <comment-title>Erstellung eines Sashimi-Plots</comment-title>
@@ -483,35 +469,30 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 >    > - Rechtsklick auf die BAM-Datei (in IGV)
 >    > - Wählen Sie **Sashimi Plot** aus dem Menü
 >    >
-> >
-> {: .comment}
->
-> >
-> > <question-title></question-title>
-> >
-> > ![Screenshot eines Sashimi-Plots von Chromosom 4](../../images/transcriptomics_images/star_igv_sashimi.png "Screenshot eines Sashimi-Plots von Chromosom 4")
-> >
-> > 1. Was stellt das vertikale rote Balkendiagramm dar? Was ist mit den Bögen mit Zahlen?
-> > 2. Was bedeuten die Zahlen auf den Bögen?
-> > 3. Warum sehen wir verschiedene gestapelte Gruppen von blauen verknüpften Boxen am unteren Rand?
-> >
-> > > <solution-title></solution-title>
-> > >
-> > > 1. Die Abdeckung für jede Alignment-Spur wird als rotes Balkendiagramm dargestellt. Die Bögen stellen beobachtete Spleißverbindungen dar, *d.h.*, Reads, die Introns überspannen.
-> > > 2. Die Zahlen beziehen sich auf die Anzahl der beobachteten Junction Reads.
-> > > 3. Die verschiedenen Gruppen von verknüpften Kästchen am unteren Rand stellen die verschiedenen Transkripte der Gene an dieser Stelle dar, die in der GTF-Datei vorhanden sind.
-> > >
-> > {: .solution}
-> >
-> {: .question}
->
-> >
-> > <comment-title></comment-title>
-> >
-> > Schauen Sie in der [IGV-Dokumentation zu Sashimi-Plots] (https://software.broadinstitute.org/software/igv/Sashimi) nach, um einige Hinweise zu finden
-> >
-> {: .comment}
->
+>    {: .comment}
+>    > 
+>    > <question-title></question-title>
+>    > 
+>    > ![Screenshot eines Sashimi-Plots von Chromosom 4](../../images/transcriptomics_images/star_igv_sashimi.png "Screenshot eines Sashimi-Plots von Chromosom 4")
+>    > 
+>    > 1. Was stellt das vertikale rote Balkendiagramm dar? Was ist mit den Bögen mit Zahlen?
+>    > 2. Was bedeuten die Zahlen auf den Bögen?
+>    > 3. Warum sehen wir verschiedene gestapelte Gruppen von blauen verknüpften Boxen am unteren Rand?
+>    > 
+>    > > <solution-title></solution-title>
+>    > > 
+>    > > 1. Die Abdeckung für jede Alignment-Spur wird als rotes Balkendiagramm dargestellt. Die Bögen stellen beobachtete Spleißverbindungen dar, *d.h.*, Reads, die Introns überspannen.
+>    > > 2. Die Zahlen beziehen sich auf die Anzahl der beobachteten Junction Reads.
+>    > > 3. Die verschiedenen Gruppen von verknüpften Kästchen am unteren Rand stellen die verschiedenen Transkripte der Gene an dieser Stelle dar, die in der GTF-Datei vorhanden sind.
+>    > > 
+>    > {: .solution}
+>    {: .question}
+>    > 
+>    > <comment-title></comment-title>
+>    > 
+>    > Schauen Sie in der [IGV-Dokumentation zu Sashimi-Plots](https://software.broadinstitute.org/software/igv/Sashimi) nach, um einige Hinweise zu finden
+>    {: .comment}
+> 
 {: .hands_on}
 
 > <details-title>Weitere Prüfung der Datenqualität</details-title>
@@ -549,11 +530,10 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 > >    > Wie hoch ist der Prozentsatz der doppelten Reads für jede Probe?
 > >    >
 > >    > > <solution-title></solution-title>
-> >    > >
-> >    > > Die Probe `GSM461177_untreat_paired` hat 25,9% duplizierte Reads, während `GSM461180_treat_paired` 27,8% hat. {: .solution}
-> > >
-> > {: .question}
-> >
+> >    > > 
+> >    > > Die Probe `GSM461177_untreat_paired` hat 25,9% duplizierte Reads, während `GSM461180_treat_paired` 27,8% hat.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 >
 > Im Allgemeinen wird ein Anteil von bis zu 50% duplizierter Reads als normal angesehen. Unsere beiden Proben sind also in Ordnung.
@@ -591,9 +571,8 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 > >    > > 3. Nach dem Prozentsatz der X+Y-Reads zu urteilen, gehören die meisten Reads zu X und nur wenige zu Y. Das deutet darauf hin, dass es wahrscheinlich nicht viele Gene auf Y gibt, so dass die Proben wahrscheinlich beide weiblich sind.
 > >    > >
 > >    > >    ![Samtools idxstats](../../images/ref-based/samtools-idxstats-xy-plot.png) {: .solution}
-> > >
-> > {: .question}
-> >
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 >
 > #### Genkörperabdeckung
@@ -637,11 +616,10 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 > >    > Wie ist die Abdeckung über die Genkörper hinweg? Gibt es einen Bias der Proben in 3' oder 5'?
 > >    >
 > >    > > <solution-title></solution-title>
-> >    > >
-> >    > > Für beide Proben gibt es eine ziemlich gleichmäßige Abdeckung von den 5'- bis zu den 3'-Enden (trotz etwas Rauschen in der Mitte). Also kein offensichtlicher Bias in beiden Proben. {: .solution}
-> > >
-> > {: .question}
-> >
+> >    > > 
+> >    > > Für beide Proben gibt es eine ziemlich gleichmäßige Abdeckung von den 5'- bis zu den 3'-Enden (trotz etwas Rauschen in der Mitte). Also kein offensichtlicher Bias in beiden Proben.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 >
 > #### Read-Verteilung über Merkmale
@@ -672,15 +650,13 @@ Die BAM-Datei enthält Informationen für alle unsere Reads, was eine Überprüf
 > >    > Was halten Sie von der Read-Verteilung?
 > >    >
 > >    > > <solution-title></solution-title>
-> >    > >
-> >    > > Die meisten Reads werden auf Exons gemappt (>80%), nur ~2% auf Introns und ~5% auf intergene Regionen, was dem entspricht, was wir erwarten. Dies bestätigt, dass es sich bei unseren Daten um RNA-Seq-Daten handelt und dass das Mapping erfolgreich war. {: .solution}
-> > >
-> > {: .question}
-> >
+> >    > > 
+> >    > > Die meisten Reads werden auf Exons gemappt (>80%), nur ~2% auf Introns und ~5% auf intergene Regionen, was dem entspricht, was wir erwarten. Dies bestätigt, dass es sich bei unseren Daten um RNA-Seq-Daten handelt und dass das Mapping erfolgreich war.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 >
 > Nachdem wir nun die Ergebnisse des Read-Mappings überprüft haben, können wir mit der nächsten Phase der Analyse fortfahren.
->
 {: .details}
 
 Nach dem Mapping haben wir nun die Information, wo sich die Reads auf dem Referenzgenom befinden und wie gut sie gemappt wurden. Der nächste Schritt in der RNA-Seq-Datenanalyse ist die Quantifizierung der Anzahl der Reads, die auf genomische Merkmale (Gene, Transkripte, Exons, ...) abgebildet wurden.
@@ -688,7 +664,6 @@ Nach dem Mapping haben wir nun die Information, wo sich die Reads auf dem Refere
 > <comment-title></comment-title>
 >
 > Die Quantifizierung hängt sowohl vom Referenzgenom (der FASTA-Datei) als auch von den zugehörigen Annotationen (der GTF-Datei) ab. Es ist äußerst wichtig, eine Annotationsdatei zu verwenden, die derselben Version des Referenzgenoms entspricht, die Sie für das Mapping verwendet haben (z. B. `dm6` hier), da die chromosomalen Koordinaten von Genen in der Regel zwischen verschiedenen Versionen des Referenzgenoms unterschiedlich sind.
->
 {: .comment}
 
 Hier werden wir uns auf die Gene konzentrieren, da wir diejenigen identifizieren möchten, die aufgrund des Knockdowns des Pasilla-Gens differenziell exprimiert werden.
@@ -719,9 +694,7 @@ Um die Expression einzelner Gene unter verschiedenen Bedingungen (*z.B.* mit ode
 > >    | gene2 - exon3 | 3               |
 > >
 > > 2. Gen1 hat 4 Reads, nicht 5, wegen des Spleißens des letzten Reads (Gen1 - Exon1 + Gen1 - Exon2). Gen2 hat 6 Reads, von denen 3 gespleißt sind.
-> >
 > {: .solution}
->
 {: .question}
 
 Zum Zählen der Anzahl der Reads stehen hauptsächlich zwei Tools zur Verfügung: [**HTSeq-count**](http://htseq.readthedocs.io/en/release_0.9.1/count.html) ({% cite anders2015htseq %}) oder **featureCounts** ({% cite liao2013featurecounts %}). Zusätzlich erlaubt **STAR** das Zählen von Reads während des Mappings: Die Ergebnisse sind identisch mit denen von **HTSeq-count**. Während diese Ausgabe für die meisten Analysen ausreicht, bietet **featureCounts** mehr Anpassungsmöglichkeiten für das Zählen von Reads (minimale Mapping-Qualität, Zählen von Reads anstelle von Fragmenten, Zählen von Transkripten anstelle von Genen usw.).
@@ -750,7 +723,6 @@ Einige Bibliotheksvorbereitungsprotokolle erzeugen sogenannte *stranded* RNA-Seq
 > Je nach Ansatz und je nachdem, ob man eine Single-End- oder eine Paired-End-Sequenzierung durchführt, gibt es mehrere Möglichkeiten, wie man die Ergebnisse der Zuordnung dieser Reads zum Genom interpretieren kann:
 >
 > ![Effects of RNA-Seq library types](../../images/transcriptomics_images/rnaseq_library_type.png "Effects of RNA-Seq library types (Figure adapted from Sailfish documentation)")
->
 {: .details}
 
 Diese Information sollte in den FASTQ-Dateien enthalten sein, fragen Sie Ihre Sequenziereinrichtung! Wenn nicht, versuchen Sie, sie auf der Website zu finden, von der Sie die Daten heruntergeladen haben, oder in der entsprechenden Veröffentlichung.
@@ -761,201 +733,215 @@ Es gibt 4 Möglichkeiten, die Strenge von **STAR**-Ergebnissen abzuschätzen (w�
 
 1. Wir können eine visuelle Inspektion der Read-Stränge auf IGV durchführen (bei Paired-End-Datensätzen ist dies weniger einfach als bei Single-Read-Daten, und wenn Sie viele Proben haben, kann dies schmerzhaft sein).
 
-   > <hands-on-title>Schätzung der Strangigkeit mit IGV für eine Paired-End-Bibliothek</hands-on-title>
-   >
-   > 1. Kehren Sie zu Ihrer IGV-Sitzung zurück und öffnen Sie die BAM-Datei `GSM461177_untreat_paired`.
-   >
-   >    > <tip-title>Wenn Sie es nicht haben</tip-title>
-   >    >
-   >    > Kein Problem, Sie müssen nur die vorherigen Schritte wiederholen:
-   >    >
-   >    > 1. IGV lokal starten
-   >    > 2. Klicken Sie auf die Sammlung `RNA STAR on collection N: mapped.bam` (Ausgabe von **RNA STAR** {% icon tool %})
-   >    > 3. Erweitern Sie die {% icon param-file %} datei `GSM461177_untreat_paired`.
-   >    > 4. Klicken Sie auf das `local` in `display with IGV local D. melanogaster (dm6)`, um die Reads in den IGV-Browser zu laden
-   >    >
-   >    {: .tip}
-   >
-   > 2. **IGV** {% icon tool %}
-   >    1. Zoom auf `chr3R:9,445,000-9,448,000` (Chromosom 3 zwischen 9,445 kb und 9,448 kb), auf der `mapped.bam` Spur
-   >    2. Klicken Sie mit der rechten Maustaste und wählen Sie dann `Color Aligments by` -> `first-in-pair strand`
-   >    3. Rechtsklick und `Squished` auswählen
-   >
-   {: .hands_on}
+    > <hands-on-title>Schätzung der Strangigkeit mit IGV für eine Paired-End-Bibliothek</hands-on-title>
+    > 
+    > 1. Kehren Sie zu Ihrer IGV-Sitzung zurück und öffnen Sie die BAM-Datei `GSM461177_untreat_paired`.
+    > 
+    >    > <tip-title>Wenn Sie es nicht haben</tip-title>
+    >    > 
+    >    > Kein Problem, Sie müssen nur die vorherigen Schritte wiederholen:
+    >    > 
+    >    > 1. IGV lokal starten
+    >    > 2. Klicken Sie auf die Sammlung `RNA STAR on collection N: mapped.bam` (Ausgabe von **RNA STAR** {% icon tool %})
+    >    > 3. Erweitern Sie die {% icon param-file %} datei `GSM461177_untreat_paired`.
+    >    > 4. Klicken Sie auf das `local` in `display with IGV local D. melanogaster (dm6)`, um die Reads in den IGV-Browser zu laden
+    >    > 
+    >    {: .tip}
+    > 
+    > 2. **IGV** {% icon tool %}
+    >    1. Zoom auf `chr3R:9,445,000-9,448,000` (Chromosom 3 zwischen 9,445 kb und 9,448 kb), auf der `mapped.bam` Spur
+    >    2. Klicken Sie mit der rechten Maustaste und wählen Sie dann `Color Aligments by` -> `first-in-pair strand`
+    >    3. Rechtsklick und `Squished` auswählen
+    > 
+    {: .hands_on}
 
-   > <question-title></question-title>
-   >
-   > ![Screenshot der IGV-Ansicht auf ps](../../images/ref-based/group_strand_igv_screenshot.png "Screenshot von IGV auf ps")
-   >
-   > 1. Sind die Reads gleichmäßig auf die beiden Gruppen (NEGATIV und POSITIV) verteilt?
-   > 2. Welcher Art ist der Bibliotheksstrang?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > 1. Ja, wir sehen in beiden Gruppen die gleiche Anzahl von Reads.
-   > > 2. Dies bedeutet, dass die Bibliothek nicht stranded war.
-   > >
-   > > > <comment-title>Wie wäre es, wenn die Bibliothek stranded wäre?</comment-title>
-   > > >
-   > > > ![Screenshot der IGV für stranded vs. non-stranded](../../images/ref-based/group_strand_igv_screenshot_RSvsUS.png "Screenshot der IGV für non-stranded (oben) vs. reverse strand-specific (unten)")
-   > > >
-   > > > Beachten Sie, dass es keinen Read auf der POSITIV-Gruppe für den Rückwärtsstrang gibt. {: .comment} {: .solution} {: .question}
+    > <question-title></question-title>
+    > 
+    > ![Screenshot der IGV-Ansicht auf ps](../../images/ref-based/group_strand_igv_screenshot.png "Screenshot von IGV auf ps")
+    > 
+    > 1. Sind die Reads gleichmäßig auf die beiden Gruppen (NEGATIV und POSITIV) verteilt?
+    > 2. Welcher Art ist der Bibliotheksstrang?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > 1. Ja, wir sehen in beiden Gruppen die gleiche Anzahl von Reads.
+    > > 2. Dies bedeutet, dass die Bibliothek nicht stranded war.
+    > > 
+    > > > <comment-title>Wie wäre es, wenn die Bibliothek stranded wäre?</comment-title>
+    > > > 
+    > > > ![Screenshot der IGV für stranded vs. non-stranded](../../images/ref-based/group_strand_igv_screenshot_RSvsUS.png "Screenshot der IGV für non-stranded (oben) vs. reverse strand-specific (unten)")
+    > > > 
+    > > > Beachten Sie, dass es keinen Read auf der POSITIV-Gruppe für den Rückwärtsstrang gibt. {: .comment} {: .solution} {: .question}
+    > > {: .comment}
+    > {: .solution}
+    {: .question}
 
 2. Alternativ können Sie statt der BAM auch die von **STAR** generierte Strangabdeckung verwenden. Mit **pyGenomeTracks** können wir die Abdeckung auf jedem Strang für jede Probe visualisieren. Dieses Tool verfügt über eine Vielzahl von Parametern, mit denen Sie Ihre Diagramme anpassen können.
 
-   > <hands-on-title>Abschätzung der Strenge mit pyGenometracks aus der STAR-Abdeckung</hands-on-title>
-   >
-   > 1. {% tool [pyGenomeTracks](toolshed.g2.bx.psu.edu/repos/iuc/pygenometracks/pygenomeTracks/3.8+galaxy2) %}:
-   >    - *"Region des Genoms zum Plotten "*: `chr4:540,000-560,000`
-   >    - In *"Include tracks in your plot "*:
-   >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
-   >            - *"Stil des Tracks wählen "*: `Bedgraph track`
-   >                - *"Plot-Titel "*: Sie müssen dieses Feld leer lassen, damit der Titel des Plots der Name der Probe ist.
-   >                - {% icon param-collection %} *"Track file(s) bedgraph format "*: Wählen Sie `RNA STAR on collection N: Coverage Uniquely mapped strand 1`.
-   >                - *"Farbe der Spur "*: Wählen Sie eine Farbe Ihrer Wahl, zum Beispiel blau
-   >                - *"Mindestwert "*: `0`
-   >                - *"Höhe "*: `3`
-   >                - *"Visualisierung des Datenbereichs anzeigen "*: `Yes`
-   >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
-   >            - *"Stil des Tracks wählen "*: `Bedgraph track`
-   >                - *"Plot-Titel "*: Sie müssen dieses Feld leer lassen, damit der Titel des Plots der Name der Probe ist.
-   >                - {% icon param-collection %} *"Track file(s) bedgraph format "*: Wählen Sie `RNA STAR on collection N: Coverage Uniquely mapped strand 2`.
-   >                - *"Farbe der Spur "*: Wählen Sie eine Farbe Ihrer Wahl, die sich von der ersten unterscheidet, z. B. rot
-   >                - *"Mindestwert "*: `0`
-   >                - *"Höhe "*: `3`
-   >                - *"Visualisierung des Datenbereichs anzeigen "*: `Yes`
-   >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
-   >            - *"Stil des Tracks wählen "*: `Gene track / Bed track`
-   >                - *"Plot title "*: `Genes`
-   >                - {% icon param-file %} *"Track-Datei(en) bed oder gtf-Format "*: Wählen Sie `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
-   >                - *"Höhe "*: `5`
-   {: .hands_on}
+    > <hands-on-title>Abschätzung der Strenge mit pyGenometracks aus der STAR-Abdeckung</hands-on-title>
+    > 
+    > 1. {% tool [pyGenomeTracks](toolshed.g2.bx.psu.edu/repos/iuc/pygenometracks/pygenomeTracks/3.8+galaxy2) %}:
+    >    - *"Region des Genoms zum Plotten "*: `chr4:540,000-560,000`
+    >    - In *"Include tracks in your plot "*:
+    >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
+    >            - *"Stil des Tracks wählen "*: `Bedgraph track`
+    >                - *"Plot-Titel "*: Sie müssen dieses Feld leer lassen, damit der Titel des Plots der Name der Probe ist.
+    >                - {% icon param-collection %} *"Track file(s) bedgraph format "*: Wählen Sie `RNA STAR on collection N: Coverage Uniquely mapped strand 1`.
+    >                - *"Farbe der Spur "*: Wählen Sie eine Farbe Ihrer Wahl, zum Beispiel blau
+    >                - *"Mindestwert "*: `0`
+    >                - *"Höhe "*: `3`
+    >                - *"Visualisierung des Datenbereichs anzeigen "*: `Yes`
+    >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
+    >            - *"Stil des Tracks wählen "*: `Bedgraph track`
+    >                - *"Plot-Titel "*: Sie müssen dieses Feld leer lassen, damit der Titel des Plots der Name der Probe ist.
+    >                - {% icon param-collection %} *"Track file(s) bedgraph format "*: Wählen Sie `RNA STAR on collection N: Coverage Uniquely mapped strand 2`.
+    >                - *"Farbe der Spur "*: Wählen Sie eine Farbe Ihrer Wahl, die sich von der ersten unterscheidet, z. B. rot
+    >                - *"Mindestwert "*: `0`
+    >                - *"Höhe "*: `3`
+    >                - *"Visualisierung des Datenbereichs anzeigen "*: `Yes`
+    >        - {% icon param-repeat %} *"Fügen Sie Spuren in Ihren Plot ein "*
+    >            - *"Stil des Tracks wählen "*: `Gene track / Bed track`
+    >                - *"Plot title "*: `Genes`
+    >                - {% icon param-file %} *"Track-Datei(en) bed oder gtf-Format "*: Wählen Sie `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
+    >                - *"Höhe "*: `5`
+    {: .hands_on}
 
-   > <question-title></question-title>
-   >
-   > ![pyGenomeTracks](../../images/ref-based/pyGenomeTracks.png "STAR-Abdeckung für Strang 1 in blau und Strang 2 in rot")
-   >
-   > 1. Um welches Gen handelt es sich? Welcher Strang ist es?
-   > 2. Wie hoch ist die durchschnittliche Abdeckung für jeden Strang?
-   > 3. Wie hoch ist die Strängigkeit der Bibliothek?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > 1. Wir sehen 3 Transkripte namens Thd1-RC, Thd1-RB und Thd1-RA des Gens Thd1. Das Gen befindet sich auf dem Rückwärtsstrang.
-   > > 2. Die Skala geht bei den 4 Profilen auf 1,5-2. Die durchschnittliche Abdeckung sollte etwa 1,2-1,5 betragen
-   > > 3. Wir schließen daraus, dass die Bibliothek nicht stranded ist.
-   > >
-   > > > <comment-title>Wie wäre es, wenn die Bibliothek stranded wäre?</comment-title>
-   > > >
-   > > > ![pyGenomeTracks USvsRS](../../images/ref-based/pyGenomeTracks_USvsRS.png "STAR coverage for strand 1 in blue and strand 2 in red for unstranded and reverse stranded library") Beachten Sie, dass die Abdeckung auf dem Strang 1 für die stranded_PE-Probe sehr niedrig ist, während das Gen vorwärts ist. Dies bedeutet, dass die Bibliothek von stranded_PE rückwärts gestrandet ist. Im Gegensatz dazu ist bei unstranded_PE der Umfang für beide Stränge vergleichbar. {: .comment} {: .solution}
-   >
-   {: .question}
+    > <question-title></question-title>
+    > 
+    > ![pyGenomeTracks](../../images/ref-based/pyGenomeTracks.png "STAR-Abdeckung für Strang 1 in blau und Strang 2 in rot")
+    > 
+    > 1. Um welches Gen handelt es sich? Welcher Strang ist es?
+    > 2. Wie hoch ist die durchschnittliche Abdeckung für jeden Strang?
+    > 3. Wie hoch ist die Strängigkeit der Bibliothek?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > 1. Wir sehen 3 Transkripte namens Thd1-RC, Thd1-RB und Thd1-RA des Gens Thd1. Das Gen befindet sich auf dem Rückwärtsstrang.
+    > > 2. Die Skala geht bei den 4 Profilen auf 1,5-2. Die durchschnittliche Abdeckung sollte etwa 1,2-1,5 betragen
+    > > 3. Wir schließen daraus, dass die Bibliothek nicht stranded ist.
+    > > 
+    > > > <comment-title>Wie wäre es, wenn die Bibliothek stranded wäre?</comment-title>
+    > > > 
+    > > > ![pyGenomeTracks USvsRS](../../images/ref-based/pyGenomeTracks_USvsRS.png "STAR coverage for strand 1 in blue and strand 2 in red for unstranded and reverse stranded library") Beachten Sie, dass die Abdeckung auf dem Strang 1 für die stranded_PE-Probe sehr niedrig ist, während das Gen vorwärts ist. Dies bedeutet, dass die Bibliothek von stranded_PE rückwärts gestrandet ist. Im Gegensatz dazu ist bei unstranded_PE der Umfang für beide Stränge vergleichbar.
+    > > {: .comment}
+    > {: .solution}
+    >
+    {: .question}
 
 3. Sie können die Ausgabe von **STAR** mit den Zählungen verwenden. Wie bereits erläutert, wertet **STAR** die Anzahl der Reads auf den Genen für die drei möglichen Szenarien aus: unstranded library, stranded forward oder stranded reverse. Die Bedingung, die den Genen mehr Reads zuordnet, muss die Bedingung sein, die zu Ihrer Bibliothek passt.
 
-   > <hands-on-title>Schätzung der Strenge mit STAR counts</hands-on-title>
-   >
-   > 1. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %}, um die STAR Counts mit den folgenden Parametern zu aggregieren:
-   >    - In *"Results "*:
-   >        - *"Ergebnisse "*
-   >            - *"Mit welchem Tool wurden die Protokolle erstellt? "*: `STAR`
-   >                - In *"STAR output "*:
-   >                    - {% icon param-repeat %} *"STAR-Ausgabe einfügen "*
-   >                        - *"Art der STAR-Ausgabe? "*: `Gene counts`
-   >                            - {% icon param-collection %} *"STAR gene count output "*: `RNA STAR on collection N: reads per gene` (Ausgabe von **RNA STAR** {% icon tool %})
-   >
-   {: .hands_on}
+    > <hands-on-title>Schätzung der Strenge mit STAR counts</hands-on-title>
+    > 
+    > 1. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %}, um die STAR Counts mit den folgenden Parametern zu aggregieren:
+    >    - In *"Results "*:
+    >        - *"Ergebnisse "*
+    >            - *"Mit welchem Tool wurden die Protokolle erstellt? "*: `STAR`
+    >                - In *"STAR output "*:
+    >                    - {% icon param-repeat %} *"STAR-Ausgabe einfügen "*
+    >                        - *"Art der STAR-Ausgabe? "*: `Gene counts`
+    >                            - {% icon param-collection %} *"STAR gene count output "*: `RNA STAR on collection N: reads per gene` (Ausgabe von **RNA STAR** {% icon tool %})
+    > 
+    {: .hands_on}
 
-   > <question-title></question-title>
-   >
-   > 1. Wie viel Prozent der Reads werden den Genen zugeordnet, wenn die Bibliothek nichtstrandig/gleichsträngig/rückwärtssträngig ist?
-   > 2. Was ist die Strängigkeit der Bibliothek?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > ![STAR Gene counts unstranded](../../images/ref-based/star_gene_counts_unstranded.png "Gene counts unstranded") ![STAR Gene counts same stranded](../../images/ref-based/star_gene_counts_same.png "Gene zählen gleich gestrandet") ![STAR Gene zählen rückwärts gestrandet](../../images/ref-based/star_gene_counts_reverse.png "Gene zählen rückwärts gestrandet")
-   > >
-   > > 1. Etwa 75% der Reads werden den Genen zugeordnet, wenn die Bibliothek nicht stranded ist, während es in den anderen Fällen etwa 40% sind.
-   > > 2. Dies deutet darauf hin, dass die Bibliothek nicht stranded ist.
-   > >
-   > > > <comment-title>Wie wäre es, wenn die Bibliothek gestrandet wäre?</comment-title>
-   > > >
-   > > > ![STAR Gene counts unstranded USvsRS](../../images/ref-based/star_gene_counts_unstranded_USvsRS.png "Gene counts unstranded for unstranded and reverse stranded library") ![STAR Gene counts same stranded USvsRS](../../images/ref-based/star_gene_counts_same_USvsRS.png "Gene counts same stranded for unstranded and reverse stranded library") ![STAR Gene counts reverse stranded USvsRS](../../images/ref-based/star_gene_counts_reverse_USvsRS.png "Gene counts reverse stranded for unstranded and reverse stranded library") Man beachte, dass es sehr wenige Reads gibt, die den Genen für same stranded zugeordnet werden. Die Zahlen sind zwischen unstranded und reverse stranded vergleichbar, da sich nur wenige Gene auf den gegenüberliegenden Strängen überlappen, aber dennoch geht es von 63,6% (unstranded) auf 65% (reverse stranded). {: .comment} {: .solution}
-   >
-   {: .question}
+    > <question-title></question-title>
+    > 
+    > 1. Wie viel Prozent der Reads werden den Genen zugeordnet, wenn die Bibliothek nichtstrandig/gleichsträngig/rückwärtssträngig ist?
+    > 2. Was ist die Strängigkeit der Bibliothek?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > ![STAR Gene counts unstranded](../../images/ref-based/star_gene_counts_unstranded.png "Gene counts unstranded")
+    > > ![STAR Gene counts same stranded](../../images/ref-based/star_gene_counts_same.png "Gene zählen gleich gestrandet")
+    > > ![STAR Gene zählen rückwärts gestrandet](../../images/ref-based/star_gene_counts_reverse.png "Gene zählen rückwärts gestrandet")
+    > > 
+    > > 1. Etwa 75% der Reads werden den Genen zugeordnet, wenn die Bibliothek nicht stranded ist, während es in den anderen Fällen etwa 40% sind.
+    > > 2. Dies deutet darauf hin, dass die Bibliothek nicht stranded ist.
+    > > 
+    > > > <comment-title>Wie wäre es, wenn die Bibliothek gestrandet wäre?</comment-title>
+    > > > 
+    > > > ![STAR Gene counts unstranded USvsRS](../../images/ref-based/star_gene_counts_unstranded_USvsRS.png "Gene counts unstranded for unstranded and reverse stranded library")
+    > > > ![STAR Gene counts same stranded USvsRS](../../images/ref-based/star_gene_counts_same_USvsRS.png "Gene counts same stranded for unstranded and reverse stranded library")
+    > > > ![STAR Gene counts reverse stranded USvsRS](../../images/ref-based/star_gene_counts_reverse_USvsRS.png "Gene counts reverse stranded for unstranded and reverse stranded library") Man beachte, dass es sehr wenige Reads gibt, die den Genen für same stranded zugeordnet werden. Die Zahlen sind zwischen unstranded und reverse stranded vergleichbar, da sich nur wenige Gene auf den gegenüberliegenden Strängen überlappen, aber dennoch geht es von 63,6% (unstranded) auf 65% (reverse stranded).
+    > > {: .comment}
+    > {: .solution}
+    >
+    {: .question}
 
 4. Eine weitere Möglichkeit ist die Schätzung dieser Parameter mit einem Tool namens **Infer Experiment** aus der RSeQC ({% cite wang2012rseqc %}) Tool-Suite.
 
-   Dieses Tool nimmt die BAM-Dateien aus dem Mapping, wählt eine Teilprobe der Reads aus und vergleicht deren Genomkoordinaten und Stränge mit denen des Referenzgenmodells (aus einer Annotationsdatei). Anhand des Strangs der Gene kann es abschätzen, ob die Sequenzierung strangspezifisch ist, und wenn ja, wie die Strängigkeit der Reads sind (vorwärts oder rückwärts).
+    Dieses Tool nimmt die BAM-Dateien aus dem Mapping, wählt eine Teilprobe der Reads aus und vergleicht deren Genomkoordinaten und Stränge mit denen des Referenzgenmodells (aus einer Annotationsdatei). Anhand des Strangs der Gene kann es abschätzen, ob die Sequenzierung strangspezifisch ist, und wenn ja, wie die Strängigkeit der Reads sind (vorwärts oder rückwärts).
 
-   > <hands-on-title>Bestimmung der Strenge der Bibliothek mit dem Infer-Experiment</hands-on-title>
-   >
-   > 1. {% tool [Convert GTF to BED12](toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357) %} um die GTF-Datei in BED zu konvertieren:
-   >    - {% icon param-file %} *"Zu konvertierende GTF-Datei "*: `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
-   >
-   >    Möglicherweise haben Sie diese `BED12`-Datei bereits aus dem `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`-Datensatz konvertiert, wenn Sie den ausführlichen Teil über Qualitätsprüfungen durchgeführt haben. In diesem Fall ist es nicht notwendig, die Konvertierung ein zweites Mal vorzunehmen
-   >
-   > 2. {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %}, um die Strenge der Bibliothek mit den folgenden Parametern zu bestimmen:
-   >    - {% icon param-collection %} *"Eingabe .bam-Datei "*: `RNA STAR on collection N: mapped.bam` (Ausgabe von **RNA STAR** {% icon tool %})
-   >    - {% icon param-file %} *"Referenz-Genmodell "*: BED12-Datei (Ausgabe von **Convert GTF to BED12** {% icon tool %})
-   >    - *"Anzahl der abgetasteten Reads "*: `200000` {: .hands_on}
+    > <hands-on-title>Bestimmung der Strenge der Bibliothek mit dem Infer-Experiment</hands-on-title>
+    > 
+    > 1. {% tool [Convert GTF to BED12](toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357) %} um die GTF-Datei in BED zu konvertieren:
+    >    - {% icon param-file %} *"Zu konvertierende GTF-Datei "*: `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`
+    > 
+    >    Möglicherweise haben Sie diese `BED12`-Datei bereits aus dem `Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`-Datensatz konvertiert, wenn Sie den ausführlichen Teil über Qualitätsprüfungen durchgeführt haben. In diesem Fall ist es nicht notwendig, die Konvertierung ein zweites Mal vorzunehmen
+    > 
+    > 2. {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %}, um die Strenge der Bibliothek mit den folgenden Parametern zu bestimmen:
+    >    - {% icon param-collection %} *"Eingabe .bam-Datei "*: `RNA STAR on collection N: mapped.bam` (Ausgabe von **RNA STAR** {% icon tool %})
+    >    - {% icon param-file %} *"Referenz-Genmodell "*: BED12-Datei (Ausgabe von **Convert GTF to BED12** {% icon tool %})
+    >    - *"Anzahl der abgetasteten Reads "*: `200000`
+    {: .hands_on}
 
-   {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %} tool erzeugt eine Datei mit Informationen über:
-    - Paired-End- oder Single-End-Bibliothek
-    - Anteil der Reads, die nicht bestimmt werden konnten
-    - 2 Zeilen
-        - Für Single-End
-            - `Fraction of reads explained by "++,--"`: der Anteil der Reads, die dem Vorwärtsstrang zugeordnet sind
-            - `Fraction of reads explained by "+-,-+"`: der Anteil der Reads, die dem Rückwärtsstrang zugeordnet sind
-        - Für Paired-End
-            - `Fraction of reads explained by "1++,1--,2+-,2-+"`: der Anteil der Reads, die dem Vorwärtsstrang zugeordnet sind
-            - `Fraction of reads explained by "1+-,1-+,2++,2--"`: der Anteil der Reads, die dem Rückwärtsstrang zugeordnet sind
+    {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %} tool erzeugt eine Datei mit Informationen über:
+     - Paired-End- oder Single-End-Bibliothek
+     - Anteil der Reads, die nicht bestimmt werden konnten
+     - 2 Zeilen
+         - Für Single-End
+             - `Fraction of reads explained by "++,--"`: der Anteil der Reads, die dem Vorwärtsstrang zugeordnet sind
+             - `Fraction of reads explained by "+-,-+"`: der Anteil der Reads, die dem Rückwärtsstrang zugeordnet sind
+         - Für Paired-End
+             - `Fraction of reads explained by "1++,1--,2+-,2-+"`: der Anteil der Reads, die dem Vorwärtsstrang zugeordnet sind
+             - `Fraction of reads explained by "1+-,1-+,2++,2--"`: der Anteil der Reads, die dem Rückwärtsstrang zugeordnet sind
 
-   Wenn die beiden "Fraction of reads explained by"-Zahlen nahe beieinander liegen, schließen wir daraus, dass es sich bei der Bibliothek nicht um einen strangspezifischen Datensatz (oder um einen nicht stranggebundenen Datensatz) handelt.
+    Wenn die beiden "Fraction of reads explained by"-Zahlen nahe beieinander liegen, schließen wir daraus, dass es sich bei der Bibliothek nicht um einen strangspezifischen Datensatz (oder um einen nicht stranggebundenen Datensatz) handelt.
 
-   > <question-title></question-title>
-   >
-   > 1. Was sind die "Fraction of the reads explained by" Ergebnisse für `GSM461177_untreat_paired`?
-   > 2. Glauben Sie, dass der Bibliothekstyp der beiden Proben stranded oder unstranded ist?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > 1. Ergebnisse für `GSM461177_untreat_paired`:
-   > >
-   > >    {% snippet faqs/galaxy-de/analysis_results_may_vary.md %}
-   > >
-   > >    ```text
-   > >    This is PairEnd Data
-   > >    Fraction of reads failed to determine: 0.1013
-   > >    Fraction of reads explained by "1++,1--,2+-,2-+": 0.4626
-   > >    Fraction of reads explained by "1+-,1-+,2++,2--": 0.4360
-   > >    ```
-   > >
-   > >    46,26% der Reads werden also dem Vorwärtsstrang und 43,60% dem Rückwärtsstrang zugeordnet.
-   > >
-   > > 2. Ähnliche Statistiken werden für `GSM461180_treat_paired` gefunden, also scheint die Bibliothek für beide Proben vom Typ unstranded zu sein.
-   > >
-   > > > <comment-title>Wie wäre es, wenn die Bibliothek gestrandet wäre?</comment-title>
-   > > >
-   > > > Nehmen wir weiterhin die 2 BAM als Beispiel, so erhalten wir für die unstranded:
-   > > >
-   > > > ```text
-   > > > This is PairEnd Data
-   > > > Fraction of reads failed to determine: 0.0382
-   > > > Fraction of reads explained by "1++,1--,2+-,2-+": 0.4847
-   > > > Fraction of reads explained by "1+-,1-+,2++,2--": 0.4771
-   > > > ```
-   > > >
-   > > > Und für den Rückwärtsstrang:
-   > > >
-   > > > ```text
-   > > > This is PairEnd Data
-   > > > Fraction of reads failed to determine: 0.0504
-   > > > Fraction of reads explained by "1++,1--,2+-,2-+": 0.0061
-   > > > Fraction of reads explained by "1+-,1-+,2++,2--": 0.9435
-   > > > ```
-   > > >
-   > > {: .comment} {: .solution} {: .question}
+    > <question-title></question-title>
+    > 
+    > 1. Was sind die "Fraction of the reads explained by" Ergebnisse für `GSM461177_untreat_paired`?
+    > 2. Glauben Sie, dass der Bibliothekstyp der beiden Proben stranded oder unstranded ist?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > 1. Ergebnisse für `GSM461177_untreat_paired`:
+    > > 
+    > >    {% snippet faqs/galaxy-de/analysis_results_may_vary.md %}
+    > > 
+    > >    ```text
+    > >    This is PairEnd Data
+    > >    Fraction of reads failed to determine: 0.1013
+    > >    Fraction of reads explained by "1++,1--,2+-,2-+": 0.4626
+    > >    Fraction of reads explained by "1+-,1-+,2++,2--": 0.4360
+    > >    ```
+    > > 
+    > >    46,26% der Reads werden also dem Vorwärtsstrang und 43,60% dem Rückwärtsstrang zugeordnet.
+    > > 
+    > > 2. Ähnliche Statistiken werden für `GSM461180_treat_paired` gefunden, also scheint die Bibliothek für beide Proben vom Typ unstranded zu sein.
+    > > 
+    > > > <comment-title>Wie wäre es, wenn die Bibliothek gestrandet wäre?</comment-title>
+    > > > 
+    > > > Nehmen wir weiterhin die 2 BAM als Beispiel, so erhalten wir für die unstranded:
+    > > > 
+    > > > ```text
+    > > > This is PairEnd Data
+    > > > Fraction of reads failed to determine: 0.0382
+    > > > Fraction of reads explained by "1++,1--,2+-,2-+": 0.4847
+    > > > Fraction of reads explained by "1+-,1-+,2++,2--": 0.4771
+    > > > ```
+    > > > 
+    > > > Und für den Rückwärtsstrang:
+    > > > 
+    > > > ```text
+    > > > This is PairEnd Data
+    > > > Fraction of reads failed to determine: 0.0504
+    > > > Fraction of reads explained by "1++,1--,2+-,2-+": 0.0061
+    > > > Fraction of reads explained by "1+-,1-+,2++,2--": 0.9435
+    > > > ```
+    > > > 
+    > > {: .comment}
+    > {: .solution}
+    {: .question}
 
 > <details-title>Strandness und Softwareeinstellungen</details-title>
 >
@@ -1016,10 +1002,8 @@ Da Sie sich für die featureCounts-Variante des Tutorials entschieden haben, fü
 >    > >
 >    > > 2. Wenn der Prozentsatz unter 50% liegt, sollten Sie untersuchen, wo Ihre Reads gemappt werden (innerhalb von Genen oder nicht, mit IGV) und überprüfen, ob die Annotation der richtigen Referenzgenomversion entspricht.
 >    > >
-> > >
-> > {: .solution}
-> >
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 >
 {: .hands_on}
 
@@ -1037,8 +1021,7 @@ Wie oben geschrieben, hat **STAR** während des Mappings die Reads für jedes in
 > 1. Überprüfen Sie die Zählungen von `GSM461177_untreat_paired` in der Sammlung `RNA STAR on collection N: reads per gene`
 >
 {: .hands_on}
-
->
+> 
 > <question-title></question-title>
 >
 > 1. Wie viele Reads sind unmapped/multi-mapped?
@@ -1076,7 +1059,6 @@ Wir werden die Ausgabe von **STAR** so umformatieren, dass sie der Ausgabe von *
 >    - {% icon param-collection %} *"From "*: `Select last on collection N` (Ausgabe des **Select last** {% icon tool %})
 >
 > 3. Umbenennen der Sammlung `FeatureCount-like files`
->
 {: .hands_on}
 
 Im weiteren Verlauf des Tutorials werden wir die Größe der einzelnen Gene ermitteln müssen. Dies ist eine der Ausgaben von **FeatureCounts**, aber wir können sie auch direkt aus der Genannotationsdatei erhalten. Da diese Datei recht lang ist, empfehlen wir, sie jetzt zu starten.
@@ -1093,10 +1075,8 @@ Im weiteren Verlauf des Tutorials werden wir die Größe der einzelnen Gene ermi
 >    > Dies funktioniert nur mit Version 0.1.2 oder höher
 >    >
 >    > {% snippet faqs/galaxy-de/tools_change_version.md %}
->    >
-> >
-> {: .warning}
->
+>    > 
+>    {: .warning}
 {: .hands_on}
 
 </div>
@@ -1144,14 +1124,10 @@ Im weiteren Verlauf des Tutorials werden wir die Größe der einzelnen Gene ermi
 > >    >    ![Scratchbook two datasets shown](../../images/ref-based/scratchbookTwoDatasetsShown.png "Scratchbook showing two side by side datasets")
 > >    >
 > >    > 5. Um den Scratchbook-Auswahlmodus zu **verlassen**, klicken Sie erneut auf das **Scratchbook-Symbol**. Sie können entscheiden, ob Sie die Fenster schließen oder verkleinern wollen, um sie später anzuzeigen.
-> >    >
-> > >
-> > {: .hands_on}
-> >
-> >
+> >    > 
+> >    {: .hands_on}
 > >
 > {: .solution}
->
 {: .question}
 
 Hier haben wir die Reads gezählt, die den Genen von zwei Proben zugeordnet wurden. Es ist wirklich interessant, dasselbe Verfahren für die anderen Datensätze zu wiederholen, insbesondere um zu prüfen, wie sich die Parameter angesichts der unterschiedlichen Datentypen (single-end versus paired-end) unterscheiden.
@@ -1358,7 +1334,6 @@ Um Proben oder Genexpressionen vergleichen zu können, müssen die Genzahlen nor
 > Mit RPKM oder FPKM ist es schwieriger, den Anteil der gesamten Reads zu vergleichen, da die Summe der normalisierten Reads in jeder Probe unterschiedlich sein kann (4,29 für Probe 1 und 4,25 für Probe 2). Wenn also die RPKM für Gen A in Probe 1 1,43 und in Probe B 1,43 beträgt, wissen wir nicht, ob derselbe Anteil der Reads in Probe 1 auf Gen A abgebildet wird wie in Probe 2.
 >
 > Da es bei RNA-Seq darum geht, den relativen Anteil der Reads zu vergleichen, scheint TPM besser geeignet als RPKM/FPKM.
->
 {: .details}
 
 RNA-Seq wird häufig verwendet, um einen Gewebetyp mit einem anderen zu vergleichen, z. B. Muskelgewebe mit Epithelgewebe. Und es könnte sein, dass viele muskelspezifische Gene im Muskel transkribiert werden, aber nicht im Epithelgewebe. Wir nennen dies einen **Unterschied in der Zusammensetzung der Bibliothek**.
@@ -1386,49 +1361,73 @@ TPM, RPKM oder FPKM berücksichtigen diese Unterschiede in der Bibliothekszusamm
 > <details-title>Normalisierung in DESeq2</details-title>
 >
 > Nehmen wir ein Beispiel, um zu zeigen, wie DESeq2 die verschiedenen Proben skaliert:
->
-> Gen | Probe 1 | Probe 2 | Probe 3 A | 0 | 10 | 4 B | 2 | 6 | 12 C | 33 | 55 | 200
->
+> 
+> Gen | Probe 1 | Probe 2 | Probe 3
+> A | 0 | 10 | 4
+> B | 2 | 6 | 12
+> C | 33 | 55 | 200
+> 
 > Ziel ist es, einen Skalierungsfaktor für jede Probe zu berechnen, der die Lesetiefe und die Zusammensetzung der Bibliothek berücksichtigt.
 >
 > 1. Nehmen Sie den log$$_e$$ aller Werte:
->
->    Gene | log(Probe 1) | log(Probe 2) | log(Probe 3) A | -Inf | 2.3 | 1.4 B | 0.7 | 1.8 | 2.5 C | 3.5 | 4.0 | 5.3
->
+> 
+>     Gene | log(Probe 1) | log(Probe 2) | log(Probe 3)
+>     A | -Inf | 2.3 | 1.4
+>     B | 0.7 | 1.8 | 2.5
+>     C | 3.5 | 4.0 | 5.3
+> 
 > 2. Durchschnitt jeder Zeile:
->
->    Gene | Durchschnitt der log-Werte A | -Inf B | 1.7 C | 4.3
->
->    Der Durchschnitt der logarithmischen Werte (auch geometrischer Durchschnitt genannt) wird hier verwendet, da er nicht so leicht von Ausreißern beeinflusst wird (z. B. Gen C mit seinem Ausreißer bei Probe 3).
->
+> 
+>     Gene | Durchschnitt der log-Werte
+>     A | -Inf
+>     B | 1.7
+>     C | 4.3
+> 
+>     Der Durchschnitt der logarithmischen Werte (auch geometrischer Durchschnitt genannt) wird hier verwendet, da er nicht so leicht von Ausreißern beeinflusst wird (z. B. Gen C mit seinem Ausreißer bei Probe 3).
+> 
 > 3. Herausfiltern von Genen, die den Wert unendlich haben.
->
->    Gen | Durchschnitt der log-Werte | B | 1.7 C | 4.3
->
->    Hier werden Gene herausgefiltert, die in mindestens einer Probe keine Read-Zahlen aufweisen, z. B. Gene, die nur in einem Gewebe transkribiert werden, wie Gen D im vorherigen Beispiel. Dies trägt dazu bei, die Skalierungsfaktoren auf Gene zu konzentrieren, die unabhängig von der Bedingung in ähnlicher Menge transkribiert werden.
->
+> 
+>     Gen | Durchschnitt der log-Werte
+>      |
+>     B | 1.7
+>     C | 4.3
+> 
+>     Hier werden Gene herausgefiltert, die in mindestens einer Probe keine Read-Zahlen aufweisen, z. B. Gene, die nur in einem Gewebe transkribiert werden, wie Gen D im vorherigen Beispiel. Dies trägt dazu bei, die Skalierungsfaktoren auf Gene zu konzentrieren, die unabhängig von der Bedingung in ähnlicher Menge transkribiert werden.
+> 
 > 4. Subtrahieren Sie den durchschnittlichen log-Wert von den log-Zahlen:
->
->    Gene | log(Probe 1) | log(Probe 2) | log(Probe 3) | | | B | -1.0 | 0.1 | 0.8 C | -0.8 | -0.3 | 1.0
->
->    $$log(\textrm{counts for gene X}) - average(\textrm{log values for counts for gene X}) = log(\frac{\textrm{counts for gene X}}{\textrm{average for gene X}})$$
->
->    Dieser Schritt vergleicht das Verhältnis der Zählungen in jeder Probe mit dem Durchschnitt aller Proben.
->
+> 
+>     Gene | log(Probe 1) | log(Probe 2) | log(Probe 3)
+>      | | |
+>     B | -1.0 | 0.1 | 0.8
+>     C | -0.8 | -0.3 | 1.0
+> 
+>     $$log(\textrm{counts for gene X}) - average(\textrm{log values for counts for gene X}) = log(\frac{\textrm{counts for gene X}}{\textrm{average for gene X}})$$
+> 
+>     Dieser Schritt vergleicht das Verhältnis der Zählungen in jeder Probe mit dem Durchschnitt aller Proben.
+> 
 > 5. Berechnen Sie den Median der Verhältnisse für jede Probe:
->
->    Gene | log(Probe 1) | log(Probe 2) | log(Probe 3) | | | B | -1.0 | 0.1 | 0.8 C | -0.8 | -0.3 | 1.0 **Median** | -0.9 | -0.1 | 0.9
->
->    Der Median wird hier verwendet, um zu vermeiden, dass extreme Gene (höchstwahrscheinlich seltene) den Wert zu stark in eine Richtung beeinflussen. Er hilft, mäßig exprimierte Gene stärker zu betonen.
->
+> 
+>     Gene | log(Probe 1) | log(Probe 2) | log(Probe 3)
+>      | | | 
+>     B | -1.0 | 0.1 | 0.8
+>     C | -0.8 | -0.3 | 1.0
+>     **Median** | -0.9 | -0.1 | 0.9
+> 
+>     Der Median wird hier verwendet, um zu vermeiden, dass extreme Gene (höchstwahrscheinlich seltene) den Wert zu stark in eine Richtung beeinflussen. Er hilft, mäßig exprimierte Gene stärker zu betonen.
+> 
 > 6. Berechnen Sie den Skalierungsfaktor, indem Sie den Exponentialwert der Mediane nehmen:
->
->    Gen | Probe 1 | Probe 2 | Probe 3 **Median** | -0.9 | -0.1 | 0.9 **Skalierungsfaktoren** | 0.4 | 0.9 | 2.5
->
+> 
+>     Gen | Probe 1 | Probe 2 | Probe 3
+>     **Median** | -0.9 | -0.1 | 0.9
+>     **Skalierungsfaktoren** | 0.4 | 0.9 | 2.5
+> 
 > 7. Berechnen Sie die normalisierten Zählungen: Teilen Sie die ursprünglichen Zählungen durch die Skalierungsfaktoren:
->
->    Gen | Probe 1 | Probe 2 | Probe 3 A | 0 | 11.11 | 1.6 B | 5 | 6.67 | 4.8 C | 83 | 61.11 | 80
->
+> 
+>     Gen | Probe 1 | Probe 2 | Probe 3
+>     A | 0 | 11.11 | 1.6
+>     B | 5 | 6.67 | 4.8
+>     C | 83 | 61.11 | 80
+> 
 > *Diese Erklärung ist eine Transkription und Anpassung des [StatQuest-Videos zur Erklärung der Bibliotheksnormalisierung in DESEq2](https://www.youtube.com/watch?v=UFB993xufUU&t=35s)*.
 >
 {: .details}
@@ -1526,9 +1525,9 @@ DESeq2 verlangt, dass für jeden Faktor die Anzahl der Proben in jeder Kategorie
 >         - In *"1: Ersetzung "*
 >            - *"Muster finden "*: `(.*)_(.*)_(.*)`
 >            - *"Ersetzen durch "*: `\1_\2_\3\tgroup:\2\tgroup:\3`
->
->    Dieser Schritt erstellt 2 zusätzliche Spalten mit der Art der Behandlung und der Sequenzierung, die mit dem {% tool [Tag elements](__TAG_FROM_FILE__) %} tool verwendet werden können
->
+> 
+>     Dieser Schritt erstellt 2 zusätzliche Spalten mit der Art der Behandlung und der Sequenzierung, die mit dem {% tool [Tag elements](__TAG_FROM_FILE__) %} tool verwendet werden können
+> 
 > 4. Ändern Sie den Datentyp in `tabular`
 >
 >    {% snippet faqs/galaxy-de/datasets_change_datatype.md datatype="tabular" %}
@@ -1538,12 +1537,11 @@ DESeq2 verlangt, dass für jeden Faktor die Anzahl der Proben in jeder Kategorie
 >      - {% icon param-file %} *"Tag collection elements according to this file "*: Ausgabe von **Replace Text** {% icon tool %}
 >
 > 6. Inspizieren Sie die neue Sammlung
->
->    > <tip-title>Sie können die Änderungen nicht sehen?</tip-title>
->    >
->    > Auf den ersten Blick sieht man es vielleicht nicht, da die Namen gleich sind. Wenn Sie jedoch auf einen klicken und dann auf {% icon galaxy-tags %} **Edit dataset tags** klicken, sollten Sie 2 Tags sehen, die mit 'group:' beginnen. Mit diesem Schlüsselwort können Sie diese Tags in **DESeq2** verwenden.
->    >
-> >
+> 
+>     > <tip-title>Sie können die Änderungen nicht sehen?</tip-title>
+>     > 
+>     > Auf den ersten Blick sieht man es vielleicht nicht, da die Namen gleich sind. Wenn Sie jedoch auf einen klicken und dann auf {% icon galaxy-tags %} **Edit dataset tags** klicken, sollten Sie 2 Tags sehen, die mit 'group:' beginnen. Mit diesem Schlüsselwort können Sie diese Tags in **DESeq2** verwenden.
+>     > 
 >     {: .tip}
 >
 {: .hands_on}
@@ -1624,7 +1622,6 @@ DESeq2 verlangt, dass für jeden Faktor die Anzahl der Proben in jeder Kategorie
 >        - *"Filter out identifiers absent from "*: `Search in textfiles on data XXX` (Ausgabe von **Suche in Textdateien** {% icon tool %})
 >
 > 8. Benennen Sie beide Sammlungen in `single` (die gefilterte Sammlung) und `paired` (die verworfene Sammlung) um.
->
 {: .hands_on}
 
 Wir können jetzt **DESeq2** ausführen:
@@ -1696,33 +1693,35 @@ Wir können jetzt **DESeq2** ausführen:
        > >
        > > 1. Die erste Dimension ist die Trennung der behandelten Proben von den unbehandelten Proben.
        > > 2. Die zweite Dimension ist die Trennung der Single-End-Datensätze von den Paired-End-Datensätzen.
-       > > 3. Die Datensätze sind nach den Stufen der beiden Faktoren gruppiert. Die Daten scheinen keinen versteckten Effekt zu enthalten. Wenn unerwünschte Variationen in den Daten vorhanden sind (z. B. Chargeneffekte), ist es immer empfehlenswert, diese zu korrigieren. Dies kann in DESeq2 erreicht werden, indem alle bekannten Chargenvariablen in das Design aufgenommen werden. {: .solution} {: .question}
+       > > 3. Die Datensätze sind nach den Stufen der beiden Faktoren gruppiert. Die Daten scheinen keinen versteckten Effekt zu enthalten. Wenn unerwünschte Variationen in den Daten vorhanden sind (z. B. Chargeneffekte), ist es immer empfehlenswert, diese zu korrigieren. Dies kann in DESeq2 erreicht werden, indem alle bekannten Chargenvariablen in das Design aufgenommen werden.
+        > {: .solution}
+        {: .question}
 
     2. Heatmap der Probe-zu-Probe-Abstandsmatrix (mit Clustering) auf der Grundlage der normalisierten Anzahlen.
 
-       Die Heatmap gibt einen Überblick über die Ähnlichkeiten und Unähnlichkeiten zwischen den Proben: Die Farbe stellt den Abstand zwischen den Proben dar. Dunkelblau bedeutet einen geringeren Abstand, d. h. näher beieinander liegende Proben in Bezug auf die normalisierten Zählungen.
+        Die Heatmap gibt einen Überblick über die Ähnlichkeiten und Unähnlichkeiten zwischen den Proben: Die Farbe stellt den Abstand zwischen den Proben dar. Dunkelblau bedeutet einen geringeren Abstand, d. h. näher beieinander liegende Proben in Bezug auf die normalisierten Zählungen.
 
-       > <question-title></question-title>
-       >
-       > ![Heatmap der Probe-zu-Probe Abstände](../../images/ref-based/deseq2_sample_sample_distance_heatmap.png "Heatmap der Probe-zu-Probe Abstände")
-       >
-       > Wie sind die Proben gruppiert?
-       >
-       > > <solution-title></solution-title>
-       > >
-       > > Sie werden erstens nach der Behandlung (erster Faktor) und zweitens nach dem Sequenzierungstyp (zweiter Faktor) gruppiert, wie in der PCA-Darstellung.
-       > >
-       > {: .solution} {: .question}
+        > <question-title></question-title>
+        > 
+        > ![Heatmap der Probe-zu-Probe Abstände](../../images/ref-based/deseq2_sample_sample_distance_heatmap.png "Heatmap der Probe-zu-Probe Abstände")
+        > 
+        > Wie sind die Proben gruppiert?
+        > 
+        > > <solution-title></solution-title>
+        > > 
+        > > Sie werden erstens nach der Behandlung (erster Faktor) und zweitens nach dem Sequenzierungstyp (zweiter Faktor) gruppiert, wie in der PCA-Darstellung.
+        > {: .solution}
+        {: .question}
 
     3. Dispersionsschätzungen: genweise Schätzungen (schwarz), die angepassten Werte (rot) und die endgültigen Maximum-a-posteriori-Schätzungen, die beim Testen verwendet wurden (blau)
 
-       Dieses Dispersionsdiagramm ist typisch, wobei die endgültigen Schätzungen von den genweisen Schätzungen auf die angepassten Schätzungen geschrumpft sind. Einige genweise Schätzungen werden als Ausreißer markiert und nicht auf den angepassten Wert geschrumpft. Das Ausmaß der Schrumpfung kann je nach Stichprobengröße, Anzahl der Koeffizienten, Zeilenmittelwert und Variabilität der genweisen Schätzungen größer oder kleiner sein als hier dargestellt.
+        Dieses Dispersionsdiagramm ist typisch, wobei die endgültigen Schätzungen von den genweisen Schätzungen auf die angepassten Schätzungen geschrumpft sind. Einige genweise Schätzungen werden als Ausreißer markiert und nicht auf den angepassten Wert geschrumpft. Das Ausmaß der Schrumpfung kann je nach Stichprobengröße, Anzahl der Koeffizienten, Zeilenmittelwert und Variabilität der genweisen Schätzungen größer oder kleiner sein als hier dargestellt.
 
     4. Histogramm der *p*-Werte für die Gene im Vergleich zwischen den beiden Stufen des ersten Faktors
 
     5. Ein [MA-Plot](https://en.wikipedia.org/wiki/MA_plot):
 
-       Dies zeigt die globale Ansicht des Verhältnisses zwischen der Veränderung der Expression der Bedingungen (log ratios, M), der durchschnittlichen Expressionsstärke der Gene (durchschnittlicher Mittelwert, A) und der Fähigkeit des Algorithmus, eine unterschiedliche Genexpression zu erkennen. Die Gene, die die Signifikanzschwelle (angepasster p-Wert < 0,1) überschritten haben, sind rot eingefärbt.
+        Dies zeigt die globale Ansicht des Verhältnisses zwischen der Veränderung der Expression der Bedingungen (log ratios, M), der durchschnittlichen Expressionsstärke der Gene (durchschnittlicher Mittelwert, A) und der Fähigkeit des Algorithmus, eine unterschiedliche Genexpression zu erkennen. Die Gene, die die Signifikanzschwelle (angepasster p-Wert < 0,1) überschritten haben, sind rot eingefärbt.
 
 - Eine Zusammenfassungsdatei mit den folgenden Werten für jedes Gen:
 
@@ -1737,15 +1736,16 @@ Wir können jetzt **DESeq2** ausführen:
     6. *p*-Wert für die statistische Signifikanz dieser Änderung
     7. *p*-Wert, bereinigt um Mehrfachtests mit dem Benjamini-Hochberg-Verfahren, das die Falschentdeckungsrate kontrolliert ([FDR](https://en.wikipedia.org/wiki/False_discovery_rate))
 
-  > <tip-title>Was sind p-Werte und wofür werden sie verwendet?</tip-title>
-  >
-  > Der p-Wert ist ein Maß, das häufig verwendet wird, um festzustellen, ob eine bestimmte Beobachtung statistisch signifikant ist oder nicht. Streng genommen ist der p-Wert die Wahrscheinlichkeit, dass die Daten zufällig entstanden sein könnten, unter der Annahme, dass die Nullhypothese richtig ist. Im konkreten Fall von RNA-Seq lautet die Nullhypothese, dass es keine unterschiedliche Genexpression gibt. Ein p-Wert von 0,13 für ein bestimmtes Gen bedeutet also, dass für dieses Gen unter der Annahme, dass es nicht differentiell exprimiert wird, eine Wahrscheinlichkeit von 13 % besteht, dass eine offensichtliche differentielle Expression einfach durch zufällige Variation in den experimentellen Daten entstanden sein könnte.
-  >
-  > 13% ist immer noch ziemlich hoch, so dass wir nicht wirklich sicher sein können, dass eine differentielle Genexpression stattfindet. Die gängigste Art und Weise, wie Wissenschaftler p-Werte verwenden, besteht darin, einen Schwellenwert festzulegen (in der Regel 0,05, manchmal auch andere Werte wie 0,01) und die Nullhypothese nur bei p-Werten unter diesem Wert zurückzuweisen. Bei Genen mit p-Werten unter 0,05 können wir also mit Sicherheit sagen, dass die differentielle Genexpression eine Rolle spielt. Es sei darauf hingewiesen, dass ein solcher Schwellenwert willkürlich ist und es keinen bedeutsamen Unterschied zwischen einem p-Wert von 0,049 und 0,051 gibt, selbst wenn wir nur im ersten Fall die Nullhypothese ablehnen.
-  >
-  > Leider werden p-Werte in der wissenschaftlichen Forschung häufig falsch verwendet, so dass Wikipedia einen [eigenen Artikel](https://en.wikipedia.org/wiki/Misuse_of_p-values) zu diesem Thema bereitstellt. Siehe auch [diesen Artikel](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) (der sich an ein allgemeines, nicht-wissenschaftliches Publikum richtet). {: .tip}
+    > <tip-title>Was sind p-Werte und wofür werden sie verwendet?</tip-title>
+    > 
+    > Der p-Wert ist ein Maß, das häufig verwendet wird, um festzustellen, ob eine bestimmte Beobachtung statistisch signifikant ist oder nicht. Streng genommen ist der p-Wert die Wahrscheinlichkeit, dass die Daten zufällig entstanden sein könnten, unter der Annahme, dass die Nullhypothese richtig ist. Im konkreten Fall von RNA-Seq lautet die Nullhypothese, dass es keine unterschiedliche Genexpression gibt. Ein p-Wert von 0,13 für ein bestimmtes Gen bedeutet also, dass für dieses Gen unter der Annahme, dass es nicht differentiell exprimiert wird, eine Wahrscheinlichkeit von 13 % besteht, dass eine offensichtliche differentielle Expression einfach durch zufällige Variation in den experimentellen Daten entstanden sein könnte.
+    > 
+    > 13% ist immer noch ziemlich hoch, so dass wir nicht wirklich sicher sein können, dass eine differentielle Genexpression stattfindet. Die gängigste Art und Weise, wie Wissenschaftler p-Werte verwenden, besteht darin, einen Schwellenwert festzulegen (in der Regel 0,05, manchmal auch andere Werte wie 0,01) und die Nullhypothese nur bei p-Werten unter diesem Wert zurückzuweisen. Bei Genen mit p-Werten unter 0,05 können wir also mit Sicherheit sagen, dass die differentielle Genexpression eine Rolle spielt. Es sei darauf hingewiesen, dass ein solcher Schwellenwert willkürlich ist und es keinen bedeutsamen Unterschied zwischen einem p-Wert von 0,049 und 0,051 gibt, selbst wenn wir nur im ersten Fall die Nullhypothese ablehnen.
+    > 
+    > Leider werden p-Werte in der wissenschaftlichen Forschung häufig falsch verwendet, so dass Wikipedia einen [eigenen Artikel](https://en.wikipedia.org/wiki/Misuse_of_p-values) zu diesem Thema bereitstellt. Siehe auch [diesen Artikel](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) (der sich an ein allgemeines, nicht-wissenschaftliches Publikum richtet).
+    {: .tip}
 
-Weitere Informationen über **DESeq2** und seine Ergebnisse finden Sie in der [**DESeq2** Dokumentation] (https://www.bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf).
+Weitere Informationen über **DESeq2** und seine Ergebnisse finden Sie in der [**DESeq2** Dokumentation](https://www.bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf).
 
 > <question-title></question-title>
 >
@@ -1761,9 +1761,9 @@ Weitere Informationen über **DESeq2** und seine Ergebnisse finden Sie in der [*
 > > 2. Sie können manuell nach `FBgn0261552` in der ersten Spalte suchen oder {% tool [Filter data on any column using simple expressions](Filter1) %}
 > >   - {% icon param-file %} *"Filter "*: die `DESeq2 result file` (Ausgabe von **DESeq2** {% icon tool %})
 > >   - *"Mit folgender Bedingung "*: `c1 == "FBgn0261552"`
-> >
-> > Die log2-Fold-Änderung ist negativ, so dass es tatsächlich herunterreguliert ist, und der angepasste p-Wert liegt unter 0,05, so dass es zu den signifikant veränderten Genen gehört.
-> >
+> > 
+> >    Die log2-Fold-Änderung ist negativ, so dass es tatsächlich herunterreguliert ist, und der angepasste p-Wert liegt unter 0,05, so dass es zu den signifikant veränderten Genen gehört.
+> > 
 > > 3. DESeq2 in Galaxy liefert den Vergleich zwischen den verschiedenen Niveaus für den ersten Faktor, nach Korrektur der Variabilität aufgrund des zweiten Faktors. In unserem aktuellen Fall, behandelt gegen unbehandelt für jeden Sequenzierungstyp. Um Sequenzierungstypen zu vergleichen, sollten wir DESeq2 erneut ausführen und die Faktoren wechseln: Faktor 1 (Behandlung) wird zu Faktor 2 und Faktor 2 (Sequenzierung) wird zu Faktor 1.
 > > 4. Um die Interaktion zwischen zwei Faktoren hinzuzufügen (z. B. behandelt für Paired-End-Daten vs. unbehandelt für Single-End-Daten), sollten wir DESeq2 ein weiteres Mal ausführen, aber mit nur einem Faktor mit den folgenden 4 Stufen:
 > >    - treated-PE
@@ -1774,7 +1774,6 @@ Weitere Informationen über **DESeq2** und seine Ergebnisse finden Sie in der [*
 > >    Durch Auswahl von *"Output all levels vs. all levels of primary factor (use when you have >2 levels for primary factor) "* auf `Yes` können wir dann treated-PE vs. untreated-SE vergleichen.
 > >
 > {: .solution}
->
 {: .question}
 
 ## Annotation der DESeq2-Ergebnisse
@@ -1821,11 +1820,9 @@ Die erzeugte Ausgabe ist eine Erweiterung der vorherigen Datei:
 > > <solution-title></solution-title>
 > >
 > > 1. FBgn0025111 (das bestplatzierte Gen mit dem höchsten positiven log2FC-Wert) befindet sich auf dem Rückwärtsstrang von Chromosom X, zwischen 10.778.953 bp und 10.786.907 bp.
-> > 2. Aus der Tabelle haben wir das Gensymbol: Ant2. Nach einer Suche in den [Online-Biologiedatenbanken] (https://www.ncbi.nlm.nih.gov/gene/32008) stellen wir fest, dass Ant2 der Adenin-Nukleotid-Translokase 2 entspricht.
+> > 2. Aus der Tabelle haben wir das Gensymbol: Ant2. Nach einer Suche in den [Online-Biologiedatenbanken](https://www.ncbi.nlm.nih.gov/gene/32008) stellen wir fest, dass Ant2 der Adenin-Nukleotid-Translokase 2 entspricht.
 > > 3. Das *Pasilla*-Gen befindet sich auf dem Vorwärtsstrang des Chromosoms 3R, zwischen 9.417.939 bp und 9.455.500 bp.
-> >
 > {: .solution}
->
 {: .question}
 
 Die annotierte Tabelle enthält keine Spaltennamen, was die Lesbarkeit erschwert. Wir würden sie gerne hinzufügen, bevor wir weitermachen.
@@ -1847,7 +1844,6 @@ Die annotierte Tabelle enthält keine Spaltennamen, was die Lesbarkeit erschwert
 >         - {% icon param-file %} *"select "*: Ausgabe von **Annotate** {% icon tool %}
 >
 > 3. Benennen Sie die Ausgabe in `Annotated DESeq2 results` um
->
 {: .hands_on}
 
 ## Extraktion und Annotation von differenziell exprimierten Genen
@@ -1870,21 +1866,18 @@ Nun möchten wir die am stärksten differentiell exprimierten Gene aufgrund der 
 >    > > <solution-title></solution-title>
 >    > >
 >    > > Wir erhalten 966 (967 Zeilen einschließlich Header) Gene (4,04%) mit einer signifikanten Veränderung der Genexpression zwischen behandelten und unbehandelten Proben.
->    > >
-> > >
-> > {: .solution}
-> >
-> {: .question}
->
-> >
-> > <comment-title></comment-title>
-> >
-> > Die Datei mit den unabhängig gefilterten Ergebnissen kann für weitere nachgeschaltete Analysen verwendet werden, da sie Gene mit nur wenigen Read-Zahlen ausschließt, da diese Gene nicht als signifikant unterschiedlich exprimiert angesehen werden.
-> >
-> {: .comment}
->
-> Wir wählen nun nur die Gene aus, die eine Fold Change (FC) > 2 oder FC < 0,5 aufweisen. Beachten Sie, dass die DESeq2-Ausgabedatei $$log_{2} FC$$ enthält, und nicht den FC selbst, so dass wir nach $$abs(log_{2} FC) > 1$$ filtern (was FC > 2 oder FC < 0,5 impliziert).
->
+>    > > 
+>    > {: .solution}
+>    {: .question}
+>    > 
+>    > <comment-title></comment-title>
+>    > 
+>    > Die Datei mit den unabhängig gefilterten Ergebnissen kann für weitere nachgeschaltete Analysen verwendet werden, da sie Gene mit nur wenigen Read-Zahlen ausschließt, da diese Gene nicht als signifikant unterschiedlich exprimiert angesehen werden.
+>    > 
+>    {: .comment}
+> 
+>    Wir wählen nun nur die Gene aus, die eine Fold Change (FC) > 2 oder FC < 0,5 aufweisen. Beachten Sie, dass die DESeq2-Ausgabedatei $$log_{2} FC$$ enthält, und nicht den FC selbst, so dass wir nach $$abs(log_{2} FC) > 1$$ filtern (was FC > 2 oder FC < 0,5 impliziert).
+> 
 > 3. {% tool [Daten in jeder Spalte mit einfachen Ausdrücken filtern](Filter1) %} um Gene mit einem $$abs(log_{2} FC) > 1$$ zu extrahieren:
 >    - {% icon param-file %} *"Filter "*: `Genes with significant adj p-value`
 >    - *"Mit folgender Bedingung "*: `abs(c3)>1`
@@ -1901,11 +1894,8 @@ Nun möchten wir die am stärksten differentiell exprimierten Gene aufgrund der 
 >    > >
 >    > > 1. Wir erhalten 113 Gene (114 Zeilen einschließlich Header), das sind 11,79 % der signifikant unterschiedlich exprimierten Gene.
 >    > > 2. Das *Pasilla*-Gen kann mit einer schnellen Suche gefunden werden (oder sogar mit {% tool [Filter data on any column using simple expressions](Filter1) %} )
-> > >
-> > {: .solution}
-> >
-> {: .question}
->
+>    > {: .solution}
+>    {: .question}
 {: .hands_on}
 
 Wir haben nun eine Tabelle mit 113 Zeilen und einer Kopfzeile, die den am stärksten differenziell exprimierten Genen entspricht. Für jedes Gen haben wir seine ID, seine mittlere normalisierte Anzahl (gemittelt über alle Proben aus beiden Bedingungen), seinen $$log_{2} FC$$ und andere Informationen wie Genname und Position.
@@ -1985,9 +1975,7 @@ Sie sollten etwas ähnliches erhalten wie:
 > > 3. Die Skala ändert sich und wir sehen nur noch wenige Gene.
 > > 4. Weil die normalisierte Expression des Gens `FBgn0013688` in `GSM461180_treat_paired` bei `0` liegt.
 > > 5. Extrahieren der Gene mit $$log_{2} FC$$ > 1 (Filter für Gene mit `c3>1` in der Zusammenfassung der differenziell exprimierten Gene) und führen Sie **heatmap2** {% icon tool %} auf der erzeugten Tabelle aus.
-> >
 > {: .solution}
->
 {: .question}
 
 ### Visualisierung des Z-Scores
@@ -1996,7 +1984,7 @@ Um die Genexpression über die Proben hinweg zu vergleichen, können wir auch de
 
 Der Z-Score gibt die Anzahl der Standardabweichungen an, die ein Wert vom Mittelwert aller Werte in derselben Gruppe, hier demselben Gen, entfernt ist. Ein Z-Score von -2 für das Gen X in Probe A bedeutet, dass dieser Wert 2 Standardabweichungen unter dem Mittelwert der Werte für das Gen X in allen Proben (A, B, C usw.) liegt.
 
-Der Z-Score $$z_{i,j}$$ für ein Gen $$i$$ in einer Probe $$j$$ bei normalisierter Anzahl $$x_{i,j}$$ wird berechnet als $$z_{i,j} = \frac{x_{i,j}- \overline{x_i}}{s_i}$$ mit $$$\overline{x_i}$$ dem Mittelwert und $$$s_i$$ der Standardabweichung der normalisierten Zählungen für das Gen $$i$$ über alle Proben.
+Der Z-Score $$z_{i,j}$$ für ein Gen $$i$$ in einer Probe $$j$$ bei normalisierter Anzahl $$x_{i,j}$$ wird berechnet als $$z_{i,j} = \frac{x_{i,j}- \overline{x_i}}{s_i}$$ mit $$$\overline{x_i}$$ dem Mittelwert und $$s_i$$ der Standardabweichung der normalisierten Zählungen für das Gen $$i$$ über alle Proben.
 
 > <details-title>Berechnen Sie den Z-Score für alle Gene</details-title>
 >
@@ -2030,7 +2018,6 @@ Der Z-Score $$z_{i,j}$$ für ein Gen $$i$$ in einer Probe $$j$$ bei normalisiert
 > >
 > > 3. Benennen Sie die Ausgabe in `Z-scores` um
 > > 4. Prüfen Sie die Ausgabedatei
-> >
 > {: .hands_on}
 >
 > Wir haben jetzt eine Tabelle mit dem Z-Score für alle Gene in den 7 Proben.
@@ -2056,9 +2043,7 @@ Der Z-Score $$z_{i,j}$$ für ein Gen $$i$$ in einer Probe $$j$$ bei normalisiert
 > > >    Das Problem ist, dass "Rauschen" hier nicht nur das Rauschen der Messung ist. Es kann auch mit der "Strenge" der Kontrolle der Genregulation zusammenhängen. Nicht streng kontrollierte Gene, d. h. deren Expression in einem weiten Bereich über die Proben hinweg variieren kann, können erheblich induziert oder unterdrückt werden. Ihr absoluter Z-Score wird klein sein, da die Variationen über die Proben hinweg groß sind. Im Gegensatz dazu können Gene, die stark kontrolliert werden, nur sehr kleine Veränderungen in ihrer Expression aufweisen, ohne dass dies biologische Auswirkungen hat. Der absolute Z-Score ist bei diesen Genen groß.
 > > >
 > > {: .solution}
-> >
 > {: .question}
->
 {: .details}
 
 Wir möchten nun eine Heatmap für die Z-Scores erstellen:
@@ -2118,7 +2103,6 @@ Wir haben Gene extrahiert, die in behandelten (PS-Gen-depletierten) Proben im Ve
 >    - *"To "*: `Upper case`
 >
 > 4. Benennen Sie die Ausgabe in `Gene IDs and differential expression` um
->
 {: .hands_on}
 
 Wir haben gerade die erste Eingabe für **goseq** erzeugt. Als zweite Eingabe für **goseq** benötigen wir die Genlängen. Wir können hier die von **featureCounts** oder **Genlänge und GC-Gehalt** generierten Genlängen verwenden und die Gen-IDs formatieren.
@@ -2127,9 +2111,9 @@ Wir haben gerade die erste Eingabe für **goseq** erzeugt. Als zweite Eingabe f�
 >
 > <div class="featureCounts" markdown="1">
 > 1. Copy the feature length collection previously generated by **featureCounts** {% icon tool %} into this history
->
-> {% snippet faqs/galaxy-de/histories_copy_dataset.md %}
->
+> 
+>    {% snippet faqs/galaxy-de/histories_copy_dataset.md %}
+> 
 > 2. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} with:
 >    - {% icon param-collection %} *"Eingabeliste "*: `featureCounts on collection N: Feature lengths`
 >    - *"Wie sollte ein Datensatz ausgewählt werden? "*: `The first dataset`
@@ -2138,8 +2122,8 @@ Wir haben gerade die erste Eingabe für **goseq** erzeugt. Als zweite Eingabe f�
 >
 > <div class="STAR" markdown="1">
 > 1. Copy the output of **Gene length and GC content** {% icon tool %} (`Gene length`) into this history
->
-> {% snippet faqs/galaxy-de/histories_copy_dataset.md %}
+> 
+>    {% snippet faqs/galaxy-de/histories_copy_dataset.md %}
 > </div>
 >
 > 2. {% tool [Change Case](ChangeCase) %} mit den folgenden Parametern:
@@ -2150,7 +2134,6 @@ Wir haben gerade die erste Eingabe für **goseq** erzeugt. Als zweite Eingabe f�
 >    - *"To "*: `Upper case`
 >
 > 3. Benennen Sie die Ausgabe in `Gene IDs and length` um
->
 {: .hands_on}
 
 Wir haben nun die beiden erforderlichen Eingabedateien für goseq.
@@ -2184,45 +2167,47 @@ Wir haben nun die beiden erforderlichen Eingabedateien für goseq.
     8. `p.adjust.over_represented`: *p*-Wert für die Überrepräsentation des Terms in den differenziell exprimierten Genen, bereinigt um Mehrfachtests mit dem Benjamini-Hochberg-Verfahren
     9. `p.adjust.under_represented`: *p*-Wert für die Unterrepräsentation des Terms in den differenziell exprimierten Genen, bereinigt um Mehrfachtests mit dem Benjamini-Hochberg-Verfahren
 
-   Um Kategorien zu identifizieren, die unterhalb eines bestimmten p-Wertes signifikant angereichert/unangereichert sind, ist es notwendig, den angepassten *p*-Wert zu verwenden.
+    Um Kategorien zu identifizieren, die unterhalb eines bestimmten p-Wertes signifikant angereichert/unangereichert sind, ist es notwendig, den angepassten *p*-Wert zu verwenden.
 
-   > <question-title></question-title>
-   >
-   > 1. Wie viele GO-Terme sind mit einem bereinigten P-Wert < 0,05 überrepräsentiert? Wie viele sind unterrepräsentiert?
-   > 2. Wie werden die überrepräsentierten GO-Terme in MF, CC und BP unterteilt? Und für unterrepräsentierte GO-Terme?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > 1. 60 GO-Terme (0,50%) sind überrepräsentiert und 7 (0,07%) unterrepräsentiert.
-   > >
-   > >    {% tool [Daten in jeder Spalte mit einfachen Ausdrücken filtern](Filter1) %} auf c8 (angepasster p-Wert für überrepräsentierte GO-Terme) und c9 (angepasster p-Wert für unterrepräsentierte GO-Terme)
-   > >
-   > > 2. Für überrepräsentierte, 50 BP, 5 CC und 5 MF und für unterrepräsentierte, 5 BP, 2 CC und 0 MF
-   > >
-   > >    {% tool [Group data](Grouping1) %} in Spalte 7 (Kategorie) und Zählung in Spalte 1 (IDs)
-   > >
-   > {: .solution} {: .question}
+    > <question-title></question-title>
+    > 
+    > 1. Wie viele GO-Terme sind mit einem bereinigten P-Wert < 0,05 überrepräsentiert? Wie viele sind unterrepräsentiert?
+    > 2. Wie werden die überrepräsentierten GO-Terme in MF, CC und BP unterteilt? Und für unterrepräsentierte GO-Terme?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > 1. 60 GO-Terme (0,50%) sind überrepräsentiert und 7 (0,07%) unterrepräsentiert.
+    > > 
+    > >    {% tool [Daten in jeder Spalte mit einfachen Ausdrücken filtern](Filter1) %} auf c8 (angepasster p-Wert für überrepräsentierte GO-Terme) und c9 (angepasster p-Wert für unterrepräsentierte GO-Terme)
+    > > 
+    > > 2. Für überrepräsentierte, 50 BP, 5 CC und 5 MF und für unterrepräsentierte, 5 BP, 2 CC und 0 MF
+    > > 
+    > >    {% tool [Group data](Grouping1) %} in Spalte 7 (Kategorie) und Zählung in Spalte 1 (IDs)
+    > > 
+    > {: .solution}
+    {: .question}
 
-2. Ein Diagramm mit den 10 wichtigsten überrepräsentierten GO-Begriffen
 
-   > <question-title></question-title>
-   >
-   > ![Top überrepräsentierte GO-Terme](../../images/ref-based/top_over-represented_go_terms.png)
-   >
-   > Was ist die x-Achse? Wie wird sie errechnet?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > Die x-Achse ist der Prozentsatz der Gene in der Kategorie, die als differenziell exprimiert identifiziert wurden: $$100 \mal \frac{numDEInCat}{numInCat}$$
-   > >
-   > {: .solution} {: .question}
+2.  Ein Diagramm mit den 10 wichtigsten überrepräsentierten GO-Begriffen
+
+    > <question-title></question-title>
+    > 
+    > ![Top überrepräsentierte GO-Terme](../../images/ref-based/top_over-represented_go_terms.png)
+    > 
+    > Was ist die x-Achse? Wie wird sie errechnet?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > Die x-Achse ist der Prozentsatz der Gene in der Kategorie, die als differenziell exprimiert identifiziert wurden: $$100 \times \frac{numDEInCat}{numInCat}$$
+    > > 
+    > {: .solution}
+    {: .question}
 
 3. Eine Tabelle mit den differenziell exprimierten Genen (aus der von uns bereitgestellten Liste), die mit den GO-Begriffen (`DE genes for categories (GO/KEGG terms)`) assoziiert sind
 
 > <comment-title>Fortgeschrittenes Tutorial zur Anreicherungsanalyse</comment-title>
 >
 > In diesem Tutorium haben wir die GO-Anreicherungsanalyse mit **goseq** behandelt. Um andere Methoden und Werkzeuge für die Analyse der Anreicherung von Gensätzen kennenzulernen, sehen Sie sich bitte das ["RNA-Seq genes to pathways"]({% link topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.md %}) Tutorial an.
->
 {: .comment}
 
 ## Analyse der KEGG-Pfade
@@ -2252,19 +2237,21 @@ Zum Beispiel repräsentiert der Pfad `dme00010` den Glykolyseprozess (Umwandlung
 
 1. Eine große Tabelle mit den KEGG-Begriffen und einigen Statistiken
 
-   > <question-title></question-title>
-   >
-   > 1. Wie viele KEGG Pathways Terms wurden identifiziert?
-   > 2. Wie viele KEGG-Pathways-Terme sind mit einem bereinigten P-Wert < 0,05 überrepräsentiert?
-   > 3. Welches sind die überrepräsentierten Begriffe der KEGG-Pfade?
-   > 4. Wie viele KEGG-Pathways-Terme sind mit einem bereinigten P-Wert < 0,05 unterrepräsentiert?
-   >
-   > > <solution-title></solution-title>
-   > >
-   > > 1. Die Datei hat 128 Zeilen einschließlich eines Headers, so dass 127 KEGG-Pfade identifiziert wurden.
-   > > 2. 2 KEGG-Pfade (2,34%) sind überrepräsentiert, unter Verwendung von {% tool [Filter data on any column using simple expressions](Filter1) %} auf c6 (angepasster p-value für überrepräsentierte KEGG-Pfade)
-   > > 3. Die 2 überrepräsentierten KEGG-Pfade sind `01100` und `00010`. Wenn wir in der [KEGG-Datenbank] (https://www.genome.jp/kegg/kegg2.html) nach ihnen suchen, können wir mehr Informationen über diese Pfade finden: `01100` entspricht allen Stoffwechselwegen und `00010` dem Weg für Glykolyse / Glukoneogenese.
-   > > 4. Kein KEGG-Pfad ist unterrepräsentiert, unter Verwendung von {% tool [Daten in jeder Spalte mit einfachen Ausdrücken filtern](Filter1) %} auf c7 (angepasster p-Wert für unterrepräsentierte KEGG-Pfade) {: .solution} {: .question}
+    > <question-title></question-title>
+    > 
+    > 1. Wie viele KEGG Pathways Terms wurden identifiziert?
+    > 2. Wie viele KEGG-Pathways-Terme sind mit einem bereinigten P-Wert < 0,05 überrepräsentiert?
+    > 3. Welches sind die überrepräsentierten Begriffe der KEGG-Pfade?
+    > 4. Wie viele KEGG-Pathways-Terme sind mit einem bereinigten P-Wert < 0,05 unterrepräsentiert?
+    > 
+    > > <solution-title></solution-title>
+    > > 
+    > > 1. Die Datei hat 128 Zeilen einschließlich eines Headers, so dass 127 KEGG-Pfade identifiziert wurden.
+    > > 2. 2 KEGG-Pfade (2,34%) sind überrepräsentiert, unter Verwendung von {% tool [Filter data on any column using simple expressions](Filter1) %} auf c6 (angepasster p-value für überrepräsentierte KEGG-Pfade)
+    > > 3. Die 2 überrepräsentierten KEGG-Pfade sind `01100` und `00010`. Wenn wir in der [KEGG-Datenbank](https://www.genome.jp/kegg/kegg2.html) nach ihnen suchen, können wir mehr Informationen über diese Pfade finden: `01100` entspricht allen Stoffwechselwegen und `00010` dem Weg für Glykolyse / Glukoneogenese.
+    > > 4. Kein KEGG-Pfad ist unterrepräsentiert, unter Verwendung von {% tool [Daten in jeder Spalte mit einfachen Ausdrücken filtern](Filter1) %} auf c7 (angepasster p-Wert für unterrepräsentierte KEGG-Pfade)
+    > {: .solution}
+    {: .question}
 
 2. Eine Tabelle mit den differentiell exprimierten Genen (aus der von uns gelieferten Liste), die mit den KEGG-Pfaden (`DE genes for categories (GO/KEGG terms)`) assoziiert sind
 
@@ -2312,7 +2299,6 @@ Hier möchten wir die 2 KEGG-Pfade visualisieren: den überrepräsentierten `000
 >    - In *"Output Options "*
 >      - *"Output for pathway "*: `KEGG native`
 >        - *"Plot on same layer? "*: `Yes`
->
 {: .hands_on}
 
 **Pathview** erzeugt eine Sammlung mit der KEGG-Visualisierung: eine Datei pro Pathway.
@@ -2332,7 +2318,6 @@ Hier möchten wir die 2 KEGG-Pfade visualisieren: den überrepräsentierten `000
 > > 2. Beachten Sie, dass der Farbcode kontraintuitiv ist: Grün steht für Werte unter 0, also für Gene mit einer log2FC < 0 und rot für Gene mit einer log2FC > 0.
 > >
 > {: .solution}
->
 {: .question}
 
 {% comment %}
@@ -2345,7 +2330,7 @@ Wir werden [DEXSeq](https://www.bioconductor.org/packages/release/bioc/html/DEXS
 
 ## Zähle die Anzahl der Reads pro Exon
 
-Dieser Schritt ähnelt dem Schritt [Zählen der Anzahl der Reads pro annotiertem Gen] (#count-the-number-of-reads-per-annotated-gene), mit dem Unterschied, dass wir anstelle von HTSeq-count DEXSeq-Count verwenden.
+Dieser Schritt ähnelt dem Schritt [Zählen der Anzahl der Reads pro annotiertem Gen](#count-the-number-of-reads-per-annotated-gene), mit dem Unterschied, dass wir anstelle von HTSeq-count DEXSeq-Count verwenden.
 
 > <hands-on-title>Zählung der Reads pro Exon</hands-on-title>
 >
@@ -2376,8 +2361,7 @@ DEXSeq erzeugt eine Zählungstabelle, die der von featureCounts erzeugten Tabell
 > > <solution-title></solution-title>
 > >
 > > FBgn0284245:005 ist das Exon mit den meisten gemappten Reads für beide Proben. Es ist Teil von FBgn0284245, dem Feature mit den meisten darauf gemappten Reads (aus featureCounts).
-> >
-> >
+> > 
 > {: .solution}
 >
 {: .question}
@@ -2445,9 +2429,7 @@ Wie bei DESeq2 haben wir im vorherigen Schritt nur Reads gezählt, die auf Exons
 >    > <comment-title></comment-title>
 >    >
 >    > Im Gegensatz zu DESeq2 erlaubt DEXSeq keine flexiblen Namen für Primärfaktoren. Verwenden Sie immer den Namen Ihres Primärfaktors als "Bedingung"
-> >
-> {: .comment}
->
+>    {: .comment}
 {: .hands_on}
 
 Ähnlich wie bei DESeq2 erzeugt DEXSeq eine Tabelle mit:
@@ -2475,12 +2457,9 @@ Wie bei DESeq2 haben wir im vorherigen Schritt nur Reads gezählt, die auf Exons
 > > > <solution-title></solution-title>
 > > >
 > > > Wir erhalten 38 Exons (12,38%) mit einer signifikanten Nutzungsänderung zwischen behandelten und unbehandelten Proben.
-> > >
-> > >
+> > > 
 > > {: .solution}
-> >
 > {: .question}
->
 {: .hands_on}
 
 {% endcomment %}

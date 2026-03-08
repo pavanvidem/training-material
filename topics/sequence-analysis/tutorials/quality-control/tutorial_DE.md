@@ -84,8 +84,6 @@ recordings:
 ---
 
 
-
-
 Bei der Sequenzierung werden die Nukleotidbasen in einer DNA- oder RNA-Probe (Bibliothek) durch den Sequenzierer bestimmt. Für jedes Fragment in der Bibliothek wird eine Sequenz erzeugt, auch **Read** genannt, die einfach eine Folge von Nukleotiden ist.
 
 Moderne Sequenzierungstechnologien können in einem einzigen Experiment eine riesige Anzahl von Sequenzier-Reads erzeugen. Allerdings ist keine Sequenzierungstechnologie perfekt, und jedes Gerät erzeugt unterschiedliche Arten und Mengen von Fehlern, wie z. B. falsch bezeichnete Nukleotide. Diese falsch benannten Basen sind auf die technischen Beschränkungen der einzelnen Sequenzierplattformen zurückzuführen.
@@ -98,6 +96,7 @@ Daher ist es notwendig, Fehlertypen zu verstehen, zu identifizieren und auszusch
 > 
 > 1. TOC
 > {:toc}
+>
 {: .agenda}
 
 # Untersuchen Sie eine Rohsequenzdatei
@@ -110,7 +109,7 @@ Daher ist es notwendig, Fehlertypen zu verstehen, zu identifizieren und auszusch
 > 
 >    {% snippet faqs/galaxy-de/histories_rename.md %}
 > 
-> 2. Importieren Sie die Datei `female_oral2.fastq-4143.gz` von [Zenodo] (https://zenodo.org/record/3977236) oder aus der Datenbibliothek (fragen Sie Ihren Dozenten) Dies ist eine Mikrobiomprobe von einer Schlange {% cite StJacques2021 %}.
+> 2. Importieren Sie die Datei `female_oral2.fastq-4143.gz` von [Zenodo](https://zenodo.org/record/3977236) oder aus der Datenbibliothek (fragen Sie Ihren Dozenten) Dies ist eine Mikrobiomprobe von einer Schlange {% cite StJacques2021 %}.
 > 
 >    ```
 >    https://zenodo.org/record/3977236/files/female_oral2.fastq-4143.gz
@@ -167,15 +166,14 @@ Das bedeutet, dass das Fragment mit der Bezeichnung `@M00970` der DNA-Sequenz `G
 > > 3. Dies kann wie folgt berechnet werden:
 > >    - ASCII-Code für `/` ist 47
 > >    - Qualitätsbewertung = 47-33=14
-> >    - Formel zur Ermittlung der Fehlerwahrscheinlichkeit: \\(P = 10^{-Q/10}\)
-> >    - Fehlerwahrscheinlichkeit = (10^{-14/10}\) = 0,03981
-> >    - Daher Genauigkeit = 100 - 0.03981 = 99.96%
-> > 4. Das entsprechende Nukleotid `G` hat eine Genauigkeit von fast 99,96 %
+> >    - Formel zur Ermittlung der Fehlerwahrscheinlichkeit: \\(P = 10^{-Q/10}\\)
+> >    - Fehlerwahrscheinlichkeit = \\(10^{-14/10}\\) = 0,03981 = 3.981 %
+> >    - Daher Genauigkeit = 100 - 0.03981 = 96.019%
+> > 4. Das entsprechende Nukleotid `G` hat eine Genauigkeit von fast 96%
 > {: .solution }
 {: .question}
 
 > <comment-title></comment-title> Das aktuelle lllumina (1.8+) verwendet das Sanger-Format (Phred+33). Wenn Sie mit älteren Datensätzen arbeiten, können Sie auf die älteren Scoring-Schemata stoßen. *mit *FastQC** {% icon tool %}, einem Tool, das wir später in diesem Tutorial verwenden werden, kann versucht werden, die Art der verwendeten Qualitätskodierung zu bestimmen (durch Bewertung des Bereichs der Phred-Werte in der FASTQ).
-> 
 {: .comment}
 
 Wenn man sich die Datei in Galaxy ansieht, sieht es so aus, als ob die meisten Nukleotide einen hohen Score haben (`G` entspricht einem Score von 38). Gilt das für alle Sequenzen? Und entlang der gesamten Sequenzlänge?
@@ -192,13 +190,14 @@ Um einen Blick auf die Sequenzqualität entlang aller Sequenzen zu werfen, könn
 >    - {% icon param-select %} *"Anzuzeigende Score-Typen "*: `Mean`
 > 
 > 2. Prüfen Sie die generierte HTML-Datei
+> 
 {: .hands_on}
 
 Anstatt die Qualitätswerte für jeden einzelnen Read zu betrachten, betrachtet FASTQE die Qualität kollektiv für alle Reads innerhalb einer Probe und kann den Mittelwert für jede Nukleotidposition entlang der Länge der Reads berechnen. Nachfolgend sind die Mittelwerte für diesen Datensatz aufgeführt.
 
 ![FASTQE before](../../images/quality-control/fastqe-mean-before.png "FASTQE mean scores")
 
-Sie können den Score für jedes [Emoji in der fastqe-Dokumentation] sehen (https://github.com/fastqe/fastqe#scale). Die folgenden Emojis mit Phred-Scores unter 20 sind diejenigen, von denen wir hoffen, dass wir sie nicht oft sehen werden.
+Sie können den Score für jedes [Emoji in der fastqe-Dokumentation](https://github.com/fastqe/fastqe#scale) sehen. Die folgenden Emojis mit Phred-Scores unter 20 sind diejenigen, von denen wir hoffen, dass wir sie nicht oft sehen werden.
 
 | Phred Quality Score | ASCII code | Emoji |
 | ------------------- | ---------- | ----- |
@@ -228,14 +227,15 @@ Sie können den Score für jedes [Emoji in der fastqe-Dokumentation] sehen (http
 > 
 > Was ist der niedrigste Durchschnittswert in diesem Datensatz?
 > 
-> > <solution-title></solution-title> Der niedrigste Wert in diesem Datensatz ist 😿 13.
+> > <solution-title></solution-title>
+> Der niedrigste Wert in diesem Datensatz ist 😿 13.
 > {: .solution }
 {: .question}
 
 
 # Bewertung der Qualität mit FastQC - kurze und lange Reads
 
-Eine zusätzliche oder alternative Möglichkeit zur Überprüfung der Sequenzqualität ist [FastQC] (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Es bietet eine modulare Reihe von Analysen, die Sie verwenden können, um zu prüfen, ob Ihre Daten Probleme aufweisen, auf die Sie achten sollten, bevor Sie eine weitere Analyse durchführen. Wir können damit zum Beispiel prüfen, ob bekannte Adapter in den Daten vorhanden sind. Wir führen es mit der FASTQ-Datei aus.
+Eine zusätzliche oder alternative Möglichkeit zur Überprüfung der Sequenzqualität ist [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Es bietet eine modulare Reihe von Analysen, die Sie verwenden können, um zu prüfen, ob Ihre Daten Probleme aufweisen, auf die Sie achten sollten, bevor Sie eine weitere Analyse durchführen. Wir können damit zum Beispiel prüfen, ob bekannte Adapter in den Daten vorhanden sind. Wir führen es mit der FASTQ-Datei aus.
 
 > <hands-on-title>Qualitätsprüfung</hands-on-title>
 > 
@@ -249,7 +249,8 @@ Eine zusätzliche oder alternative Möglichkeit zur Überprüfung der Sequenzqua
 > 
 > Welche Phred-Kodierung wird in der FASTQ-Datei für diese Sequenzen verwendet?
 > 
-> > <solution-title></solution-title> Die Phred-Scores werden mit `Sanger / Illumina 1.9` (`Encoding` in der oberen Tabelle) kodiert.
+> > <solution-title></solution-title>
+> Die Phred-Scores werden mit `Sanger / Illumina 1.9` (`Encoding` in der oberen Tabelle) kodiert.
 > {: .solution }
 {: .question}
 
@@ -282,16 +283,16 @@ Bei allen Illumina-Sequenzern ist es normal, dass der mittlere Qualitätswert in
 > 
 > - Signalverfall
 > 
-> Die Intensität des Fluoreszenzsignals nimmt mit jedem Zyklus des Sequenziervorgangs ab. Aufgrund der sich abbauenden Fluorophore wird ein Teil der Stränge im Cluster nicht verlängert. Der Anteil des emittierten Signals nimmt mit jedem Zyklus weiter ab, was zu einer Verringerung der Qualitätswerte am 3'-Ende des Read führt.
+>  Die Intensität des Fluoreszenzsignals nimmt mit jedem Zyklus des Sequenziervorgangs ab. Aufgrund der sich abbauenden Fluorophore wird ein Teil der Stränge im Cluster nicht verlängert. Der Anteil des emittierten Signals nimmt mit jedem Zyklus weiter ab, was zu einer Verringerung der Qualitätswerte am 3'-Ende des Read führt.
 > 
 > - Phasierung
 > 
-> Das Signal beginnt mit zunehmender Zykluszahl zu verschwimmen, weil der Cluster an Synchronität verliert. Im Laufe der Zyklen kommt es bei einigen Strängen zu zufälligen Ausfällen bei der Einbindung von Nukleotiden aufgrund von:
+>  Das Signal beginnt mit zunehmender Zykluszahl zu verschwimmen, weil der Cluster an Synchronität verliert. Im Laufe der Zyklen kommt es bei einigen Strängen zu zufälligen Ausfällen bei der Einbindung von Nukleotiden aufgrund von:
 > 
 >  - Unvollständige Entfernung der 3'-Terminatoren und Fluorophore
 >  - Einbau von Nukleotiden ohne wirksame 3'-Terminatoren
 > 
-> Dies führt zu einer Verringerung der Qualitätswerte am 3'-Ende des Reads.
+>  Dies führt zu einer Verringerung der Qualitätswerte am 3'-Ende des Reads.
 {: .details}
 
 
@@ -390,7 +391,7 @@ Die Verteilung der durchschnittlichen Lesequalität sollte einen engen Peak im o
 
 In einer zufälligen Bibliothek würde man erwarten, dass sich die vier Basen wenig bis gar nicht unterscheiden. Der Anteil jeder der vier Basen sollte über die Länge des Reads mit `%A=%T` und `%G=%C` relativ konstant bleiben, und die Linien in diesem Diagramm sollten parallel zueinander verlaufen. Es handelt sich um Amplikondaten, bei denen 16S-DNA mittels PCR amplifiziert und sequenziert wird. Daher ist zu erwarten, dass diese Darstellung eine gewisse Verzerrung aufweist und keine Zufallsverteilung zeigt.
 
-> <Details-title>Biases nach Bibliothekstyp</details-title>
+> <details-title>Biases nach Bibliothekstyp</details-title>
 > 
 > Es ist erwähnenswert, dass einige Bibliothekstypen immer einn Sequenzzusammensetzungsbias erzeugen, normalerweise zu Beginn des Lesevorgangs. Bibliotheken, die durch Priming mit zufälligen Hexameren hergestellt wurden (einschließlich fast aller RNA-Seq-Bibliotheken), und solche, die mit Transposasen fragmentiert wurden, enthalten eine intrinsischen Bias an den Positionen, an denen Reads beginnen (die ersten 10-12 Basen). Dieser Bias bezieht sich nicht auf eine bestimmte Sequenz, sondern sorgt für eine Anreicherung einer Reihe verschiedener K-Mere am 5'-Ende der Reads. Dies ist zwar ein echter technischer Bias, kann aber nicht durch Trimming korrigiert werden und scheint in den meisten Fällen die nachgeschaltete Analyse nicht zu beeinträchtigen. Es wird jedoch eine Warnung oder ein Fehler in diesem Modul erzeugt.
 > 
@@ -407,7 +408,8 @@ In einer zufälligen Bibliothek würde man erwarten, dass sich die vier Basen we
 > 
 > Warum gibt es eine Warnung bei den Graphen für den Sequenzgehalt pro Base?
 > 
-> > <solution-title></solution-title> Am Anfang der Sequenzen ist der Sequenzgehalt pro Base nicht wirklich gut und die Prozentsätze sind nicht gleich, wie für 16S-Amplikon-Daten erwartet.
+> > <solution-title></solution-title>
+> Am Anfang der Sequenzen ist der Sequenzgehalt pro Base nicht wirklich gut und die Prozentsätze sind nicht gleich, wie für 16S-Amplikon-Daten erwartet.
 > {: .solution }
 {: .question}
 
@@ -426,7 +428,8 @@ Es gibt aber auch andere Situationen, in denen eine ungewöhnlich geformte Verte
 > 
 > Warum sind die Graphen für den GC-Gehalt pro Sequenz fehlerhaft?
 > 
-> > <solution-title></solution-title> Es gibt mehrere Peaks. Dies kann auf unerwartete Kontaminationen wie Adapter, rRNA oder überrepräsentierte Sequenzen hinweisen. Es kann aber auch normal sein, wenn es sich um Amplikon-Daten handelt oder Sie sehr reichhaltige RNA-seq-Transkripte haben.
+> > <solution-title></solution-title>
+> > Es gibt mehrere Peaks. Dies kann auf unerwartete Kontaminationen wie Adapter, rRNA oder überrepräsentierte Sequenzen hinweisen. Es kann aber auch normal sein, wenn es sich um Amplikon-Daten handelt oder Sie sehr reichhaltige RNA-seq-Transkripte haben.
 > {: .solution }
 {: .question}
 
@@ -487,10 +490,10 @@ RNA-Sequenzierungsdaten können einige Transkripte enthalten, die so häufig vor
 > > >overrep_seq1
 > > GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
 > > ```
-> > und [blastn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) gegen die Standard-Nukleotiddatenbank (nr/nt) verwenden, erhalten wir keine Treffer. Aber wenn wir [VecScreen](https://www.ncbi.nlm.nih.gov/tools/vecscreen/) verwenden, sehen wir, dass es der Nextera-Adapter ist. ![VecScreen](../../images/quality-control/vecscreen-nextera.png "Nextera-Adapter")
+> > und [blastn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) gegen die Standard-Nukleotiddatenbank (nr/nt) verwenden, erhalten wir keine Treffer. Aber wenn wir [VecScreen](https://www.ncbi.nlm.nih.gov/tools/vecscreen/) verwenden, sehen wir, dass es der Nextera-Adapter ist.
+> > ![VecScreen](../../images/quality-control/vecscreen-nextera.png "Nextera-Adapter")
 > {: .solution }
 {: .question}
-
 
 > <details-title>Mehr Details über andere FastQC-Plots</details-title>
 > 
@@ -517,6 +520,7 @@ RNA-Sequenzierungsdaten können einige Transkripte enthalten, die so häufig vor
 > ![Kmer Content](../../images/quality-control/kmer_content.png "Kmer content")
 > 
 > Dieses Modul kann sehr schwer zu interpretieren sein. Der Adapter-Content-Plot und die Tabelle der überrepräsentierten Sequenzen sind einfacher zu interpretieren und können Ihnen genügend Informationen liefern, ohne dass Sie diesen Plot benötigen. RNA-seq-Bibliotheken können stark vertretene kmers haben, die von hoch exprimierten Sequenzen stammen. Um mehr über diese Darstellung zu erfahren, lesen Sie bitte die [FastQC Kmer Content documentation](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/11%20Kmer%20Content.html).
+>
 {: .details}
 
 Wir haben versucht, hier verschiedene FastQC-Berichte und einige Anwendungsfälle zu erklären. Mehr darüber und auch einige häufige Probleme bei Next-Generation-Sequenzierung finden Sie auf [QCFAIL.com](https://sequencing.qcfail.com/)
@@ -559,9 +563,11 @@ Wir haben versucht, hier verschiedene FastQC-Berichte und einige Anwendungsfäll
 > - Spike im GC-Gehalt pro Sequenz
 > - Überrepräsentierte Sequenz mit passendem Adapter
 > - Adaptergehalt > 0% ab Basis 1
+> 
 {: .details}
 
-> <comment-title>Schlechte Qualität der Sequenzen</comment-title> Wenn die Qualität der Reads nicht gut ist, sollten wir immer zuerst prüfen, was falsch ist und darüber nachdenken: Es kann an der Art der Sequenzierung liegen oder an dem, was wir sequenziert haben (hohe Anzahl überrepräsentierter Sequenzen in Transkriptomikdaten, verzerrter Prozentsatz von Basen in HiC-Daten).
+> <comment-title>Schlechte Qualität der Sequenzen</comment-title>
+> Wenn die Qualität der Reads nicht gut ist, sollten wir immer zuerst prüfen, was falsch ist und darüber nachdenken: Es kann an der Art der Sequenzierung liegen oder an dem, was wir sequenziert haben (hohe Anzahl überrepräsentierter Sequenzen in Transkriptomikdaten, verzerrter Prozentsatz von Basen in HiC-Daten).
 > 
 > Sie können sich auch an die Sequenziereinrichtung wenden, insbesondere wenn die Qualität wirklich schlecht ist: Die Qualitätsbehandlungen können nicht alles lösen. Wenn zu viele Basen von schlechter Qualität weggeschnitten werden, werden die entsprechenden Reads herausgefiltert und Sie verlieren sie.
 {: .comment}
@@ -591,10 +597,9 @@ Um diese Aufgabe zu bewältigen, werden wir [Cutadapt](https://cutadapt.readthed
 >    - *"Single-end or Paired-end reads? "*: `Single-end`
 >       - {% icon param-file %} *"FASTQ/A-Datei "*: `Reads` (Eingabe-Datensatz)
 > 
->         > <tip-title>Dateien nicht auswählbar?</tip-title> Wenn Ihre FASTQ-Datei nicht ausgewählt werden kann, können Sie überprüfen, ob das Format FASTQ mit Sanger-skalierten Qualitätswerten (`fastqsanger.gz`) ist. Sie können den Datentyp bearbeiten, indem Sie auf das Bleistiftsymbol klicken.
-> > 
->          {: .tip}
-> 
+>         > <tip-title>Dateien nicht auswählbar?</tip-title>
+>         > Wenn Ihre FASTQ-Datei nicht ausgewählt werden kann, können Sie überprüfen, ob das Format FASTQ mit Sanger-skalierten Qualitätswerten (`fastqsanger.gz`) ist. Sie können den Datentyp bearbeiten, indem Sie auf das Bleistiftsymbol klicken.
+>         {: .tip}
 >    - In *"Read 1 Adapters "*:
 >       - *"1: 3' (End) Adapter "*:
 >          - *"Quelle "*: `Enter custom sequence`
@@ -618,13 +623,13 @@ Um diese Aufgabe zu bewältigen, werden wir [Cutadapt](https://cutadapt.readthed
 >    > > 2. 35,1% der Reads wurden wegen schlechter Qualität abgeschnitten (`Quality-trimmed:`)
 >    > > 3. 0 % der Reads wurden entfernt, weil sie zu kurz waren
 >    > {: .solution }
-> {: .question}
+>    {: .question}
 {: .hands_on}
 
 
 > <details-title>Trimming mit Cutadapt</details-title>
 > 
-> Einer der größten Vorteile von Cutadapt im Vergleich zu anderen Trimming-Tools (z.B. TrimGalore!) ist, dass es eine gute [Dokumentation] (https://cutadapt.readthedocs.io) gibt, die die Funktionsweise des Tools im Detail erklärt.
+> Einer der größten Vorteile von Cutadapt im Vergleich zu anderen Trimming-Tools (z.B. TrimGalore!) ist, dass es eine gute [Dokumentation](https://cutadapt.readthedocs.io) gibt, die die Funktionsweise des Tools im Detail erklärt.
 > 
 > Der Cutadapt-Algorithmus zum Trimmen der Qualität besteht aus drei einfachen Schritten:
 > 
@@ -688,14 +693,15 @@ Wir können unsere beschnittenen Daten mit FASTQE und/oder FastQC untersuchen.
 >    > 
 >    > {% snippet faqs/galaxy-de/features_scratchbook.md %}
 >    > 
->    >   > <solution-title></solution-title> Ja, die Emojis für die Qualitätsbewertung sehen jetzt besser (fröhlicher) aus.
->    >   > 
->    >   > ![FASTQE before](../../images/quality-control/fastqe-mean-before.png "Before trimming")
->    >   > 
->    >   > ![FASTQE after](../../images/quality-control/fastqe-mean-after.png "After trimming")
->    >   > 
+>    > > <solution-title></solution-title>
+>    > > Ja, die Emojis für die Qualitätsbewertung sehen jetzt besser (fröhlicher) aus.
+>    > > 
+>    > > ![FASTQE before](../../images/quality-control/fastqe-mean-before.png "Before trimming")
+>    > > 
+>    > > ![FASTQE after](../../images/quality-control/fastqe-mean-after.png "After trimming")
+>    > > 
 >    > {: .solution }
-> {: .question}
+>    {: .question}
 {: .hands_on}
 
 Mit FASTQE konnten wir die Qualität der Basen im Datensatz verbessern.
@@ -716,9 +722,11 @@ Wir können auch, oder stattdessen, die qualitätskontrollierten Daten mit FastQ
 > 2. Ist der Adapter weg?
 > 
 > > <solution-title></solution-title>
-> > 1. Ja. Die überwiegende Mehrheit der Basen hat jetzt einen Qualitätswert von über 20. per base sequence quality](../../images/quality-control/per_base_sequence_quality-after.png "Per base sequence quality")
+> > 1. Ja. Die überwiegende Mehrheit der Basen hat jetzt einen Qualitätswert von über 20.
+> > ![Per base sequence quality](../../images/quality-control/per_base_sequence_quality-after.png "Per base sequence quality")
 > > 
-> > 2. Ja. Jetzt wird kein Adapter erkannt. ![Adapterinhalt](../../images/quality-control/adapter_content-after.png)
+> > 2. Ja. Jetzt wird kein Adapter erkannt.
+> > ![Adapterinhalt](../../images/quality-control/adapter_content-after.png)
 > {: .solution }
 {: .question}
 
@@ -726,24 +734,31 @@ Mit FastQC konnten wir die Qualität der Basen im Datensatz verbessern und den A
 
 > <details-title>Andere FastQC-Plots nach dem Trimmen</details-title>
 > 
-> ![Per tile sequence quality](../../images/quality-control/per_tile_sequence_quality-after.png) Wir haben einige rote Streifen, da wir diese Regionen aus den Reads herausgeschnitten haben.
+> ![Per tile sequence quality](../../images/quality-control/per_tile_sequence_quality-after.png)
+> Wir haben einige rote Streifen, da wir diese Regionen aus den Reads herausgeschnitten haben.
 > 
-> ![Per sequence quality scores](../../images/quality-control/per_sequence_quality_scores-after.png) Wir haben jetzt einen Peak hoher Qualität anstelle eines hohen und eines niedrigeren, wie wir ihn vorher hatten.
+> ![Per sequence quality scores](../../images/quality-control/per_sequence_quality_scores-after.png)
+> Wir haben jetzt einen Peak hoher Qualität anstelle eines hohen und eines niedrigeren, wie wir ihn vorher hatten.
 > 
-> ![Per base sequence content](../../images/quality-control/per_base_sequence_content-after.png) Da es sich um Amplikon-Daten handelt, sind die Basen nicht mehr gleichmäßig vertreten.
+> ![Per base sequence content](../../images/quality-control/per_base_sequence_content-after.png)
+> Da es sich um Amplikon-Daten handelt, sind die Basen nicht mehr gleichmäßig vertreten.
 > 
-> ![GC-Gehalt pro Sequenz](../../images/quality-control/per_sequence_gc_content-after.png) Wir haben jetzt einen einzigen Haupt-GC-Peak aufgrund der Entfernung des Adapters.
+> ![GC-Gehalt pro Sequenz](../../images/quality-control/per_sequence_gc_content-after.png)
+> Wir haben jetzt einen einzigen Haupt-GC-Peak aufgrund der Entfernung des Adapters.
 > 
-> ![Per base N content](../../images/quality-control/per_base_n_content-after.png) Dies ist dasselbe wie vorher, da wir keine Ns in diesen Reads haben.
+> ![Per base N content](../../images/quality-control/per_base_n_content-after.png)
+> Dies ist dasselbe wie vorher, da wir keine Ns in diesen Reads haben.
 > 
-> ![Sequenzlängenverteilung](../../images/quality-control/sequence_length_distribution-after.png) Wir haben jetzt mehrere Peaks und eine Reihe von Längen, anstelle des einzelnen Peaks, den wir vor dem Trimmen hatten, als alle Sequenzen die gleiche Länge hatten.
+> ![Sequenzlängenverteilung](../../images/quality-control/sequence_length_distribution-after.png)
+> Wir haben jetzt mehrere Peaks und eine Reihe von Längen, anstelle des einzelnen Peaks, den wir vor dem Trimmen hatten, als alle Sequenzen die gleiche Länge hatten.
 > 
 > ![Sequenzduplikationsstufen](../../images/quality-control/sequence_duplication_levels-after.png)
 > > <question-title></question-title>
 > > 
 > > Was entspricht der am stärksten überrepräsentierten Sequenz `GTGTCAGCCGCCGCGGTAGTCCGACGTGG`?
 > > 
-> > > <solution-title></solution-title> Wenn wir die am stärksten überrepräsentierte Sequenz nehmen
+> > > <solution-title></solution-title>
+> > > Wenn wir die am stärksten überrepräsentierte Sequenz nehmen
 > > > ```
 > > > >overrep_seq1_after
 > > > GTGTCAGCCGCCGCGGTAGTCCGACGTGG
@@ -779,7 +794,7 @@ Die Daten, die wir im vorigen Schritt analysiert haben, waren Single-End-Daten, 
 
 > <hands-on-title>Bewertung der Qualität von Paired-End-Reads</hands-on-title>
 > 
-> 1. Importieren Sie die Paired-End-Reads `GSM461178_untreat_paired_subset_1.fastq` und `GSM461178_untreat_paired_subset_2.fastq` von [Zenodo] (https://zenodo.org/record/61771) oder aus der Datenbibliothek (fragen Sie Ihren Lehrer)
+> 1. Importieren Sie die Paired-End-Reads `GSM461178_untreat_paired_subset_1.fastq` und `GSM461178_untreat_paired_subset_2.fastq` von [Zenodo](https://zenodo.org/record/61771) oder aus der Datenbibliothek (fragen Sie Ihren Lehrer)
 > 
 >    ```
 >    https://zenodo.org/record/61771/files/GSM461178_untreat_paired_subset_1.fastq
@@ -817,6 +832,7 @@ Die Daten, die wir im vorigen Schritt analysiert haben, waren Single-End-Daten, 
 > >    Die anderen Indikatoren (Adapter, Duplikationsgrad, etc.) sind ähnlich.
 > > 
 > > 2. Wir sollten das Ende der Sequenzen abschneiden und sie mit **Cutadapt** {% icon tool %} filtern
+> > 
 > {: .solution}
 {: .question}
 
@@ -852,8 +868,8 @@ Nach dem Trimmen sind die Reverse-Reads aufgrund ihrer Qualität kürzer und wer
 >    > > <solution-title></solution-title>
 >    > > 1. 44.164 bp (`Quality-trimmed:`) für die Forward Reads und 138.638 bp für die Reverse Reads.
 >    > > 2. 1.376 Sequenzen wurden entfernt, weil mindestens ein Read kürzer als der Längen-Cutoff war (322, wenn nur die Forward Reads analysiert wurden).
-> > {: .solution }
-> {: .question}
+>    > {: .solution }
+>    {: .question}
 {: .hands_on}
 
 Zusätzlich zu dem Bericht erzeugt Cutadapt 2 Dateien:
@@ -871,6 +887,7 @@ Diese Datensätze können für die nachgelagerte Analyse, z. B. für das Mapping
 > > 
 > > 1. Semiglobales Alignment, d. h. nur der sich überlappende Teil der Lesung und der Adaptersequenz wird für die Auswertung verwendet.
 > > 2. Es wird ein Alignment mit maximaler Überlappung berechnet, das die geringste Anzahl von Mismatches und Indels aufweist.
+> > 
 > {: .solution}
 {: .question}
 
@@ -900,13 +917,18 @@ Bei langen Reads können wir die Sequenzqualität mit [Nanoplot](https://github.
 > 
 > Was ist der mittlere Qscore?
 > 
-> > <solution-title></solution-title> Der Qscore liegt bei Q32. Im Falle von PacBio CLR und Nanopore liegt er bei Q12 und bei Illumina (NovaSeq 6000) nahe bei Q31. plot of Qscore between Illumina, PacBio and Nanopore](../../images/quality-control/qscore-illumina-pacbio-nanopore.png "Comparison of Qscore between Illumina, PacBio and Nanopore")
+> > <solution-title></solution-title>
+> > Der Qscore liegt bei Q32.
+> > Im Falle von PacBio CLR und Nanopore liegt er bei Q12 und bei Illumina (NovaSeq 6000) nahe bei Q31.
+> > ![Plot of Qscore between Illumina, PacBio and Nanopore](../../images/quality-control/qscore-illumina-pacbio-nanopore.png "Comparison of Qscore between Illumina, PacBio and Nanopore")
 > > 
 > > Definition: Qscores ist die durchschnittliche Fehlerwahrscheinlichkeit pro Base, ausgedrückt auf der log (Phred)-Skala
 > {: .solution }
 > 
 > Was ist der Median, Mittelwert und N50?
-> > <solution-title></solution-title> Der Median, die mittlere Leselänge und auch N50 liegen nahe bei 18.000bp. Bei PacBio HiFi-Reads liegt die Mehrheit der Reads im Allgemeinen in der Nähe dieses Wertes, da die Bibliotheksvorbereitung einen Schritt zur Größenauswahl umfasst. Bei anderen Technologien wie PacBio CLR und Nanopore ist der Wert größer und hängt hauptsächlich von der Qualität Ihrer DNA-Extraktion ab.
+> > <solution-title></solution-title>
+> > Der Median, die mittlere Leselänge und auch N50 liegen nahe bei 18.000bp.
+> > Bei PacBio HiFi-Reads liegt die Mehrheit der Reads im Allgemeinen in der Nähe dieses Wertes, da die Bibliotheksvorbereitung einen Schritt zur Größenauswahl umfasst. Bei anderen Technologien wie PacBio CLR und Nanopore ist der Wert größer und hängt hauptsächlich von der Qualität Ihrer DNA-Extraktion ab.
 > {: .solution }
 {: .question}
 
@@ -922,14 +944,19 @@ Diese Darstellung zeigt die Verteilung der Fragmentgrößen entsprechend dem Qsc
 
 ![Leselängen vs. durchschnittliche Lesequalität mittels Punkten](../../images/quality-control/LengthvsQualityScatterPlot_dot.png "Histogram of read length")
 
-> <question-title></question-title> Betrachten Sie "Read lengths vs Average read quality plot using dots plot". Ist Ihnen beim Qscore etwas Ungewöhnliches aufgefallen? Können Sie das erklären?
-> > <solution-title></solution-title> Es gibt keine Reads unter Q20. Die Qualifikation für HiFi-Reads lautet:
+> <question-title></question-title>
+> Betrachten Sie "Read lengths vs Average read quality plot using dots plot". Ist Ihnen beim Qscore etwas Ungewöhnliches aufgefallen? Können Sie das erklären?
+> > <solution-title></solution-title>
+> > Es gibt keine Reads unter Q20.
+> > Die Qualifikation für HiFi-Reads lautet:
 > > - Eine minimale Anzahl von 3 Subreads
-> > - A read Qscore >=20 ![PacBio HiFi sequencing](../../images/quality-control/pacbio-css-hifi-sequencing.png "PacBio HiFi sequencing")
+> > - A read Qscore >=20
+> > ![PacBio HiFi sequencing](../../images/quality-control/pacbio-css-hifi-sequencing.png "PacBio HiFi sequencing")
 > {: .solution }
 {: .question}
 
-> <comment-title>Try it on!</comment-title> Führen Sie die Qualitätskontrolle mit **FastQC** {% icon tool %} auf `m64011_190830_220126.Q20.subsample.fastq.gz` durch und vergleichen Sie die Ergebnisse!
+> <comment-title>Probier es an!</comment-title>
+> Führen Sie die Qualitätskontrolle mit **FastQC** {% icon tool %} auf `m64011_190830_220126.Q20.subsample.fastq.gz` durch und vergleichen Sie die Ergebnisse!
 {: .comment}
 
 # Bewertung der Qualität mit PycoQC - nur Nanopore
@@ -958,11 +985,15 @@ Eine der Stärken von PycoQC ist, dass es interaktiv und in hohem Maße anpassba
 > <question-title></question-title>
 > 
 > Wie viele Reads haben Sie insgesamt?
-> > <solution-title></solution-title> ~270k Reads insgesamt (siehe Basecall-Zusammenfassungstabelle "Alle Reads") Bei den meisten Basecalling-Profilen stuft Guppy die Reads als "Pass" ein, wenn der Qscore der Reads mindestens gleich 7 ist.
+> > <solution-title></solution-title>
+> > ~270k Reads insgesamt (siehe Basecall-Zusammenfassungstabelle "Alle Reads")
+> > Bei den meisten Basecalling-Profilen stuft Guppy die Reads als "Pass" ein, wenn der Qscore der Reads mindestens gleich 7 ist.
 > {: .solution }
 > 
 > Was ist der Median, das Minimum und das Maximum der Leselänge, was ist der N50?
-> > <solution-title></solution-title> Die mediane Leselänge und der N50-Wert können für alle sowie für alle bestandenen Reads, d. h. für Reads, die die Guppy-Qualitätseinstellungen (Qscore >= 7) bestanden haben, in der Basecall-Zusammenfassungstabelle gefunden werden. Für die minimale (195bp) und maximale (256kbp) Leselänge kann sie mit dem Leselängenplot ermittelt werden.
+> > <solution-title></solution-title>
+> > Die mediane Leselänge und der N50-Wert können für alle sowie für alle bestandenen Reads, d. h. für Reads, die die Guppy-Qualitätseinstellungen (Qscore >= 7) bestanden haben, in der Basecall-Zusammenfassungstabelle gefunden werden.
+> > Für die minimale (195bp) und maximale (256kbp) Leselänge kann sie mit dem Leselängenplot ermittelt werden.
 > {: .solution }
 {: .question}
 
@@ -980,8 +1011,10 @@ Diese Grafik zeigt die Verteilung der Q-Scores (Q) für jeden Read. Dieser Wert 
 
 ## Länge der Basecalled Reads vs. Reads PHRED-Qualität
 
-> <question-title></question-title> Wie sehen die mittlere Qualität und die Qualitätsverteilung des Laufs aus?
-> > <solution-title></solution-title> Die Mehrheit der Reads hat einen Qscore zwischen 8 und 11, was für Nanopore-Daten Standard ist. Beachten Sie, dass für dieselben Daten der verwendete Basecaller (Albacor, Guppy, Bonito), das Modell (fast, hac, sup) und die Toolversion unterschiedliche Ergebnisse liefern können.
+> <question-title></question-title>
+> Wie sehen die mittlere Qualität und die Qualitätsverteilung des Laufs aus?
+> > <solution-title></solution-title>
+> Die Mehrheit der Reads hat einen Qscore zwischen 8 und 11, was für Nanopore-Daten Standard ist. Beachten Sie, dass für dieselben Daten der verwendete Basecaller (Albacor, Guppy, Bonito), das Modell (fast, hac, sup) und die Toolversion unterschiedliche Ergebnisse liefern können.
 > {: .solution }
 {: .question}
 
@@ -1010,12 +1043,15 @@ In diesem Beispiel ist der Beitrag jeder Betankung sehr gering, und es kann als 
 > In diesem Beispiel nahm die Datenproduktion im Laufe der 12 Stunden nur geringfügig ab, während die kumulativen Daten kontinuierlich zunahmen. Das Fehlen einer abfallenden Kurve am Ende des Laufs deutet darauf hin, dass sich noch biologisches Material auf der Fließzelle befindet. Der Lauf wurde beendet, bevor alles sequenziert war. Es ist ein ausgezeichneter Lauf, der sogar als außergewöhnlich bezeichnet werden kann.
 > 
 > ![Output über Experimentierzeit gutes Profil](../../images/quality-control/output_over_experiment_time-pycoqc-good.png)
+> 
 {: .details}
 
 ### Leselänge über die Experimentierzeit
 
-> <question-title></question-title> Hat sich die Leselänge im Laufe der Zeit verändert? Was könnte der Grund dafür sein?
-> > <solution-title></solution-title> Im vorliegenden Beispiel nimmt die Leselänge mit der Zeit des Sequenzierungslaufs zu. Eine Erklärung dafür ist, dass die Adapterdichte bei vielen kurzen Fragmenten höher ist und daher die Chance, dass sich ein kürzeres Fragment an eine Pore anlagert, größer ist. Außerdem bewegen sich kürzere Moleküle möglicherweise schneller über den Chip. Mit der Zeit werden die kürzeren Fragmente jedoch seltener, so dass mehr lange Fragmente an den Poren haften und sequenziert werden.
+> <question-title></question-title>
+> Hat sich die Leselänge im Laufe der Zeit verändert? Was könnte der Grund dafür sein?
+> > <solution-title></solution-title>
+> Im vorliegenden Beispiel nimmt die Leselänge mit der Zeit des Sequenzierungslaufs zu. Eine Erklärung dafür ist, dass die Adapterdichte bei vielen kurzen Fragmenten höher ist und daher die Chance, dass sich ein kürzeres Fragment an eine Pore anlagert, größer ist. Außerdem bewegen sich kürzere Moleküle möglicherweise schneller über den Chip. Mit der Zeit werden die kürzeren Fragmente jedoch seltener, so dass mehr lange Fragmente an den Poren haften und sequenziert werden.
 > {: .solution }
 {: .question}
 
@@ -1039,7 +1075,8 @@ Man hofft auf eine Darstellung, die in der Nähe der X-Achse dunkel ist und bei 
 {: .details}
 
 
-> <comment-title>Try it out!</comment-title> Führen Sie die Qualitätskontrolle mit **FastQC** {% icon tool %} und/oder **Nanoplot** {% icon tool %} auf `nanopore_basecalled-guppy.fastq.gz` durch und vergleichen Sie die Ergebnisse!
+> <comment-title>Probier es an!</comment-title>
+> Führen Sie die Qualitätskontrolle mit **FastQC** {% icon tool %} und/oder **Nanoplot** {% icon tool %} auf `nanopore_basecalled-guppy.fastq.gz` durch und vergleichen Sie die Ergebnisse!
 {: .comment}
 
 # Schlussfolgerung

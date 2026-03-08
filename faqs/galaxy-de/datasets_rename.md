@@ -23,8 +23,6 @@ examples:
     name: genomes.fa
 ---
 
-
 - Klicken Sie auf das {% icon galaxy-pencil %} **Bleistift-Symbol** für den Datensatz, um seine Attribute zu bearbeiten
 - Ändern Sie im zentralen Bereich das Feld **Name** {% if include.name %} in `{{ include.name }}` {% endif %}
 - Klicken Sie auf die Schaltfläche **Speichern**
-

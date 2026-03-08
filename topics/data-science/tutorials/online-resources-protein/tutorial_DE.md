@@ -53,20 +53,18 @@ Wenn wir eine biologische Datenanalyse durchführen, erhalten wir vielleicht ein
 Das Ziel dieses Tutoriums ist es, uns damit vertraut zu machen, indem wir menschliche Opsine als Beispiel nehmen.
 
 > <comment-title></comment-title> Dieses Tutorial ist etwas untypisch: wir werden nicht in Galaxy arbeiten, sondern hauptsächlich außerhalb, in den Seiten der [UniProt](https://uniprot.org) Datenbank.
-> 
 {: .comment}
 
 > <comment-title></comment-title> Dieses Tutorial ist als Fortsetzung des Tutorials ["Ein Gen in verschiedenen Dateiformaten"]({% link topics/data-science/tutorials/online-resources-gene/tutorial.md %}) gedacht, kann aber auch als eigenständiges Modul konsultiert werden.
-> 
 {: .comment}
 
 Opsine befinden sich in den Zellen der Netzhaut. Sie fangen das Licht ein und leiten die Abfolge von Signalen ein, die zum Sehen führen, und das ist der Grund, warum sie, wenn sie beeinträchtigt sind, mit Farbenblindheit und anderen Sehstörungen in Verbindung gebracht werden.
 
 > <comment-title>Informationsquellen aus diesem Lehrgang</comment-title>
 > 
-> Das Tutorial, das Sie konsultieren, wurde hauptsächlich unter Hinzuziehung der UniProtKB-Ressourcen entwickelt, insbesondere des Tutorials [Explore UniProtKB entry] (https://www.uniprot.org/help/explore_uniprotkb_entry). Einige Sätze sind von dort ohne Änderungen übernommen worden.
+> Das Tutorial, das Sie konsultieren, wurde hauptsächlich unter Hinzuziehung der UniProtKB-Ressourcen entwickelt, insbesondere des Tutorials [Explore UniProtKB entry](https://www.uniprot.org/help/explore_uniprotkb_entry). Einige Sätze sind von dort ohne Änderungen übernommen worden.
 > 
-> Außerdem wurde das Thema auf der Grundlage von Gale Rhodes' [Bioinformatics Tutorial] (https://spdbv.unil.ch/TheMolecularLevel/Matics/index.html) gewählt. Obwohl das Tutorial nicht mehr Schritt für Schritt nachvollzogen werden kann, da sich die genannten Ressourcen im Laufe der Zeit verändert haben, könnte es zusätzliche Erkenntnisse über Opsine liefern und insbesondere darüber, wie man auf der Grundlage evolutionärer Informationen Strukturmodelle von Proteinen erstellen kann.
+> Außerdem wurde das Thema auf der Grundlage von Gale Rhodes' [Bioinformatics Tutorial](https://spdbv.unil.ch/TheMolecularLevel/Matics/index.html) gewählt. Obwohl das Tutorial nicht mehr Schritt für Schritt nachvollzogen werden kann, da sich die genannten Ressourcen im Laufe der Zeit verändert haben, könnte es zusätzliche Erkenntnisse über Opsine liefern und insbesondere darüber, wie man auf der Grundlage evolutionärer Informationen Strukturmodelle von Proteinen erstellen kann.
 > 
 {: .comment}
 
@@ -75,13 +73,13 @@ Opsine befinden sich in den Zellen der Netzhaut. Sie fangen das Licht ein und le
 > 
 > In diesem Tutorium werden wir uns folgendne Themen beschäftigen:
 > 
-> 1. TOC {:toc}
-> 
+> 1. TOC
+> {:toc}
 {: .agenda}
 
 # Die UniProtKB-Eintragsseite
 
-Das Portal, das man besuchen muss, um alle Informationen über ein Protein zu erhalten, ist [UniProtKB] (https://www.uniprot.org/). Wir können dort über eine Textsuche oder über den Gen- oder Proteinnamen suchen. Versuchen wir es zunächst mit einer Reihe von allgemeinen Schlüsselwörtern, wie `Human opsin`.
+Das Portal, das man besuchen muss, um alle Informationen über ein Protein zu erhalten, ist [UniProtKB](https://www.uniprot.org/). Wir können dort über eine Textsuche oder über den Gen- oder Proteinnamen suchen. Versuchen wir es zunächst mit einer Reihe von allgemeinen Schlüsselwörtern, wie `Human opsin`.
 
 > <hands-on-title>Suche nach Human Opsin auf UniProtKB</hands-on-title>
 > 
@@ -99,9 +97,7 @@ Das Portal, das man besuchen muss, um alle Informationen über ein Protein zu er
 > > 
 > > 410 Ergebnisse (zum Zeitpunkt der Erstellung dieses Tutorials)
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Diese 410 Ergebnisse geben uns das Gefühl, dass wir genauer sein müssen (obwohl - Spoiler - unser eigentliches Ziel unter den ersten Treffern ist).
@@ -124,9 +120,7 @@ Um genau genug zu sein, schlagen wir vor, einen eindeutigen Identifikator zu ver
 > > 
 > > 1. 200+ Ergebnisse (zum Zeitpunkt der Erstellung dieses Tutorials)
 > > 2. Wir müssen klären, wonach wir suchen: Menschliches OPN1LW
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Wir müssen `Human` hinzufügen, um zu verdeutlichen, wonach wir suchen.
@@ -147,9 +141,7 @@ Wir müssen `Human` hinzufügen, um zu verdeutlichen, wonach wir suchen.
 > > 
 > > 1. 7 Ergebnisse (zum Zeitpunkt der Erstellung dieses Tutorials)
 > > 2. Das erste Ergebnis ist mit `Gene: OPN1LW (RCP)` gekennzeichnet
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Das erste Ergebnis, beschriftet mit `Gene: OPN1LW (RCP)`, ist unser Ziel, `P04000 · OPSR_HUMAN`. Bevor Sie die Seite öffnen, sollten Sie zwei Dinge beachten:
@@ -162,7 +154,6 @@ Das erste Ergebnis, beschriftet mit `Gene: OPN1LW (RCP)`, ist unser Ziel, `P0400
 > <hands-on-title>Öffne ein Ergebnis auf UniProt</hands-on-title>
 > 
 > 1. Klicken Sie auf `P04000 · OPSR_HUMAN`
-> 
 {: .hands-on}
 
 ![Screenshot der Kopfzeile der UniProt-Eingangsseite](./images/UniProt.png "UniProt-Seite")
@@ -201,7 +192,6 @@ Das nächste Menü ist bereits Teil der Registerkarte *Entry*. Es ermöglicht un
 > > 2. Die Formate `FASTA` sollten (nach dem einleitenden Tutorium) vertraut klingen und beinhalten die Proteinsequenz, eventuell mit ihren Isoformen (in diesem Fall handelt es sich um eine Multi-FASTA). Abgesehen von diesen Formaten sind alle anderen Formate nicht protein- oder gar biologiespezifisch. Es handelt sich um allgemeine Dateiformate, die von Websites häufig verwendet werden, um die auf der Seite enthaltenen Informationen aufzunehmen. Wenn wir also die Datei `text` (oder noch besser die Datei `json`) herunterladen, erhalten wir dieselbe Annotation, auf die wir auf dieser Seite zugreifen, aber in einem Format, das programmatisch leichter zu analysieren ist.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Blättern wir nun auf der Einstiegsseite Abschnitt für Abschnitt.
@@ -229,7 +219,6 @@ GO ist ein perfektes Beispiel für eine Datenbank/Ressource, die auf einem sehr 
 > > 2. Sinnestransduktion, Sehen
 > > 
 > {: .solution}
-> 
 {: .question}
 
 ### Names and Taxonomy
@@ -245,9 +234,7 @@ Weitere Beispiele für strukturierte Informationen sind im nächsten Abschnitt z
 > > 
 > > 1. 9606, d.h. Homo sapiens
 > > 2. UP000005640, Bestandteil des Chromosoms Xs
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ## Subzelluläre Lage
@@ -263,9 +250,7 @@ Wir wissen bereits, wo sich unser Protein im menschlichen Körper befindet (in d
 > > 
 > > 1. Der Abschnitt erklärt, dass es sich um ein "Multipass-Membranprotein" handelt, was bedeutet, dass es sich um ein Protein handelt, das in die Zellmembran eingesetzt wird und diese mehrfach durchläuft.
 > > 2. Die GO-Anmerkung oben besagt, dass wir uns insbesondere auf die Photorezeptor(zell)membran beziehen.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Der Abschnitt "Subzelluläre Lage" enthält einen Bereich *Features*, in dem angegeben ist, welche Abschnitte der Proteinsequenz in die Membran eingefügt sind (Transmembrane) und welche nicht (Topologische Domäne).
@@ -277,9 +262,7 @@ Der Abschnitt "Subzelluläre Lage" enthält einen Bereich *Features*, in dem ang
 > > <solution-title></solution-title>
 > > 
 > > 8 Transmembran- und 7 topologische Domänen
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Krankheit & Varianten
@@ -308,9 +291,7 @@ Wie wir aus dem vorangegangenen Tutorium wissen, ist dieses Gen/Protein mit mehr
 > > 
 > > Diese Art von Studien würde eine umfangreiche Verwendung von Dateitypen zur Verwaltung genomischer Daten voraussetzen, wie z. B.: SAM (Sequence Alignment Map), BAM (Binary Alignment Map), VCF (Variant Calling Format) usw.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Dieser Abschnitt enthält auch einen Bereich *Features*, in dem die natürlichen Varianten entlang der Sequenz abgebildet sind. Unten wird auch hervorgehoben, dass eine detailliertere Ansicht der Merkmale entlang der Sequenz auf der Registerkarte *Krankheit & Varianten* zu finden ist, aber wir öffnen sie vorerst nicht.
@@ -326,14 +307,12 @@ Eine posttranslationale Modifikation (PTM) ist ein kovalentes Verarbeitungsereig
 > > <solution-title></solution-title>
 > > 
 > > Kette, Glykosylierung, Disulfidbindung, modifizierter Rückstand
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Expression
 
-Wir wissen bereits, wo sich das Protein in der Zelle befindet, aber bei menschlichen Proteinen haben wir oft Informationen darüber, wo es sich im menschlichen Körper befindet, d. h. in welchen Geweben. Diese Informationen können aus dem Human [ExpressionAtlas] (https://www.ebi.ac.uk/gxa/home) oder anderen ähnlichen Quellen stammen.
+Wir wissen bereits, wo sich das Protein in der Zelle befindet, aber bei menschlichen Proteinen haben wir oft Informationen darüber, wo es sich im menschlichen Körper befindet, d. h. in welchen Geweben. Diese Informationen können aus dem Human [ExpressionAtlas](https://www.ebi.ac.uk/gxa/home) oder anderen ähnlichen Quellen stammen.
 
 > <question-title></question-title>
 > 
@@ -342,9 +321,7 @@ Wir wissen bereits, wo sich das Protein in der Zelle befindet, aber bei menschli
 > > <solution-title></solution-title>
 > > 
 > > Die drei Farbpigmente befinden sich in den Zapfen-Photorezeptorzellen.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Interaktion
@@ -368,9 +345,7 @@ Die Quelle dieser Informationen sind Datenbanken wie STRING, und die Einstiegsse
 > > 
 > > STRING bietet Daten in herunterladbaren Dateiformaten zur Unterstützung weiterer Analysen. Das primäre von STRING verwendete Dateiformat ist das TSV-Format (Tab-Separated Values), das Proteininteraktionsdaten in einem strukturierten, tabellarischen Layout darstellt. Dieses Format eignet sich gut für die einfache Integration in verschiedene Datenanalysetools und Software. Darüber hinaus bietet STRING Daten im PSI-MI (Proteomics Standards Initiative Molecular Interactions) XML-Format an, einem Standard für die Darstellung von Proteininteraktionsdaten, der die Kompatibilität mit anderen Interaktionsdatenbanken und Analyseplattformen gewährleistet. Diese Dateiformate ermöglichen es Forschern, die Fülle an Proteininteraktionsdaten in STRING für ihre eigenen Studien und Analysen zu nutzen. Die Forscher können auch visuelle Darstellungen von Proteinnetzwerken in Bildformaten wie PNG und SVG herunterladen, die sich für Präsentationen und Veröffentlichungen eignen. Für fortgeschrittene Analysen bietet STRING "Flat Files" mit detaillierten Interaktionsinformationen und "MFA"-Dateien (Multiple Alignment Format), die für den Vergleich mehrerer Proteinsequenzen nützlich sind. Diese verschiedenen herunterladbaren Dateiformate ermöglichen es Forschern, die Fülle an Proteininteraktionsinformationen in STRING für ihre eigenen Studien und Analysen zu nutzen.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Struktur
@@ -392,7 +367,6 @@ In diesem Abschnitt finden Sie Informationen über experimentell bestimmte Prote
 > > 3. Auf der Grundlage der bisher gesammelten Informationen können wir eine Hypothese aufstellen, warum dieses Gen störend ist. Die Mutation befindet sich nicht in einer Helix (normalerweise sind bei Transmembranproteinen Helices in die Membran eingefügt), sondern in einer der größeren Domänen, die aus der Membran in die Zelle hinein oder aus ihr heraus ragen. Diese Mutation unterbricht wahrscheinlich nicht die Struktur in ihren membraninternen Abschnitten, sondern eher eine der funktionellen Domänen. Wenn Sie tiefer eindringen möchten, können Sie im **Feature Viewer** überprüfen, ob es sich um das extra- oder intrazelluläre Segment handelt.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Woher stammen die Informationen in der Strukturanzeige?
@@ -428,9 +402,7 @@ All diese Informationen über die Entwicklung, Funktion und Struktur des Protein
 > > 
 > > 1: H0Y622
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Ähnliche Proteine
@@ -450,7 +422,6 @@ Der letzte Abschnitt der UniProt-Eintragsseite meldet ähnliche Proteine (dies i
 > > 3. 397
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Wie Sie beim Betrachten dieser Seite vielleicht schon vermutet haben, besteht ein großer Teil der Verarbeitung biologischer Daten über ein Protein darin, verschiedene Arten von Informationen entlang der Sequenz zuzuordnen und zu verstehen, wie sie sich gegenseitig beeinflussen. Eine visuelle Abbildung (und eine Tabelle mit denselben Informationen) bieten die beiden alternativen Registerkarten zur Ansicht dieses Eintrags, d. h. der *Variantenbetrachter* und der *Merkmalbetrachter*.
@@ -473,9 +444,7 @@ Der *Variantenviewer* zeigt alle bekannten alternativen Versionen dieser Sequenz
 > > 
 > > Wenn wir in der Variantenansicht herauszoomen, sehen wir, dass wir 5 rote Punkte haben, also 5 Varianten, die wahrscheinlich pathogen sind.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Die hohe Anzahl von Varianten, die Sie in diesem Abschnitt finden, deutet darauf hin, dass "Proteinsequenzen" (ebenso wie Gensequenzen, Proteinstrukturen usw.) tatsächlich weniger fixe Einheiten sind, als wir denken.
@@ -506,9 +475,7 @@ Der *Feature Viewer* ist im Grunde eine zusammengefasste Version aller *Features
 > > 
 > > Eine topologische zytoplasmatische Domäne
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Werfen wir abschließend noch einen Blick auf die anderen Registerkarten.
@@ -534,7 +501,6 @@ Unter *Publikationen* sind wissenschaftliche Veröffentlichungen zu dem Protein 
 > > 2. 23
 > > 
 > {: .solution}
-> 
 {: .question}
 
 ## Externe Links
@@ -561,9 +527,6 @@ Schließlich ist auch die Registerkarte *Geschichte* interessant. Sie zeigt alle
 > > 
 > > Um diese Frage zu beantworten, können Sie in der Tabelle zurückblättern und die Spalte `Database` überprüfen. War dieser Eintrag jemals in TrEMBL statt in SwissProt? Nein, also wurde dieser Eintrag von Anfang an manuell annotiert.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
-
 

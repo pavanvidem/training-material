@@ -18,6 +18,6 @@ Werkzeuge werden häufig auf neue Versionen aktualisiert. Auf Ihrem Galaxy könn
 
 **Wechseln zu einer anderen Version** eines Werkzeugs:
   - Öffnen Sie das Werkzeug
-  - Klicken Sie auf das {% icon tool-versions %} versions logo oben rechts**
+  - Klicken Sie auf das {% icon tool-versions %} versions logo **oben rechts**
   - Wählen Sie die gewünschte Version aus der Auswahlliste
 

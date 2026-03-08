@@ -35,14 +35,19 @@ edam_ontology:
 - topic_0102
 contributions:
   authorship:
-  - joachimwolff
-  - bebatut
-  - hexylena
+    - joachimwolff
+    - bebatut
+    - hexylena
+  editing:
+    - tflowers15
   translation:
-  - Tillsa
-  - unode
+    - Tillsa
+    - unode
   funding:
-  - biont
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
+    - biont
 recordings:
 - captioners:
   - shiltemann
@@ -137,6 +142,10 @@ Daten mit dem Programm **IGV** visualisieren.
 > 3. Benennen Sie die Dateien in `reads_1` und `reads_2` um
 > 
 >    {% snippet faqs/galaxy-de/datasets_rename.md %}
+>
+> 4. Erstelle eine gepaarte Sammlung namens `Paired Reads`
+>
+>    {% snippet faqs/galaxy-de/collections_build_list_paired.md %}
 > 
 {: .hands_on}
 
@@ -148,11 +157,7 @@ Sequenzierungsfehler können die Analyse verfälschen und zu einer Fehlinterpret
 Daten führen. Der erste Schritt bei jeder Art von Sequenzierungsdaten ist immer die
 Überprüfung ihrer Qualität.
 
-Es gibt ein spezielles Tutorial zur [Qualitätskontrolle] ({% link
-topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) von
-Sequenzierungsdaten. Wir werden die Schritte dort nicht wiederholen. Sie sollten das
-[tutorial]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %})
-befolgen und es auf Ihre Daten anwenden, bevor Sie weitermachen.
+Es gibt ein spezielles Tutorial zur [Qualitätskontrolle]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) von Sequenzierungsdaten. Wir werden die Schritte dort nicht wiederholen. Sie sollten das [tutorial]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) befolgen und es auf Ihre Daten anwenden, bevor Sie weitermachen.
 
 # Mapping der Reads auf ein Referenzgenom
 
@@ -181,18 +186,13 @@ Genomen eignet.
 >       - {% icon param-file %} *"FASTA/Q-Datei #2"*: `reads_2`
 >       - *"Möchten Sie Paired-End-Optionen festlegen? "*: `No`
 > 
->         Sie sollten sich die Parameter dort ansehen, insbesondere die
->         Paarungsorientierung, wenn Sie sie kennen. Sie können die Qualität des
->         Paired-End-Mappings verbessern.
+>         Sie sollten sich die Parameter dort ansehen, insbesondere die Paarungsorientierung, wenn Sie sie kennen. Sie können die Qualität des Paired-End-Mappings verbessern.
 > 
->     - *"Werden Sie ein Referenzgenom aus Ihrer Historie auswählen oder einen
->       eingebauten Index verwenden? "*: `Use a built-in genome index`
+>     - *"Werden Sie ein Referenzgenom aus Ihrer Historie auswählen oder einen eingebauten Index verwenden? "*: `Use a built-in genome index`
 >       - *"Referenzgenom auswählen "*: `Mouse (Mus musculus): mm10`
 >     - *"Analysemodus auswählen "*: `Default setting only`
 > 
->       Sie sollten einen Blick auf die nicht-standard Parameter werfen und
->       versuchen, sie zu verstehen. Sie können einen Einfluss auf das Mapping haben und
->       es verbessern.
+>       Sie sollten einen Blick auf die nicht-standard Parameter werfen und versuchen, sie zu verstehen. Sie können einen Einfluss auf das Mapping haben und es verbessern.
 > 
 >     - *"Speichern Sie die Bowtie2-Mapping-Statistiken in der Historie "*: `Yes`
 > 
@@ -204,13 +204,11 @@ Genomen eignet.
 > 
 > 1. Welche Informationen werden hier bereitgestellt?
 > 2. Wie viele Reads wurden genau 1 Mal gemappt?
-> 3. Wie viele Reads wurden mehr als 1 Mal gemappt? Wie ist das möglich? Was sollten wir
->    mit ihnen machen?
+> 3. Wie viele Reads wurden mehr als 1 Mal gemappt? Wie ist das möglich? Was sollten wir mit ihnen machen?
 > 4. Wie viele Paare von Reads wurden nicht gemappt? Was sind die Ursachen dafür?
 > 
 > > <solution-title></solution-title>
-> > 1. Die hier gegebene Information ist eine quantitative. Wir können sehen, wie viele
-> >    Sequenzen aufeinander abgestimmt sind. Sie sagt nichts über die Qualität aus.
+> > 1. Die hier gegebene Information ist eine quantitative. Wir können sehen, wie viele Sequenzen aufeinander abgestimmt sind. Sie sagt nichts über die Qualität aus.
 > > 2. ~90% der Reads wurden genau 1 Mal aligniert
 > > 3. ~7 % der Reads wurden >1 Mal übereinstimmend ausgerichtet. Diese werden als
 > >    "multi-mapped reads" bezeichnet. Dies kann aufgrund von Wiederholungen im
@@ -227,9 +225,7 @@ Genomen eignet.
 > >     - ein Read dieser Paare wird gemappt, aber nicht der gepaarte Read (`aligned
 > >       exactly 1 time` in `pairs aligned 0 times concordantly or discordantly`)
 > >     - der Rest ist überhaupt nicht gemappt
-> > 
 > {: .solution }
-> 
 {: .question}
 
 Die Überprüfung der Mapping-Statistiken ist ein wichtiger Schritt, der vor der
@@ -262,8 +258,7 @@ der die Read-Mappings gespeichert sind.
 
 {% include topics/sequence-analysis/tutorials/mapping/bam_explanation_DE.md mapper="Bowtie2" %}
 
-Die BAM-Datei enthält viele Informationen über jeden Read, insbesondere über die
-Qualität des Mappings.
+Die BAM-Datei enthält viele Informationen über jeden Read, insbesondere über die Qualität des Mappings.
 
 > <hands-on-title>Zusammenfassung der Mapping-Qualität</hands-on-title>
 > 1. {% tool [Samtools Stats](toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.2+galaxy2) %} mit den folgenden Parametern
@@ -277,8 +272,7 @@ Qualität des Mappings.
 
 > <question-title></question-title>
 > 
-> 1. Wie hoch ist der Anteil der Mismatches in den gemappten Reads, wenn sie an das
->    Referenzgenom angeglichen werden?
+> 1. Wie hoch ist der Anteil der Mismatches in den gemappten Reads, wenn sie an das Referenzgenom angeglichen werden?
 > 2. Was bedeutet die Fehlerrate?
 > 3. Was ist die durchschnittliche Qualität? Wie wird sie dargestellt?
 > 4. Was ist die durchschnittliche Insertgröße?
@@ -299,9 +293,7 @@ Qualität des Mappings.
 > >      2. {% tool [Samtools Stats](toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.5) %} auf die Ausgabe von **Filter**
 > > 
 > >    Vor der Filterung: 95.412 Reads und nach der Filterung: 89.664 Reads.
-> > 
 > {: .solution }
-> 
 {: .question}
 
 # Visualisierung mit einem Genom-Browser

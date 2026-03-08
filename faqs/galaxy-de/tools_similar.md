@@ -20,7 +20,11 @@ Manchmal gibt es mehrere Werkzeuge mit sehr ähnlichen Namen. Wenn die Parameter
 
    {% snippet faqs/galaxy-de/tutorial_mode.md %}
 
-2. Überprüfen Sie, ob der **gesamte Werkzeugname** mit dem im Tutorial übereinstimmt. {% if include.toolname %} Bitte überprüfen Sie das:
-   - **Vollständiger Werkzeugname**: `{{ include.toolname }}` {% endif %} {% if include.toolversion %}
-   - **Werkzeugversion**: `{{include.toolversion}}` (wird hinter den Werkzeugnamen geschrieben) {% endif %}
+2. Überprüfen Sie, ob der **gesamte Werkzeugname** mit dem im Tutorial übereinstimmt.
+   {% if include.toolname %} Bitte überprüfen Sie das:
+   - **Vollständiger Werkzeugname**: `{{ include.toolname }}`
+   {% endif %}
+   {% if include.toolversion %}
+   - **Werkzeugversion**: `{{include.toolversion}}` (wird hinter den Werkzeugnamen geschrieben)
+   {% endif %}
 

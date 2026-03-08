@@ -49,21 +49,45 @@ examples:
 
 
 * Kopieren der Linkposition
-* Klicken Sie auf {% icon galaxy-upload %} **Daten hochladen** am oberen Rand der Werkzeugleiste {% if include.reset_form %}
-* Klicken Sie auf die Schaltfläche **Zurücksetzen** am unteren Rand des Formulars. Wenn die Schaltfläche ausgegraut ist -> zum nächsten Schritt übergehen. {% endif %} {% if include.collection %}
-* Klicken Sie oben auf **Sammlung** {% endif %} {% if include.collection_type %}
-* Klicken Sie auf **Sammlungstyp** und wählen Sie `{{ include.collection_type }}` {% endif %}
+* Klicken Sie auf {% icon galaxy-upload %} **Daten hochladen** am oberen Rand der Werkzeugleiste
+{% if include.reset_form %}
+* Klicken Sie auf die Schaltfläche **Zurücksetzen** am unteren Rand des Formulars. Wenn die Schaltfläche ausgegraut ist -> zum nächsten Schritt übergehen.
+{% endif %}
+{% if include.collection %}
+* Klicken Sie oben auf **Sammlung**
+{% endif %}
+{% if include.collection_type %}
+* Klicken Sie auf **Sammlungstyp** und wählen Sie `{{ include.collection_type }}`
+{% endif %}
 * Wählen Sie {% icon galaxy-wf-edit %} **Daten einfügen/holen**
-* Fügen Sie den/die Link(s) in das Textfeld ein {% if include.link %} `{{ include.link }}` {% endif %} {% if include.link2 %} `{{ include.link2 }}` {% endif %} {% if include.format %}
-* Ändern Sie **Type (set all):** von "Auto-detect" auf `{{ include.format }}` {% endif %} {% if include.genome %}
-* **Genom** auf `{{ include.genome }}` ändern {% endif %}
-* Drücken Sie **Start** {% if include.collection %}
-* Klicken Sie auf **Build** wenn verfügbar {% if include.pairswaptext %}
+* Fügen Sie den/die Link(s) in das Textfeld ein
+{% if include.link %}
+  `{{ include.link }}`
+{% endif %}
+{% if include.link2 %}
+  `{{ include.link2 }}`
+{% endif %}
+{% if include.format %}
+* Ändern Sie **Type (set all):** von "Auto-detect" auf `{{ include.format }}`
+{% endif %}
+{% if include.genome %}
+* **Genom** auf `{{ include.genome }}` ändern
+{% endif %}
+* Drücken Sie **Start**
+{% if include.collection %}
+* Klicken Sie auf **Build** wenn verfügbar
+{% if include.pairswaptext %}
 * Stellen Sie sicher, dass die Vorwärts- und Rückwärtslesungen jeweils auf {{ include.pairswaptext }} gesetzt sind.
-    * Klick auf **Tauschen** sonst {% endif %}
-* Geben Sie einen Namen für die Sammlung ein {% if include.collection_name_convention %}
-    * Eine nützliche Namenskonvention ist die Verwendung von {{ include.collection_name_convention }} {% endif %} {% if include.collection_name %}
-    * {{ include.collection_name }} {% endif %}
-* Klicken Sie auf **Liste erstellen** (und warten Sie ein wenig) {% else %}
-* **Schließen** Sie das Fenster {% endif %}
-
+    * Klick auf **Tauschen** sonst
+{% endif %}
+* Geben Sie einen Namen für die Sammlung ein
+{% if include.collection_name_convention %}
+    * Eine nützliche Namenskonvention ist die Verwendung von {{ include.collection_name_convention }}
+{% endif %}
+{% if include.collection_name %}
+    * {{ include.collection_name }}
+{% endif %}
+* Klicken Sie auf **Liste erstellen** (und warten Sie ein wenig)
+{% else %}
+* **Schließen** Sie das Fenster
+{% endif %}

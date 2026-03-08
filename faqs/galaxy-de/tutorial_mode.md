@@ -28,6 +28,5 @@ Die Tools werden häufig auf neue Versionen aktualisiert. Auf Ihrem Galaxy sind 
 > <warning-title>Nicht alle Browser funktionieren!</warning-title>
 > - Es gab einige Probleme mit dem Lernprogramm-Modus in Safari für Mac-Benutzer.
 > - Versuchen Sie einen **anderen Browser**, wenn Sie die Schaltfläche nicht sehen.
-> 
 {: .warning}
 

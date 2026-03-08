@@ -447,20 +447,17 @@ lang sind, wie im folgenden Diagramm dargestellt.
 >     - *"Versatz "*: `10000`
 >     - *"Länge der flankierenden Region(en) "*: `12000`
 > 
->    Dieses Tool liefert flankierende Regionen für jedes Gen
+>     Dieses Tool liefert flankierende Regionen für jedes Gen
 > 
-> 2. Vergleichen Sie die Zeilen der resultierenden BED-Datei mit der Eingabe, um
->    herauszufinden, wie sich die Start- und Endpositionen geändert haben
+> 2. Vergleichen Sie die Zeilen der resultierenden BED-Datei mit der Eingabe, um herauszufinden, wie sich die Start- und Endpositionen geändert haben
 > 
 >    > <tip-title>Untersuchung mehrerer Dateien mit dem Scratchbook</tip-title>
 >    > 
 >    > * Klicken Sie auf **Scratchbook aktivieren/deaktivieren** in der oberen Leiste
 >    > 
->    >   ![Scratchbook
->    >   aktivieren/deaktivieren](../../images/intro_scratchbook_enable.png)
+>    >   ![Scratchbook aktivieren/deaktivieren](../../images/intro_scratchbook_enable.png)
 >    > 
->    > * Klicken Sie auf das {% icon galaxy-eye %} (Auge)-Symbol der zu prüfenden
->    >   Dateien
+>    > * Klicken Sie auf das {% icon galaxy-eye %} (Auge)-Symbol der zu prüfenden Dateien
 >    > * Klicken Sie auf **Scratchbook anzeigen/ausblenden**
 >    > 
 >    >   ![Scratchbook ein-/ausblenden](../../images/intro_scratchbook_show_hide.png)
@@ -469,10 +466,7 @@ lang sind, wie im folgenden Diagramm dargestellt.
 > 3. Benennen Sie Ihren Datensatz so um, dass er Ihre Ergebnisse widerspiegelt (`Promoter regions`)
 {: .hands_on}
 
-Die Ausgabe besteht aus Regionen, die 2kb stromaufwärts vom TSS beginnen und 10kb
-stromabwärts umfassen. Für Eingaberegionen auf dem positiven Strang, z. B. `chr1
-134212701 134230065`, ergibt dies `chr1 134210701 134222701`. Für Regionen auf dem
-negativen Strang, z. B. `chr1 8349819 9289958`, ergibt dies `chr1 9279958 9291958`.
+Die Ausgabe besteht aus Regionen, die 2kb stromaufwärts vom TSS beginnen und 10kb stromabwärts umfassen. Für Eingaberegionen auf dem positiven Strang, z. B. `chr1 134212701 134230065`, ergibt dies `chr1 134210701 134222701`. Für Regionen auf dem negativen Strang, z. B. `chr1 8349819 9289958`, ergibt dies `chr1 9279958 9291958`.
 
 Sie haben vielleicht bemerkt, dass die UCSC-Datei im Format `BED` vorliegt und mit einer
 Datenbank verknüpft ist. Genau das wollen wir auch für unsere Peak-Datei. Das Tool
@@ -482,14 +476,11 @@ konvertieren, um zu zeigen, wie dies mit Galaxy erreicht werden kann.
 
 > <hands-on-title>Format und Datenbank ändern</hands-on-title>
 > 
-> 1. Klicken Sie auf das {% icon galaxy-pencil %} (Bleistift)-Symbol im History-Eintrag
->    unserer Peak-Region-Datei
+> 1. Klicken Sie auf das {% icon galaxy-pencil %} (Bleistift)-Symbol im History-Eintrag unserer Peak-Region-Datei
 > 2. Wechsel zur Registerkarte **Datentypen**
-> 3. Im Abschnitt **In Datentyp konvertieren** unter *"Zieldatentyp "* wählen: `bed
->    (using 'Convert Genomic Interval To Bed')`
+> 3. Im Abschnitt **In Datentyp konvertieren** unter *"Zieldatentyp "* wählen: `bed (Verwendung 'Convert Genomic Interval To Bed')`
 > 4. Drücken Sie **Datensatz erstellen**
-> 5. Prüfen Sie, ob die "Datenbank/Build" `mm9` ist (die in der Publikation verwendete
->    Datenbank-Build für Mäuse)
+> 5. Prüfen Sie, ob die "Datenbank/Build" `mm9` ist (die in der Publikation verwendete Datenbank-Build für Mäuse)
 > 6. Benennen Sie die Datei erneut in etwas Erkennbares um, z.B. `Peak regions BED`
 {: .hands_on}
 
@@ -498,18 +489,14 @@ die Gene extrahieren, die sich mit unseren Peaks überlappen/überschneiden.
 
 > <hands-on-title>Überschneidungen finden</hands-on-title>
 > 
-> 1. {% tool
->    [Intersect](toolshed.g2.bx.psu.edu/repos/devteam/intersect/gops_intersect_1/1.0.0)
->    %} die Intervalle zweier Datensätze, mit den folgenden Einstellungen:
+> 1. {% tool [Intersect](toolshed.g2.bx.psu.edu/repos/devteam/intersect/gops_intersect_1/1.0.0) %} die Intervalle zweier Datensätze, mit den folgenden Einstellungen:
 >     - *"Rückgabe "*: `Overlapping Intervals`
 >     - *"von "*: die UCSC-Datei mit Promotorregionen (`Promoter regions`)
->     - *"die sich schneiden "*: unsere Peak-Region-Datei von **Ersetzen** (`Peak
->       regions BED`)
+>     - *"die sich schneiden "*: unsere Peak-Region-Datei von **Ersetzen** (`Peak regions BED`)
 >     - *"für mindestens "*: `1`
 > 
->    > <comment-title></comment-title> Die Reihenfolge der Eingaben ist wichtig! Wir
->    > wollen am Ende eine Liste von **Genen** erhalten, also muss der entsprechende
->    > Datensatz mit den Geninformationen die erste Eingabe sein (`Promoter regions`).
+>    > <comment-title></comment-title>
+>    > Die Reihenfolge der Eingaben ist wichtig! Wir wollen am Ende eine Liste von **Genen** erhalten, also muss der entsprechende Datensatz mit den Geninformationen die erste Eingabe sein (`Promoter regions`).
 >    {: .comment}
 >    ![Genes overlapping peaks](../../images/intro_overlapping_genes.png)
 {: .hands_on}
@@ -523,11 +510,11 @@ Chromosomen und zählen die Anzahl der Gene mit Peaks auf jedem Chromosom
 
 > <hands-on-title>Gene auf verschiedenen Chromosomen zählen</hands-on-title>
 > 
-> 1. {% tool [Group](Grouping1) %} data by a column and perform aggregate operation on other columns, with the following settings:
+> 1. {% tool [Gruppieren](Grouping1) %} Sie Daten nach einer Spalte und führen Sie eine Aggregationsoperation für andere Spalten durch, mit den folgenden Einstellungen.
 >     - *"Daten auswählen "* zum Ergebnis der Schnittmenge
 >     - *"Gruppieren nach Spalte "*:`Column 1`
 >     - Drücken Sie **Einfügen Operation** und wählen Sie:
->         - *"Typ "*: `Count`
+>         - *"Typ"*: `Count`
 >         - *"In der Spalte "*: `Column 1`
 >         - *"Ergebnis auf die nächste ganze Zahl runden "*: `No`
 > 
@@ -537,14 +524,7 @@ Chromosomen und zählen die Anzahl der Gene mit Peaks auf jedem Chromosom
 >    > 
 >    > > <solution-title></solution-title>
 >    > > 
->    > > Das Ergebnis variiert bei verschiedenen Einstellungen, z. B. kann sich die
->    > > Annotation aufgrund von Aktualisierungen bei UCSC ändern. Wenn Sie Schritt für
->    > > Schritt mit der gleichen Annotation vorgehen, sollte das Ergebnis Chromosom 11
->    > > mit 2164 Genen sein. Beachten Sie, dass Sie aus Gründen der Reproduzierbarkeit
->    > > alle in der Analyse verwendeten Eingabedaten aufbewahren sollten. Ein erneuter
->    > > Durchlauf der Analyse mit demselben Satz von Parametern, die in Galaxy
->    > > gespeichert sind, kann zu einem anderen Ergebnis führen, wenn sich die Eingaben
->    > > geändert haben, z. B. die Annotation von UCSC.
+>    > > Das Ergebnis variiert bei verschiedenen Einstellungen, z. B. kann sich die Annotation aufgrund von Aktualisierungen bei UCSC ändern. Wenn Sie Schritt für Schritt mit der gleichen Annotation vorgehen, sollte das Ergebnis Chromosom 11 mit 2164 Genen sein. Beachten Sie, dass Sie aus Gründen der Reproduzierbarkeit alle in der Analyse verwendeten Eingabedaten aufbewahren sollten. Ein erneuter Durchlauf der Analyse mit demselben Satz von Parametern, die in Galaxy gespeichert sind, kann zu einem anderen Ergebnis führen, wenn sich die Eingaben geändert haben, z. B. die Annotation von UCSC.
 >    > {: .solution }
 >    {: .question}
 >
@@ -581,16 +561,13 @@ Großartig, wir sind bereit, Dinge zu zeichnen!
 
 > <hands-on-title>Balkendiagramm zeichnen</hands-on-title>
 > 
-> 1. Klicken Sie auf {% icon galaxy-barchart %} (visualisieren) auf die Ausgabe des
->    Werkzeugs **Sortieren**
+> 1. Klicken Sie auf {% icon galaxy-barchart %} (visualisieren) auf die Ausgabe des Werkzeugs **Sortieren**
 > 2. Wähle `Bar diagram (NVD3)`
 > 3. Klicken Sie auf das Symbol **<<** in der oberen rechten Ecke
-> 4. Wählen Sie einen Titel bei **Angeben eines Titels**, z.B. `Gene counts per
->    chromosome`
-> 5. Wechseln Sie zum {% icon galaxy-chart-select-data %} **Daten auswählen** und
->    spielen Sie mit den Einstellungen herum
-> 6. Wenn Sie zufrieden sind, klicken Sie auf das {% icon galaxy-save %} **Speichern**
->    Visualisierung oben rechts im *Hauptfenster*
+> 4. Wählen Sie einen Titel bei **Angeben eines Titels**, z.B. `Gene counts per chromosome`
+> 5. Wechseln Sie zum {% icon galaxy-chart-select-data %} **Daten auswählen**
+> 6. Spielen Sie mit den Einstellungen herum
+> 7. Wenn Sie zufrieden sind, klicken Sie auf das {% icon galaxy-save %} **Speichern** Visualisierung oben rechts im *Hauptfenster*
 > 
 >    Damit wird die Datei in Ihren gespeicherten Visualisierungen gespeichert. Später
 >    können Sie sie unter **Daten -> Visualisierungen** im oberen Menü von Galaxy
@@ -614,26 +591,21 @@ Analyse problemlos weitergeben oder veröffentlichen.
 
 > <hands-on-title>Workflow extrahieren</hands-on-title>
 > 
-> 1. **Aufräumen**: Entfernen Sie alle fehlgeschlagenen (roten) Aufträge aus Ihrer
->    Historie, indem Sie auf die Schaltfläche {% icon galaxy-delete %} klicken.
+> 1. **Aufräumen**: Entfernen Sie alle fehlgeschlagenen (roten) Aufträge aus Ihrer Historie, indem Sie auf die Schaltfläche {% icon galaxy-delete %} klicken.
 > 
 >    Dies wird die Erstellung des Arbeitsablaufs erleichtern.
 > 
-> 2. Klicken Sie auf {% icon galaxy-gear %} (**Verlaufsoptionen**) am oberen Rand des
->    Verlaufsfensters und wählen Sie **Workflow extrahieren**.
+> 2. Klicken Sie auf {% icon galaxy-gear %} (**Verlaufsoptionen**) am oberen Rand des Verlaufsfensters und wählen Sie **Workflow extrahieren**.
 > 
->    ![`Extract Workflow` Eintrag im Menü der
->    Verlaufsoptionen](../../images/history_menu_extract_workflow.png)
+>    ![`Extract Workflow` Eintrag im Menü der Verlaufsoptionen](../../images/history_menu_extract_workflow.png)
 > 
 >    Das zentrale Bedienfeld zeigt den Inhalt der Historie in umgekehrter Reihenfolge an
 >    (die älteste Datei steht oben), und Sie können auswählen, welche Schritte in den
 >    Arbeitsablauf aufgenommen werden sollen.
 > 
-> 3. Ersetzen Sie den **Arbeitsablaufnamen** durch etwas Beschreibenderes, zum Beispiel:
->    `From peaks to genes`
+> 3. Ersetzen Sie den **Arbeitsablaufnamen** durch etwas Beschreibenderes, zum Beispiel: `From peaks to genes`
 > 
-> 4. Wenn es Schritte gibt, die nicht in den Arbeitsablauf einbezogen werden sollen,
->    können Sie sie in der ersten Spalte der Kästchen **entmarkieren**.
+> 4. Wenn es Schritte gibt, die nicht in den Arbeitsablauf einbezogen werden sollen, können Sie sie in der ersten Spalte der Kästchen **entmarkieren**.
 > 
 >    Da wir einige Schritte durchgeführt haben, die spezifisch für unsere
 >    benutzerdefinierte Peak-Datei waren, möchten wir sie vielleicht ausschließen:
@@ -644,8 +616,7 @@ Analyse problemlos weitergeben oder veröffentlichen.
 > 
 > 5. Klicken Sie auf die Schaltfläche **Workflow erstellen** am oberen Rand.
 > 
->    Sie erhalten eine Meldung, dass der Workflow erstellt wurde. Aber wo ist er
->    geblieben?
+>    Sie erhalten eine Meldung, dass der Workflow erstellt wurde. Aber wo ist er geblieben?
 > 
 > 6. Klicken Sie auf **Workflow** im linken Menü von Galaxy
 > 
@@ -658,40 +629,30 @@ Analyse problemlos weitergeben oder veröffentlichen.
 >    ![Schnittstelle zum Bearbeitungsworkflow](../../images/intro_06.png)
 > 
 >    > <comment-title>Der Workflow-Editor</comment-title> Wir können den Workflow im
->    > Workflow-Editor von Galaxy untersuchen. Hier können Sie die
->    > Parametereinstellungen der einzelnen Schritte anzeigen/ändern, Werkzeuge
->    > hinzufügen und entfernen und die Ausgabe eines Werkzeugs mit der Eingabe eines
->    > anderen verbinden - alles auf einfache und grafische Weise. Sie können diesen
->    > Editor auch verwenden, um Workflows von Grund auf neu zu erstellen.
+>    > Workflow-Editor von Galaxy untersuchen. Hier können Sie die Parametereinstellungen der einzelnen Schritte anzeigen/ändern, Werkzeuge hinzufügen und entfernen und die Ausgabe eines Werkzeugs mit der Eingabe eines anderen verbinden - alles auf einfache und grafische Weise. Sie können diesen Editor auch verwenden, um Workflows von Grund auf neu zu erstellen.
 >    {: .comment}
 > 
 >      Obwohl wir unsere beiden Eingaben im Workflow haben, fehlt ihnen die Verbindung zum ersten Werkzeug (**Intersect** {% icon tool %}), da wir einige der Zwischenschritte nicht übernommen haben.
 > 
-> 8. Verbinden Sie jeden Eingabedatensatz mit dem Tool **Intersect** {% icon tool %},
->    indem Sie den nach außen zeigenden Pfeil auf der rechten Seite des Kästchens (das
->    eine Ausgabe bezeichnet) auf einen nach innen zeigenden Pfeil auf der linken Seite
->    des **Intersect**-Kästchens (das eine Eingabe bezeichnet) ziehen
+> 8. Verbinden Sie jeden Eingabedatensatz mit dem Tool **Intersect** {% icon tool %}, indem Sie den nach außen zeigenden Pfeil auf der rechten Seite des Kästchens (das eine Ausgabe bezeichnet) auf einen nach innen zeigenden Pfeil auf der linken Seite des **Intersect**-Kästchens (das eine Eingabe bezeichnet) ziehen
 > 9. Umbenennung der Eingabedatensätze in `Reference regions` und `Peak regions`
-> 10. Drücken Sie **Auto Re-layout**, um unsere Ansicht aufzuräumen ![Auto
->     re-layouting](../../images/intro_07.png)
-> 11. Klicken Sie auf das {% icon galaxy-save %} **Speichern** (oben), um Ihre
->     Änderungen zu speichern ![Save workflow button]({% link topics/contributing/images/save_workflow.png %}){: width="50%"}
+> 10. Drücken Sie **Auto Re-layout**, um unsere Ansicht aufzuräumen
+>     ![Auto re-layouting](../../images/intro_07.png)
+> 11. Klicken Sie auf das {% icon galaxy-save %} **Speichern** (oben), um Ihre Änderungen zu speichern
+>     ![Save workflow button]({% link topics/contributing/images/save_workflow.png %}){: width="50%"}
 > 
-> > <tip-title>Zwischenschritte ausblenden</tip-title>
-> > Bei der Ausführung eines Workflows ist der Benutzer in der Regel in erster Linie an dem Endprodukt und nicht
-> > an allen Zwischenschritten interessiert. Standardmäßig werden alle Ausgaben eines
-> > Workflows angezeigt, aber wir können Galaxy explizit mitteilen, welche Ausgaben für
-> > einen bestimmten Workflow angezeigt und welche ausgeblendet werden sollen. Dieses
-> > Verhalten wird durch das kleine Sternchen neben jedem Ausgabedatensatz gesteuert:
-> > 
-> > ![Workflow-Editor Markierungsausgabe](../../../../shared/images/workflow_editor_mark_output.png)
-> > 
-> > Wenn Sie auf dieses Sternchen für einen der Ausgabedatensätze klicken, werden *nur*
-> > die Dateien mit einem Sternchen angezeigt, und alle Ausgaben ohne Sternchen werden
-> > ausgeblendet (Beachten Sie, dass das Anklicken von *allen* Ausgaben denselben Effekt
-> > hat wie das Anklicken von *keiner* der Ausgaben, in beiden Fällen werden alle
-> > Datensätze angezeigt).
-> {: .tip}
+>    > <tip-title>Zwischenschritte ausblenden</tip-title>
+>    > Bei der Ausführung eines Workflows ist der Benutzer in der Regel in erster Linie an dem Endprodukt und nicht an allen Zwischenschritten interessiert. Standardmäßig werden alle Ausgaben eines Workflows angezeigt, aber wir können Galaxy explizit mitteilen, welche Ausgaben für einen bestimmten Workflow angezeigt und welche ausgeblendet werden sollen. Dieses Verhalten wird durch das kleine Sternchen neben jedem Ausgabedatensatz gesteuert:
+>    > 
+>    > ![Workflow-Editor Markierungsausgabe](../../../../shared/images/workflow_editor_mark_output.png)
+>    > 
+>    > Wenn Sie auf dieses Sternchen für einen der Ausgabedatensätze klicken, werden *nur*
+>    > die Dateien mit einem Sternchen angezeigt, und alle Ausgaben ohne Sternchen werden
+>    > ausgeblendet (Beachten Sie, dass das Anklicken von *allen* Ausgaben denselben Effekt
+>    > hat wie das Anklicken von *keiner* der Ausgaben, in beiden Fällen werden alle
+>    > Datensätze angezeigt).
+>    {: .tip}
+>
 {: .hands_on}
 
 Nun ist es an der Zeit, unseren Arbeitsablauf für einen anspruchsvolleren Ansatz
@@ -811,7 +772,8 @@ erhalten, verwenden wir eine andere BED-Datei aus den Datenbibliotheken.
 >    Standardmäßig nimmt Galaxy den Link als Namen, also benennen Sie sie um.
 > 
 > 2. Überprüfen Sie den Inhalt der Datei, um zu sehen, ob sie Gennamen enthält. Er
->    sollte ähnlich wie unten aussehen: ![Gennamen](../../images/intro_gene_names.png)
+>    sollte ähnlich wie unten aussehen:
+>    ![Gennamen](../../images/intro_gene_names.png)
 > 
 > 3. Umbenennen in `mm9.RefSeq_genes`
 > 4. Anwenden des Tags `#genes`
@@ -841,21 +803,17 @@ Chromosom gefundenen Gene. Aber wäre es nicht interessanter, die Anzahl der Pea
 jedem einzelnen Gen zu kennen? Lassen Sie uns den Arbeitsablauf mit anderen
 Einstellungen wiederholen!
 
-> <hands-on-title>Ausführen eines Arbeitsablaufs mit geänderten
-> Einstellungen</hands-on-title>
+> <hands-on-title>Ausführen eines Arbeitsablaufs mit geänderten Einstellungen</hands-on-title>
 > 1. Öffnet das Workflow-Menü (linke Menüleiste)
-> 2. Suchen Sie den Workflow, den Sie im vorherigen Abschnitt erstellt haben, und wählen
->    Sie die Option **Ausführen**
-> 3. Wählen Sie als Eingaben unsere `mm9.RefSeq_genes` (`#genes`) BED-Datei und das
->    Ergebnis des **Cut**-Tools (`#peaks`)
-> 4. Klicken Sie auf den Titel des Werkzeugs {% icon tool %} **Gruppenwerkzeugs**, um
->    die Optionen zu erweitern.
-> 5. Ändern Sie die folgenden Einstellungen durch Klicken auf das {% icon galaxy-pencil %} (Bleistift)-Symbol auf der linken Seite:
+> 2. Suchen Sie den Workflow, den Sie im vorherigen Abschnitt erstellt haben
+> 3. Wählen Sie die Option **Ausführen**
+> 4. Wählen Sie als Eingaben unsere `mm9.RefSeq_genes` (`#genes`) BED-Datei und das Ergebnis des **Cut**-Tools (`#peaks`)
+> 5. Klicken Sie auf den Titel des Werkzeugs {% icon tool %} **Gruppenwerkzeugs**, um die Optionen zu erweitern.
+> 6. Ändern Sie die folgenden Einstellungen durch Klicken auf das {% icon galaxy-pencil %} (Bleistift)-Symbol auf der linken Seite:
 >     - *"Gruppieren nach Spalte "*: `7`
 >     - In *"Operation "*:
 >       - *"In der Spalte "*: `7`
-> 6. Klick **Workflow starten**
-> 
+> 7. Klick **Workflow starten**
 {: .hands_on}
 
 Herzlichen Glückwunsch! Sie sollten nun eine Datei mit allen eindeutigen Gennamen und
@@ -867,7 +825,7 @@ der Anzahl der darin enthaltenen Peaks haben.
 > sortieren!
 > 
 > > <solution-title></solution-title>
-> > Sie können das Werkzeug "Daten in aufsteigender oder absteigender Reihenfolge sortieren" auf Spalte 2 und "schnelle numerische Sortierung" verwenden.
+> > Sie können das Werkzeug "Daten in aufsteigender oder absteigender Reihenfolge {% tool [Sortieren](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/9.5+galaxy2) %}" auf Spalte 2 und "schnelle numerische Sortierung" verwenden.
 > {: .solution }
 {: .question}
 
@@ -914,9 +872,7 @@ tun:
 
 # Schlussfolgerung
 
-
 {% icon trophy %} Sie haben gerade Ihre erste Analyse in Galaxy durchgeführt. Sie haben
 auch einen Arbeitsablauf für Ihre Analyse erstellt, so dass Sie dieselbe Analyse leicht
 mit anderen Datensätzen wiederholen können. Außerdem haben Sie Ihre Ergebnisse und
 Methoden mit anderen geteilt.
-

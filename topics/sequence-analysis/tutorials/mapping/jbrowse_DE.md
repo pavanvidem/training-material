@@ -12,11 +12,10 @@
 >          - *"Track Visibility "*: Ein für neue Benutzer
 > 2. Visualisieren Sie den Datensatz {% icon galaxy-eye %}
 > 3. Zoom auf die `{{ include.region_to_zoom }}`
-> 
 {: .hands_on}
 
-> <comment-title>Langsam</comment-title> Die Ausführung kann je nach den Ressourcen Ihrer Trainingsinstanz ein bis zwei Minuten dauern. Der Server baut eine kleine Website für Sie auf und bereitet das Referenzgenom in einem effizienteren Format vor. Wenn Sie dies mit Ihren Kollegen teilen möchten, können Sie diesen Datensatz herunterladen und direkt auf Ihren Webserver stellen.
-> 
+> <comment-title>Langsam</comment-title>
+> Die Ausführung kann je nach den Ressourcen Ihrer Trainingsinstanz ein bis zwei Minuten dauern. Der Server baut eine kleine Website für Sie auf und bereitet das Referenzgenom in einem effizienteren Format vor. Wenn Sie dies mit Ihren Kollegen teilen möchten, können Sie diesen Datensatz herunterladen und direkt auf Ihren Webserver stellen.
 {: .comment}
 
 Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstrang abgebildet. Wenn Sie auf einen Read klicken, werden zusätzliche Informationen angezeigt
@@ -26,7 +25,7 @@ Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstr
 > 1. Was bedeuten die Tropfenform und die Linie in der automatisch generierten SNP-Spur?
 > 2. Was bedeuten unterschiedlich gefärbte Reads?
 > 
-> > <lösungs-title></lösungs-title>
+> > <solution-title></solution-title>
 > > 1. Wenn genügend Reads einen anderen Wert haben, wird dieser mit einem Tränensymbol markiert. Der Coverage Plot wird in der Höhe mit dem Prozentsatz der Reads mit einem anderen Call an dieser Position markiert
 > > 2. Farbcodes:
 > > 
@@ -41,9 +40,5 @@ Die Reads haben eine Richtung: Sie werden auf den Vorwärts- bzw. Rückwärtsstr
 > >    | <i style="background:#000000">     </i> Black         | Forward, diff chr            |
 > >    | <i style="background:#969696">     </i> Grey          | Reverse, diff chr            |
 > >    | <i style="background:#999999">     </i> Grey          | No strand                    |
-> > 
 > {: .solution }
-> 
 {: .question}
-
-

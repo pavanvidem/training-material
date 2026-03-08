@@ -32,10 +32,18 @@ examples:
 
 * Klicken Sie auf {% icon galaxy-upload %} **Daten hochladen** am oberen Rand des Werkzeugfensters
 * Wählen Sie {% icon galaxy-wf-edit %} **Einfügen/Daten holen** am unteren Rand
-* Fügen Sie den Inhalt der Datei in das Textfeld ein {% if include.name %}
-* Ändern Sie den Namen des Datensatzes von "Neue Datei" in `{{ include.name }}` {% endif %} {%- if include.format -%}
-* Ändern Sie **Type** von "Auto-detect" auf `{{ include.format }}` {%- endif -%} {%- if include.genome -%}
-* Ändern Sie **Genom** in `{{ include.genome }}` {%- endif -%} {%- if include.convertspaces -%}
-* Wählen Sie im Menü Einstellungen ({% icon galaxy-gear %}) **Leerzeichen in Tabulatoren umwandeln** {%- endif -%}
+* Fügen Sie den Inhalt der Datei in das Textfeld ein
+{% if include.name %}
+* Ändern Sie den Namen des Datensatzes von "Neue Datei" in `{{ include.name }}`
+{% endif %}
+{%- if include.format -%}
+* Ändern Sie **Type** von "Auto-detect" auf `{{ include.format }}`
+{%- endif -%}
+{%- if include.genome -%}
+* Ändern Sie **Genom** in `{{ include.genome }}`
+{%- endif -%}
+{%- if include.convertspaces -%}
+* Wählen Sie im Menü Einstellungen ({% icon galaxy-gear %}) **Leerzeichen in Tabulatoren umwandeln**
+{%- endif -%}
 * Drücken Sie **Start** und **Schließen** Sie das Fenster
 
