@@ -47,7 +47,6 @@ recordings:
 ---
 
 
-
 Exome sequencing is a method that enables the selective sequencing of the
 exonic regions of a genome - that is the transcribed parts of the genome present
 in mature mRNA, including protein-coding sequences, but also untranslated
@@ -339,9 +338,11 @@ out a few interesting aspects about that data. For a more thorough explanation
 of NGS data quality control, you may want to have a look at the dedicated
 tutorial on [Quality control]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}).
 
+To perform quality control, we will use [Falco](https://falco.readthedocs.io/en/latest/) an efficiency-optimized rewrite of [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+
 > <hands-on-title>Quality control of the input datasets</hands-on-title>
-> 1. Run {% tool [FastQC](toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0) %} on each of your six fastq datasets
->       - {% icon param-files %} *"Short read data from your current history"*: all 6 FASTQ  datasets selected with **Multiple datasets**
+> 1. Run {% tool [Falco](toolshed.g2.bx.psu.edu/repos/iuc/falco/falco/1.2.4+galaxy0) %} on each of your six fastq datasets
+>      - {% icon param-files %} *"Short read data from your current history"*: all 6 FASTQ datasets selected with **Multiple datasets**
 >
 >    {% snippet faqs/galaxy/tools_select_multiple_datasets.md %}
 >
@@ -352,10 +353,12 @@ tutorial on [Quality control]({% link topics/sequence-analysis/tutorials/quality
 > 2. Use {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %} to aggregate the raw **FastQC** data of all input datasets into one report
 >      - In *"Results"*
 >        - *"Which tool was used generate logs?"*: `FastQC`
+>
+>          Since *Falco* produces FastQC-style output, *MultiQC* will work just fine with it and can parse it as if it had been generated with *FastQC*.
 >        - In *"FastQC output"*
 >           - *"Type of FastQC output?"*: `Raw data`
 >           - {% icon param-files %} *"FastQC output"*: all six *RawData*
->             outputs of **FastQC** {% icon tool %})
+>             outputs of **Falco** {% icon tool %})
 >
 > 3. Inspect the *Webpage* output produced by the tool
 >
