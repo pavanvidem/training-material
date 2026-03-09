@@ -639,7 +639,7 @@ To make it easier to find your favorite tools, you can star them.
 
 ### Optional: Use OpenRefine instead
 
-Galaxy also offers various *Ineractive Tools*. For example, we could have performed these preprocessing steps with OpenRefine as well (I think?)
+Galaxy also offers various *Ineractive Tools*. For example, we could have performed these preprocessing steps with OpenRefine as well. Using these tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research.
 
 TODO: finish this section
 
@@ -1163,7 +1163,7 @@ TODO: question box?
 ```
 
 
-## Reuse: Find and run workflow shared by others
+## Reuse: Find and run workflows shared by others
 
 ![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
 
@@ -1176,10 +1176,30 @@ TODO: question box?
 - show account options while we wait (e.g. permanently deleting, quota and how to request more storage)
 ```
 
-The ultimate goal of preserving and sharing your research data and analyses, is that others can reuse your work.
+The ultimate goal of preserving and sharing your research data and analyses, is to enable others to repeat your analysis and reuse your work.
 To illustrate this, we will now show you how you can reuse a shared workflow from the WorkflowHub.
 
 
+### The workflow
 
+We will now walk you through reusing the *Voronoi segmentation* workflow
+you may recognize from the [video at the start of this tutorial](#watch)
+
+This [workflow has been made available via WorkflowHub](https://workflowhub.eu/workflows/1522). We will import this workflow into Galaxy, upload a dataset, and run the workflow in Galaxy.
+
+> <details-title> Voronoi Segmentation </details-title>
+>
+> **From Wikipedia:** In mathematics, a Voronoi diagram is a partition of a plane into regions close to each of a given set of objects. It can be classified also as a tessellation. In the simplest case, these objects are just finitely many points in the plane (called seeds, sites, or generators). For each seed there is a corresponding region, called a Voronoi cell, consisting of all points of the plane closer to that seed than to any other.
+>
+> ![example of voronoi diagram]({% link topics/introduction/images/galaxy-intro-rdm/voronoi-example.png %})
+{: .details}
+
+![screenshot of the voronoi workflow from workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/voronoi-wf.png %})
+
+
+For more information about this workflow and a full walkthrough of all its steps, see also the [full GTN tutorial]({% link topics/imaging/tutorials/voronoi-segmentation/tutorial.md %})
+
+
+https://workflowhub.eu/workflows/1522
 https://zenodo.org/records/15281843/files/images_and_seeds.zip
 
