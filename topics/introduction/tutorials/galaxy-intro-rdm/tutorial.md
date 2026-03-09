@@ -47,15 +47,29 @@ To keep this tutorial accessible for people with different backgrounds, we perfo
 
 ## Overview
 
-Galaxy can be used at different stages of the data life cycle, covering the steps from data collection to data reuse.
+### The Research Data Life Cycle
+
+The research life cycle refers to the series of stages through which a research project or study progresses from inception to completion. Although the specifics of the research process vary across disciplines, they share several key phases that help ensure that the research is systematic, rigorous, and produces reliable results. From **planning** and designing your study, to **collecting**, **processing**, and **analysing** your data, evaluating results, and finally **preserving** and **sharing** your data and findings for **reuse** by others.
+
+![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:40%"}
+
+### Galaxy as part of the RDM Life Cycle
+
+Galaxy supports you in your research throughout the different stages of the life cycle, covering the steps from data collection to data reuse.
+
+![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %}){: style="width:75%"}
+
+For  more information, see also [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly)
 
 
-![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:50%"}
+### Watch
 
-TODO: reference https://rdmkit.elixir-europe.org/galaxy_assembly , add or link to life cycle description
+Below is a 5-minute video introducing Galaxy as a cross-domain RDM platform.
+
+{% include _includes/youtube.html id="2w8okrORVtM"  title="Introduction to Galaxy: Image analysis in Life Sciences, Climate, Earth Science and Astronomy" nofigure="true" %}
 
 
-In this tutorial, we will provide a hands-on introduction to the Galaxy platform across the different stages of the research data life cycle.
+In this tutorial, we will take you through all the stages of the Research data life cycle, and provide a hands-on introduction to the Galaxy platform at each stage.
 
 
 ## The Galaxy Web Interface
@@ -69,7 +83,17 @@ In Galaxy, *server* and *instance* are often used interchangeably. These terms b
 
 {% snippet faqs/galaxy/account_create.md %}
 
-TODO: highlight single sign-on options
+Depending on your Galaxy server, you may also be able to log in with your institutional or social account.
+
+> <tip-title>Galaxy Single Sign-on </tip-title>
+>
+> In the Galaxy login screen, you may find the option to log in with
+> an institutional account. Which options are offered depend on which Galaxy
+> you are using.
+>
+> ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso.png %}){: width="40%"}
+> > ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso2.png %}){: width="40%"}
+{: .tip}
 
 ### What does Galaxy look like?
 
@@ -151,6 +175,7 @@ https://zenodo.org/records/18803585/files/olympics-1896-2016.zip
 >   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
+    - CERN Open Data (Particle Physics)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
 > - **Bring-your-own-data** (e.g. Dropbox, Gdrive, OneData, eLabFTW)
 >
@@ -1151,8 +1176,10 @@ TODO: question box?
 - show account options while we wait (e.g. permanently deleting, quota and how to request more storage)
 ```
 
+The ultimate goal of preserving and sharing your research data and analyses, is that others can reuse your work.
+To illustrate this, we will now show you how you can reuse a shared workflow from the WorkflowHub.
 
-Workflows shared with you by others can easily be rerun.  To illustrate this fact, we will now get a workflow from WorkflowHub, import it into Galaxy, and run it.
+
 
 https://zenodo.org/records/15281843/files/images_and_seeds.zip
 
