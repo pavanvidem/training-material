@@ -350,7 +350,7 @@ To perform quality control, we will use [Falco](https://falco.readthedocs.io/en/
 >    data, another one with an html report of the findings for each input
 >    dataset) will get added to your history.
 >
-> 2. Use {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %} to aggregate the raw **FastQC** data of all input datasets into one report
+> 2. Use {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.33+galaxy0) %} to aggregate the raw **Falco** data of all input datasets into one report
 >      - In *"Results"*
 >        - *"Which tool was used generate logs?"*: `FastQC`
 >
@@ -375,7 +375,7 @@ To perform quality control, we will use [Falco](https://falco.readthedocs.io/en/
 >    > >    consider trimming the 3' ends of reads (base qualities decline
 >    > >    slightly towards the 3' ends) or to filter out the small fraction
 >    > >    of reads with a mean base quality < 5.
->    > >    Feel free to run, *e.g.*, {% tool [Trimmomatic](toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.38.1) %} on the
+>    > >    Feel free to run, *e.g.*, {% tool [Trimmomatic](toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.39+galaxy2) %} on the
 >    > >    fastq datasets if you want to, but don't expect this to have a big
 >    > >    effect on the analysis given the high overall quality of the data
 >    > >    of all samples.
@@ -409,7 +409,7 @@ NGS reads datasets to the human reference genome. We recommend you to follow
 the dedicated [Mapping tutorial]({% link topics/sequence-analysis/tutorials/mapping/tutorial.md %}), if you need a general introduction to read mapping.
 
 > <hands-on-title>Read Mapping</hands-on-title>
-> 1. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2) %} to map the reads from the **father** sample to the reference genome
+> 1. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.19) %} to map the reads from the **father** sample to the reference genome
 >    - *"Will you select a reference genome from your history or use a built-in index?"*: `Use a built-in genome index`
 >        - *"Using reference genome"*: `Human: hg19` (or a similarly named option)
 >
@@ -465,7 +465,7 @@ the dedicated [Mapping tutorial]({% link topics/sequence-analysis/tutorials/mapp
 >    >
 >    {: .warning}
 >
-> 2. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2) %} to map the reads from the **mother** sample to the reference genome **using the same parameters as before** except
+> 2. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.19) %} to map the reads from the **mother** sample to the reference genome **using the same parameters as before** except
 >
 >    - *"Single or Paired-end reads"*: `Paired`
 >       - {% icon param-file %} *"Select first set of reads"*: the
@@ -479,7 +479,7 @@ the dedicated [Mapping tutorial]({% link topics/sequence-analysis/tutorials/mapp
 >      - *"Auto-assign"*: `No`
 >        - *"Read group sample name (SM)"*: `mother`
 >
-> 3. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2) %} to map the reads from the **child** sample to the reference genome **using the same parameters as before** except
+> 3. {% tool [Map with BWA-MEM](toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.19) %} to map the reads from the **child** sample to the reference genome **using the same parameters as before** except
 >
 >    - *"Single or Paired-end reads"*: `Paired`
 >       - {% icon param-file %} *"Select first set of reads"*: the
@@ -559,7 +559,7 @@ To produce new filtered BAM datasets with only mapped reads the mate of which is
 
 > <hands-on-title>Filtering for read pair mapping status</hands-on-title>
 >
-> 1. {% tool [Samtools view](toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.15.1+galaxy0) %} with the following
+> 1. {% tool [Samtools view](toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.22+galaxy1) %} with the following
 > parameters (leaving non-mentioned ones at their defaults):
 >   - {% icon param-files %} *"SAM/BAM/CRAM data set"*: all 3 mapped reads
 >     datasets of the family trio, outputs of **Map with BWA-MEM**
@@ -607,7 +607,7 @@ This will result in three new datasets, one for each sample in the analysis.
 >
 > > <hands-on-title></hands-on-title>
 > >
-> > 1. {% tool [Samtools view](toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.15.1+galaxy0) %}:
+> > 1. {% tool [Samtools view](toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.22+galaxy1) %}:
 > >   - {% icon param-files %} *"SAM/BAM/CRAM data set"*: all 3 mapped reads
 > >     datasets of the family trio, outputs of **Map with BWA-MEM**
 > >     {% icon tool %}
@@ -659,7 +659,7 @@ alignment.
 
 > <hands-on-title>Generating FreeBayes calls</hands-on-title>
 >
-> 1. Run {% tool [FreeBayes](toolshed.g2.bx.psu.edu/repos/devteam/freebayes/freebayes/1.3.6+galaxy0) %}:
+> 1. Run {% tool [FreeBayes](toolshed.g2.bx.psu.edu/repos/devteam/freebayes/freebayes/1.3.10+galaxy1) %}:
 >    - *"Choose the source for the reference genome"*: `Locally cached`
 >      - *"Run in batch mode?"*: `Merge output VCFs`
 >        - {% icon param-files %} *"BAM dataset(s)"*: all three mapped reads
@@ -783,7 +783,7 @@ standards in some other, less important respects is **bcftools norm**.
 
 > <hands-on-title>Post-processing FreeBayes calls</hands-on-title>
 >
-> 1. {% tool [bcftools norm](toolshed.g2.bx.psu.edu/repos/iuc/bcftools_norm/bcftools_norm/1.15.1+galaxy3) %} with the following parameters:
+> 1. {% tool [bcftools norm](toolshed.g2.bx.psu.edu/repos/iuc/bcftools_norm/bcftools_norm/1.22+galaxy0) %} with the following parameters:
 >    - *"VCF/BCF Data"*: the VCF output of **FreeBayes** {% icon tool %}
 >    - *"Choose the source for the reference genome"*: `Use a built-in genome`
 >      - *"Reference genome"*: `Human: hg19` (or a similarly named option)
@@ -797,7 +797,7 @@ standards in some other, less important respects is **bcftools norm**.
 >      {: .comment}
 >    - *"When any REF allele does not match the reference genome base"*:
 >      `ignore the problem (-w)`
->    - *"Atomize"*: `No`
+>    - *"Atomize"*: `Do not atomize`
 >    - *"Left-align and normalize indels?"*: `Yes`
 >    - *"Perform deduplication for the folowing types of variant records"*:
 >      `do not deduplicate any records`
@@ -892,11 +892,11 @@ which is rather simple to generate manually.
 >     > You can skip this step if the Galaxy server you are working on offers
 >     > `Homo sapiens: hg19` as a locally installed snpEff database. You can
 >     > check the **Genome source** select list of the
->     > {% tool [SnpEff eff](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff/4.3+T.galaxy2) %}
+>     > {% tool [SnpEff eff](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff/5.2+galaxy1) %}
 >     > tool to see if this is the case.
 >     {: .comment}
 >
->     Use {% tool [SnpEff Download](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff_download/4.3+T.galaxy2) %} to download genome annotation
+>     Use {% tool [SnpEff Download](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff_download/5.2+galaxy1) %} to download genome annotation
 >     database `hg19`.
 > 2. Create a PED-formatted pedigree dataset describing our single-family sample trio:
 >
@@ -944,12 +944,13 @@ knows how to parse SnpEff-annotated VCFs, while GEMINI output cannot be used
 with SnpEff.
 
 > <hands-on-title>Adding annotations with SnpEff</hands-on-title>
-> 1. {% tool [SnpEff eff](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff/4.3+T.galaxy2) %}
+> 1. {% tool [SnpEff eff](toolshed.g2.bx.psu.edu/repos/iuc/snpeff/snpEff/5.2+galaxy1) %}
 >    - {% icon param-file %} *"Sequence changes (SNPs, MNPs, InDels)"*: the
 >      output of **bcftools norm** {% icon tool %}
 >    - *"Input format"*: `VCF`
 >    - *"Output format"*: `VCF (only if input is VCF)`
->    - *"Genome source"*: `Locally installed reference genome`
+>    - *"Produce Summary Stats"*: `Yes`
+>    - *"Genome source"*: `Locally installed snpEff database`
 >       - *"Genome"*: `Homo sapiens: hg19` (or a similarly named option)
 >
 >      > <comment-title>Using the imported `hg19` SnpEff genome database</comment-title>
@@ -958,8 +959,6 @@ with SnpEff.
 >      >   - *"Genome source"*: `Downloaded snpEff database in your history`
 >      >      - {% icon param-file %} *"SnpEff4.3 Genome Data"*: your imported `hg19` SnpEff dataset.
 >      {: .comment}
->
->    - *"Produce Summary Stats"*: `Yes`
 >
 {: .hands_on}
 
