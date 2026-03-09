@@ -760,5 +760,4 @@ To share a history, click on the {%  icon galaxy-history-options %} history opti
 
 # Conclusion
 
-
 {% icon trophy %} You have just performed your first analysis in Galaxy. You also created a workflow from your analysis so you can easily repeat the exact same analysis on other datasets. Additionally you shared your results and methods with others.
