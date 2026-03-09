@@ -455,6 +455,9 @@ bebatut:
       - gallantries
       - ifb
       - elixir-europe
+    former_affiliations:
+      - uni-freiburg
+      - deNBI
 
 bedroesb:
     name: Bert Droesbeke
@@ -541,6 +544,7 @@ bgruening:
       - eosc-life
       - by-covid
       - deNBI
+      - mwk
       - sfb992
       - elixir-converge
       - uni-freiburg
@@ -1392,6 +1396,8 @@ Sch-Da:
       - elixir-europe
       - nfdi4culture
       - biont
+      - deNBI
+      - mwk
 
 dadrasarmin:
     name: Armin Dadras
@@ -1431,6 +1437,8 @@ davelopez:
     affiliations:
       - eurosciencegateway
       - uni-freiburg
+      - deNBI
+      - mwk
 
 dbrites:
     name: Daniela Brites
@@ -1620,9 +1628,11 @@ erxleben:
     elixir_node: de
     affiliations:
       - uni-freiburg
-      - elixir-europe
     former_affiliations:
       - eurosciencegateway
+      - elixir-europe
+      - deNBI
+      - mwk
 
 estebanpw:
     name: Esteban Perez-Wohlfeil
@@ -1695,6 +1705,7 @@ foellmelanie:
     affiliations:
       - uni-freiburg
       - deNBI
+      - mwk
       - elixir-europe
 
 fpsom:
@@ -1812,6 +1823,7 @@ gmauro:
     former_affiliations:
       - uni-freiburg
       - elixir-europe
+      - deNBI
 
 GokceOGUZ:
     name: Gokce Oguz
@@ -2445,6 +2457,7 @@ kostrykin:
     affiliations:
       - elixir-europe
       - deNBI
+      - mwk
 
 KristinaGomoryova:
     name: Kristina Gomoryova
@@ -2674,8 +2687,13 @@ MarisaJL:
     affiliations:
       - spoc
       - ou
+      - biofair
+      - elixir-europe
     former_affiliations:
       - uni-freiburg
+    location:
+      country: UK
+    elixir_node: uk
 
 martenson:
     name: Martin Čech
@@ -2861,6 +2879,7 @@ Minamehr:
       - uni-freiburg
       - elixir-europe
       - deNBI
+      - mwk
 
 Mingkai14:
     name: Mingkai Wang
@@ -2877,6 +2896,7 @@ mira-miracoli:
       - uni-freiburg
       - elixir-europe
       - deNBI
+      - mwk
       - eurosciencegateway
 
 miRlyKayleigh:
@@ -3255,6 +3275,8 @@ paulzierep:
     affiliations:
       - uni-freiburg
       - elixir-europe
+      - deNBI
+      - mwk
 
 pavanvidem:
     name: Pavankumar Videm
@@ -3264,6 +3286,8 @@ pavanvidem:
       - uni-freiburg
       - elixir-europe
       - spoc
+      - deNBI
+      - mwk
 
 PfisterMaxJLU:
     name: Max Pfister
@@ -3833,6 +3857,7 @@ teresa-m:
       - uni-freiburg
       - elixir-europe
       - deNBI
+      - mwk
       - biont
 
 TanguyGen:
@@ -4083,6 +4108,8 @@ wm75:
       - uni-freiburg
       - elixir-europe
       - eurosciencegateway
+      - deNBI
+      - mwk
 
 wverastegui:
     name: Wudmir Rojas
