@@ -1,3 +1,41 @@
+GTN_GTN:1772826530
+
+A	assets/images/biofair.png
+GTN_GTN:1772715368
+
+A	shared/images/logos/CESNET_LOGO.png
+GTN_GTN:1772702751
+
+A	topics/imaging/images/omero-suite/credential_1.png
+A	topics/imaging/images/omero-suite/credential_2.png
+A	topics/imaging/images/omero-suite/credential_3.png
+A	topics/imaging/images/omero-suite/credential_4.png
+A	topics/imaging/images/omero-suite/credential_5.png
+A	topics/imaging/tutorials/omero-suite/workflows/2024_OMERO_Basic_Upload.ga
+GTN_GTN:1772696988
+
+A	_includes/cyoa-choices-ES.html
+A	faqs/galaxy-es/analysis_results_may_vary.md
+A	faqs/galaxy-es/collections_build_list.md
+A	faqs/galaxy-es/collections_build_list_paired.md
+A	faqs/galaxy-es/datasets_add_tag.md
+A	faqs/galaxy-es/datasets_create_new_file.md
+A	faqs/galaxy-es/datasets_import_from_data_library.md
+A	faqs/galaxy-es/datasets_rename.md
+A	faqs/galaxy-es/histories_copy_dataset.md
+A	faqs/galaxy-es/tools_change_version.md
+A	faqs/galaxy-es/tools_select_collection.md
+A	faqs/galaxy-es/tools_select_multiple_datasets.md
+A	faqs/galaxy-es/tools_similar.md
+A	faqs/galaxy-es/tutorial_mode.md
+GTN_GTN:1772554970
+
+A	shared/images/logos/ELIXIR-Germany-logo.jpg
+A	shared/images/logos/ghga-logo.svg
+GTN_GTN:1772443625
+
+R099	metadata/git-mod-326b422749cb5f76982a63bf781e479e31ab5fe8.txt	metadata/git-mod-ae82efbadb271a71064648d53c807a85ae2c03e0.txt
+R099	metadata/git-pub-326b422749cb5f76982a63bf781e479e31ab5fe8.txt	metadata/git-pub-ae82efbadb271a71064648d53c807a85ae2c03e0.txt
 GTN_GTN:1772123462
 
 A	faqs/galaxy/bulk_change_datatype.md
