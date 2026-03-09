@@ -909,7 +909,7 @@ which is rather simple to generate manually.
 >
 >    and set its datatype to `tabular`.
 >
->    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" %}
+>    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" convertspaces="true" %}
 >
 >    > <warning-title>Remember those sample names</warning-title>
 >    >
