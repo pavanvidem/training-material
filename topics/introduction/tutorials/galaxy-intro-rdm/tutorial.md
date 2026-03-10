@@ -1178,9 +1178,12 @@ To illustrate this, we will now show you how you can reuse a shared workflow fro
 
 There are various places where you can find Galaxy workflows to reuse:
 
-1. [IWC (Intergalactic Workflows commission)](https://iwc.galaxyproject.org). Workflows curated by Galaxy experts.
+1. [IWC (Intergalactic Workflows commission)](https://iwc.galaxyproject.org). High-quality workflows curated by Galaxy community experts.
 2. [WorkflowHub](https://workflowhub.eu/). A registry for describing, sharing and publishing scientific computational workflows. Not limited to Galaxy workflows.
-3. The "Published Workflows" section in Galaxy
+3. [Dockstore](https://dockstore.org/search?entryType=workflows&searchMode=files). a free and open source platform for sharing reusable and scalable analytical tools and workflows.
+4. The "Published Workflows" section in Galaxy. All the workflows published by others on your Galaxy.
+5. Workflow definition files (ending in `.ga`) shared with you by others, e.g. in a publication.
+
 
 
 ## Showcase 1: WorkflowHub
@@ -1207,29 +1210,139 @@ For more information about this workflow and a full walkthrough of all its steps
 
 ### Import the Workflow
 
-We start by importing this workflow into Galaxy
+We start by importing this workflow into Galaxy.
 
-> <hands-on-title></hands-on-title>
+{% include _includes/cyoa-choices.html option1="GalaxyEU" option2="Other" default="Other" text="If you are working on GalaxyEU (usegalaxy.eu), the next step can be made a bit quicker. If that is the case, choose the corresponding button below" %}
+
+
+<div class="GalaxyEU" markdown="1">
+
+> <hands-on-title> Obtain workflow from WorkflowHub </hands-on-title>
 >
-> 1. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522)
+> 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
+>    - Here you can browse for workflows
+>    - On the left panel you can filter workflows by type (Galaxy, Nextflow, CWL etc)
+>    - **Search** for **"Voronoi Segmentation"**
 >
-> 2.
+> 2. Click on the "Run on Galaxy" button in the top-right instead!
+>
+>    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-rungalaxy.png %})
+>
+> 3. This will automatically import the workflow to Galaxy EU, and display the workflow run window
+>
+>    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-imported.png %})
+>
+> 4. In the **Activity Bar**, click on **Workflows**
+>    - you will see the workflow listed under **My Workflows**
+>
+>     ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-imported2.png %})
 >
 {: .hands_on}
 
+</div>
 
-### Import the Data
+<div class="Other" markdown="1">
 
-https://zenodo.org/records/15281843/files/images_and_seeds.zip
+> <hands-on-title> Obtain workflow from WorkflowHub </hands-on-title>
+>
+> 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
+>    - Here you can browse for workflows
+>    - On the left panel you can filter workflows by type (Galaxy, Nextflow, CWL etc)
+>    - **Search** for **"Voronoi Segmentation"**
+>
+> 2. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522)
+>
+>    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh.png %})
+>
+> 3. Click on the **Files** tab
+>
+>    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-files.png %})
+>
+> 4. Click on `voronoi-segmentation.ga` in the file list
+>
+> 5. **Download** the .ga file OR **copy the URL** to it (via the "Raw" button)
+>
+> 6. In Galaxy, click on **Workflows** in the **Activity Bar**
+>
+> 7. Import the voronoi workflow to Galaxy via URL or file upload
+>
+>    {% snippet faqs/galaxy/workflows_import.md %}
+>
+{: .hands_on}
+</div>
 
-### Run the Workflow
+### Run the workflow
 
+> <hands-on-title></hands-on-title>
+>
+> 1. Create a **new history**, and give it a good name
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>
+> 2. Upload the two input images by URL
+>
+>    ```
+>    https://zenodo.org/records/18803585/files/tree-image.tiff
+>    https://zenodo.org/records/18803585/files/tree-seeds.tiff
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+> 3. Run the voronoi workflow with the following inputs
+>    - **Image**: `tree-image.tiff`
+>    - **Seeds**: `tree-seeds.tiff`
+>
+>    {% snippet faqs/galaxy/workflows_run.md %}
+>
+> 4. After the workflows is completed (~5-10 minutes), you can explore the outputs
+>
+>   ![example output from voronoi workflow]({% link topics/introduction/images/galaxy-intro-rdm/voronoi-output.png %})
+>
+{: .hands_on}
 
+The details of this workflow are out of scope for this tutorial, the important thing is that you have seen how to find and import workflows shared by others.
 
 
 ## Showcase 2: IWC
 
-Run a
+All the workflows from IWC are reviewed and maintained by a group of Galaxy experts.
+
+All IWC workflows are available from the [IWC Workflow Library]((https://iwc.galaxyproject.org/). The IWC workflow library makes it even easier to try out workflows, by providing example data preconfigured with the workflow.
+
+
+> <hands-on-title> Try an IWC workflow with example data </hands-on-title>
+>
+> 1. Open the [IWC Workflow Library](https://iwc.galaxyproject.org/)
+>
+>    ![IWC workflow library home page]({% link topics/introduction/images/galaxy-intro-rdm/iwc-wf-library.png %})
+>
+> 2. Browse for a workflow that interests you.
+>    - If nothing jumps out at you, try ["Segmentation and counting of cell nuclei in fluorescence microscopy images"](https://iwc.galaxyproject.org/workflow/fluorescence-nuclei-segmentation-and-counting-main/) from the Imaging section.
+>
+> 3. On the workflow page, look at the options at the bottom right
+>    - Select your Galaxy from the dropdown
+>    - Click **Try with Example Data**
+>
+>    ![IWC workflow library home page]({% link topics/introduction/images/galaxy-intro-rdm/iwc-try.png %})
+>
+> 4. Your workflow will now be imported to your account, and the workflow run menu will be opened, preconfigured with example inputs
+>    - Simply click **Run Workflow** to start it
+>
+> 5. Once the workflow is completed, you can explore the outputs
+>
+{: .hands_on}
+
+This is a great way to evaluate a workflow without requiring the effort of finding good example datasets.
+
+
+# Conclusion
+
+Congratulations! You have now completed this introduction to Galaxy and seen how Galaxy can support you in every phase of the research data life cycle.
+
+![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %}){: style="width:75%"}
+
+
+
 
 
 
