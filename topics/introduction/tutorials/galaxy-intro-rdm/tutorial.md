@@ -57,7 +57,7 @@ The research life cycle refers to the series of stages through which a research 
 
 Galaxy supports you in your research throughout the different stages of the life cycle, covering the steps from data collection to data reuse.
 
-![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %}){: style="width:75%"}
+![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %})
 
 For  more information, see also [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly)
 
@@ -69,6 +69,7 @@ Below is a 5-minute video introducing Galaxy as a cross-domain RDM platform.
 {% include _includes/youtube.html id="2w8okrORVtM"  title="Introduction to Galaxy: Image analysis in Life Sciences, Climate, Earth Science and Astronomy" nofigure="true" %}
 
 
+## Scope
 In this tutorial, we will take you through all the stages of the Research data life cycle, and provide a hands-on introduction to the Galaxy platform at each stage.
 
 
@@ -101,6 +102,8 @@ Depending on your Galaxy server, you may also be able to log in with your instit
 > 1. Open your favorite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
 > 2. Browse to your Galaxy instance
 > 3. Log in or register
+>
+>    {% snippet faqs/galaxy/account_create.md %}
 >
 > ![Screenshot of Galaxy Australia with the register or login button highlighted](../../images/galaxy-login.png)
 >
@@ -1162,15 +1165,6 @@ TODO: question box?
 
 ![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
 
-```
-- download a workflow from WorkflowHub and run it
-	- CYOA choice between Voronoi tuto workflow and digital humanities workflow?
-- import the data for it (can we show a third way to import data?)
-- run and view results
-
-- show account options while we wait (e.g. permanently deleting, quota and how to request more storage)
-```
-
 The ultimate goal of preserving and sharing your research data and analyses, is to enable others to repeat your analysis and reuse your work.
 To illustrate this, we will now show you how you can reuse a shared workflow from the WorkflowHub.
 
@@ -1320,15 +1314,20 @@ All IWC workflows are available from the [IWC Workflow Library]((https://iwc.gal
 >    - If nothing jumps out at you, try ["Segmentation and counting of cell nuclei in fluorescence microscopy images"](https://iwc.galaxyproject.org/workflow/fluorescence-nuclei-segmentation-and-counting-main/) from the Imaging section.
 >
 > 3. On the workflow page, look at the options at the bottom right
->    - Select your Galaxy from the dropdown
+>    - **Select your Galaxy** from the dropdown
 >    - Click **Try with Example Data**
 >
 >    ![IWC workflow library home page]({% link topics/introduction/images/galaxy-intro-rdm/iwc-try.png %})
 >
 > 4. Your workflow will now be imported to your account, and the workflow run menu will be opened, preconfigured with example inputs
->    - Simply click **Run Workflow** to start it
+>    - Simply click **Run Workflow** to start it (top-right)
+>
+>    ![IWC workflow library home page]({% link topics/introduction/images/galaxy-intro-rdm/iwc-try-run.png %})
 >
 > 5. Once the workflow is completed, you can explore the outputs
+>    - If you picked the Segmentation workflow, one of the outputs is this image, a microscope image analysed to detect objects (cells in this case), count them and label them:
+>
+>      ![output image from segmentation workflow]({% link topics/introduction/images/galaxy-intro-rdm/iwc-wf-out.png %})
 >
 {: .hands_on}
 
@@ -1339,7 +1338,7 @@ This is a great way to evaluate a workflow without requiring the effort of findi
 
 Congratulations! You have now completed this introduction to Galaxy and seen how Galaxy can support you in every phase of the research data life cycle.
 
-![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %}){: style="width:75%"}
+![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %})
 
 
 
