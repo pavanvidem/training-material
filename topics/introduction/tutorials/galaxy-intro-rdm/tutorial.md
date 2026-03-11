@@ -37,7 +37,7 @@ To keep this tutorial accessible for people with different backgrounds, we perfo
 
 > <agenda-title></agenda-title>
 >
-> In this tutorial, we will:
+> In this tutorial, we will cover:
 >
 > 1. TOC
 > {:toc}
@@ -59,7 +59,7 @@ Galaxy supports you in your research throughout the different stages of the life
 
 ![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %})
 
-For  more information, see also [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly)
+For  more information, see also the [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly)
 
 
 ## Watch
@@ -93,7 +93,9 @@ Depending on your Galaxy server, you may also be able to log in with your instit
 > you are using.
 >
 > ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso.png %}){: width="40%"}
-> > ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso2.png %}){: width="40%"}
+>
+>  ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso2.png %}){: width="40%"}
+>
 {: .tip}
 
 ## What does Galaxy look like?
@@ -129,7 +131,7 @@ The first time you use Galaxy, there will be no files in your history panel.
 
 # Collect: Data import
 
-![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:50%"}
+![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:75%"}
 
 
 ## The Galaxy History
@@ -166,6 +168,7 @@ Before we begin, let's name our history. It is recommended to create a new histo
 
 
 > <comment-title> Galaxy Data Import Options </comment-title>
+>
 > There are various ways to get data into Galaxy
 > - Uploading from **your computer**
 > - Import from **URL**
@@ -173,7 +176,7 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
-    - CERN Open Data (Particle Physics)
+>    - CERN Open Data (Particle Physics)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
 > - **Bring-your-own-data** (e.g. Dropbox, Gdrive, OneData, eLabFTW)
 >
@@ -277,7 +280,7 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 
 # Process: Data preparation and QC
 
-![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:50%"}
+![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:75%"}
 
 
 The first steps of an analysis are often data cleaning and quality control steps.
@@ -846,7 +849,7 @@ answer our research question, ***"What is the age distribution of Olympic athlet
 # Analyse: Calculate results
 
 
-![The RDM lifecycle with the analyse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:50%"}
+![The RDM lifecycle with the analyse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:75%"}
 
 
 > <comment-title> Domain-specific analysis tools </comment-title>
@@ -1130,26 +1133,122 @@ Once your workflow is finished, you should get a final montage image with 51 his
 ![final montage image]({% link topics/introduction/images/galaxy-intro-rdm/montage-all.png %} "Montage of histograms for all 51 Olympic games in our dataset")
 
 
-TODO: question box?
+> <question-title></question-title>
+>
+> 1. What was the youngest athelete in 1896 Olympics?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. Look in the Summary statistics output, the 0th percentile is **10 years old**
+> {: .solution}
+{: .question}
 
+Well done! You have created your first Galaxy workflow, and rerun it on a collection of datasets.
 
+The next step is often preserving your work. Whether you want to publish your findings and methods in a journal article, or share it with colleagues, or simply have a detailed record for yourself. The next sections deal with exporting and sharing everything you created in Galaxy for your research.
 
 # Preserve: Export data, history, and workflow
 
-![The RDM lifecycle with the preserve stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:50%"}
+![The RDM lifecycle with the preserve stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:75%"}
 
-```
-- history download
-- workflow download
-- RO-crate export?
-- Daniela's suggestion: export to repository using https://usegalaxy.eu/root?tool_id=export_remote
-- other?
-```
+
+## Downloading your history
+
+Individual datasets can be downloaded via the save {% icon save %} icon on the expanded dataset in history.
+
+But we can also download our entire history at once, including all metadata
+
+> <hands-on-title>Export your history</hands-on-title>
+>
+> 1. Click on **History options** {% icon galaxy-history-options %}
+> 2. Select **Export history to file**
+> 3. Select the format *compressed TGZ*
+>
+>   ![history export format selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export.png %})
+>
+> 4. Select as destination: **Temporary Direct Download**
+>
+>    ![history export destination selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export-destination.png %})
+>
+> 5. Click **Generate Download Link**
+>
+>    ![history export destination selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export-link.png %})
+>
+> 6. You will get a Download button and a Download link
+>
+>    ![history export destination selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export-dl.png %})
+>
+{: .hands_on}
+
+You now have your full history available outside of Galaxy. This is useful if you want to continue your analysis on your local machine,
+or simply want a backup of your work.
+
+This exported history can also be imported into a different Galaxy.
+
+{% snippet faqs/galaxy/histories_import.md %}
+
+If you want to share your history with another Galaxy user, there are more direct ways to do that, which we will cover in the *share* section next.
+
+
+## Exporting your history to a repository
+
+You can also directly export Galaxy datasets to external repositories such as Zenodo, Google Drive, OneData, and many more.
+
+In order to do this, you will first need to configure one of these repositories in your Galaxy account settings.
+
+> <hands-on-title> Manage your repositories </hands-on-title>
+>
+> 1. Configure a repository in your Galaxy account by following the instructions in the box below
+>    - Pick a repository you already have an account for. E.g. Google drive may be a good option.
+>    - If you do not have accounts on any of these systems, you can skip this and watch the video below this hands-on box.
+>
+>    {% snippet faqs/galaxy/manage_your_repositories.md %}
+>
+> 2. {% tool [Export datasets - to repositories](export_remote) %} with the following parameters
+>    - *"Choose your dataset"*: the montage output from Galaxy
+>    - *"Directory URI"*: the repository you configured in the previous step
+>
+> 3. Go to your repository and view the file there.
+>
+{: .hands_on}
+
+Below is a video showing this feature in action:
+
+{% include _includes/youtube.html id="KdJgCJz9A8I"  title="Example of importing and exporting datasets between Galaxy and Zenodo"  %}
+
+Now that you have configured a data repository in your Galaxy account, you can also use it to **import data from repositories** into Galaxy for analysis
+
+{% snippet faqs/galaxy/datasets_import_from_remote_files.md %}
+
+## Exporting tool citations
+
+When you publish your analysis, you will have to cite the tools you used. Galaxy makes this easy for you:
+
+> <hands-on-title> Export Tool Citations </hands-on-title>
+>
+> 1. Click on **History options** {% icon galaxy-history-options %}
+> 2. Select **Export Tool References**
+> 3. Here you will find all known citations for the tools used in your current history
+>    - They are provided in 2 formats, **References (APA)** and **Bibtex**
+>
+>    ![history tool citations in APA format]({% link topics/introduction/images/galaxy-intro-rdm/history-export-citations.png %})
+>
+{: .hands_on}
+
+## Exporting your workflows
+
+Any workflows you have created can also be exported. For example to share them when you publish your analysis.
+
+{% snippet faqs/galaxy/workflows_download.md %}
+
+Your exported Galaxy workflow will be a file with a `.ga` extension. This file can be imported into Galaxy by others easily.
+
+{% snippet faqs/galaxy/workflows_import.md %}
 
 
 # Share: Share or publish data and workflow
 
-![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:50%"}
+![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:75%"}
 
 ```
 - share workflow
@@ -1163,10 +1262,10 @@ TODO: question box?
 
 # Reuse: Find and run workflows shared by others
 
-![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:50%"}
+![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:75%"}
 
 The ultimate goal of preserving and sharing your research data and analyses, is to enable others to repeat your analysis and reuse your work.
-To illustrate this, we will now show you how you can reuse a shared workflow from the WorkflowHub.
+To illustrate this, we will now show you how you can find and reuse shared Galaxy workflows.
 
 ## Where to find Galaxy Worfklows
 
@@ -1174,11 +1273,11 @@ There are various places where you can find Galaxy workflows to reuse:
 
 1. [IWC (Intergalactic Workflows commission)](https://iwc.galaxyproject.org). High-quality workflows curated by Galaxy community experts.
 2. [WorkflowHub](https://workflowhub.eu/). A registry for describing, sharing and publishing scientific computational workflows. Not limited to Galaxy workflows.
-3. [Dockstore](https://dockstore.org/search?entryType=workflows&searchMode=files). a free and open source platform for sharing reusable and scalable analytical tools and workflows.
+3. [Dockstore](https://dockstore.org/search?entryType=workflows&searchMode=files). A free and open source platform for sharing reusable and scalable analytical tools and workflows.
 4. The "Published Workflows" section in Galaxy. All the workflows published by others on your Galaxy.
 5. Workflow definition files (ending in `.ga`) shared with you by others, e.g. in a publication.
 
-
+In the following sections we will showcase some of these workflow repositories.
 
 ## Showcase 1: WorkflowHub
 
