@@ -1158,13 +1158,32 @@ Individual datasets can be downloaded via the save {% icon save %} icon on the e
 
 But we can also download our entire history at once, including all metadata
 
+You can download your history in two formats
+- Compressed folder
+- [RO-crate](https://www.researchobject.org/ro-crate/) (Research Object crates), a community standard for bundling research (meta)data and analysis.
+
+> <details-title> About RO-crates </details-title>
+>
+> An RO-Crate is an integrated view through which you can see an entire Research Object; the methods, the data, the output and the outcomes of a project or a piece of work. Linking all this together enables the sharing of research outputs with their context, as a coherent whole.
+>
+> RO-Crates link data and metadata no matter where they are stored – so that from a paper, you can find the data, and from the data, you can find its authors, and so on.
+>
+> For example, an RO Crate won’t just contain an author’s name. It would also contain their ORCID, which in turn is connected to their affiliations, their funding, and their other publications.
+>
+> ![RO crates infographic]({% link topics/introduction/images/galaxy-intro-rdm/rocrate.png %})
+>
+> For more information, see the [ROcrates website](https://www.researchobject.org/ro-crate/)
+>
+{: .details}
+
+
 > <hands-on-title>Export your history</hands-on-title>
 >
 > 1. Click on **History options** {% icon galaxy-history-options %}
 > 2. Select **Export history to file**
 > 3. Select the format *compressed TGZ*
 >
->   ![history export format selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export.png %})
+>    ![history export format selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export.png %})
 >
 > 4. Select as destination: **Temporary Direct Download**
 >
@@ -1198,7 +1217,7 @@ In order to do this, you will first need to configure one of these repositories 
 
 > <hands-on-title> Manage your repositories </hands-on-title>
 >
-> 1. Configure a repository in your Galaxy account by following the instructions in the box below
+> 1. **Configure a repository** in your Galaxy account by following the instructions in the box below
 >    - Pick a repository you already have an account for. E.g. Google drive may be a good option.
 >    - If you do not have accounts on any of these systems, you can skip this and watch the video below this hands-on box.
 >
@@ -1250,15 +1269,49 @@ Your exported Galaxy workflow will be a file with a `.ga` extension. This file c
 
 ![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:75%"}
 
-```
-- share workflow
-- share history
-- show published histories
-- discuss workflowhub, IWC
 
-- examples of publications citing workflows/histories/tutorials
-```
+To share your Galaxy work, you can of course send the exported files from the previous section to others. But you can also share your work without exporting it, by providing others access to your Galaxy datasets, histories, workflows, visualisations, and more.
 
+Galaxy objects can be shared in different ways:
+1. With **specific users** on the same Galaxy
+2. With Galaxy users via a **share link** (anybody with the link can access)
+3. **Publicly visible** to everybody (published on Galaxy)
+
+
+Let's see how we can share our work in Galaxy
+
+> <hands-on-title> Share your work </hands-on-title>
+>
+> 1. Share your history with another Galaxy user.
+>    - If you do not know other Galaxy users, publish it for everybody to see.
+>
+>    {% snippet faqs/galaxy/histories_sharing.md %}
+>
+> 2. [If possible] Have somebody else share a history with you.
+>
+> 3. Find histories shared with you
+>    - If nobody shared a history with you, choose a **public history**
+>
+>    {% snippet faqs/galaxy/histories_shared.md %}
+>
+{: .hands_on}
+
+You now have your own copy of this history in your account. Any changes you make will not affect the original history.
+
+This is a quick and easy way to collaborate with your colleagues on Galaxy.
+
+Workflows can be shared or published in a similar way.
+
+{% snippet faqs/galaxy/workflows_share.md %}
+
+{% snippet faqs/galaxy/workflows_publish.md %}
+
+
+When you publish a paper about your research we recommend always publishing your workflow and history (e.g. as an RO-crate) with your journal article for optimal FAIRness.
+
+Workflows can be shared in dedicated workflow repositories such as [WorkflowHub](https://workflowhub.eu) for increased visibility.Similarly, you can publish your exported history to repositories such as [Zenodo](https://zenodo.org) or other data repositories.
+
+Sharing every aspect of your research, from data, to metadata and workflows, enables other researchers to **reuse your work (and cite you!)** and build on top of it. Team work makes the (science) dream work!
 
 # Reuse: Find and run workflows shared by others
 
