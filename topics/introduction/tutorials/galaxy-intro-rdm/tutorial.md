@@ -638,11 +638,6 @@ To make it easier to find your favorite tools, you can star them.
 
 
 
-## Optional: Use OpenRefine instead
-
-Galaxy also offers various *Ineractive Tools*. For example, we could have performed these preprocessing steps with OpenRefine as well. Using these tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research.
-
-TODO: finish this section
 
 
 ## Keeping your history clean
@@ -653,7 +648,6 @@ If you have failed items in your history, you might want to delete them. This he
 > <hands-on-title> Delete failed dataset </hands-on-title>
 >
 > 1. Click on the **trashcan icon** {% icon galaxy-delete %} on the failed (red) dataset
->
 >
 > > <tip-title> Deleted by accident? </tip-title>
 > >
@@ -691,6 +685,94 @@ We recommend always keeping your history clean, and deleting any failed steps.
 > For more practice with such tools, please see our [Data Manipulation Olympics tutorial]({% link topics/introduction/tutorials/data-manipulation-olympics/tutorial.md %})
 >
 {: .comment}
+
+
+## Optional: Use an Interactive Tool
+
+Galaxy also offers various *Interactive Tools*. For example, we could have performed this preprocessing steps with [OpenRefine](https://openrefine.org/) as well. Or if we know a bit of programming in R or Python, we could have done these steps in the built-in Rstudio or Jupyter Notebooks environments.
+
+Using these interactive tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research.
+
+In this **optional** section we will show you how to use such interactive tools:
+
+
+
+
+> <hands-on-title> Launch OpenRefine </hands-on-title>
+>
+> 1. Click on **Interactive Tools** in the **Activity Bar**
+> 2. Search for OpenRefine
+>
+>    ![OpenRefine Interactive tool search result]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-search.png %})
+>
+> 3. You will see a tool form where you can select files to open
+>    - *"Input file in tabular format"*: `2010 Winter Olympics Vancouver`
+>    - **Run** {% icon workflow-run %} the tool
+>
+> 4. Click on **Interactive Tools** in the **Activity Bar** again
+>    - It may take a little time to start
+>
+> 5. Once it has started, click on the name to open it
+>    - Clicking on the {% icon external-link %} icon will open it in a new tab
+>
+>    ![Olympics dataset as a table in OpenRefine]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-active.png %})
+>
+> 6. Click on **Open Project** on the left panel of OpenRefine
+>    - Click on **Galaxy File**
+>
+>    ![Olympics dataset as a table in OpenRefine]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-open.png %})
+>
+> 5. You will see our Olympics dataset loaded in OpenRefine:
+>
+>    ![Olympics dataset as a table in OpenRefine]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-table.png %})
+>
+{: .hands_on}
+
+Next, let's create the same age column we did using regular tools
+
+> <hands-on-title> Edit dataset in OpenRefine </hands-on-title>
+>
+> 1. First we tell OpenRefine to interpret the birthyear column as a number
+>    - Click on the dropdown {% icon dropdown %} icon next to the birthyear column name
+>    - **birthyear {% icon dropdown %} --> Edit Cells --> Common Transforms --> To number**
+>
+>    ![menu item to convert column to number]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-tonumber.png %})
+>
+> 2. The values in the column turned green
+>
+> 3. Click on column **birthyear {% icon dropdown %} --> Edit Column --> Add column based on this column**
+>
+> 4. Fill in the form
+>    - *"New column name"*: `age`
+>    - *"Expression"*: `2010-value
+>
+>    ![create new column menu]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-create-age-column.png %})
+>
+> 3. You should now see a new column named "age"
+>
+>    ![age column added]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-newcolumn.png %})
+>
+>
+{: .hands_on}
+
+Now that we have transformed our dataset as needed, we want to export this table back to our Galaxy history so that we can continue working on it.
+
+> <hands-on-title> Save OpenRefine dataset to Galaxy History </hands-on-title>
+>
+> 1. Click on the **Export** button in the top-right corner of OpenRefine
+> 2. Select **Galaxy Exporter** from the dropdown
+>
+>    ![button to export to Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-exporter.png %})
+>
+> 3. You will get a message that your dataset has been exported to Galaxy
+>    - Check your history and view the exported file
+>
+> 4. You can now **stop** {% icon stop %} your Interactive tool again
+>
+>    {% snippet faqs/galaxy/interactive_tools_stop.md tool="OpenRefine" %}
+>
+{: .hands_on}
+
 
 
 ## Scaling up
@@ -1008,8 +1090,7 @@ To make it easy to repeat this entire analysis without a lot of clicking, we wil
 > <hands-on-title>Extract workflow from history </hands-on-title>
 >
 > 1. **Clean up** your history: remove any failed (red) jobs from your history by clicking the {% icon galaxy-delete %} button.
->
->    This will make the creation of the workflow easier.
+>    - This will make the creation of the workflow easier.
 >
 > 2. Click {% icon galaxy-history-options %} (**History options**) at the top of your history panel and select **Extract workflow**.
 >
