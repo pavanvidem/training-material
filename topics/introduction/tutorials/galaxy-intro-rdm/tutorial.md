@@ -90,17 +90,8 @@ In Galaxy, *server* and *instance* are often used interchangeably. These terms b
 
 Depending on your Galaxy server, you may also be able to log in with your institutional or social account.
 
-> <tip-title>Galaxy Single Sign-on </tip-title>
->
-> In the Galaxy login screen, you may find the option to log in with
-> an institutional account. Which options are offered depend on which Galaxy
-> you are using.
->
-> ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso.png %}){: width="40%"}
->
->  ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso2.png %}){: width="40%"}
->
-{: .tip}
+{% snippet faqs/galaxy/account_single_sign_on.md %}
+
 
 ## What does Galaxy look like?
 
