@@ -292,7 +292,7 @@ based on these two existing columns.
 > <hands-on-title>Find a tool</hands-on-title>
 >
 > 1. **Search** for the tool {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
->    - Click on **Tools** in the Activity bar
+>    - Click on **Tools** {% icon tool %} in the **Activity bar** on the left
 >    - Enter "Compute" in the search bar
 >
 > 2. **Open** the tool by clicking on it
@@ -470,7 +470,7 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-search.png %})
 >
->    - Select the file `olympics-2010-summer.tsv`
+>    - Select the file `olympics-2008-summer.tsv`
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-repo-import.png %})
 >
@@ -1378,6 +1378,8 @@ Let's see how we can share our work in Galaxy
 >    - If nobody shared a history with you, choose a **public history**
 >
 >    {% snippet faqs/galaxy/histories_shared.md %}
+>
+> 4. **Import** this history into your own account to start working with it.
 >
 {: .hands_on}
 
