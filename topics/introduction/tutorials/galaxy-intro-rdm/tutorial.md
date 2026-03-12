@@ -475,6 +475,8 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-repo-import.png %})
 >
 >    - Click **Start**
+>    - Close the upload window
+
 >
 > 2. **Option 2:** From URL (same method as before)
 >
@@ -719,7 +721,7 @@ In this **optional section** we will show you how to use such an interactive too
 >
 {: .hands_on}
 
-Next, let's create the same age column we did using regular tools
+Next, let's create the same age column in OpenRefine as we did earlier with regular tools.
 
 > <hands-on-title> Edit dataset in OpenRefine </hands-on-title>
 >
@@ -889,7 +891,7 @@ Remember that you starred {% icon galaxy-star %} the compute tool, so you can us
 
 > <hands-on-title> Run a tool on a collection </hands-on-title>
 >
-> 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
+> 1. {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
 >    - {% icon param-collection %} *"Input file"*: `Olympics Dataset` (collection)
 >      - In front of this parameter, click on the {% icon param-collection %} icon to switch to collection input
 >    - *"Input has a header line with column names?"*: `Yes`
