@@ -90,17 +90,8 @@ In Galaxy, *server* and *instance* are often used interchangeably. These terms b
 
 Depending on your Galaxy server, you may also be able to log in with your institutional or social account.
 
-> <tip-title>Galaxy Single Sign-on </tip-title>
->
-> In the Galaxy login screen, you may find the option to log in with
-> an institutional account. Which options are offered depend on which Galaxy
-> you are using.
->
-> ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso.png %}){: width="40%"}
->
->  ![example of SSO options to log into Galaxy]({% link topics/introduction/images/galaxy-intro-rdm/login-sso2.png %}){: width="40%"}
->
-{: .tip}
+{% snippet faqs/galaxy/account_single_sign_on.md %}
+
 
 ## What does Galaxy look like?
 
@@ -302,7 +293,7 @@ based on these two existing columns.
 > <hands-on-title>Find a tool</hands-on-title>
 >
 > 1. **Search** for the tool {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
->    - Click on **Tools** in the Activity bar
+>    - Click on **Tools** {% icon tool %} in the **Activity bar** on the left
 >    - Enter "Compute" in the search bar
 >
 > 2. **Open** the tool by clicking on it
@@ -480,11 +471,13 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-search.png %})
 >
->    - Select the file `olympics-2010-summer.tsv`
+>    - Select the file `olympics-2008-summer.tsv`
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-repo-import.png %})
 >
 >    - Click **Start**
+>    - Close the upload window
+
 >
 > 2. **Option 2:** From URL (same method as before)
 >
@@ -729,7 +722,7 @@ In this **optional section**, we will show you how to use such an interactive to
 >
 {: .hands_on}
 
-Next, let's create the same age column we did using regular tools:
+Next, let's create the same age column in OpenRefine as we did earlier with regular tools.
 
 > <hands-on-title> Edit dataset in OpenRefine </hands-on-title>
 >
@@ -882,7 +875,7 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 >    ![collection contents]({% link topics/introduction/images/galaxy-intro-rdm/collection-files.png %})
 >
 > 4. **Return to the regular history view** by clicking the link at the top of the history panel
->    - The link will be called something like *"<< History: Multi-Olympics Data Analysis*
+>    - The link will be called something like *<< History: Multi-Olympics Data Analysis*
 >
 {: .hands_on}
 
@@ -899,7 +892,7 @@ Remember that you starred {% icon galaxy-star %} the compute tool, so you can us
 
 > <hands-on-title> Run a tool on a collection </hands-on-title>
 >
-> 1. {% tool [Compute - on a row](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
+> 1. {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %} with the following parameters
 >    - {% icon param-collection %} *"Input file"*: `Olympics Dataset` (collection)
 >      - In front of this parameter, click on the {% icon param-collection %} icon to switch to collection input
 >    - *"Input has a header line with column names?"*: `Yes`
@@ -1389,6 +1382,8 @@ Let's see how we can share our work in Galaxy.
 >    - If nobody shared a history with you, choose a **public history**
 >
 >    {% snippet faqs/galaxy/histories_shared.md %}
+>
+> 4. **Import** this history into your own account to start working with it.
 >
 {: .hands_on}
 
