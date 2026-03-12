@@ -9,10 +9,14 @@ objectives:
 - Familiarize yourself with the basics of Galaxy
 - Learn how to import data
 - Learn how to process and analyze data
+- Learn how to create workflows and scale up analysis
 - Learn how to share your work
-
+- Learn how to reuse workflows shared with you
 time_estimation: 3H
 key_points:
+- Galaxy is a powerful platform throughout the research life cycle
+- You can easily scale up analyses to large number of datasets
+- Galaxy aims to ensure FAIRness of your research
 subtopic: core
 priority: 3
 
@@ -1410,7 +1414,7 @@ Sharing every aspect of your research, from data, to metadata and workflows, ena
 The ultimate goal of preserving and sharing your research data and analyses, is to enable others to repeat your analysis and reuse your work.
 To illustrate this, we will now show you how you can find and reuse shared Galaxy workflows.
 
-## Where to find Galaxy Worfklows
+## Where to find Galaxy Workflows
 
 There are various places where you can find Galaxy workflows to reuse:
 
