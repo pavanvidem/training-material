@@ -34,7 +34,7 @@ contributions:
 
 This tutorial aims to familiarize you with the Galaxy user interface, with a special focus on highlighting Galaxy's many RDM (Research Data Management) features.
 
-Galaxy has over 10,000 available tools in its [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences, to astronomy, and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
+Galaxy has over 10,000 available tools in its [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences to astronomy and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
 
 To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic athletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily repeated on different datasets and shared with others.
 
@@ -74,7 +74,7 @@ Below is a 5-minute video introducing Galaxy as a cross-domain RDM platform.
 
 
 ## Scope
-In this tutorial, we will take you through all the stages of the Research data life cycle, and provide a hands-on introduction to the Galaxy platform at each stage.
+In this tutorial, we will take you through all the stages of the Research data life cycle and provide a hands-on introduction to the Galaxy platform at each stage.
 
 
 # The Galaxy Web Interface
@@ -105,7 +105,7 @@ Depending on your Galaxy server, you may also be able to log in with your instit
 ## What does Galaxy look like?
 
 > <hands-on-title>Log in to Galaxy</hands-on-title>
-> 1. Open your favorite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
+> 1. Open your favourite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
 > 2. Browse to your Galaxy instance
 > 3. Log in or register
 >
@@ -137,10 +137,11 @@ Now that you are logged in to Galaxy, let's start!
 
 ![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:75%"}
 
+There are many ways to help you with data collection in Galaxy. Central to all those is the Galaxy History.
 
 ## The Galaxy History
 
-Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets; which tools were used to create them, which version, and which parameter settings. Everything you need to write the methods section of your journal publication.
+Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets: which tools, versions, and parameter settings were used to create them. Everything you need to write the methods section of your journal publication.
 Before we begin, let's name our history. It is recommended to create a new history for each analysis that you perform, and giving your histories good names will help keep your analyses organized.
 
 
@@ -180,9 +181,9 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
->    - CERN Open Data (Particle Physics)
+>   - CERN Open Data (Particle Physics)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
-> - **Bring-your-own-data** (e.g. Dropbox, Gdrive, OneData, eLabFTW)
+> - **Bring-your-own-data** (e.g. Dropbox, Google Drive, OneData, eLabFTW)
 >
 >   {% snippet faqs/galaxy/manage_your_repositories.md %}
 >
@@ -203,7 +204,7 @@ For this tutorial, we will import datasets from the general-purpose FAIR data re
 >
 >    This brings up a box:
 >
->    ![the complicated galaxy upload dialog, the 'regular' tab is active with a large textarea to paste subsequent URL](../../images/upload-box.png)
+>    ![the complicated galaxy upload dialogue, the 'regular' tab is active with a large textarea to paste subsequent URL](../../images/upload-box.png)
 >
 > 3. Click **Paste/Fetch data**
 > 4. Paste in the address of a file:
@@ -249,7 +250,7 @@ This file contains a table listing all athletes who competed in the 2010 Winter 
 >
 > > <solution-title></solution-title>
 > > 1. 4402 athletes. Each row signifies an athlete; there are 4403 rows, one of which is the header row.
-> > 2. Vancouver. This information is given in column 13.
+> > 2. Vancouver. This information is given in column 12.
 > {: .solution}
 {: .question}
 
@@ -287,7 +288,7 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 ![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:75%"}
 
 
-The first steps of an analysis are often data cleaning and quality control steps.
+The first steps of an analysis are often data cleaning and quality control, which are more generally referred to as data preparation or data processing.
 Galaxy offers many tools that can help prepare your data for analysis, such as format conversions and data manipulation tools.
 
 ## Use a tool
@@ -422,7 +423,7 @@ In addition, it shows which tool produced this output, complete with exact param
 >
 >    ![visualisation options]({% link topics/introduction/images/galaxy-intro-rdm/visualise-options.png %})
 >
-> 4. Change **Column of y-axis values** to `Column: 16` (our new age column)
+> 4. In the "Tracks" tab, change **Column of y-axis values** to `Column: 16` (our new age column)
 >
 {: .hands_on}
 
@@ -498,7 +499,7 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 > > 1. Which Olympics is this file for? Which city was it held in?
 > >
 > > > <solution-title></solution-title>
-> > > 1. This file is from the 2008 summer Olympics in Beijing
+> > > 1. This file is from the 2008 Summer Olympics in Beijing.
 > > >
 > > {: .solution}
 > {: .question}
@@ -560,7 +561,7 @@ The error messages can sometimes be a bit cryptic, but the more you use the tool
 > <question-title> Examine the Error message </question-title>
 >
 > 1. Can you guess what went wrong based on the error message?
-> 2. Is this something we can fix? how?
+> 2. Is this something we can fix? How?
 >
 > > <solution-title></solution-title>
 > > 1. The error message says `could not convert string to float: 'NA'`. This suggests there is a line in the input file that contains an unexpected value (`NA`). This is a common way to denote a missing value, but if we assume this column to be a number and use it in our calculation
@@ -744,7 +745,7 @@ Next, let's create the same age column we did using regular tools:
 >
 > 4. Fill in the form
 >    - *"New column name"*: `age`
->    - *"Expression"*: `2010-value
+>    - *"Expression"*: `2010-value`
 >
 >    ![create new column menu]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-create-age-column.png %})
 >
@@ -1045,6 +1046,7 @@ input dataset. Since we are only interested in the age column, we will extract t
 >    - {% icon param-collection %} *"Tabular file"*: output from **Compute** {% icon tool %} (collection)
 >    - *"Header name"*: `age`
 >    - {% icon param-toggle %} *"Keep named columns"*: `Yes`
+>    - Click on **Run** 
 >
 > 2. **View** {% icon galaxy-eye %} the outputs
 >    - make sure the output is as expected (a file containing only the age column)
