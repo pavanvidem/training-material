@@ -1268,7 +1268,7 @@ But we can also download our entire history at once, including all metadata. You
 >
 > 1. Click on **History options** {% icon galaxy-history-options %}
 > 2. Select **Export history to file**
-> 3. Select the format *compressed TGZ*
+> 3. Select the format of your choice
 >
 >    ![history export format selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export.png %})
 >
