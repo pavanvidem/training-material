@@ -332,13 +332,16 @@ AnomalyCodes:
 anuprulez:
     name: Anup Kumar
     email: anup.rulez@gmail.com
-    twitter: musafirtweetsz
+    linkedin: anup-kumar-phd-9ab935159
+    orcid: 0000-0002-2068-4695
+    matrix: 'anupkumar:matrix.org'
     joined: 2018-08
     elixir_node: de
     affiliations:
       - uni-freiburg
       - eurosciencegateway
       - elixir-europe
+      - materialvitaldigital
 
 arash77:
     gtn-halloffame: "no"
@@ -549,6 +552,7 @@ bgruening:
       - elixir-converge
       - uni-freiburg
       - elixir-europe
+      - materialvitaldigital
 
 bazante1:
     name: Bazante Sanders
@@ -3277,6 +3281,7 @@ paulzierep:
       - elixir-europe
       - deNBI
       - mwk
+      - materialvitaldigital
 
 pavanvidem:
     name: Pavankumar Videm
