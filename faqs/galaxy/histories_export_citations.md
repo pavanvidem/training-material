@@ -13,6 +13,6 @@ When you publish your analysis, you will have to cite the tools you used. Galaxy
 3. Here you will find all known citations for the tools used in your current history
    - They are provided in 2 formats, **References (APA)** and **Bibtex**
 
-   ![history tool citations in APA format]({% link topics/introduction/images/galaxy-intro-rdm/history-citations.png %})
+   ![history tool citations in APA format]({% link topics/introduction/images/galaxy-intro-rdm/history-export-citations.png %})
 
 
