@@ -872,7 +872,7 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 >    ![collection contents]({% link topics/introduction/images/galaxy-intro-rdm/collection-files.png %})
 >
 > 4. **Return to the regular history view** by clicking the link at the top of the history panel
->    - The link will be called something like *"<< History: Multi-Olympics Data Analysis*
+>    - The link will be called something like *<< History: Multi-Olympics Data Analysis*
 >
 {: .hands_on}
 
