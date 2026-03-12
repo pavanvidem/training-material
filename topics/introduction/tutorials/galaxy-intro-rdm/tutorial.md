@@ -126,7 +126,7 @@ The Galaxy homepage is divided into four sections (panels):
 
 ![Screenshot of the Galaxy interface with aforementioned structure](../../images/galaxy_interface.png)
 
-The first time you use Galaxy, there will be no files in your history panel.
+Now that you are logged in to Galaxy, let's start!
 
 
 # Collect: Data import
@@ -288,7 +288,7 @@ Galaxy offers many tools that can help prepare your data for analysis, such as f
 
 ## Use a tool
 
-Recall that our research question in this tutorial is "What is the age distribution of Olympic athletes?"
+Recall that our research question in this tutorial is **"What is the age distribution of Olympic athletes?"**
 Looking at the dataset, you will see that we do not have an "age" column in our table. We do however, have a column with the birth year
 of each athlete, and a column containing the year of the olympics. Let's prepare our data for analysis by calculating a new age column
 based on these two existing columns.
@@ -296,22 +296,22 @@ based on these two existing columns.
 
 > <hands-on-title>Find a tool</hands-on-title>
 >
-> 1. Search for the tool {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
+> 1. **Search** for the tool {% tool [Compute - on rows](toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1) %}
 >    - Click on **Tools** in the Activity bar
 >    - Enter "Compute" in the search bar
 >
-> 2. Open the tool
+> 2. **Open** the tool by clicking on it
 >    - You will see the tool form in the center panel of Galaxy
 >
-> 3. Scroll down to the **Help** section and read about the tool
->    - Here you will always find usage information about the tool, including citations and links to tutorials explaining the tool.
+> 3. **Scroll** down to the **Help** section and read about the tool
+>    - Here you will always find **usage information** about the tool, including **citations** and links to **tutorials** describing the tool.
 >    - How could we use this tool to add an age column to our dataset?
 >
 >    ![tool help section]({% link topics/introduction/images/galaxy-intro-rdm/tool-help.png %} "Help section of the Compute tool")
 >
 {: .hands_on}
 
-We can use this tool to comute an age column for our dataset, but first we must ask ourselves some questions:
+We can use this tool to compute an age column for our dataset, but first we must ask ourselves some questions:
 
 > <question-title> Explore the dataset </question-title>
 >
@@ -339,7 +339,7 @@ We now have what we need to add an age column to our dataset, let's do it:
 >        - *"Add expression"*: `c10-c4`
 >        - *"Mode of the operation"*: `Append`
 >        - *"The new column name"*: `age`
-> 2. **Run** the tool
+> 2. **Run** {% icon workflow-run %} the tool
 >
 {: .hands_on}
 
@@ -513,7 +513,7 @@ We could open the tool again, and re-configure all the settings, but there is an
 >    ![rerun button]({% link topics/introduction/images/galaxy-intro-rdm/rerun-tool.png %})
 >
 > 2. **Change the input dataset** {% icon param-file %} to the summer olympics file we just uploaded
->    - Run the tool
+>    - **Run** {% icon workflow-run %} the tool
 >
 > > <question-title> How did it go? </question-title>
 > >
@@ -580,11 +580,11 @@ The error messages can sometimes be a bit cryptic, but the more you use the tool
 {: .question}
 
 The error is caused because Galaxy is trying to interpret the birthyear column as a number, but cannot do this for columns
-containing an "NA" value. We can tell the **Compute** {% icon tool %} tool not autodetect the column type, and tell it what to
-
+containing an "NA" (Not Available) value.
 
 So now that we know what caused the error, let's fix it by re-running our tool once more, with different error-handling settings.
-
+We can tell the **Compute** {% icon tool %} tool stop autodetecting the column type, and instruct it what
+to do with "NA" values.
 
 > <hands-on-title> Re-run the tool with error handling parameters </hands-on-title>
 >
@@ -594,8 +594,6 @@ So now that we know what caused the error, let's fix it by re-running our tool o
 >      - *"If an expression cannot be computed for a row"*: `Skip the row`
 >    - Change the *"Expression"* parameter to: `int(c10)-int(c4)`
 >      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool to not autodetect anymore, we need to tell it how to interpret the values in the column.
->    - Run the tool
->
 >
 >    ![expression of the tool form]({% link topics/introduction/images/galaxy-intro-rdm/compute-error-handling-expression.png %})
 >
@@ -637,9 +635,6 @@ To make it easier to find your favorite tools, you can star them.
 
 
 
-
-
-
 ## Keeping your history clean
 
 If you have failed items in your history, you might want to delete them. This helps keep your history organized.
@@ -670,32 +665,33 @@ You can also delete datasets in bulk
 
 {% snippet faqs/galaxy/datasets_deleting.md %}
 
-Sometimes you really want to permanently delete a dataset, for example to free up your storage quota. By default you get 250 GB storage (exact number may depend on your Galaxy), and usually more can be requested temporarily. If you are running out of storage space, you can *purge* (permanently delete) datasets as well. This cannot be undone.
+### Storage Quota
+
+Sometimes you really want to permanently delete a dataset, for example to free up your storage quota. By default you get **250 GB storage** (exact number may depend on your Galaxy), and more can usually be requested on a temporary basis. If you are running out of storage space, you can *purge* (permanently delete) datasets as well. This cannot be undone.
 
 {% snippet faqs/galaxy/datasets_purging_datasets.md %}
 
+{% snippet faqs/galaxy/account_reduce_quota_usage.md %}
+
 We recommend always keeping your history clean, and deleting any failed steps.
 
+### Further learning about data preprocessing in Galaxy
 
-> <comment-title> More data cleaning and preprocessing tools </comment-title>
->
-> Galaxy offers a wide range of basic file manipulation tools that are very helpful for data cleaning.
-> Operations such as file transformations, filtering, sorting, grouping, joining, splitting, etc are all possible inside Galaxy
->
-> For more practice with such tools, please see our [Data Manipulation Olympics tutorial]({% link topics/introduction/tutorials/data-manipulation-olympics/tutorial.md %})
->
-{: .comment}
+Galaxy offers a wide range of basic file manipulation tools that are very helpful for data cleaning.
+Operations such as file transformations, filtering, sorting, grouping, joining, splitting, etc are all possible inside Galaxy
+
+For more practice with such tools, please see our [Data Manipulation Olympics tutorial]({% link topics/introduction/tutorials/data-manipulation-olympics/tutorial.md %})
 
 
 ## Optional: Use an Interactive Tool
 
-Galaxy also offers various *Interactive Tools*. For example, we could have performed this preprocessing steps with [OpenRefine](https://openrefine.org/) as well. Or if we know a bit of programming in R or Python, we could have done these steps in the built-in Rstudio or Jupyter Notebooks environments.
+Galaxy also offers various *Interactive Tools*. For example, we could have performed this preprocessing with [OpenRefine](https://openrefine.org/) as well.
+Or if we know a bit of programming in R or Python, we could have done these steps using [Rstudio](https://posit.co/download/rstudio-desktop/) or [Jupyter Notebooks](https://jupyter.org/).
+All of these have been integrated into Galaxy as *Interactive Tools*.
 
-Using these interactive tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research.
+Using these interactive tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research, especially if you are already familiar with these tools.
 
-In this **optional** section we will show you how to use such interactive tools:
-
-
+In this **optional section** we will show you how to use such an interactive tool. Here we will use [OpenRefine](https://openrefine.org/), a powerful free, open source tool for working with messy data: cleaning it, transforming it from one format into another. We will use OpenRefine to perform the same task of adding an age column to our dataset.
 
 
 > <hands-on-title> Launch OpenRefine </hands-on-title>
@@ -774,6 +770,16 @@ Now that we have transformed our dataset as needed, we want to export this table
 {: .hands_on}
 
 
+Interactive tools can be a powerful addition to your Galaxy analysis.
+
+> <tip-title>Tutorials about Rstudio and Jupyter notebooks in Galaxy</tip-title>
+>
+> If you are interested in using R or python programming in Galaxy, we recommend
+> you have a look at the [Foundations of Data Science]({% link topics/data-science/ %}) topic in
+> GTN for comprehensive tutorials.
+>
+{: .tip}
+
 
 ## Scaling up
 
@@ -809,7 +815,7 @@ To avoid re-uploading our Olympics dataset and duplicating that data, we can sim
 
 > <hands-on-title> Copy datasets from another history  </hands-on-title>
 >
-> 1. View your histories side by side. Instructions are in the box below:
+> 1. **View** your histories **side by side**. Instructions are in the tip box below:
 >
 >    {% snippet faqs/galaxy/histories_side_by_side_view.md %}
 >
@@ -855,7 +861,7 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 
 > <hands-on-title> Create a collection </hands-on-title>
 >
-> 1. Create a collection out of our two olympic datasets
+> 1. Create a collection out of our two Olympic datasets
 >
 >    {% snippet faqs/galaxy/collections_autobuild_list.md %}
 >
@@ -870,13 +876,13 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 >
 >    ![collection contents]({% link topics/introduction/images/galaxy-intro-rdm/collection-files.png %})
 >
-> 4. **Return to the history view** by clicking the link at the top of the history panel
->    - The link will be called something like *"History: Multi-Olympics Data Analysis:*
+> 4. **Return to the regular history view** by clicking the link at the top of the history panel
+>    - The link will be called something like *"<< History: Multi-Olympics Data Analysis*
 >
 {: .hands_on}
 
 
-We can now treat this collection the same way as a single dataset. If we use a collection as input of a tool, that tool will be run on each of
+We can now treat this collection the same way as a single dataset. If we use a collection as input to a tool, that tool will be run on each of
 the datasets inside the collection. The result will again be a collection, this time with all the result files.
 
 
@@ -979,7 +985,7 @@ Recall that our research question in this tutorial is ***"What is the age distri
 > >
 > >    The tool **Summary Statistics - for any numerical column** {% icon tool %} looks interesting!
 > >
-> >    As does the **Histogram - of a numeric column** {% icon tool %}
+> >    As does the **Histogram** {% icon tool %}
 > >
 > {: .solution}
 {: .question}
@@ -1026,10 +1032,8 @@ A picture is worth a 1000 words, so let's see if we can plot the age distributio
 We already created a boxplot before, let's try a histogram this time. We will also use a tool rather than a Galaxy visualisation,
 so that we get an output file with the plot in our history.
 
-The tool we are goint to use for this is **Histogram with ggplot2** {% icon tool %}. This tool will plot every compatible column in the
-input dataset. Since we are only interested in the age column, we will extract this colum first, and then plot it.
-
-In order to make it easier to compare
+The tool we are going to use for this is **Histogram with ggplot2** {% icon tool %}. This tool will plot every compatible column in the
+input dataset. Since we are only interested in the age column, we will extract this column first, and then plot it.
 
 > <hands-on-title> Create a Histogram Plot </hands-on-title>
 >
@@ -1089,7 +1093,8 @@ To make it easy to repeat this entire analysis without a lot of clicking, we wil
 
 > <hands-on-title>Extract workflow from history </hands-on-title>
 >
-> 1. **Clean up** your history: remove any failed (red) jobs from your history by clicking the {% icon galaxy-delete %} button.
+> 1. **Clean up** your history
+>    - Remove any failed (red) jobs from your history by clicking the {% icon galaxy-delete %} button.
 >    - This will make the creation of the workflow easier.
 >
 > 2. Click {% icon galaxy-history-options %} (**History options**) at the top of your history panel and select **Extract workflow**.
@@ -1109,11 +1114,50 @@ To make it easy to repeat this entire analysis without a lot of clicking, we wil
 >
 {: .hands_on}
 
+
+Next, let's view our workflow in the workflow editor
+
+
+> <hands-on-title>View the workflow in the editor</hands-on-title>
+>
+> 1. Click {% icon galaxy-workflows-activity %} **Workflows** in the **Activity bar**.
+>
+>    Here you have a list of all your workflows _(the **My Workflows** tab is active by default)_.
+>
+>    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflows.png %})
+>
+>    You can see all available actions for the workflow on the workflow card, e.g. copy, download, share, edit and run
+>
+> 2. Click the {% icon galaxy-wf-edit %} (*Edit*) button on the bottom right of the workflow card.
+>
+> 3. Play around with the editor
+>    - You can move boxes around
+>    - You can add tools and make connections between tools
+>    - You can click on a tool and change parameters
+>
+>    ![workflows editor]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
+>
+>    **We will only make 1 change:** since we will have many more histograms, lets make the montage image 4 plots wide
+>
+> 4. Click on the Montage tool
+>    - A panel with the tool's configuration will open on the right.
+>    - Change the value for **# of images wide** to 4.
+>
+>     ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor-parameter.png %})
+>
+> 5. **Save** {% icon dataset-save %} the workflow via the {% icon dataset-save %} icon at the top right.
+>
+> 6. **Exit** the editor by clicking on the **Home button** (Galaxy logo) at the left of the top menu bar.
+>
+{: .hands_on}
+
+
 Next, we will run this workflow on *all* Olympic games.
 
 
 ## Run workflow on all Olympics
 
+First we will create a new history, and upload our data.
 
 > <hands-on-title>New history</hands-on-title>
 >
@@ -1147,48 +1191,11 @@ Next, we will run this workflow on *all* Olympic games.
 >
 {: .hands_on}
 
-
-Next, let's view the workflow in the workflow editor
-
-> <hands-on-title>View the workflow in the editor</hands-on-title>
->
-> 1. Click the {% icon galaxy-workflows-activity %} **Workflows** activity in the activity bar.
->
->    Here you have a list of all your workflows _(the **My Workflows** tab is active by default)_.
->
->    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflows.png %})
->
->    You can see all available actions for the workflow on the workflow card, e.g. copy, download, share, edit and run
->
-> 2. Click the {% icon galaxy-wf-edit %} (*Edit*) button on the bottom right of the workflow card.
->
-> 3. Play around with the editor
->    - You can move boxes around
->    - You can add tools and make connections between tools
->    - You can click on a tool and change parameters
->
->    ![workflows editor]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
->
->    **We will only make 1 change:** since we will have many more histograms, lets make the montage image 4 plots wide
->
-> 4. Click on the Montage tool
->    - a panel with the tool's configuration will open on the right
->    - change the value for **# of images wide** to 4
->
->     ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor-parameter.png %})
->
-> 5. **Save** {% icon dataset-save %} the workflow via the {% icon dataset-save %} icon at the top right
->
-> 6. Exit the editor by clicking on the Home button (Galaxy logo) at the left of the top menu bar
->
-{: .hands_on}
-
-
 Now it's time to run our workflow
 
 > <hands-on-title>Run the workflow</hands-on-title>
 >
-> 1. Click the {% icon galaxy-workflows-activity %} **Workflows** activity in the activity bar.
+> 1.  Click {% icon galaxy-workflows-activity %} **Workflows** in the **Activity bar**.
 >
 > 2. Click the {% icon workflow-run %} (*Run workflow*) button on the bottom right of the workflow card.
 >
@@ -1198,10 +1205,10 @@ Now it's time to run our workflow
 >
 > 3. Make sure the input of the workflow is our collection with 51 datasets.
 >
-> 4. Click **Run Workflow** {% icon workflow-run %} at top right
+> 4. Click **Run Workflow** {% icon workflow-run %} at top right.
 >    - You will now see the *workflow invocation* screen
 >    - Here you can see the progress of the workflow
->    - You can find all your previous workflow runs (invocations) in the Activity bar under Workflow Invocations {% icon galaxy-panelview %}
+>    - You can find all your previous workflow runs (invocations) in the Activity bar under **Workflow Invocations** {% icon galaxy-panelview %}
 >
 >    ![workflow invocation]({% link topics/introduction/images/galaxy-intro-rdm/workflow-invocation.png %})
 >
@@ -1235,11 +1242,13 @@ The next step is often preserving your work. Whether you want to publish your fi
 
 ## Downloading your history
 
-Individual datasets can be downloaded via the save {% icon save %} icon on the expanded dataset in history.
+**Individual** datasets can be downloaded via the **save** {% icon save %} icon on the expanded dataset in history, or via the command line.
 
-But we can also download our entire history at once, including all metadata
+{% snippet faqs/galaxy/datasets_download_datasets.md %}
 
-You can download your history in two formats
+{% snippet faqs/galaxy/datasets_download_using_command_line.md %}
+
+But we can also download our entire history at once, including all metadata. You can download your history in two formats
 - Compressed folder
 - [RO-crate](https://www.researchobject.org/ro-crate/) (Research Object crates), a community standard for bundling research (meta)data and analysis.
 
@@ -1378,7 +1387,6 @@ Let's see how we can share our work in Galaxy
 {: .hands_on}
 
 You now have your own copy of this history in your account. Any changes you make will not affect the original history.
-
 This is a quick and easy way to collaborate with your colleagues on Galaxy.
 
 Workflows can be shared or published in a similar way.
@@ -1390,7 +1398,8 @@ Workflows can be shared or published in a similar way.
 
 When you publish a paper about your research we recommend always publishing your workflow and history (e.g. as an RO-crate) with your journal article for optimal FAIRness.
 
-Workflows can be shared in dedicated workflow repositories such as [WorkflowHub](https://workflowhub.eu) for increased visibility.Similarly, you can publish your exported history to repositories such as [Zenodo](https://zenodo.org) or other data repositories.
+Workflows can be shared in dedicated workflow repositories such as [WorkflowHub](https://workflowhub.eu) for increased visibility.
+Similarly, you can publish your exported history to repositories such as [Zenodo](https://zenodo.org) or other data repositories.
 
 Sharing every aspect of your research, from data, to metadata and workflows, enables other researchers to **reuse your work (and cite you!)** and build on top of it. Team work makes the (science) dream work!
 
@@ -1565,6 +1574,7 @@ All IWC workflows are available from the [IWC Workflow Library]((https://iwc.gal
 {: .hands_on}
 
 This is a great way to evaluate a workflow without requiring the effort of finding good example datasets.
+
 
 
 # Conclusion
