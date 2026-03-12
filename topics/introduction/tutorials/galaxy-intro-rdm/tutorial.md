@@ -827,7 +827,11 @@ To avoid re-uploading our Olympics dataset and duplicating that data, we can sim
 
 We now have both our datasets in our new history. By doing it this way, rather than re-uploading the files, we do not increase our storage usage.
 
-**Important:** We will now continue this tutorial in this new history.
+> <warning-title> Important </warning-title>
+>
+> **Important:** We will now continue this tutorial in this new history.
+>
+{: .warning}
 
 ### Dataset tags
 
