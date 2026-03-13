@@ -115,7 +115,13 @@
             "type": "tool",
             "uuid": "fb165db5-36c6-4b2c-ba4a-65fce9ff1b5c",
             "when": null,
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": "summary_statistics",
+                    "output_name": "out_file1",
+                    "uuid": "4cb62955-579d-4bed-8d45-b432b5c984f8"
+                }
+            ]
         },
         "3": {
             "annotation": "",
@@ -241,6 +247,6 @@
     "tags": [
         "introduction"
     ],
-    "uuid": "df97e7e8-e35f-40da-b8c0-a5135fb5cf65",
-    "version": 2
+    "uuid": "a25c2860-f065-41c9-b5ec-b338d5407e1c",
+    "version": 3
 }
