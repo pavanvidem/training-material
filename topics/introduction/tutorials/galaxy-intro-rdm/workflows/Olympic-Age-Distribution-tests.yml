@@ -1,0 +1,13 @@
+- doc: Test outline for Olympic-Age-Distribution
+  job:
+    Input Dataset Collection:
+      class: Collection
+      collection_type: list
+      elements:
+      - class: File
+        identifier: 2010 Winter Olympics Vancouver
+        path: test-data/Input Dataset Collection_2010 Winter Olympics Vancouver.tabular
+      - class: File
+        identifier: olympics-2008-summer
+        path: test-data/Input Dataset Collection_olympics-2008-summer.tabular
+  outputs: {}

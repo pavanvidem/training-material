@@ -477,7 +477,6 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >
 >    - Click **Start**
 >    - Close the upload window
-
 >
 > 2. **Option 2:** From URL (same method as before)
 >
@@ -793,7 +792,7 @@ and show you how you can switch between histories and move data from one history
 
 > <hands-on-title> Create a second History </hands-on-title>
 >
-> 1. Create a new History
+> 1. Create a **new History**
 >
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 >
@@ -829,13 +828,19 @@ To avoid re-uploading our Olympics dataset and duplicating that data, we can sim
 
 We now have both our datasets in our new history. By doing it this way, rather than re-uploading the files, we do not increase our storage usage.
 
+> <warning-title> Important </warning-title>
+>
+> **Important:** We will now continue this tutorial in this new history.
+>
+{: .warning}
+
 ### Dataset tags
 
 You may have noticed in our first history that the results from the **Compute** {% icon tool %} tool were named *Compute on dataset 1* and *Compute on dataset 3*. To make it a bit clearer for ourselves which dataset was generated from which input file, we can add **dataset tags** {% icon galaxy-tags %}
 
 > <hands-on-title> Add dataset tags </hands-on-title>
 >
-> 1. Add two dataset tags to the Winter Olympics file
+> 1. Add two **dataset tags** {% icon galaxy-tags %} to the Winter Olympics file
 >    - Make sure all tags start with a hashtag (`#`), then they will also be added to any datasets derived from it during analysis.
 >    - tag 1: `#winter`
 >    - tag 2: `#Vancouver`
@@ -848,6 +853,9 @@ You may have noticed in our first history that the results from the **Compute** 
 >    - tag 2: `#Beijing`
 >    - tag 3: `#2008`
 >
+> 3. Your history should now look something like this:
+>    - a history with 2 files, each with dataset tags
+>
 >    ![datasets with tags added]({% link topics/introduction/images/galaxy-intro-rdm/datasets-tagged.png %})
 >
 {: .hands_on}
@@ -859,14 +867,31 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 
 > <hands-on-title> Create a collection </hands-on-title>
 >
-> 1. Create a collection out of our two Olympic datasets
+> 1. **Create a collection** {% icon param-collection %} out of our two Olympic datasets:
+>    - Click on **Select Items** {% icon param-check %} (checkbox icon) at top-left of the history panel
+>
+>      ![select datasets from history]({% link topics/introduction/images/galaxy-intro-rdm/collection-create-select.png %})
+>
+>    - Check the box in front of both our datasets
+>
+>      ![checked both our datasets]({% link topics/introduction/images/galaxy-intro-rdm/collection-create-checked.png %})
+>
+>    - At the top, click on **All 2 Selected** {% icon dropdown%}
+>    - Choose the option **Auto Build List**
+>
+>      ![Auto Build list menu option]({% link topics/introduction/images/galaxy-intro-rdm/collection-create-autobuild.png %})
+>
+>    - **Name your Collection**
+>      - for example "Olympics Dataset"
+>
+>      ![dataset collection builder]({% link topics/introduction/images/galaxy-intro-rdm/collection.png %})
+>
+>    - Click **Build**
 >
 >    {% snippet faqs/galaxy/collections_autobuild_list.md %}
 >
->    ![dataset collection builder]({% link topics/introduction/images/galaxy-intro-rdm/collection.png %})
->
 > 2. Your history now has a single item in it
->    - it tells you what is inside *"a list with 2 tabular datasets"*
+>    - It tells you what is inside *"a list with 2 tabular datasets"*
 >
 >    ![collection history item]({% link topics/introduction/images/galaxy-intro-rdm/collection-new.png %})
 >
@@ -875,13 +900,13 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 >    ![collection contents]({% link topics/introduction/images/galaxy-intro-rdm/collection-files.png %})
 >
 > 4. **Return to the regular history view** by clicking the link at the top of the history panel
->    - The link will be called something like *<< History: Multi-Olympics Data Analysis*
+>    - The link will be called something like "*<< History: Multi-Olympics Data Analysis*"
 >
 {: .hands_on}
 
 
-We can now treat this collection the same way as a single dataset. If we use a collection as input to a tool, that tool will be run on each of
-the datasets inside the collection. The result will again be a collection, this time with all the result files.
+We can now treat this collection the same way as a single dataset. If we use a collection as input to a tool, that tool will be run multiple times, once on each of the datasets inside the collection.
+The output of the tool will again be a collection, this time with all the result files.
 
 
 ### Run a tool on a collection
@@ -928,8 +953,6 @@ you like, even hundreds or thousands.
 
 Now that we have everything in Galaxy set up for analysis, and our data pre-processed to the right format, we can start to
 answer our research question, ***"What is the age distribution of Olympic athletes?"***.
-
-
 
 
 # Analyse: Calculate results
@@ -1270,7 +1293,7 @@ But we can also download our entire history at once, including all metadata. You
 >
 > 1. Click on **History options** {% icon galaxy-history-options %}
 > 2. Select **Export history to file**
-> 3. Select the format *compressed TGZ*
+> 3. Select the format of your choice
 >
 >    ![history export format selection menu]({% link topics/introduction/images/galaxy-intro-rdm/history-export.png %})
 >
