@@ -15,8 +15,8 @@ objectives:
 time_estimation: 3H
 key_points:
 - Galaxy is a powerful platform throughout the research life cycle
-- You can easily scale up analyses to large number of datasets
-- Galaxy aims to ensure FAIRness of your research
+- You can easily scale up analyses to a large number of datasets
+- Galaxy aims to ensure the FAIRness of your research
 subtopic: core
 priority: 3
 
@@ -34,9 +34,9 @@ contributions:
 
 This tutorial aims to familiarize you with the Galaxy user interface, with a special focus on highlighting Galaxy's many RDM (Research Data Management) features.
 
-Galaxy has over 10,000 available tools in it's [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences, to astronomy, and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
+Galaxy has over 10,000 available tools in its [Tool Shed](https://toolshed.g2.bx.psu.edu/), covering a wide variety of scientific domains, ranging from life sciences to astronomy and digital humanities, and covering techniques from simple text manipulation to advanced machine learning and other complex algorithms.
 
-To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic athletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily be repeated on different datasets, and shared with others.
+To keep this tutorial accessible for people with different backgrounds, we perform a toy analysis on a tabular dataset, namely a table of all athletes competing in the Olympics. The question we ask ourselves is ***"What is the age distribution of Olympic athletes?"***. In addition, we want to make sure our analysis is reproducible, so that it can be easily repeated on different datasets and shared with others.
 
 
 > <agenda-title></agenda-title>
@@ -53,7 +53,7 @@ To keep this tutorial accessible for people with different backgrounds, we perfo
 
 ## The Research Data Life Cycle
 
-The research life cycle refers to the series of stages through which a research project or study progresses from inception to completion. Although the specifics of the research process vary across disciplines, they share several key phases that help ensure that the research is systematic, rigorous, and produces reliable results. From **planning** and designing your study, to **collecting**, **processing**, and **analysing** your data, evaluating results, and finally **preserving** and **sharing** your data and findings for **reuse** by others.
+The research life cycle refers to the series of stages through which a research project or study progresses from inception to completion. Although the specifics of the research process vary across disciplines, they share several key phases that help ensure systematic, rigorous research and reliable results. It ranges from **planning** and designing your study, to **collecting**, **processing**, and **analysing** your data, evaluating results, and finally **preserving** and **sharing** your data and findings for **reuse** by others. As this is an iterative process, it is often referred to as the Research data life cycle.
 
 ![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:40%"}
 
@@ -63,7 +63,7 @@ Galaxy supports you in your research throughout the different stages of the life
 
 ![The RDM lifecycle with Galaxy features listed for each stage]({% link topics/introduction/images/galaxy-intro-rdm/rdm-all.png %})
 
-For  more information, see also the [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly)
+For  more information, see also the [RDMKit Galaxy page](https://rdmkit.elixir-europe.org/galaxy_assembly).
 
 
 ## Watch
@@ -74,7 +74,7 @@ Below is a 5-minute video introducing Galaxy as a cross-domain RDM platform.
 
 
 ## Scope
-In this tutorial, we will take you through all the stages of the Research data life cycle, and provide a hands-on introduction to the Galaxy platform at each stage.
+In this tutorial, we will take you through all the stages of the Research data life cycle and provide a hands-on introduction to the Galaxy platform at each stage.
 
 
 # The Galaxy Web Interface
@@ -96,7 +96,7 @@ Depending on your Galaxy server, you may also be able to log in with your instit
 ## What does Galaxy look like?
 
 > <hands-on-title>Log in to Galaxy</hands-on-title>
-> 1. Open your favorite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
+> 1. Open your favourite browser (Chrome, Safari, Edge or Firefox as your browser, not Internet Explorer!)
 > 2. Browse to your Galaxy instance
 > 3. Log in or register
 >
@@ -114,7 +114,7 @@ Depending on your Galaxy server, you may also be able to log in with your instit
 {: .hands_on}
 
 The Galaxy homepage is divided into four sections (panels):
-- The **Activity Bar** on the left: _This is where you will navigate to the resources in Galaxy (Tools, Workflows, Histories etc.)_
+- The **Activity Bar** on the left: _This is where you will navigate to the resources in Galaxy (Tools, Workflows, Histories, etc.)_
 - Currently active **"Activity Panel"** on the left: _By default, the {% icon tool %} **Tools** activity will be active and its panel will be expanded_
 - **Viewing panel** in the middle: _The main area for context for your analysis_
 - **History** of analysis and files on the right: _Shows your "current" history; i.e.: Where any new files for your analysis will be stored_
@@ -128,10 +128,11 @@ Now that you are logged in to Galaxy, let's start!
 
 ![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:75%"}
 
+There are many ways to help you with data collection in Galaxy. Central to all those is the Galaxy History.
 
 ## The Galaxy History
 
-Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets; which tools were used to create them, which version, and which parameter settings. Everything you need to write the methods section of your journal publication.
+Your "History" is in the panel at the right. This is where all the files you import or create will be shown. It is also a record of the actions you have taken. Galaxy tracks the provenance of all datasets: which tools, versions, and parameter settings were used to create them. Everything you need to write the methods section of your journal publication.
 Before we begin, let's name our history. It is recommended to create a new history for each analysis that you perform, and giving your histories good names will help keep your analyses organized.
 
 
@@ -171,9 +172,9 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >   - SRA/NCBI/EBI/Uniprot (Biological Sequence Data)
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
->    - CERN Open Data (Particle Physics)
+>   - CERN Open Data (Particle Physics)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
-> - **Bring-your-own-data** (e.g. Dropbox, Gdrive, OneData, eLabFTW)
+> - **Bring-your-own-data** (e.g. Dropbox, Google Drive, OneData, eLabFTW)
 >
 >   {% snippet faqs/galaxy/manage_your_repositories.md %}
 >
@@ -194,7 +195,7 @@ For this tutorial, we will import datasets from the general-purpose FAIR data re
 >
 >    This brings up a box:
 >
->    ![the complicated galaxy upload dialog, the 'regular' tab is active with a large textarea to paste subsequent URL](../../images/upload-box.png)
+>    ![the complicated galaxy upload dialogue, the 'regular' tab is active with a large textarea to paste subsequent URL](../../images/upload-box.png)
 >
 > 3. Click **Paste/Fetch data**
 > 4. Paste in the address of a file:
@@ -209,11 +210,11 @@ For this tutorial, we will import datasets from the general-purpose FAIR data re
 {: .hands_on}
 
 Your uploaded file is now in your current history.
-When the file has uploaded to Galaxy, it will turn green.
+When the file has been uploaded to Galaxy, it will turn green.
 
 > <comment-title></comment-title>
-> After this you will see your first history item (called a "dataset") in Galaxy's right panel. It will go through
-> the gray (preparing/queued) and yellow (running) states to become green (success).
+> After this, you will see your first history item (called a "dataset") in Galaxy's right panel. It will go through
+> the grey (preparing/queued) and yellow (running) states to become green (success).
 >
 {: .comment}
 
@@ -230,17 +231,17 @@ The contents of the file will be displayed in the central Galaxy panel. If the d
 
 This file contains a table listing all athletes who competed in the 2010 Winter Olympics in Oslo.
 
-![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an athlete, and each column provides further information about this athlete including birthyear, weight, medals.")
+![galaxy center panel view showing a single dataset olympics-2010-winter.tsv. ]({% link topics/introduction/images/galaxy-intro-rdm/file-preview.png %} "Preview of the dataset in Galaxy. Each row corresponds to an athlete, and each column provides further information about this athlete, including birth year, weight, and medals.")
 
 
 > <question-title> Explore the dataset </question-title>
 >
-> 1. How many athletes participated in this Olympics?
-> 2. What was the location of this Olympic games?
+> 1. How many athletes participated in these Olympics?
+> 2. What was the location of these Olympic Games?
 >
 > > <solution-title></solution-title>
-> > 1. 4402 athletes. Each row signifies an athlete, there are 4403 rows, one of which is the header row.
-> > 2. Vancouver. This information is given in column 13.
+> > 1. 4402 athletes. Each row signifies an athlete; there are 4403 rows, one of which is the header row.
+> > 2. Vancouver. This information is given in column 12.
 > {: .solution}
 {: .question}
 
@@ -258,11 +259,11 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 >
 > 2. **Click** on the **"Dataset Details"** {% icon details %} button
 >    - Here you can see further metadata such as file size, creation date, hash, format, original URL, and more
->    - Scrolling down you will also see details of the upload job that performed the import. We will look more closely at this later.
+>    - Scrolling down, you will also see details of the upload job that performed the import. We will look more closely at this later.
 >
 >    ![dataset details]({% link topics/introduction/images/galaxy-intro-rdm/dataset-details.png %} "Screenshot of the dataset details")
 >
-> 3. **Rename** the file to include the city of the Olympic. You can do this by **editing the dataset attributes**
+> 3. **Rename** the file to include the city of the Olympics. You can do this by **editing the dataset attributes**
 >    - This can be done by clicking on the **Edit** tab at the top of your screen, or the pencil icon {% icon galaxy-pencil %} on the expanded dataset.
 >    - For example, rename it to `2010 Winter Olympics Vancouver`
 >
@@ -278,14 +279,14 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 ![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:75%"}
 
 
-The first steps of an analysis are often data cleaning and quality control steps.
+The first steps of an analysis are often data cleaning and quality control, which are more generally referred to as data preparation or data processing.
 Galaxy offers many tools that can help prepare your data for analysis, such as format conversions and data manipulation tools.
 
 ## Use a tool
 
 Recall that our research question in this tutorial is **"What is the age distribution of Olympic athletes?"**
-Looking at the dataset, you will see that we do not have an "age" column in our table. We do however, have a column with the birth year
-of each athlete, and a column containing the year of the olympics. Let's prepare our data for analysis by calculating a new age column
+Looking at the dataset, you will see that we do not have an "age" column in our table. We do, however, have a column with the birth year
+of each athlete, and a column containing the year of the Olympics. Let's prepare our data for analysis by calculating a new age column
 based on these two existing columns.
 
 
@@ -306,7 +307,7 @@ based on these two existing columns.
 >
 {: .hands_on}
 
-We can use this tool to compute an age column for our dataset, but first we must ask ourselves some questions:
+We can use this tool to compute an age column for our dataset, but first, we must ask ourselves some questions:
 
 > <question-title> Explore the dataset </question-title>
 >
@@ -338,7 +339,7 @@ We now have what we need to add an age column to our dataset, let's do it:
 >
 {: .hands_on}
 
-This tool will run and a new output dataset will appear at the top of your history panel.
+This tool will run, and a new output dataset will appear at the top of your history panel.
 
 > <hands-on-title> Check the results </hands-on-title>
 >
@@ -366,7 +367,7 @@ This tool will run and a new output dataset will appear at the top of your histo
 ## Tool provenance
 
 We already examined the attributes for the file we uploaded. For datasets that result from running tools, Galaxy tracks even more provenance.
-Let's look at this now
+Let's look at this now.
 
 > <hands-on-title> Explore metadata </hands-on-title>
 >
@@ -413,7 +414,7 @@ In addition, it shows which tool produced this output, complete with exact param
 >
 >    ![visualisation options]({% link topics/introduction/images/galaxy-intro-rdm/visualise-options.png %})
 >
-> 4. Change **Column of y-axis values** to `Column: 16` (our new age column)
+> 4. In the "Tracks" tab, change **Column of y-axis values** to `Column: 16` (our new age column)
 >
 {: .hands_on}
 
@@ -426,7 +427,7 @@ This is a quick way to get a feeling for our data.
 > 1. What age range were our athletes?
 >
 > > <solution-title></solution-title>
-> > 1. Based on the box plot, it looks like our youngest athelete was 15, and our oldest 51. The mean age was 25.
+> > 1. Based on the box plot, it looks like our youngest athlete was 15, and our oldest was 51. The mean age was 25.
 > {: .solution}
 {: .question}
 
@@ -443,7 +444,7 @@ This is a quick way to get a feeling for our data.
 >    ![saved visualisations]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-saved.png %})
 >
 > 4. Here you will find your saved visualisations
->    - Here you can view, adjust, rename your previously saved visualisaions
+>    - Here you can view, adjust, and rename your previously saved visualisaions
 >
 >    ![saved visualisations list]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-list.png %})
 >
@@ -490,7 +491,7 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 > > 1. Which Olympics is this file for? Which city was it held in?
 > >
 > > > <solution-title></solution-title>
-> > > 1. This file is from the 2008 summer Olympics in Beijing
+> > > 1. This file is from the 2008 Summer Olympics in Beijing.
 > > >
 > > {: .solution}
 > {: .question}
@@ -498,7 +499,7 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 
 
 Now that we have a second dataset, we want to run the same **Compute** {% icon tool %} tool on this data so that we get an age column.
-We could open the tool again, and re-configure all the settings, but there is an easier way to repeat what we did before.
+We could open the tool again and reconfigure all the settings, but there is an easier way to repeat what we did before.
 
 > <hands-on-title> Re-run a tool </hands-on-title>
 >
@@ -526,12 +527,12 @@ We could open the tool again, and re-configure all the settings, but there is an
 >
 {: .hands_on}
 
-Oh no! The dataset turned red! This means something went wrong. In the next section we will show you how you can troubleshoot errors in Galaxy.
+Oh no! The dataset turned red! This means something went wrong. In the next section, we will show you how you can troubleshoot errors in Galaxy.
 
 
 ## Troubleshooting errors
 
-So something went wrong with one of your tools. This will happen now and then, and can have different causes. It might be something you can fix yourself (e.g. a problem with the input dataset), or it might be something that needs to be fixed in Galaxy (e.g. a bug in the tool). Next we will see how you can find more information about the error, and submit a bug report if you think it might be a problem with the tool.
+So something went wrong with one of your tools. This will happen now and then, and can have different causes. It might be something you can fix yourself (e.g. a problem with the input dataset), or it might be something that needs to be fixed in Galaxy (e.g. a bug in the tool). Next, we will see how you can find more information about the error and submit a bug report if you think it might be a problem with the tool.
 
 
 > <hands-on-title> Troubleshoot a failed tool </hands-on-title>
@@ -546,16 +547,16 @@ You will now see details about the error in the center panel:
 
 ![Error tab of dataset details]({% link topics/introduction/images/galaxy-intro-rdm/galaxy-bugreport.png %} "the error tab of the dataset details page. This page shows us the error message (stderr) and other tool logs (stdout). It also has a form to submit a bug report at the bottom.")
 
-The error messages can sometimes be a bit cryptic, but the more you use the tools the easier it will get. If you do not know how to fix the error yourself, you can submit a bug report at the bottom of this page. This will be sent to the administrators of the Galaxy you are using.
+The error messages can sometimes be a bit cryptic, but the more you use the tools, the easier it will get. If you do not know how to fix the error yourself, you can submit a bug report at the bottom of this page. This will be sent to the administrators of the Galaxy you are using.
 
 
 > <question-title> Examine the Error message </question-title>
 >
 > 1. Can you guess what went wrong based on the error message?
-> 2. Is this something we can fix? how?
+> 2. Is this something we can fix? How?
 >
 > > <solution-title></solution-title>
-> > 1. The error message says `could not convert string to float: 'NA'`. This suggests there is a line in the input file that contains unexpected value (`NA`). This is a common way to denote a missing value, but if we assume this column to be a number and use it in our calculation
+> > 1. The error message says `could not convert string to float: 'NA'`. This suggests there is a line in the input file that contains an unexpected value (`NA`). This is a common way to denote a missing value, but if we assume this column to be a number and use it in our calculation
 > >    things can go wrong.
 > >
 > >    ```
@@ -567,7 +568,7 @@ The error messages can sometimes be a bit cryptic, but the more you use the tool
 > >
 > >    Apparently, no birth year was known for this athlete from North Korea
 > >
-> > 2. Yes, since the problem is with our input file, this is something we can fix ourself.
+> > 2. Yes, since the problem is with our input file, this is something we can fix ourselves.
 > >    - One solution could be to remove all lines that contain `NA` in the birth year column.
 > >    - Another would be to replace all `NA` values with `nan` (not a number), which is the appropriate way to indicate missing values in numeric columns
 > >    - In our case, there is an easier option: we can tell the **Compute** {% icon tool %} tool how to deal with such cases.
@@ -575,11 +576,11 @@ The error messages can sometimes be a bit cryptic, but the more you use the tool
 > {: .solution}
 {: .question}
 
-The error is caused because Galaxy is trying to interpret the birthyear column as a number, but cannot do this for columns
+The error is caused because Galaxy is trying to interpret the birthyear column as a number, but it cannot do this for columns
 containing an "NA" (Not Available) value.
 
 So now that we know what caused the error, let's fix it by re-running our tool once more, with different error-handling settings.
-We can tell the **Compute** {% icon tool %} tool stop autodetecting the column type, and instruct it what
+We can tell the **Compute** {% icon tool %} tool to stop autodetecting the column type, and instruct it what
 to do with "NA" values.
 
 > <hands-on-title> Re-run the tool with error handling parameters </hands-on-title>
@@ -589,7 +590,7 @@ to do with "NA" values.
 >      - {% icon param-toggle %} *"Autodetect column types"*: `No`
 >      - *"If an expression cannot be computed for a row"*: `Skip the row`
 >    - Change the *"Expression"* parameter to: `int(c10)-int(c4)`
->      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool to not autodetect anymore, we need to tell it how to interpret the values in the column.
+>      - the `int()` part tells the tool to turn the value into an integer (whole number). Since we told the tool not to autodetect anymore, we need to tell it how to interpret the values in the column.
 >
 >    ![expression of the tool form]({% link topics/introduction/images/galaxy-intro-rdm/compute-error-handling-expression.png %})
 >
@@ -606,9 +607,9 @@ to do with "NA" values.
 > {: .question}
 {: .hands_on}
 
-If this solution seemed a bit cryptic, don't worry too much, there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
+If this solution seemed a bit cryptic, don't worry too much; there are always multiple ways to solve the problem. The important thing is that you ran into a problem, looked at the error, and then solved it.
 
-If you get an error message that you don't understand, or don't know how to solve, you can always ask for help in one of our **support channels**.
+If you get an error message that you don't understand or don't know how to solve, you can always ask for help in one of our **support channels**.
 
 {% snippet faqs/galaxy/support.md %}
 
@@ -616,7 +617,7 @@ If you get an error message that you don't understand, or don't know how to solv
 ### Starring your favourite tools
 
 Since Galaxy has so many tools to choose from, once you find one that is useful for you, you will likely want to use it more often.
-To make it easier to find your favorite tools, you can star them.
+To make it easier to find your favourite tools, you can star them.
 
 > <hands-on-title> Star/Favourite a tool </hands-on-title>
 >
@@ -624,7 +625,7 @@ To make it easier to find your favorite tools, you can star them.
 >
 >    {% snippet faqs/galaxy/tools_favorite.md %}
 >
-> 2. You can access your favorite tools by clicking on the {% icon galaxy-star %} icon at the top of the **Tool Panel**
+> 2. You can access your favourite tools by clicking on the {% icon galaxy-star %} icon at the top of the **Tool Panel**
 >    - this will filter the tool panel for the tools you have starred and your most-used tools
 >
 {: .hands_on}
@@ -657,24 +658,24 @@ If you have failed items in your history, you might want to delete them. This he
 
 Your dataset is now gone from your history. But deleting it does not remove it completely yet. So if you delete something by accident, you can still view it and undelete it.
 
-You can also delete datasets in bulk
+You can also delete datasets in bulk:
 
 {% snippet faqs/galaxy/datasets_deleting.md %}
 
 ### Storage Quota
 
-Sometimes you really want to permanently delete a dataset, for example to free up your storage quota. By default you get **250 GB storage** (exact number may depend on your Galaxy), and more can usually be requested on a temporary basis. If you are running out of storage space, you can *purge* (permanently delete) datasets as well. This cannot be undone.
+Sometimes you really want to permanently delete a dataset, for example, to free up your storage quota. By default, you get **250 GB storage** (exact number may depend on your Galaxy instance), and more can usually be requested on a temporary basis. If you are running out of storage space, you can *purge* (permanently delete) datasets as well. This cannot be undone.
 
 {% snippet faqs/galaxy/datasets_purging_datasets.md %}
 
 {% snippet faqs/galaxy/account_reduce_quota_usage.md %}
 
-We recommend always keeping your history clean, and deleting any failed steps.
+We recommend always keeping your history clean and deleting any failed steps.
 
 ### Further learning about data preprocessing in Galaxy
 
 Galaxy offers a wide range of basic file manipulation tools that are very helpful for data cleaning.
-Operations such as file transformations, filtering, sorting, grouping, joining, splitting, etc are all possible inside Galaxy
+Operations such as file transformations, filtering, sorting, grouping, joining, splitting, etc., are all possible inside Galaxy.
 
 For more practice with such tools, please see our [Data Manipulation Olympics tutorial]({% link topics/introduction/tutorials/data-manipulation-olympics/tutorial.md %})
 
@@ -682,12 +683,12 @@ For more practice with such tools, please see our [Data Manipulation Olympics tu
 ## Optional: Use an Interactive Tool
 
 Galaxy also offers various *Interactive Tools*. For example, we could have performed this preprocessing with [OpenRefine](https://openrefine.org/) as well.
-Or if we know a bit of programming in R or Python, we could have done these steps using [Rstudio](https://posit.co/download/rstudio-desktop/) or [Jupyter Notebooks](https://jupyter.org/).
+Or if we know a bit of programming in R or Python, we could have done these steps using [RStudio](https://posit.co/download/rstudio-desktop/) or [Jupyter Notebooks](https://jupyter.org/).
 All of these have been integrated into Galaxy as *Interactive Tools*.
 
 Using these interactive tools is not quite as reproducible as using standard Galaxy tools, but it is great for the exploratory analysis phase of research, especially if you are already familiar with these tools.
 
-In this **optional section** we will show you how to use such an interactive tool. Here we will use [OpenRefine](https://openrefine.org/), a powerful free, open source tool for working with messy data: cleaning it, transforming it from one format into another. We will use OpenRefine to perform the same task of adding an age column to our dataset.
+In this **optional section**, we will show you how to use such an interactive tool. Here we will use [OpenRefine](https://openrefine.org/), a powerful free, open source tool for working with messy data: cleaning it, transforming it from one format into another. We will use OpenRefine to perform the same task of adding an age column to our dataset.
 
 
 > <hands-on-title> Launch OpenRefine </hands-on-title>
@@ -724,7 +725,7 @@ Next, let's create the same age column in OpenRefine as we did earlier with regu
 
 > <hands-on-title> Edit dataset in OpenRefine </hands-on-title>
 >
-> 1. First we tell OpenRefine to interpret the birthyear column as a number
+> 1. First, we tell OpenRefine to interpret the birthyear column as a number
 >    - Click on the dropdown {% icon dropdown %} icon next to the birthyear column name
 >    - **birthyear {% icon dropdown %} --> Edit Cells --> Common Transforms --> To number**
 >
@@ -736,7 +737,7 @@ Next, let's create the same age column in OpenRefine as we did earlier with regu
 >
 > 4. Fill in the form
 >    - *"New column name"*: `age`
->    - *"Expression"*: `2010-value
+>    - *"Expression"*: `2010-value`
 >
 >    ![create new column menu]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-create-age-column.png %})
 >
@@ -768,9 +769,9 @@ Now that we have transformed our dataset as needed, we want to export this table
 
 Interactive tools can be a powerful addition to your Galaxy analysis.
 
-> <tip-title>Tutorials about Rstudio and Jupyter notebooks in Galaxy</tip-title>
+> <tip-title>Tutorials about RStudio and Jupyter notebooks in Galaxy</tip-title>
 >
-> If you are interested in using R or python programming in Galaxy, we recommend
+> If you are interested in using R or Python programming in Galaxy, we recommend
 > you have a look at the [Foundations of Data Science]({% link topics/data-science/ %}) topic in
 > GTN for comprehensive tutorials.
 >
@@ -785,7 +786,7 @@ Galaxy RDM features that can help you manage your research data and analyses.
 
 ### Multiple histories
 
-You can have multiple histories in Galaxy, to organize your different analyses. We will now start a second history,
+You can have multiple histories in Galaxy to organize your different analyses. We will now start a second history,
 and show you how you can switch between histories and move data from one history to another.
 
 
@@ -804,7 +805,7 @@ You have now created a new, empty history. You can easily switch back and forth 
 
 {% snippet faqs/galaxy/histories_switch.md %}
 
-We will continue our analysis in this new history, and use collections and dataset tags to analyze multiple datasets simultaneously,
+We will continue our analysis in this new history and use collections and dataset tags to analyze multiple datasets simultaneously,
 and keeping our data organized.
 
 To avoid re-uploading our Olympics dataset and duplicating that data, we can simply copy the files from our previous history
@@ -835,7 +836,7 @@ We now have both our datasets in our new history. By doing it this way, rather t
 
 ### Dataset tags
 
-You may have noticed in our first history that the results from the **Compute** {% icon tool %} tool were named *Compute on dataset 1* and *Compute on dataset 3*. To make it a bit more clear for ourselves which dataset was generated from which input file, we can add **dataset tags** {% icon galaxy-tags %}
+You may have noticed in our first history that the results from the **Compute** {% icon tool %} tool were named *Compute on dataset 1* and *Compute on dataset 3*. To make it a bit clearer for ourselves which dataset was generated from which input file, we can add **dataset tags** {% icon galaxy-tags %}
 
 > <hands-on-title> Add dataset tags </hands-on-title>
 >
@@ -910,7 +911,7 @@ The output of the tool will again be a collection, this time with all the result
 
 ### Run a tool on a collection
 
-Now that we have set up our inputs as a collection with tags, lets see how to run the **Compute** {% icon tool %} tool on both datasets in the collection at once.
+Now that we have set up our inputs as a collection with tags, let's see how to run the **Compute** {% icon tool %} tool on both datasets in the collection at once.
 
 Remember that you starred {% icon galaxy-star %} the compute tool, so you can use that to easily find it again now!
 
@@ -962,8 +963,8 @@ answer our research question, ***"What is the age distribution of Olympic athlet
 
 > <comment-title> Domain-specific analysis tools </comment-title>
 >
-> Because this is an intro tutorial, our "analysis" will be quite basic. But Galaxy offers thousand of tools covering
-> a wide range of scientific domains. From life sciences, to ecology, climate, astronomy, digital humanities, and many more.
+> Because this is an intro tutorial, our "analysis" will be quite basic. But Galaxy offers thousands of tools covering
+> a wide range of scientific domains. From life sciences to ecology, climate, astronomy, digital humanities, and many more.
 >
 > Galaxy has a lot of computational power behind it, so whether you need a simple calculation or a complex algorithm requiring a supercomputer,
 > Galaxy can handle it.
@@ -1035,21 +1036,21 @@ Let's do some analysis based on our plan.
 > > 2. What was the age of the oldest contestant in each Olympics?
 > >
 > > > <solution-title></solution-title>
-> > > 1. The 2008 Summer Olympics. Compare the *mean* of each output. For the 2010 Winter games this was 26.1243, and for the 2008 Summer games it was 25.7341
-> > > 2. The value of the 100th percentile indicates the highest value encountered. For 2008 this was 67 year, for 2010 it was 51.
+> > > 1. The 2008 Summer Olympics. Compare the *mean* of each output. For the 2010 Winter Games, this was 26.1243, and for the 2008 Summer Games, it was 25.7341
+> > > 2. The value of the 100th percentile indicates the highest value encountered. For 2008, this was 67 years, for 2010, it was 51.
 > > >
 > > {: .solution}
 > {: .question}
 >
 {: .hands_on}
 
-This is great, we know know some summary statistics for the age distribution of the Olympics. Let's see if we can also create a visual representation.
+This is great, we know some summary statistics for the age distribution of the Olympics. Let's see if we can also create a visual representation.
 
 
 ## Create a histogram
 
 A picture is worth a 1000 words, so let's see if we can plot the age distribution as well.
-We already created a boxplot before, let's try a histogram this time. We will also use a tool rather than a Galaxy visualisation,
+We already created a boxplot before; let's try a histogram this time. We will also use a tool rather than a Galaxy visualisation,
 so that we get an output file with the plot in our history.
 
 The tool we are going to use for this is **Histogram with ggplot2** {% icon tool %}. This tool will plot every compatible column in the
@@ -1061,6 +1062,7 @@ input dataset. Since we are only interested in the age column, we will extract t
 >    - {% icon param-collection %} *"Tabular file"*: output from **Compute** {% icon tool %} (collection)
 >    - *"Header name"*: `age`
 >    - {% icon param-toggle %} *"Keep named columns"*: `Yes`
+>    - Click on **Run** 
 >
 > 2. **View** {% icon galaxy-eye %} the outputs
 >    - make sure the output is as expected (a file containing only the age column)
@@ -1082,7 +1084,7 @@ The Window Manager is an easy way to quickly compare two datasets.
 
 ![the histograms side by side]({% link topics/introduction/images/galaxy-intro-rdm/histogram-scratchbook.png %})
 
-But this doesn't scale to a large number of datasets. So as the final step of our analysis, let's create a montage of our histograms.
+But this doesn't scale to a large number of datasets. So, as the final step of our analysis, let's create a montage of our histograms.
 
 
 > <hands-on-title> Create a montage of plots </hands-on-title>
@@ -1104,7 +1106,7 @@ Awesome, we now have a pretty good answer to our question. We have some basic su
 
 Next, we would like to repeat all this for **all** Olympic games.
 
-Note that we chose our montage to be 2 images wide because we only had 2, but when we run it on more datasets at once we might want to change this. We will do this later.
+Note that we chose a 2-image-wide montage because we only had 2, but when we run it on more datasets at once, we might want to change this. We will do this later.
 
 
 ## Extract workflow from our history
@@ -1115,7 +1117,7 @@ To make it easy to repeat this entire analysis without a lot of clicking, we wil
 >
 > 1. **Clean up** your history
 >    - Remove any failed (red) jobs from your history by clicking the {% icon galaxy-delete %} button.
->    - This will make the creation of the workflow easier.
+>    - This will make creating the workflow easier.
 >
 > 2. Click {% icon galaxy-history-options %} (**History options**) at the top of your history panel and select **Extract workflow**.
 >
@@ -1125,7 +1127,7 @@ To make it easy to repeat this entire analysis without a lot of clicking, we wil
 >
 >    ![Selection of steps for Extract Workflow from history.]({% link topics/introduction/images/galaxy-intro-rdm/workflow-extract.png %})
 >
-> 3. Replace the **Workflow name** to something more descriptive, for example: `Olympic Age distribution`.
+> 3. Replace the **Workflow name** with something more descriptive, for example: `Olympic Age distribution`.
 >    - Here you can also uncheck any steps you forgot to delete when you cleaned up your history
 >
 > 4. Click the **Create Workflow** button near the top.
@@ -1157,7 +1159,7 @@ Next, let's view our workflow in the workflow editor
 >
 >    ![workflows editor]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor.png %})
 >
->    **We will only make 1 change:** since we will have many more histograms, lets make the montage image 4 plots wide
+>    **We will only make 1 change:** since we will have many more histograms, let's make the montage image 4 plots wide
 >
 > 4. Click on the Montage tool
 >    - A panel with the tool's configuration will open on the right.
@@ -1177,7 +1179,7 @@ Next, we will run this workflow on *all* Olympic games.
 
 ## Run workflow on all Olympics
 
-First we will create a new history, and upload our data.
+First, we will create a new history and upload our data.
 
 > <hands-on-title>New history</hands-on-title>
 >
@@ -1189,7 +1191,7 @@ First we will create a new history, and upload our data.
 >
 >    {% snippet faqs/galaxy/histories_rename.md %}
 >
-> 3. **Upload** the zip file with all olympic datasets from Zenodo
+> 3. **Upload** the zip file with all Olympic datasets from Zenodo
 >
 >    ```
 >    https://zenodo.org/records/18803585/files/olympics-all.zip
@@ -1202,7 +1204,7 @@ First we will create a new history, and upload our data.
 >
 > > <question-title> </question-title>
 > >
-> > 1. How many Olympic games do we have data for?
+> > 1. How many Olympic Games do we have data for?
 > >
 > > > <solution-title></solution-title>
 > > > 1. Our collection contains 51 datasets, one per Olympics
@@ -1223,7 +1225,7 @@ Now it's time to run our workflow
 >
 >    ![workflow run menu]({% link topics/introduction/images/galaxy-intro-rdm/workflow-run.png %})
 >
-> 3. Make sure the input of the workflow is our collection with 51 datasets.
+> 3. Make sure the input of the workflow is our collection of 51 datasets.
 >
 > 4. Click **Run Workflow** {% icon workflow-run %} at top right.
 >    - You will now see the *workflow invocation* screen
@@ -1234,16 +1236,16 @@ Now it's time to run our workflow
 >
 {: .hands_on}
 
-Our analysis will now be run on all 51 olympics files. This may take a bit of time (~5-10 minutes or more depending on how busy Galaxy is at the moment), so now is a good time to **grab a coffee**. You can also already proceed to the next section while you wait.
+Our analysis will now be run on all 51 Olympics files. This may take a bit of time (~5-10 minutes or more, depending on how busy Galaxy is at the moment), so now is a good time to **grab a coffee**. You can also already proceed to the next section while you wait.
 
-Once your workflow is finished, you should get a final montage image with 51 histograms
+Once your workflow is finished, you should get a final montage image with 51 histograms.
 
 ![final montage image]({% link topics/introduction/images/galaxy-intro-rdm/montage-all.png %} "Montage of histograms for all 51 Olympic games in our dataset")
 
 
 > <question-title></question-title>
 >
-> 1. What was the youngest athelete in 1896 Olympics?
+> 1. What was the youngest athlete in the 1896 Olympics?
 >
 > > <solution-title></solution-title>
 > >
@@ -1251,7 +1253,7 @@ Once your workflow is finished, you should get a final montage image with 51 his
 > {: .solution}
 {: .question}
 
-Well done! You have created your first Galaxy workflow, and rerun it on a collection of datasets.
+Well done! You have created your first Galaxy workflow and rerun it on a collection of datasets.
 
 The next step is often preserving your work. Whether you want to publish your findings and methods in a journal article, or share it with colleagues, or simply have a detailed record for yourself. The next sections deal with exporting and sharing everything you created in Galaxy for your research.
 
@@ -1328,7 +1330,7 @@ In order to do this, you will first need to configure one of these repositories 
 > <hands-on-title> Manage your repositories </hands-on-title>
 >
 > 1. **Configure a repository** in your Galaxy account by following the instructions in the box below
->    - Pick a repository you already have an account for. E.g. Google drive may be a good option.
+>    - Pick a repository you already have an account for. E.g. Google Drive may be a good option.
 >    - If you do not have accounts on any of these systems, you can skip this and watch the video below this hands-on box.
 >
 >    {% snippet faqs/galaxy/manage_your_repositories.md %}
@@ -1345,7 +1347,7 @@ Below is a video showing this feature in action:
 
 {% include _includes/youtube.html id="KdJgCJz9A8I"  title="Example of importing and exporting datasets between Galaxy and Zenodo"  %}
 
-Now that you have configured a data repository in your Galaxy account, you can also use it to **import data from repositories** into Galaxy for analysis
+Now that you have configured a data repository in your Galaxy account, you can also use it to **import data from repositories** into Galaxy for analysis.
 
 {% snippet faqs/galaxy/datasets_import_from_remote_files.md %}
 
@@ -1366,11 +1368,11 @@ When you publish your analysis, you will have to cite the tools you used. Galaxy
 
 ## Exporting your workflows
 
-Any workflows you have created can also be exported. For example to share them when you publish your analysis.
+Any workflows you have created can also be exported. For example, to share them when you publish your analysis.
 
 {% snippet faqs/galaxy/workflows_download.md %}
 
-Your exported Galaxy workflow will be a file with a `.ga` extension. This file can be imported into Galaxy by others easily.
+Your exported Galaxy workflow will be a file with a `.ga` extension. This file can be imported into Galaxy easily by others.
 
 {% snippet faqs/galaxy/workflows_import.md %}
 
@@ -1380,7 +1382,7 @@ Your exported Galaxy workflow will be a file with a `.ga` extension. This file c
 ![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:75%"}
 
 
-To share your Galaxy work, you can of course send the exported files from the previous section to others. But you can also share your work without exporting it, by providing others access to your Galaxy datasets, histories, workflows, visualisations, and more.
+To share your Galaxy work, you can, of course, send the exported files from the previous section to others. But you can also share your work without exporting it, by providing others access to your Galaxy datasets, histories, workflows, visualisations, and more.
 
 Galaxy objects can be shared in different ways:
 1. With **specific users** on the same Galaxy
@@ -1388,7 +1390,7 @@ Galaxy objects can be shared in different ways:
 3. **Publicly visible** to everybody (published on Galaxy)
 
 
-Let's see how we can share our work in Galaxy
+Let's see how we can share our work in Galaxy.
 
 > <hands-on-title> Share your work </hands-on-title>
 >
@@ -1418,31 +1420,31 @@ Workflows can be shared or published in a similar way.
 {% snippet faqs/galaxy/workflows_publish.md %}
 
 
-When you publish a paper about your research we recommend always publishing your workflow and history (e.g. as an RO-crate) with your journal article for optimal FAIRness.
+When you publish a paper about your research, we recommend always publishing your workflow and history (e.g. as an RO-crate) with your journal article for optimal FAIRness.
 
 Workflows can be shared in dedicated workflow repositories such as [WorkflowHub](https://workflowhub.eu) for increased visibility.
 Similarly, you can publish your exported history to repositories such as [Zenodo](https://zenodo.org) or other data repositories.
 
-Sharing every aspect of your research, from data, to metadata and workflows, enables other researchers to **reuse your work (and cite you!)** and build on top of it. Team work makes the (science) dream work!
+Sharing every aspect of your research, from data to metadata and workflows, enables other researchers to **reuse your work (and cite you!)** and build on top of it. Teamwork makes the (science) dream work!
 
 # Reuse: Find and run workflows shared by others
 
 ![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:75%"}
 
-The ultimate goal of preserving and sharing your research data and analyses, is to enable others to repeat your analysis and reuse your work.
+The ultimate goal of preserving and sharing your research data and analyses is to enable others to repeat your analysis and reuse your work.
 To illustrate this, we will now show you how you can find and reuse shared Galaxy workflows.
 
 ## Where to find Galaxy Workflows
 
 There are various places where you can find Galaxy workflows to reuse:
 
-1. [IWC (Intergalactic Workflows commission)](https://iwc.galaxyproject.org). High-quality workflows curated by Galaxy community experts.
+1. [IWC (Intergalactic Workflows Commission)](https://iwc.galaxyproject.org). High-quality workflows curated by Galaxy community experts.
 2. [WorkflowHub](https://workflowhub.eu/). A registry for describing, sharing and publishing scientific computational workflows. Not limited to Galaxy workflows.
 3. [Dockstore](https://dockstore.org/search?entryType=workflows&searchMode=files). A free and open source platform for sharing reusable and scalable analytical tools and workflows.
 4. The "Published Workflows" section in Galaxy. All the workflows published by others on your Galaxy.
 5. Workflow definition files (ending in `.ga`) shared with you by others, e.g. in a publication.
 
-In the following sections we will showcase some of these workflow repositories.
+In the following sections, we will showcase some of these workflow repositories.
 
 ## Showcase 1: WorkflowHub
 
@@ -1455,7 +1457,7 @@ This [workflow has been made available via WorkflowHub](https://workflowhub.eu/w
 
 > <details-title> Voronoi Segmentation </details-title>
 >
-> **From Wikipedia:** In mathematics, a Voronoi diagram is a partition of a plane into regions close to each of a given set of objects. It can be classified also as a tessellation. In the simplest case, these objects are just finitely many points in the plane (called seeds, sites, or generators). For each seed there is a corresponding region, called a Voronoi cell, consisting of all points of the plane closer to that seed than to any other.
+> **From Wikipedia:** In mathematics, a Voronoi diagram is a partition of a plane into regions close to each of a given set of objects. It can also be classified as a tessellation. In the simplest case, these objects are just finitely many points in the plane (called seeds, sites, or generators). For each seed, there is a corresponding region, called a Voronoi cell, consisting of all points of the plane closer to that seed than to any other.
 >
 > ![example of voronoi diagram]({% link topics/introduction/images/galaxy-intro-rdm/voronoi-example.png %})
 {: .details}
@@ -1479,14 +1481,14 @@ We start by importing this workflow into Galaxy.
 >
 > 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
 >    - Here you can browse for workflows
->    - On the left panel you can filter workflows by type (Galaxy, Nextflow, CWL etc)
+>    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc)
 >    - **Search** for **"Voronoi Segmentation"**
 >
 > 2. Click on the "Run on Galaxy" button in the top-right instead!
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-rungalaxy.png %})
 >
-> 3. This will automatically import the workflow to Galaxy EU, and display the workflow run window
+> 3. This will automatically import the workflow to Galaxy EU and display the workflow run window.
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-imported.png %})
 >
@@ -1505,7 +1507,7 @@ We start by importing this workflow into Galaxy.
 >
 > 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
 >    - Here you can browse for workflows
->    - On the left panel you can filter workflows by type (Galaxy, Nextflow, CWL etc)
+>    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc.)
 >    - **Search** for **"Voronoi Segmentation"**
 >
 > 2. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522)
@@ -1522,7 +1524,7 @@ We start by importing this workflow into Galaxy.
 >
 > 6. In Galaxy, click on **Workflows** in the **Activity Bar**
 >
-> 7. Import the voronoi workflow to Galaxy via URL or file upload
+> 7. Import the Voronoi workflow to Galaxy via URL or file upload
 >
 >    {% snippet faqs/galaxy/workflows_import.md %}
 >
@@ -1546,26 +1548,26 @@ We start by importing this workflow into Galaxy.
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-> 3. Run the voronoi workflow with the following inputs
+> 3. Run the Voronoi workflow with the following inputs:
 >    - **Image**: `tree-image.tiff`
 >    - **Seeds**: `tree-seeds.tiff`
 >
 >    {% snippet faqs/galaxy/workflows_run.md %}
 >
-> 4. After the workflows is completed (~5-10 minutes), you can explore the outputs
+> 4. After the workflows are completed (~5-10 minutes), you can explore the outputs
 >
 >   ![example output from voronoi workflow]({% link topics/introduction/images/galaxy-intro-rdm/voronoi-output.png %})
 >
 {: .hands_on}
 
-The details of this workflow are out of scope for this tutorial, the important thing is that you have seen how to find and import workflows shared by others.
+The details of this workflow are out of scope for this tutorial; the important thing is that you have seen how to find and import workflows shared by others.
 
 
 ## Showcase 2: IWC
 
 All the workflows from IWC are reviewed and maintained by a group of Galaxy experts.
 
-All IWC workflows are available from the [IWC Workflow Library]((https://iwc.galaxyproject.org/). The IWC workflow library makes it even easier to try out workflows, by providing example data preconfigured with the workflow.
+All IWC workflows are available from the [IWC Workflow Library]((https://iwc.galaxyproject.org/). The IWC workflow library makes it even easier to try out workflows by providing example data preconfigured with the workflow.
 
 
 > <hands-on-title> Try an IWC workflow with example data </hands-on-title>
