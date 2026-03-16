@@ -1,3 +1,41 @@
+GTN_GTN:1773065944
+
+A	faqs/galaxy-de/analysis_results_may_vary.md
+A	faqs/galaxy-de/collections_build_list.md
+A	faqs/galaxy-de/collections_build_list_paired.md
+A	faqs/galaxy-de/datasets_add_tag.md
+A	faqs/galaxy-de/datasets_change_datatype.md
+A	faqs/galaxy-de/datasets_create_new_file.md
+A	faqs/galaxy-de/datasets_import_from_data_library.md
+A	faqs/galaxy-de/datasets_import_via_link.md
+A	faqs/galaxy-de/datasets_rename.md
+A	faqs/galaxy-de/features_scratchbook.md
+A	faqs/galaxy-de/histories_copy_dataset.md
+A	faqs/galaxy-de/histories_create_new.md
+A	faqs/galaxy-de/histories_rename.md
+A	faqs/galaxy-de/tools_change_version.md
+A	faqs/galaxy-de/tools_select_collection.md
+A	faqs/galaxy-de/tools_select_multiple_datasets.md
+A	faqs/galaxy-de/tools_similar.md
+A	faqs/galaxy-de/tutorial_mode.md
+A	topics/data-science/tutorials/online-resources-gene/tutorial_DE.md
+A	topics/data-science/tutorials/online-resources-protein/tutorial_DE.md
+A	topics/introduction/tutorials/galaxy-intro-peaks2genes/tutorial_DE.md
+A	topics/sequence-analysis/faqs/quality_score_DE.md
+A	topics/sequence-analysis/tutorials/mapping/bam_explanation_DE.md
+A	topics/sequence-analysis/tutorials/mapping/igv_DE.md
+A	topics/sequence-analysis/tutorials/mapping/jbrowse_DE.md
+A	topics/sequence-analysis/tutorials/mapping/ref_genome_explanation_DE.md
+A	topics/sequence-analysis/tutorials/mapping/tutorial_DE.md
+A	topics/sequence-analysis/tutorials/quality-control/fastq_question_DE.md
+A	topics/sequence-analysis/tutorials/quality-control/paired_end_question_DE.md
+A	topics/sequence-analysis/tutorials/quality-control/trimming_question_DE.md
+A	topics/sequence-analysis/tutorials/quality-control/tutorial_DE.md
+A	topics/transcriptomics/tutorials/ref-based/tutorial_DE.md
+GTN_GTN:1773041860
+
+R099	metadata/git-mod-ae82efbadb271a71064648d53c807a85ae2c03e0.txt	metadata/git-mod-046ccffbbe627f9f451b032c519d757de8bba6a8.txt
+R099	metadata/git-pub-ae82efbadb271a71064648d53c807a85ae2c03e0.txt	metadata/git-pub-046ccffbbe627f9f451b032c519d757de8bba6a8.txt
 GTN_GTN:1772826530
 
 A	assets/images/biofair.png
