@@ -28,7 +28,7 @@ We can now launch the proper binning with MetaBAT 2
 >     - *"Fasta file containing contigs"*: `Contigs`
 >     - In **Advanced options**, keep all as **default**.
 >     - In **Output options:**
->       - *"Save cluster memberships as a matrix format?"*: `"Yes"`
+>       - *"Save cluster memberships as a matrix format?"*: `"No"`
 >
 {: .hands_on}
 
