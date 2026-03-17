@@ -46,12 +46,14 @@ These output files can be further analyzed and used for downstream applications 
 
 > <question-title>Binning metrics</question-title>
 >
-> 1. How many bins where produced by MetaBAT 2 for our sample?
-> 2. How many contigs are in the bin with most contigs? 
+> 1. How many bins were produced by MetaBAT 2 for our sample?
+> 2. How many contigs are in the bin with the most contigs?
+>
 > > <solution-title></solution-title>
 > >
 > > 1. There is only one bin for this sample.
-> > 2. 52 (these numbers may differ slightly depending on the version of MetaBAT2). So not all contigs were binned into this bin!
+> > 2. 52 (these numbers may differ slightly depending on the version of MetaBAT2). Therefore, not all contigs were assigned to this bin.
+> >
 > >
 > {: .solution}
 >
