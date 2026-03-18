@@ -1539,7 +1539,7 @@ We start by importing this workflow into Galaxy.
 >    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc.)
 >    - **Search** for **"Voronoi Segmentation"**
 >
-> 2. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522)
+> 2. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522){:target="_blank"}
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh.png %})
 >
