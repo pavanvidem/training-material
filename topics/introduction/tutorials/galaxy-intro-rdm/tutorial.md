@@ -797,16 +797,11 @@ and show you how you can switch between histories and move data from one history
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 >
 > 2. **Name** {% icon galaxy-pencil %} your history
->    - call it "Multi-Olympics Analysis"
+>    - call it `Multi-Olympics Data Analysis`
 >
 {: .hands_on}
 
-You have now created a new, empty history. You can easily switch back and forth between histories as needed
-
-{% snippet faqs/galaxy/histories_switch.md %}
-
-We will continue our analysis in this new history and use collections and dataset tags to analyze multiple datasets simultaneously,
-and keeping our data organized.
+You have now created a new, empty history.
 
 To avoid re-uploading our Olympics dataset and duplicating that data, we can simply copy the files from our previous history
 
@@ -828,9 +823,37 @@ To avoid re-uploading our Olympics dataset and duplicating that data, we can sim
 
 We now have both our datasets in our new history. By doing it this way, rather than re-uploading the files, we do not increase our storage usage.
 
-> <warning-title> Important </warning-title>
+> <comment-title>The Galaxy History System </comment-title>
 >
-> **Important:** We will now continue this tutorial in this new history.
+> Galaxy allows you to have as many histories as you like. Some tips and tricks for using histories:
+>
+> - Use a different **history for each analysis**
+> - Always give your histories a **good name**. This makes it easy to find your histories later.
+> - You can easily **switch back and forth between histories** as needed
+>
+>   {% snippet faqs/galaxy/histories_switch.md %}
+>
+> - And you can **search** your histories
+>
+>   {% snippet faqs/galaxy/histories_finding_histories.md %}
+>
+{: .comment}
+
+We will continue our analysis in this second history and use collections and dataset tags to analyze multiple datasets simultaneously,
+and keeping our data organized.
+
+
+> <warning-title> Proceed with the correct history </warning-title>
+>
+> **Important!** We will now continue the rest of this tutorial in this new history (named `Multi-Olympics Data Analysis`)
+>
+> 1. If this is not your active history, please switch to it now (see the box below for instructions)
+>
+>    {% snippet faqs/galaxy/histories_switch.md %}
+>
+> 2. Your history should contain two datasets, and look something like this:
+>
+>    ![screenshot of history to continue with]({% link topics/introduction/images/galaxy-intro-rdm/history-multiolympics.png %})
 >
 {: .warning}
 
