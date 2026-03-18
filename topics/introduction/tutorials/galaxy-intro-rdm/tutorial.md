@@ -25,6 +25,8 @@ contributions:
     - shiltemann
   editing:
     - Sch-Da
+  testing:
+    - Sch-Da
   funding:
     - uni-freiburg
     - nfdi4plants
@@ -1534,12 +1536,19 @@ We start by importing this workflow into Galaxy.
 
 > <hands-on-title> Obtain workflow from WorkflowHub </hands-on-title>
 >
-> 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
+> 1. Open [WorkflowHub](https://workflowhub.eu/workflows){:target="_blank"}
 >    - Here you can browse for workflows
 >    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc.)
->    - **Search** for **"Voronoi Segmentation"**
+>    - **Search** for **"Voronoi"** via the search bar at the top
 >
-> 2. Open the [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522){:target="_blank"}
+> 2. **Click** on the first result, named **"Voronoi segmentation"**
+>    - It should say "Galaxy Training Network" in top right
+>
+>      ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-search-results.png %})
+>
+>    - (direct link: [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522){:target="_blank"})
+>
+> 3. This will lead to the Workflow page
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh.png %})
 >
