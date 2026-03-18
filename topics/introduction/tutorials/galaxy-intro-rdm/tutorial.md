@@ -1082,15 +1082,21 @@ input dataset. Since we are only interested in the age column, we will extract t
 > <hands-on-title> Create a Histogram Plot </hands-on-title>
 >
 > 1. {% tool [Remove columns - by heading](toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0) %} with the following parameters:
->    - {% icon param-collection %} *"Tabular file"*: output from **Compute** {% icon tool %} (collection)
+>    - {% icon param-collection %} *"Tabular file"*: output from **Compute** {% icon tool %} (remember to switch to **collection** {% icon param-collection %} input again)
 >    - *"Header name"*: `age`
 >    - {% icon param-toggle %} *"Keep named columns"*: `Yes`
->    - Click on **Run** 
+>    - Click on **Run**
 >
 > 2. **View** {% icon galaxy-eye %} the outputs
->    - make sure the output is as expected (a file containing only the age column)
+>    - Make sure the output is as expected
+>    - You should have a collection with two files
+>    - Each file should contain only 1 column, the age column
 >
-> 3. {% tool [Histogram with ggplot2](toolshed.g2.bx.psu.edu/repos/devteam/histogram/histogram_rpy/1.0.5) %} with the following parameters:
+>    ![output of remove columns step]({% link topics/introduction/images/galaxy-intro-rdm/remove-columns-output.png %})
+>
+>
+> 3. {% tool [Histogram with ggplot2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_histogram/ggplot2_histogram/3.5.1+galaxy1) %} with the following parameters:
+>    - *"Input"*: The output from **Remove columns** {% icon tool %} (This is a **collection input** {% icon param-collection %})
 >    - *"Plot title"*: enter a good title, e.g. `Age distribution of athletes`
 >    - *"Label for x axis"*: `Age`
 >    - *"Label for y axis"*: `Count`
