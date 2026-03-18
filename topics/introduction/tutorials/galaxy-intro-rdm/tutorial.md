@@ -59,6 +59,12 @@ The research life cycle refers to the series of stages through which a research 
 
 ![RDM life cycle]({% link topics/introduction/images/galaxy-intro-rdm/rdm-overview.png %}){: style="width:40%"}
 
+> <tip-title> Why RDM? Play the Scarytales game of RDM gone wrong! </tip-title>
+>
+> Good RDM practices are critical to scientific research, to illustrate this in a fun way, have a look at the [RDM Scary Tales](https://forschungsdaten-thueringen.de/rdm-scarytales/articles/overview.html) game (based on the game [Black Stories](https://boardgamegeek.com/boardgame/18803/black-stories))
+>
+{: .tip}
+
 ## Galaxy as part of the RDM Life Cycle
 
 Galaxy supports you in your research throughout the different stages of the life cycle, covering the steps from data collection to data reuse.
@@ -981,7 +987,7 @@ answer our research question, ***"What is the age distribution of Olympic athlet
 
 The ***Analyse*** phase of the research life cycle is where you extract knowledge from your data in order to answer your research questions.
 The details of this phase vary greatly depending on your domain, but Galaxy is a cross-domain platform and has a wide range of analysis
-tools availale for any scientific domain.
+tools available for any scientific domain.
 
 
 > <comment-title> Domain-specific analysis tools </comment-title>
