@@ -178,7 +178,7 @@ program:
     description: |
       Can't get enough? Explore another track or discover out Digital Humanities short track. You can also explore the rest of the Galaxy Training Network material. The trainers will still be present on Slack for you if you have a problem and answer questions. However, they may not be experts in the topic you selected.
 
-      **Need help with these tutorials?** Ask your questions via the Slack Channel [TBD]().
+      **Need help with these tutorials?** Ask your questions via the Slack Channel (TBD).
 
 
 
