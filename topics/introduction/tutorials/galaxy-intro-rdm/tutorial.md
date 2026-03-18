@@ -130,7 +130,7 @@ Now that you are logged in to Galaxy, let's start!
 
 ![The RDM lifecycle with the collect stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-collect.png %}){: style="width:75%"}
 
-There are many ways to help you with data collection in Galaxy. Central to all those is the Galaxy History.
+The ***collect*** stage in Galaxy usually consists of importing data into what we call your analysis ***history***, this is your Galaxy working environment. Data can be uploaded from from your own machine, from a URL, or imported directly from various general-purpose or domain-specific databases that have been integrated into Galaxy. Before we start our analysis, let's familiarize ourselves with the Galaxy history system.
 
 ## The Galaxy History
 
@@ -145,12 +145,6 @@ Before we begin, let's name our history. It is recommended to create a new histo
 > 2. Click {% icon galaxy-pencil %} (**Edit**) next to the history name (which by default is "Unnamed history")
 >
 >    ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value. An input box is below it.]({% link shared/images/rename_history.png %}){:width="250px"}
->
->    > <comment-title></comment-title>
->    >
->    > In some previous versions of Galaxy, you will need to click the history name to rename it as shown here:
->    > ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value.](../../../../shared/images/rename_history_old.png){:width="320px"}
->    {: .comment}
 >
 > 3. Type in a new name, for example, "Olympics Data Analysis"
 > 4. Click **Save**
@@ -281,7 +275,7 @@ Let's have a look at the metadata that Galaxy tracks for your datasets.
 ![The RDM lifecycle with the process stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-process.png %}){: style="width:75%"}
 
 
-The first steps of an analysis are often data cleaning and quality control, which are more generally referred to as data preparation or data processing.
+The ***process*** phase of the research life cycle involves preparing your data for analysis. This includes steps such as data cleaning, data transformation, and quality control.
 Galaxy offers many tools that can help prepare your data for analysis, such as format conversions and data manipulation tools.
 
 ## Use a tool
@@ -985,6 +979,10 @@ answer our research question, ***"What is the age distribution of Olympic athlet
 
 ![The RDM lifecycle with the analyse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-analyse.png %}){: style="width:75%"}
 
+The ***Analyse*** phase of the research life cycle is where you extract knowledge from your data in order to answer your research questions.
+The details of this phase vary greatly depending on your domain, but Galaxy is a cross-domain platform and has a wide range of analysis
+tools availale for any scientific domain.
+
 
 > <comment-title> Domain-specific analysis tools </comment-title>
 >
@@ -1194,9 +1192,9 @@ Next, let's view our workflow in the workflow editor
 >
 > 4. Click on the Montage tool
 >    - A panel with the tool's configuration will open on the right.
->    - Change the value for **# of images wide** to 4.
+>    - Change the value for **"# of images wide"** to `4`.
 >
->     ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor-parameter.png %})
+>    ![workflows table]({% link topics/introduction/images/galaxy-intro-rdm/workflow-editor-parameter.png %})
 >
 > 5. **Save** {% icon dataset-save %} the workflow via the {% icon dataset-save %} icon at the top right.
 >
@@ -1207,6 +1205,29 @@ Next, let's view our workflow in the workflow editor
 
 Next, we will run this workflow on *all* Olympic games.
 
+> <tip-title>Does your workflow look very different?</tip-title>
+>
+> If your workflow looks very different than the one pictured above, it may be that you missed a step
+> or continued in the wrong history. This is ok and won't affect the rest of the tutorial too much
+> (though you may have to make some adjustments in the next step where we run the workflow)
+>
+> If you would like to see the workflow as intended, you can follow the steps below to import the example workflow
+> to your account so you can start using it:
+>
+> > <hands-on-title> Importing the example workflow for this tutorial </hands-on-title>
+> > 1. Open the [workflows page for this tutorial]({% link topics/introduction/tutorials/galaxy-intro-rdm/workflows/ %}){: target="_blank"}
+> >   - Every tutorial in the GTN has a workflow, you can always find the link to this in the overview box at the start of a tutorial
+> > 2. Click on **Olympic Age Distribution**
+> > 3. You should see the following page
+> >
+> >    ![GTN workflow page]({% link topics/introduction/images/galaxy-intro-rdm/gtn-workflow.png %})
+> >
+> > 4. Click the **"Run Workflow in Galaxy** button at the top of the page
+> > 5. Select your Galaxy from the dropdown
+> > 6. Click on **Import workflow**
+> >   - You will now see this workflow under **Workflows** {% icon galaxy-workflows-activity %} in the **Activity Bar**
+> {: .hands_on}
+{: .tip}
 
 ## Run workflow on all Olympics
 
@@ -1292,6 +1313,7 @@ The next step is often preserving your work. Whether you want to publish your fi
 
 ![The RDM lifecycle with the preserve stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-preserve.png %}){: style="width:75%"}
 
+The ***preserve*** phase of the research life cycle consists of ensuring that our data, results and the details of our analysis are preserved and remain accessible long-term. For instance so that we can share our work with colleagues at our institute, or with the wider world via e.g. a journal publication. Everything you do in Galaxy, can be exported so that you can share it with others or archive it in specialized data repositories.
 
 ## Downloading your history
 
@@ -1413,7 +1435,9 @@ Your exported Galaxy workflow will be a file with a `.ga` extension. This file c
 ![The RDM lifecycle with the share stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-share.png %}){: style="width:75%"}
 
 
-To share your Galaxy work, you can, of course, send the exported files from the previous section to others. But you can also share your work without exporting it, by providing others access to your Galaxy datasets, histories, workflows, visualisations, and more.
+The ***share*** phase of the research life cycle consist of making the data and metadata you preserved [FAIR (findable, accessible, interoperable, reusable)](https://www.go-fair.org/fair-principles/) so that others may benefit from your work (and cite you!).
+
+As a first sharing step, you can share your work without exporting it out of Galaxy, by providing others access to your Galaxy datasets, histories, workflows, and visualisations. This makes it very easy to collaborate with others on Galaxy.
 
 Galaxy objects can be shared in different ways:
 1. With **specific users** on the same Galaxy
@@ -1462,7 +1486,7 @@ Sharing every aspect of your research, from data to metadata and workflows, enab
 
 ![The RDM lifecycle with the reuse stage highlighted]({% link topics/introduction/images/galaxy-intro-rdm/rdm-reuse.png %}){: style="width:75%"}
 
-The ultimate goal of preserving and sharing your research data and analyses is to enable others to repeat your analysis and reuse your work.
+The ultimate goal of preserving and sharing your research data and analyses is to enable others to repeat your analysis and ***reuse*** your work.
 To illustrate this, we will now show you how you can find and reuse shared Galaxy workflows.
 
 ## Where to find Galaxy Workflows
@@ -1510,20 +1534,31 @@ We start by importing this workflow into Galaxy.
 
 > <hands-on-title> Obtain workflow from WorkflowHub </hands-on-title>
 >
-> 1. Open [WorkflowHub](https://workflowhub.eu/workflows)
+> 1. Open [WorkflowHub](https://workflowhub.eu/workflows){:target="_blank"}
 >    - Here you can browse for workflows
->    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc)
->    - **Search** for **"Voronoi Segmentation"**
+>    - On the left panel, you can filter workflows by type (Galaxy, Nextflow, CWL, etc.)
+>    - **Search** for **"Voronoi"** via the search bar at the top
 >
-> 2. Click on the "Run on Galaxy" button in the top-right instead!
+> 2. **Click** on the first result, named **"Voronoi segmentation"**
+>    - It should say "Galaxy Training Network" in top right
+>
+>      ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-search-results.png %})
+>
+>    - (direct link: [WorkflowHub page for the Voronoi workflow](https://workflowhub.eu/workflows/1522){:target="_blank"})
+>
+> 3. This will lead to the Workflow page
+>
+>    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh.png %})
+>
+> 4. Click on the "Run on Galaxy" button in the top-right instead!
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-rungalaxy.png %})
 >
-> 3. This will automatically import the workflow to Galaxy EU and display the workflow run window.
+> 5. This will automatically import the workflow to Galaxy EU and display the workflow run window.
 >
 >    ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-imported.png %})
 >
-> 4. In the **Activity Bar**, click on **Workflows**
+> 6. In the **Activity Bar**, click on **Workflows**
 >    - you will see the workflow listed under **My Workflows**
 >
 >     ![screenshot of workflowhub]({% link topics/introduction/images/galaxy-intro-rdm/wfh-imported2.png %})
@@ -1636,7 +1671,6 @@ All IWC workflows are available from the [IWC Workflow Library]((https://iwc.gal
 {: .hands_on}
 
 This is a great way to evaluate a workflow without requiring the effort of finding good example datasets.
-
 
 
 # Conclusion
