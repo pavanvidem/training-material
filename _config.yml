@@ -154,6 +154,7 @@ icon-tag:
   galaxy-history-answer: fas fa-sign-out-alt
   galaxy-home: fas fa-home
   galaxy-info: fas fa-info-circle
+  galaxy-interactive-tool: fas fa-laptop
   galaxy-lab: fa fa-tv
   galaxy-library: far fa-folder
   galaxy-link: fas fa-link

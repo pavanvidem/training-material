@@ -152,7 +152,8 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >
 >    ![Screenshot of the galaxy interface with the history name being edited, it currently reads "Unnamed history", the default value. An input box is below it.]({% link shared/images/rename_history.png %}){:width="250px"}
 >
-> 3. Type in a new name, for example, "Olympics Data Analysis"
+> 3. Type in a new name. Make sure it is a descriptive name.
+>    - for example, `Olympics Data Analysis`
 > 4. Click **Save**
 >
 > > <comment-title>Renaming not an option?</comment-title>
@@ -175,12 +176,13 @@ Before we begin, let's name our history. It is recommended to create a new histo
 >   - OMERO (Image database)
 >   - Copernicus (Climate Data)
 >   - CERN Open Data (Particle Physics)
+>   - Zenodo (general purpose publishing platform)
 >   - many more (See "Get Data" section of the Tool panel in Galaxy)
 > - **Bring-your-own-data** (e.g. Dropbox, Google Drive, OneData, eLabFTW)
 >
 >   {% snippet faqs/galaxy/manage_your_repositories.md %}
 >
-> - Connections to your **LIMS** system
+> - Connections to your **LIMS** (Laboratory Information Management System)
 >
 >   {% snippet faqs/galaxy/importing-data-from-sierra-lims.md %}
 >
@@ -396,7 +398,10 @@ In addition, it shows which tool produced this output, complete with exact param
 > > 1. Version 2.1. This can be found under *"Job Information -> Galaxy Tool ID"*, where the last part is the version. E.g. `toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1`. Note that this may be different for you if a newer version has been released since writing this tutorial.
 > > 2. The command that is run can be found under *"Job Information -> Command Line"*. It will be something like:
 > >    ```
-> >    python '/opt/galaxy/shed_tools/toolshed.g2.bx.psu.edu/repos/devteam/column_maker/aff5135563c6/column_maker/column_maker.py' --column-types int,str,str,int,float,float,str,str,str,int,str,str,str,str,str  --header --file '/data/jwd07/main/097/599/97599988/configs/tmp1vp1f4gh' --fail-on-non-existent-columns --fail-on-non-computable '/data/dnb12/galaxy_db/files/7/a/6/dataset_7a6bad76-3181-45e2-a460-31cbe2a6e4a3.dat' '/data/jwd07/main/097/599/97599988/outputs/dataset_5ce07003-fe0c-4836-8f16-b64f25dc9219.dat'
+> >    python '/opt/galaxy/shed_tools/toolshed.g2.bx.psu.edu/repos/devteam/column_maker/aff5135563c6/column_maker/column_maker.py'
+> >    --column-types int,str,str,int,float,float,str,str,str,int,str,str,str,str,str  --header --file '/data/jwd07/main/097/599/97599988/configs/
+> >    tmp1vp1f4gh' --fail-on-non-existent-columns --fail-on-non-computable '/data/dnb12/galaxy_db/files/7/a/6/dataset_7a6bad76-3181-45e2-a460-
+> >    31cbe2a6e4a3.dat' '/data/jwd07/main/097/599/97599988/outputs/dataset_5ce07003-fe0c-4836-8f16-b64f25dc9219.dat'
 > >    ```
 > {: .solution}
 {: .question}
@@ -418,6 +423,8 @@ In addition, it shows which tool produced this output, complete with exact param
 >
 > 4. In the "Tracks" tab, change **Column of y-axis values** to `Column: 16` (our new age column)
 >
+>    ![track configuration]({% link topics/introduction/images/galaxy-intro-rdm/visualise-track.png %})
+>
 {: .hands_on}
 
 This is a quick way to get a feeling for our data.
@@ -436,16 +443,25 @@ This is a quick way to get a feeling for our data.
 
 > <tip-title> Save your visualisation </tip-title>
 >
-> 1. Click on the **Save** {% icon cloud-upload %} icon at the top-right
+> 1. **Name** your visualisation in the "Settings" tab. You can also set the axis labels here
+>    - *"Title"*: `Olympics Age Distribution`
+>    - *"X-Axis Label"*: `2010 Winter Olympics`
+>    - *"Y-Axis Label"*: `Age in years`
+>
+>    ![plot settings]({% link topics/introduction/images/galaxy-intro-rdm/visualise-settings.png %})
+>
+> 2. Click on the **Save** {% icon cloud-upload %} icon at the top-right
 >
 >    ![visualisation save button]({% link topics/introduction/images/galaxy-intro-rdm/viz-save.png %})
 >
-> 2. In the Activity bar, click on **Visualization**
-> 3. Click on **Saved Visualizations** at the top of the panel
+>    Your visualisation has now been saved to your account. To find it back:
+>
+> 3. In the **Activity bar**, click on **Visualization** {% icon galaxy-visualise %}
+> 4. Click on **Saved Visualizations** at the top of the panel
 >
 >    ![saved visualisations]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-saved.png %})
 >
-> 4. Here you will find your saved visualisations
+> 5. Here you will find your saved visualisations
 >    - Here you can view, adjust, and rename your previously saved visualisaions
 >
 >    ![saved visualisations list]({% link topics/introduction/images/galaxy-intro-rdm/visualisations-list.png %})
@@ -473,10 +489,11 @@ We will import another file from Zenodo, but in a slightly different way. Instea
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-search.png %})
 >
->    - Select the file `olympics-2008-summer.tsv`
+>    - Check the file `olympics-2008-summer.tsv`
 >
 >      ![choose from repositories button]({% link topics/introduction/images/galaxy-intro-rdm/zenodo-repo-import.png %})
 >
+>    - Click **Select**
 >    - Click **Start**
 >    - Close the upload window
 >
@@ -651,7 +668,7 @@ If you have failed items in your history, you might want to delete them. This he
 > > 1. Click on  **include deleted** {% icon galaxy-delete %} at the top of your history
 > >    - so not on the dataset, but at the top of the history panel
 > >    - you will see the deleted dataset appear in your history again
-> >   - if you expand the deleted dataset, the delete icon has turned into an undelete icon
+> >    - if you expand the deleted dataset, the delete icon has turned into an undelete icon {% icon galaxy-undelete %}
 > >
 > >    ![history option to include deleted datasets]({% link topics/introduction/images/galaxy-intro-rdm/history-include-deleted.png %})
 > >
@@ -695,7 +712,7 @@ In this **optional section**, we will show you how to use such an interactive to
 
 > <hands-on-title> Launch OpenRefine </hands-on-title>
 >
-> 1. Click on **Interactive Tools** in the **Activity Bar**
+> 1. Click on **Interactive Tools** {% icon galaxy-interactive-tool %} in the **Activity Bar**
 > 2. Search for OpenRefine
 >
 >    ![OpenRefine Interactive tool search result]({% link topics/introduction/images/galaxy-intro-rdm/openrefine-search.png %})
@@ -704,7 +721,7 @@ In this **optional section**, we will show you how to use such an interactive to
 >    - *"Input file in tabular format"*: `2010 Winter Olympics Vancouver`
 >    - **Run** {% icon workflow-run %} the tool
 >
-> 4. Click on **Interactive Tools** in the **Activity Bar** again
+> 4. Click on **Interactive Tools** {% icon galaxy-interactive-tool %} in the **Activity Bar** again
 >    - It may take a little time to start
 >
 > 5. Once it has started, click on the name to open it
@@ -865,7 +882,7 @@ You may have noticed in our first history that the results from the **Compute** 
 
 > <hands-on-title> Add dataset tags </hands-on-title>
 >
-> 1. Add two **dataset tags** {% icon galaxy-tags %} to the Winter Olympics file
+> 1. Add three **dataset tags** {% icon galaxy-tags %} to the Winter Olympics file
 >    - Make sure all tags start with a hashtag (`#`), then they will also be added to any datasets derived from it during analysis.
 >    - tag 1: `#winter`
 >    - tag 2: `#Vancouver`
@@ -916,7 +933,7 @@ In order to easily run analysis on multiple datasets at once, we can create *dat
 >    {% snippet faqs/galaxy/collections_autobuild_list.md %}
 >
 > 2. Your history now has a single item in it
->    - It tells you what is inside *"a list with 2 tabular datasets"*
+>    - It tells you what is inside: *"a list with 2 tabular datasets"*
 >
 >    ![collection history item]({% link topics/introduction/images/galaxy-intro-rdm/collection-new.png %})
 >
@@ -961,11 +978,11 @@ Remember that you starred {% icon galaxy-star %} the compute tool, so you can us
 >
 > > <question-title> What is our output? </question-title>
 > >
-> > 1. How many outputs were created? Are the files the same as before?
+> > 1. How many outputs were created? Are the files the same as in our first history?
 > > 2. What happened with the tags?
 > >
 > > > <solution-title></solution-title>
-> > > 1. One output collection was created, with two files inside. The files themselves are the same as before.
+> > > 1. One output collection was created, with two files inside. The files themselves are the same as before (a new 'age' column added at the end).
 > > > 2. The tags from our input datasets were also added to the results
 > > >
 > > {: .solution}
@@ -1055,8 +1072,8 @@ Let's do some analysis based on our plan.
 >    - it should look something like this:
 >
 >      ```
->      #sum 	mean 	stdev 	0% 	25% 50% 75% 100%
->      114999 	26.1243 5.01207 15 	23 	25 	29 	51
+>      #sum	mean	stdev	0%	25%	50%	75%	100%
+>      114999	26.1243	5.01207	15	23	25	29	51
 >      ```
 >
 > > <question-title> </question-title>
@@ -1102,7 +1119,7 @@ input dataset. Since we are only interested in the age column, we will extract t
 >
 >
 > 3. {% tool [Histogram with ggplot2](toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_histogram/ggplot2_histogram/3.5.1+galaxy1) %} with the following parameters:
->    - *"Input"*: The output from **Remove columns** {% icon tool %} (This is a **collection input** {% icon param-collection %})
+>    - {% icon param-collection %} *"Input"*: The output from **Remove columns** {% icon tool %} (This is a **collection input** {% icon param-collection %})
 >    - *"Plot title"*: enter a good title, e.g. `Age distribution of athletes`
 >    - *"Label for x axis"*: `Age`
 >    - *"Label for y axis"*: `Count`
