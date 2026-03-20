@@ -337,6 +337,7 @@ materialvitaldigital:
 moorev:
     name: MOOREV
     joined: 2026-03
+    funding_id: "WB-2022-42799"
     url: https://moorev.fr/
     github: false
 
