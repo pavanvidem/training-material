@@ -28,8 +28,6 @@ answer_histories:
     date: 2026-03-24
 ---
 
-# Introduction
-
 Audio and media files are a rich source in the social sciences and the Humanities. 
 One example is oral history, in which historians interview contemporary witnesses to access information beyond written sources. 
 {% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio(visual) material. 
@@ -76,9 +74,10 @@ You can upload data in various ways. Here are some examples:
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
+>    
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-> 3. Check the Datatype
+> 4. Check the Datatype
 >
 >    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
 >
