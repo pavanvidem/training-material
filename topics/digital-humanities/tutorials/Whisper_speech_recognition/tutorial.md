@@ -22,6 +22,8 @@ contributions:
     - Sch-Da
   funding:
     - deKCD
+    - deNBI
+    - mwk
 answer_histories:
   - label: "UseGalaxy.eu"
     history: https://usegalaxy.eu/u/schnda/h/training-automated-speech-recognition
