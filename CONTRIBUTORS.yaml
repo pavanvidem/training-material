@@ -545,7 +545,7 @@ bgruening:
       - eurosciencegateway
       - eosc-life
       - by-covid
-      - sfb992
+      - crc992
       - elixir-converge
     affiliations:
       - deNBI
@@ -2070,6 +2070,10 @@ jfallmann:
     name: Joerg Fallmann
     joined: 2017-09
 
+nadinelebris:
+    name: Nadine Le Bras
+    joined: 2026-03
+
 scottedmunds:
     gtn-halloffame: "no"
     name: Scott Edmunds
@@ -2770,6 +2774,11 @@ MattiHoch:
       - elixir-europe
       - by-covid
 
+maximilianh:
+    name: Maximilian Haeussler
+    joined: 2026-03
+    gtn-halloffame: "no"
+
 maximskorik:
     name: Maxim Skoryk
     email: maximskoryk@gmail.com
@@ -3292,6 +3301,8 @@ paulzierep:
 pavanvidem:
     name: Pavankumar Videm
     orcid: 0000-0002-5192-126X
+    matrix: 'pavanvidem:matrix.org'
+    elixir_node: de
     joined: 2017-09
     affiliations:
       - uni-freiburg
@@ -3299,6 +3310,9 @@ pavanvidem:
       - spoc
       - deNBI
       - mwk
+    former_affiliations:
+      - crc992
+      - crc1425
 
 PfisterMaxJLU:
     name: Max Pfister
@@ -3994,6 +4008,10 @@ TKlingstrom:
     elixir_node: se
     affiliations:
       - elixir-europe
+
+TuturBaba:
+    name: Arthur Barreau
+    joined: 2026-03
 
 tvedtees:
     name: Eric Tvedte
