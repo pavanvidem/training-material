@@ -128,7 +128,7 @@ If you want to differentiate between various speakers, use WhisperX instead. Thi
 
 Please make sure to comply with your local copyright and privacy laws regarding recordings and sensitive data, if applicable. 
 You might also need to get informed consent first to use this tool on some files. 
-Read more, for example, on the regulations in Germany [here](https://forschungsdaten.info/themen/rechte-und-pflichten/datenschutzrecht/).
+Read more, for example, on [the regulations in Germany, here](https://forschungsdaten.info/themen/rechte-und-pflichten/datenschutzrecht/).
 
 > <hands-on-title> Create the Video Transcription </hands-on-title>
 >
