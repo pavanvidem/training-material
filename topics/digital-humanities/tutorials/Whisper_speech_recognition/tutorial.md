@@ -72,7 +72,7 @@ You can upload data in various ways. Here are some examples:
 >     -> `{{ page.title }}`) or from [Zenodo](https://zenodo.org/records/17949386):
 >
 >    ```
->    https://zenodo.org/records/17949386
+>    https://zenodo.org/records/17949386/files/1960_kennedy-nixon_1.mp4
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
