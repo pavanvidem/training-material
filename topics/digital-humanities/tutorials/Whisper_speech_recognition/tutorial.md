@@ -140,7 +140,7 @@ Read more, for example, on the regulations in Germany [here](https://forschungsd
 >
 >    > <comment-title> Choose a suitable model </comment-title>
 >    >
->    > There are several models to choose from. This (overview)[https://whisper-api.com/blog/models/] can help you decide. The bigger the model, the higher the accuracy, but also the greater the computational time for transcription and its carbon footprint.
+>    > There are several models to choose from. This [overview](https://whisper-api.com/blog/models/) can help you decide. The bigger the model, the higher the accuracy, but also the greater the computational time for transcription and its carbon footprint.
 >    > Despite the tool's option to auto-detect the language, we suggest selecting a language if you can. This saves computing resources.
 >    > The `Medium` model selected here showed the best results for this recording. The large model was too sensitive and returned many errors, while the smaller ones were not accurate enough. Files with different qualities and in other languages may differ.
 >    > For those, you can check Eamonn Bell's [workflow on comparing Whisper Models](https://usegalaxy.eu/u/eamonnbell/w/compare-two-whisper-models-on-a-set-of-audio-files) or build your own for WhisperX based on this.
