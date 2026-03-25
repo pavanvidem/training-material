@@ -88,7 +88,7 @@ You can upload data in various ways. Here are some examples:
 We upload one file: the video of the presidential debate we want to describe. 
 
 Once you click start, your upload should begin. It will turn green once it is done.
-If you follow this workflow with one of your own files, make sure to check your file'S datatype. 
+If you follow this workflow with one of your own files, make sure to check your file's datatype. 
 If your file's datatype is not supported as an input for Whisper or WhisperX, you can use [FFMPEG](https://usegalaxy.eu/root?tool_id=ffmpeg_converter) to convert your input file into a format WhisperX supports. 
 You can check which file types a tool supports by clicking on the tool of your choice, for example, [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx), and clicking on "accepted formats" below the upload section, where you choose the tool input.
 
