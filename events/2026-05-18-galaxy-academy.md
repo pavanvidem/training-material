@@ -193,7 +193,7 @@ We provide you with training materials which you can study at your own pace and 
 
 <button id="program-button" class="btn btn-info" onclick="$('#program-tab').tab('show');">Program</button>
 
-On the first day, you can make yourself familiar with the Galaxy platform. In the next days, you can learn about Proteomics, Assembly, Transcriptomics, Single Cell, Microbiome or Machine Learning data analysis in Galaxy. On the last day, the Friday we additionally offer a ***Digital Humanities*** program to you.
+On the first day, you can make yourself familiar with the Galaxy platform. In the next days, you can learn about Proteomics, Assembly, Transcriptomics, Single Cell, Microbiome or Machine Learning data analysis in Galaxy.
 
 
 **Course format**
