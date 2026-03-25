@@ -166,7 +166,7 @@ Now, take a look at the finished transcript as soon as the job turns green.
 Your transcript differs slightly because Whisper is not deterministic, meaning its outputs are not standardised. 
 You can run it several times and will get a slightly different output each time.
 Another thing to be aware of is small errors that can occur in speaker diarization.
-The longer a person speaks on the recording, the easier it is for Whisper to allocate a speaker. 
+The longer a person speaks on the recording, the easier it is for WhisperX to allocate a speaker. 
 If someone speaks only a single sentence in the whole recording, it might mean it is not recognised as a different speaker. 
 As a result, some passages can be wrongly allocated as happened in the last bit of the recording:
 
