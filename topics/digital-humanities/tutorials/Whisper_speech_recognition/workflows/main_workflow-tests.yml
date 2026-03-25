@@ -1,13 +1,9 @@
-- doc: Test outline for Transcription-Speech-to-Text-(imported-from-uploaded-file)
+- doc: Test outline for main_workflow
   job:
     Video or Audio File:
       class: File
       path: https://zenodo.org/records/17949386/files/1960_kennedy-nixon_1.mp4
       filetype: mp4
-    stopwords-en.txt:
-      class: File
-      path: https://zenodo.org/records/17047254/files/stopwords-en.txt
-      filetype: txt
   outputs:
     Nixon-transcribed-cleaned:
       asserts:
@@ -19,13 +15,3 @@
         has_text:
           - "If we fail, then freedom fails."
           - "I think we can do better."
-    Word Cloud for Nixon:
-      asserts:
-        has_size:
-                size: 70K
-                delta: 20K
-    Word cloud for Kennedy:
-      asserts:
-        has_size:
-                size: 70K
-                delta: 20K

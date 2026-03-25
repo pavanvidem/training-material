@@ -11,7 +11,7 @@
     ],
     "format-version": "0.1",
     "license": "CC-BY-4.0",
-    "name": "Transcription Speech to Text",
+    "name": "Transcription Speech to Text (imported from uploaded file)",
     "readme": "# General\n\nThis Workflow transcribes a video or audio with multiple speakers. After transcription, it allocates the names of the speakers and groups and cleans passages from the teo main speakers for further analysis.\n\n# Upload\nThis workflow uses a video or audio with multiple speakers as an input.\n\n# Transcription\nWhiser with speaker diarization transcribes the audio or video into machine-readable text. The diarization allows to attribute passages to different speakers. The numbering seems random and not according to first appearance. The model used here is the second largest (medium) but outputs may vary with different audio qualities and languages.\n\n# Allocation of Speakers\nThis step uses the tool `Replace parts of text` to identify the automatically allocated speakers for clear identification. This step happens four times, for all four distinguised speakers.\n\n# Text passages only from selected speakers\n`Search in textfiles` allows selecting only passages from the two main speakers, Kennedy and Nixon.\n\n# Clean Text passages from main speakers\nTo continue working with the texts from the two main speakers, it is no longer necessary to have the prefix, who spoke the words, as the file name indicates this already. Hence, `Replace parts of text` allows replacing the name with no content, effectively deleting the now unnecessary speaker attribution for both texts. The result are two cleaned texts, one containing all lines allocated to Nixon and the other with those passages allocated to Kennedy but without having each line begin with their names. those cleaned text are the main workflow outputs.\n\n# Word cloud\nFor a quick glance, at what speech focuses on what, you can visualise both files in a wordcloud. An additional file, an English stopword list, deletes filler words in the word cloud, leaving only meaningful content. You can adapt this to your needs.\n",
     "report": {
         "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
@@ -464,5 +464,5 @@
         "video"
     ],
     "uuid": "5d015eda-b1df-45a2-a30d-e2e04be1d1ba",
-    "version": 1
+    "version": 0
 }
