@@ -364,7 +364,7 @@ We remove it in the next step.
 >    > Make sure to add the space after the colon to clean the text properly. If you forget, each line will start with a space! 
 >    {: .comment}
 >
-
+>
 {: .hands_on}
 
 The result is the transcript of the text Nixon spoke during the debate. You can use it for further in-depth analysis or visualise it.
