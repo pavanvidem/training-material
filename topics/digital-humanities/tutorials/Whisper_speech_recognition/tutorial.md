@@ -34,7 +34,7 @@ Audio and media files are a rich source in the social sciences and the Humanitie
 One example is oral history, in which historians interview contemporary witnesses to access information beyond written sources. 
 {% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio(visual) material. 
 How can you make it accessible for structured analysis? This is a task Galaxy can help with.
-The platform contains several tools for automatic speech recognition (ASR). 
+The platform contains several tools for Automatic Speech Recognition (ASR). 
 From uploading and converting to suitable file types to transcriptions and post-processing, Galaxy has you covered.
 
 This tutorial aims to make the audio track of a video machine-readable for further processing. 
