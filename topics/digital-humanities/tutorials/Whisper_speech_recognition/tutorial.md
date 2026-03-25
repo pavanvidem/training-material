@@ -85,7 +85,7 @@ You can upload data in various ways. Here are some examples:
 >
 {: .hands_on}
 
-We upload one file: the video of the presidential debate we want to describe. 
+We upload one file: the video of the presidential debate we want to transcribe. 
 
 Once you click start, your upload should begin. It will turn green once it is done.
 If you follow this workflow with one of your own files, make sure to check your file's datatype. 
