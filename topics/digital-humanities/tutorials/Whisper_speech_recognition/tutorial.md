@@ -170,7 +170,7 @@ The longer a person speaks on the recording, the easier it is for WhisperX to al
 If someone speaks only a single sentence in the whole recording, it might mean it is not recognised as a different speaker. 
 As a result, some passages can be wrongly allocated as happened in the last bit of the recording:
 
-![Screenshot of wrongly allocated text in the WhisperX example](/images/SC_wrong_allocation.png "Wrong speaker allocation in the example transcript.")
+![Screenshot of wrongly allocated text in the WhisperX example](../../images/SC_wrong_allocation.png "Wrong speaker allocation in the example transcript.")
 
 The above screenshot shows an extract at the end of the transcript. 
 You can also watch that part of the recording in the media player starting at 14:35. 
