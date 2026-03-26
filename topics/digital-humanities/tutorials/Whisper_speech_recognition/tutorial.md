@@ -30,9 +30,9 @@ answer_histories:
     date: 2026-03-24
 ---
 
-Audio and media files are a rich source in the social sciences and the Humanities. 
+Audio and media files are a rich source in the social sciences and the humanities. 
 One example is oral history, in which historians interview contemporary witnesses to access information beyond written sources. 
-{% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio(visual) material. 
+{% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio and audiovisual material. 
 How can you make it accessible for structured analysis? This is a task Galaxy can help with.
 The platform contains several tools for Automatic Speech Recognition (ASR). 
 From uploading and converting to suitable file types to transcriptions and post-processing, Galaxy has you covered.
@@ -42,7 +42,7 @@ It is the pre-processing step to get you started.
 Once you have covered this, you can further analyse your material more thoroughly. This step will not be covered in this tutorial.
 
 We use a video of the 1960 United States presidential debate between John F. Kennedy and Richard Nixon.
-It was broadcast on television, and the recording is now in the public domain. We will use [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx) to transcribe the material. 
+It was broadcast on television, and the recording is now in the public domain. We will use  {% tool [WhisperX](toolshed.g2.bx.psu.edu/repos/bgruening/whisperx/whisperx/3.4.2+galaxy1) %} to transcribe the material. 
 The advantage of WhisperX over [Whisper](https://usegalaxy.eu/root?tool_id=whisper), another tool available on Galaxy, is its speaker diarization. 
 This means the tool recognises different speakers and (tries to) allocate the text passages accordingly. 
 To make it easier to distinguish "who said what", we later replace the tool's naming convention of, for example, "SPEAKER_00," with the name of the person speaking. 
@@ -124,7 +124,8 @@ You can use Galaxy for automated speech recognition.
 Galaxy has different tools to transcribe your media files: [Whisper](https://usegalaxy.eu/root?tool_id=whisper)
 and WhisperX [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx). 
 If you want to transcribe a monologue or do not care about who said what, you can choose Whisper. 
-If you want to differentiate between various speakers, use WhisperX instead. This is what we will do here to create our video transcript. 
+To differentiate between various speakers, use {% tool [WhisperX](toolshed.g2.bx.psu.edu/repos/bgruening/whisperx/whisperx/3.4.2+galaxy1) %} instead. 
+This is what we will do in this tutorial to create our video transcript. 
 
 Please make sure to comply with your local copyright and privacy laws regarding recordings and sensitive data, if applicable. 
 You might also need to get informed consent first to use this tool on some files. 
@@ -163,7 +164,7 @@ Now, take a look at the finished transcript as soon as the job turns green.
 >
 {: .question}
 
-Your transcript differs slightly because Whisper is not deterministic, meaning its outputs are not standardised. 
+Your transcript differs slightly because Whisper and WhisperX are not deterministic, meaning their outputs are not standardised. 
 You can run it several times and will get a slightly different output each time.
 Another thing to be aware of is small errors that can occur in speaker diarization.
 The longer a person speaks on the recording, the easier it is for WhisperX to allocate a speaker. 
