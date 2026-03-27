@@ -58,7 +58,7 @@ recordings:
   captioners:
   - npechl
   bot-timestamp: 1725013820
-- youtube_id: TODO
+- youtube_id: https://youtu.be/RjsWjuBzCd4
   length: 34M
   galaxy_version: 25.1.2.dev0
   date: '2026-03-25'
