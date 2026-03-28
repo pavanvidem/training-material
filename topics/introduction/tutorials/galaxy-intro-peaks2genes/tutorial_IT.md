@@ -84,7 +84,6 @@ un elenco di possibili geni bersaglio**.
 > 
 > 1. TOC
 > {:toc}
->
 {: .agenda}
 
 # Pretrattamenti
@@ -96,7 +95,6 @@ un elenco di possibili geni bersaglio**.
 > 2. Accesso o registrazione (pannello superiore)
 > 
 >    ![Accedi o registrati nel pannello superiore](../../images/login_register.png)
-> 
 {: .hands_on}
 
 L'interfaccia di Galaxy è composta da tre parti principali. Gli strumenti disponibili
@@ -270,7 +268,6 @@ elenco di geni nei topi, che possiamo ottenere dall'UCSC.
 > è possibile trovare maggiori informazioni al riguardo su
 > [UCSC](https://genome.ucsc.edu/FAQ/FAQformat#format1), compresa una descrizione dei
 > campi opzionali.
-> 
 {: .comment}
 
 Ora abbiamo raccolto tutti i dati necessari per iniziare la nostra analisi.
@@ -491,9 +488,8 @@ vogliamo estrarre i geni che si sovrappongono/intersecano con i nostri picchi.
 >     - *"che intersecano "*: il nostro file della regione di picco da **Replace** (`Peak regions BED`)
 >     - *"per almeno "*: `1`
 > 
->    > <comment-title></comment-title> L'ordine degli input è importante! Vogliamo
->    > ottenere un elenco di **geni**, quindi il set di dati corrispondente con le
->    > informazioni sui geni deve essere il primo input (`Promoter regions`).
+>    > <comment-title></comment-title>
+>    > L'ordine degli input è importante! Vogliamo ottenere un elenco di **geni**, quindi il set di dati corrispondente con le informazioni sui geni deve essere il primo input (`Promoter regions`).
 >    {: .comment}
 >    ![Picchi di sovrapposizione dei geni](../../images/intro_overlapping_genes.png)
 {: .hands_on}
@@ -646,26 +642,27 @@ facilmente le analisi.
 > 
 > 8. Collegate ogni set di dati di input allo strumento **Intersect** {% icon tool %} trascinando la freccia rivolta verso l'esterno a destra del suo riquadro (che denota un output) a una freccia rivolta verso l'interno a sinistra del riquadro **Intersect** (che denota un input)
 > 9. Rinominare i set di dati di input in `Reference regions` e `Peak regions`
-> 10. Premere **Auto Re-layout** per ripulire la nostra vista ![Auto re-layouting](../../images/intro_07.png)
-> 11. cliccare sull'icona {% icon galaxy-save %} *icona *Salva** (in alto) per salvare
->     le modifiche![Pulsante Salva flusso di lavoro]({% link topics/contributing/images/save_workflow.png %}){: width="50%"}
+> 10. Premere **Auto Re-layout** per ripulire la nostra vista
+>     ![Auto re-layouting](../../images/intro_07.png)
+> 11. cliccare sull'icona {% icon galaxy-save %} *icona *Salva** (in alto) per salvare le modifiche
+>     ![Pulsante Salva flusso di lavoro]({% link topics/contributing/images/save_workflow.png %}){: width="50%"}
 > 
-> > <tip-title>Nascondere le fasi intermedie</tip-title>
-> > Quando si esegue un flusso di lavoro, di solito l'utente è interessato principalmente al prodotto finale e non a
-> > tutte le fasi intermedie. Per impostazione predefinita, tutti gli output di un
-> > flusso di lavoro vengono mostrati, ma è possibile indicare esplicitamente a Galaxy
-> > quali output mostrare e quali nascondere per un determinato flusso di lavoro. Questo
-> > comportamento è controllato dal piccolo asterisco accanto a ogni set di dati di
-> > output:
-> > 
-> > ![Workflow editor mark > output](../../../../shared/images/workflow_editor_mark_output.png)
-> > 
-> > se si fa clic su questo asterisco per uno qualsiasi dei set di dati di output,
-> > verranno mostrati *solo* i file con l'asterisco e tutti gli output senza asterisco
-> > verranno nascosti (si noti che fare clic su *tutti* gli output ha lo stesso effetto
-> > di fare clic su *nessuno* degli output, in entrambi i casi verranno mostrati tutti i
-> > set di dati).
-> {: .tip}
+>    > <tip-title>Nascondere le fasi intermedie</tip-title>
+>    > Quando si esegue un flusso di lavoro, di solito l'utente è interessato principalmente al prodotto finale e non a
+>    > tutte le fasi intermedie. Per impostazione predefinita, tutti gli output di un
+>    > flusso di lavoro vengono mostrati, ma è possibile indicare esplicitamente a Galaxy
+>    > quali output mostrare e quali nascondere per un determinato flusso di lavoro. Questo
+>    > comportamento è controllato dal piccolo asterisco accanto a ogni set di dati di
+>    > output:
+>    > 
+>    > ![Workflow editor mark > output](../../../../shared/images/workflow_editor_mark_output.png)
+>    > 
+>    > se si fa clic su questo asterisco per uno qualsiasi dei set di dati di output,
+>    > verranno mostrati *solo* i file con l'asterisco e tutti gli output senza asterisco
+>    > verranno nascosti (si noti che fare clic su *tutti* gli output ha lo stesso effetto
+>    > di fare clic su *nessuno* degli output, in entrambi i casi verranno mostrati tutti i
+>    > set di dati).
+>    {: .tip}
 > 
 {: .hands_on}
 
@@ -728,8 +725,7 @@ cadono tra due basi). Come fine della regione del picco, definiremo semplicement
 >           - *"Aggiungi espressione "*: `c8 + 1`
 >           - *"Modalità dell'operazione "*: Aggiungi
 > 
-> Questo creerà un'ottava e una nona colonna nella nostra tabella, che utilizzeremo nel
-> prossimo passo:
+>   Questo creerà un'ottava e una nona colonna nella nostra tabella, che utilizzeremo nel prossimo passo:
 > 
 > 2. Rinomina l'uscita `Peak summit regions`
 > 
@@ -865,7 +861,7 @@ fare 3 cose:
 
    Questo condividerà la cronologia solo con utenti specifici dell'istanza Galaxy.
 
-![Il menu per la condivisione delle cronologie comprende i pulsanti per rendere accessibile la cronologia, pubblicarla su questo server Galaxy e visualizzare un link condivisibile alla cronologia. In fondo c'è un pulsante per condividere la cronologia con i singoli utenti].(../../images/publish.png)
+![Il menu per la condivisione delle cronologie comprende i pulsanti per rendere accessibile la cronologia, pubblicarla su questo server Galaxy e visualizzare un link condivisibile alla cronologia. In fondo c'è un pulsante per condividere la cronologia con i singoli utenti](../../images/publish.png)
 
 > <hands-on-title>Condivisione della storia e del flusso di lavoro</hands-on-title>
 > 

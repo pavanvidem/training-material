@@ -286,13 +286,13 @@ La qualità tende invece a diminuire verso la fine della lettura, spesso a causa
 > - Decadimento del segnale
 > 
 > L’intensità del segnale fluorescente diminuisce a ogni ciclo di sequenziamento.
-A causa della degradazione dei fluorofori, una parte dei filamenti nel cluster non viene più allungata.
-La frazione di segnale emesso continua quindi a ridursi ciclo dopo ciclo, determinando un calo dei punteggi di qualità all’estremità 3’ della lettura.
+> A causa della degradazione dei fluorofori, una parte dei filamenti nel cluster non viene più allungata.
+> La frazione di segnale emesso continua quindi a ridursi ciclo dopo ciclo, determinando un calo dei punteggi di qualità all’estremità 3’ della lettura.
 > 
 > - Sfasamento
 > 
 > Il segnale inizia a confondersi man mano che aumentano i cicli, poiché il cluster perde sincronia.
-Alcuni filamenti subiscono errori casuali di incorporazione dei nucleotidi dovuti a:
+> Alcuni filamenti subiscono errori casuali di incorporazione dei nucleotidi dovuti a:
 > 
 > - rimozione incompleta dei terminatori e dei fluorofori in 3'
 > - Incorporazione di nucleotidi privi di terminatori efficaci in 3’'
@@ -308,12 +308,12 @@ Alcuni filamenti subiscono errori casuali di incorporazione dei nucleotidi dovut
 > - Sovra-raggruppamento
 > 
 >   LIn alcuni casi, le strutture di sequenziamento possono sovraccaricare la cella di flusso, causando distanze ridotte tra i cluster e sovrapposizione dei segnali. Due cluster possono quindi essere interpretati come uno solo, con segnali fluorescenti misti che riducono la purezza del segnale.
-Questo genera punteggi di qualità inferiori per l’intera lettura.
+>   Questo genera punteggi di qualità inferiori per l’intera lettura.
 > 
 > - Guasti strumentali
 > 
 >   Possono verificarsi problemi tecnici durante una corsa di sequenziamento.
-Un calo improvviso della qualità o una percentuale elevata di letture a bassa qualità lungo tutta la sequenza possono indicare un problema di strumentazione. Alcuni esempi:
+>   Un calo improvviso della qualità o una percentuale elevata di letture a bassa qualità lungo tutta la sequenza possono indicare un problema di strumentazione. Alcuni esempi:
 > 
 >    - Rottura del collettore (Manifold burst)
 > 
@@ -336,9 +336,7 @@ Un calo improvviso della qualità o una percentuale elevata di letture a bassa q
 > 2. Questa tendenza si osserva in tutte le sequenze?
 > 
 > > <solution-title></solution-title>
-> > 1. Il punteggio medio di qualità (linea blu) diminuisce circa a metà di queste sequenze.
-È normale che la qualità media cali verso la fine delle letture, poiché i sequenziatori incorporano più nucleotidi errati negli ultimi cicli.
-Tuttavia, in questo campione si osserva un calo di qualità molto marcato dalla metà in poi.
+> > 1. Il punteggio medio di qualità (linea blu) diminuisce circa a metà di queste sequenze. È normale che la qualità media cali verso la fine delle letture, poiché i sequenziatori incorporano più nucleotidi errati negli ultimi cicli. Tuttavia, in questo campione si osserva un calo di qualità molto marcato dalla metà in poi.
 > > 2. I boxplot si allargano a partire dalla posizione ~100, indicando che molte sequenze mostrano un calo di punteggio a partire da metà lettura. Dopo 100 nucleotidi, oltre il 10% delle sequenze presenta un punteggio inferiore a 20.
 > >
 > {: .solution }
@@ -370,7 +368,7 @@ Per rimuovere l’adattatore, è possibile utilizzare uno strumento di trimming 
 > <tip-title>Scorciatoia</tip-title>
 > 
 > Le sezioni seguenti descrivono nel dettaglio alcuni degli altri grafici generati da FastQC. Alcuni moduli possono dare avvertimenti che sono normali per il tipo di dati con cui si sta lavorando, come discusso sotto e [nelle FAQ di FASTQC](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/). Gli altri grafici forniscono informazioni utili per comprendere più a fondo la qualità dei dati e per valutare possibili miglioramenti di laboratorio in futuro. Queste sezioni sono **opzionali** e vuoi saltarle, puoi 
->   - Passate direttamente alla [sezione successiva] (#trim-and-filter---short-reads) per imparare a ritagliare dati paired-end.
+>   - Passate direttamente alla [sezione successiva](#trim-and-filter---short-reads) per imparare a ritagliare dati paired-end.
 {: .tip}
 
 ### Qualità della sequenza per piastrella (tile)
@@ -383,11 +381,7 @@ Questo grafico appare solo per librerie Illumina che preservano gli identificato
 
 > <details-title>Altri profili di qualità delle piastrelle</details-title>
 > 
-> Questo grafico appare solo per librerie Illumina che preservano gli identificatori originali nelle intestazioni delle letture (che codificano la piastrella di provenienza).
-
-<details-title>Altri profili di qualità per piastrella</details-title>
-
-A volte le sostanze chimiche usate durante il sequenziamento si esauriscono col tempo e le ultime piastrelle ricevono reagenti meno performanti, rendendo la reazione più soggetta a errori. Il grafico può presentare linee orizzontali come in questo esempio:
+> A volte le sostanze chimiche usate durante il sequenziamento si esauriscono col tempo e le ultime piastrelle ricevono reagenti meno performanti, rendendo la reazione più soggetta a errori. Il grafico può presentare linee orizzontali come in questo esempio:
 > 
 > ![Qualità della sequenza per tile con linee orizzontali](../../images/quality-control/per_tile_sequence_quality_horizontal_lines.png)
 > 
@@ -447,7 +441,8 @@ Ma ci sono anche altre situazioni in cui può verificarsi una distribuzione di f
 > 
 > Perché i grafici del contenuto GC per sequenza risultano “fail”?
 > 
-> > <solution-title></solution-title> CSono presenti più picchi. Questo può indicare contaminazione inattesa (adattatori, rRNA, sequenze sovrarappresentate) oppure essere normale per ampliconi o trascritti RNA-Seq molto abbondanti.
+> > <solution-title></solution-title>
+> > CSono presenti più picchi. Questo può indicare contaminazione inattesa (adattatori, rRNA, sequenze sovrarappresentate) oppure essere normale per ampliconi o trascritti RNA-Seq molto abbondanti.
 > {: .solution }
 {: .question}
 
@@ -602,8 +597,8 @@ La qualità diminuisce al centro di queste sequenze. Ciò potrebbe causare disto
 
 Per svolgere questo compito utilizzeremo [Cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) {% cite marcel2011cutadapt %}, uno strumento che migliora la qualità della sequenza automatizzando il trimming degli adattatori e il controllo di qualità. Si tratta di:
 
-- Rifilatura delle basi di bassa qualità dalle estremità. Il trimming della qualità viene eseguito prima di qualsiasi trimming dell'adattatore. Impostiamo la soglia di qualità a 20, una soglia comunemente usata, per saperne di più [nelle Phred Score FAQ di GATK] (https://gatk.broadinstitute.org/hc/en-us/articles/360035531872-Phred-scaled-quality-scores).
-- Ritagliare l'adattatore con Cutadapt. Per questo è necessario fornire la sequenza dell'adattatore. In questo esempio, Nextera è l'adattatore rilevato. Possiamo trovare la sequenza dell'adattatore Nextera sul [sito web Illumina] (https://support.illumina.com/bulletins/2016/12/what-sequences-do-i-use-for-adapter-trimming.html) `CTGTCTCTTATACACATCT`. Taglieremo questa sequenza dall'estremità 3' delle letture.
+- Rifilatura delle basi di bassa qualità dalle estremità. Il trimming della qualità viene eseguito prima di qualsiasi trimming dell'adattatore. Impostiamo la soglia di qualità a 20, una soglia comunemente usata, per saperne di più [nelle Phred Score FAQ di GATK](https://gatk.broadinstitute.org/hc/en-us/articles/360035531872-Phred-scaled-quality-scores).
+- Ritagliare l'adattatore con Cutadapt. Per questo è necessario fornire la sequenza dell'adattatore. In questo esempio, Nextera è l'adattatore rilevato. Possiamo trovare la sequenza dell'adattatore Nextera sul [sito web Illumina](https://support.illumina.com/bulletins/2016/12/what-sequences-do-i-use-for-adapter-trimming.html) `CTGTCTCTTATACACATCT`. Taglieremo questa sequenza dall'estremità 3' delle letture.
 - Filtrare le sequenze con lunghezza < 20 dopo il trimming
 
 > <hands-on-title>Miglioramento della qualità della sequenza</hands-on-title>
@@ -611,12 +606,11 @@ Per svolgere questo compito utilizzeremo [Cutadapt](https://cutadapt.readthedocs
 > 1. {% tool [Cutadapt](toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/4.9+galaxy1) %} con i seguenti parametri
 >    - *"Letture single-end o paired-end? "*: ..`Single-end`..
 >       - {% icon param-file %} *"File FASTQ/A "*: `Reads` (set di dati di input)
->        
->          > <tip-title>Files not selectable?</tip-title>
->         > Se il file FASTQ non può essere selezionato, si può controllare se il formato è FASTQ con valori di qualità scalati Sanger (`fastqsanger.gz`). È possibile modificare il tipo di dati facendo clic sul simbolo della matita.
->         {: .tip}
 > 
-   - In *"Read 1 Adapters"*:
+>          > <tip-title>Files not selectable?</tip-title>
+>          > Se il file FASTQ non può essere selezionato, si può controllare se il formato è FASTQ con valori di qualità scalati Sanger (`fastqsanger.gz`). È possibile modificare il tipo di dati facendo clic sul simbolo della matita.
+>          {: .tip}
+>    - In *"Read 1 Adapters"*:
 >       - *"1: 3' (End) Adapters"*:
 >          - *"Source"*: `Enter custom sequence`
 >          - *"Custom 3' adapter sequence"*: `CTGTCTCTTATACACATCT`
@@ -688,7 +682,7 @@ Per svolgere questo compito utilizzeremo [Cutadapt](https://cutadapt.readthedocs
 > * Taglio dopo la prima posizione con qualità inferiore alla soglia
 > * Approccio a finestra scorrevole
 > 
->   L'approccio a finestra scorrevole controlla che la qualità media di ogni finestra di sequenza di lunghezza specificata sia maggiore della soglia. Si noti che, a differenza dell'approccio di cutadapt, questo approccio ha un parametro in più e la robustezza dipende dalla lunghezza della finestra (in combinazione con la soglia di qualità). Entrambi gli approcci sono implementati in Trimmomatic.
+>     L'approccio a finestra scorrevole controlla che la qualità media di ogni finestra di sequenza di lunghezza specificata sia maggiore della soglia. Si noti che, a differenza dell'approccio di cutadapt, questo approccio ha un parametro in più e la robustezza dipende dalla lunghezza della finestra (in combinazione con la soglia di qualità). Entrambi gli approcci sono implementati in Trimmomatic.
 {: .details}
 
 
@@ -738,9 +732,11 @@ Possiamo anche, o invece, controllare i dati a qualità controllata con FastQC.
 > 2. L'adattatore è sparito?
 > 
 > > <solution-title></solution-title>
-> > 1. Sì. La stragrande maggioranza delle basi ha un punteggio di qualità superiore a 20. ![Qualità della sequenza per base](../../images/quality-control/per_base_sequence_quality-after.png "Qualità della sequenza per base")
+> > 1. Sì. La stragrande maggioranza delle basi ha un punteggio di qualità superiore a 20.
+> > ![Qualità della sequenza per base](../../images/quality-control/per_base_sequence_quality-after.png "Qualità della sequenza per base")
 > > 
-> > 2. Sì. Non è stato rilevato alcun adattatore. ![Contenuto adattatore](../../images/quality-control/adapter_content-after.png)
+> > 2. Sì. Non è stato rilevato alcun adattatore.
+> > ![Contenuto adattatore](../../images/quality-control/adapter_content-after.png)
 > > 
 > {: .solution }
 {: .question}
@@ -749,24 +745,31 @@ Con FastQC possiamo vedere che abbiamo migliorato la qualità delle basi nel dat
 
 > <details-title>Altri tracciati FastQC dopo il trimming</details-title>
 > 
-> ![Qualità della sequenza per tile](../../images/quality-control/per_tile_sequence_quality-after.png) Abbiamo alcune strisce rosse perché abbiamo tagliato quelle regioni dalle letture.
+> ![Qualità della sequenza per tile](../../images/quality-control/per_tile_sequence_quality-after.png)
+> Abbiamo alcune strisce rosse perché abbiamo tagliato quelle regioni dalle letture.
 > 
-> ![Punteggi di qualità per sequenza](../../images/quality-control/per_sequence_quality_scores-after.png) Ora abbiamo un picco di alta qualità invece di uno di alta e uno di bassa qualità che avevamo in precedenza.
+> ![Punteggi di qualità per sequenza](../../images/quality-control/per_sequence_quality_scores-after.png)
+> Ora abbiamo un picco di alta qualità invece di uno di alta e uno di bassa qualità che avevamo in precedenza.
 > 
-> ![Contenuto della sequenza per base](../../images/quality-control/per_base_sequence_content-after.png) Non abbiamo una rappresentazione uguale delle basi come prima, poiché si tratta di dati ampliconici.
+> ![Contenuto della sequenza per base](../../images/quality-control/per_base_sequence_content-after.png)
+> Non abbiamo una rappresentazione uguale delle basi come prima, poiché si tratta di dati ampliconici.
 > 
-> ![Contenuto GC per sequenza](../../images/quality-control/per_sequence_gc_content-after.png) Ora abbiamo un unico picco GC principale dovuto alla rimozione dell'adattatore.
+> ![Contenuto GC per sequenza](../../images/quality-control/per_sequence_gc_content-after.png)
+> Ora abbiamo un unico picco GC principale dovuto alla rimozione dell'adattatore.
 > 
-> ![Contenuto N per base](../../images/quality-control/per_base_n_content-after.png) Questo è lo stesso di prima in quanto non abbiamo N in queste letture.
+> ![Contenuto N per base](../../images/quality-control/per_base_n_content-after.png)
+> Questo è lo stesso di prima in quanto non abbiamo N in queste letture.
 > 
-> ![Distribuzione della lunghezza della sequenza](../../images/quality-control/sequence_length_distribution-after.png) Ora abbiamo più picchi e una gamma di lunghezze, invece del singolo picco che avevamo prima del trimming quando tutte le sequenze erano della stessa lunghezza.
+> ![Distribuzione della lunghezza della sequenza](../../images/quality-control/sequence_length_distribution-after.png)
+> Ora abbiamo più picchi e una gamma di lunghezze, invece del singolo picco che avevamo prima del trimming quando tutte le sequenze erano della stessa lunghezza.
 > 
 > ![Livelli di duplicazione della sequenza](../../images/quality-control/sequence_duplication_levels-after.png)
 > > <question-title></question-title>
 > > 
 > > A cosa corrisponde la sequenza top sovrarappresentata `GTGTCAGCCGCCGCGGTAGTCCGACGTGG`?
 > > 
-> > > <solution-title></solution-title> Se prendiamo la sequenza top overrepresented
+> > > <solution-title></solution-title>
+> > > Se prendiamo la sequenza top overrepresented
 > > > ```
 > > > >overrep_seq1_after
 > > > GTGTCAGCCGCCGCGGTAGTCCGACGTGG
@@ -794,7 +797,7 @@ La distanza tra le due letture è nota e quindi è un'informazione aggiuntiva ch
 
 Il sequenziamento Paired-end genera 2 file FASTQ:
 - Un file con le sequenze corrispondenti all'orientamento **forward** di tutti i frammenti
-- Un file con le sequenze corrispondenti all'orientamento **REVERSE** di tutti i frammenti
+- Un file con le sequenze corrispondenti all'orientamento **reverse** di tutti i frammenti
 
 Di solito riconosciamo questi due file che appartengono a un campione dal nome che ha lo stesso identificatore per le letture ma un'estensione diversa, ad esempio `sampleA_R1.fastq` per le letture in avanti e `sampleA_R2.fastq` per le letture inverse. Può anche essere `_f` o `_1` per le letture in avanti e `_r` o `_2` per le letture inverse.
 
@@ -863,7 +866,7 @@ Dopo il trimming, le letture inverse saranno più corte a causa della loro quali
 >       - *"Quality cutoff(s) (R1)"*: `20`
 >    - In *"Read Filtering Options"*
 >       - *"Minimum length (R1)"*: `20`
->    - {%icon param-select%} *"Additional outputs to generate"*: `Report`
+>    - {% icon param-select %} *"Additional outputs to generate"*: `Report`
 > 
 > 2. Ispezionare il file txt generato (`Report`)
 > 
@@ -990,11 +993,14 @@ Uno dei punti di forza di PycoQC è che è interattivo e altamente personalizzab
 > <question-title></question-title>
 > 
 > Quante letture avete in totale?
-> > <solution-title></solution-title> ~270k letture in totale (vedere la tabella di riepilogo Basecall, "Tutte le letture") Per la maggior parte dei profili di basecalling, Guppy assegnerà le letture come "Pass" se il Qscore della lettura è almeno pari a 7.
+> > <solution-title></solution-title>
+> > ~270k letture in totale (vedere la tabella di riepilogo Basecall, "Tutte le letture") Per la maggior parte dei profili di basecalling, Guppy assegnerà le letture come "Pass" se il Qscore della lettura è almeno pari a 7.
 > {: .solution }
 > 
 > Qual è la lunghezza mediana, minima e massima delle letture, qual è l'N50?
-> > <solution-title></solution-title> La lunghezza mediana della lettura e l'N50 si possono trovare per tutte e per tutte le letture superate, cioè quelle che hanno superato le impostazioni di qualità di Guppy (Qscore >= 7), nella tabella riassuntiva della basecall. Per le lunghezze minime (195bp) e massime (256kbp) delle letture, si può trovare con il grafico delle lunghezze delle letture.
+> > <solution-title></solution-title>
+> > La lunghezza mediana della lettura e l'N50 si possono trovare per tutte e per tutte le letture superate, cioè quelle che hanno superato le impostazioni di qualità di Guppy (Qscore >= 7), nella tabella riassuntiva della basecall.
+> > Per le lunghezze minime (195bp) e massime (256kbp) delle letture, si può trovare con il grafico delle lunghezze delle letture.
 > {: .solution }
 {: .question}
 

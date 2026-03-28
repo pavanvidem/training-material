@@ -53,11 +53,13 @@ Quando si esegue un'analisi di dati biologici, è possibile che ci si ritrovi co
 
 Lo scopo di questo tutorial è di familiarizzare con questo aspetto, utilizzando come esempio le opsine umane.
 
-> <comment-title></comment-title> Questo tutorial è un po' atipico: non lavoreremo in Galaxy ma soprattutto al di fuori di esso, nelle pagine del database [UniProt](https://uniprot.org).
+> <comment-title></comment-title>
+> Questo tutorial è un po' atipico: non lavoreremo in Galaxy ma soprattutto al di fuori di esso, nelle pagine del database [UniProt](https://uniprot.org).
 > 
 {: .comment}
 
-> <comment-title></comment-title> Questo tutorial è stato progettato per essere la continuazione del tutorial ["Un gene attraverso i formati di file"]({% link topics/data-science/tutorials/online-resources-gene/tutorial.md %}), ma può essere consultato anche come modulo autonomo.
+> <comment-title></comment-title>
+> Questo tutorial è stato progettato per essere la continuazione del tutorial ["Un gene attraverso i formati di file"]({% link topics/data-science/tutorials/online-resources-gene/tutorial.md %}), ma può essere consultato anche come modulo autonomo.
 > 
 {: .comment}
 
@@ -76,8 +78,8 @@ Le opsine si trovano nelle cellule della retina. Catturano la luce e iniziano la
 > 
 > In questo tutorial ci occuperemo di:
 > 
-> 1. TOC {:toc}
-> 
+> 1. TOC
+> {:toc}
 {: .agenda}
 
 # La pagina di inserimento di UniProtKB
@@ -100,9 +102,7 @@ Il portale da visitare per ottenere tutte le informazioni su una proteina è [Un
 > > 
 > > 410 risultati (al momento della preparazione di questo tutorial)
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Questi 410 risultati ci danno la sensazione di dover essere più specifici (anche se - spoiler - il nostro obiettivo effettivo è tra i primi risultati).
@@ -125,9 +125,7 @@ Per essere sufficientemente specifici, suggeriamo di usare un identificatore uni
 > > 
 > > 1. 200+ risultati (al momento della preparazione di questo tutorial)
 > > 2. Dobbiamo chiarire cosa stiamo cercando: OPN1LW umano
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Dobbiamo aggiungere `Human` per chiarire cosa stiamo cercando.
@@ -148,9 +146,7 @@ Dobbiamo aggiungere `Human` per chiarire cosa stiamo cercando.
 > > 
 > > 1. 7 risultati (al momento della preparazione di questo tutorial)
 > > 2. Il primo risultato è etichettato con `Gene: OPN1LW (RCP)`
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Il primo risultato, etichettato con `Gene: OPN1LW (RCP)`, è il nostro obiettivo, `P04000 · OPSR_HUMAN`. Prima di aprire la pagina, occorre notare due cose:
@@ -163,7 +159,6 @@ Il primo risultato, etichettato con `Gene: OPN1LW (RCP)`, è il nostro obiettivo
 > <hands-on-title>Aprire un risultato in UniProt</hands-on-title>
 > 
 > 1. Clicca su `P04000 · OPSR_HUMAN`
-> 
 {: .hands-on}
 
 ![Schermata dell'intestazione della pagina di inserimento di UniProt](./images/UniProt.png "pagina UniProt")
@@ -202,7 +197,6 @@ Il menu successivo fa già parte della scheda *Entry*. Permette di eseguire una 
 > > 2. I formati `FASTA` dovrebbero suonare familiari (dopo il tutorial preliminare), e includono la sequenza della proteina, eventualmente con le sue isoforme (nel qual caso si tratterà di un multi-FASTA). Oltre a questi, tutti gli altri formati non sono specifici per le proteine o per la biologia. Si tratta di formati di file generali ampiamente utilizzati dai siti web per includere le informazioni contenute nella pagina. Quindi, scaricando il file `text` (o meglio ancora il file `json`), si scaricherebbe la stessa annotazione a cui si accede in questa pagina, ma in un formato più facile da analizzare programmaticamente.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Scorriamo ora la pagina di ingresso, sezione per sezione.
@@ -230,7 +224,6 @@ GO è un perfetto esempio di database/risorsa che si basa su un universo di cono
 > > 2. Trasduzione sensoriale, Visione
 > > 
 > {: .solution}
-> 
 {: .question}
 
 ### Nomi e tassonomia
@@ -246,9 +239,7 @@ Altri esempi di informazioni strutturate sono disponibili nella sezione successi
 > > 
 > > 1. 9606, cioè Homo sapiens
 > > 2. UP000005640, componente del cromosoma Xs
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ## Posizione subcellulare
@@ -264,9 +255,7 @@ Sappiamo già dove si trova la nostra proteina nel corpo umano (nella retina, co
 > > 
 > > 1. La sezione spiega che si tratta di una "proteina di membrana a più passaggi", il che significa che è una proteina inserita nella membrana cellulare e che la attraversa più volte.
 > > 2. L'annotazione GO in alto indica che ci stiamo riferendo in particolare alla membrana dei fotorecettori (cellule).
-> > 
 > {: .solution}
-> 
 {: .question}
 
 La sezione della localizzazione subcellulare comprende un'area *Caratteristiche* che specifica quali sezioni, lungo la sequenza della proteina, sono inserite nella membrana (Transmembrana) e quali no (Dominio topologico).
@@ -278,9 +267,7 @@ La sezione della localizzazione subcellulare comprende un'area *Caratteristiche*
 > > <solution-title></solution-title>
 > > 
 > > 8 domini transmembrana e 7 domini topologici
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Malattia e Varianti
@@ -309,9 +296,7 @@ Come sappiamo dal tutorial precedente, questo gene/proteina è associato a diver
 > > 
 > > Questo tipo di studi implica un uso estensivo dei tipi di file per la gestione dei dati genomici, come: SAM (Sequence Alignment Map), BAM (Binary Alignment Map), VCF (Variant Calling Format) ecc.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Questa sezione comprende anche un'area *Caratteristiche*, dove sono mappate le varianti naturali lungo la sequenza. Di seguito, si evidenzia anche che una vista più dettagliata delle caratteristiche lungo la sequenza è fornita nella scheda *Malattie e varianti*, ma non apriamola per ora.
@@ -327,9 +312,7 @@ Una modifica post-traduzionale (PTM) è un evento di elaborazione covalente risu
 > > <solution-title></solution-title>
 > > 
 > > Catena, glicosilazione, legame disolfuro, residuo modificato
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Espressione
@@ -343,9 +326,7 @@ Sappiamo già dove si trova la proteina nella cellula, ma per le proteine umane 
 > > <solution-title></solution-title>
 > > 
 > > I tre pigmenti colorati si trovano nelle cellule dei fotorecettori del cono.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Interazione
@@ -369,9 +350,7 @@ La fonte di queste informazioni sono i database come STRING, e la pagina di ingr
 > > 
 > > STRING fornisce dati in formati di file scaricabili per supportare ulteriori analisi. Il formato di file principale utilizzato da STRING è il formato TSV (Tab-Separated Values), che presenta i dati di interazione proteica in un layout strutturato e tabellare. Questo formato è adatto a una facile integrazione in vari strumenti e software di analisi dei dati. Inoltre, STRING offre dati in formato XML PSI-MI (Proteomics Standards Initiative Molecular Interactions), uno standard per la rappresentazione dei dati di interazione proteica che consente la compatibilità con altri database di interazione e piattaforme di analisi. Questi formati di file consentono ai ricercatori di sfruttare la ricchezza di informazioni sulle interazioni proteiche di STRING per i propri studi e analisi. I ricercatori possono anche scaricare rappresentazioni visive delle reti proteiche in formati immagine come PNG e SVG, adatti per presentazioni e pubblicazioni. Per le analisi avanzate, STRING offre "file piatti" contenenti informazioni dettagliate sulle interazioni e file "MFA" (Multiple Alignment Format), utili per confrontare più sequenze di proteine. Questi diversi formati di file scaricabili consentono ai ricercatori di sfruttare la ricchezza di informazioni sulle interazioni proteiche di STRING per i propri studi e analisi.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Struttura
@@ -393,7 +372,6 @@ In questa sezione troverete informazioni sulle strutture proteiche determinate s
 > > 3. Sulla base delle informazioni raccolte finora, potremmo formulare un'ipotesi sul motivo per cui questo è distruptivo. Non è in un'elica (di solito, nelle proteine transmembrana, le eliche sono inserite nella membrana), quindi è in uno dei domini più grandi che sporgono dalla membrana, dentro o fuori la cellula. Questa mutazione probabilmente non interrompe la struttura nei suoi segmenti intra-membrana, ma piuttosto uno dei domini funzionali. Se si desidera approfondire, è possibile verificare se si tratta del segmento extra- o intra-cellulare nel **Feature viewer**.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Da dove provengono le informazioni nel visualizzatore di strutture?
@@ -429,9 +407,7 @@ Tutte queste informazioni sull'evoluzione, la funzione e la struttura della prot
 > > 
 > > 1: H0Y622
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Proteine simili
@@ -451,12 +427,11 @@ L'ultima sezione della pagina UniProt Entry riporta le proteine simili (si tratt
 > > 3. 397
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Come avrete intuito consultando questa pagina, gran parte dell'elaborazione dei dati biologici su una proteina consiste nel mappare diversi tipi di informazioni lungo la sequenza e capire come si influenzano a vicenda. Una mappatura visiva (e una tabella con le stesse informazioni) è fornita dalle due schede alternative per visualizzare questa voce, cioè il *Variant viewer* e il *Feature viewer*.
 
-## Variant viewer
+## Visualizzazione delle varianti
 
 > <hands-on-title>Visualizzazione delle varianti</hands-on-title>
 > 
@@ -474,14 +449,12 @@ Il *Variant viewer* mappa tutte le versioni alternative note di questa sequenza.
 > > 
 > > ingrandendo la vista delle varianti, vediamo che abbiamo 5 punti rossi, quindi 5 varianti probabilmente patogene.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 L'elevato numero di varianti che si trovano in questa sezione suggerisce che le "sequenze proteiche" (così come le sequenze geniche, le strutture proteiche ecc.) sono in realtà entità meno fisse di quanto si possa pensare.
 
-## Feature viewer
+## Visualizzazione delle caratteristiche
 
 > <hands-on-title>Visualizzazione delle caratteristiche</hands-on-title>
 > 
@@ -507,9 +480,7 @@ Il *Feature viewer* è fondamentalmente una versione fusa di tutte le aree *Feat
 > > 
 > > Un dominio topologico citoplasmatico
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Infine, diamo una rapida occhiata alle altre schede.
@@ -535,7 +506,6 @@ La sezione *Pubblicazioni* elenca le pubblicazioni scientifiche relative alla pr
 > > 2. 23
 > > 
 > {: .solution}
-> 
 {: .question}
 
 ## Collegamenti esterni
@@ -562,9 +532,5 @@ Infine, anche la scheda *Storia* è interessante. Riporta e rende disponibili pe
 > > 
 > > Per rispondere a questa domanda si può scorrere indietro nel tempo nella tabella e controllare la colonna `Database`. Questa voce è mai stata inserita in TrEMBL invece che in SwissProt? No, quindi questa voce è stata annotata manualmente fin dall'inizio.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
-
-

@@ -15,17 +15,15 @@
 
 Le letture hanno una direzione: sono mappate, rispettivamente, sul filamento avanti o sul filamento indietro. Quando si passa il mouse su una lettura, vengono visualizzate informazioni supplementari
 
-> <titolo-domanda></titolo-domanda>
+> <question-title></question-title>
 > 
 > 1. Cosa può significare se una barra nella vista di copertura è colorata?
 > 2. Quale potrebbe essere il motivo per cui una lettura è bianca invece che grigia?
 > 
-> > <titolo della soluzione></titolo della soluzione>
+> > <solution-title></solution-title>
 > > 1. Se un nucleotide differisce dalla sequenza di riferimento in più del 20% delle letture ponderate per la qualità, IGV colora la barra in proporzione al numero di letture di ciascuna base.
 > > 2. Hanno una qualità di mappatura pari a zero. L'interpretazione di questa qualità di mappatura dipende dall'allineatore di mappatura, poiché alcuni allineatori comunemente utilizzati utilizzano questa convenzione per contrassegnare una lettura con allineamenti multipli. In questo caso, la lettura si mappa anche in un'altra posizione con un posizionamento altrettanto buono. È anche possibile che la lettura non sia posizionata in modo univoco, ma che gli altri posizionamenti non diano necessariamente risultati altrettanto buoni.
-> > 
 > {: .solution }
-> 
 {: .question}
 
 > <comment-title>Consigli per IGV</comment-title>
@@ -35,7 +33,4 @@ Le letture hanno una direzione: sono mappate, rispettivamente, sul filamento ava
 >    ![Seleziona genoma in IGV](../../images/igv_select_genome.png "Seleziona genoma in IGV")
 > 
 > Una descrizione generale dell'interfaccia utente del browser IGV è disponibile qui: [Descrizione del browser IGV]({% link topics/introduction/tutorials/igv-introduction/tutorial.md %})
-> 
 {: .comment}
-
-

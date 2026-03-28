@@ -15,8 +15,8 @@
 > 
 {: .hands_on}
 
-> <comment-title>Slow</comment-title> L'esecuzione può richiedere uno o due minuti, a seconda delle risorse dell'istanza di formazione. Ci vuole tempo perché il server crea un piccolo sito web per voi e preelabora il genoma di riferimento in un formato più efficiente. Se si desidera condividere questo lavoro con i colleghi, è possibile scaricare questo set di dati e inserirlo direttamente nel proprio server web.
-> 
+> <comment-title>Slow</comment-title>
+> L'esecuzione può richiedere uno o due minuti, a seconda delle risorse dell'istanza di formazione. Ci vuole tempo perché il server crea un piccolo sito web per voi e preelabora il genoma di riferimento in un formato più efficiente. Se si desidera condividere questo lavoro con i colleghi, è possibile scaricare questo set di dati e inserirlo direttamente nel proprio server web.
 {: .comment}
 
 Le letture hanno una direzione: sono mappate rispettivamente sul filamento avanti o sul filamento indietro. Quando si fa clic su una lettura, vengono visualizzate informazioni aggiuntive
@@ -26,7 +26,7 @@ Le letture hanno una direzione: sono mappate rispettivamente sul filamento avant
 > 1. Cosa significano la forma a goccia e la linea nella traccia SNP autogenerata?
 > 2. Cosa significano letture di colore diverso?
 > 
-> > <titolo della soluzione></titolo della soluzione>
+> > <solution-title></solution-title>
 > > 1. Se un numero sufficiente di letture ha un valore diverso, viene contrassegnato con un'icona a goccia. Il grafico della copertura è contrassegnato in altezza con la percentuale di letture con una chiamata diversa in quella posizione
 > > 2. Codici colore:
 > > 
@@ -41,9 +41,5 @@ Le letture hanno una direzione: sono mappate rispettivamente sul filamento avant
 > >    | <i style="background:#000000">     </i> Black         | Forward, diff chr            |
 > >    | <i style="background:#969696">     </i> Grey          | Reverse, diff chr            |
 > >    | <i style="background:#999999">     </i> Grey          | No strand                    |
-> > 
 > {: .solution }
-> 
 {: .question}
-
-

@@ -1,6 +1,6 @@
 Un file BAM ([Binary Alignment Map](https://en.wikipedia.org/wiki/SAM_(file_format)) è un file binario compresso che memorizza le sequenze di letture, se sono state allineate a una sequenza di riferimento (ad esempio un cromosoma) e, in caso affermativo, la posizione sulla sequenza di riferimento in cui sono state allineate.
 
-> <mani sul titolo>Ispettare un file BAM/SAM</hands-on-title>
+> <hands-on-title>Ispettare un file BAM/SAM</hands-on-title>
 > 
 > 1. Ispezionare il {% icon param-file %} output di **{{ include.mapper }}** {% icon tool %}
 > 
@@ -25,7 +25,7 @@ Un file BAM (o un file SAM, la versione non compressa) consiste in:
   | 10  | SEQ   | String  | Segment SEQuence                      |
   | 11  | QUAL  | String  | ASCII of Phred-scaled base QUALity+33 |
 
-> <titolo domanda></titolo domanda>
+> <question-title></question-title>
 > 
 > 1. Quali informazioni si trovano in un file SAM/BAM?
 > 2. Quali sono le informazioni aggiuntive rispetto a un file FASTQ?
@@ -33,9 +33,5 @@ Un file BAM (o un file SAM, la versione non compressa) consiste in:
 > > <titolo della soluzione></titolo della soluzione>
 > > 1. Sequenze e informazioni sulla qualità, come un FASTQ
 > > 2. Informazioni sulla mappatura, posizione della lettura sul cromosoma, qualità della mappatura, ecc
-> > 
 > {: .solution }
-> 
 {: .question}
-
-

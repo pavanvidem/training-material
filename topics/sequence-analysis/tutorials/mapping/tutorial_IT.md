@@ -94,7 +94,6 @@ Di seguito, elaboreremo un set di dati con il mappatore **Bowtie2** e visualizze
 > 
 > 1. TOC
 > {:toc}
-> 
 {: .agenda}
 
 # Preparazione dei dati
@@ -133,17 +132,15 @@ Durante il sequenziamento possono essere introdotti errori, come nucleotidi chia
 Tali errori possono influenzare l’analisi e portare a un’interpretazione sbagliata dei dati.
 Il primo passo in qualsiasi analisi di dati di sequenziamento è sempre verificare la qualità delle letture.
 
-Esiste un tutorial dedicato al [controllo di qualità] ({% link
-topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) dei dati di sequenziamento. NNon ripeteremo qui i passaggi descritti. Ti consigliamo di seguire il
+Esiste un tutorial dedicato al [controllo di qualità]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) dei dati di sequenziamento. NNon ripeteremo qui i passaggi descritti. Ti consigliamo di seguire il
 [tutorial]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}) e di applicarlo ai tuoi dati prima di proseguire.
 
 # Mappare le letture su un genoma di riferimento
 
 La mappatura delle letture è il processo di allineamento delle sequenze lette a un genoma di riferimento. Un mapper prende in input un genoma di riferimento e un insieme di letture, con l’obiettivo di allineare ciascuna lettura al genoma di riferimento, consentendo mismatch, inserzioni/delezioni (indel) e clipping di piccoli frammenti alle due estremità delle letture:
 
-![Spiegazione della mappatura](../../images/mapping/mapping.png "L’input è costituito da un insieme di letture e da un genoma di riferimento. Al centro sono mostrati i risultati della mappatura: le posizioni delle letture sul genoma di riferimento.
-La prima lettura è allineata alla posizione 100 e presenta due mismatch.
-La seconda lettura è allineata alla posizione 114: si tratta di un allineamento locale con clipping (ritagli) alle estremità sinistra e destra. La terza lettura è allineata alla posizione 123 e mostra un’inserzione di 2 basi e una delezione di 1 base.")
+![Spiegazione della mappatura](../../images/mapping/mapping.png "L'input è costituito da un insieme di letture e da un genoma di riferimento. Al centro sono mostrati i risultati della mappatura: le posizioni delle letture sul genoma di riferimento.
+La prima lettura è allineata alla posizione 100 e presenta due mismatch. La seconda lettura è allineata alla posizione 114: si tratta di un allineamento locale con clipping (ritagli) alle estremità sinistra e destra. La terza lettura è allineata alla posizione 123 e mostra un'inserzione di 2 basi e una delezione di 1 base.")
 
 Abbiamo bisogno di un genoma di riferimento su cui mappare le letture.
 
@@ -179,7 +176,7 @@ Attualmente esistono oltre 60 diversi mappatori, e il loro numero continua a cre
 > 3. Quante letture sono state mappate più di una volta? Come è possibile? Cosa si dovrebbe fare con esse?
 > 4. Quante coppie di letture non sono state mappate? Quali possono essere le cause?
 > 
-> > <titolo della soluzione></solution-title>
+> > <solution-title></solution-title>
 > > 1. Il file fornisce informazioni quantitative: mostra quante sequenze sono state allineate, ma non dà indicazioni dirette sulla qualità dell’allineamento.
 > > 2. Circa il 90% delle letture è stato allineato esattamente una volta
 > > 3. Circa il 7% delle letture è stato allineato concordemente più di una volta. Queste sono dette multi-mapped reads. Ciò può accadere a causa di regioni ripetitive nel genoma di riferimento (ad esempio copie multiple di un gene), soprattutto quando le letture sono brevi. È difficile stabilire la loro origine esatta, perciò la maggior parte delle pipeline le ignora. È comunque importante verificare queste statistiche per assicurarsi di non escludere troppe informazioni nelle analisi successive.
@@ -190,9 +187,7 @@ Attualmente esistono oltre 60 diversi mappatori, e il loro numero continua a cre
 > >     - una delle due letture è mappata ma non la sua compagna (`aligned
 > >       exactly 1 time` in `pairs aligned 0 times concordantly or discordantly`)
 > >     - il resto non viene mappato affatto
-> > 
 > {: .solution }
-> 
 {: .question}
 
 Verificare le statistiche di mappatura è un passaggio cruciale prima di proseguire con qualsiasi analisi.
@@ -233,7 +228,6 @@ Il file BAM include molte informazioni, in particolare sulla qualità della mapp
 >      - *"Using genome"*: `Mouse (Mus musculus): mm10 Full`
 > 
 > 2. Ispezionare il file {% icon param-file %} file `Stats`
-> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -259,9 +253,7 @@ Il file BAM include molte informazioni, in particolare sulla qualità della mapp
 > >      2. {% tool [Samtools Stats](toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.5) %} sull'output di **Filter**
 > > 
 > >    Prima del filtraggio: 95.412 letture e dopo il filtraggio: 89.664 letture.
-> > 
 > {: .solution }
-> 
 {: .question}
 
 # Visualizzazione con il browser del genoma

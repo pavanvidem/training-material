@@ -62,6 +62,7 @@ contributions:
   - silviadg87
   - unode
   funding:
+  - deNBI
   - biont
 recordings:
 - youtube_id: AeiW3IItO_c
@@ -104,17 +105,15 @@ Ogni campione rappresenta un replicato biologico indipendete della condizione co
 
 > <comment-title>Dati completi</comment-title>
 > 
-> I dati originali sono disponibili nel database NCBI Gene Expression Omnibus (GEO) con il numero di accesso [GSE18508] (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18508). Le letture RNA-Seq grezze sono state estratte dai file del Sequence Read Archive (SRA) e convertite in file FASTQ.
-> 
+> I dati originali sono disponibili nel database NCBI Gene Expression Omnibus (GEO) con il numero di accesso [GSE18508](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18508). Le letture RNA-Seq grezze sono state estratte dai file del Sequence Read Archive (SRA) e convertite in file FASTQ.
 {: .comment}
 
-> 
 > <agenda-title></agenda-title>
 > 
 > In questa esercitazione ci occuperemo di:
 > 
-> 1. TOC {:toc}
-> 
+> 1. TOC
+> {:toc}
 {: .agenda}
 
 # Caricamento dei dati
@@ -148,7 +147,7 @@ Nella seconda parte del tutorial, i conteggi delle letture di tutti e 7 i campio
 >    > 
 >    > Si noti che questi sono i file completi dei campioni, di circa 1,5 GB ciascuno, quindi l’importazione potrebbe richiedere alcuni minuti.  
 >    > 
->    > Per un’esecuzione più rapida dei passaggi relativi ai file FASTQ, è disponibile un piccolo sottoinsieme di ciascun file (~5 MB) su [Zenodo] ({{ page.zenodo_link }}):
+>    > Per un’esecuzione più rapida dei passaggi relativi ai file FASTQ, è disponibile un piccolo sottoinsieme di ciascun file (~5 MB) su [Zenodo]({{ page.zenodo_link }}):
 >    > 
 >    > ```text
 >    > {{ page.zenodo_link }}/files/GSM461177_1_subsampled.fastqsanger
@@ -178,7 +177,7 @@ Le letture rappresentano dati grezzi provenienti dalla macchina di sequenziament
 
 Durante il sequenziamento possono verificarsi errori, come il richiamo errato di nucleotidi, dovuti alle limitazioni tecniche di ciascuna piattaforma di sequenziamento. Tali errori di sequenziamento possono influenzare l'analisi e portare a un'interpretazione non corretta dei dati. Se le letture sono più lunghe dei frammenti sequenziati, possono contenere degli adattatori, la cui rimozione può migliorare il numero di letture mappate.
 
-Il controllo della qualità delle sequenze è quindi un primo passo essenziale nella vostra analisi. Utilizzeremo strumenti simili a quelli descritti nel tutorial ["Controllo di qualità"] ({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}):
+Il controllo della qualità delle sequenze è quindi un primo passo essenziale nella vostra analisi. Utilizzeremo strumenti simili a quelli descritti nel tutorial ["Controllo di qualità"]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}):
 - [Falco](https://falco.readthedocs.io/en/latest/), una riscrittura ottimizzata per l’efficienza di [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), per generare un rapporto sulla qualità delle sequenze
 - [MultiQC](https://multiqc.info/) ({% cite ewels2016multiqc %}) per aggregare i rapporti generati
 - [Cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) ({% cite marcel2011cutadapt %}) per migliorare la qualità delle sequenze attraverso il taglio e il filtraggio.
@@ -211,12 +210,8 @@ Purtroppo la versione attuale di MultiQC (lo strumento che utilizziamo per combi
 >    > > 
 >    > > La lunghezza delle letture di entrambi gli accoppiamenti è di 37 bp.
 >    > > 
-> > > 
-> > {: .solution}
-> > 
-> > 
-> > 
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 > 
 > Poiché è noioso ispezionare tutti questi rapporti individualmente, li combineremo con {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %}.
 > 
@@ -272,10 +267,8 @@ Purtroppo la versione attuale di MultiQC (lo strumento che utilizziamo per combi
 >    > >    2. Contattare il centro di sequenziamento per ottenere chiarimenti.
 >    > >    3. Eseguire un trattamento di qualità (prestando attenzione a non perdere troppe informazioni), ad esempio effettuando un leggero trimming o rimuovendo le letture di scarsa qualità
 >    > > 
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 > 
 {: .hands_on}
 
@@ -311,12 +304,9 @@ Dovremmo tagliare le letture per eliminare le basi che sono state sequenziate co
 >    > > <solution-title></solution-title>
 >    > > 
 >    > > 1. 147.810 (1,4%) letture erano troppo corte per `GSM461177_untreat_paired` e 1.101.875 (9%) per `GSM461180_treat_paired`. ![Cutadapt Filtered reads](../../images/ref-based/cutadapt_filtered_reads_plot.png "Cutadapt Filtered reads")
->    > > 2. LL’output di MultiQC riporta solo la percentuale totale di bp tagliati, non il dettaglio per ciascuna lettura. Per ottenere questa informazione occorre tornare ai report individuali. Per `GSM461177_untreat_paired`, ono stati tagliati 5.072.810 bp dalle letture forward (Read 1) e 8.648.619 bp dalle letture reverse (Read 2) per motivi di qualità. Per `GSM461180_treat_paired`, 10.224.537 bp dalle forward e 51.746.850 bp dalle reverse.
-Non sorprende: abbiamo già osservato un calo più marcato della qualità verso la fine delle letture reverse rispetto alle forward, in particolare per `GSM461180_treat_paired`.
-> > > 
-> > {: .solution }
-> > 
-> {: .question}
+>    > > 2. LL’output di MultiQC riporta solo la percentuale totale di bp tagliati, non il dettaglio per ciascuna lettura. Per ottenere questa informazione occorre tornare ai report individuali. Per `GSM461177_untreat_paired`, ono stati tagliati 5.072.810 bp dalle letture forward (Read 1) e 8.648.619 bp dalle letture reverse (Read 2) per motivi di qualità. Per `GSM461180_treat_paired`, 10.224.537 bp dalle forward e 51.746.850 bp dalle reverse. Non sorprende: abbiamo già osservato un calo più marcato della qualità verso la fine delle letture reverse rispetto alle forward, in particolare per `GSM461180_treat_paired`.
+>    > {: .solution }
+>    {: .question}
 > 
 {: .hands_on}
 
@@ -376,7 +366,7 @@ Mapperemo ora le nostre letture sul genoma di *Drosophila melanogaster* utilizza
 
 > <hands-on-title>Mappatura degli spliced</hands-on-title>
 > 
-> 1. Importare l’annotazione genica Ensembl per *Drosophila melanogaster* (`Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`) dalla libreria Shared Data, se disponibile, oppure da [Zenodo] ({{ page.zenodo_link }}/files/Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz) nella storia di Galaxy corrente.
+> 1. Importare l’annotazione genica Ensembl per *Drosophila melanogaster* (`Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz`) dalla libreria Shared Data, se disponibile, oppure da [Zenodo]({{ page.zenodo_link }}/files/Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz) nella storia di Galaxy corrente.
 > 
 >    ```text
 >    {{ page.zenodo_link }}/files/Drosophila_melanogaster.BDGP6.32.109_UCSC.gtf.gz
@@ -391,8 +381,7 @@ Mapperemo ora le nostre letture sul genoma di *Drosophila melanogaster* utilizza
 >    > 
 >    > Per generare questo file specifico, il file di annotazione è stato scaricato da Ensembl, che fornisce un database più completo di trascritti, e adattato per essere compatibile con il genoma dm6 installato sui server Galaxy.
 >    > 
-> > 
-> {: .comment}
+>    {: .comment}
 > 
 > 2. {% tool [RNA STAR](toolshed.g2.bx.psu.edu/repos/iuc/rgrnastar/rna_star/2.7.11a+galaxy0) %} con i seguenti parametri per mappare le letture sul genoma di riferimento:
 >    - *"Letture single-end o paired-end "*: `Paired-end (as collection)`
@@ -426,18 +415,13 @@ Mapperemo ora le nostre letture sul genoma di *Drosophila melanogaster* utilizza
 >    > > 
 >    > > 1. Più dell’83% per `GSM461177_untreat_paired` e del 79% per `GSM461180_treat_paired`. È possibile procedere con l’analisi, poiché solo percentuali inferiori al 70% devono essere esaminate per verificare una potenziale contaminazione.
 >    > > 2. Sono disponibili anche il numero e la percentuale di letture mappate in più posizioni, di letture mappate in troppe posizioni diverse e di letture non mappate perché troppo corte.
-
 >    > > 
 >    > >    ![Punteggi di allineamento STAR](../../images/ref-based/star_alignment_plot.png "Punteggi di allineamento")
 >    > > 
 >    > >    Probabilmente sarebbe stato possibile essere più rigorosi nella soglia minima di lunghezza delle letture per evitare queste letture non mappate a causa della lunghezza.
-> > > 
-> > {: .solution}
-> > 
-> > 
-> > 
-> {: .question}
-> 
+>    > > 
+>    > {: .solution}
+>    {: .question}
 {: .hands_on}
 
 Secondo il reporto **MultiQC**, circa l’80% delle letture di entrambi i campioni si mappa esattamente una volta sul genoma di riferimento. È possibile procedere con l’analisi, poiché solo percentuali inferiori al 70% devono essere verificate per una potenziale contaminazione. Entrambi i campioni mostrano una percentuale bassa (inferiore al 10%) di letture mappate in più posizioni del genoma di riferimento. Questo valore rientra nella norma per i dati di sequenziamento Illumina a lettura breve, ma può essere inferiore per i nuovi dataset di sequenziamento a lettura lunga, che possono coprire regioni ripetute più ampie nel genoma di riferimento, e più elevato per le librerie 3’-end.
@@ -462,10 +446,9 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 >    > 
 >    > Perché questo passaggio funzioni, è necessario avere installato IGV o [Java Web Start](https://www.java.com/en/download/faq/java_webstart.xml) sul proprio computer. Tuttavia, le domande di questa sezione possono essere risolte anche osservando le schermate di IGV riportate di seguito.
 >    > 
->    > Per ulteriori informazioni, consultare la [documentazione di IGV] (https://software.broadinstitute.org/software/igv/AlignmentData).
+>    > Per ulteriori informazioni, consultare la [documentazione di IGV](https://software.broadinstitute.org/software/igv/AlignmentData).
 >    > 
-> > 
-> {: .comment}
+>    {: .comment}
 > 
 > 6. **IGV** {% icon tool %}: In IGV, eseguire lo zoom sulla regione `chr4:540,000-560,000` (Cromosoma 4 tra 540 kb e 560 kb)
 > 
@@ -481,10 +464,8 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 >    > > 1. Il grafico della copertura rappresenta la somma delle letture mappate in ogni posizione.
 >    > > 2. Indicano eventi di giunzione (o siti di giunzione), *cioè * letture che sono mappate attraverso un introne.
 >    > > 
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 > 
 > 7. **IGV** {% icon tool %}: Ispeziona le giunzioni di giunzione utilizzando un **tracciato Sashimi**
 > 
@@ -493,34 +474,30 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 >    > - Fare clic con il pulsante destro del mouse sul file BAM (in IGV)
 >    > - Selezionare **Sashimi Plot** dal menu
 >    > 
-> > 
-> {: .comment}
-> 
-> > 
-> > <question-title></question-title>
-> > 
-> > ![Screenshot of a Sashimi plot of Chromosome 4](../../images/transcriptomics_images/star_igv_sashimi.png "Screenshot of a Sashimi plot of Chromosome 4")
-> > 
-> > 1. Cosa rappresenta il grafico verticale a barre rosse? E gli archi con i numeri?
-> > 2. Cosa significano i numeri sugli archi?
-> > 3. Perché si osservano diversi gruppi impilati di caselle blu collegate in basso?
-> > 
-> > > <solution-title></solution-title>
-> > > 
-> > > 1. La copertura per ogni traccia di allineamento è rappresentata da un grafico a barre rosse. Gli archi rappresentano le giunzioni di splice osservate, cioè le letture che coprono gli introni.
-> > > 2. I numeri si riferiscono al numero di letture di giunzione osservate.
-> > > 3. I diversi gruppi di caselle collegate nella parte inferiore rappresentano i diversi trascritti dei geni presenti in quella posizione nel file GTF.
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
-> 
-> > 
-> > <comment-title></comment-title>
-> > 
-> > Controllare la [documentazione IGV sui diagrammi Sashimi](https://software.broadinstitute.org/software/igv/Sashimi) per trovare alcuni indizi
-> > 
-> {: .comment}
+>    {: .comment}
+>    > 
+>    > <question-title></question-title>
+>    > 
+>    > ![Screenshot of a Sashimi plot of Chromosome 4](../../images/transcriptomics_images/star_igv_sashimi.png "Screenshot of a Sashimi plot of Chromosome 4")
+>    > 
+>    > 1. Cosa rappresenta il grafico verticale a barre rosse? E gli archi con i numeri?
+>    > 2. Cosa significano i numeri sugli archi?
+>    > 3. Perché si osservano diversi gruppi impilati di caselle blu collegate in basso?
+>    > 
+>    > > <solution-title></solution-title>
+>    > > 
+>    > > 1. La copertura per ogni traccia di allineamento è rappresentata da un grafico a barre rosse. Gli archi rappresentano le giunzioni di splice osservate, cioè le letture che coprono gli introni.
+>    > > 2. I numeri si riferiscono al numero di letture di giunzione osservate.
+>    > > 3. I diversi gruppi di caselle collegate nella parte inferiore rappresentano i diversi trascritti dei geni presenti in quella posizione nel file GTF.
+>    > > 
+>    > {: .solution}
+>    {: .question}
+>    > 
+>    > <comment-title></comment-title>
+>    > 
+>    > Controllare la [documentazione IGV sui diagrammi Sashimi](https://software.broadinstitute.org/software/igv/Sashimi) per trovare alcuni indizi
+>    > 
+>    {: .comment}
 > 
 {: .hands_on}
 
@@ -560,10 +537,9 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 > >    > 
 > >    > > <solution-title></solution-title>
 > >    > > 
-> >    > > Il campione `GSM461177_untreat_paired` ha il 25,9% di letture duplicate mentre `GSM461180_treat_paired` ha il 27,8%. {Soluzione}
-> > > 
-> > {: .question}
-> > 
+> >    > > Il campione `GSM461177_untreat_paired` ha il 25,9% di letture duplicate mentre `GSM461180_treat_paired` ha il 27,8%.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 > 
 > In generale, ottenere fino al 50% di letture duplicate è considerato normale. Quindi entrambi i nostri campioni vanno bene.
@@ -600,10 +576,9 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 > >    > > 2. Le letture sono state mappate principalmente sui cromosomi 2 (chr2L e chr2R), 3 (chr3L e chr3R) e X. Solo poche letture sono state mappate sul cromosoma 4, il che è prevedibile dato che questo cromosoma è molto piccolo.
 > >    > > 3. A giudicare dalla percentuale di letture X+Y, la maggior parte delle letture mappa su X e solo poche su Y. Questo indica che probabilmente non ci sono molti geni su Y, quindi i campioni sono probabilmente entrambi di sesso femminile.
 > >    > > 
-> >    > >    ![Samtools idxstats](../../images/ref-based/samtools-idxstats-xy-plot.png) {: .solution}
-> > > 
-> > {: .question}
-> > 
+> >    > >    ![Samtools idxstats](../../images/ref-based/samtools-idxstats-xy-plot.png)
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 > 
 > #### Copertura del corpo genico
@@ -648,10 +623,9 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 > >    > 
 > >    > > <solution-title></solution-title>
 > >    > > 
-> >    > > PPer entrambi i campioni la copertura è abbastanza uniforme dalle estremità 5' alle 3', nonostante un po’ di rumore al centro. Quindi non si osservano bias evidenti. {Soluzione}
-> > > 
-> > {: .question}
-> > 
+> >    > > Per entrambi i campioni la copertura è abbastanza uniforme dalle estremità 5' alle 3', nonostante un po’ di rumore al centro. Quindi non si osservano bias evidenti.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 > 
 > #### Distribuzione delle letture tra le caratteristiche
@@ -683,14 +657,12 @@ Il file BAM contiene informazioni su tutte le letture, il che lo rende difficile
 > >    > 
 > >    > > <solution-title></solution-title>
 > >    > > 
-> >    > >La maggior parte delle letture si mappa sugli esoni (>80%), circa il 2% sugli introni e circa il 5% nelle regioni intergeniche, come ci aspettavamo. Questo conferma che i nostri dati sono effettivamente dati RNA-Seq e che la mappatura è riuscita correttamente. {\a6}(*)
-> > > 
-> > {: .question}
-> > 
+> >    > > La maggior parte delle letture si mappa sugli esoni (>80%), circa il 2% sugli introni e circa il 5% nelle regioni intergeniche, come ci aspettavamo. Questo conferma che i nostri dati sono effettivamente dati RNA-Seq e che la mappatura è riuscita correttamente.
+> >    > {: .solution}
+> >    {: .question}
 > {: .hands_on}
 > 
 > Ora che abbiamo controllato i risultati della mappatura delle letture, possiamo procedere alla fase successiva dell'analisi.
-> 
 {: .details}
 
 Dopo la mappatura, disponiamo ora delle informazioni sulla posizione delle letture sul genoma di riferimento e sulla qualità della loro mappatura. Il passo successivo dell’analisi RNA-Seq consiste nella quantificazione del numero di letture mappate sulle diverse caratteristiche genomiche (geni, trascritti, esoni, ecc.).
@@ -729,9 +701,7 @@ er confrontare l’espressione di singoli geni tra condizioni diverse (ad esempi
 > >    | gene2 - exon3 | 3               |
 > > 
 > > 2. Il gene1 ha 4 letture, non 5, a causa dello splicing dell’ultima lettura (gene1 - esone1 + gene1 - esone2). Il gene2 ha 6 letture, 3 delle quali sono spliced.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Per il conteggio delle letture sono disponibili due strumenti principali: [**HTSeq-count**](http://htseq.readthedocs.io/en/release_0.9.1/count.html) ({% cite anders2015htseq %}) o **featureCounts** ({% cite liao2013featurecounts %}). Inoltre, **STAR** permette di contare le letture durante la mappatura: i suoi risultati sono identici a quelli di **HTSeq-count**. Sebbene questo risultato sia sufficiente per la maggior parte delle analisi, **featureCounts** offre una maggiore personalizzazione del conteggio delle letture (qualità minima della mappatura, conteggio delle letture invece dei frammenti, conteggio dei trascritti invece dei geni, ecc.)
@@ -760,7 +730,6 @@ Alcuni protocolli di preparazione delle librerie creano librerie RNA-Seq cosidde
 > A seconda dell'approccio e del fatto che si esegua un sequenziamento single-end o paired-end, ci sono diverse possibilità su come interpretare i risultati della mappatura di queste letture sul genoma:
 > 
 > ![Effetti dei tipi di libreria RNA-Seq](../../images/transcriptomics_images/rnaseq_library_type.png "Effetti dei tipi di libreria RNA-Seq (Figura adattata dalla documentazione Sailfish)")
-> 
 {: .details}
 
 Le informazioni sulla strandness dovrebbero essere fornite insieme ai file FASTQ; in caso contrario, è possibile richiederle al centro di sequenziamento o trovarle nel sito da cui i dati sono stati scaricati o nella pubblicazione associata.
@@ -809,7 +778,10 @@ Esistono quattro modi principali per stimare la strandness dai risultati di **ST
    > > > 
    > > > ![Schermata dell'IGV per stranded vs non-stranded](../../images/ref-based/group_strand_igv_screenshot_RSvsUS.png "Schermata dell'IGV per non-stranded (in alto) vs. reverse strand-specific (in basso)")
    > > > 
-   > > > Si noti che non ci sono letture nel gruppo POSITIVO per il filamento inverso specifico. {: .comment} {: .solution} {: .question}
+   > > > Si noti che non ci sono letture nel gruppo POSITIVO per il filamento inverso specifico.
+   > > {: .comment}
+   > {: .solution}
+   {: .question}
 
 2. In alternativa, invece di usare la BAM si può usare la copertura dei filamenti generata da **STAR**. Utilizzando **pyGenomeTracks** si potrà visualizzare la copertura su ciascun filamento per ogni campione. Questo strumento dispone di numerosi parametri per personalizzare i grafici.
 
@@ -857,8 +829,9 @@ Esistono quattro modi principali per stimare la strandness dai risultati di **ST
    > > 
    > > > <comment-title>Come sarebbe se la libreria fosse direzionale? </comment-title>
    > > > 
-   > > > ![pyGenomeTracks USvsRS](../../images/ref-based/pyGenomeTracks_USvsRS.png "STAR coverage for strand 1 in blue and strand 2 in red for unstranded and reverse stranded library") Si noti che la copertura sullo strand 1 è molto bassa per il campione stranded_PE mentre il gene è forward. Ciò significa che la libreria di stranded_PE è a filamento inverso. Al contrario, per unstranded_PE la scala è paragonabile per entrambi gli strand. {: .comment} {: .solution}
-   > 
+   > > > ![pyGenomeTracks USvsRS](../../images/ref-based/pyGenomeTracks_USvsRS.png "STAR coverage for strand 1 in blue and strand 2 in red for unstranded and reverse stranded library") Si noti che la copertura sullo strand 1 è molto bassa per il campione stranded_PE mentre il gene è forward. Ciò significa che la libreria di stranded_PE è a filamento inverso. Al contrario, per unstranded_PE la scala è paragonabile per entrambi gli strand.
+   > > {: .comment}
+   > {: .solution}
    {: .question}
 
 3. È possibile utilizzare l'output di **STAR** con i conteggi. Infatti, come spiegato in precedenza, **STAR** valuta il numero di letture sui geni per i tre possibili scenari: libreria non filiforme, filiforme in avanti o filiforme inverso. La condizione che attribuisce più letture al gene deve essere quella che corrisponde alla vostra libreria.
@@ -890,9 +863,13 @@ Esistono quattro modi principali per stimare la strandness dai risultati di **ST
    > > 
    > > > <comment-title>Come sarebbe se la libreria fosse direzionale? </comment-title>
    > > > 
-   > > > ![STAR Gene counts unstranded USvsRS](../../images/ref-based/star_gene_counts_unstranded_USvsRS.png "Gene counts unstranded for unstranded and reverse stranded library") ![STAR Gene counts same stranded USvsRS](../../images/ref-based/star_gene_counts_same_USvsRS.png "Gene counts same stranded for unstranded and reverse stranded library") ![STAR Gene counts reverse stranded USvsRS](../../images/ref-based/star_gene_counts_reverse_USvsRS.png "Gene counts reverse stranded for unstranded and reverse stranded library") Si noti che le letture attribuite ai geni per lo stesso filamento sono molto poche. I numeri sono paragonabili tra unstranded e reverse stranded perché pochi geni si sovrappongono su filamenti opposti, ma comunque si passa dal 63,6% (unstranded) al 65% (reverse stranded). {\a6}Commento {: .solution}
-   > 
-   {: .question}
+   > > > ![STAR Gene counts unstranded USvsRS](../../images/ref-based/star_gene_counts_unstranded_USvsRS.png "Gene counts unstranded for unstranded and reverse stranded library")
+   > > > ![STAR Gene counts same stranded USvsRS](../../images/ref-based/star_gene_counts_same_USvsRS.png "Gene counts same stranded for unstranded and reverse stranded library")
+   > > > ![STAR Gene counts reverse stranded USvsRS](../../images/ref-based/star_gene_counts_reverse_USvsRS.png "Gene counts reverse stranded for unstranded and reverse stranded library")
+   > > > Si noti che le letture attribuite ai geni per lo stesso filamento sono molto poche. I numeri sono paragonabili tra unstranded e reverse stranded perché pochi geni si sovrappongono su filamenti opposti, ma comunque si passa dal 63,6% (unstranded) al 65% (reverse stranded).
+    > > {: .comment}
+    > {: .solution}
+    {: .question}
 
 4. Un'altra opzione è stimare questi parametri con uno strumento chiamato **Infer Experiment** negli strumenti di RSeQC ({% cite wang2012rseqc %}).
 
@@ -908,7 +885,8 @@ Esistono quattro modi principali per stimare la strandness dai risultati di **ST
    > 2. {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %} per determinare la direzionalità della libreria con i seguenti parametri:
    >    - {% icon param-collection %} *"Input .bam file "*: `RNA STAR on collection N: mapped.bam` (output di **RNA STAR** {% icon tool %})
    >    - {% icon param-file %} *"Reference gene model "*: File BED12 (risultato di **Converti GTF in BED12** {% icon tool %})
-   >    - *"Number of reads sampled "*: `200000` {: .hands_on}
+   >    - *"Number of reads sampled "*: `200000`
+   {: .hands_on}
 
    {% tool [Infer Experiment](toolshed.g2.bx.psu.edu/repos/nilesh/rseqc/rseqc_infer_experiment/5.0.3+galaxy0) %} il tool genera un file con informazioni su:
     - Libreria Paired-end o single-end
@@ -965,7 +943,9 @@ Se le due “Fraction of reads explained by” hanno valori simili, si può conc
    > > > Fraction of reads explained by "1+-,1-+,2++,2--": 0.9435
    > > > ```
    > > > 
-   > > {: .comment} {: .solution} {: .question}
+   > > {: .comment}
+   > {: .solution}
+   {: .question}
 
 > <details-title>Impostazioni di strandness e software</details-title>
 > 
@@ -1026,11 +1006,8 @@ Poiché in questo tutorial si è scelto di utilizzare la funzione **featureCount
 >    > > 
 >    > > 2. Se la percentuale è inferiore al 50%, si dovrebbe indagare su dove le letture vengono mappate (all'interno dei geni o meno, con IGV) e controllare che l'annotazione corrisponda alla versione corretta del genoma di riferimento.
 >    > > 
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
-> 
+>    > {: .solution}
+>    {: .question}
 {: .hands_on}
 
 L'output principale di **featureCounts** è una tabella con i conteggi, cioè il numero di letture (o frammenti nel caso di letture paired-end) mappate a ciascun gene (in righe, con il loro ID nella prima colonna) nell'annotazione fornita. **FeatureCount** genera anche i set di dati di output della ***feature length**. Questo file ci servirà in seguito per eseguire lo strumento **goseq**.
@@ -1046,7 +1023,6 @@ Come descritto in precedenza, durante la mappatura **STAR** ha contato le lettur
 > 1. Ispezionare i conteggi di `GSM461177_untreat_paired` nella raccolta `RNA STAR on collection N: reads per gene`
 > 
 {: .hands_on}
-
 > 
 > <question-title></question-title>
 > 
@@ -1065,9 +1041,7 @@ Come descritto in precedenza, durante la mappatura **STAR** ha contato le lettur
 > >    3. Conteggi per il primo filamento di lettura allineato all’RNA (stranded forward)
 > >    4. Conteggi per il secondo filamento di lettura allineato all’RNA (stranded reverse)
 > > 4. Poiché i nostri dati non sono stranded, utilizzeremo la colonna Gene ID e la seconda colonna del file.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Riformuleremo l'output di **STAR** in modo che sia simile a quello di **featureCounts** (o di altri software di conteggio) che prevede solo due colonne, una con gli ID e l'altra con i conteggi.
@@ -1085,10 +1059,10 @@ Riformuleremo l'output di **STAR** in modo che sia simile a quello di **featureC
 >    - {% icon param-collection %} *"From "*: `Select last on collection N` (risultato di **Select last** {% icon tool %})
 > 
 > 3. Rinominare la raccolta `FeatureCount-like files`
-> 
 {: .hands_on}
 
 Più avanti nell’esercitazione avremo bisogno di conoscere la lunghezza di ciascun gene. Questo valore è già incluso tra gli output di **FeatureCounts**, ma può anche essere ottenuto direttamente dal file di annotazione genica. Poiché il calcolo richiede un po’ di tempo, è consigliabile avviarlo già ora.
+
 > <hands-on-title>Determinare la lunghezza dei geni</hands-on-title>
 > 
 > 1. {% tool [Gene length and GC content](toolshed.g2.bx.psu.edu/repos/iuc/length_and_gc_content/length_and_gc_content/0.1.2) %} con i seguenti parametri:
@@ -1102,9 +1076,7 @@ Più avanti nell’esercitazione avremo bisogno di conoscere la lunghezza di cia
 >    > 
 >    > {% snippet faqs/galaxy-it/tools_change_version.md %}
 >    > 
-> > 
-> {: .warning}
-> 
+>    {: .warning}
 {: .hands_on}
 
 </div>
@@ -1115,8 +1087,7 @@ Più avanti nell’esercitazione avremo bisogno di conoscere la lunghezza di cia
 > 
 > > <solution-title></solution-title>
 > > 
-> > Per visualizzare la feature (caratteristica) più abbondantemente rappresentata, è necessario ordinare la tabella dei conteggi.
-Questo può essere fatto seguendo la procedura riportata di seguito:
+> > Per visualizzare la feature (caratteristica) più abbondantemente rappresentata, è necessario ordinare la tabella dei conteggi. Questo può essere fatto seguendo la procedura riportata di seguito:
 > > 
 > > 1. {% tool [Sort](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/1.1.1) %} con i seguenti parametri:
 > >    - {% icon param-collection %} *"Sort Query "*: <span class="featureCounts" markdown="1">`featureCounts on collection N: Counts` (output di **featureCounts** {% icon tool %})</span><span class="STAR" markdown="1">Utilizzare la collezione `FeatureCount-like files`</span>
@@ -1154,20 +1125,15 @@ Questo può essere fatto seguendo la procedura riportata di seguito:
 > >    > 
 > >    > 5. Per uscire dalla modalità di selezione di Scratchbook, fare nuovamente clic sull'icona **Scratchbook**. Si può decidere di chiudere le finestre o di ridurle per poterle visualizzare in seguito.
 > >    > 
-> > > 
-> > {: .hands_on}
-> > 
-> > 
-> > 
+> >    {: .hands_on}
 > {: .solution}
-> 
 {: .question}
 
 Qui abbiamo contato le letture mappate sui geni per due campioni. È molto interessante ripetere la stessa procedura sugli altri set di dati, soprattutto per verificare come i parametri differiscano in base al diverso tipo di dati (single-end contro paired-end).
 
 > <hands-on-title>(Opzionale) Eseguire nuovamente il test sugli altri set di dati</hands-on-title>
 > 
-> È possibile eseguire lo stesso processo sugli altri file di sequenza disponibili su [Zenodo] ({{ page.zenodo_link }}) e sulla libreria di dati.
+> È possibile eseguire lo stesso processo sugli altri file di sequenza disponibili su [Zenodo]({{ page.zenodo_link }}) e sulla libreria di dati.
 > 
 > - Dati paired-end
 >   - `GSM461178_1` e `GSM461178_2` che possono essere etichettati come `GSM461178_untreat_paired`
@@ -1190,7 +1156,6 @@ Qui abbiamo contato le letture mappate sui geni per due campioni. È molto inter
 > ```
 > 
 > Per i dati single-end, non è necessario appiattire la raccolta prima di eseguire il passaggio con **Falco**. II parametri di tutti gli strumenti restano invariati, ad eccezione di **STAR**, per il quale è possibile impostare `Length of the genomic sequence around annotated junctions` a 74 poiché un set di dati ha letture di 75bp (gli altri sono 44bp e 45bp). Inoltre, è necessario modificare i parametri di **FeatureCounts** nel caso in cui i dati non siano più accoppiati.
-> 
 {: .hands_on}
 
 # Analisi dell'espressione genica differenziale
@@ -1206,7 +1171,7 @@ Il risultato consiste in 7 file di conteggi, ciascuno contenente il numero di le
 > 
 >    {% snippet faqs/galaxy-it/histories_create_new.md %}
 > 
-> 2. Importare i sette file di conteggio da [Zenodo] ({{ page.zenodo_link }}) o dalla libreria Shared Data:
+> 2. Importare i sette file di conteggio da [Zenodo]({{ page.zenodo_link }}) o dalla libreria Shared Data:
 > 
 >    - `GSM461176_untreat_single_featureCounts.counts`
 >    - `GSM461177_untreat_paired_featureCounts.counts`
@@ -1225,7 +1190,6 @@ Il risultato consiste in 7 file di conteggi, ciascuno contenente il numero di le
 >    {{ page.zenodo_link }}/files/GSM461181_treat_paired_featureCounts.counts
 >    {{ page.zenodo_link }}/files/GSM461182_untreat_single_featureCounts.counts
 >    ```
-> 
 {: .hands_on}
 
 Si potrebbe pensare di poter confrontare direttamente i valori di conteggio nei file e calcolare l'entità dell'espressione genica differenziale. Tuttavia, non è così semplice.
@@ -1367,7 +1331,6 @@ Per confrontare i campioni o le espressioni geniche, i conteggi dei geni devono 
 > Con RPKM o FPKM, è più difficile confrontare la proporzione di letture totali perché la somma delle letture normalizzate in ogni campione può essere diversa (4,29 per il campione 1 e 4,25 per il campione 2). Pertanto, se l'RPKM per il gene A nel campione 1 è 1,43 e nel campione B è 1,43, non sappiamo se la stessa proporzione di letture nel campione 1 è mappata al gene A come nel campione 2.
 > 
 > Poiché l'RNA-Seq consiste nel confrontare la proporzione relativa di letture, il TPM sembra più appropriato di RPKM/FPKM.
-> 
 {: .details}
 
 L'RNA-Seq è spesso usato per confrontare un tipo di tessuto con un altro, per esempio, muscolo contro tessuto epiteliale. È possibile che vi siano molti geni specifici del muscolo trascritti nel muscolo ma non nel tessuto epiteliale. Si tratta di una **differenza nella composizione della libreria**.
@@ -1396,50 +1359,73 @@ TPM, RPKM o FPKM non trattano queste differenze nella composizione della libreri
 > 
 > Facciamo un esempio per illustrare come DESeq2 scala i diversi campioni:
 > 
-> Gene | Campione 1 | Campione 2 | Campione 3 A | 0 | 10 | 4 B | 2 | 6 | 12 C | 33 | 55 | 200
+> Gene | Campione 1 | Campione 2 | Campione 3
+> A | 0 | 10 | 4
+> B | 2 | 6 | 12
+> C | 33 | 55 | 200
 > 
 > L'obiettivo è calcolare un fattore di scala per ogni campione, che tenga conto della profondità di lettura e della composizione della libreria.
 > 
 > 1. Prendere il log$$_e$$ di tutti i valori:
 > 
->    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3) A | -Inf | 2,3 | 1,4 B | 0,7 | 1,8 | 2,5 C | 3,5 | 4,0 | 5,3
+>    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3)
+>    A | -Inf | 2,3 | 1,4
+>    B | 0,7 | 1,8 | 2,5
+>    C | 3,5 | 4,0 | 5,3
 > 
 > 2. Media di ogni riga:
 > 
->    Gene | Media dei valori log A | -Inf B | 1,7 C | 4,3
+>    Gene | Media dei valori log
+>    A | -Inf
+>    B | 1,7
+>    C | 4,3
 > 
 >    La media dei valori logici (nota anche come media geometrica) viene utilizzata in questo caso perché non è facilmente influenzata da valori anomali (ad esempio, il gene C con il suo valore anomalo per il campione 3).
 > 
 > 3. Filtrare i geni il cui valore è infinito.
 > 
->    Gene | Media dei valori log | B | 1,7 C | 4,3
+>    Gene | Media dei valori log
+>     | 
+>    B | 1,7
+>    C | 4,3
 > 
 >    Qui filtriamo i geni che non hanno conteggi di letture in almeno un campione, ad esempio i geni trascritti solo in un tessuto, come il gene D nell'esempio precedente. Questo aiuta a concentrare i fattori di scala sui geni trascritti a livelli simili, indipendentemente dalla condizione.
 > 
 > 4. Sottrarre il valore medio del log dai conteggi del log:
 > 
->    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3) | | B | -1,0 | 0,1 | 0,8 C | -0,8 | -0,3 | 1,0
+>    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3)
+>     | | 
+>    B | -1,0 | 0,1 | 0,8
+>    C | -0,8 | -0,3 | 1,0
 > 
->    $$log(\textrm{conteggio per il gene X}) - media(\textrm{valori logici per il conteggio per il gene X}) = log(\frac{\textrm{conteggio per il gene X}}{\textrm{media per il gene X}})$$
+>    $$log(\textrm{conteggio per il gene X}) - average(\textrm{valori logici per il conteggio per il gene X}) = log(\frac{\textrm{conteggio per il gene X}}{\textrm{media per il gene X}})$$
 > 
 >    Questo passaggio confronta il rapporto tra i conteggi di ciascun campione e la media di tutti i campioni.
 > 
 > 5. Calcolare la mediana dei rapporti per ciascun campione:
 > 
->    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3) | | B | -1,0 | 0,1 | 0,8 C | -0,8 | -0,3 | 1,0 **Mediana** | -0,9 | -0,1 | 0,9
+>    Gene | log(Campione 1) | log(Campione 2) | log(Campione 3)
+>     | | 
+>    B | -1,0 | 0,1 | 0,8
+>    C | -0,8 | -0,3 | 1,0
+>    **Mediana** | -0,9 | -0,1 | 0,9
 > 
 >    La mediana viene utilizzata per evitare che i geni estremi (probabilmente rari) influenzino troppo il valore in una direzione. Aiuta a dare maggiore enfasi ai geni moderatamente espressi.
 > 
 > 6. Calcolare il fattore di scala prendendo l'esponenziale delle mediane:
 > 
->    Gene | Campione 1 | Campione 2 | Campione 3 **Mediana** | -0,9 | -0,1 | 0,9 **Fattori di scala** | 0,4 | 0,9 | 2,5
+>    Gene | Campione 1 | Campione 2 | Campione 3
+>    **Mediana** | -0,9 | -0,1 | 0,9
+>    **Fattori di scala** | 0,4 | 0,9 | 2,5
 > 
 > 7. Calcolo dei conteggi normalizzati: dividere i conteggi originali per i fattori di scala:
 > 
->    Gene | Campione 1 | Campione 2 | Campione 3 A | 0 | 11,11 | 1,6 B | 5 | 6,67 | 4,8 C | 83 | 61,11 | 80
+>    Gene | Campione 1 | Campione 2 | Campione 3
+>    A | 0 | 11,11 | 1,6
+>    B | 5 | 6,67 | 4,8
+>    C | 83 | 61,11 | 80
 > 
-> *Questa spiegazione è una trascrizione e un adattamento del [video StatQuest che spiega la normalizzazione delle librerie in DESEq2] (https://www.youtube.com/watch?v=UFB993xufUU&t=35s)*.
-> 
+> *Questa spiegazione è una trascrizione e un adattamento del [video StatQuest che spiega la normalizzazione delle librerie in DESEq2](https://www.youtube.com/watch?v=UFB993xufUU&t=35s)*.
 {: .details}
 
 DESeq2 esegue anche l'analisi dell'espressione genica differenziale (DGE), che ha due compiti fondamentali:
@@ -1456,7 +1442,6 @@ Questa analisi dell'espressione è stimata dal conteggio delle letture e si cerc
 > Nei nostri dati, abbiamo 4 repliche biologiche (qui chiamate campioni) senza trattamento e 3 repliche biologiche con trattamento (gene *Pasilla* impoverito da RNAi).
 > 
 > Si consiglia di combinare le tabelle di conteggio per i diversi replicati tecnici (ma non per i replicati biologici) prima di un'analisi di espressione differenziale (cfr. [documentazione DESeq2](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#collapsing-technical-replicates))
-> 
 {: .details}
 
 È possibile incorporare nell'analisi fattori multipli con diversi livelli che descrivono fonti note di variazione (ad esempio, trattamento, tipo di tessuto, sesso, lotti), con due o più livelli che rappresentano le condizioni per ciascun fattore. Dopo la normalizzazione è possibile confrontare la risposta dell'espressione di qualsiasi gene alla presenza di diversi livelli di un fattore in modo statisticamente affidabile.
@@ -1471,7 +1456,6 @@ Qui il trattamento è il fattore principale che ci interessa. Il tipo di sequenz
 > <comment-title></comment-title>
 > 
 > Si consiglia di aggiungere tutti i fattori che si pensa possano influenzare l'espressione genica nel proprio esperimento. Può trattarsi del tipo di sequenziamento, come in questo caso, ma anche della manipolazione (se diverse persone sono coinvolte nella preparazione delle librerie), di altri effetti del batch, ecc.
-> 
 {: .comment}
 
 Se avete solo uno o due fattori con un numero limitato di repliche biologiche, la configurazione di base di **DESeq2** è sufficiente. Nel caso di un setup sperimentale complesso con un gran numero di repliche biologiche, sono appropriate le raccolte basate sui tag. Entrambi gli approcci danno gli stessi risultati. L'approccio basato sui tag richiede alcuni passaggi aggiuntivi prima di eseguire lo strumento **DESeq2**, ma si rivelerà vantaggioso quando si lavora con un setup sperimentale complesso.
@@ -1552,8 +1536,7 @@ DESeq2 richiede di specificare, per ciascun fattore sperimentale, i conteggi dei
 >    > 
 >    > A prima vista non si nota perché i nomi sono gli stessi. Tuttavia, se si fa clic su uno di essi e si clicca su {% icon galaxy-tags %} **Edit dataset tags**, si dovrebbero vedere 2 tag che iniziano con "group:". Questa parola chiave permetterà di usare questi tag in **DESeq2**.
 >    > 
-> > 
->     {: .tip}
+>    {: .tip}
 > 
 {: .hands_on}
 
@@ -1561,7 +1544,7 @@ Ora possiamo eseguire **DESeq2**:
 
 > <hands-on-title>Determinare le caratteristiche differenzialmente espresse</hands-on-title>
 > 
->> 1. {% tool [DESeq2](toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.8+galaxy0) %} with the following parameters:
+> 1. {% tool [DESeq2](toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.8+galaxy0) %} with the following parameters:
 >    - *"how"*: `Select group tags corresponding to levels`
 >        - {% icon param-collection %} *"Count file(s) collection"*: output of **Tag elements** {% icon tool %}
 >        - In *"Factor"*:
@@ -1686,7 +1669,7 @@ Ora possiamo eseguire **DESeq2**:
        > 
        > Tornando ai conteggi delle letture, la PCA viene eseguita sui conteggi normalizzati per tutti i campioni. Qui vogliamo descrivere i campioni in base all'espressione dei geni. Le caratteristiche sono quindi il numero di letture mappate su ciascun gene. Le utilizziamo e le loro combinazioni lineari per rappresentare i campioni e le loro somiglianze.
        > 
-       > *L'analogia con la birra è stata adattata da [una risposta su StackExchange] (https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues)*.
+       > *L'analogia con la birra è stata adattata da [una risposta su StackExchange](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues)*.
        > 
        {: .details}
 
@@ -1706,9 +1689,9 @@ Questo tipo di grafico è utile per visualizzare l’effetto complessivo delle v
        > > 
        > > 1. La prima dimensione separa i campioni trattati da quelli non trattati.
        > > 2. La seconda dimensione separa i dataset single-end da quelli paired-end.
-       > > 3. II dataset sono raggruppati in base ai livelli dei due fattori.
-Non sembra esserci alcun effetto nascosto nei dati.
-Se è presente una variazione indesiderata (ad esempio effetti di batch), è sempre consigliato correggerla, cosa che può essere fatta in DESeq2 includendo nel design eventuali variabili di batch note. {: .solution} {: .question}
+       > > 3. II dataset sono raggruppati in base ai livelli dei due fattori. Non sembra esserci alcun effetto nascosto nei dati. Se è presente una variazione indesiderata (ad esempio effetti di batch), è sempre consigliato correggerla, cosa che può essere fatta in DESeq2 includendo nel design eventuali variabili di batch note.
+       > {: .solution}
+       {: .question}
 
     2. Heatmap della matrice delle distanze campione-campione (con clustering) basata sui conteggi normalizzati.
 
@@ -1724,7 +1707,8 @@ Se è presente una variazione indesiderata (ad esempio effetti di batch), è sem
        > > 
        > > Vengono prima raggruppate in base al trattamento (il primo fattore) e poi in base al tipo di sequenziamento (il secondo fattore), come nel grafico PCA.
        > > 
-       > {: .solution} {: .question}
+       > {: .solution}
+       {: .question}
 
     3. Stime di dispersione: stime per gene (nero), valori adattati (rosso) e stime finali a posteriori massime utilizzate nei test (blu)
 Questo grafico di dispersione è tipico: le stime finali vengono rimpicciolite (shrunken) dalle stime gene-wise verso le stime fitted. Alcune stime gene-wise sono contrassegnate come outlier e non vengono rimpicciolite verso il valore adattato.
@@ -1734,8 +1718,7 @@ L’entità del restringimento può essere maggiore o minore di quella mostrata 
 
     5. Un [grafico MA](https://en.wikipedia.org/wiki/MA_plot):
 
-Questo grafico mostra una visione globale della relazione tra la variazione di espressione tra le condizioni (log fold change, M), l’intensità media di espressione dei geni (A) e la capacità dell’algoritmo di rilevare l’espressione genica differenziale.
-I geni che superano la soglia di significatività (p-value aggiustato < 0,1) sono evidenziati in rosso.
+        Questo grafico mostra una visione globale della relazione tra la variazione di espressione tra le condizioni (log fold change, M), l’intensità media di espressione dei geni (A) e la capacità dell’algoritmo di rilevare l’espressione genica differenziale. I geni che superano la soglia di significatività (p-value aggiustato < 0,1) sono evidenziati in rosso.
 
 - Un file di riepilogo con i seguenti valori per ciascun gene:
 
@@ -1743,22 +1726,23 @@ I geni che superano la soglia di significatività (p-value aggiustato < 0,1) son
     2. Media dei conteggi normalizzati, calcolata su tutti i campioni di entrambe le condizioni
     3. Variazione di espressione in log₂ (log₂ fold change), cioè il logaritmo in base 2 del rapporto tra le medie di espressione nelle due condizioni
 
-I cambiamenti di fold log₂ si basano sul confronto tra il livello 1 e il livello 2 del fattore primario, pertanto l’ordine di inserimento dei livelli del fattore è importante. In questo caso, DESeq2 calcola le variazioni di espressione (log₂ fold change) dei campioni trattati rispetto a quelli non trattati per il primo fattore “Trattamento”. In altre parole, i valori ottenuti rappresentano l’aumento o la diminuzione dell’espressione genica nei campioni trattati rispetto ai non trattati.
+        I cambiamenti di fold log₂ si basano sul confronto tra il livello 1 e il livello 2 del fattore primario, pertanto l’ordine di inserimento dei livelli del fattore è importante. In questo caso, DESeq2 calcola le variazioni di espressione (log₂ fold change) dei campioni trattati rispetto a quelli non trattati per il primo fattore “Trattamento”. In altre parole, i valori ottenuti rappresentano l’aumento o la diminuzione dell’espressione genica nei campioni trattati rispetto ai non trattati.
 
     4. Stima dell'errore standard per la stima del cambiamento log2 fold
     5. Statistica [Wald](https://en.wikipedia.org/wiki/Wald_test)
     6. valore *p* per la significatività statistica di questo cambiamento
     7. valore *p* aggiustato per i test multipli con la procedura di Benjamini-Hochberg, che controlla il tasso di scoperta dei falsi ([FDR](https://en.wikipedia.org/wiki/False_discovery_rate))
 
-  > <tip-title>Che cosa sono i valori di p e a che cosa servono?</tip-title>
-  > 
-  > Il valore p è una misura spesso utilizzata per determinare se una particolare osservazione possiede o meno una significatività statistica. In senso stretto, il valore p è la probabilità che i dati possano essere emersi casualmente, assumendo che l'ipotesi nulla sia corretta. Nel caso concreto di RNA-Seq, l'ipotesi nulla è che non vi sia espressione genica differenziale. Quindi un valore p di 0,13 per un particolare gene indica che, per quel gene, supponendo che non sia espresso in modo differenziato, c'è una probabilità del 13% che qualsiasi apparente espressione differenziale possa essere semplicemente prodotta da una variazione casuale nei dati sperimentali.
-  > 
-  > il 13% è ancora piuttosto alto, quindi non possiamo essere sicuri che sia in atto un'espressione genica differenziale. Il modo più comune in cui gli scienziati utilizzano i valori di p è quello di fissare una soglia (di solito 0,05, a volte altri valori come 0,01) e rifiutare l'ipotesi nulla solo per valori di p inferiori a questo valore. In questo modo, per i geni con valori di p inferiori a 0,05, possiamo affermare con sicurezza che l'espressione genica differenziale svolge un ruolo. Va notato che tale soglia è arbitraria e non c'è alcuna differenza significativa tra un valore di p di 0,049 e 0,051, anche se rifiutiamo l'ipotesi nulla solo nel primo caso.
-  > 
-  > Sfortunatamente, i valori p sono spesso utilizzati in modo improprio nella ricerca scientifica, tanto che Wikipedia offre un [articolo dedicato](https://en.wikipedia.org/wiki/Misuse_of_p-values) sull'argomento. Si veda anche [questo articolo](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) (rivolto a un pubblico generico e non scientifico). {: .tip}
+    > <tip-title>Che cosa sono i valori di p e a che cosa servono?</tip-title>
+    > 
+    > Il valore p è una misura spesso utilizzata per determinare se una particolare osservazione possiede o meno una significatività statistica. In senso stretto, il valore p è la probabilità che i dati possano essere emersi casualmente, assumendo che l'ipotesi nulla sia corretta. Nel caso concreto di RNA-Seq, l'ipotesi nulla è che non vi sia espressione genica differenziale. Quindi un valore p di 0,13 per un particolare gene indica che, per quel gene, supponendo che non sia espresso in modo differenziato, c'è una probabilità del 13% che qualsiasi apparente espressione differenziale possa essere semplicemente prodotta da una variazione casuale nei dati sperimentali.
+    > 
+    > il 13% è ancora piuttosto alto, quindi non possiamo essere sicuri che sia in atto un'espressione genica differenziale. Il modo più comune in cui gli scienziati utilizzano i valori di p è quello di fissare una soglia (di solito 0,05, a volte altri valori come 0,01) e rifiutare l'ipotesi nulla solo per valori di p inferiori a questo valore. In questo modo, per i geni con valori di p inferiori a 0,05, possiamo affermare con sicurezza che l'espressione genica differenziale svolge un ruolo. Va notato che tale soglia è arbitraria e non c'è alcuna differenza significativa tra un valore di p di 0,049 e 0,051, anche se rifiutiamo l'ipotesi nulla solo nel primo caso.
+    > 
+    > Sfortunatamente, i valori p sono spesso utilizzati in modo improprio nella ricerca scientifica, tanto che Wikipedia offre un [articolo dedicato](https://en.wikipedia.org/wiki/Misuse_of_p-values) sull'argomento. Si veda anche [questo articolo](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/) (rivolto a un pubblico generico e non scientifico).
+    {: .tip}
 
-Per ulteriori informazioni su **DESeq2** e i suoi risultati, è possibile consultare la [documentazione di **DESeq2**] (https://www.bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf).
+Per ulteriori informazioni su **DESeq2** e i suoi risultati, è possibile consultare la [documentazione di **DESeq2**](https://www.bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf).
 
 > <question-title></question-title>
 > 
@@ -1775,7 +1759,7 @@ Per ulteriori informazioni su **DESeq2** e i suoi risultati, è possibile consul
 > >   - {% icon param-file %} *"Filtro "*: il `DESeq2 result file` (output di **DESeq2** {% icon tool %})
 > >   - *"Con le seguenti condizioni "*: `c1 == "FBgn0261552"`
 > > 
-> > Il log2 fold-change è negativo, quindi è effettivamente downregolato e il valore p aggiustato è inferiore a 0,05, quindi fa parte dei geni significativamente modificati.
+> >    Il log2 fold-change è negativo, quindi è effettivamente downregolato e il valore p aggiustato è inferiore a 0,05, quindi fa parte dei geni significativamente modificati.
 > > 
 > > 3. DESeq2 in Galaxy restituisce il confronto tra i diversi livelli per il 1° fattore, dopo la correzione per la variabilità dovuta al 2° fattore. Nel nostro caso attuale, trattati contro non trattati per qualsiasi tipo di sequenziamento. Per confrontare i tipi di sequenziamento, dovremmo eseguire nuovamente DESeq2 cambiando i fattori: il fattore 1 (trattamento) diventa fattore 2 e il fattore 2 (sequenziamento) diventa fattore 1.
 > > 4. Per aggiungere l'interazione tra due fattori (ad es. trattati per i dati paired-end vs. non trattati per quelli single-end), dovremmo eseguire DESeq2 un'altra volta ma con un solo fattore con i seguenti 4 livelli:
@@ -1785,9 +1769,7 @@ Per ulteriori informazioni su **DESeq2** e i suoi risultati, è possibile consul
 > >    - non trattato-SE
 > > 
 > >    Selezionando *"Output all levels vs all levels of primary factor (use when you have >2 levels for primary factor) "* a `Yes`, possiamo confrontare treated-PE vs untreated-SE.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ## Annotazione dei risultati DESeq2
@@ -1836,9 +1818,7 @@ L'output generato è un'estensione del file precedente:
 > > 1. FBgn0025111 (il gene in cima alla classifica con il valore log2FC positivo più alto) si trova sul filamento inverso del cromosoma X, tra 10.778.953 bp e 10.786.907 bp.
 > > 2. Dalla tabella, abbiamo ottenuto il simbolo del gene: Ant2. Dopo una ricerca su [online biological databases](https://www.ncbi.nlm.nih.gov/gene/32008), scopriamo che Ant2 corrisponde all'adenina nucleotide translocase 2.
 > > 3. Il gene *Pasilla* si trova sul filamento anteriore del cromosoma 3R, tra 9.417.939 bp e 9.455.500 bp.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 La tabella annotata non contiene nomi di colonne, il che rende difficile la lettura. Vorremmo aggiungerli prima di andare avanti.
@@ -1884,19 +1864,15 @@ Ora vorremmo estrarre i geni più differenzialmente espressi dal trattamento con
 >    > > 
 >    > > Otteniamo 966 (967 righe inclusa l'intestazione) geni (4,04%) con un cambiamento significativo nell'espressione genica tra campioni trattati e non trattati.
 >    > > 
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
+>    > {: .solution}
+>    {: .question}
+>    > 
+>    > <comment-title></comment-title>
+>    > 
+>    > Il file con i risultati filtrati in modo indipendente può essere utilizzato per ulteriori analisi a valle, poiché esclude i geni con solo pochi conteggi di letture, in quanto questi geni non saranno considerati significativamente espressi in modo differenziato.
+>    {: .comment}
 > 
-> > 
-> > <comment-title></comment-title>
-> > 
-> > Il file con i risultati filtrati in modo indipendente può essere utilizzato per ulteriori analisi a valle, poiché esclude i geni con solo pochi conteggi di letture, in quanto questi geni non saranno considerati significativamente espressi in modo differenziato.
-> > 
-> {: .comment}
-> 
-> Selezioneremo ora solo i geni con un fold change (FC) > 2 o FC < 0,5. Si noti che il file di output di DESeq2 contiene $$log_{2} FC$$, piuttosto che FC stesso, quindi filtriamo per $$abs(log_{2} FC) > 1$$ (che implica FC > 2 o FC < 0,5).
+>    Selezioneremo ora solo i geni con un fold change (FC) > 2 o FC < 0,5. Si noti che il file di output di DESeq2 contiene $$log_{2} FC$$, piuttosto che FC stesso, quindi filtriamo per $$abs(log_{2} FC) > 1$$ (che implica FC > 2 o FC < 0,5).
 > 
 > 3. {% tool [Filtra i dati su qualsiasi colonna usando espressioni semplici](Filter1) %} per estrarre i geni con un $$abs(log_{2} FC) > 1$$:
 >    - {% icon param-file %} *"Filter"*: `Genes with significant adj p-value`
@@ -1913,11 +1889,9 @@ Ora vorremmo estrarre i geni più differenzialmente espressi dal trattamento con
 >    > > <solution-title></solution-title>
 >    > > 
 >    > > 1. Otteniamo 113 geni (114 righe compresa l'intestazione), ovvero l'11,79% dei geni significativamente espressi in modo differenziato.
->    > > 2. Il gene *Pasilla* può essere trovato con una rapida ricerca (o anche usando {% tool [Filtra i dati su qualsiasi colonna usando semplici espressioni](Filter1) %}) )
-> > > 
-> > {: .solution}
-> > 
-> {: .question}
+>    > > 2. Il gene *Pasilla* può essere trovato con una rapida ricerca (o anche usando {% tool [Filtra i dati su qualsiasi colonna usando semplici espressioni](Filter1) %})
+>    > {: .solution}
+>    {: .question}
 > 
 {: .hands_on}
 
@@ -1998,9 +1972,7 @@ Si dovrebbe ottenere qualcosa di simile a:
 > > 3. La scala cambia e si vedono solo pochi geni.
 > > 4. Perché l'espressione normalizzata del gene `FBgn0013688` in `GSM461180_treat_paired` è a `0`.
 > > 5. Estrarre i geni con $$log_{2} FC$$ > 1 (filtro per i geni con `c3>1` nel riepilogo dei geni differenzialmente espressi) ed eseguire **heatmap2** {% icon tool %} sulla tabella generata.
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Visualizzazione del punteggio Z
@@ -2009,7 +1981,7 @@ Per confrontare l'espressione genica tra i campioni, si può usare anche il punt
 
 Il punteggio Z indica il numero di deviazioni standard che un valore ha rispetto alla media di tutti i valori dello stesso gruppo, in questo caso lo stesso gene. Un punteggio Z di -2 per il gene X nel campione A significa che questo valore è inferiore di 2 deviazioni standard rispetto alla media dei valori del gene X in tutti i campioni (A, B, C, ecc.).
 
-Lo Z-score $$z_{i,j}$ per un gene $$i$$ in un campione $$j$$ dato il conteggio normalizzato $$x_{i,j}$ è calcolato come $$z_{i,j}$ = \frac{x_{i,j}- \overline{x_i}}{s_i}$$ con $$overline{x_i}$$ la media e $$s_i$$ la deviazione standard dei conteggi normalizzati per il gene $$i$$ su tutti i campioni.
+Lo Z-score $$z_{i,j}$ per un gene $$i$$ in un campione $$j$$ dato il conteggio normalizzato $$x_{i,j}$ è calcolato come $$z_{i,j}$ = \frac{x_{i,j}- \overline{x_i}}{s_i}$$ con $$\overline{x_i}$$ la media e $$s_i$$ la deviazione standard dei conteggi normalizzati per il gene $$i$$ su tutti i campioni.
 
 > <details-title>Calcolo del punteggio Z per tutti i geni</details-title>
 > 
@@ -2043,7 +2015,6 @@ Lo Z-score $$z_{i,j}$ per un gene $$i$$ in un campione $$j$$ dato il conteggio n
 > > 
 > > 3. Rinominare l'output in `Z-scores`
 > > 4. Ispezione del file di output
-> > 
 > {: .hands_on}
 > 
 > Ora abbiamo una tabella con il punteggio Z per tutti i geni nei 7 campioni.
@@ -2069,9 +2040,7 @@ Lo Z-score $$z_{i,j}$ per un gene $$i$$ in un campione $$j$$ dato il conteggio n
 > > >    Il problema è che il "rumore" in questo caso non è solo il rumore della misura. Può anche essere legato alla "rigidità" del controllo della regolazione genica. I geni non strettamente controllati, cioè la cui espressione può variare in un ampio intervallo di campioni, possono essere notevolmente indotti o repressi. Il loro Z-score assoluto sarà piccolo perché le variazioni tra i campioni sono grandi. Al contrario, i geni strettamente controllati possono subire solo cambiamenti molto piccoli nella loro espressione, senza alcun impatto biologico. Per questi geni il punteggio Z assoluto sarà grande.
 > > > 
 > > {: .solution}
-> > 
 > {: .question}
-> 
 {: .details}
 
 Ora vorremmo tracciare una heatmap per i punteggi Z:
@@ -2130,7 +2099,6 @@ L'analisi [Gene Ontology (GO)](http://www.geneontology.org/) è ampiamente utili
 >    - *"To"*: `Upper case`
 > 
 > 4. Rinominare l'output in `Gene IDs and differential expression`
-> 
 {: .hands_on}
 
 Abbiamo appena generato il primo input per **goseq**. Come secondo input per **goseq** abbiamo bisogno delle lunghezze dei geni. Possiamo usare le lunghezze dei geni generate da **featureCounts** o **Gene length and GC content** e formattare gli ID dei geni.
@@ -2140,13 +2108,15 @@ Abbiamo appena generato il primo input per **goseq**. Come secondo input per **g
 > <div class="featureCounts" markdown="1">
 > 1. Copiare la raccolta delle lunghezze delle caratteristiche precedentemente generata da **featureCounts** {% icon tool %} in questa history
 > 
-> {% snippet faqs/galaxy-it/histories_copy_dataset.md %}
+>    {% snippet faqs/galaxy-it/histories_copy_dataset.md %}
 > 
 > 2. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} con:
 >    - {% icon param-file %} *"From"*: <span class="featureCounts" markdown="1">`GSM461177_untreat_paired` (output of **Extract Dataset** {% icon tool %})</span><span class="STAR" markdown="1">`Gene length`</span>
 >    - *"Change case of columns"*: `c1`
 >    - *"Delimited by"*: `Tab`
 >    - *"To"*: `Upper case`
+> 
+> </div>
 > 
 > <div class="STAR" markdown="1">
 > 1. Copiare l'output di **Gene length and GC content** {% icon tool %} (`Gene length`) in questa history
@@ -2213,7 +2183,8 @@ Ora abbiamo i due file di input necessari per goseq.
    > > 
    > >    {% tool [Grouping data](Grouping1) %} sulla colonna 7 (categoria) e conteggio sulla colonna 1 (IDs)
    > > 
-   > {: .solution} {: .question}
+   > {: .solution}
+   {: .question}
 
 2. Un grafico con i 10 termini GO più sovrarappresentati
 
@@ -2227,7 +2198,8 @@ Ora abbiamo i due file di input necessari per goseq.
    > > 
    > > L'asse delle ascisse è la percentuale di geni della categoria che sono stati identificati come differenzialmente espressi: $$100 \times \frac{numDEInCat}{numInCat}$$
    > > 
-   > {: .solution} {: .question}
+   > {: .solution}
+   {: .question}
 
 3. Una tabella con i geni differenzialmente espressi (dall'elenco che abbiamo fornito) associati ai termini GO (`DE genes for categories (GO/KEGG terms)`)
 
@@ -2276,8 +2248,10 @@ Per esempio, il percorso `dme00010` rappresenta il processo di glicolisi (conver
    > > 
    > > 1. Il file ha 128 righe, compresa l'intestazione, quindi sono stati identificati 127 percorsi KEGG.
    > > 2. 2 percorsi KEGG (2,34%) sono sovrarappresentati, usando lo strumento {% tool [Filtra i dati su qualsiasi colonna usando espressioni semplici](Filter1) %} su c6 (valore p aggiustato per i percorsi KEGG sovrarappresentati)
-   > > 3. I 2 percorsi KEGG sovrarappresentati sono `01100` e `00010`. Effettuando una ricerca su [KEGG database] (https://www.genome.jp/kegg/kegg2.html), possiamo trovare ulteriori informazioni su questi percorsi:`01100` corrisponde a tutte le vie metaboliche e`00010` alla via della glicolisi/gluconeogenesi.
-   > > 4. Nessun percorso KEGG è sottorappresentato, usando lo strumento {% tool [Filtra i dati su qualsiasi colonna usando espressioni semplici](Filter1) %} su c7 (valore p aggiustato per i percorsi KEGG sottorappresentati) {: .solution} {: .question}
+   > > 3. I 2 percorsi KEGG sovrarappresentati sono `01100` e `00010`. Effettuando una ricerca su [KEGG database](https://www.genome.jp/kegg/kegg2.html), possiamo trovare ulteriori informazioni su questi percorsi:`01100` corrisponde a tutte le vie metaboliche e`00010` alla via della glicolisi/gluconeogenesi.
+   > > 4. Nessun percorso KEGG è sottorappresentato, usando lo strumento {% tool [Filtra i dati su qualsiasi colonna usando espressioni semplici](Filter1) %} su c7 (valore p aggiustato per i percorsi KEGG sottorappresentati)
+   > {: .solution}
+   {: .question}
 
 2. Una tabella con i geni differenzialmente espressi (dall'elenco fornito) associati ai percorsi KEGG (`DE genes for categories (GO/KEGG terms)`)
 
@@ -2345,7 +2319,6 @@ Qui vorremmo visualizzare i 2 percorsi KEGG: il `00010` sovrarappresentato (Glic
 > > 2. Prestare attenzione al fatto che il codice dei colori è controintuitivo: il verde è per i valori inferiori a 0, significa per i geni con un log2FC < 0 e il rosso per i geni con un log2FC > 0.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 {% comment %}
@@ -2358,7 +2331,7 @@ Useremo [DEXSeq](https://www.bioconductor.org/packages/release/bioc/html/DEXSeq.
 
 ## Conta il numero di letture per esone
 
-Questo passaggio è simile a quello del [conteggio del numero di letture per gene annotato] (#conteggio del numero di letture per gene annotato), tranne per il fatto che, invece del conteggio HTSeq, si utilizza il conteggio DEXSeq.
+Questo passaggio è simile a quello del [conteggio del numero di letture per gene annotato](#conteggio del numero di letture per gene annotato), tranne per il fatto che, invece del conteggio HTSeq, si utilizza il conteggio DEXSeq.
 
 > <hands-on-title>Conto del numero di letture per esone</hands-on-title>
 > 
@@ -2392,14 +2365,13 @@ DEXSeq genera una tabella di conteggio simile a quella generata da featureCounts
 > > 
 > > 
 > {: .solution}
-> 
 {: .question}
 
 ## Uso differenziale degli esoni
 
 L'uso di DEXSeq è simile a quello di DESeq2. Utilizza statistiche simili per trovare gli esoni utilizzati in modo differenziato.
 
-Come per DESeq2, nella fase precedente, abbiamo contato solo le letture che mappavano su esoni del cromosoma 4 e per un solo campione. Per poter identificare l'uso differenziale degli esoni indotto dalla deplezione di PS, tutti i set di dati (3 trattati e 4 non trattati) devono essere analizzati seguendo la stessa procedura. Per risparmiare tempo, lo abbiamo fatto per voi. I risultati sono disponibili su [Zenodo] ({{ page.zenodo_link }}):
+Come per DESeq2, nella fase precedente, abbiamo contato solo le letture che mappavano su esoni del cromosoma 4 e per un solo campione. Per poter identificare l'uso differenziale degli esoni indotto dalla deplezione di PS, tutti i set di dati (3 trattati e 4 non trattati) devono essere analizzati seguendo la stessa procedura. Per risparmiare tempo, lo abbiamo fatto per voi. I risultati sono disponibili su [Zenodo]({{ page.zenodo_link }}):
 
 - I risultati dell'esecuzione di DEXSeq-count in modalità "Prepara annotazione"
 - Sette file di conteggio generati in modalità "Conteggio letture"
@@ -2410,7 +2382,7 @@ Come per DESeq2, nella fase precedente, abbiamo contato solo le letture che mapp
 > 
 >    {% snippet faqs/galaxy-it/histories_create_new.md %}
 > 
-> 2. Importare i file dei sette conteggi da [Zenodo] ({{ page.zenodo_link }}) o dalla libreria Shared Data (se disponibile):
+> 2. Importare i file dei sette conteggi da [Zenodo]({{ page.zenodo_link }}) o dalla libreria Shared Data (se disponibile):
 > 
 >    - `Drosophila_melanogaster.BDGP6.87.dexseq.gtf`
 >    - `GSM461176_untreat_single.exon.counts`
@@ -2458,9 +2430,7 @@ Come per DESeq2, nella fase precedente, abbiamo contato solo le letture che mapp
 >    > <comment-title></comment-title>
 >    > 
 >    > A differenza di DESeq2, DEXSeq non consente nomi di fattori primari flessibili. Utilizzare sempre il nome del fattore primario come "condizione"
-> > 
-> {: .comment}
-> 
+>    {: .comment}
 {: .hands_on}
 
 Analogamente a DESeq2, DEXSeq genera una tabella con:
@@ -2491,15 +2461,12 @@ Analogamente a DESeq2, DEXSeq genera una tabella con:
 > > > 
 > > > 
 > > {: .solution}
-> > 
 > {: .question}
-> 
 {: .hands_on}
 
 {% endcomment %}
 
 # Conclusione
-
 
 
 In questo tutorial, abbiamo analizzato dati reali di sequenziamento dell'RNA per estrarre informazioni utili, come ad esempio quali geni sono aumentati o diminuiti dalla deplezione del gene *Pasilla*, ma anche in quali termini GO o percorsi KEGG sono coinvolti. Per rispondere a queste domande, abbiamo analizzato i set di dati di sequenze di RNA utilizzando un approccio di analisi dei dati RNA-Seq basato su riferimenti. Questo approccio può essere riassunto con il seguente schema:

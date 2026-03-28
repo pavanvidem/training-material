@@ -26,9 +26,8 @@ Gli strumenti vengono aggiornati frequentemente a nuove versioni. Nella vostra G
   - **Nota:** questo non funziona per tutte le esercitazioni (ancora) ![gif che mostra come funziona GTN-in-Galaxy]({% link topics/contributing/images/88277962-ddda4a80-cce1-11ea-92cd-41b1df063db0.gif %})
   - È possibile fare clic in qualsiasi punto dell'area grigia al di fuori del riquadro dell'esercitazione per tornare all'interfaccia analitica di Galaxy
 
-> <titolo di avviso>Non tutti i browser funzionano!</titolo di avviso>
+> <warning-title>Non tutti i browser funzionano!</warning-title>
 > - Abbiamo riscontrato alcuni problemi con la modalità Tutorial su Safari per gli utenti Mac.
 > - Prova con un **diverso browser** se non vedi il pulsante.
-> 
 {: .warning}
 

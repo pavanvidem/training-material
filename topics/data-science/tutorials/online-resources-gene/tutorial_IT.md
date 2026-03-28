@@ -49,7 +49,8 @@ Lo scopo di questo tutorial è di familiarizzare con questi aspetti, utilizzando
 
 Le opsine umane si trovano nelle cellule della retina. Sono proteine che catturano la luce e iniziano la sequenza di segnali che porta alla visione. Procederemo ponendoci delle domande sulle opsine e sui geni delle opsine, utilizzando poi diversi database e risorse bioinformatiche per rispondere ad esse.
 
-> <comment-title></comment-title> Questo tutorial è un po' atipico: non lavoreremo in Galaxy ma per lo più al di fuori di esso, navigando tra i database e gli strumenti attraverso le loro interfacce web. Lo scopo di questa esercitazione è quello di illustrare diverse fonti di dati biologici in diversi formati di file e che rappresentano diverse informazioni.
+> <comment-title></comment-title>
+> Questo tutorial è un po' atipico: non lavoreremo in Galaxy ma per lo più al di fuori di esso, navigando tra i database e gli strumenti attraverso le loro interfacce web. Lo scopo di questa esercitazione è quello di illustrare diverse fonti di dati biologici in diversi formati di file e che rappresentano diverse informazioni.
 {: .comment}
 
 > <agenda-title></agenda-title>
@@ -62,7 +63,7 @@ Le opsine umane si trovano nelle cellule della retina. Sono proteine che cattura
 
 # Ricerca di Opsine umane
 
-Per cercare le Opsine umane, inizieremo controllando il [NCBI Genome Data Viewer] (https://www.ncbi.nlm.nih.gov/genome/gdv). L'NCBI Genome Data Viewer (GDV) ({% cite rangwala2021accessing %}) è un browser del genoma che supporta l'esplorazione e l'analisi degli assemblaggi di genomi eucariotici annotati. Il browser GDV visualizza le informazioni biologiche mappate su un genoma, tra cui l'annotazione dei geni, i dati sulle variazioni, gli allineamenti BLAST e i dati degli studi sperimentali dai database GEO e dbGaP dell'NCBI. Le note di rilascio di GDV descrivono le nuove funzionalità di questo browser.
+Per cercare le Opsine umane, inizieremo controllando il [NCBI Genome Data Viewer](https://www.ncbi.nlm.nih.gov/genome/gdv). L'NCBI Genome Data Viewer (GDV) ({% cite rangwala2021accessing %}) è un browser del genoma che supporta l'esplorazione e l'analisi degli assemblaggi di genomi eucariotici annotati. Il browser GDV visualizza le informazioni biologiche mappate su un genoma, tra cui l'annotazione dei geni, i dati sulle variazioni, gli allineamenti BLAST e i dati degli studi sperimentali dai database GEO e dbGaP dell'NCBI. Le note di rilascio di GDV descrivono le nuove funzionalità di questo browser.
 
 > <hands-on-title>Aprire il visualizzatore di dati del genoma NCBI</hands-on-title>
 > 
@@ -304,8 +305,8 @@ Indaghiamo ancora sulla variante rs104894913
 >    > > <solution-title></solution-title>
 >    > > 
 >    > > Il nome della malattia associata è "difetto di Protan". Una rapida ricerca su Internet con il vostro motore di ricerca chiarirà che si tratta di un tipo di daltonismo.
-> > {: .solution}
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 > 
 > 3. Fare clic su *Dettagli della variante*
 > 
@@ -320,8 +321,8 @@ Indaghiamo ancora sulla variante rs104894913
 >    > > 1. La sostituzione `NC_000023.10:g.153424319G>A` corrisponde al passaggio da una guanina (G) a un'adenina (A)
 >    > > 2. Questa sostituzione cambia il codone `GGG`, una glicina, in `GAG`, un glutatione
 >    > > 3. `p.Gly338Glu` significa che la sostituzione avviene nella posizione 338 della proteina.
-> > {: .solution}
-> {: .question}
+>    > {: .solution}
+>    {: .question}
 {: .hands-on}
 
 Cosa significa questa sostituzione della proteina? Diamo un'occhiata più approfondita a questa proteina.
@@ -408,7 +409,6 @@ Accediamo a un riquadro contenente molte linee colorate. Ogni linea rappresenta 
 > > 1. Il primo risultato è la nostra opsina rossa. Questo è incoraggiante, perché la migliore corrispondenza dovrebbe essere con la sequenza di query stessa, e si è ottenuta questa sequenza dalla voce del gene.
 > > 2. Altri risultati sono altre opsine. Comprendono voci di altri primati (ad esempio `Pan troglogytes`).
 > {: .solution}
-> 
 {: .question}
 
 I risultati riguardano la nostra opsina rossa nell'uomo, ma anche altre opsine in altri primati. Potremmo volerlo, per esempio se volessimo usare questi dati per costruire un albero filogenetico. Se invece siamo abbastanza sicuri che la nostra sequenza di interesse sia umana, potremmo anche filtrare la ricerca solo nelle sequenze umane.
@@ -536,5 +536,5 @@ Il primo risultato dovrebbe essere `P04000 · OPSR_HUMAN`. Prima di aprire la pa
 
 ![Schermata dell'intestazione della pagina UniProt](./images/UniProt.png "pagina UniProt")
 
-Questa è una pagina lunga con molte informazioni, per cui abbiamo progettato un [intero tutorial] ({% link topics/data-science/tutorials/online-resources-protein/tutorial.md %}) per esaminarla.
+Questa è una pagina lunga con molte informazioni, per cui abbiamo progettato un [intero tutorial]({% link topics/data-science/tutorials/online-resources-protein/tutorial.md %}) per esaminarla.
 
