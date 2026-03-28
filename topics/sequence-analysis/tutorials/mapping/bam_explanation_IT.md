@@ -30,7 +30,7 @@ Un file BAM (o un file SAM, la versione non compressa) consiste in:
 > 1. Quali informazioni si trovano in un file SAM/BAM?
 > 2. Quali sono le informazioni aggiuntive rispetto a un file FASTQ?
 > 
-> > <titolo della soluzione></titolo della soluzione>
+> > <solution-title></solution-title>
 > > 1. Sequenze e informazioni sulla qualità, come un FASTQ
 > > 2. Informazioni sulla mappatura, posizione della lettura sul cromosoma, qualità della mappatura, ecc
 > {: .solution }

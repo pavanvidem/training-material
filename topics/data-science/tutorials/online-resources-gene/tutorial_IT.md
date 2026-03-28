@@ -436,7 +436,7 @@ Con questa nuova ricerca, troviamo le altre opsine (verde, blu, pigmento della c
 > 
 >     > <comment-title>Filtrare una ricerca BLAST</comment-title>
 >     > 
->     > Se E è più piccolo di $$10\mathrm{e}{-100}$, a volte viene dato come 0,0.
+>     > Se E è più piccolo di $$10\mathrm{e}{-100}$$, a volte viene dato come 0,0.
 >     {: .comment}
 > 
 >     Il valore di aspettativa è il numero di risultati che ci si aspetterebbe di ottenere per puro caso se si cercasse la propria sequenza in un genoma casuale delle dimensioni del genoma umano.

@@ -42,8 +42,13 @@ contributions:
   - lisanna
   - silviadg87
   - unode
+  editing:
+  - tflowers15
   funding:
   - biont
+  - unimelb
+  - melbournebioinformatics
+  - AustralianBioCommons
 recordings:
 - captioners:
   - shiltemann
@@ -119,11 +124,15 @@ Di seguito, elaboreremo un set di dati con il mappatore **Bowtie2** e visualizze
 > 
 >    {% snippet faqs/galaxy-it/datasets_import_from_data_library.md %}
 > 
->   Per impostazione predefinita, Galaxy assegna come nome il link stesso, quindi è necessario rinominarli.
+>    Per impostazione predefinita, Galaxy assegna come nome il link stesso, quindi è necessario rinominarli.
 > 
 > 3. Rinominare i file in `reads_1` e `reads_2`
 > 
 >    {% snippet faqs/galaxy-it/datasets_rename.md %}
+>
+> 4. Crea una raccolta di coppie denominata `Paired Reads` 
+>
+>    {% snippet faqs/galaxy-it/collections_build_list_paired.md %}
 > 
 {: .hands_on}
 

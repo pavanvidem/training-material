@@ -78,7 +78,7 @@ un elenco di possibili geni bersaglio**.
 
 {% snippet faqs/galaxy-it/analysis_results_may_vary.md %}
 
-> <titolo dell'agenda></titolo dell'agenda>
+> <agenda-title></agenda-title>
 > 
 > In questo tutorial, ci occuperemo di:
 > 
@@ -152,8 +152,7 @@ Cominciamo con una nuova cronologia.
 > 
 >    {% snippet faqs/galaxy-it/datasets_import_via_link.md format="interval" %}
 > 
->    > <tip-title>Importazione di dati in Galaxy</tip-title> Ci sono [ulteriori opzioni]
->    > ({% link topics/galaxy-interface/tutorials/get-data/slides.html %}) per gli utenti avanzati.
+>    > <tip-title>Importazione di dati in Galaxy</tip-title> Ci sono [ulteriori opzioni]({% link topics/galaxy-interface/tutorials/get-data/slides.html %}) per gli utenti avanzati.
 >    {: .tip}
 >
 {: .hands_on}

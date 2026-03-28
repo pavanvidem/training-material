@@ -954,7 +954,7 @@ Questo grafico mostra la distribuzione delle dimensioni dei frammenti in base al
 ![Grafico della lunghezza delle letture rispetto alla qualità media delle letture utilizzando i punti](../../images/quality-control/LengthvsQualityScatterPlot_dot.png "Istogramma della lunghezza delle letture")
 
 > <question-title></question-title>
-> > Guardando "Read lengths vs Average read quality plot using dots plot". Ha notato qualcosa di insolito nel Qscore? Può spiegarlo?
+> Guardando "Read lengths vs Average read quality plot using dots plot". Ha notato qualcosa di insolito nel Qscore? Può spiegarlo?
 > > <solution-title></solution-title>
 > > Non ci sono letture sotto Q20. La qualifica per le letture HiFi è:
 > > - un numero minimo di 3 subreads
