@@ -368,7 +368,7 @@ Per rimuovere l’adattatore, è possibile utilizzare uno strumento di trimming 
 > <tip-title>Scorciatoia</tip-title>
 > 
 > Le sezioni seguenti descrivono nel dettaglio alcuni degli altri grafici generati da FastQC. Alcuni moduli possono dare avvertimenti che sono normali per il tipo di dati con cui si sta lavorando, come discusso sotto e [nelle FAQ di FASTQC](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/). Gli altri grafici forniscono informazioni utili per comprendere più a fondo la qualità dei dati e per valutare possibili miglioramenti di laboratorio in futuro. Queste sezioni sono **opzionali** e vuoi saltarle, puoi 
->   - Passate direttamente alla [sezione successiva](#trim-and-filter---short-reads) per imparare a ritagliare dati paired-end.
+>   - Passate direttamente alla [sezione successiva](#trim-e-filtro---letture-corte) per imparare a ritagliare dati paired-end.
 {: .tip}
 
 ### Qualità della sequenza per piastrella (tile)
