@@ -61,9 +61,16 @@ bioconda:
 biodaten:
     name: BioDATEN
     github: false
-    url: https://portal.biodaten.info/
+    url: https://portal.biodaten.info
     gtn-halloffame: "no"
+    avatar: https://raw.githubusercontent.com/bgruening/rbc_docs/blob/master/logos/csm_biodaten_logo.jpg
 
+biofair:
+    name: BioFAIR
+    github: false
+    url: https://biofair.uk/
+    avatar: "/training-material/assets/images/biofair.png"
+    
 biolytix:
     name: Biolytix AG
     url: https://www.biolytix.ch/en/
@@ -80,7 +87,7 @@ cesnet:
     name: CESNET (Czech Education and Scientific NETwork)
     email: galaxy@cesnet.cz
     joined: 2020-01
-    url: https://www.cesnet.cz/
+    url: https://www.cesnet.cz
     avatar: "/training-material/shared/images/logos/CESNET_LOGO.png"
     ror: "050dkka69"
 
@@ -99,12 +106,7 @@ crc992:
     name: Collaborative Research Centre 992
     github: false
     url: http://www.sfb992.uni-freiburg.de/
-
-de.kcd:
-    name: Das Deutsche Kompetenzzentrum Cloud-Technologien für Datenmanagement und -verarbeitung
-    github: false
-    url: https://datenkompetenz.cloud/
-    gtn-halloffame: "no"
+    avatar: https://raw.githubusercontent.com/bgruening/presentations/bce348bb606c312d531c479e63a66efc2bc38d44/shared/resources/img/MEDEP.jpg
 
 dataterra:
     name: DATA TERRA
@@ -178,7 +180,7 @@ idr:
     name: Image Data Resource
     github: false
     url: https://idr.openmicroscopy.org/
-    gtn-halloffame: "no"
+    gtn-halloffame: "no" 
 
 ifremer:
     name: IFREMER
@@ -235,10 +237,9 @@ deNBI:
 deKCD:
     name: German Competence Center Cloud Technologies for Data Management and Processing
     short_name: "de.KCD"
-    github: false
     bio: "The German Competence Center Cloud Technologies for Data Management and Processing (de.KCD) is a cross-location and cross-domain contact point for teaching skills in handling data using cloud-based technologies, resources and methods for institutions and networked centers as well as for researchers at all career levels."
     joined: 2025-03
-    url: https://datenkompetenz.cloud/
+    url: https://datenkompetenz.cloud
 
 dfg:
     name: Deutsche Forschungsgemeinschaft
@@ -469,12 +470,14 @@ MPIIE:
     ror: "058xzat49"
 
 mwk:
-    name: Ministerium für Wissenschaft, Forschung und Kunst Baden-Württemberg
+    name: Ministry of Science, Research and Arts
     short_name: MWK
     joined: 2024-08
-    url: https://mwk.baden-wuerttemberg.de/de/startseite
+    bio: "The [MWK](https://mwk.baden-wuerttemberg.de/en) serves as Baden-Württemberg's highest state authority for all public universities, the majority of non-university research institutions, academic libraries and archives as well as important art institutions in the state."
+    url: https://mwk.baden-wuerttemberg.de/en
     avatar: "/training-material/assets/images/MWK.png"
     github: false
+    ror: https://ror.org/01hc18p32
 
 ncbi:
     short_name: NCBI
@@ -526,10 +529,12 @@ pangens:
     github: false
 
 uniisfahan:
+    short_name: UI
     name: University of Isfahan
     github: false
-    url: https://www.ui.ac.ir
-    gtn-halloffame: "no"
+    url: https://www.ui.ac.ir/
+    avatar: https://raw.githubusercontent.com/soheilsalimidev/lo-fAi/39fe7248db1b109b12de92b828cc950c7d76a167/paper/Settings/UI_Logo.png
+    ror: "05h9t7759"
 
 upcite:
     short_name: UPCité
@@ -595,13 +600,6 @@ sciensano:
   avatar: "/training-material/shared/images/sciensano.jpg"
   github: false
   ror: "04ejags36"
-
-sfb992:
-    short_name: CRC992
-    name: Collaborative Research Centre 992
-    url: https://www.sfb992.uni-freiburg.de
-    avatar: https://raw.githubusercontent.com/bgruening/presentations/bce348bb606c312d531c479e63a66efc2bc38d44/shared/resources/img/MEDEP.jpg
-    github: false
 
 societyprotectionundergroundnetworks:
     short_name: SPUN
