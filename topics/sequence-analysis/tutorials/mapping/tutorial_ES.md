@@ -197,7 +197,7 @@ largos.
 > 
 {: .hands_on}
 
-> <question-title></question-title> (título de la pregunta)
+> <question-title></question-title>
 > 
 > 1. ¿Qué información se proporciona aquí?
 > 2. ¿Cuántas lecturas se han mapeado exactamente 1 vez?
@@ -272,7 +272,7 @@ calidad del mapeo.
 > 
 {: .hands_on}
 
-> <question-title></question-title> (título de la pregunta)
+> <question-title></question-title>
 > 
 > 1. ¿Cuál es la proporción de desajustes en las lecturas mapeadas cuando se alinean con
 >    el genoma de referencia?

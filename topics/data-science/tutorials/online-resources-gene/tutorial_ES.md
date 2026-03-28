@@ -86,7 +86,7 @@ En la lista de genes relacionados con el término de búsqueda opsina, aparecen 
 
 Múltiples coincidencias en el cromosoma X, uno de los cromosomas que determinan el sexo.
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Cuántos genes se han encontrado en el cromosoma X?
 > 2. ¿Cuántos son los genes codificadores de proteínas?
@@ -127,7 +127,7 @@ Hay mucha información en esta página, centrémonos en una sección cada vez.
 
    Pase el ratón sobre la línea verde correspondiente a `NM_020061.6` (nuestro gen de interés) para obtener información más detallada.
 
-   > <pregunta-title></pregunta-title>
+   > <question-title></question-title>
    > 
    > 1. ¿Cuál es la ubicación del segmento OPN1LW?
    > 2. ¿Cuál es la longitud del segmento OPN1LW?
@@ -173,7 +173,7 @@ Este cuadro de secuencia no muestra el gen completo en este momento, sino una su
 
 La secuencia resaltada en púrpura señala aquí una región reguladora.
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Cuál es el primer aminoácido del producto proteico resultante?
 > 2. ¿Cuál es la última?
@@ -229,7 +229,7 @@ Ha introducido en PubMed, una base de datos gratuita de literatura científica, 
 
 Haciendo clic en el título de cada artículo, podrá ver resúmenes del mismo. Si se encuentra en un campus universitario donde hay acceso en línea a revistas específicas, también podrá ver enlaces a artículos completos. PubMed es su punto de entrada a una amplia variedad de literatura científica en ciencias de la vida. En la parte izquierda de cualquier página de PubMed encontrará enlaces a una descripción de la base de datos, ayuda y tutoriales sobre búsquedas.
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Puede adivinar qué tipo de enfermedades están asociadas a este gen?
 > 
@@ -275,7 +275,7 @@ Cada entrada OMIM es un trastorno genético (aquí principalmente tipos de dalto
 
 ![Captura de pantalla de la página de dbSNPs sobre el gen OPN1LW. Tres paneles principales, el de la izquierda para filtrar la búsqueda basada en etiquetas, el central mostrando resultados, el de la derecha para una búsqueda más detallada y programática](./images/dbSNPs.png "dbSNP en OPN1LW")
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Cuál es el significado clínico de las rs5986963 y rs5986964 (las 2 primeras variantes listadas en el momento de creación de este tutorial)?
 > 2. ¿Cuál es la consecuencia funcional de rs104894912?
@@ -296,7 +296,7 @@ Investiguemos más sobre la variante rs104894913
 > 1. Haga clic en `rs104894913` para abrir su [página dedicada](https://www.ncbi.nlm.nih.gov/snp/rs104894913)
 > 2. Haga clic en *Clinical Significance* (Importancia clínica)
 > 
->    > <pregunta-title></pregunta-title>
+>    > <question-title></question-title>
 >    > 
 >    > ¿Qué tipo de afección se asocia con la variante rs104894913?
 >    > 
@@ -308,7 +308,7 @@ Investiguemos más sobre la variante rs104894913
 > 
 > 3. Haga clic en *Detalles de la variante*
 > 
->    > <pregunta-title></pregunta-title>
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Qué sustitución está asociada a esta variante?
 >    > 2. ¿Cuál es el impacto de esta subtitución en términos de codón y aminoácido?
@@ -349,7 +349,7 @@ Esta página presenta de nuevo algunos datos con los que estamos familiarizados 
 > 4. Abra el archivo ZIP descargado
 {: .hands-on}
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Qué contiene la carpeta?
 > 2. ¿Cree que han aplicado buenas prácticas de datos?
@@ -397,7 +397,7 @@ Accedemos a un cuadro que contiene muchas líneas de colores. Cada línea repres
 > 1. Haga clic en la pestaña *Descripciones*
 {: .hands-on}
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > 1. ¿Cuál es el primer resultado? ¿Se espera?
 > 2. ¿Cuáles son los otros resultados? ¿Para qué organismos?
@@ -494,7 +494,7 @@ Mientras que en las secciones anteriores de este tutorial hemos utilizado amplia
 > 
 {: .hands_on}
 
-> <pregunta-title></pregunta-title>
+> <question-title></question-title>
 > 
 > ¿Cree que estamos viendo exactamente los mismos resultados que nuestra búsqueda original de `opsin` en [www.ncbi.nlm.nih.gov/genome/gdv](https://www.ncbi.nlm.nih.gov/genome/gdv/)? ¿Por qué?
 > 

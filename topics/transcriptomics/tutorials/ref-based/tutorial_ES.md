@@ -203,7 +203,7 @@ Lamentablemente, la versión actual de MultiQC (la herramienta que utilizamos pa
 > 
 > 3. Inspeccionar la página web de salida de **Falco** {% icon tool %} para la muestra `GSM461177_untreat_paired` (forward y reverse)
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > ¿Cuál es la longitud de la lectura?
 >    > 
@@ -232,7 +232,7 @@ Lamentablemente, la versión actual de MultiQC (la herramienta que utilizamos pa
 > 
 > 5. Inspeccionar la página web de salida de MultiQC para cada FASTQ
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Qué opina de la calidad de las secuencias?
 >    > 2. ¿Qué debemos hacer?
@@ -303,7 +303,7 @@ Debemos recortar las lecturas para eliminar las bases que se secuenciaron con al
 >            - *"Which tool was used generate logs?"*: `Cutadapt/Trim Galore!`
 >               - {% icon param-collection %} *"Output of Cutadapt "*: `Cutadapt on collection N: Report` (salida de **Cutadapt** {% icon tool %}) seleccionada como **Dataset collection**
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Cuántos pares de secuencias se han eliminado porque al menos una lectura era más corta que el corte de longitud?
 >    > 2. ¿Cuántos pares de bases se han eliminado de las lecturas directas debido a la mala calidad? ¿Y de las lecturas inversas?
@@ -416,7 +416,7 @@ Mapearemos nuestras lecturas en el genoma de *Drosophila melanogaster* usando **
 >                        - *"Type of STAR output? "*: `Log`
 >                            - {% icon param-collection %} *"STAR log output "*: `RNA STAR on collection N: log` (salida de **RNA STAR** {% icon tool %})
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Qué porcentaje de lecturas se mapean exactamente una vez para ambas muestras?
 >    > 2. ¿Cuáles son las otras estadísticas disponibles?
@@ -467,7 +467,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > 
 > 6. **IGV** {% icon tool %}: Zoom a `chr4:540,000-560,000` (Cromosoma 4 entre 540 kb y 560 kb)
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > ![Captura de pantalla de la vista IGV en el cromosoma 4](../../images/transcriptomics_images/junction_igv_screenshot.png "Captura de pantalla de IGV en el cromosoma 4")
 >    > 
@@ -495,7 +495,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > {: .comment}
 > 
 > > 
-> > <question-title></question-title> (pregunta-title)
+> > <question-title></question-title>
 > > 
 > > ![Captura de pantalla de un gráfico Sashimi del cromosoma 4](../../images/transcriptomics_images/star_igv_sashimi.png "Captura de pantalla de un gráfico Sashimi del cromosoma 4")
 > > 
@@ -552,7 +552,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > >                        - *"¿Tipo de salida Picard? "*: `Markdups`
 > >                        - {% icon param-collection %} *"Picard output "*: `MarkDuplicates on collection N: MarkDuplicate metrics` (salida de **MarkDuplicates** {% icon tool %})
 > > 
-> >    > <question-title></question-title> (pregunta-title)
+> >    > <question-title></question-title>
 > >    > 
 > >    > ¿Cuáles son los porcentajes de lecturas duplicadas para cada muestra?
 > >    > 
@@ -584,7 +584,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > >                        - *"¿Tipo de salida Samtools? "*: `idxstats`
 > >                            - {% icon param-collection %} *"Samtools idxstats output "*: `Samtools idxstats on collection N` (salida de **Samtools idxstats** {% icon tool %})
 > > 
-> >    > <question-title></question-title> (pregunta-title)
+> >    > <question-title></question-title>
 > >    > 
 > >    > ![Samtools idxstats](../../images/ref-based/samtools-idxstats-mapped-reads-plot.png)
 > >    > 
@@ -638,7 +638,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > >                        - *"¿Tipo de salida RSeQC? "*: `gene_body_coverage`
 > >                            - {% icon param-collection %} *"RSeQC gene_body_coverage output "*: `Gene Body Coverage (BAM) on collection N (text)` (salida de **Gene Body Coverage (BAM)** {% icon tool %})
 > > 
-> >    > <question-title></question-title> (pregunta-title)
+> >    > <question-title></question-title>
 > >    > 
 > >    > ![Gene body coverage](../../images/ref-based/rseqc_gene_body_coverage_plot.png)
 > >    > 
@@ -673,7 +673,7 @@ El archivo BAM contiene información de todas nuestras lecturas, lo que dificult
 > >                        - *"¿Tipo de salida RSeQC? "*: `read_distribution`
 > >                            - {% icon param-collection %} *"RSeQC read_distribution output "*: `Read Distribution on collection N` (salida de **Distribución de lecturas** {% icon tool %})
 > > 
-> >    > <question-title></question-title> (pregunta-title)
+> >    > <question-title></question-title>
 > >    > 
 > >    > ![Read Distribution](../../images/ref-based/rseqc_read_distribution_plot.png)
 > >    > 
@@ -791,7 +791,7 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
    > 
    {: .hands_on}
 
-   > <question-title> Pregunta </question-title>  
+   > <question-title> Pregunta </question-title>
    > 
    > ![Captura de pantalla de la vista IGV en ps](../../images/ref-based/group_strand_igv_screenshot.png "Captura de pantalla de IGV en ps")
    > 
@@ -807,7 +807,10 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
    > > > 
    > > > ![Captura de pantalla del IGV para hebra frente a no hebra](../../images/ref-based/group_strand_igv_screenshot_RSvsUS.png "Captura de pantalla del IGV para no hebra (arriba) frente a hebra específica inversa (abajo)")
    > > > 
-   > > > Observe que no hay ninguna lectura en el grupo POSITIVO para la cadena inversa específica. {: .comment} {: .solución} {: .pregunta}
+   > > > Observe que no hay ninguna lectura en el grupo POSITIVO para la cadena inversa específica.
+   > > {: .comment}
+   > {: .solución}
+   {: .question}
 
 2. Alternativamente, en lugar de utilizar el BAM se puede utilizar la cobertura de hebra generada por **STAR**. Usando **pyGenomeTracks** podremos visualizar la cobertura en cada hebra para cada muestra. Esta herramienta tiene un montón de parámetros para personalizar sus gráficos.
 
@@ -839,7 +842,7 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
    >                - *"height "*: `5`
    {: .hands_on}
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > ![pyGenomeTracks](../../images/ref-based/pyGenomeTracks.png "STAR coverage for strand 1 in blue and strand 2 in red")
    > 
@@ -874,7 +877,7 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
    > 
    {: .hands_on}
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > 1. ¿Qué porcentaje de lecturas se asignan a genes si la biblioteca es no trenzada/misma trenzada/trenzada inversa?
    > 2. ¿Cuál es el nivel de fragilidad de la biblioteca?
@@ -921,7 +924,7 @@ Hay 4 formas de estimar la estridencia a partir de los resultados de **STAR** (e
 
    Si los dos números de "Fracción de lecturas explicadas por" están próximos entre sí, concluimos que la biblioteca no es un conjunto de datos de cadena específica (o no cadena).
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > 1. ¿Cuáles son los resultados de "Fracción de las lecturas explicada por" para `GSM461177_untreat_paired`?
    > 2. ¿Cree que el tipo de biblioteca de las 2 muestras es trenzada o no trenzada?
@@ -1009,7 +1012,7 @@ Como usted eligió utilizar la opción featureCounts del tutorial, ahora ejecuta
 >            - *"Which tool was used generate logs?"*: `featureCounts`
 >                - {% icon param-collection %} *"Output of FeatureCounts "*: `featureCounts on collection N: Summary` (salida de **featureCounts** {% icon tool %})
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Cuántas lecturas se han asignado a un gen?
 >    > 2. ¿Cuándo debemos preocuparnos por la tasa de asignación? ¿Qué debemos hacer?
@@ -1047,7 +1050,7 @@ Como se ha escrito anteriormente, durante el mapeo, **STAR** contó las lecturas
 {: .hands_on}
 
 > 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > 1. ¿Cuántas lecturas están sin mapear/multi-mapeadas?
 > 2. ¿En qué línea comienza el recuento de genes?
@@ -1109,7 +1112,7 @@ Más adelante en el tutorial necesitaremos obtener el tamaño de cada gen. Esta 
 
 </div>
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > ¿Qué característica tiene más recuentos en ambas muestras? (Sugerencia: utilice la herramienta Ordenar)
 > 
@@ -1692,7 +1695,7 @@ Ya podemos ejecutar **DESeq2**:
 
        Muestra las muestras en el plano 2D abarcado por sus dos primeros componentes principales. Cada réplica se representa como un punto de datos individual. Este tipo de gráfico es útil para visualizar el efecto global de las covariables experimentales y los efectos de lote.
 
-       > <question-title></question-title> (pregunta-title)
+       > <question-title></question-title>
        > 
        > ![DESeq PCA](../../images/ref-based/deseq2_pca.png "Diagrama de componentes principales de las muestras")
        > 
@@ -1710,7 +1713,7 @@ Ya podemos ejecutar **DESeq2**:
 
        El mapa de calor ofrece una visión general de las similitudes y disimilitudes entre las muestras: el color representa la distancia entre las muestras. El azul oscuro significa una distancia más corta, es decir, muestras más cercanas dados los recuentos normalizados.
 
-       > <question-title></question-title> (pregunta-title)
+       > <question-title></question-title>
        > 
        > ![Mapa térmico de las distancias entre muestras](../../images/ref-based/deseq2_sample_sample_distance_heatmap.png "Mapa térmico de las distancias entre muestras")
        > 
@@ -1755,7 +1758,7 @@ Ya podemos ejecutar **DESeq2**:
 
 Para más información sobre **DESeq2** y sus resultados, puede consultar la [documentación de **DESeq2**](https://www.bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf).
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > 1. ¿Se expresa de forma diferencial el gen FBgn0003360 debido al tratamiento? En caso afirmativo, ¿en qué medida?
 > 2. ¿Está el gen *Pasilla* (ps, FBgn0261552) regulado a la baja por el tratamiento de ARNi?
@@ -1820,7 +1823,7 @@ La salida generada es una extensión del archivo anterior:
 12. Característica
 13. Nombre del gen
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > 1. ¿Dónde se encuentra el gen más sobreexpresado?
 > 2. ¿Cuál es el nombre del gen?
@@ -1871,7 +1874,7 @@ Ahora queremos extraer los genes más expresados diferencialmente debido al trat
 > 
 > 2. Renombrar la salida `Genes with significant adj p-value`.
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > ¿Cuántos genes presentan un cambio significativo en la expresión génica entre estas condiciones?
 >    > 
@@ -1900,7 +1903,7 @@ Ahora queremos extraer los genes más expresados diferencialmente debido al trat
 > 
 > 4. Renombrar la salida `Genes with significant adj p-value & abs(log2(FC)) > 1`.
 > 
->    > <question-title></question-title> (pregunta-title)
+>    > <question-title></question-title>
 >    > 
 >    > 1. ¿Cuántos genes se han conservado?
 >    > 2. ¿Se puede encontrar el gen *Pasilla* (ps, FBgn0261552) en esta tabla?
@@ -1978,7 +1981,7 @@ Debería obtener algo similar a:
 
 ![Mapa de calor con los recuentos normalizados de los genes más expresados diferencialmente](../../images/ref-based/heatmap2_normalized_counts.png "Recuentos normalizados de los genes más expresados diferencialmente")
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > 1. ¿Qué representa el eje X del mapa de calor? ¿Y el eje Y?
 > 2. ¿Observa algo en la agrupación de las muestras y los genes?
@@ -2043,7 +2046,7 @@ La puntuación Z $$z_{i,j}$$ para un gen $$i$$ en una muestra $$j$$ dado el recu
 > 
 > Ahora tenemos una tabla con la puntuación Z de todos los genes de las 7 muestras.
 > 
-> > <question-title></question-title> (pregunta-title)
+> > <question-title></question-title>
 > > 
 > > 1. ¿Cuál es el rango para la puntuación Z?
 > > 2. ¿Por qué algunas filas están vacías?
@@ -2194,7 +2197,7 @@ Ya tenemos los dos archivos de entrada necesarios para goseq.
 
    Para identificar categorías significativamente enriquecidas/no enriquecidas por debajo de algún valor p de corte, es necesario utilizar el valor *p* ajustado.
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > 1. ¿Cuántos términos GO están sobrerrepresentados con un valor P ajustado < 0,05? ¿Cuántos están infrarrepresentados?
    > 2. ¿Cómo se dividen los términos GO sobrerrepresentados en MF, CC y BP? ¿Y para los términos GO infrarrepresentados?
@@ -2213,7 +2216,7 @@ Ya tenemos los dos archivos de entrada necesarios para goseq.
 
 2. Un gráfico con los 10 términos GO más sobrerrepresentados
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > ![Top over-represented GO terms](../../images/ref-based/top_over-represented_go_terms.png)
    > 
@@ -2260,7 +2263,7 @@ Por ejemplo, la ruta `dme00010` representa el proceso de glucólisis (conversió
 
 1. Una tabla grande con los términos KEGG y algunas estadísticas
 
-   > <question-title></question-title> (pregunta-title)
+   > <question-title></question-title>
    > 
    > 1. ¿Cuántos términos de vías KEGG se han identificado?
    > 2. ¿Cuántos términos de vías KEGG están sobrerrepresentados con un valor P ajustado < 0,05?
@@ -2325,7 +2328,7 @@ Aquí nos gustaría visualizar las 2 vías KEGG: la sobrerrepresentada `00010` (
 
 **Pathview** genera una colección con la visualización KEGG: un archivo por ruta.
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > `dme00010` Ruta KEGG de **Pathview**
 > 
@@ -2375,7 +2378,7 @@ Este paso es similar al paso de [contar el número de lecturas por gen anotado](
 
 DEXSeq genera una tabla de recuento similar a la generada por featureCounts, pero con recuentos para los exones.
 
-> <question-title></question-title> (pregunta-title)
+> <question-title></question-title>
 > 
 > 1. ¿Qué exón tiene más lecturas asignadas en ambas muestras?
 > 2. ¿A qué gen pertenece este exón?
@@ -2476,7 +2479,7 @@ Al igual que DESeq2, DEXSeq genera una tabla con:
 > 
 > 1. {% tool [Filter data on any column using simple expressions](Filter1) %} para extraer exones con un uso diferencial significativo (valor *p* ajustado igual o inferior a 0,05) entre muestras tratadas y no tratadas
 > 
-> > <question-title></question-title> (pregunta-title)
+> > <question-title></question-title>
 > > 
 > > ¿Cuántos exones muestran un cambio de uso significativo entre estas condiciones?
 > > 
