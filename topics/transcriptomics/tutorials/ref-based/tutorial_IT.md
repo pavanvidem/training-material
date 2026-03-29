@@ -213,7 +213,7 @@ Purtroppo la versione attuale di MultiQC (lo strumento che utilizziamo per combi
 >    > {: .solution}
 >    {: .question}
 > 
-> Poiché è noioso ispezionare tutti questi rapporti individualmente, li combineremo con {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %}.
+>    Poiché è noioso ispezionare tutti questi rapporti individualmente, li combineremo con {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %}.
 > 
 > 4. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.24.1+galaxy0) %} per aggregare i rapporti Falco con i seguenti parametri:
 >    - In *"Risultati "*:
@@ -288,7 +288,7 @@ Dovremmo tagliare le letture per eliminare le basi che sono state sequenziate co
 >    - In *"Additional outputs to generate "*
 >       - Selezionare: `Report: Cutadapt's per-adapter statistics. You can use this file with MultiQC.`
 > 
->      {% include topics/sequence-analysis/tutorials/quality-control/trimming_question_IT.md %}
+>      {% snippet topics/sequence-analysis/tutorials/quality-control/trimming_question_IT.md %}
 > 
 > 2. {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy1) %} per aggregare i rapporti prodotti da Cutadapt e visualizzare i risultati complessivi:
 >    - In *"Results "*:
