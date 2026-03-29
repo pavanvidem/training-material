@@ -48,7 +48,8 @@ El objetivo de este tutorial es familiarizarnos con ello, utilizando como ejempl
 
 Las opsinas humanas se encuentran en las células de la retina. Las opsinas captan la luz e inician la secuencia de señales que dan lugar a la visión. Procederemos formulando preguntas sobre las opsinas y los genes de opsina, y luego utilizaremos diferentes bases de datos y recursos bioinformáticos para responderlas.
 
-> <comment-title></comment-title> Este tutorial es un poco atípico: no trabajaremos en Galaxy sino principalmente fuera de él, navegando por bases de datos y herramientas a través de sus propios interfaces web. El objetivo de este tutorial es ilustrar varias fuentes de datos biológicos en diferentes formatos de archivo, y que representan información diferente.
+> <comment-title></comment-title>
+> Este tutorial es un poco atípico: no trabajaremos en Galaxy sino principalmente fuera de él, navegando por bases de datos y herramientas a través de sus propios interfaces web. El objetivo de este tutorial es ilustrar varias fuentes de datos biológicos en diferentes formatos de archivo, y que representan información diferente.
 {: .comment}
 
 > <agenda-title></agenda-title>
@@ -74,7 +75,7 @@ La página de inicio incluye un simple "árbol de la vida" donde el nodo humano 
 
 El panel de la derecha informa de múltiples ensamblajes del genoma de interés, y un mapa de los cromosomas en ese genoma. Allí podemos buscar Opsinas.
 
-> <hands-on-title>Buscar OpsinasAbrir el Visor de Datos del Genoma del NCBI</hands-on-title>
+> <hands-on-title>Buscar Opsinas - Abrir el Visor de Datos del Genoma del NCBI</hands-on-title>
 > 
 > 1. Escriba `opsin` en la casilla *Buscar en genoma*
 > 2. Haga clic en el icono de la lupa o pulse <kbd>Intro<kbd>

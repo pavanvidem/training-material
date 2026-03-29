@@ -137,7 +137,7 @@ Aunque parece complicado (y puede que lo sea), el formato FASTQ es fácil de ent
 
 Cada lectura, que representa un fragmento de la biblioteca, está codificada por 4 líneas:
 
-| Line | Description                                                                                                                                                        |
+| Línea | Descripción
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1    | Empieza siempre con un `@` seguido de la información de la lecture                                                                                                  |
 | 2    | La secuenciación de nucleótidos                                                                                                                                       |
@@ -171,15 +171,16 @@ Significa que el fragmento llamado `@M00970` corresponde a la secuencia de ADN `
 > >    - El código ASCII para `/` es 47
 > >    - Puntuación de calidad = 47-33=14
 > >    - Fórmula para hallar la probabilidad de error: \\(P = 10^-Q/10})
-> >    - Probabilidad de error = \\(10^{-14/10}\\\) = 0.03981
-> >    - Por lo tanto Exactitud = 100 - 0.03981 = 99.96%
-> > 4. El nucleótido correspondiente `G` tiene una precisión de casi el 99,96%
+> >    - Probabilidad de error = \\(10^{-14/10}\\\) = 0.03981 = 3.981 %
+> >    - Por lo tanto Exactitud = 100 - 3.981 = 96.019%
+> > 4. El nucleótido correspondiente `G` tiene una precisión de casi el 96%
 > > 
 > {: .solution }
-> 
 {: .question}
 
-> <comment-title></comment-title> El lllumina actual (1.8+) utiliza el formato Sanger (Phred+33). Si está trabajando con conjuntos de datos más antiguos puede encontrarse con los esquemas de puntuación más antiguos. **FastQC** {% icon tool %}, una herramienta que utilizaremos más adelante en este tutorial, se puede utilizar para tratar de determinar qué tipo de codificación de calidad se utiliza (a través de la evaluación de la gama de valores Phred visto en el FASTQ).
+> <comment-title></comment-title>
+>
+> El lllumina actual (1.8+) utiliza el formato Sanger (Phred+33). Si está trabajando con conjuntos de datos más antiguos puede encontrarse con los esquemas de puntuación más antiguos. **FastQC** {% icon tool %}, una herramienta que utilizaremos más adelante en este tutorial, se puede utilizar para tratar de determinar qué tipo de codificación de calidad se utiliza (a través de la evaluación de la gama de valores Phred visto en el FASTQ).
 > 
 {: .comment}
 
@@ -234,7 +235,9 @@ Puede ver la puntuación de cada [emoji en la documentación de fastqe](https://
 > 
 > ¿Cuál es la puntuación media más baja en este conjunto de datos?
 > 
-> > <solution-title></solution-title> La puntuación más baja en este conjunto de datos es 😿 13.
+> > <solution-title></solution-title>
+> > 
+> > La puntuación más baja en este conjunto de datos es 😿 13.
 > > 
 > {: .solution }
 > 
@@ -512,10 +515,9 @@ Los datos de secuenciación de ARN pueden tener algunas transcripciones que son 
 > > >overrep_seq1
 > > GTGTCAGCCGCCGCGGTAGTCCGACGTGGCTGTCTCTTATACACATCTCC
 > > ```
-> > y usamos [blastn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) contra la base de datos Nucleotide (nr/nt) por defecto no obtenemos ningún resultado. Pero si usamos [VecScreen](https://www.ncbi.nlm.nih.gov/tools/vecscreen/) vemos que es el adaptador Nextera. vecScreen](../images/quality-control/vecscreen-nextera.png "Adaptador Nextera")
-> > 
+> > y usamos [blastn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) contra la base de datos Nucleotide (nr/nt) por defecto no obtenemos ningún resultado. Pero si usamos [VecScreen](https://www.ncbi.nlm.nih.gov/tools/vecscreen/) vemos que es el adaptador Nextera.
+> > ![VecScreen](../../images/quality-control/vecscreen-nextera.png "Adaptador Nextera")
 > {: .solution }
-> 
 {: .question}
 
 
@@ -621,8 +623,8 @@ Para llevar a cabo esta tarea utilizaremos [Cutadapt](https://cutadapt.readthedo
 >    - *""Single-end or Paired-end reads?" "*: `Single-end`
 >       - {% icon param-file %} *"FASTQ/A file "*: `Reads` (Conjunto de datos de entrada)
 > 
->         > <tip-title>¿Archivos no seleccionables?</tip-title> Si su archivo FASTQ no se puede seleccionar, puede comprobar si el formato es FASTQ con valores de calidad escalados por Sanger (`fastqsanger.gz`). Puede editar el tipo de datos haciendo clic en el símbolo del lápiz.
-> > 
+>          > <tip-title>¿Archivos no seleccionables?</tip-title>
+>          > Si su archivo FASTQ no se puede seleccionar, puede comprobar si el formato es FASTQ con valores de calidad escalados por Sanger (`fastqsanger.gz`). Puede editar el tipo de datos haciendo clic en el símbolo del lápiz.
 >          {: .tip}
 > 
 >    - En *"Read 1 Adapters "*:
@@ -647,11 +649,8 @@ Para llevar a cabo esta tarea utilizaremos [Cutadapt](https://cutadapt.readthedo
 >    > > 1. 56.8% lecturas contienen adaptador (`Reads with adapters:`)
 >    > > 2. El 35,1% de las lecturas han sido recortadas por mala calidad (`Quality-trimmed:`)
 >    > > 3. 0 % de lecturas eliminadas por ser demasiado cortas
-> > > 
-> > {: .solution }
-> > 
-> {: .question}
-> 
+>    > {: .solution }
+>    {: .question}
 {: .hands_on}
 
 
@@ -722,17 +721,16 @@ Podemos examinar nuestros datos recortados con FASTQE y/o FastQC.
 >    > 
 >    > {% snippet faqs/galaxy-es/features_scratchbook.md %}
 >    > 
->    > > <solution-title></solution-title> Sí, los emojis de puntuación de calidad se ven mejor (más felices) ahora.
+>    > > <solution-title></solution-title>
+>    > > 
+>    > > Sí, los emojis de puntuación de calidad se ven mejor (más felices) ahora.
 >    > > 
 >    > > ![FASTQE before](../../images/quality-control/fastqe-mean-before.png "Antes del recorte")
 >    > > 
 >    > > ![FASTQE after](../../images/quality-control/fastqe-mean-after.png "Después del recorte")
 >    > > 
-> > > 
-> > {: .solution }
-> > 
-> {: .question}
-> 
+>    > {: .solution }
+>    {: .question}
 {: .hands_on}
 
 Con FASTQE podemos ver que hemos mejorado la calidad de las bases en el conjunto de datos.
@@ -754,31 +752,40 @@ También podemos, o en su lugar, comprobar los datos de calidad controlada con F
 > 2. ¿Ha desaparecido el adaptador?
 > 
 > > <solution-title></solution-title>
-> > 1. Sí. La gran mayoría de las bases tienen una puntuación de calidad por encima de 20 ahora. calidad de la secuencia por base](../../images/quality-control/per_base_sequence_quality-after.png "Calidad de la secuencia por base")
+> > 1. Sí. La gran mayoría de las bases tienen una puntuación de calidad por encima de 20 ahora.
 > > 
-> > 2. Sí. Ahora no se detecta ningún adaptador. contenido del adaptador](../../images/quality-control/adapter_content-after.png)
+> > ![calidad de la secuencia por base](../../images/quality-control/per_base_sequence_quality-after.png "Calidad de la secuencia por base")
 > > 
+> > 2. Sí. Ahora no se detecta ningún adaptador. 
+> > 
+> > ![contenido del adaptador](../../images/quality-control/adapter_content-after.png)
 > {: .solution }
-> 
 {: .question}
 
 Con FastQC podemos ver que mejoramos la calidad de las bases en el conjunto de datos y eliminamos el adaptador.
 
 > <details-title>Otros gráficos FastQC tras el recorte</details-title>
 > 
-> ![Per tile sequence quality](../../images/quality-control/per_tile_sequence_quality-after.png) Tenemos algunas rayas rojas porque hemos recortado esas regiones de las lecturas.
+> ![Per tile sequence quality](../../images/quality-control/per_tile_sequence_quality-after.png)
+> Tenemos algunas rayas rojas porque hemos recortado esas regiones de las lecturas.
 > 
-> ![Per sequence quality scores](../../images/quality-control/per_sequence_quality_scores-after.png) Ahora tenemos un pico de alta calidad en lugar de uno de alta y otro de baja calidad que teníamos anteriormente.
+> ![Per sequence quality scores](../../images/quality-control/per_sequence_quality_scores-after.png)
+> Ahora tenemos un pico de alta calidad en lugar de uno de alta y otro de baja calidad que teníamos anteriormente.
 > 
-> ![Per base sequence content](../../images/quality-control/per_base_sequence_content-after.png) No tenemos la misma representación de las bases que antes, ya que se trata de datos de amplicones.
+> ![Per base sequence content](../../images/quality-control/per_base_sequence_content-after.png)
+> No tenemos la misma representación de las bases que antes, ya que se trata de datos de amplicones.
 > 
-> ![Per sequence GC content](../../images/quality-control/per_sequence_gc_content-after.png) Ahora tenemos un único pico principal de GC debido a la eliminación del adaptador.
+> ![Per sequence GC content](../../images/quality-control/per_sequence_gc_content-after.png)
+> Ahora tenemos un único pico principal de GC debido a la eliminación del adaptador.
 > 
-> ![Contenido N por base](../../images/quality-control/per_base_n_content-after.png) Esto es lo mismo que antes, ya que no tenemos Ns en estas lecturas.
+> ![Contenido N por base](../../images/quality-control/per_base_n_content-after.png)
+> Esto es lo mismo que antes, ya que no tenemos Ns en estas lecturas.
 > 
-> ![Sequence length distribution](../../images/quality-control/sequence_length_distribution-after.png) Ahora tenemos múltiples picos y un rango de longitudes, en lugar del único pico que teníamos antes del recorte cuando todas las secuencias tenían la misma longitud.
+> ![Sequence length distribution](../../images/quality-control/sequence_length_distribution-after.png)
+> Ahora tenemos múltiples picos y un rango de longitudes, en lugar del único pico que teníamos antes del recorte cuando todas las secuencias tenían la misma longitud.
 > 
 > ![Niveles de duplicación de secuencias](../../images/quality-control/sequence_duplication_levels-after.png)
+> 
 > > <question-title></question-title>
 > > 
 > > ¿A qué corresponde la secuencia más sobrerrepresentada `GTGTCAGCCGCCGCGGTAGTCCGACGTGG`?
@@ -789,11 +796,8 @@ Con FastQC podemos ver que mejoramos la calidad de las bases en el conjunto de d
 > > > GTGTCAGCCGCCGCGGTAGTCCGACGTGG
 > > > ```
 > > > y usamos [blastn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) contra la base de datos por defecto Nucleotide (nr/nt) vemos que los resultados más altos son para genes 16S rRNA. Esto tiene sentido, ya que se trata de datos de amplicones 16S, en los que el gen 16S se amplifica por PCR.
-> > > 
 > > {: .solution }
-> > 
 > {: .question}
-> 
 {: .details}
 
 
@@ -861,9 +865,7 @@ Los datos que analizamos en el paso anterior eran datos de extremo único, por l
 > >    Los demás indicadores (adaptadores, niveles de duplicación, etc.) son similares.
 > > 
 > > 2. Deberíamos recortar el final de las secuencias y filtrarlas con **Cutadapt** {% icon tool %}
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Con lecturas pareadas, las puntuaciones medias de calidad de las lecturas hacia delante serán casi siempre superiores a las de las lecturas hacia atrás.
@@ -898,11 +900,8 @@ Tras el recorte, las lecturas inversas serán más cortas debido a su calidad y 
 >    > > <solution-title></solution-title>
 >    > > 1. 44.164bp (`Quality-trimmed:`) para las lecturas hacia adelante y 138.638bp para las lecturas hacia atrás.
 >    > > 2. Se han eliminado 1.376 secuencias porque al menos una lectura era más corta que el corte de longitud (322 cuando sólo se analizaron las lecturas hacia adelante).
-> > > 
-> > {: .solution }
-> > 
-> {: .question}
-> 
+>    > {: .solution }
+>    {: .question}
 {: .hands_on}
 
 Además del informe, Cutadapt genera 2 archivos:
@@ -922,7 +921,6 @@ Estos conjuntos de datos pueden utilizarse para el análisis posterior, por ejem
 > > 2. Se calcula un alineamiento con solapamiento máximo que tiene el menor número de desajustes e indels.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 # Evaluar la calidad con Nanoplot - Sólo lecturas largas
@@ -952,7 +950,10 @@ En caso de lecturas largas, podemos comprobar la calidad de la secuencia con [Na
 > 
 > ¿Cuál es el Qscore medio?
 > 
-> > <solution-title></solution-title> El Qscore está en torno a Q32. En el caso de PacBio CLR y Nanopore, está alrededor de Q12 y cerca de Q31 para Illumina (NovaSeq 6000). ![Gráfico de Qscore entre Illumina, PacBio y Nanopore](../../images/quality-control/qscore-illumina-pacbio-nanopore.png "Comparación de Qscore entre Illumina, PacBio y Nanopore")
+> > <solution-title></solution-title>
+> > 
+> > El Qscore está en torno a Q32. En el caso de PacBio CLR y Nanopore, está alrededor de Q12 y cerca de Q31 para Illumina (NovaSeq 6000).
+> > ![Gráfico de Qscore entre Illumina, PacBio y Nanopore](../../images/quality-control/qscore-illumina-pacbio-nanopore.png "Comparación de Qscore entre Illumina, PacBio y Nanopore")
 > > 
 > > Definición: Qscores es la probabilidad media de error por base, expresada en la escala log (Phred)
 > > 
@@ -977,16 +978,19 @@ Este gráfico muestra la distribución del tamaño de los fragmentos en función
 
 ![Gráfico de longitudes de lectura frente a calidad media de lectura mediante puntos](../../images/quality-control/LengthvsQualityScatterPlot_dot.png "Histograma de longitud de lectura")
 
-> <question-title></question-title> Observando el "Gráfico de longitudes de lectura frente a calidad media de lectura utilizando el gráfico de puntos". ¿Notaste algo inusual con el Qscore? ¿Puede explicarlo?
+> <question-title></question-title>
+>
+> Observando el "Gráfico de longitudes de lectura frente a calidad media de lectura utilizando el gráfico de puntos". ¿Notaste algo inusual con el Qscore? ¿Puede explicarlo?
 > > <solution-title></solution-title> No hay lecturas bajo Q20. La calificación para las lecturas HiFi es:
 > > - Un número mínimo de 3 subreads
 > > - A read Qscore >=20 ![PacBio HiFi sequencing](../../images/quality-control/pacbio-css-hifi-sequencing.png "PacBio HiFi sequencing")
 > > 
 > {: .solution }
-> 
 {: .question}
 
-> <comment-title>¡Pruébalo!</comment-title> Haz el control de calidad con **FastQC** {% icon tool %} en `m64011_190830_220126.Q20.subsample.fastq.gz` y compare los resultados!
+> <comment-title>¡Pruébalo!</comment-title>
+> 
+> Haz el control de calidad con **FastQC** {% icon tool %} en `m64011_190830_220126.Q20.subsample.fastq.gz` y compare los resultados!
 > 
 {: .comment}
 

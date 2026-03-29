@@ -38,10 +38,15 @@ contributions:
     - joachimwolff
     - bebatut
     - hexylena
+  editing:
+    - tflowers15
   translation:
     - hvelab
     - unode
   funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
     - biont
 recordings:
 - captioners:
@@ -105,7 +110,6 @@ visualizaremos los datos con el programa **IGV**.
 > 
 > 1. TOC
 > {:toc}
-> 
 {: .agenda}
 
 # Preparar los datos
@@ -180,21 +184,19 @@ largos.
 >       - {% icon param-file %} *"FASTA/Q file #2"*: `reads_2`
 >       - *"Do you want to set paired-end options?"*: `No`
 > 
->         Debería echar un vistazo a los parámetros, especialmente la orientación de la
->         pareja si la conoce. Pueden mejorar la calidad del mapeo de extremos pareados.
+>           Debería echar un vistazo a los parámetros, especialmente la orientación de la
+>           pareja si la conoce. Pueden mejorar la calidad del mapeo de extremos pareados.
 > 
 >     - *"¿Will you select a reference genome from your history or use a built-in index?"*: `Use a built-in genome index`
 >       - *"Select reference genome "*: `Mouse (Mus musculus): mm10`
-
 >     - *"Select analysis mode "*: `Default setting only`
 > 
->       Debería echar un vistazo a los parámetros no predeterminados e intentar
->       comprenderlos. Pueden tener un impacto en el mapeo y mejorarlo.
+>         Debería echar un vistazo a los parámetros no predeterminados e intentar
+>         comprenderlos. Pueden tener un impacto en el mapeo y mejorarlo.
 > 
 >     - *"Save the bowtie2 mapping statistics to the history "*: `Yes`
 > 
 > 2. Inspeccione el archivo `mapping stats` haciendo clic en el {% icon galaxy-eye %} (ojo)
-> 
 {: .hands_on}
 
 > <question-title></question-title>
@@ -226,7 +228,6 @@ largos.
 > >     - el resto no está mapeado en absoluto
 > > 
 > {: .solution }
-> 
 {: .question}
 
 La comprobación de las estadísticas de mapeo es un paso importante antes de continuar
@@ -269,7 +270,6 @@ calidad del mapeo.
 >      - *"Use genome"*: `Mouse (Mus musculus): mm10 Full`
 > 
 > 2. Inspeccionar el archivo {% icon param-file %} archivo `Stats`
-> 
 {: .hands_on}
 
 > <question-title></question-title>

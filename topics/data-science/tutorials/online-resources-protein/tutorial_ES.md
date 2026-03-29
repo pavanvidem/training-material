@@ -53,12 +53,14 @@ Al realizar un análisis de datos biológicos, es posible que nos encontremos co
 
 El objetivo de este tutorial es familiarizarnos con ello, utilizando como ejemplo las opsinas humanas.
 
-> <comment-title></comment-title> Este tutorial es un poco atípico: no trabajaremos en Galaxy sino principalmente fuera de ella, en las páginas de la base de datos [UniProt](https://uniprot.org).
-> 
+> <comment-title></comment-title>
+>
+> Este tutorial es un poco atípico: no trabajaremos en Galaxy sino principalmente fuera de ella, en las páginas de la base de datos [UniProt](https://uniprot.org).
 {: .comment}
 
-> <comment-title></comment-title> Este tutorial está diseñado para ser la continuación del tutorial ["Un gen a través de formatos de archivo"]({% link topics/data-science/tutorials/online-resources-gene/tutorial.md %}), pero también puede ser consultado como un módulo independiente.
-> 
+> <comment-title></comment-title>
+>
+> Este tutorial está diseñado para ser la continuación del tutorial ["Un gen a través de formatos de archivo"]({% link topics/data-science/tutorials/online-resources-gene/tutorial.md %}), pero también puede ser consultado como un módulo independiente.
 {: .comment}
 
 Las opsinas se encuentran en las células de la retina. Captan la luz e inician la secuencia de señales que dan lugar a la visión, y esa es la razón por la que, cuando se ven comprometidas, se asocian al daltonismo y a otras deficiencias visuales.
@@ -68,7 +70,6 @@ Las opsinas se encuentran en las células de la retina. Captan la luz e inician 
 > El tutorial que usted está consultando fue desarrollado principalmente consultando los recursos de UniProtKB, en particular el tutorial [Explore UniProtKB entry](https://www.uniprot.org/help/explore_uniprotkb_entry). Algunas frases se reportan desde allí sin modificaciones.
 > 
 > Además, el tema se eligió basándose en el [Tutorial de Bioinformática] de Gale Rhodes (https://spdbv.unil.ch/TheMolecularLevel/Matics/index.html). Aunque el tutorial ya no se puede seguir paso a paso debido a cómo los recursos mencionados cambiaron con el tiempo, podría proporcionar ideas adicionales sobre las opsinas y, en particular, sobre cómo se pueden construir modelos estructurales de proteínas basados en información evolutiva.
-> 
 {: .comment}
 
 
@@ -76,8 +77,8 @@ Las opsinas se encuentran en las células de la retina. Captan la luz e inician 
 > 
 > En este tutorial trataremos:
 > 
-> 1. TOC {:toc}
-> 
+> 1. TOC
+> {:toc}
 {: .agenda}
 
 # La página de entrada de UniProtKB
@@ -100,9 +101,7 @@ El portal que hay que visitar para obtener toda la información sobre una prote�
 > > 
 > > 410 resultados (en el momento de la preparación de este tutorial)
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Estos 410 resultados nos dan la sensación de que tenemos que ser más específicos (aunque - spoiler - nuestro objetivo real está entre los primeros resultados).
@@ -127,7 +126,6 @@ Para ser suficientemente específicos, sugerimos utilizar un identificador únic
 > > 2. Necesitamos aclarar lo que estamos buscando: OPN1LW humano
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Necesitamos añadir `Human` para aclarar lo que estamos buscando.
@@ -150,7 +148,6 @@ Necesitamos añadir `Human` para aclarar lo que estamos buscando.
 > > 2. El primer resultado está etiquetado con `Gene: OPN1LW (RCP)`
 > > 
 > {: .solution}
-> 
 {: .question}
 
 El primer resultado, etiquetado con `Gene: OPN1LW (RCP)`, es nuestro objetivo, `P04000 · OPSR_HUMAN`. Antes de abrir la página, hay que tener en cuenta dos cosas:
@@ -202,7 +199,6 @@ El siguiente menú ya forma parte de la pestaña *Entrada*. Nos permite ejecutar
 > > 2. Los formatos`FASTA` deberían sonar familiares (después del tutorial preliminar), e incluyen la secuencia de la proteína, eventualmente con sus isoformas (en cuyo caso será un multi-FASTA). Aparte de éstos, todos los demás formatos no son específicos de una proteína, ni siquiera de una biología. Se trata de formatos de archivo generales muy utilizados por los sitios web para incluir la información que figura en la página. Por lo tanto, descargando el fichero `text` (o incluso mejor el `json`), descargaríamos la misma anotación a la que accedemos en esta página, pero en un formato más fácil de parsear programáticamente.
 > > 
 > {: .solution}
-> 
 {: .question}
 
 Desplacémonos ahora por la página de entrada, sección por sección.
@@ -228,9 +224,7 @@ GO es un ejemplo perfecto de base de datos / recurso que parte de un universo de
 > > 1. Proteína fotorreceptora, receptor acoplado a proteína G
 > > 2. Membrana del disco fotorreceptor
 > > 2. Transducción sensorial, Visión
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ### Nombres y taxonomía
@@ -246,9 +240,7 @@ Otros ejemplos de información estructurada están disponibles en la siguiente s
 > > 
 > > 1. 9606, es decir, Homo sapiens
 > > 2. UP000005640, componente del cromosoma Xs
-> > 
 > {: .solution}
-> 
 {: .question}
 
 ## Localización subcelular
@@ -309,9 +301,7 @@ Como sabemos por el tutorial anterior, este gen/proteína está asociado a múlt
 > > 
 > > Este tipo de estudios implicaría un uso extensivo de los tipos de archivos para gestionar datos genómicos, tales como: SAM (Sequence Alignment Map), BAM (Binary Alignment Map), VCF (Variant Calling Format) etc.
 > > 
-> > 
 > {: .solution}
-> 
 {: .question}
 
 Esta sección también incluye un área *Features*, donde se mapean las variantes naturales a lo largo de la secuencia. Abajo, también se destaca que una vista más detallada de las características a lo largo de la secuencia se proporciona en la pestaña *Enfermedad & Variantes*, pero no la abramos por ahora.

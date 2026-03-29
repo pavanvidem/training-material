@@ -75,7 +75,6 @@ lista de posibles genes diana**.
 > 
 > 1. TOC
 > {:toc}
->
 {: .agenda}
 
 # Pretratado
@@ -143,7 +142,8 @@ Empecemos con una historial vacío.
 > 
 >    {% snippet faqs/galaxy-es/datasets_import_via_link.md format="interval" %}
 > 
->    > <tip-title>Importación de datos a Galaxy</tip-title> Hay [más opciones]({% link topics/galaxy-interface/tutorials/get-data/slides.html %}) para usuarios avanzados.
+>    > <tip-title>Importación de datos a Galaxy</tip-title>
+>    > Hay [más opciones]({% link topics/galaxy-interface/tutorials/get-data/slides.html %}) para usuarios avanzados.
 >    {: .tip}
 > 
 {: .hands_on}
@@ -795,8 +795,8 @@ encontrados en cada cromosoma. ¿Pero no sería más interesante conocer el núm
 en cada gen único? Volvamos a ejecutar el *workflow* con una configuración
 diferente
 
-> <hands-on-title>Ejecutar un workflow con la configuración
-> cambiada</hands-on-title>
+> <hands-on-title>Ejecutar un workflow con la configuración cambiada</hands-on-title>
+>
 > 1. Abre el menú de *workflow* (barra de menú izquierda)
 > 2. Busque el *workflow* que realizó en la sección anterior y seleccione la opción **Ejecutar**
 > 3. Elige como entradas nuestro fichero BED `mm9.RefSeq_genes` (`#genes`) y el resultado de la herramienta **Cut** (`#peaks`)
@@ -806,7 +806,6 @@ diferente
 >     - En *"Operation "*:
 >       - *"In column "*: `7`
 > 6. Haz clic en **Execute *workflow***
-> 
 {: .hands_on}
 
 ¡Enhorabuena! Debería tener un archivo con todos los nombres de genes únicos y un recuento de cuántos picos contenían.
@@ -815,7 +814,8 @@ diferente
 > 
 > La lista de genes únicos no está ordenada. Intente ordenarla usted mismo
 > 
-> > <solution-title></solution-title> Puede utilizar la herramienta "Sort data in ascending or descending order" en la columna 2 y "fast numeric sort".
+> > <solution-title></solution-title>
+> > Puede utilizar la herramienta "Sort data in ascending or descending order" en la columna 2 y "fast numeric sort".
 > {: .solution }
 {: .question}
 

@@ -15,6 +15,7 @@
 {: .hands_on}
 
 > <comment-title>Slow</comment-title>
+>
 > Esto puede tardar uno o dos minutos en ejecutarse, dependiendo de los recursos de tu instancia de entrenamiento. Toma tiempo porque el servidor construye un pequeño sitio web para ti y preprocesa el genoma de referencia en un formato más eficiente. Si quisieras compartir esto con tus colegas, podrías descargar este conjunto de datos y colocarlo directamente en tu propio servidor web.
 {: .comment}
 
