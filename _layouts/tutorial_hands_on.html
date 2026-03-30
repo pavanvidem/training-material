@@ -101,7 +101,7 @@ We should ONLY be using new_material (if at all possible.)
         {% endif %}
 
         {% if page.translations %}
-        <div><strong>{% icon language aria=false %} Translations:</strong> {% for lang in page.translations %}<a href="./tutorial_{{lang | upcase}}.html"> {% icon language aria=false %} {{ site.other_languages[lang] }} </a>{% endfor %}</div>
+        <div><strong>{% icon language aria=false %} {{ locale['translations'] | default: "Translations" }}:</strong> {% for lang in page.translations %}<a href="./tutorial{% if lang != 'en' %}_{{lang | upcase}}{% endif %}.html"> {% icon language aria=false %} {{ site.other_languages[lang] }} </a>{% endfor %}</div>
         {% endif %}
 
         {% if own_material.zenodo_link and own_material.zenodo_link != "" %}
