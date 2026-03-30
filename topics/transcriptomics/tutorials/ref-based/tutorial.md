@@ -1283,7 +1283,6 @@ To be able to identify differential gene expression induced by PS depletion, all
 >    {{ page.zenodo_link }}/files/GSM461181_treat_paired_featureCounts.counts
 >    {{ page.zenodo_link }}/files/GSM461182_untreat_single_featureCounts.counts
 >    ```
->
 {: .hands_on}
 
 You might think we can just compare the count values in the files directly and calculate the extent of differential gene expression. However, it is not that simple.
