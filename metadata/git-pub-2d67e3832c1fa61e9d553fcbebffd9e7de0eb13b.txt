@@ -1,3 +1,20 @@
+GTN_GTN:1774431947
+
+A	topics/statistics/images/multimodal_learner/report_tabs.png
+A	topics/statistics/images/multimodal_learner/test_roc_auc.png
+A	topics/statistics/images/multimodal_learner/workflow.png
+A	topics/statistics/tutorials/multimodal_learner/data-library.yaml
+A	topics/statistics/tutorials/multimodal_learner/faqs/index.md
+A	topics/statistics/tutorials/multimodal_learner/slides.html
+A	topics/statistics/tutorials/multimodal_learner/tutorial.bib
+A	topics/statistics/tutorials/multimodal_learner/tutorial.md
+A	topics/statistics/tutorials/multimodal_learner/workflows/index.md
+A	topics/statistics/tutorials/multimodal_learner/workflows/main_workflow-tests.yml
+A	topics/statistics/tutorials/multimodal_learner/workflows/main_workflow.ga
+GTN_GTN:1774242463
+
+R099	metadata/git-mod-771ff843a1ddfddb44ac670ef9a23b6153288a80.txt	metadata/git-mod-8c638a18ae33de2a0a0945d0697f80a1018521db.txt
+R099	metadata/git-pub-771ff843a1ddfddb44ac670ef9a23b6153288a80.txt	metadata/git-pub-8c638a18ae33de2a0a0945d0697f80a1018521db.txt
 GTN_GTN:1773999859
 
 A	topics/introduction/images/galaxy-intro-rdm/visualise-settings.png
