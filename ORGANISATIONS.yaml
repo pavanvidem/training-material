@@ -338,12 +338,6 @@ FAIR2Adapt:
     url: https://eosc.eu/eu-project/fair2adapt/
     avatar: "/training-material/shared/images/logos/FAIR2Adapt.png"
 
-fondfrance:
-    short_name: FondFrance
-    name: Fondation de France
-    url: "https://www.fondationdefrance.org/"
-    avatar: "/training-material/shared/images/fondfrance.jpg"
-
 fiesta:
     short_name: OSCARS-FIESTA
     name: FAIR Image Analysis across Sciences
