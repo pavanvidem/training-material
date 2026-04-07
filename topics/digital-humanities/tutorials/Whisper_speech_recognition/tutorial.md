@@ -104,6 +104,15 @@ Instead, browse to the activity bar on the left side of your screen and click on
 There, search for ["Media Player"](https://usegalaxy.eu/visualizations/create/plyr). 
 Select the video in the dropdown menu and click on play to watch the video or audio.
 
+> <hands-on-title> Data Upload </hands-on-title>
+>
+1. In the **Activity bar**, click on **Visualisations** {% icon galaxy-visualise %}.
+2. Search for **Media Player** and **click on it**.
+3. In the drop-down menu, select `1960_kennedy-nixon_1.mp4`. A black screen appears.
+4. Click on the **Play icon** in the middle and take a look at the video.
+>
+{: .hands_on}
+
 > <question-title></question-title>
 >
 > 1. How long is the video?
@@ -118,11 +127,13 @@ Select the video in the dropdown menu and click on play to watch the video or au
 >
 {: .question}
 
-This video shows the first televised presidential debate held between Richard Nixon and John F. Kennedy in 1960. {% cite Druckman_2003 %} 
-You can use Galaxy for automated speech recognition.
+This video shows the first televised presidential debate held between Richard Nixon and John F. Kennedy in 1960. 
+{% cite Druckman_2003 %} looks at the media history of this document, in case you want to know more about it.
+We will not analyse its aesthetics or importance, but focus on the spoken words.
+You can use Galaxy for automated speech recognition of the video.
 
 
-# Sub-step with **Speech to Text with Diarization**
+# Transcribe your Media File(s)
 Galaxy has different tools to transcribe your media files: [Whisper](https://usegalaxy.eu/root?tool_id=whisper)
 and WhisperX [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx). 
 If you want to transcribe a monologue or do not care about who said what, you can choose Whisper. 
@@ -130,7 +141,7 @@ To differentiate between various speakers, use {% tool [WhisperX](toolshed.g2.bx
 This is what we will do in this tutorial to create our video transcript. 
 
 Please make sure to comply with your local copyright and privacy laws regarding recordings and sensitive data, if applicable. 
-You might also need to get informed consent first to use this tool on some files. 
+You might also need to obtain informed consent before using this tool on some files. 
 Read more, for example, on [the regulations in Germany, here](https://forschungsdaten.info/themen/rechte-und-pflichten/datenschutzrecht/).
 
 > <hands-on-title> Create the Video Transcription </hands-on-title>
@@ -284,11 +295,11 @@ This may be all you need, but you may want to go further and work only with sele
 In this example, we want to get a sense of the topics Nixon and Kennedy addressed during their time on screen. 
 Therefore, we will first select all passages allocated to them and then clean them.
 
-# Select  and clean the presidential candidate's passages
+# Select the Presidential Candidate’s Passages
 
-In this step, we will use the `Transcribed_all` file to select only the lines from Nixon and Kennedy, that are most relevant to this example.
+In this step, we will use the `Transcribed_all` file to select only the lines from Nixon and Kennedy that are most relevant to this example.
 
-## Select Nixon's passages
+## Select Nixon's Passages
 
 First, we search the document for mentions of Richard Nixon, which are now marked as `[Nixon]`. 
 Despite the tool's name, `search`, it actually selects the lines that fit a certain expression, in our case, the speaker allocation for Nixon. 
@@ -322,7 +333,7 @@ Despite the tool's name, `search`, it actually selects the lines that fit a cert
 {: .question}
 
 
-## Select Kennedy's passages
+## Select Kennedy's Passages
 
 We will redo this step to extract the parts of John F. Kennedy's speech accordingly.
 
@@ -345,8 +356,12 @@ We will redo this step to extract the parts of John F. Kennedy's speech accordin
 This output might already suffice, depending on what you want to do with the texts. 
 If you want to use it further, some text cleaning might be in order.
 
+# Clean the Presidential Candidate’s Passages
 
-## Clean Nixon's passages
+If you want to create a Wordcloud, for example, the information on who spoke what might be redundant and falsify your visualisation.
+Therefore, we remove this passage for both speakers.
+
+## Clean Nixon's Passages
 
 Since all of the passages in this file are now from Nixon, the allocation saying `[Nixon]: ` at the beginning of each line is redundant.
 We remove it in the next step.
@@ -374,7 +389,7 @@ The result is the transcript of the text Nixon spoke during the debate. You can 
 To get the same for Kennedy, we have to redo the same step on Kennedy's text.
 
 
-## Clean Kennedy's passages
+## Clean Kennedy's Passages
 
 > <hands-on-title> Clean Kennedy's passages </hands-on-title>
 >
@@ -394,11 +409,11 @@ To get the same for Kennedy, we have to redo the same step on Kennedy's text.
 >
 {: .hands_on}
 
-Congratulation! You should now have two cleaned texts. One with Kennedy's text and one with Nixon's text.
+Congratulation! You should now have two cleaned texts: one with Kennedy's text and one with Nixon's text.
 
 # Conclusion
 
 With the example of the first televised presidential debate of Richard Nixon and John F. Kennedy in 1960, this tutorial introduced you to automated speech recognition using Galaxy.
 We introduced several tools to transcribe your audio and video files into machine-readable text.
-Building on this, we explored how using Regular Expressions can help us clean the automated text and extract specific passages, in our case, the lines from Nixon and Kennedy respectively. 
+Building on this, we explored how using Regular Expressions can help us clean the automated text and extract specific passages, in our case, the lines from Nixon and Kennedy, respectively. 
 Which audio and video files do you want to test this on?
