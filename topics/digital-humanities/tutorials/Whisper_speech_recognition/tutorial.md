@@ -34,8 +34,9 @@ answer_histories:
 
 Audio and media files are a rich source in the social sciences and the humanities. 
 One example is oral history, in which historians interview contemporary witnesses to access information beyond written sources. 
-{% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio and audiovisual material. 
-How can you make it accessible for structured analysis? This is a task Galaxy can help with.
+{% cite Cole2022 %} gives an introduction to the topic and lays out potential challenges. But once you have your audio or audiovisual material, 
+how can you make it accessible for structured analysis? You will often need to transcribe the media content into machine-readable text first.
+This is a task Galaxy can help with.
 The platform contains several tools for Automatic Speech Recognition (ASR). 
 From uploading and converting to suitable file types to transcriptions and post-processing, Galaxy has you covered.
 
@@ -47,7 +48,7 @@ We use a video of the 1960 United States presidential debate between John F. Ken
 It was broadcast on television, and the recording is now in the public domain. We will use {% tool WhisperX %} to transcribe the material. 
 The advantage of {% tool WhisperX %} over {% tool Whisper %}, another tool available on Galaxy, is its speaker diarization. 
 This means the tool recognises different speakers and (tries to) allocate the text passages accordingly. 
-To make it easier to distinguish who said what, we later replace the tool's naming convention of, for example, "SPEAKER_00," with the name of the person speaking. 
+To make it easier to distinguish who said what, we later replace the tool's naming convention, for example, "SPEAKER_00," with the person's name. 
 Then we extract passages from Kennedy's and Nixon's speeches for further analysis. 
 
 
@@ -299,7 +300,7 @@ In this step, we will use the `Transcribed_all` file to select only the lines fr
 ## Select Nixon's Passages
 
 First, we search the document for mentions of Richard Nixon, which are now marked as `[Nixon]`. 
-Despite the tool's name, `search`, it actually selects the lines that fit a certain expression, in our case, the speaker allocation for Nixon. 
+Despite the tool's name, `Search`, it actually selects the lines that fit a certain expression, in our case, the speaker allocation for Nixon. 
 
 > <hands-on-title> Search Nixon's passages </hands-on-title>
 >
@@ -407,10 +408,13 @@ To get the same for Kennedy, we have to redo the same step on Kennedy's text.
 {: .hands_on}
 
 Congratulation! You should now have two cleaned texts: one with Kennedy's text and one with Nixon's text.
+If you want, you can use other tools in Galaxy for further analysis or visualisation.
+The {% tool Word cloud %}, for example, can show you what the most frequent words in the respective speeches were.
 
 # Conclusion
 
 With the example of the first televised presidential debate of Richard Nixon and John F. Kennedy in 1960, this tutorial introduced you to automated speech recognition using Galaxy.
 We introduced several tools to transcribe your audio and video files into machine-readable text.
 Building on this, we explored how using Regular Expressions can help us clean the automated text and extract specific passages, in our case, the lines from Nixon and Kennedy, respectively. 
+
 Which audio and video files do you want to test this on?
