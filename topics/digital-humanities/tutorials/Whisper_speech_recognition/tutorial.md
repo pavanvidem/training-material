@@ -44,10 +44,10 @@ It is the pre-processing step to get you started.
 Once you have covered this, you can further analyse your material more thoroughly. This step will not be covered in this tutorial.
 
 We use a video of the 1960 United States presidential debate between John F. Kennedy and Richard Nixon.
-It was broadcast on television, and the recording is now in the public domain. We will use  {% tool [WhisperX](toolshed.g2.bx.psu.edu/repos/bgruening/whisperx/whisperx/3.4.2+galaxy1) %} to transcribe the material. 
-The advantage of WhisperX over [Whisper](https://usegalaxy.eu/root?tool_id=whisper), another tool available on Galaxy, is its speaker diarization. 
+It was broadcast on television, and the recording is now in the public domain. We will use {% tool WhisperX %} to transcribe the material. 
+The advantage of {% tool WhisperX %} over {% tool Whisper %}, another tool available on Galaxy, is its speaker diarization. 
 This means the tool recognises different speakers and (tries to) allocate the text passages accordingly. 
-To make it easier to distinguish "who said what", we later replace the tool's naming convention of, for example, "SPEAKER_00," with the name of the person speaking. 
+To make it easier to distinguish who said what, we later replace the tool's naming convention of, for example, "SPEAKER_00," with the name of the person speaking. 
 Then we extract passages from Kennedy's and Nixon's speeches for further analysis. 
 
 
@@ -90,21 +90,18 @@ You can upload data in various ways. Here are some examples:
 We upload one file: the video of the presidential debate we want to transcribe. 
 
 Once you click start, your upload should begin. It will turn green once it is done.
-If you follow this workflow with one of your own files, make sure to check your file's datatype. 
-If your file's datatype is not supported as an input for Whisper or WhisperX, you can use [FFMPEG](https://usegalaxy.eu/root?tool_id=ffmpeg_converter) to convert your input file into a format WhisperX supports. 
-You can check which file types a tool supports by clicking on the tool of your choice, for example, [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx), and clicking on "accepted formats" below the upload section, where you choose the tool input.
+If you follow this workflow with one of your own files, make sure to check the file's data type. 
+If your file's format is not supported as input by {% tool WhisperX %} or {% tool Whisper %}, you can use {% tool FFMPEG %} to convert it to a format that the tool of your choice supports. 
+You can check which file types a tool supports by clicking on the tool of your choice, for example, {% tool WhisperX %}, and clicking on "accepted formats" below the upload section, where you choose the tool input.
 
 
 ## Get to know your Input
 
 You should now have one item in your history.
 But how can you watch the video? If you try to access it via the view option, a download button pops up. 
-But you do not need to download the file.
-Instead, browse to the activity bar on the left side of your screen and click on ["Vizualisation"](https://usegalaxy.eu/visualizations). 
-There, search for ["Media Player"](https://usegalaxy.eu/visualizations/create/plyr). 
-Select the video in the dropdown menu and click on play to watch the video or audio.
+But you do not need to download the file - you can watch it directly within Galaxy:
 
-> <hands-on-title> Data Upload </hands-on-title>
+> <hands-on-title> Watch the Video </hands-on-title>
 >
 1. In the **Activity bar**, click on **Visualisations** {% icon galaxy-visualise %}.
 2. Search for **Media Player** and **click on it**.
@@ -134,10 +131,10 @@ You can use Galaxy for automated speech recognition of the video.
 
 
 # Transcribe your Media File(s)
-Galaxy has different tools to transcribe your media files: [Whisper](https://usegalaxy.eu/root?tool_id=whisper)
-and WhisperX [WhisperX](https://usegalaxy.eu/root?tool_id=%2Fwhisperx). 
+Galaxy has different tools to transcribe your media files: {% tool Whisper %}
+and {% tool WhisperX %}.
 If you want to transcribe a monologue or do not care about who said what, you can choose Whisper. 
-To differentiate between various speakers, use {% tool [WhisperX](toolshed.g2.bx.psu.edu/repos/bgruening/whisperx/whisperx/3.4.2+galaxy1) %} instead. 
+To differentiate between various speakers, use WhisperX instead. 
 This is what we will do in this tutorial to create our video transcript. 
 
 Please make sure to comply with your local copyright and privacy laws regarding recordings and sensitive data, if applicable. 
@@ -182,7 +179,7 @@ You can run it several times and will get a slightly different output each time.
 Another thing to be aware of is small errors that can occur in speaker diarization.
 The longer a person speaks on the recording, the easier it is for WhisperX to allocate a speaker. 
 If someone speaks only a single sentence in the whole recording, it might mean it is not recognised as a different speaker. 
-As a result, some passages can be wrongly allocated as happened in the last bit of the recording:
+As a result, some passages can be wrongly allocated, as happened in the last bit of the recording:
 
 ![Screenshot of wrongly allocated text in the WhisperX example](images/SC_wrong_allocation.png "Wrong speaker allocation in the example transcript.")
 
@@ -193,7 +190,7 @@ The video clearly shows four different journalists speaking. WhisperX, however, 
 As we are more interested in the presidential candidates than the journalists, this poses no issue to us. But keep this in mind for your own transcripts.
 
 It is cumbersome to keep track of who is who in this version of the transcript. 
-We will make it a bit more obvious by renaming the speakers with their given names with the help of Regular Expressions (RegEx).
+We will make it more obvious by renaming the speakers with their given names with the help of Regular Expressions (RegEx).
 
 # Allocate the Speakers by using Regular Expressions
 
@@ -227,7 +224,7 @@ The tool goes through the text line by line, finds passages that match `SPEAKER_
 When the dataset turns green, we can check whether our renaming worked. This step makes it easier to point out when the moderator spoke.
 
 We will repeat this step three more times to allocate all the speakers mentioned in the transcript. 
-Make sure to always use the latest text file to ensure we end up with a single text file where all speakers are clearly distinguished.
+Always use the latest text file to ensure we end up with a single text file where all speakers are clearly distinguished.
 
 ## Allocating Kennedy
 
@@ -314,7 +311,7 @@ Despite the tool's name, `search`, it actually selects the lines that fit a cert
 >
 >    > <comment-title> Using RegEx here </comment-title>
 >    >
->    > As the input is set as another Regular Expression, we need to "escape" the brackets by putting `\` in front of them in order to make the selection work.
+>    > As the input is set as another Regular Expression, we need to "escape" the brackets by putting `\` in front of them to make the selection work.
 >    {: .comment}
 >
 {: .hands_on}
@@ -335,7 +332,7 @@ Despite the tool's name, `search`, it actually selects the lines that fit a cert
 
 ## Select Kennedy's Passages
 
-We will redo this step to extract the parts of John F. Kennedy's speech accordingly.
+We will redo this step to extract the relevant parts of John F. Kennedy's speech.
 
 > <hands-on-title> Search Kennedy's passages </hands-on-title>
 >
