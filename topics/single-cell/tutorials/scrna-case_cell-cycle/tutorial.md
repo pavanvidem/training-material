@@ -215,7 +215,7 @@ If we're going to mark all the cell cycle genes, we'll need a single list of all
 
 > <hands-on-title>Create a list of all cell cycle genes</hands-on-title>
 >
-> 1. {% tool [Concatenate datasets](cat1) %} with the following parameters:
+> 1. {% tool [Concatenate multiple datasets or collections](cat1) %} with the following parameters:
 >    - {% icon param-file %} *"Concatenate Dataset"*: `sPhase` (Input dataset)
 >    - In *"Dataset"*:
 >        - {% icon param-repeat %} *"Insert Dataset"*
