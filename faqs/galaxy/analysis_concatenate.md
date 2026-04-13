@@ -9,7 +9,7 @@ contributors: [wm75]
 
 On most Galaxy servers you will find two {% icon tool %} **Concatenate** tools installed:
 
-1. **Concatenate multiple datasets or collections** (or **Concatenate datasets** tail-to-head on previous galaxy versions)
+1. **Concatenate multiple datasets or collections** (or **Concatenate datasets** tail-to-head on previous Galaxy versions)
 2. **Concatenate datasets** tail-to-head (cat)
 
 {% if include.toolspec %}
