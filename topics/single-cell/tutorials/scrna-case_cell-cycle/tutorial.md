@@ -341,7 +341,7 @@ We now have a table with all the gene names in the same order as the main datase
 >    {% snippet faqs/galaxy/datasets_create_new_file.md format="tabular" %}
 >
 >
-> 3. {% tool [Concatenate datasets](cat1) %} with the following parameters:
+> 3. {% tool [Concatenate multiple datasets or collections](cat1) %} with the following parameters:
 >    - {% icon param-file %} *"Concatenate Dataset"*: `Pasted Entry` dataset
 >    - In *"Dataset"*:
 >        - {% icon param-repeat %} *"Insert Dataset"*
